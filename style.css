@@ -775,15 +775,7 @@ h3 {
     opacity: 1;
 }
 
-/* The featured (center) card always shows brackets */
-.service-card--featured::before,
-.service-card--featured::after {
-    opacity: 1;
-}
 
-.service-card--featured {
-    background-color: var(--bg-surface);
-}
 
 .service-card__icon {
     display: flex;
@@ -1347,7 +1339,6 @@ h3 {
 
 .footer-grid>* {
     background-color: var(--bg-main);
-    padding: var(--space-xl);
 }
 
 .footer__col-title {
