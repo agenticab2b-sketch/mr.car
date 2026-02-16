@@ -18,6 +18,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 img {
@@ -421,7 +423,7 @@ h3 {
     width: 100%;
     height: 100%;
     background: var(--bg-main);
-    z-index: 999;
+    z-index: 1001;
     flex-direction: column;
     padding: var(--space-4xl) var(--space-xl);
     transform: translateX(100%);
@@ -838,6 +840,7 @@ h3 {
 
 /* All services expandable grid */
 .services-all {
+    margin-top: var(--space-section);
     padding: var(--space-xl);
     display: flex;
     flex-direction: column;
@@ -1467,9 +1470,10 @@ h3 {
         padding: 0 var(--space-md);
     }
 
-    /* Navbar mobile */
+    /* P-02: Navbar mobile — hide CTA, show only logo + burger */
     .navbar__nav,
-    .navbar__phone {
+    .navbar__phone,
+    .navbar__cta {
         display: none;
     }
 
@@ -1478,12 +1482,12 @@ h3 {
     }
 
     .navbar {
-        grid-template-columns: 1fr auto auto;
+        grid-template-columns: 1fr auto;
     }
 
-    /* Hero mobile */
+    /* P-06: Hero mobile — more vertical breathing room */
     .hero__content {
-        padding: var(--space-xl) var(--space-md);
+        padding: var(--space-2xl) var(--space-md);
     }
 
     /* Grids to single column */
@@ -1496,31 +1500,65 @@ h3 {
         grid-template-columns: 1fr;
     }
 
+    /* P-04: Services overview — 2 cols on mobile (not 3, too cramped) */
     .services-overview .brutal-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* P-03: About features — single column on mobile */
+    .about__features {
+        grid-template-columns: 1fr;
     }
 
     .service-card__number {
         font-size: 2.5rem;
     }
 
+    /* P-07: Let content determine card height */
     .service-card {
-        min-height: 200px;
+        min-height: auto;
     }
 
-    /* Contact */
+    /* P-08: Unified margins for contact and footer grids */
     .contact-grid {
         margin: 0 var(--space-md);
     }
 
-    /* Footer */
     .footer-grid {
         margin: 0 var(--space-md);
     }
 
+    /* P-14: Pricing grid margins aligned with other sections */
+    .pricing-grid {
+        margin: var(--space-xl) var(--space-md) 0;
+    }
+
+    /* P-16: Services section header — wrap on narrow screens */
+    .services-section__header {
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    /* P-10: Services-all header — stack vertically */
+    .services-all__header {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+
+    /* P-09: Location map — less vertical space on mobile */
+    .location__map {
+        min-height: 280px;
+    }
+
+    /* P-13: Gallery — wider aspect ratio on mobile single column */
+    .gallery__item {
+        aspect-ratio: 16 / 9;
+    }
+
+    /* P-15: Footer bottom — more gap between items */
     .footer__bottom {
         flex-direction: column;
-        gap: var(--space-sm);
+        gap: var(--space-md);
         text-align: center;
     }
 }
@@ -1646,12 +1684,7 @@ h3 {
     }
 }
 
-/* --- Services List Refinement --- */
-.services-all {
-    margin-top: var(--space-section);
-    /* Separation from featured cards */
-}
-
+/* --- Services List Refinement (P-17: merged duplicate blocks) --- */
 .services-all__header {
     margin-bottom: var(--space-lg);
     border-bottom: 1px solid var(--border-grid);
