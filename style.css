@@ -1339,6 +1339,7 @@ h3 {
 
 .footer-grid>* {
     background-color: var(--bg-main);
+    padding: var(--space-xl);
 }
 
 .footer__col-title {
@@ -1643,4 +1644,33 @@ h3 {
         bottom: 0;
         opacity: 0;
     }
+}
+
+/* --- Services List Refinement --- */
+.services-all {
+    margin-top: var(--space-section);
+    /* Separation from featured cards */
+}
+
+.services-all__header {
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--border-grid);
+    padding-bottom: var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.services-all__header h3 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+}
+
+.services-all__header .meta {
+    font-family: var(--font-mono);
+    color: var(--accent-primary);
 }
