@@ -51,8 +51,27 @@
                 alt="Autoteenindus Mr.Car — meister tööl" loading="eager">
         </div>
         <div class="hero__content reveal">
-            <div class="hero__status">
-                Teeninduse staatus: Avatud
+            <div class="hero__status" id="serviceStatus">
+                <span class="hero__status-dot"></span>
+                <span class="hero__status-label">Teeninduse staatus:</span>
+                <span class="hero__status-state" id="statusState">Avatud</span>
+                <span class="hero__status-sep">│</span>
+                <span class="hero__status-countdown" id="statusCountdown">
+                    <span class="countdown__block">
+                        <span class="countdown__num" id="cdHours">00</span>
+                        <span class="countdown__unit">t</span>
+                    </span>
+                    <span class="countdown__sep">:</span>
+                    <span class="countdown__block">
+                        <span class="countdown__num" id="cdMinutes">00</span>
+                        <span class="countdown__unit">min</span>
+                    </span>
+                    <span class="countdown__sep">:</span>
+                    <span class="countdown__block">
+                        <span class="countdown__num" id="cdSeconds">00</span>
+                        <span class="countdown__unit">sek</span>
+                    </span>
+                </span>
             </div>
             <h1 class="hero__title">Mr.Car<br>autoremont Tallinn</h1>
             <span class="hero__underline"></span>
@@ -659,6 +678,110 @@
         document.querySelectorAll('.reveal').forEach(el => {
             observer.observe(el);
         });
+        // ========================================
+        // Service Status Countdown Timer
+        // Schedule: Mon–Fri 09:00–18:00 (Europe/Tallinn)
+        // ========================================
+        (function () {
+            const OPEN_HOUR = 9;
+            const CLOSE_HOUR = 18;
+            const TZ = 'Europe/Tallinn';
+
+            const statusEl = document.getElementById('serviceStatus');
+            const stateEl = document.getElementById('statusState');
+            const cdH = document.getElementById('cdHours');
+            const cdM = document.getElementById('cdMinutes');
+            const cdS = document.getElementById('cdSeconds');
+
+            function getTallinnTime() {
+                const now = new Date();
+                const tallinnStr = now.toLocaleString('en-US', { timeZone: TZ });
+                return new Date(tallinnStr);
+            }
+
+            function isWorkday(day) {
+                return day >= 1 && day <= 5; // Mon=1 ... Fri=5
+            }
+
+            function getServiceState() {
+                const t = getTallinnTime();
+                const day = t.getDay();
+                const hour = t.getHours();
+                const min = t.getMinutes();
+                const timeDecimal = hour + min / 60;
+
+                if (isWorkday(day) && timeDecimal >= OPEN_HOUR && timeDecimal < CLOSE_HOUR) {
+                    return 'open';
+                }
+                return 'closed';
+            }
+
+            function getNextTransition() {
+                const now = getTallinnTime();
+                const day = now.getDay();
+                const state = getServiceState();
+
+                if (state === 'open') {
+                    // Open: countdown to today 18:00
+                    const target = new Date(now);
+                    target.setHours(CLOSE_HOUR, 0, 0, 0);
+                    return target - now;
+                }
+
+                // Closed: find next opening (Mon–Fri 09:00)
+                const target = new Date(now);
+                target.setHours(OPEN_HOUR, 0, 0, 0);
+
+                if (isWorkday(day) && now.getHours() < OPEN_HOUR) {
+                    // Before opening on a workday — opens today
+                    return target - now;
+                }
+
+                // After closing or on weekends — find next workday
+                let daysToAdd = 1;
+                let nextDay = (day + 1) % 7;
+
+                while (!isWorkday(nextDay)) {
+                    daysToAdd++;
+                    nextDay = (nextDay + 1) % 7;
+                }
+
+                target.setDate(target.getDate() + daysToAdd);
+                return target - now;
+            }
+
+            function pad(n) {
+                return String(Math.floor(n)).padStart(2, '0');
+            }
+
+            function updateCountdown() {
+                const state = getServiceState();
+                const ms = getNextTransition();
+
+                // Update state
+                if (state === 'open') {
+                    statusEl.setAttribute('data-state', 'open');
+                    stateEl.textContent = 'Avatud';
+                } else {
+                    statusEl.setAttribute('data-state', 'closed');
+                    stateEl.textContent = 'Suletud';
+                }
+
+                // Calculate time
+                const totalSec = Math.max(0, Math.floor(ms / 1000));
+                const hours = Math.floor(totalSec / 3600);
+                const minutes = Math.floor((totalSec % 3600) / 60);
+                const seconds = totalSec % 60;
+
+                cdH.textContent = pad(hours);
+                cdM.textContent = pad(minutes);
+                cdS.textContent = pad(seconds);
+            }
+
+            // Run immediately, then every second
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
     </script>
 
     <!-- Snackbar Component -->
