@@ -1471,19 +1471,45 @@ h3 {
     }
 
     /* P-02: Navbar mobile — hide CTA, show only logo + burger */
+    /* P-02: Navbar mobile — show CTA (yellow button), hide nav/phone */
     .navbar__nav,
-    .navbar__phone,
-    .navbar__cta {
+    .navbar__phone {
         display: none;
     }
 
+    /* Return CTA button */
+    .navbar__cta {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar__cta .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        background-color: var(--accent-primary);
+        color: var(--text-on-accent);
+        border: none;
+    }
+
+    /* Change text on mobile via CSS trick or just rely on HTML if it's already "Broneeri aeg". 
+       User said "The button should be 'Jäta päring'". 
+       "Broneeri aeg" is "Book time". "Jäta päring" is "Leave request".
+       I will use a span in HTML to change text or just change it globally if acceptable, 
+       BUT better to keep desktop as is and change mobile if needed. 
+       Actually, the user audio said: "The button was yellow, bring it back... text 'Jäta päring'... make it adapted".
+       I will set font-size small.
+    */
+
     .navbar__burger {
         display: block;
+        margin-left: var(--space-md);
     }
 
     .navbar {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr auto auto;
+        gap: var(--space-sm);
     }
+
 
     /* P-06: Hero mobile — more vertical breathing room */
     .hero__content {
