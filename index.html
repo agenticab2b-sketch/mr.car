@@ -8,6 +8,7 @@
         content="Mr.Car Autoremont Tallinn — professionaalne autoremont, rehvivahetus ja diagnostika Koplis. Helista +372 5646 1210">
     <title>Mr.Car Autoremont Tallinn — Professionaalne Autohooldus</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
@@ -99,11 +100,14 @@
             <span>—</span>
             <span>◉ Ausad hinnad ilma üllatusteta</span>
             <span>—</span>
+        </div>
+        <div class="trust-bar__content" aria-hidden="true">
             <span>◉ Usaldusväärne teenindus Koplis</span>
             <span>—</span>
             <span>◉ Garantii kõigile töödele</span>
             <span>—</span>
             <span>◉ Ausad hinnad ilma üllatusteta</span>
+            <span>—</span>
         </div>
     </div>
 
@@ -113,58 +117,27 @@
     <section class="services-overview">
         <div class="brutal-grid">
             <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <path d="M10 32 L10 16 L14 16 L14 10 L34 10 L34 16 L38 16 L38 32 Z M18 32 L18 26 L30 26 L30 32" />
-                    <line x1="20" y1="18" x2="28" y2="18" />
-                </svg>
+                <iconify-icon icon="mdi:car-wrench" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Remont</span>
             </a>
             <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <rect x="6" y="18" width="36" height="14" />
-                    <circle cx="14" cy="32" r="5" />
-                    <circle cx="34" cy="32" r="5" />
-                    <path d="M10 18 L14 10 L34 10 L38 18" />
-                </svg>
+                <iconify-icon icon="mdi:car-side" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Veermik</span>
             </a>
             <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <rect x="10" y="6" width="28" height="36" />
-                    <line x1="16" y1="14" x2="32" y2="14" />
-                    <line x1="16" y1="20" x2="32" y2="20" />
-                    <line x1="16" y1="26" x2="26" y2="26" />
-                    <circle cx="30" cy="34" r="4" />
-                    <path d="M28 36 L32 32" />
-                </svg>
+                <iconify-icon icon="mdi:car-cog" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Diagnostika</span>
             </a>
             <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <circle cx="24" cy="24" r="18" />
-                    <circle cx="24" cy="24" r="12" />
-                    <circle cx="24" cy="24" r="4" />
-                    <line x1="24" y1="6" x2="24" y2="12" />
-                    <line x1="24" y1="36" x2="24" y2="42" />
-                    <line x1="6" y1="24" x2="12" y2="24" />
-                    <line x1="36" y1="24" x2="42" y2="24" />
-                </svg>
+                <iconify-icon icon="mdi:tire" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Rehvitööd</span>
             </a>
             <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <path d="M30 6 L18 24 L26 24 L18 42" />
-                    <path d="M34 18 L40 18 L40 30 L34 30" />
-                </svg>
+                <iconify-icon icon="mdi:lightning-bolt" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Elekter</span>
             </a>
             <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <circle cx="24" cy="24" r="6" />
-                    <path
-                        d="M24 4 v8 M24 36 v8 M4 24 h8 M36 24 h8 M10.3 10.3 l5.7 5.7 M32 32 l5.7 5.7 M37.7 10.3 l-5.7 5.7 M16 32 l-5.7 5.7" />
-                    <circle cx="24" cy="24" r="16" stroke-dasharray="4 4" />
-                </svg>
+                <iconify-icon icon="mdi:snowflake" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Kliima</span>
             </a>
         </div>
@@ -184,10 +157,7 @@
             <!-- Card: Remont -->
             <div class="service-card">
                 <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-                    </svg>
+                    <iconify-icon icon="mdi:wrench" width="24" height="24"></iconify-icon>
                 </div>
                 <h3 class="service-card__title">Kapitaalremont</h3>
                 <p class="service-card__description">Mootori, käigukasti ja veermiku kapitaalremont. Lahendame kõik
@@ -201,9 +171,7 @@
             <!-- Card: Diagnostika (FEATURED — center) -->
             <div class="service-card service-card--featured">
                 <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                    </svg>
+                    <iconify-icon icon="mdi:car-cog" width="24" height="24"></iconify-icon>
                 </div>
                 <h3 class="service-card__title">Diagnostika</h3>
                 <p class="service-card__description">Kõigi autosüsteemide kompuuterdiagnostika. Tuvastame vead
@@ -217,9 +185,7 @@
             <!-- Card: Garantii -->
             <div class="service-card">
                 <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
+                    <iconify-icon icon="mdi:shield-check" width="24" height="24"></iconify-icon>
                 </div>
                 <h3 class="service-card__title">Garantii</h3>
                 <p class="service-card__description">Anname garantii kõigile töödele. Kasutame ainult originaalvaruosi
@@ -321,25 +287,29 @@
             </div>
             <div class="about__features">
                 <div class="feature-block">
-                    <div class="feature-block__icon">⚙️</div>
+                    <div class="feature-block__icon"><iconify-icon icon="mdi:cog" width="32" height="32"></iconify-icon>
+                    </div>
                     <h3 class="feature-block__title">Kogemus</h3>
                     <p class="feature-block__text">Töötame Koplis. Tunneme iga mootorit – Volkswagenist BMW-ni.</p>
                     <span class="feature-block__badge">Aja poolt testitud</span>
                 </div>
                 <div class="feature-block">
-                    <div class="feature-block__icon">🔧</div>
+                    <div class="feature-block__icon"><iconify-icon icon="mdi:wrench" width="32"
+                            height="32"></iconify-icon></div>
                     <h3 class="feature-block__title">Seadmed</h3>
                     <p class="feature-block__text">Kaasaegne kompuuterdiagnostika. Originaal- ja kvaliteteetvaruosad.
                     </p>
                 </div>
                 <div class="feature-block">
-                    <div class="feature-block__icon">💰</div>
+                    <div class="feature-block__icon"><iconify-icon icon="mdi:currency-eur" width="32"
+                            height="32"></iconify-icon></div>
                     <h3 class="feature-block__title">Aus hind</h3>
                     <p class="feature-block__text">Nimetame hinna enne töö algust. Ei mingeid varjatud lisatasusid.</p>
                     <span class="feature-block__badge">Ilma üllatusteta</span>
                 </div>
                 <div class="feature-block">
-                    <div class="feature-block__icon">⏱️</div>
+                    <div class="feature-block__icon"><iconify-icon icon="mdi:timer" width="32"
+                            height="32"></iconify-icon></div>
                     <h3 class="feature-block__title">Kiirus</h3>
                     <p class="feature-block__text">Enamik töid teeme samal päeval. Helistame tagasi 30 minuti jooksul.
                     </p>
@@ -454,14 +424,8 @@
         </div>
 
         <div class="container" style="margin-top: var(--space-xl);">
-            <a href="#" class="btn btn-secondary">Hinnakiri [PDF] <svg
-                    style="display:inline-block; vertical-align:middle; margin-left:8px; width:16px; height:16px;"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg></a>
+            <a href="#" class="btn btn-secondary">Hinnakiri [PDF] <iconify-icon icon="mdi:download" width="16"
+                    height="16" style="vertical-align: middle; margin-left: 8px;"></iconify-icon></a>
         </div>
     </section>
 
@@ -560,16 +524,10 @@
                 </div>
                 <div class="footer__socials">
                     <a href="#" class="footer__social-link" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                        </svg>
+                        <iconify-icon icon="mdi:facebook"></iconify-icon>
                     </a>
                     <a href="#" class="footer__social-link" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="2" width="20" height="20" rx="5" />
-                            <circle cx="12" cy="12" r="5" />
-                            <circle cx="17.5" cy="6.5" r="1.5" />
-                        </svg>
+                        <iconify-icon icon="mdi:instagram"></iconify-icon>
                     </a>
                 </div>
             </div>
