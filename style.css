@@ -704,7 +704,7 @@ h3 {
     padding-right: var(--space-2xl);
     flex-shrink: 0;
     min-width: 100%;
-    animation: run-marquee 30s linear infinite;
+    animation: run-marquee 60s linear infinite;
 }
 
 @keyframes run-marquee {
