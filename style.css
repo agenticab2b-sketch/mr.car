@@ -338,8 +338,10 @@ h3 {
     -webkit-backdrop-filter: blur(12px);
     border-bottom: var(--border);
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
-    align-items: center;
+    grid-template-columns: auto 1fr auto auto auto;
+    /* Added 5th column for language */
+    align-items: stretch;
+    /* Ensure full-height borders */
 }
 
 .navbar__logo {
@@ -350,6 +352,8 @@ h3 {
     padding: var(--space-md) var(--space-xl);
     border-right: var(--border);
     letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
 }
 
 .navbar__nav {
@@ -364,7 +368,11 @@ h3 {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: var(--space-md) var(--space-xl);
+    padding: 0 var(--space-xl);
+    /* Removed vertical padding, let align-items center */
+    height: 100%;
+    display: flex;
+    align-items: center;
     border-left: var(--border);
     transition: background-color var(--transition-fast), color var(--transition-fast);
     color: var(--text-muted);
@@ -376,7 +384,11 @@ h3 {
 }
 
 .navbar__cta {
-    padding: var(--space-md) var(--space-xl);
+    padding: 0 var(--space-xl);
+    /* Removed vertical padding */
+    height: 100%;
+    display: flex;
+    align-items: center;
     border-left: var(--border);
 }
 
@@ -384,7 +396,12 @@ h3 {
     font-family: var(--font-mono);
     font-size: 0.875rem;
     font-weight: 700;
-    padding: var(--space-md) var(--space-lg);
+    font-weight: 700;
+    padding: 0 var(--space-lg);
+    /* Removed vertical padding */
+    height: 100%;
+    display: flex;
+    align-items: center;
     color: var(--accent-primary);
     border-left: var(--border);
     white-space: nowrap;
@@ -430,6 +447,10 @@ h3 {
 .lang-link.active {
     opacity: 1;
     background-color: rgba(255, 255, 255, 0.05);
+}
+
+.lang-link:not(:first-child) {
+    border-left: var(--border);
 }
 
 .mobile-menu__lang {
