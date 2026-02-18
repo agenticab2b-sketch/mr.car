@@ -31,6 +31,14 @@
         <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
         </button>
+        <div class="navbar__lang desktop-only">
+            <a href="index.html" class="lang-link active" title="Eesti keel">
+                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="homepage.html" class="lang-link" title="Русский язык">
+                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
+            </a>
+        </div>
     </header>
 
     <!-- Mobile Menu -->
@@ -41,6 +49,16 @@
         <a href="#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
         <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
         <a href="tel:+3725646121" class="mobile-menu__link" style="color: var(--accent-primary);">+372 5646 1210</a>
+        <div class="mobile-menu__lang">
+            <a href="index.html" class="mobile-lang-link active">
+                <iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon>
+                <span>Eesti</span>
+            </a>
+            <a href="homepage.html" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon>
+                <span>Русский</span>
+            </a>
+        </div>
     </div>
 
     <!-- ========================================
@@ -129,27 +147,27 @@
     <section class="services-overview">
         <div class="brutal-grid">
             <a href="#services" class="service-icon">
-                <iconify-icon icon="material-symbols:car-repair-outline-rounded" width="48" height="48"></iconify-icon>
+                <iconify-icon icon="mdi:car-wrench" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Remont</span>
             </a>
             <a href="#services" class="service-icon">
-                <iconify-icon icon="ph:steering-wheel" width="48" height="48"></iconify-icon>
+                <iconify-icon icon="mdi:car-side" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Veermik</span>
             </a>
             <a href="#services" class="service-icon">
-                <iconify-icon icon="fluent:engine-24-regular" width="48" height="48"></iconify-icon>
+                <iconify-icon icon="mdi:car-cog" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Diagnostika</span>
             </a>
             <a href="#services" class="service-icon">
-                <iconify-icon icon="material-symbols:tire-repair-outline-rounded" width="48" height="48"></iconify-icon>
+                <iconify-icon icon="mdi:tire" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Rehvitööd</span>
             </a>
             <a href="#services" class="service-icon">
-                <iconify-icon icon="ph:car-battery" width="48" height="48"></iconify-icon>
+                <iconify-icon icon="mdi:lightning-bolt" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Elekter</span>
             </a>
             <a href="#services" class="service-icon">
-                <iconify-icon icon="tabler:air-conditioning" width="48" height="48"></iconify-icon>
+                <iconify-icon icon="mdi:snowflake" width="48" height="48"></iconify-icon>
                 <span class="service-icon__label">Kliima</span>
             </a>
         </div>
