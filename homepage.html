@@ -91,7 +91,7 @@
        4. SERVICES OVERVIEW (Icon Anchors)
        ======================================== -->
     <section class="services-overview">
-        <div class="brutal-grid">
+        <div class="brutal-grid site-container">
             <a href="#services" class="service-icon">
                 <svg viewBox="0 0 48 48">
                     <path d="M10 32 L10 16 L14 16 L14 10 L34 10 L34 16 L38 16 L38 32 Z M18 32 L18 26 L30 26 L30 32" />
@@ -154,13 +154,13 @@
        5. SERVICES — FEATURED (3 Key Cards)
        ======================================== -->
     <section class="services-section" id="services">
-        <div class="services-section__header">
+        <div class="services-section__header site-container">
             <h2>Полный<br>сервис.</h2>
             <span class="services-section__subtitle">/// Гарантия качества</span>
         </div>
 
         <!-- 3 Featured Cards -->
-        <div class="services-grid reveal">
+        <div class="services-grid site-container reveal">
             <!-- Card: Полный ремонт -->
             <div class="service-card">
                 <div class="service-card__icon">
@@ -213,7 +213,7 @@
         </div>
 
         <!-- All 12 Services — Compact Grid -->
-        <div class="services-all">
+        <div class="services-all site-container">
             <div class="services-all__grid">
                 <a href="#" class="services-all__item">
                     <span class="services-all__number">[01]</span>
@@ -283,7 +283,7 @@
        6. ABOUT / WHY US
        ======================================== -->
     <section class="about-section" id="about">
-        <div class="about-grid reveal">
+        <div class="about-grid site-container reveal">
             <div class="about__title-block">
                 <div>
                     <span class="meta">/// Почему мы</span>
@@ -325,20 +325,21 @@
        7. GALLERY
        ======================================== -->
     <section class="gallery-section" id="gallery">
-        <div class="gallery__header reveal">
+        <div class="gallery__header site-container reveal">
             <h2>Наши работы</h2>
             <a href="#" class="gallery__index">Смотреть галерею</a>
         </div>
-        <div class="gallery__images reveal">
+        <div class="gallery__images site-container reveal">
             <div class="gallery__item">
-                <img src="homepage_pics/lowkey_portfolio_1_1771547397632.png" alt="Mootori remont Mr.Car-is"
+                <img src="homepage_pics/lowkey_portfolio_1_1771547397632.avif" alt="Mootori remont Mr.Car-is"
                     loading="lazy">
             </div>
             <div class="gallery__item">
-                <img src="homepage_pics/lowkey_portfolio_2_1771547415128.png" alt="Auto diagnostika" loading="lazy">
+                <img src="homepage_pics/lowkey_portfolio_2_1771547415128.avif" alt="Auto diagnostika" loading="lazy">
             </div>
             <div class="gallery__item">
-                <img src="homepage_pics/lowkey_portfolio_3_1771547430620.png" alt="Mr.Car töökoda seest" loading="lazy">
+                <img src="homepage_pics/lowkey_portfolio_3_1771547430620.avif" alt="Mr.Car töökoda seest"
+                    loading="lazy">
             </div>
         </div>
     </section>
@@ -347,11 +348,11 @@
        8. TEAM
        ======================================== -->
     <section class="team-section" id="team">
-        <div class="team__header">
+        <div class="team__header site-container">
             <span class="meta">/// Наши мастера</span>
             <h2 style="margin-top: var(--space-sm);">Команда</h2>
         </div>
-        <div class="team-grid reveal">
+        <div class="team-grid site-container reveal">
             <div class="team-card">
                 <div class="team-card__image">
                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Мастер-механик"
@@ -401,12 +402,14 @@
        9. PRICING TEASER
        ======================================== -->
     <section class="pricing-section" id="pricing">
-        <div class="container">
-            <span class="meta">/// Прозрачные цены</span>
-            <h2 style="margin-top: var(--space-sm);">Популярные<br>услуги.</h2>
+        <div class="site-container">
+            <div class="section-header">
+                <span class="meta">/// Прозрачные цены</span>
+                <h2>Популярные услуги</h2>
+            </div>
         </div>
 
-        <div class="pricing-grid reveal">
+        <div class="pricing-grid site-container reveal">
             <div class="pricing-item">
                 <span class="pricing-item__service">Замена масла</span>
                 <span class="pricing-item__price">от €35</span>
@@ -424,15 +427,9 @@
             </div>
         </div>
 
-        <div class="container" style="margin-top: var(--space-xl);">
-            <a href="#" class="btn btn-secondary">Полный прайс [PDF] <svg
-                    style="display:inline-block; vertical-align:middle; margin-left:8px; width:16px; height:16px;"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg></a>
+        <div class="pricing__cta-wrapper">
+            <a href="#services" class="btn btn-secondary">Полный прайс <iconify-icon icon="mdi:arrow-top-right"
+                    width="16" height="16" aria-hidden="true" class="btn__icon"></iconify-icon></a>
         </div>
     </section>
 
@@ -440,10 +437,10 @@
        10. CONTACT FORM
        ======================================== -->
     <section class="contact-section" id="contact">
-        <div class="container">
+        <div class="container site-container">
             <span class="meta">/// Запись на ремонт</span>
         </div>
-        <div class="contact-grid reveal">
+        <div class="contact-grid site-container reveal">
             <div class="contact__info">
                 <h2>Записаться<br>на ремонт.</h2>
                 <p class="contact__promise">Оставьте заявку — перезвоним в течение 30 минут в рабочее время.</p>
@@ -482,7 +479,7 @@
        11. MAP + LOCATION
        ======================================== -->
     <section class="location-section" id="location">
-        <div class="location-grid reveal">
+        <div class="location-grid site-container reveal">
             <div class="location__info">
                 <div>
                     <span class="meta">/// Как нас найти</span>
@@ -521,7 +518,7 @@
        12. FOOTER
        ======================================== -->
     <footer class="footer">
-        <div class="footer-grid">
+        <div class="footer-grid site-container">
             <div>
                 <div class="footer__col-title">Контакты</div>
                 <div class="footer__text">
