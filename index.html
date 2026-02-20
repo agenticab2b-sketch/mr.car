@@ -7,10 +7,65 @@
     <meta name="description"
         content="Mr.Car Autoremont Tallinn — professionaalne autoremont, rehvivahetus ja diagnostika Koplis. Helista +372 5646 1210">
     <title>Mr.Car Autoremont Tallinn — Professionaalne Autohooldus</title>
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://mrcar.ee/">
+    <link rel="alternate" hreflang="et" href="https://mrcar.ee/">
+    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/">
+    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/">
+    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="Mr.Car Autoremont Tallinn — Professionaalne Autohooldus">
+    <meta property="og:description"
+        content="Professionaalne autoteenindus Koplis. Remont, diagnostika, rehvivahetus. Helista +372 5646 1210.">
+    <meta property="og:url" content="https://mrcar.ee/">
+    <meta property="og:image" content="https://mrcar.ee/og-image.jpg">
+    <meta property="og:locale" content="et_EE">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- JSON-LD: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Mr.Car Autoremont",
+      "url": "https://mrcar.ee",
+      "telephone": "+3725646121",
+      "email": "info@mrcar.ee",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kopli 82a",
+        "addressLocality": "Tallinn",
+        "postalCode": "10412",
+        "addressCountry": "EE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 59.45,
+        "longitude": 24.7
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "€€"
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
+
+    <!-- Skip to main content (a11y) -->
+    <a href="#content" class="skip-link">Liigu põhisisu juurde</a>
 
     <!-- ========================================
        1. NAVBAR
@@ -30,762 +85,799 @@
         <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
         </button>
+        <div class="navbar__lang desktop-only">
+            <a href="/" class="lang-link active" title="Eesti keel">
+                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="/ru/" class="lang-link" title="Русский язык">
+                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="/en/" class="lang-link" title="English">
+                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
+            </a>
+        </div>
     </header>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
         <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
-        <a href="#services" class="mobile-menu__link" onclick="closeMobileMenu()">Teenused</a>
-        <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
-        <a href="#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
-        <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
-        <a href="tel:+3725646121" class="mobile-menu__link" style="color: var(--accent-primary);">+372 5646 1210</a>
+        <nav aria-label="Mobiilne navigatsioon">
+            <a href="#services" class="mobile-menu__link" onclick="closeMobileMenu()">Teenused</a>
+            <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
+            <a href="#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
+            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
+            <a href="tel:+3725646121" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372 5646
+                1210</a>
+        </nav>
+        <div class="mobile-menu__lang">
+            <a href="/" class="mobile-lang-link active">
+                <iconify-icon icon="circle-flags:ee" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>Eesti</span>
+            </a>
+            <a href="/ru/" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:ru" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>Русский</span>
+            </a>
+            <a href="/en/" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:en" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>English</span>
+            </a>
+        </div>
     </div>
 
     <!-- ========================================
        2. HERO
        ======================================== -->
-    <section class="hero" id="hero">
-        <div class="hero__image">
-            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80"
-                alt="Autoteenindus Mr.Car — meister tööl" loading="eager">
-        </div>
-        <div class="hero__content reveal">
-            <div class="hero__status" id="serviceStatus">
-                <span class="hero__status-dot"></span>
-                <span class="hero__status-label">Teeninduse staatus:</span>
-                <span class="hero__status-state" id="statusState">Avatud</span>
-                <span class="hero__status-sep">│</span>
-                <span class="hero__status-countdown" id="statusCountdown">
-                    <span class="countdown__block">
-                        <span class="countdown__num" id="cdHours">00</span>
-                        <span class="countdown__unit">t</span>
-                    </span>
-                    <span class="countdown__sep">:</span>
-                    <span class="countdown__block">
-                        <span class="countdown__num" id="cdMinutes">00</span>
-                        <span class="countdown__unit">min</span>
-                    </span>
-                    <span class="countdown__sep">:</span>
-                    <span class="countdown__block">
-                        <span class="countdown__num" id="cdSeconds">00</span>
-                        <span class="countdown__unit">sek</span>
-                    </span>
-                </span>
+    <main id="content">
+        <section class="hero" id="hero">
+            <div class="hero__image">
+                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80"
+                    alt="Autoteenindus Mr.Car — meister tööl" loading="eager">
             </div>
-            <h1 class="hero__title">Mr.Car<br>autoremont Tallinn</h1>
-            <span class="hero__underline"></span>
-            <p class="hero__description body-text">Mr.Car — professionaalne autoteenindus. Teostame remonti
-                usaldusväärselt,
-                kvaliteetselt ja tähtaegselt. Teie auto on kindlates kätes.</p>
-            <div class="hero__actions">
-                <span class="hero__address">/// Kopli 82a, 10412 Tallinn</span>
-                <a href="#contact" class="hero__cta-row">
-                    <span class="hero__cta-text">Broneeri aeg</span>
-                    <span class="hero__cta-arrow">↘</span>
-                </a>
+            <div class="hero__content reveal">
+                <div class="hero__status" id="serviceStatus" aria-hidden="true">
+                    <span class="hero__status-dot"></span>
+                    <span class="hero__status-label">Teeninduse staatus:</span>
+                    <span class="hero__status-state" id="statusState">Avatud</span>
+                    <span class="hero__status-sep">│</span>
+                    <span class="hero__status-countdown" id="statusCountdown">
+                        <span class="countdown__block">
+                            <span class="countdown__num" id="cdHours">00</span>
+                            <span class="countdown__unit">t</span>
+                        </span>
+                        <span class="countdown__sep">:</span>
+                        <span class="countdown__block">
+                            <span class="countdown__num" id="cdMinutes">00</span>
+                            <span class="countdown__unit">min</span>
+                        </span>
+                        <span class="countdown__sep">:</span>
+                        <span class="countdown__block">
+                            <span class="countdown__num" id="cdSeconds">00</span>
+                            <span class="countdown__unit">sek</span>
+                        </span>
+                    </span>
+                </div>
+                <h1 class="hero__title">Mr.Car<br>autoremont Tallinn</h1>
+                <span class="hero__underline"></span>
+                <p class="hero__description body-text">Mr.Car — professionaalne autoteenindus. Teostame remonti
+                    usaldusväärselt,
+                    kvaliteetselt ja tähtaegselt. Teie auto on kindlates kätes.</p>
+                <div class="hero__actions">
+                    <span class="hero__address">/// Kopli 82a, 10412 Tallinn</span>
+                    <a href="#contact" class="hero__cta-row">
+                        <span class="hero__cta-text">Broneeri aeg</span>
+                        <span class="hero__cta-arrow" aria-hidden="true">↘</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========================================
+        <!-- ========================================
        3. TRUST BAR
        ======================================== -->
-    <div class="trust-bar">
-        <div class="trust-bar__content">
-            <span>◉ Usaldusväärne teenindus Koplis</span>
-            <span>—</span>
-            <span>◉ Garantii kõigile töödele</span>
-            <span>—</span>
-            <span>◉ Ausad hinnad ilma üllatusteta</span>
-            <span>—</span>
-            <span>◉ Usaldusväärne teenindus Koplis</span>
-            <span>—</span>
-            <span>◉ Garantii kõigile töödele</span>
-            <span>—</span>
-            <span>◉ Ausad hinnad ilma üllatusteta</span>
+        <div class="trust-bar">
+            <div class="trust-bar__content">
+                <span>Kogenud mehaanikud ja kaasaegne varustus</span>
+                <span>—</span>
+                <span>Selge tööprotsess ja läbipaistev hinnastus</span>
+                <span>—</span>
+                <span>Kiire teenindus ilma kvaliteedis järeleandmisi tegemata</span>
+                <span>—</span>
+                <span>Varuosad tuntud ja usaldusväärsetelt tarnijatelt</span>
+                <span>—</span>
+                <span>Personaalse lähenemisega klienditeenindus</span>
+                <span>—</span>
+                <span>Parandame nii, nagu teeksime oma autole</span>
+                <span>—</span>
+            </div>
+            <div class="trust-bar__content" aria-hidden="true">
+                <span>Kogenud mehaanikud ja kaasaegne varustus</span>
+                <span>—</span>
+                <span>Selge tööprotsess ja läbipaistev hinnastus</span>
+                <span>—</span>
+                <span>Kiire teenindus ilma kvaliteedis järeleandmisi tegemata</span>
+                <span>—</span>
+                <span>Varuosad tuntud ja usaldusväärsetelt tarnijatelt</span>
+                <span>—</span>
+                <span>Personaalse lähenemisega klienditeenindus</span>
+                <span>—</span>
+                <span>Parandame nii, nagu teeksime oma autole</span>
+                <span>—</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ========================================
+        <!-- ========================================
        4. SERVICES OVERVIEW (Icon Anchors)
        ======================================== -->
-    <section class="services-overview">
-        <div class="brutal-grid">
-            <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <path d="M10 32 L10 16 L14 16 L14 10 L34 10 L34 16 L38 16 L38 32 Z M18 32 L18 26 L30 26 L30 32" />
-                    <line x1="20" y1="18" x2="28" y2="18" />
-                </svg>
-                <span class="service-icon__label">Remont</span>
-            </a>
-            <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <rect x="6" y="18" width="36" height="14" />
-                    <circle cx="14" cy="32" r="5" />
-                    <circle cx="34" cy="32" r="5" />
-                    <path d="M10 18 L14 10 L34 10 L38 18" />
-                </svg>
-                <span class="service-icon__label">Veermik</span>
-            </a>
-            <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <rect x="10" y="6" width="28" height="36" />
-                    <line x1="16" y1="14" x2="32" y2="14" />
-                    <line x1="16" y1="20" x2="32" y2="20" />
-                    <line x1="16" y1="26" x2="26" y2="26" />
-                    <circle cx="30" cy="34" r="4" />
-                    <path d="M28 36 L32 32" />
-                </svg>
-                <span class="service-icon__label">Diagnostika</span>
-            </a>
-            <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <circle cx="24" cy="24" r="18" />
-                    <circle cx="24" cy="24" r="12" />
-                    <circle cx="24" cy="24" r="4" />
-                    <line x1="24" y1="6" x2="24" y2="12" />
-                    <line x1="24" y1="36" x2="24" y2="42" />
-                    <line x1="6" y1="24" x2="12" y2="24" />
-                    <line x1="36" y1="24" x2="42" y2="24" />
-                </svg>
-                <span class="service-icon__label">Rehvitööd</span>
-            </a>
-            <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <path d="M30 6 L18 24 L26 24 L18 42" />
-                    <path d="M34 18 L40 18 L40 30 L34 30" />
-                </svg>
-                <span class="service-icon__label">Elekter</span>
-            </a>
-            <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <circle cx="24" cy="24" r="6" />
-                    <path
-                        d="M24 4 v8 M24 36 v8 M4 24 h8 M36 24 h8 M10.3 10.3 l5.7 5.7 M32 32 l5.7 5.7 M37.7 10.3 l-5.7 5.7 M16 32 l-5.7 5.7" />
-                    <circle cx="24" cy="24" r="16" stroke-dasharray="4 4" />
-                </svg>
-                <span class="service-icon__label">Kliima</span>
-            </a>
-        </div>
-    </section>
+        <section class="services-overview" aria-label="Teenuste ülevaade">
+            <div class="brutal-grid">
+                <a href="#services" class="service-icon">
+                    <iconify-icon icon="mdi:car-wrench" width="48" height="48" aria-hidden="true"></iconify-icon>
+                    <span class="service-icon__label">Remont</span>
+                </a>
+                <a href="#services" class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                        aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M3 6.5v-2c0-.465 0-.697.038-.89A2 2 0 0 1 4.61 2.038C4.803 2 5.035 2 5.5 2s.697 0 .89.038A2 2 0 0 1 7.962 3.61C8 3.803 8 4.035 8 4.5v.25h8V4.5c0-.465 0-.697.038-.89a2 2 0 0 1 1.572-1.572C17.803 2 18.035 2 18.5 2s.697 0 .89.038a2 2 0 0 1 1.572 1.572c.038.193.038.425.038.89v2c0 .465 0 .697-.038.89a2 2 0 0 1-1.572 1.572C19.197 9 18.965 9 18.5 9s-.697 0-.89-.038a2 2 0 0 1-1.572-1.572C16 7.197 16 6.965 16 6.5v-.25h-3.25v11.5H16v-.25c0-.465 0-.697.038-.89a2 2 0 0 1 1.572-1.572c.193-.038.425-.038.89-.038s.697 0 .89.038a2 2 0 0 1 1.572 1.572c.038.193.038.425.038.89v2c0 .465 0 .697-.038.89a2 2 0 0 1-1.572 1.572c-.193.038-.425.038-.89.038s-.697 0-.89-.038a2 2 0 0 1-1.572-1.572C16 20.197 16 19.965 16 19.5v-.25H8v.25c0 .465 0 .697-.038.89a2 2 0 0 1-1.572 1.572C6.197 22 5.965 22 5.5 22s-.697 0-.89-.038a2 2 0 0 1-1.572-1.572C3 20.197 3 19.965 3 19.5v-2c0-.465 0-.697.038-.89a2 2 0 0 1 1.572-1.572C4.803 15 5.035 15 5.5 15s.697 0 .89.038a2 2 0 0 1 1.572 1.572c.038.193.038.425.038.89v.25h3.25V6.25H8v.25c0 .465 0 .697-.038.89A2 2 0 0 1 6.39 8.962C6.197 9 5.965 9 5.5 9s-.697 0-.89-.038A2 2 0 0 1 3.038 7.39C3 7.197 3 6.965 3 6.5" />
+                    </svg>
+                    <span class="service-icon__label">Veermik</span>
+                </a>
+                <a href="#services" class="service-icon">
+                    <iconify-icon icon="mdi:car-cog" width="48" height="48" aria-hidden="true"></iconify-icon>
+                    <span class="service-icon__label">Diagnostika</span>
+                </a>
+                <a href="#services" class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 512 512"
+                        aria-hidden="true">
+                        <path fill="currentColor"
+                            d="M256 21A235 235 0 0 0 21 256a235 235 0 0 0 235 235a235 235 0 0 0 235-235A235 235 0 0 0 256 21m0 82c84.393 0 153 68.607 153 153s-68.607 153-153 153s-153-68.607-153-153s68.607-153 153-153m0 18c-20.417 0-39.757 4.52-57.09 12.602C210.457 166.482 230.218 208 256 208c25.823 0 44.926-41.65 56.752-74.555C295.505 125.462 276.284 121 256 121m98.752 42.88c-27.714 21.143-61.142 52.79-53.17 77.327c7.981 24.564 53.508 29.858 88.459 30.936c.628-5.294.959-10.678.959-16.143c0-35.642-13.755-68.012-36.248-92.12m-197.729.243C134.663 188.204 121 220.477 121 256c0 5.55.34 11.018.988 16.39c34.833-.825 80.381-6.793 88.344-31.3c7.974-24.542-25.68-55.553-53.309-76.967m70.188 43.643a9 9 0 0 0-5.035 1.714a9 9 0 0 0-1.99 12.57a9 9 0 0 0 12.57 1.993a9 9 0 0 0 1.992-12.572a9 9 0 0 0-7.537-3.705m57.578 0a9 9 0 0 0-.637.004a9 9 0 0 0-6.9 3.7a9 9 0 0 0 1.992 12.573a9 9 0 0 0 12.57-1.992a9 9 0 0 0-1.99-12.57a9 9 0 0 0-5.035-1.715M256 224a32 32 0 0 0-32 32a32 32 0 0 0 32 32a32 32 0 0 0 32-32a32 32 0 0 0-32-32m-46.297 38.037a9 9 0 0 0-2.652.44a9 9 0 0 0-5.78 11.341a9 9 0 0 0 11.34 5.778a9 9 0 0 0 5.78-11.34a9 9 0 0 0-8.688-6.219m92.856.008a9 9 0 0 0-8.95 6.21a9 9 0 0 0 5.78 11.34a9 9 0 0 0 11.34-5.777a9 9 0 0 0-5.78-11.341a9 9 0 0 0-2.39-.432m-92.143 27.713c-21.59.104-50.24 16.832-72.424 31.928c19.029 34.168 52.46 59.164 92.143 66.837c9.99-33.39 18.42-78.618-2.446-93.777c-4.854-3.527-10.737-5.02-17.273-4.988m91.016.02c-6.58 0-12.492 1.516-17.346 5.042c-20.895 15.181-11.863 60.106-2.088 93.678c39.687-7.715 73.108-32.76 92.1-66.973c-22.006-15.224-50.935-31.747-72.666-31.748zM256 295.58a9 9 0 0 0-9 9a9 9 0 0 0 9 9a9 9 0 0 0 9-9a9 9 0 0 0-9-9" />
+                    </svg>
+                    <span class="service-icon__label">Rehvitööd</span>
+                </a>
+                <a href="#services" class="service-icon">
+                    <iconify-icon icon="mdi:lightning-bolt" width="48" height="48" aria-hidden="true"></iconify-icon>
+                    <span class="service-icon__label">Elekter</span>
+                </a>
+                <a href="#services" class="service-icon">
+                    <iconify-icon icon="mdi:snowflake" width="48" height="48" aria-hidden="true"></iconify-icon>
+                    <span class="service-icon__label">Kliima</span>
+                </a>
+            </div>
+        </section>
 
-    <!-- ========================================
+        <!-- ========================================
        5. SERVICES — FEATURED (3 Key Cards)
        ======================================== -->
-    <section class="services-section" id="services">
-        <div class="services-section__header">
-            <h2>Täisteenus.</h2>
-            <span class="services-section__subtitle">/// Kvaliteedigarantii</span>
-        </div>
-
-        <!-- 3 Featured Cards -->
-        <div class="services-grid reveal">
-            <!-- Card: Remont -->
-            <div class="service-card">
-                <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-                    </svg>
-                </div>
-                <h3 class="service-card__title">Kapitaalremont</h3>
-                <p class="service-card__description">Mootori, käigukasti ja veermiku kapitaalremont. Lahendame kõik
-                    probleemid – pisivigadest keeruliste juhtumiteni.</p>
-                <div class="service-card__footer">
-                    <span class="service-card__meta">[Artikleid: 04]</span>
-                    <a href="#" class="btn-link">Loe lähemalt <span class="arrow">→</span></a>
+        <section class="services-section" id="services">
+            <div class="services-section__header">
+                <div class="section-header">
+                    <span class="meta">/// Kvaliteedigarantii</span>
+                    <h2>Täisteenus</h2>
                 </div>
             </div>
 
-            <!-- Card: Diagnostika (FEATURED — center) -->
-            <div class="service-card service-card--featured">
-                <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                    </svg>
+            <!-- 3 Featured Cards -->
+            <div class="services-grid reveal">
+                <!-- Card: Remont -->
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <iconify-icon icon="mdi:wrench" width="24" height="24" aria-hidden="true"></iconify-icon>
+                    </div>
+                    <h3 class="service-card__title">Kapitaalremont</h3>
+                    <p class="service-card__description">Mootori, käigukasti ja veermiku kapitaalremont. Lahendame kõik
+                        probleemid – pisivigadest keeruliste juhtumiteni.</p>
+                    <div class="service-card__footer">
+                        <span class="service-card__meta">[Artikleid: 04]</span>
+                        <a href="#contact" class="btn-link">Küsi pakkumist <span class="arrow"
+                                aria-hidden="true">→</span></a>
+                    </div>
                 </div>
-                <h3 class="service-card__title">Diagnostika</h3>
-                <p class="service-card__description">Kõigi autosüsteemide kompuuterdiagnostika. Tuvastame vead
-                    100% täpsusega. Kaasaegsed seadmed.</p>
-                <div class="service-card__footer">
-                    <span class="service-card__meta">[Artikleid: 02]</span>
-                    <a href="#" class="btn-link">Loe lähemalt <span class="arrow">→</span></a>
+
+                <!-- Card: Diagnostika (FEATURED — center) -->
+                <div class="service-card service-card--featured">
+                    <div class="service-card__icon">
+                        <iconify-icon icon="mdi:car-cog" width="24" height="24" aria-hidden="true"></iconify-icon>
+                    </div>
+                    <h3 class="service-card__title">Diagnostika</h3>
+                    <p class="service-card__description">Kõigi autosüsteemide kompuuterdiagnostika. Tuvastame vead
+                        100% täpsusega. Kaasaegsed seadmed.</p>
+                    <div class="service-card__footer">
+                        <span class="service-card__meta">[Artikleid: 02]</span>
+                        <a href="#contact" class="btn-link">Broneeri aeg <span class="arrow"
+                                aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+
+                <!-- Card: Garantii -->
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <iconify-icon icon="mdi:shield-check" width="24" height="24" aria-hidden="true"></iconify-icon>
+                    </div>
+                    <h3 class="service-card__title">Garantii</h3>
+                    <p class="service-card__description">Anname garantii kõigile töödele. Kasutame ainult
+                        originaalvaruosi
+                        või kontrollitud tootjate kvaliteetseid analooge.</p>
+                    <span class="service-card__badge">Garantii &gt; 12 kuud</span>
+                    <div class="service-card__footer">
+                        <span class="service-card__meta">[Artikleid: 01]</span>
+                        <a href="#contact" class="btn-link">Küsi lisainfot <span class="arrow"
+                                aria-hidden="true">→</span></a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Card: Garantii -->
-            <div class="service-card">
-                <div class="service-card__icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
+            <!-- All 12 Services — Compact Grid -->
+            <div class="services-all">
+                <div class="services-all__header">
+                    <div class="section-header">
+                        <span class="meta">/// Täielik nimekiri</span>
+                        <h3>Kõik teenused</h3>
+                    </div>
                 </div>
-                <h3 class="service-card__title">Garantii</h3>
-                <p class="service-card__description">Anname garantii kõigile töödele. Kasutame ainult originaalvaruosi
-                    või kontrollitud tootjate kvaliteetseid analooge.</p>
-                <span class="service-card__badge">Garantii &gt; 12 kuud</span>
-                <div class="service-card__footer">
-                    <span class="service-card__meta">[Artikleid: 01]</span>
-                    <a href="#" class="btn-link">Loe lähemalt <span class="arrow">→</span></a>
+                <div class="services-all__grid">
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[01]</span>
+                        <span class="services-all__name">Autoremont</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[02]</span>
+                        <span class="services-all__name">Summuti ja Keevitustööd</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[03]</span>
+                        <span class="services-all__name">Veermiku ja Pidurite remont</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[04]</span>
+                        <span class="services-all__name">Rehvitööd</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[05]</span>
+                        <span class="services-all__name">Hooldus ja Diagnostika</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[06]</span>
+                        <span class="services-all__name">Käigukasti tööd</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[07]</span>
+                        <span class="services-all__name">Elektritööd</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[08]</span>
+                        <span class="services-all__name">Mootori tööd</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[09]</span>
+                        <span class="services-all__name">Õli ja Filtrite vahetus</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[10]</span>
+                        <span class="services-all__name">Enne Ostu Kontroll</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[11]</span>
+                        <span class="services-all__name">Kliima ja Konditsioneer</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a href="#contact" class="services-all__item">
+                        <span class="services-all__number">[12]</span>
+                        <span class="services-all__name">Webasto remont ja diagnostika</span>
+                        <span class="services-all__arrow" aria-hidden="true">→</span>
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- All 12 Services — Compact Grid -->
-        <div class="services-all">
-            <div class="services-all__header">
-                <h3>Kõik teenused</h3>
-                <span class="meta">/// Täielik nimekiri</span>
-            </div>
-            <div class="services-all__grid">
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[01]</span>
-                    <span class="services-all__name">Autoremont</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[02]</span>
-                    <span class="services-all__name">Summuti ja Keevitustööd</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[03]</span>
-                    <span class="services-all__name">Veermiku ja Pidurite remont</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[04]</span>
-                    <span class="services-all__name">Rehvitööd</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[05]</span>
-                    <span class="services-all__name">Hooldus ja Diagnostika</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[06]</span>
-                    <span class="services-all__name">Käigukasti tööd</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[07]</span>
-                    <span class="services-all__name">Elektritööd</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[08]</span>
-                    <span class="services-all__name">Mootori tööd</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[09]</span>
-                    <span class="services-all__name">Õli ja Filtrite vahetus</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[10]</span>
-                    <span class="services-all__name">Enne Ostu Kontroll</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[11]</span>
-                    <span class="services-all__name">Kliima ja Konditsioneer</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-                <a href="#" class="services-all__item">
-                    <span class="services-all__number">[12]</span>
-                    <span class="services-all__name">Webasto remont
-                        ja diagnostika</span>
-                    <span class="services-all__arrow">→</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
+        <!-- ========================================
        6. ABOUT / WHY US
        ======================================== -->
-    <section class="about-section" id="about">
-        <div class="about-grid reveal">
-            <div class="about__title-block">
-                <div>
-                    <span class="meta">/// Miks meie</span>
-                    <h2 style="margin-top: var(--space-md);">Miks<br>Mr.Car</h2>
-                    <div class="accent-underline"></div>
+        <section class="about-section" id="about">
+            <div class="about-grid reveal">
+                <div class="about__title-block">
+                    <div>
+                        <div class="section-header">
+                            <span class="meta">/// Miks meie</span>
+                            <h2>Mr.Car</h2>
+                        </div>
+                        <div class="accent-underline"></div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary about__cta">Jäta päring <span class="arrow"
+                            aria-hidden="true">↗</span></a>
                 </div>
-                <a href="#contact" class="btn btn-primary"
-                    style="margin-top: var(--space-xl); align-self: flex-start;">Jäta päring <span
-                        class="arrow">↗</span></a>
+                <div class="about__features">
+                    <div class="feature-block">
+                        <div class="feature-block__icon"><iconify-icon icon="mdi:cog" width="32" height="32"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="feature-block__title">Kogemus</h3>
+                        <p class="feature-block__text">Remondime igapäevaautodest kuni keerukamate mootoriteni.</p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-block__icon"><iconify-icon icon="mdi:wrench" width="32" height="32"
+                                aria-hidden="true"></iconify-icon></div>
+                        <h3 class="feature-block__title">Seadmed</h3>
+                        <p class="feature-block__text">Kaasaegne arvutidiagnostika ja kvaliteetsed varuosad.
+                        </p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-block__icon"><iconify-icon icon="mdi:currency-eur" width="32" height="32"
+                                aria-hidden="true"></iconify-icon></div>
+                        <h3 class="feature-block__title">Aus hind</h3>
+                        <p class="feature-block__text">Selgitame töö ja hinna enne alustamist.
+                        </p>
+                    </div>
+                    <div class="feature-block">
+                        <div class="feature-block__icon"><iconify-icon icon="mdi:timer" width="32" height="32"
+                                aria-hidden="true"></iconify-icon></div>
+                        <h3 class="feature-block__title">Kiirus</h3>
+                        <p class="feature-block__text">Enamik töid teeme samal päeval.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="about__features">
-                <div class="feature-block">
-                    <div class="feature-block__icon">⚙️</div>
-                    <h3 class="feature-block__title">Kogemus</h3>
-                    <p class="feature-block__text">Töötame Koplis. Tunneme iga mootorit – Volkswagenist BMW-ni.</p>
-                    <span class="feature-block__badge">Aja poolt testitud</span>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-block__icon">🔧</div>
-                    <h3 class="feature-block__title">Seadmed</h3>
-                    <p class="feature-block__text">Kaasaegne kompuuterdiagnostika. Originaal- ja kvaliteteetvaruosad.
-                    </p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-block__icon">💰</div>
-                    <h3 class="feature-block__title">Aus hind</h3>
-                    <p class="feature-block__text">Nimetame hinna enne töö algust. Ei mingeid varjatud lisatasusid.</p>
-                    <span class="feature-block__badge">Ilma üllatusteta</span>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-block__icon">⏱️</div>
-                    <h3 class="feature-block__title">Kiirus</h3>
-                    <p class="feature-block__text">Enamik töid teeme samal päeval. Helistame tagasi 30 minuti jooksul.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========================================
+        <!-- ========================================
        7. GALLERY
        ======================================== -->
-    <section class="gallery-section" id="gallery">
-        <div class="gallery__header reveal">
-            <h2>Meie tööd</h2>
-            <span class="gallery__index">Indeks: 01–03</span>
-        </div>
-        <div class="gallery__images reveal">
-            <div class="gallery__item">
-                <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=80"
-                    alt="Mootori remont Mr.Car-is" loading="lazy">
+        <section class="gallery-section" id="gallery">
+            <div class="gallery__header reveal">
+                <div class="section-header">
+                    <span class="meta">/// Portfolio</span>
+                    <h2>Meie tööd</h2>
+                </div>
+                <a href="#" class="gallery__index">Vaata galerii</a>
             </div>
-            <div class="gallery__item">
-                <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&q=80"
-                    alt="Auto diagnostika" loading="lazy">
+            <div class="gallery__images reveal">
+                <div class="gallery__item">
+                    <img src="homepage_pics/lowkey_portfolio_1_1771547397632.png" alt="Mootori remont Mr.Car-is"
+                        loading="lazy">
+                </div>
+                <div class="gallery__item">
+                    <img src="homepage_pics/lowkey_portfolio_2_1771547415128.png" alt="Auto diagnostika" loading="lazy">
+                </div>
+                <div class="gallery__item">
+                    <img src="homepage_pics/lowkey_portfolio_3_1771547430620.png" alt="Mr.Car töökoda seest"
+                        loading="lazy">
+                </div>
             </div>
-            <div class="gallery__item">
-                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&q=80"
-                    alt="Mr.Car töökoda seest" loading="lazy">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========================================
+        <!-- ========================================
        8. TEAM
        ======================================== -->
-    <section class="team-section" id="team">
-        <div class="team__header">
-            <span class="meta">/// Meie meistrid</span>
-            <h2 style="margin-top: var(--space-sm);">Meeskond</h2>
-        </div>
-        <div class="team-grid reveal">
-            <div class="team-card">
-                <div class="team-card__image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
-                        alt="Meister-mehaanik" loading="lazy">
+        <section class="team-section" id="team">
+            <div class="team__header">
+                <div class="section-header">
+                    <span class="meta">/// Meie meistrid</span>
+                    <h2>Meeskond</h2>
                 </div>
-                <div class="team-card__info">
-                    <div class="team-card__name">Aleksei K.</div>
-                    <div class="team-card__role">Meister-mehaanik</div>
-                    <div class="team-card__details">
-                        Spetsialiseerumine: mootorid, käigukastid<br>
-                        Kogemus: 15+ aastat
+            </div>
+            <div class="team-grid reveal">
+                <div class="team-card">
+                    <div class="team-card__image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80"
+                            alt="Meister-mehaanik" loading="lazy">
+                    </div>
+                    <div class="team-card__info">
+                        <div class="team-card__name">Aleksei K.</div>
+                        <div class="team-card__role">Meister-mehaanik</div>
+                        <div class="team-card__details">
+                            Spetsialiseerumine: mootorid, käigukastid<br>
+                            Kogemus: 15+ aastat
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-card__image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                            alt="Elektrik-diagnostik" loading="lazy">
+                    </div>
+                    <div class="team-card__info">
+                        <div class="team-card__name">Dmitri S.</div>
+                        <div class="team-card__role">Elektrik-diagnostik</div>
+                        <div class="team-card__details">
+                            Spetsialiseerumine: elekter, diagnostika<br>
+                            Kogemus: 10+ aastat
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-card__image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
+                            alt="Veermiku meister" loading="lazy">
+                    </div>
+                    <div class="team-card__info">
+                        <div class="team-card__name">Sergei V.</div>
+                        <div class="team-card__role">Veermiku meister</div>
+                        <div class="team-card__details">
+                            Spetsialiseerumine: vedrustus, pidurid<br>
+                            Kogemus: 12+ aastat
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="team-card">
-                <div class="team-card__image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
-                        alt="Elektrik-diagnostik" loading="lazy">
-                </div>
-                <div class="team-card__info">
-                    <div class="team-card__name">Dmitri S.</div>
-                    <div class="team-card__role">Elektrik-diagnostik</div>
-                    <div class="team-card__details">
-                        Spetsialiseerumine: elekter, diagnostika<br>
-                        Kogemus: 10+ aastat
-                    </div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-card__image">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
-                        alt="Veermiku meister" loading="lazy">
-                </div>
-                <div class="team-card__info">
-                    <div class="team-card__name">Sergei V.</div>
-                    <div class="team-card__role">Veermiku meister</div>
-                    <div class="team-card__details">
-                        Spetsialiseerumine: vedrustus, pidurid<br>
-                        Kogemus: 12+ aastat
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========================================
+        <!-- ========================================
        9. PRICING TEASER
        ======================================== -->
-    <section class="pricing-section" id="pricing">
-        <div class="container">
-            <span class="meta">/// Läbipaistvad hinnad</span>
-            <h2 style="margin-top: var(--space-sm);">Populaarsed<br>teenused.</h2>
-        </div>
-
-        <div class="pricing-grid reveal">
-            <div class="pricing-item">
-                <span class="pricing-item__service">Õlivahetus</span>
-                <span class="pricing-item__price">alates €35</span>
-                <span class="pricing-item__note">Õli + filter</span>
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <span class="meta">/// Läbipaistvad hinnad</span>
+                    <h2>Populaarsed teenused</h2>
+                </div>
             </div>
-            <div class="pricing-item">
-                <span class="pricing-item__service">Diagnostika</span>
-                <span class="pricing-item__price">alates €40</span>
-                <span class="pricing-item__note">Kompuuterdiagnostika</span>
-            </div>
-            <div class="pricing-item">
-                <span class="pricing-item__service">Rehvitööd</span>
-                <span class="pricing-item__price">alates €20</span>
-                <span class="pricing-item__note">Üks ratas</span>
-            </div>
-        </div>
 
-        <div class="container" style="margin-top: var(--space-xl);">
-            <a href="#" class="btn btn-secondary">Hinnakiri [PDF] <svg
-                    style="display:inline-block; vertical-align:middle; margin-left:8px; width:16px; height:16px;"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg></a>
-        </div>
-    </section>
+            <div class="pricing-grid reveal">
+                <div class="pricing-item">
+                    <span class="pricing-item__service">Õlivahetus</span>
+                    <span class="pricing-item__price">alates €35</span>
+                    <span class="pricing-item__note">Õli + filter</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-item__service">Diagnostika</span>
+                    <span class="pricing-item__price">alates €40</span>
+                    <span class="pricing-item__note">Kompuuterdiagnostika</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-item__service">Rehvitööd</span>
+                    <span class="pricing-item__price">alates €20</span>
+                    <span class="pricing-item__note">Üks ratas</span>
+                </div>
+            </div>
 
-    <!-- ========================================
+            <div class="pricing__cta-wrapper">
+                <a href="#contact" class="btn btn-secondary">Hinnakiri [PDF] <iconify-icon icon="mdi:download"
+                        width="16" height="16" aria-hidden="true" class="btn__icon"></iconify-icon></a>
+            </div>
+        </section>
+
+        <!-- ========================================
        10. CONTACT FORM
        ======================================== -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <span class="meta">/// Broneeri aeg</span>
-        </div>
-        <div class="contact-grid reveal">
-            <div class="contact__info">
-                <h2>Broneeri<br>aeg.</h2>
-                <p class="contact__promise">Jätke taotlus – helistame tööajal 30 minuti jooksul tagasi.</p>
-                <div class="accent-underline"></div>
-                <p class="contact__alt">Või helistage: <a href="tel:+3725646121">+372 5646 1210</a></p>
+        <section class="contact-section" id="contact">
+            <div class="contact-grid reveal">
+                <div class="contact__info">
+                    <div class="section-header">
+                        <span class="meta">/// Broneeri aeg</span>
+                        <h2>Broneeri aeg</h2>
+                    </div>
+                    <p class="contact__promise">Jätke taotlus – helistame tööajal 24 tunni jooksul tagasi.</p>
+                    <div class="accent-underline"></div>
+                    <p class="contact__alt">Või helistage: <a href="tel:+3725646121">+372 5646 1210</a></p>
+                </div>
+                <div class="contact__form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nimi</label>
+                            <input type="text" id="name" name="name" placeholder="Teie nimi" required>
+                            <span class="form-error" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+372 ..." required>
+                            <span class="form-error" id="phoneError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="car">Auto mark ja mudel (valikuline)</label>
+                            <input type="text" id="car" name="car" placeholder="Nt: VW Golf 2019">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Kommentaar (valikuline)</label>
+                            <textarea id="message" name="message"
+                                placeholder="Kirjeldage probleemi või soovitud tööd"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; justify-content: center;">Saada
+                            päring <span class="arrow">↗</span></button>
+                    </form>
+                </div>
             </div>
-            <div class="contact__form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nimi</label>
-                        <input type="text" id="name" name="name" placeholder="Teie nimi" required>
-                        <span class="form-error" id="nameError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+372 ..." required>
-                        <span class="form-error" id="phoneError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="car">Auto mark ja mudel (valikuline)</label>
-                        <input type="text" id="car" name="car" placeholder="Nt: VW Golf 2019">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Kommentaar (valikuline)</label>
-                        <textarea id="message" name="message"
-                            placeholder="Kirjeldage probleemi või soovitud tööd"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Saada
-                        päring <span class="arrow">↗</span></button>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========================================
+        <!-- ========================================
        11. MAP + LOCATION
        ======================================== -->
-    <section class="location-section" id="location">
-        <div class="location-grid reveal">
-            <div class="location__info">
-                <div>
-                    <span class="meta">/// Kuidas meid leida</span>
-                    <h2 style="margin-top: var(--space-sm);">Oleme lähedal.</h2>
+        <section class="location-section" id="location">
+            <div class="location-grid reveal">
+                <div class="location__info">
+                    <div>
+                        <div class="section-header">
+                            <span class="meta">/// Kuidas meid leida</span>
+                            <h2>Oleme lähedal</h2>
+                        </div>
+                    </div>
+                    <div class="location__detail">
+                        <span class="location__label">Aadress</span>
+                        <span class="location__value">Kopli 82a, 10412 Tallinn</span>
+                    </div>
+                    <div class="location__detail">
+                        <span class="location__label">Lahtiolekuajad</span>
+                        <span class="location__value">E–R: 09:00 – 18:00</span>
+                        <span class="location__value location__value--dimmed">L–P: Suletud</span>
+                    </div>
+                    <div class="location__detail">
+                        <span class="location__label">Telefon</span>
+                        <a href="tel:+3725646121" class="location__value" style="color: var(--accent-primary);">+372
+                            5646
+                            1210</a>
+                    </div>
+                    <div class="location__detail">
+                        <span class="location__label">Email</span>
+                        <a href="mailto:info@mrcar.ee" class="location__value">info@mrcar.ee</a>
+                    </div>
+                    <a href="https://maps.google.com/?q=Kopli+82a+Tallinn" target="_blank" rel="noopener"
+                        class="btn btn-secondary">Ava kaart <span class="arrow">↗</span></a>
                 </div>
-                <div class="location__detail">
-                    <span class="location__label">Aadress</span>
-                    <span class="location__value">Kopli 82a, 10412 Tallinn</span>
+                <div class="location__map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.5!2d24.7!3d59.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDI3JzAwLjAiTiAyNMKwNDInMDAuMCJF!5e0!3m2!1sen!2see!4v1&q=Kopli+82a,+Tallinn"
+                        allowfullscreen loading="lazy" title="Mr.Car kaardil"
+                        aria-label="Mr.Car asukoht kaardil"></iframe>
                 </div>
-                <div class="location__detail">
-                    <span class="location__label">Lahtiolekuajad</span>
-                    <span class="location__value">E–R: 09:00 – 18:00</span>
-                    <span class="location__value" style="color: var(--text-dimmed);">L–P: Suletud</span>
-                </div>
-                <div class="location__detail">
-                    <span class="location__label">Telefon</span>
-                    <a href="tel:+3725646121" class="location__value" style="color: var(--accent-primary);">+372 5646
-                        1210</a>
-                </div>
-                <div class="location__detail">
-                    <span class="location__label">Email</span>
-                    <a href="mailto:info@mrcar.ee" class="location__value">info@mrcar.ee</a>
-                </div>
-                <a href="https://maps.google.com/?q=Kopli+82a+Tallinn" target="_blank" rel="noopener"
-                    class="btn btn-secondary">Ava kaart <span class="arrow">↗</span></a>
             </div>
-            <div class="location__map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.5!2d24.7!3d59.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDI3JzAwLjAiTiAyNMKwNDInMDAuMCJF!5e0!3m2!1sen!2see!4v1&q=Kopli+82a,+Tallinn"
-                    allowfullscreen loading="lazy" title="Mr.Car kaardil"></iframe>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========================================
+        <!-- ========================================
        12. FOOTER
        ======================================== -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div>
-                <div class="footer__col-title">Kontaktid</div>
-                <div class="footer__text">
-                    <a href="tel:+3725646121">+372 5646 1210</a><br>
-                    <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
-                    Kopli 82a, 10412 Tallinn
+        <footer class="footer">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer__col-title">Kontaktid</div>
+                    <div class="footer__text">
+                        <a href="tel:+3725646121">+372 5646 1210</a><br>
+                        <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
+                        Kopli 82a, 10412 Tallinn
+                    </div>
+                    <div class="footer__socials">
+                        <a href="https://www.facebook.com/" class="footer__social-link" aria-label="Facebook"
+                            target="_blank" rel="noopener">
+                            <iconify-icon icon="mdi:facebook" aria-hidden="true"></iconify-icon>
+                        </a>
+                        <a href="https://www.instagram.com/" class="footer__social-link" aria-label="Instagram"
+                            target="_blank" rel="noopener">
+                            <iconify-icon icon="mdi:instagram" aria-hidden="true"></iconify-icon>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer__socials">
-                    <a href="#" class="footer__social-link" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                        </svg>
-                    </a>
-                    <a href="#" class="footer__social-link" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24">
-                            <rect x="2" y="2" width="20" height="20" rx="5" />
-                            <circle cx="12" cy="12" r="5" />
-                            <circle cx="17.5" cy="6.5" r="1.5" />
-                        </svg>
-                    </a>
+                <div>
+                    <div class="footer__col-title">Rekvisiidid</div>
+                    <div class="footer__text footer__text--rekvisiidid">
+                        ANET EESTI OÜ<br>
+                        Reg. nr: 10233521<br>
+                        KMKR: EE100321511<br>
+                        LHV: EE54 7700 7710 0969 0559<br>
+                        SEB: EE10 1010 0520 0108 4005
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="footer__col-title">Rekvisiidid</div>
-                <div class="footer__text"
-                    style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dimmed);">
-                    ANET EESTI OÜ<br>
-                    Reg. nr: 12345678<br>
-                    KMKR: EE101234567<br>
-                    LHV: EE12 3456 7890 1234 5678<br>
-                    SEB: EE12 3456 7890 1234 5678
-                </div>
-            </div>
-            <div>
-                <div class="footer__col-title">Lahtiolekuajad</div>
-                <div class="footer__text">
-                    Esmaspäev – Reede<br>
-                    <strong style="color: var(--text-main);">09:00 – 18:00</strong><br><br>
-                    Laupäev – Pühapäev<br>
-                    <span style="color: var(--text-dimmed);">Suletud</span>
+                <div>
+                    <div class="footer__col-title">Lahtiolekuajad</div>
+                    <div class="footer__text">
+                        Esmaspäev – Reede<br>
+                        <strong style="color: var(--text-main);">09:00 – 18:00</strong><br><br>
+                        Laupäev – Pühapäev<br>
+                        <span style="color: var(--text-dimmed);">Suletud</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer__bottom">
-            <span>© 2024 Mr.Car Autoremont Tallinn</span>
-            <a href="#">Privaatsuspoliitika</a>
-            <span>Designed by <a href="https://agentica.ee" target="_blank" rel="noopener">Agentica</a></span>
-        </div>
-    </footer>
+            <div class="footer__bottom">
+                <span>© 2025 Mr.Car Autoremont Tallinn</span>
+                <a href="/privaatsus/">Privaatsuspoliitika</a>
+                <span>Designed by <a href="https://agentica.ee" target="_blank" rel="noopener">Agentica</a></span>
+            </div>
+        </footer>
 
-    <!-- ========================================
+        <!-- ========================================
        SCRIPTS
        ======================================== -->
-    <script>
-        // Mobile menu
-        const burger = document.getElementById('burgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeBtn = document.getElementById('closeMenu');
+        <script>
+            // Mobile menu
+            const burger = document.getElementById('burgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeBtn = document.getElementById('closeMenu');
 
-        burger.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeBtn.addEventListener('click', closeMobileMenu);
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-            if (currentScroll > 100) {
-                navbar.style.borderBottomColor = 'var(--accent-primary)';
-            } else {
-                navbar.style.borderBottomColor = '';
-            }
-            lastScroll = currentScroll;
-        });
-        // Form handling
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const btn = this.querySelector('button[type="submit"]');
-                const originalText = btn.innerHTML;
-                btn.disabled = true;
-                btn.innerHTML = 'Saatmine...';
-
-                setTimeout(() => {
-                    showSnackbar();
-                    contactForm.reset();
-                    btn.disabled = false;
-                    btn.innerHTML = originalText;
-                }, 1000);
+            burger.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                closeBtn.focus();
             });
-        }
 
-        function showSnackbar() {
-            var x = document.getElementById("snackbar");
-            x.className = "snackbar show";
-            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-        }
+            closeBtn.addEventListener('click', closeMobileMenu);
 
-        // Scroll Reveal
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
+            // ESC key closes mobile menu
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                    burger.focus();
                 }
             });
-        }, observerOptions);
 
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
-        // ========================================
-        // Service Status Countdown Timer
-        // Schedule: Mon–Fri 09:00–18:00 (Europe/Tallinn)
-        // ========================================
-        (function () {
-            const OPEN_HOUR = 9;
-            const CLOSE_HOUR = 18;
-            const TZ = 'Europe/Tallinn';
-
-            const statusEl = document.getElementById('serviceStatus');
-            const stateEl = document.getElementById('statusState');
-            const cdH = document.getElementById('cdHours');
-            const cdM = document.getElementById('cdMinutes');
-            const cdS = document.getElementById('cdSeconds');
-
-            function getTallinnTime() {
-                const now = new Date();
-                const tallinnStr = now.toLocaleString('en-US', { timeZone: TZ });
-                return new Date(tallinnStr);
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
             }
 
-            function isWorkday(day) {
-                return day >= 1 && day <= 5; // Mon=1 ... Fri=5
-            }
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            let lastScroll = 0;
 
-            function getServiceState() {
-                const t = getTallinnTime();
-                const day = t.getDay();
-                const hour = t.getHours();
-                const min = t.getMinutes();
-                const timeDecimal = hour + min / 60;
-
-                if (isWorkday(day) && timeDecimal >= OPEN_HOUR && timeDecimal < CLOSE_HOUR) {
-                    return 'open';
-                }
-                return 'closed';
-            }
-
-            function getNextTransition() {
-                const now = getTallinnTime();
-                const day = now.getDay();
-                const state = getServiceState();
-
-                if (state === 'open') {
-                    // Open: countdown to today 18:00
-                    const target = new Date(now);
-                    target.setHours(CLOSE_HOUR, 0, 0, 0);
-                    return target - now;
-                }
-
-                // Closed: find next opening (Mon–Fri 09:00)
-                const target = new Date(now);
-                target.setHours(OPEN_HOUR, 0, 0, 0);
-
-                if (isWorkday(day) && now.getHours() < OPEN_HOUR) {
-                    // Before opening on a workday — opens today
-                    return target - now;
-                }
-
-                // After closing or on weekends — find next workday
-                let daysToAdd = 1;
-                let nextDay = (day + 1) % 7;
-
-                while (!isWorkday(nextDay)) {
-                    daysToAdd++;
-                    nextDay = (nextDay + 1) % 7;
-                }
-
-                target.setDate(target.getDate() + daysToAdd);
-                return target - now;
-            }
-
-            function pad(n) {
-                return String(Math.floor(n)).padStart(2, '0');
-            }
-
-            function updateCountdown() {
-                const state = getServiceState();
-                const ms = getNextTransition();
-
-                // Update state
-                if (state === 'open') {
-                    statusEl.setAttribute('data-state', 'open');
-                    stateEl.textContent = 'Avatud';
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.scrollY;
+                if (currentScroll > 100) {
+                    navbar.style.borderBottomColor = 'var(--accent-primary)';
                 } else {
-                    statusEl.setAttribute('data-state', 'closed');
-                    stateEl.textContent = 'Suletud';
+                    navbar.style.borderBottomColor = '';
                 }
+                lastScroll = currentScroll;
+            });
+            // Form handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const btn = this.querySelector('button[type="submit"]');
+                    const originalText = btn.innerHTML;
+                    btn.disabled = true;
+                    btn.innerHTML = 'Saatmine...';
 
-                // Calculate time
-                const totalSec = Math.max(0, Math.floor(ms / 1000));
-                const hours = Math.floor(totalSec / 3600);
-                const minutes = Math.floor((totalSec % 3600) / 60);
-                const seconds = totalSec % 60;
-
-                cdH.textContent = pad(hours);
-                cdM.textContent = pad(minutes);
-                cdS.textContent = pad(seconds);
+                    setTimeout(() => {
+                        showSnackbar();
+                        contactForm.reset();
+                        btn.disabled = false;
+                        btn.innerHTML = originalText;
+                    }, 1000);
+                });
             }
 
-            // Run immediately, then every second
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        })();
-    </script>
+            function showSnackbar() {
+                var x = document.getElementById("snackbar");
+                x.className = "snackbar show";
+                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+            }
+
+            // Scroll Reveal
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+            // ========================================
+            // Service Status Countdown Timer
+            // Schedule: Mon–Fri 09:00–18:00 (Europe/Tallinn)
+            // ========================================
+            (function () {
+                const OPEN_HOUR = 9;
+                const CLOSE_HOUR = 18;
+                const TZ = 'Europe/Tallinn';
+
+                const statusEl = document.getElementById('serviceStatus');
+                const stateEl = document.getElementById('statusState');
+                const cdH = document.getElementById('cdHours');
+                const cdM = document.getElementById('cdMinutes');
+                const cdS = document.getElementById('cdSeconds');
+
+                function getTallinnTime() {
+                    const now = new Date();
+                    const tallinnStr = now.toLocaleString('en-US', { timeZone: TZ });
+                    return new Date(tallinnStr);
+                }
+
+                function isWorkday(day) {
+                    return day >= 1 && day <= 5; // Mon=1 ... Fri=5
+                }
+
+                function getServiceState() {
+                    const t = getTallinnTime();
+                    const day = t.getDay();
+                    const hour = t.getHours();
+                    const min = t.getMinutes();
+                    const timeDecimal = hour + min / 60;
+
+                    if (isWorkday(day) && timeDecimal >= OPEN_HOUR && timeDecimal < CLOSE_HOUR) {
+                        return 'open';
+                    }
+                    return 'closed';
+                }
+
+                function getNextTransition() {
+                    const now = getTallinnTime();
+                    const day = now.getDay();
+                    const state = getServiceState();
+
+                    if (state === 'open') {
+                        // Open: countdown to today 18:00
+                        const target = new Date(now);
+                        target.setHours(CLOSE_HOUR, 0, 0, 0);
+                        return target - now;
+                    }
+
+                    // Closed: find next opening (Mon–Fri 09:00)
+                    const target = new Date(now);
+                    target.setHours(OPEN_HOUR, 0, 0, 0);
+
+                    if (isWorkday(day) && now.getHours() < OPEN_HOUR) {
+                        // Before opening on a workday — opens today
+                        return target - now;
+                    }
+
+                    // After closing or on weekends — find next workday
+                    let daysToAdd = 1;
+                    let nextDay = (day + 1) % 7;
+
+                    while (!isWorkday(nextDay)) {
+                        daysToAdd++;
+                        nextDay = (nextDay + 1) % 7;
+                    }
+
+                    target.setDate(target.getDate() + daysToAdd);
+                    return target - now;
+                }
+
+                function pad(n) {
+                    return String(Math.floor(n)).padStart(2, '0');
+                }
+
+                function updateCountdown() {
+                    const state = getServiceState();
+                    const ms = getNextTransition();
+
+                    // Update state
+                    if (state === 'open') {
+                        statusEl.setAttribute('data-state', 'open');
+                        stateEl.textContent = 'Avatud';
+                    } else {
+                        statusEl.setAttribute('data-state', 'closed');
+                        stateEl.textContent = 'Suletud';
+                    }
+
+                    // Calculate time
+                    const totalSec = Math.max(0, Math.floor(ms / 1000));
+                    const hours = Math.floor(totalSec / 3600);
+                    const minutes = Math.floor((totalSec % 3600) / 60);
+                    const seconds = totalSec % 60;
+
+                    cdH.textContent = pad(hours);
+                    cdM.textContent = pad(minutes);
+                    cdS.textContent = pad(seconds);
+                }
+
+                // Run immediately, then every second
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            })();
+        </script>
+
+    </main><!-- /#content -->
 
     <!-- Snackbar Component -->
-    <div id="snackbar" class="snackbar">Päring edukalt saadetud!</div>
+    <div id="snackbar" class="snackbar" role="status" aria-live="polite">Päring edukalt saadetud!</div>
 
 </body>
 
