@@ -1035,7 +1035,13 @@ h3 {
 
 @media (max-width: 768px) {
     .services__rating {
+        width: 100%;
         margin-bottom: 0;
+    }
+
+    .services__rating-link {
+        justify-content: flex-end;
+        padding-right: var(--container-padding, 16px);
     }
 }
 
