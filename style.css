@@ -1142,7 +1142,9 @@ h3 {
 .service-card--centered .service-card__icon iconify-icon,
 .service-card--centered .service-card__icon svg {
     display: flex !important;
-    margin: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
     padding: 0 !important;
 }
 
@@ -2048,8 +2050,8 @@ h3 {
 
     .service-card__icon svg,
     .service-card__icon iconify-icon {
-        width: 56px !important;
-        height: 56px !important;
+        width: 28px !important;
+        height: 28px !important;
     }
 
     /* P-08: Unified margins for contact and footer grids */
