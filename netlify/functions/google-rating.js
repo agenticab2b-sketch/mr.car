@@ -9,8 +9,8 @@ exports.handler = async (event, context) => {
 
   // Fallback values in case of missing config or API failure
   const fallbackData = {
-    rating: 5.0,
-    user_ratings_total: 48,
+    rating: 4.9,
+    user_ratings_total: 103,
     is_fallback: true
   };
 
