@@ -255,55 +255,40 @@
                     <span class="meta">/// Kvaliteedigarantii</span>
                     <h2>Täisteenus</h2>
                 </div>
+                <div id="google-rating" class="services__rating"></div>
             </div>
 
             <!-- 3 Featured Cards -->
             <div class="services-grid site-container reveal">
                 <!-- Card: Remont -->
-                <div class="service-card">
+                <div class="service-card service-card--centered">
                     <div class="service-card__icon">
-                        <iconify-icon icon="mdi:wrench" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        <iconify-icon icon="mdi:wrench" width="28" height="28" aria-hidden="true"></iconify-icon>
                     </div>
                     <h3 class="service-card__title">Kapitaalremont</h3>
                     <p class="service-card__description">Mootori, käigukasti ja veermiku kapitaalremont. Lahendame kõik
                         probleemid – pisivigadest keeruliste juhtumiteni.</p>
-                    <div class="service-card__footer">
-                        <span class="service-card__meta">[Artikleid: 04]</span>
-                        <a href="#contact" class="btn-link">Küsi pakkumist <span class="arrow"
-                                aria-hidden="true">→</span></a>
-                    </div>
                 </div>
 
                 <!-- Card: Diagnostika (FEATURED — center) -->
-                <div class="service-card service-card--featured">
+                <div class="service-card service-card--featured service-card--centered">
                     <div class="service-card__icon">
-                        <iconify-icon icon="mdi:car-cog" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        <iconify-icon icon="mdi:car-cog" width="28" height="28" aria-hidden="true"></iconify-icon>
                     </div>
                     <h3 class="service-card__title">Diagnostika</h3>
                     <p class="service-card__description">Kõigi autosüsteemide kompuuterdiagnostika. Tuvastame vead
                         100% täpsusega. Kaasaegsed seadmed.</p>
-                    <div class="service-card__footer">
-                        <span class="service-card__meta">[Artikleid: 02]</span>
-                        <a href="#contact" class="btn-link">Broneeri aeg <span class="arrow"
-                                aria-hidden="true">→</span></a>
-                    </div>
                 </div>
 
                 <!-- Card: Garantii -->
-                <div class="service-card">
+                <div class="service-card service-card--centered">
                     <div class="service-card__icon">
-                        <iconify-icon icon="mdi:shield-check" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        <iconify-icon icon="mdi:shield-check" width="28" height="28" aria-hidden="true"></iconify-icon>
                     </div>
                     <h3 class="service-card__title">Garantii</h3>
                     <p class="service-card__description">Anname garantii kõigile töödele. Kasutame ainult
                         originaalvaruosi
                         või kontrollitud tootjate kvaliteetseid analooge.</p>
-                    <span class="service-card__badge">Garantii &gt; 12 kuud</span>
-                    <div class="service-card__footer">
-                        <span class="service-card__meta">[Artikleid: 01]</span>
-                        <a href="#contact" class="btn-link">Küsi lisainfot <span class="arrow"
-                                aria-hidden="true">→</span></a>
-                    </div>
                 </div>
             </div>
 
@@ -872,6 +857,49 @@
                 // Run immediately, then every second
                 updateCountdown();
                 setInterval(updateCountdown, 1000);
+            })();
+
+            // Google Rating Fetch
+            (function () {
+                const ratingContainer = document.getElementById('google-rating');
+                const fallbackData = { rating: 4.9, user_ratings_total: 103 };
+
+                async function fetchRating() {
+                    try {
+                        const response = await fetch('/api/google-rating');
+                        const data = await response.json();
+                        updateUI(data);
+                    } catch (error) {
+                        console.error('Error fetching rating:', error);
+                        updateUI(fallbackData);
+                    }
+                }
+
+                function updateUI(data) {
+                    if (!ratingContainer) return;
+                    const rating = data.rating || fallbackData.rating;
+                    const count = data.user_ratings_total || fallbackData.user_ratings_total;
+
+                    ratingContainer.innerHTML = `
+                        <a href="https://www.google.com/maps/search/?api=1&query=Mr.Car+Autoremont+Tallinn" target="_blank" rel="noopener" class="services__rating-link">
+                            <div class="services__rating-stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                            <div class="services__rating-text">
+                                <span class="services__rating-value">${rating.toFixed(1)}</span>
+                                <span class="services__rating-count">(${count})</span>
+                                <span class="services__rating-label"> • Eesti Autojuhtide poolt usaldatud</span>
+                            </div>
+                        </a>
+                    `;
+                    ratingContainer.style.opacity = '1';
+                }
+
+                fetchRating();
             })();
         </script>
 
