@@ -1141,7 +1141,7 @@ h3 {
 
 .service-card--centered .service-card__icon iconify-icon,
 .service-card--centered .service-card__icon svg {
-    display: block !important;
+    display: flex !important;
     margin: 0 !important;
     padding: 0 !important;
 }
