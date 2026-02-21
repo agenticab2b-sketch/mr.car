@@ -2276,3 +2276,9 @@ h3 {
 }
 
 /* Services list header (layout) */
+
+@media (max-width: 500px) {
+    .services-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
