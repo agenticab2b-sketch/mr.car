@@ -1040,6 +1040,7 @@ h3 {
     }
 
     .services__rating-link {
+        width: 100%;
         justify-content: flex-end !important;
         padding-right: var(--container-padding, 16px);
     }
