@@ -789,21 +789,23 @@
                 const count = data.user_ratings_total || fallbackData.user_ratings_total;
 
                 ratingContainer.innerHTML = `
-                    <a href="https://www.google.com/maps/search/?api=1&query=Mr.Car+Autoremont+Tallinn" target="_blank" rel="noopener" class="services__rating-link" style="display: flex; justify-content: flex-end; align-items: center;">
-                        <div class="services__rating-stars">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        </div>
-                        <div class="services__rating-text" style="display: flex; align-items: center;">
-                            <span class="services__rating-value" style="display: flex; align-items: center;">${rating.toFixed(1)}</span>
-                            <span class="services__rating-count" style="margin-left: 4px; display: flex; align-items: center;">(${count})</span>
-                            <span class="services__rating-label" style="display: flex; align-items: center;">
-                                <span style="margin: 0 12px; color: var(--text-dimmed); font-size: 1.25rem; display: flex; align-items: center;">•</span>
-                                <iconify-icon icon="logos:google" width="58" style="display: flex; align-items: center;"></iconify-icon>
-                            </span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mr.Car+Autoremont+Tallinn" target="_blank" rel="noopener" class="services__rating-link">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-left: auto;">
+                            <div class="services__rating-stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            </div>
+                            <div class="services__rating-text" style="display: flex; align-items: center;">
+                                <span class="services__rating-value" style="display: flex; align-items: center;">${rating.toFixed(1)}</span>
+                                <span class="services__rating-count" style="margin-left: 4px; display: flex; align-items: center;">(${count})</span>
+                                <span class="services__rating-label" style="display: flex; align-items: center;">
+                                    <span style="margin: 0 12px; color: var(--text-dimmed); font-size: 1.25rem; display: flex; align-items: center;">•</span>
+                                    <iconify-icon icon="logos:google" width="58" style="display: flex; align-items: center;"></iconify-icon>
+                                </span>
+                            </div>
                         </div>
                     </a>
                 `;
