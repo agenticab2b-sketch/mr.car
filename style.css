@@ -1033,6 +1033,10 @@ h3 {
     color: var(--text-dimmed);
 }
 
+#google-rating .services__rating-link>div {
+    margin-left: auto;
+}
+
 @media (max-width: 768px) {
     .services__rating {
         width: 100%;
@@ -1040,6 +1044,7 @@ h3 {
     }
 
     .services__rating-link {
+        box-sizing: border-box;
         width: 100%;
         justify-content: flex-end !important;
         padding-right: var(--container-padding, 16px);
