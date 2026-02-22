@@ -229,7 +229,7 @@ const SERVICES = [
         icon: "mdi:car-brake-alert",
         heroTitle: "Vedrustuse ja pidurite remont",
         heroLead: "Vedrustus, roolisüsteem, pidurdussüsteem — diagnostika ja remont garantiiga.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Vedrustuse remont Mr.Car-is",
         introText: [
             "Vedrustus on sinu ohutus teel. Põrutamine, rooli kõrvalekalle, vibratsioon — kõik need on kulumise märgid, mida ei saa eirata.",
@@ -286,7 +286,7 @@ const SERVICES = [
         icon: "mdi:tire",
         heroTitle: "Rehvitööd",
         heroLead: "Hooajaline rehvivahetus, tasakaalustamine, torkeaukude remont. Kiiresti ja korrektselt — järjekordadeta.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Rehvitööd Mr.Car-is",
         introText: [
             "Rehvitööd tunduvad lihtsad, kuid nõuavad täpsust. Vale tasakaalustamine põhjustab vibratsiooni, laagrite kulumist ja ebamugavat sõitu.",
@@ -445,7 +445,7 @@ const SERVICES = [
         icon: "mdi:file-search-outline",
         heroTitle: "Auto kontroll enne ostmist",
         heroLead: "Sõltumatu tehniline ekspertiis — et ost ei muutuks pettumiseks.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Ostueelne kontroll Mr.Car-is",
         introText: [
             "Kasutatud auto ostmine on alati risk. Keerutatud läbisõit, varjatud avariid, mootoriprobleemid — kõik see võib selguda alles pärast tehingut.",

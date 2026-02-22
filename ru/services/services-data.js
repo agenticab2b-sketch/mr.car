@@ -229,7 +229,7 @@ const SERVICES = [
         icon: "mdi:car-brake-alert",
         heroTitle: "Ремонт ходовой и тормозов",
         heroLead: "Подвеска, рулевое управление, тормозная система — диагностика и ремонт с гарантией.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Ремонт ходовой части автомобиля",
         introText: [
             "Ходовая часть — это ваша безопасность на дороге. Стуки в подвеске, увод руля, вибрации — всё это признаки износа, которые нельзя игнорировать.",
@@ -286,7 +286,7 @@ const SERVICES = [
         icon: "mdi:tire",
         heroTitle: "Шиномонтаж",
         heroLead: "Сезонная замена, балансировка, ремонт проколов. Быстро и аккуратно — без очередей.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Шиномонтаж в Mr.Car",
         introText: [
             "Шиномонтаж — услуга, которая кажется простой, но требует точности. Неправильная балансировка — это вибрации, износ подшипников и дискомфорт при вождении.",
@@ -445,7 +445,7 @@ const SERVICES = [
         icon: "mdi:file-search-outline",
         heroTitle: "Проверка авто перед покупкой",
         heroLead: "Независимая техническая экспертиза автомобиля — чтобы покупка не стала разочарованием.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Проверка перед покупкой в Mr.Car",
         introText: [
             "Покупка б/у автомобиля — это всегда риск. Скрученный пробег, скрытые ДТП, проблемы с двигателем — всё это может обнаружиться уже после сделки.",

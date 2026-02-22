@@ -39,16 +39,16 @@
 
     <!-- NAVBAR -->
     <header class="navbar" id="navbar">
-        <a href="/ee/" class="navbar__logo">Mr.Car</a>
+        <a href="/" class="navbar__logo">Mr.Car</a>
         <nav class="navbar__nav">
             <div class="navbar__item has-dropdown">
-                <a href="/ee/#services" class="navbar__link" style="color:var(--accent-primary)">[01] Teenused</a>
+                <a href="/#services" class="navbar__link" style="color:var(--accent-primary)">[01] Teenused</a>
                 <!-- JS-generated mega-menu -->
                 <div class="mega-menu" id="megaMenuDesktop"></div>
             </div>
-            <a href="/ee/#about" class="navbar__link">[02] Meist</a>
-            <a href="/ee/#pricing" class="navbar__link">[03] Hinnad</a>
-            <a href="/ee/#contact" class="navbar__link">[04] Kontakt</a>
+            <a href="/#about" class="navbar__link">[02] Meist</a>
+            <a href="/#pricing" class="navbar__link">[03] Hinnad</a>
+            <a href="/#contact" class="navbar__link">[04] Kontakt</a>
         </nav>
         <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
         <div class="navbar__cta">
@@ -64,6 +64,9 @@
             <a href="/ru/" class="lang-link" title="Русский">
                 <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
             </a>
+            <a href="/en/" class="lang-link" title="English">
+                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
+            </a>
         </div>
     </header>
 
@@ -71,16 +74,16 @@
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu__close" id="closeMenu" aria-label="Sulge menüü">&times;</button>
         <nav aria-label="Mobiilne navigatsioon">
-            <a href="/ee/#services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+            <a href="/#services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
                 Teenused
                 <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
                     height="24"></iconify-icon>
             </a>
             <!-- JS-generated mobile mega-menu -->
             <div class="mobile-mega-menu" id="mobileMegaMenu"></div>
-            <a href="/ee/#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
-            <a href="/ee/#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
-            <a href="/ee/#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
+            <a href="/#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
+            <a href="/#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
+            <a href="/#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
         </nav>
         <a href="tel:+37256461210" class="mobile-menu__link" style="color:var(--accent-primary)">+372 5646 1210</a>
         <div class="mobile-menu__lang">
@@ -91,6 +94,10 @@
             <a href="/ru/" class="mobile-lang-link">
                 <iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon>
                 <span>Русский</span>
+            </a>
+            <a href="/en/" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon>
+                <span>English</span>
             </a>
         </div>
     </div>
@@ -364,13 +371,13 @@
         function renderService() {
             var slug = getSlug();
             if (!slug) {
-                window.location.href = '/ee/';
+                window.location.href = '/';
                 return;
             }
 
             var s = getService(slug);
             if (!s) {
-                window.location.href = '/ee/';
+                window.location.href = '/';
                 return;
             }
 
@@ -418,7 +425,7 @@
                     {
                         "@type": "AutoRepair",
                         "name": "Mr.Car Autoremont",
-                        "url": SITE_ORIGIN + '/ee/',
+                        "url": SITE_ORIGIN + '/',
                         "telephone": "+372 5646 1210",
                         "image": absImage,
                         "address": {

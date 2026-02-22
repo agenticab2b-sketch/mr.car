@@ -228,7 +228,7 @@ const SERVICES = [
         icon: "mdi:car-brake-alert",
         heroTitle: "Suspension & Brakes Repair",
         heroLead: "Suspension, steering, braking system — diagnostics and repair with a guarantee.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Suspension Repair at Mr.Car",
         introText: [
             "The suspension is your safety on the road. Knocking in the suspension, steering pull, or vibrations are signs of wear that cannot be ignored.",
@@ -285,7 +285,7 @@ const SERVICES = [
         icon: "mdi:tire",
         heroTitle: "Tire Services",
         heroLead: "Seasonal change, balancing, puncture repair. Fast and accurate — no queues.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Tire Services at Mr.Car",
         introText: [
             "Tire fitting seems simple but requires precision. Improper balancing causes vibration, bearing wear, and driving discomfort.",
@@ -444,7 +444,7 @@ const SERVICES = [
         icon: "mdi:file-search-outline",
         heroTitle: "Pre-purchase Inspection",
         heroLead: "Independent technical expertise — so your purchase doesn't become a disappointment.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Pre-purchase Inspection at Mr.Car",
         introText: [
             "Buying a used car is always a risk. Rolled-back mileage, hidden accidents, engine problems — all this can be discovered after the deal.",
