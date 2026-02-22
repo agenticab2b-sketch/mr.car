@@ -8,7 +8,9 @@ const SERVICES = [
     // CATEGORY: Diagnostika ja elektroonika
     // ═══════════════════════════════════
     {
-        slug: "elektrika",
+        key: "electrical",
+        slug: "elektritood",
+        allSlugs: { ru: "elektrika", ee: "elektritood", en: "electrical-repair" },
         category: "Diagnostika ja elektroonika",
         navTitle: "Autoelekter",
         icon: "mdi:lightning-bolt",
@@ -62,7 +64,9 @@ const SERVICES = [
     // CATEGORY: Mootor ja seadmed
     // ═══════════════════════════════════
     {
-        slug: "remont-dvigatelya",
+        key: "engine",
+        slug: "mootoriremont",
+        allSlugs: { ru: "remont-dvigatelya", ee: "mootoriremont", en: "engine-repair" },
         category: "Mootor ja seadmed",
         navTitle: "Mootori remont",
         icon: "mdi:engine",
@@ -119,7 +123,9 @@ const SERVICES = [
     },
 
     {
-        slug: "remont-kpp",
+        key: "transmission",
+        slug: "kaigukastiremont",
+        allSlugs: { ru: "remont-kpp", ee: "kaigukastiremont", en: "transmission-repair" },
         category: "Mootor ja seadmed",
         navTitle: "Käigukasti remont",
         icon: "mdi:car-shift-pattern",
@@ -169,16 +175,18 @@ const SERVICES = [
     },
 
     {
-        slug: "glushiteli-svarka",
+        key: "exhaust_welding",
+        slug: "summutid-keevitus",
+        allSlugs: { ru: "glushiteli-svarka", ee: "summutid-keevitus", en: "exhaust-welding" },
         category: "Mootor ja seadmed",
         navTitle: "Summutid ja keevitus",
         icon: "mdi:fire",
         heroTitle: "Summutid ja keevitustööd",
         heroLead: "Heitgaasisüsteemi remont ja vahetus. Argooni- ja poolautomaatkeevitus igasuguse keerukusega.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Summutite remont ja keevitustööd",
+        introTitle: "Summutite remont и keevitustööd",
         introText: [
-            "Läbipõlenud summuti ei ole ainult ebameeldiv heli — heitgaasid võivad tungida salongi. Remondime ja vahetame kõiki heitgaasisüsteemi elemente.",
+            "Heitgaasisüsteemi remondi vajadus tekib tavaliselt kulumisest või korrosioonist. Läbipõlenud summuti ei ole ainult ebameeldiv heli — heitgaasid võivad tungida salongi.",
             "Eraldi valdkonnana tegeleme keevitustöödega: pragude kinnijootmine, kinnituste remont, põhja keevitamine. Alumiiniumi ja roostevaba terase argoonikeevitus."
         ],
         symptomsTitle: "Millal on vaja summuti remonti?",
@@ -223,7 +231,9 @@ const SERVICES = [
     // CATEGORY: Vedrustus ja pidurid
     // ═══════════════════════════════════
     {
-        slug: "hodovaya-tormoza",
+        key: "chassis_brakes",
+        slug: "veermik-pidurid",
+        allSlugs: { ru: "hodovaya-tormoza", ee: "veermik-pidurid", en: "chassis-brakes" },
         category: "Vedrustus ja pidurid",
         navTitle: "Vedrustus ja pidurid",
         icon: "mdi:car-brake-alert",
@@ -280,7 +290,9 @@ const SERVICES = [
     },
 
     {
+        key: "tire_service",
         slug: "rehvitood",
+        allSlugs: { ru: "rehvitood", ee: "rehvitood", en: "tire-service" },
         category: "Vedrustus ja pidurid",
         navTitle: "Rehvitööd",
         icon: "mdi:tire",
@@ -290,7 +302,7 @@ const SERVICES = [
         introTitle: "Rehvitööd Mr.Car-is",
         introText: [
             "Rehvitööd tunduvad lihtsad, kuid nõuavad täpsust. Vale tasakaalustamine põhjustab vibratsiooni, laagrite kulumist ja ebamugavat sõitu.",
-            "Mr.Car-is kasutame kaasaegset montaažiseadmestikku ja tasakaalustajat. Töötame rehvidega R13-st R22-ni, sealhulgas madalprofiiliga rehvide ja RunFlat-rehvidega."
+            "Mr.Car-is kasutame kaasaegset montaažiseadmestikku ja tasakaalustajat. Töötame rehvidega R13-st R22-ni, sealhulgas madalproфиiliga rehvide ja RunFlat-rehvidega."
         ],
         symptomsTitle: "Millal on vaja rehvitöid?",
         symptoms: [
@@ -333,7 +345,9 @@ const SERVICES = [
     // CATEGORY: Hooldus
     // ═══════════════════════════════════
     {
-        slug: "to-diagnostika",
+        key: "maintenance_diag",
+        slug: "hooldus-diagnostika",
+        allSlugs: { ru: "to-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
         category: "Hooldus",
         navTitle: "Tehniline ülevaatus ja hooldus",
         icon: "mdi:car-cog",
@@ -383,12 +397,14 @@ const SERVICES = [
         },
         seo: {
             title: "Tehniline hooldus — Mr.Car Tallinn | Autoteenindus",
-            description: "Tehniline hooldus Tallinnas. Õlivahetus, filtrid, kõigi süsteemide kontroll. Edasimüüja garantii säilib. Kopli 82a. +372 5646 1210"
+            description: "Tehniline hooldus Tallinnas. Õlivahetus, filtrid, kõigi süстееmide kontroll. Edasimüüja garantii säilib. Kopli 82a. +372 5646 1210"
         }
     },
 
     {
-        slug: "zamena-masla",
+        key: "oil_change",
+        slug: "olivahetus",
+        allSlugs: { ru: "zamena-masla", ee: "olivahetus", en: "oil-change" },
         category: "Hooldus",
         navTitle: "Õlivahetus ja filtrid",
         icon: "mdi:oil",
@@ -439,7 +455,9 @@ const SERVICES = [
     },
 
     {
-        slug: "proverka-pered-pokupkoy",
+        key: "pre_purchase",
+        slug: "ostueelne-kontroll",
+        allSlugs: { ru: "proverka-pered-pokupkoy", ee: "ostueelne-kontroll", en: "pre-purchase-inspection" },
         category: "Hooldus",
         navTitle: "Kontroll enne ostmist",
         icon: "mdi:file-search-outline",
@@ -498,7 +516,9 @@ const SERVICES = [
     // CATEGORY: Kliimaseade ja lisavarustus
     // ═══════════════════════════════════
     {
-        slug: "klimat-konditsioner",
+        key: "ac_service",
+        slug: "kliimahooldus",
+        allSlugs: { ru: "klimat-konditsioner", ee: "kliimahooldus", en: "ac-service" },
         category: "Kliimaseade ja lisavarustus",
         navTitle: "Kliimaseade ja konditsioneer",
         icon: "mdi:snowflake",
@@ -549,7 +569,9 @@ const SERVICES = [
     },
 
     {
-        slug: "webasto",
+        key: "webasto",
+        slug: "webasto-remont",
+        allSlugs: { ru: "webasto", ee: "webasto-remont", en: "webasto-repair" },
         category: "Kliimaseade ja lisavarustus",
         navTitle: "Webasto remont",
         icon: "mdi:radiator",
@@ -603,7 +625,9 @@ const SERVICES = [
     },
 
     {
+        key: "general_repair",
         slug: "autoremont",
+        allSlugs: { ru: "autoremont", ee: "autoremont", en: "general-car-repair" },
         category: "Hooldus",
         navTitle: "Üldine autoremont",
         icon: "mdi:wrench",

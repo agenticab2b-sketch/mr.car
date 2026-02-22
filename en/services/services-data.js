@@ -7,7 +7,9 @@ const SERVICES = [
     // CATEGORY: Diagnostics & Electrical
     // ═══════════════════════════════════
     {
-        slug: "elektrika",
+        key: "electrical",
+        slug: "electrical-repair",
+        allSlugs: { ru: "elektrika", ee: "elektritood", en: "electrical-repair" },
         category: "Diagnostics & Electrical",
         navTitle: "Auto Electrical",
         icon: "mdi:lightning-bolt",
@@ -61,7 +63,9 @@ const SERVICES = [
     // CATEGORY: Engine & Drivetrain
     // ═══════════════════════════════════
     {
-        slug: "remont-dvigatelya",
+        key: "engine",
+        slug: "engine-repair",
+        allSlugs: { ru: "remont-dvigatelya", ee: "mootoriremont", en: "engine-repair" },
         category: "Engine & Drivetrain",
         navTitle: "Engine Repair",
         icon: "mdi:engine",
@@ -118,7 +122,9 @@ const SERVICES = [
     },
 
     {
-        slug: "remont-kpp",
+        key: "transmission",
+        slug: "transmission-repair",
+        allSlugs: { ru: "remont-kpp", ee: "kaigukastiremont", en: "transmission-repair" },
         category: "Engine & Drivetrain",
         navTitle: "Gearbox Repair",
         icon: "mdi:car-shift-pattern",
@@ -168,7 +174,9 @@ const SERVICES = [
     },
 
     {
-        slug: "glushiteli-svarka",
+        key: "exhaust_welding",
+        slug: "exhaust-welding",
+        allSlugs: { ru: "glushiteli-svarka", ee: "summutid-keevitus", en: "exhaust-welding" },
         category: "Engine & Drivetrain",
         navTitle: "Exhaust & Welding",
         icon: "mdi:fire",
@@ -222,7 +230,9 @@ const SERVICES = [
     // CATEGORY: Suspension & Brakes
     // ═══════════════════════════════════
     {
-        slug: "hodovaya-tormoza",
+        key: "chassis_brakes",
+        slug: "chassis-brakes",
+        allSlugs: { ru: "hodovaya-tormoza", ee: "veermik-pidurid", en: "chassis-brakes" },
         category: "Suspension & Brakes",
         navTitle: "Suspension & Brakes",
         icon: "mdi:car-brake-alert",
@@ -279,7 +289,9 @@ const SERVICES = [
     },
 
     {
-        slug: "rehvitood",
+        key: "tire_service",
+        slug: "tire-service",
+        allSlugs: { ru: "rehvitood", ee: "rehvitood", en: "tire-service" },
         category: "Suspension & Brakes",
         navTitle: "Tire Services",
         icon: "mdi:tire",
@@ -332,7 +344,9 @@ const SERVICES = [
     // CATEGORY: Maintenance
     // ═══════════════════════════════════
     {
-        slug: "to-diagnostika",
+        key: "maintenance_diag",
+        slug: "maintenance-diagnostics",
+        allSlugs: { ru: "to-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
         category: "Maintenance",
         navTitle: "Maintenance & Diagnostics",
         icon: "mdi:car-cog",
@@ -387,7 +401,9 @@ const SERVICES = [
     },
 
     {
-        slug: "zamena-masla",
+        key: "oil_change",
+        slug: "oil-change",
+        allSlugs: { ru: "zamena-masla", ee: "olivahetus", en: "oil-change" },
         category: "Maintenance",
         navTitle: "Oil & Filter Change",
         icon: "mdi:oil",
@@ -438,7 +454,9 @@ const SERVICES = [
     },
 
     {
-        slug: "proverka-pered-pokupkoy",
+        key: "pre_purchase",
+        slug: "pre-purchase-inspection",
+        allSlugs: { ru: "proverka-pered-pokupkoy", ee: "ostueelne-kontroll", en: "pre-purchase-inspection" },
         category: "Maintenance",
         navTitle: "Pre-purchase Inspection",
         icon: "mdi:file-search-outline",
@@ -497,7 +515,9 @@ const SERVICES = [
     // CATEGORY: Climate & Accessories
     // ═══════════════════════════════════
     {
-        slug: "klimat-konditsioner",
+        key: "ac_service",
+        slug: "ac-service",
+        allSlugs: { ru: "klimat-konditsioner", ee: "kliimahooldus", en: "ac-service" },
         category: "Climate & Accessories",
         navTitle: "AC & Climate Control",
         icon: "mdi:snowflake",
@@ -548,7 +568,9 @@ const SERVICES = [
     },
 
     {
-        slug: "webasto",
+        key: "webasto",
+        slug: "webasto-repair",
+        allSlugs: { ru: "webasto", ee: "webasto-remont", en: "webasto-repair" },
         category: "Climate & Accessories",
         navTitle: "Webasto Repair",
         icon: "mdi:radiator",
@@ -602,7 +624,9 @@ const SERVICES = [
     },
 
     {
-        slug: "autoremont",
+        key: "general_repair",
+        slug: "general-car-repair",
+        allSlugs: { ru: "autoremont", ee: "autoremont", en: "general-car-repair" },
         category: "Maintenance",
         navTitle: "General Car Repair",
         icon: "mdi:wrench",

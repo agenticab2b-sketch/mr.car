@@ -43,7 +43,7 @@
         <nav class="navbar__nav">
             <div class="navbar__item has-dropdown">
                 <a href="/en/#services" class="navbar__link" style="color:var(--accent-primary)">[01] Services</a>
-                <!-- JS-generated mega-menu -->
+                <!-- Fix 6: JS-generated mega-menu -->
                 <div class="mega-menu" id="megaMenuDesktop"></div>
             </div>
             <a href="/en/#about" class="navbar__link">[02] About</a>
@@ -79,7 +79,7 @@
                 <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
                     height="24"></iconify-icon>
             </a>
-            <!-- JS-generated mobile mega-menu -->
+            <!-- Fix 6: JS-generated mobile mega-menu -->
             <div class="mobile-mega-menu" id="mobileMegaMenu"></div>
             <a href="/en/#about" class="mobile-menu__link" onclick="closeMobileMenu()">About</a>
             <a href="/en/#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Pricing</a>
@@ -386,10 +386,10 @@
             document.getElementById('canonicalLink').href = canonicalUrl;
 
             // hreflang
-            document.getElementById('hreflangRu').href = SITE_ORIGIN + '/ru/services/' + slug;
-            document.getElementById('hreflangEt').href = SITE_ORIGIN + '/ee/services/' + slug;
-            document.getElementById('hreflangEn').href = SITE_ORIGIN + '/en/services/' + slug;
-            document.getElementById('hreflangDefault').href = SITE_ORIGIN + '/en/services/' + slug;
+            document.getElementById('hreflangRu').href = SITE_ORIGIN + '/ru/services/' + s.allSlugs.ru;
+            document.getElementById('hreflangEt').href = SITE_ORIGIN + '/ee/services/' + s.allSlugs.ee;
+            document.getElementById('hreflangEn').href = SITE_ORIGIN + '/en/services/' + s.allSlugs.en;
+            document.getElementById('hreflangDefault').href = SITE_ORIGIN + '/en/services/' + s.allSlugs.en;
 
             // Update URL to clean /en/services/slug without reload
             if (window.location.search.indexOf('slug=') !== -1 || window.location.pathname.indexOf('service.html') !== -1) {

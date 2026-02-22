@@ -28,55 +28,55 @@
             <div class="navbar__item has-dropdown">
                 <a href="#services" class="navbar__link">[01] Services</a>
                 <div class="mega-menu">
-                    <a href="/en/services/autoremont" class="mega-menu__item">
+                    <a href="/en/services/general-car-repair" class="mega-menu__item">
                         <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Car Repair</span>
                     </a>
-                    <a href="/en/services/glushiteli-svarka" class="mega-menu__item">
+                    <a href="/en/services/exhaust-welding" class="mega-menu__item">
                         <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Exhaust & Welding</span>
                     </a>
-                    <a href="/en/services/hodovaya-tormoza" class="mega-menu__item">
+                    <a href="/en/services/chassis-brakes" class="mega-menu__item">
                         <iconify-icon icon="mdi:car-brake-alert" width="20" height="20"
                             aria-hidden="true"></iconify-icon>
                         <span>Suspension & Brakes</span>
                     </a>
-                    <a href="/en/services/rehvitood" class="mega-menu__item">
+                    <a href="/en/services/tire-service" class="mega-menu__item">
                         <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Tire Services</span>
                     </a>
-                    <a href="/en/services/to-diagnostika" class="mega-menu__item">
+                    <a href="/en/services/maintenance-diagnostics" class="mega-menu__item">
                         <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Maintenance & Diagnostics</span>
                     </a>
-                    <a href="/en/services/remont-kpp" class="mega-menu__item">
+                    <a href="/en/services/transmission-repair" class="mega-menu__item">
                         <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20"
                             aria-hidden="true"></iconify-icon>
                         <span>Gearbox Repair</span>
                     </a>
-                    <a href="/en/services/elektrika" class="mega-menu__item">
+                    <a href="/en/services/electrical-repair" class="mega-menu__item">
                         <iconify-icon icon="mdi:lightning-bolt" width="20" height="20"
                             aria-hidden="true"></iconify-icon>
                         <span>Electrical Works</span>
                     </a>
-                    <a href="/en/services/remont-dvigatelya" class="mega-menu__item">
+                    <a href="/en/services/engine-repair" class="mega-menu__item">
                         <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Engine Repair</span>
                     </a>
-                    <a href="/en/services/zamena-masla" class="mega-menu__item">
+                    <a href="/en/services/oil-change" class="mega-menu__item">
                         <iconify-icon icon="mdi:oil" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Oil & Filter Change</span>
                     </a>
-                    <a href="/en/services/proverka-pered-pokupkoy" class="mega-menu__item">
+                    <a href="/en/services/pre-purchase-inspection" class="mega-menu__item">
                         <iconify-icon icon="mdi:file-search-outline" width="20" height="20"
                             aria-hidden="true"></iconify-icon>
                         <span>Pre-purchase Inspection</span>
                     </a>
-                    <a href="/en/services/klimat-konditsioner" class="mega-menu__item">
+                    <a href="/en/services/ac-service" class="mega-menu__item">
                         <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>AC & Climate Control</span>
                     </a>
-                    <a href="/en/services/webasto" class="mega-menu__item">
+                    <a href="/en/services/webasto-repair" class="mega-menu__item">
                         <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Webasto Repair</span>
                     </a>
@@ -107,13 +107,71 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
         <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
-        <a href="#services" class="mobile-menu__link" onclick="closeMobileMenu()">Services</a>
-        <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">About</a>
-        <a href="#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Pricing</a>
-        <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
-        <a href="tel:+37256461210" class="mobile-menu__link" style="color: var(--accent-primary);">+372 5646 1210</a>
+        <nav aria-label="Mobile Navigation">
+            <a href="#services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+                Services
+                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
+                    height="24"></iconify-icon>
+            </a>
+            <div class="mobile-mega-menu" id="mobileMegaMenu">
+                <a href="/en/services/general-car-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+                    <span>Car Repair</span>
+                </a>
+                <a href="/en/services/exhaust-welding" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+                    <span>Exhaust & Welding</span>
+                </a>
+                <a href="/en/services/chassis-brakes" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
+                    <span>Suspension & Brakes</span>
+                </a>
+                <a href="/en/services/tire-service" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
+                    <span>Tire Services</span>
+                </a>
+                <a href="/en/services/maintenance-diagnostics" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                    <span>Maintenance & Diagnostics</span>
+                </a>
+                <a href="/en/services/transmission-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                    <span>Gearbox Repair</span>
+                </a>
+                <a href="/en/services/electrical-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+                    <span>Electrical Works</span>
+                </a>
+                <a href="/en/services/engine-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+                    <span>Engine Repair</span>
+                </a>
+                <a href="/en/services/oil-change" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
+                    <span>Oil & Filter Change</span>
+                </a>
+                <a href="/en/services/pre-purchase-inspection" class="mobile-mega-menu__item"
+                    onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+                    <span>Pre-purchase Inspection</span>
+                </a>
+                <a href="/en/services/ac-service" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+                    <span>AC & Climate Control</span>
+                </a>
+                <a href="/en/services/webasto-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                    <span>Webasto Repair</span>
+                </a>
+            </div>
+            <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">About</a>
+            <a href="#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Pricing</a>
+            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
+            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
+                5646 1210</a>
+        </nav>
         <div class="mobile-menu__lang">
             <a href="/" class="mobile-lang-link">
                 <iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon>
@@ -282,73 +340,73 @@
         <!-- All 12 Services — Compact Grid -->
         <div class="services-all site-container">
             <div class="services-all__grid">
-                <a href="/en/services/autoremont" class="services-all__item">
+                <a href="/en/services/general-car-repair" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:wrench" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Car Repair</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/glushiteli-svarka" class="services-all__item">
+                <a href="/en/services/exhaust-welding" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:fire" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Exhaust & Welding</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/hodovaya-tormoza" class="services-all__item">
+                <a href="/en/services/chassis-brakes" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:car-brake-alert" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Suspension & Brakes</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/rehvitood" class="services-all__item">
+                <a href="/en/services/tire-service" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:tire" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Tire Services</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/to-diagnostika" class="services-all__item">
+                <a href="/en/services/maintenance-diagnostics" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:car-cog" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Maintenance & Diagnostics</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/remont-kpp" class="services-all__item">
+                <a href="/en/services/transmission-repair" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:car-shift-pattern" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Gearbox Repair</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/elektrika" class="services-all__item">
+                <a href="/en/services/electrical-repair" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:lightning-bolt" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Electrical Works</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/remont-dvigatelya" class="services-all__item">
+                <a href="/en/services/engine-repair" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:engine" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Engine Repair</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/zamena-masla" class="services-all__item">
+                <a href="/en/services/oil-change" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:oil" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Oil & Filter Change</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/proverka-pered-pokupkoy" class="services-all__item">
+                <a href="/en/services/pre-purchase-inspection" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:file-search-outline" width="24"
                             height="24" aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Pre-purchase Inspection</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/klimat-konditsioner" class="services-all__item">
+                <a href="/en/services/ac-service" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:snowflake" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">AC & Climate Control</span>
                     <span class="services-all__arrow">→</span>
                 </a>
-                <a href="/en/services/webasto" class="services-all__item">
+                <a href="/en/services/webasto-repair" class="services-all__item">
                     <span class="services-all__number"><iconify-icon icon="mdi:radiator" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span>
                     <span class="services-all__name">Webasto Repair</span>
@@ -650,6 +708,21 @@
         function closeMobileMenu() {
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
+
+            // Also close mega menu if open
+            const megaMenu = document.getElementById('mobileMegaMenu');
+            const toggleLink = document.querySelector('.mobile-menu__link[onclick="toggleMobileMegaMenu(event)"]');
+            if (megaMenu) megaMenu.classList.remove('is-open');
+            if (toggleLink) toggleLink.classList.remove('is-open');
+        }
+
+        function toggleMobileMegaMenu(e) {
+            e.preventDefault();
+            const megaMenu = document.getElementById('mobileMegaMenu');
+            const toggleLink = e.currentTarget;
+
+            megaMenu.classList.toggle('is-open');
+            toggleLink.classList.toggle('is-open');
         }
 
         // Navbar scroll effect

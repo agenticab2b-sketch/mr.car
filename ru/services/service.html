@@ -388,10 +388,10 @@
             document.getElementById('canonicalLink').href = canonicalUrl;
 
             // hreflang
-            document.getElementById('hreflangRu').href = SITE_ORIGIN + '/ru/services/' + slug;
-            document.getElementById('hreflangEt').href = SITE_ORIGIN + '/ee/services/' + slug;
-            document.getElementById('hreflangEn').href = SITE_ORIGIN + '/en/services/' + slug;
-            document.getElementById('hreflangDefault').href = SITE_ORIGIN + '/en/services/' + slug;
+            document.getElementById('hreflangRu').href = SITE_ORIGIN + '/ru/services/' + s.allSlugs.ru;
+            document.getElementById('hreflangEt').href = SITE_ORIGIN + '/ee/services/' + s.allSlugs.ee;
+            document.getElementById('hreflangEn').href = SITE_ORIGIN + '/en/services/' + s.allSlugs.en;
+            document.getElementById('hreflangDefault').href = SITE_ORIGIN + '/en/services/' + s.allSlugs.en;
 
             // Update URL to clean /ru/services/slug without reload
             if (window.location.search.indexOf('slug=') !== -1 || window.location.pathname.indexOf('service.html') !== -1) {
