@@ -32,7 +32,7 @@
       "@type": "AutoRepair",
       "name": "Mr.Car Autoremont",
       "url": "https://mrcar.ee",
-      "telephone": "+3725646121",
+      "telephone": "+372 5646 1210",
       "email": "info@mrcar.ee",
       "address": {
         "@type": "PostalAddress",
@@ -73,12 +73,68 @@
     <header class="navbar" id="navbar">
         <a href="/" class="navbar__logo">Mr.Car</a>
         <nav class="navbar__nav">
-            <a href="#services" class="navbar__link">[01] Teenused</a>
+            <div class="navbar__item has-dropdown">
+                <a href="#services" class="navbar__link">[01] Teenused</a>
+                <div class="mega-menu">
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Autoremont</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Summuti ja Keevitustööd</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-brake-alert" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Veermiku ja Pidurite remont</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Rehvitööd</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Hooldus ja Diagnostika</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Käigukasti tööd</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:lightning-bolt" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Elektritööd</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Mootori tööd</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:oil" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Õli ja Filtrite vahetus</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:file-search-outline" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Enne Ostu Kontroll</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Kliima ja Konditsioneer</span>
+                    </a>
+                    <a href="#contact" class="mega-menu__item">
+                        <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Webasto remont</span>
+                    </a>
+                </div>
+            </div>
             <a href="#about" class="navbar__link">[02] Meist</a>
             <a href="#pricing" class="navbar__link">[03] Hinnad</a>
             <a href="#contact" class="navbar__link">[04] Kontakt</a>
         </nav>
-        <a href="tel:+3725646121" class="navbar__phone">+372 5646 1210</a>
+        <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
         <div class="navbar__cta">
             <a href="#contact" class="btn btn-primary">Jäta päring</a>
         </div>
@@ -102,11 +158,65 @@
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
         <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
         <nav aria-label="Mobiilne navigatsioon">
-            <a href="#services" class="mobile-menu__link" onclick="closeMobileMenu()">Teenused</a>
+            <a href="#services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+                Teenused
+                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
+                    height="24"></iconify-icon>
+            </a>
+            <div class="mobile-mega-menu" id="mobileMegaMenu">
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+                    <span>Autoremont</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+                    <span>Summuti ja Keevitustööd</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
+                    <span>Veermiku ja Pidurite remont</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
+                    <span>Rehvitööd</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                    <span>Hooldus ja Diagnostika</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                    <span>Käigukasti tööd</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+                    <span>Elektritööd</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+                    <span>Mootori tööd</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
+                    <span>Õli ja Filtrite vahetus</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+                    <span>Enne Ostu Kontroll</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+                    <span>Kliima ja Konditsioneer</span>
+                </a>
+                <a href="#contact" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                    <span>Webasto remont</span>
+                </a>
+            </div>
             <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
             <a href="#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
             <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
-            <a href="tel:+3725646121" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372 5646
+            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372 5646
                 1210</a>
         </nav>
         <div class="mobile-menu__lang">
@@ -303,62 +413,74 @@
                 </div>
                 <div class="services-all__grid">
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[01]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:wrench" width="24" height="24"
+                                aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Autoremont</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[02]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:fire" width="24" height="24"
+                                aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Summuti ja Keevitustööd</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[03]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:car-brake-alert" width="24"
+                                height="24" aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Veermiku ja Pidurite remont</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[04]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:tire" width="24" height="24"
+                                aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Rehvitööd</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[05]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:car-cog" width="24" height="24"
+                                aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Hooldus ja Diagnostika</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[06]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:car-shift-pattern" width="24"
+                                height="24" aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Käigukasti tööd</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[07]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:lightning-bolt" width="24"
+                                height="24" aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Elektritööd</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[08]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:engine" width="24" height="24"
+                                aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Mootori tööd</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[09]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:oil" width="24" height="24"
+                                aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Õli ja Filtrite vahetus</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[10]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:file-search-outline" width="24"
+                                height="24" aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Enne Ostu Kontroll</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[11]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:snowflake" width="24" height="24"
+                                aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Kliima ja Konditsioneer</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
                     <a href="#contact" class="services-all__item">
-                        <span class="services-all__number">[12]</span>
+                        <span class="services-all__number"><iconify-icon icon="mdi:radiator" width="24" height="24"
+                                aria-hidden="true"></iconify-icon></span>
                         <span class="services-all__name">Webasto remont ja diagnostika</span>
                         <span class="services-all__arrow" aria-hidden="true">→</span>
                     </a>
@@ -545,7 +667,7 @@
                     </div>
                     <p class="contact__promise">Jätke taotlus – helistame tööajal 24 tunni jooksul tagasi.</p>
                     <div class="accent-underline"></div>
-                    <p class="contact__alt">Või helistage: <a href="tel:+3725646121">+372 5646 1210</a></p>
+                    <p class="contact__alt">Või helistage: <a href="tel:+37256461210">+372 5646 1210</a></p>
                 </div>
                 <div class="contact__form">
                     <form id="contactForm">
@@ -599,7 +721,7 @@
                     </div>
                     <div class="location__detail">
                         <span class="location__label">Telefon</span>
-                        <a href="tel:+3725646121" class="location__value" style="color: var(--accent-primary);">+372
+                        <a href="tel:+37256461210" class="location__value" style="color: var(--accent-primary);">+372
                             5646
                             1210</a>
                     </div>
@@ -627,7 +749,7 @@
                 <div>
                     <div class="footer__col-title">Kontaktid</div>
                     <div class="footer__text">
-                        <a href="tel:+3725646121">+372 5646 1210</a><br>
+                        <a href="tel:+37256461210">+372 5646 1210</a><br>
                         <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
                         Kopli 82a, 10412 Tallinn
                     </div>
@@ -697,6 +819,21 @@
             function closeMobileMenu() {
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
+
+                // Also close mega menu if open
+                const megaMenu = document.getElementById('mobileMegaMenu');
+                const toggleLink = document.querySelector('.mobile-menu__link[onclick="toggleMobileMegaMenu(event)"]');
+                if (megaMenu) megaMenu.classList.remove('is-open');
+                if (toggleLink) toggleLink.classList.remove('is-open');
+            }
+
+            function toggleMobileMegaMenu(e) {
+                e.preventDefault();
+                const megaMenu = document.getElementById('mobileMegaMenu');
+                const toggleLink = e.currentTarget;
+
+                megaMenu.classList.toggle('is-open');
+                toggleLink.classList.toggle('is-open');
             }
 
             // Navbar scroll effect

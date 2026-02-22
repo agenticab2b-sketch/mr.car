@@ -5,3 +5,18 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[[redirects]]
+  from = "/ru/services/:slug"
+  to = "/ru/services/service.html?slug=:slug"
+  status = 200
+
+[[redirects]]
+  from = "/ee/services/:slug"
+  to = "/ee/services/service.html?slug=:slug"
+  status = 200
+
+[[redirects]]
+  from = "/en/services/:slug"
+  to = "/en/services/service.html?slug=:slug"
+  status = 200
