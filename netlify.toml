@@ -18,6 +18,11 @@
   status = 200
 
 [[redirects]]
+  from = "/services/:slug"
+  to = "/ee/services/service.html?slug=:slug"
+  status = 200
+
+[[redirects]]
   from = "/ru/services/:slug"
   to = "/ru/services/service.html?slug=:slug"
   status = 200

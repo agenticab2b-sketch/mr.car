@@ -13,7 +13,7 @@
     <link rel="alternate" hreflang="ru" id="hreflangRu" href="https://mrcar.ee/ru/">
     <link rel="alternate" hreflang="et" id="hreflangEt" href="https://mrcar.ee/">
     <link rel="alternate" hreflang="en" id="hreflangEn" href="https://mrcar.ee/en/">
-    <link rel="alternate" hreflang="x-default" id="hreflangDefault" href="https://mrcar.ee/en/">
+    <link rel="alternate" hreflang="x-default" id="hreflangDefault" href="https://mrcar.ee/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -390,9 +390,9 @@
 
             // hreflang (always PROD)
             document.getElementById('hreflangRu').href = PROD_ORIGIN + '/ru/services/' + s.allSlugs.ru;
-            document.getElementById('hreflangEt').href = PROD_ORIGIN + '/ee/services/' + s.allSlugs.ee;
+            document.getElementById('hreflangEt').href = PROD_ORIGIN + '/services/' + s.allSlugs.ee;
             document.getElementById('hreflangEn').href = PROD_ORIGIN + '/en/services/' + s.allSlugs.en;
-            document.getElementById('hreflangDefault').href = PROD_ORIGIN + '/en/services/' + s.allSlugs.en;
+            document.getElementById('hreflangDefault').href = PROD_ORIGIN + '/services/' + s.allSlugs.ee;
 
             // Update URL to clean /en/services/slug without reload
             if (window.location.search.indexOf('slug=') !== -1 || window.location.pathname.indexOf('service.html') !== -1) {
