@@ -9,20 +9,29 @@
     <title>Mr.Car Autoremont Tallinn — Professionaalne Autohooldus</title>
 
     <!-- Canonical & hreflang -->
-    <link rel="canonical" href="https://mrcartallinn.netlify.app/">
-    <link rel="alternate" hreflang="et" href="https://mrcartallinn.netlify.app/">
-    <link rel="alternate" hreflang="ru" href="https://mrcartallinn.netlify.app/ru/">
-    <link rel="alternate" hreflang="en" href="https://mrcartallinn.netlify.app/en/">
-    <link rel="alternate" hreflang="x-default" href="https://mrcartallinn.netlify.app/">
+    <link rel="canonical" id="canonicalLink" href="https://mrcar.ee/">
+    <link rel="alternate" hreflang="et" href="https://mrcar.ee/">
+    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/">
+    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/">
+    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="Mr.Car Autoremont Tallinn — Professionaalne Autohooldus">
     <meta property="og:description"
         content="Professionaalne autoteenindus Koplis. Remont, diagnostika, rehvivahetus. Helista +372 5646 1210.">
-    <meta property="og:url" content="https://mrcartallinn.netlify.app/">
-    <meta property="og:image" content="https://mrcartallinn.netlify.app/og-image.jpg">
+    <meta property="og:url" id="ogUrl" content="https://mrcar.ee/">
+    <meta property="og:image" content="https://mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="et_EE">
+    <script>
+        (function() {
+            var PROD = 'https://mrcar.ee';
+            var STAGING = 'https://mrcartallinn.netlify.app';
+            var isStaging = window.location.hostname.indexOf('netlify.app') !== -1;
+            var origin = isStaging ? STAGING : PROD;
+            document.getElementById('ogUrl').setAttribute('content', origin + window.location.pathname);
+        })();
+    </script>
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- JSON-LD: LocalBusiness -->
@@ -31,7 +40,7 @@
       "@context": "https://schema.org",
       "@type": "AutoRepair",
       "name": "Mr.Car Autoremont",
-      "url": "https://mrcartallinn.netlify.app",
+      "url": "https://mrcar.ee",
       "telephone": "+372 5646 1210",
       "email": "info@mrcar.ee",
       "address": {

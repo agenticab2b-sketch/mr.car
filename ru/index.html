@@ -9,11 +9,28 @@
     <title>Mr.Car Авторемонт Таллинн — Профессиональное обслуживание авто</title>
 
     <!-- Canonical & hreflang -->
-    <link rel="canonical" href="https://mrcartallinn.netlify.app/ru/">
-    <link rel="alternate" hreflang="et" href="https://mrcartallinn.netlify.app/">
-    <link rel="alternate" hreflang="ru" href="https://mrcartallinn.netlify.app/ru/">
-    <link rel="alternate" hreflang="en" href="https://mrcartallinn.netlify.app/en/">
-    <link rel="alternate" hreflang="x-default" href="https://mrcartallinn.netlify.app/">
+    <link rel="canonical" id="canonicalLink" href="https://mrcar.ee/ru/">
+    <link rel="alternate" hreflang="et" href="https://mrcar.ee/">
+    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/">
+    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/">
+    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="Mr.Car Авторемонт Таллинн — Профессиональное обслуживание авто">
+    <meta property="og:description" content="Профессиональный автосервис в Копли. Ремонт, диагностика, шиномонтаж. Звоните +372 5646 1210.">
+    <meta property="og:url" id="ogUrl" content="https://mrcar.ee/ru/">
+    <meta property="og:image" content="https://mrcar.ee/og-image.jpg">
+    <meta property="og:locale" content="ru_RU">
+    <script>
+        (function() {
+            var PROD = 'https://mrcar.ee';
+            var STAGING = 'https://mrcartallinn.netlify.app';
+            var isStaging = window.location.hostname.indexOf('netlify.app') !== -1;
+            var origin = isStaging ? STAGING : PROD;
+            document.getElementById('ogUrl').setAttribute('content', origin + window.location.pathname);
+        })();
+    </script>
 
     <link rel="stylesheet" href="../style.css">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>

@@ -9,18 +9,18 @@
     <title id="pageTitle">Service — Mr.Car Auto Service Tallinn</title>
 
     <!-- SEO -->
-    <link rel="canonical" id="canonicalLink" href="">
-    <link rel="alternate" hreflang="ru" id="hreflangRu" href="">
-    <link rel="alternate" hreflang="et" id="hreflangEt" href="">
-    <link rel="alternate" hreflang="en" id="hreflangEn" href="">
-    <link rel="alternate" hreflang="x-default" id="hreflangDefault" href="">
+    <link rel="canonical" id="canonicalLink" href="https://mrcar.ee/en/services/">
+    <link rel="alternate" hreflang="ru" id="hreflangRu" href="https://mrcar.ee/ru/">
+    <link rel="alternate" hreflang="et" id="hreflangEt" href="https://mrcar.ee/">
+    <link rel="alternate" hreflang="en" id="hreflangEn" href="https://mrcar.ee/en/">
+    <link rel="alternate" hreflang="x-default" id="hreflangDefault" href="https://mrcar.ee/en/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" id="ogTitle" content="">
     <meta property="og:description" id="ogDesc" content="">
     <meta property="og:image" id="ogImage" content="">
-    <meta property="og:url" id="ogUrl" content="">
+    <meta property="og:url" id="ogUrl" content="https://mrcar.ee/en/services/">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" id="twTitle" content="">
@@ -269,8 +269,11 @@
     <!-- ████ SCRIPTS ████ -->
     <script>
         // ── Constants ──
-        // SEO: Canonical/OG/JSON-LD must always point to production domain
-        var SITE_ORIGIN = 'https://mrcartallinn.netlify.app';
+        var PROD_ORIGIN = 'https://mrcar.ee';
+        var STAGING_ORIGIN = 'https://mrcartallinn.netlify.app';
+        // Determine current environment for OG tags
+        var CURRENT_ORIGIN = window.location.origin.indexOf('netlify.app') !== -1 ? STAGING_ORIGIN : PROD_ORIGIN;
+
         var DEFAULT_OG_IMAGE = 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80';
 
         // ── Category labels (EN) ──
@@ -287,7 +290,7 @@
             if (!src) return DEFAULT_OG_IMAGE;
             if (src.indexOf('http') === 0) return src;
             var cleanSrc = src.charAt(0) === '/' ? src.substring(1) : src;
-            return SITE_ORIGIN + '/' + cleanSrc;
+            return PROD_ORIGIN + '/' + cleanSrc;
         }
 
         // ── Get slug from URL ──
@@ -381,15 +384,15 @@
                 return;
             }
 
-            // ── Canonical URL + replaceState ──
-            var canonicalUrl = SITE_ORIGIN + '/en/services/' + slug;
+            // ── Canonical URL (always PROD) ──
+            var canonicalUrl = PROD_ORIGIN + '/en/services/' + slug;
             document.getElementById('canonicalLink').href = canonicalUrl;
 
-            // hreflang
-            document.getElementById('hreflangRu').href = SITE_ORIGIN + '/ru/services/' + s.allSlugs.ru;
-            document.getElementById('hreflangEt').href = SITE_ORIGIN + '/ee/services/' + s.allSlugs.ee;
-            document.getElementById('hreflangEn').href = SITE_ORIGIN + '/en/services/' + s.allSlugs.en;
-            document.getElementById('hreflangDefault').href = SITE_ORIGIN + '/en/services/' + s.allSlugs.en;
+            // hreflang (always PROD)
+            document.getElementById('hreflangRu').href = PROD_ORIGIN + '/ru/services/' + s.allSlugs.ru;
+            document.getElementById('hreflangEt').href = PROD_ORIGIN + '/ee/services/' + s.allSlugs.ee;
+            document.getElementById('hreflangEn').href = PROD_ORIGIN + '/en/services/' + s.allSlugs.en;
+            document.getElementById('hreflangDefault').href = PROD_ORIGIN + '/en/services/' + s.allSlugs.en;
 
             // Update URL to clean /en/services/slug without reload
             if (window.location.search.indexOf('slug=') !== -1 || window.location.pathname.indexOf('service.html') !== -1) {
@@ -408,24 +411,26 @@
             document.getElementById('pageTitle').textContent = seoTitle;
             document.getElementById('metaDescription').setAttribute('content', seoDesc);
 
-            // ── OG + Twitter meta (absolute image URLs) ──
+            // ── OG + Twitter meta (CURRENT_ORIGIN for URL, absolute image URLs) ──
             var absImage = toAbsoluteImageUrl(s.heroImage);
+            var ogUrl = CURRENT_ORIGIN + '/en/services/' + slug;
+
             document.getElementById('ogTitle').setAttribute('content', seoTitle);
             document.getElementById('ogDesc').setAttribute('content', seoDesc);
             document.getElementById('ogImage').setAttribute('content', absImage);
-            document.getElementById('ogUrl').setAttribute('content', canonicalUrl);
+            document.getElementById('ogUrl').setAttribute('content', ogUrl);
             document.getElementById('twTitle').setAttribute('content', seoTitle);
             document.getElementById('twDesc').setAttribute('content', seoDesc);
             document.getElementById('twImage').setAttribute('content', absImage);
 
-            // ── JSON-LD structured data ──
+            // ── JSON-LD structured data (PROD URLs) ──
             var ldJson = {
                 "@context": "https://schema.org",
                 "@graph": [
                     {
                         "@type": "AutoRepair",
                         "name": "Mr.Car Autoremont",
-                        "url": SITE_ORIGIN + '/en/',
+                        "url": PROD_ORIGIN + '/en/',
                         "telephone": "+372 5646 1210",
                         "image": absImage,
                         "address": {

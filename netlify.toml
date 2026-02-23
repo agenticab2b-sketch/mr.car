@@ -1,6 +1,11 @@
 [build]
   functions = "netlify/functions"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
 [[redirects]]
   from = "/homepage.html"
   to = "/ru/"
