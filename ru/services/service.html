@@ -8,6 +8,30 @@
         content="Услуги автосервиса Mr.Car в Таллинне — профессиональный ремонт и обслуживание автомобилей.">
     <title id="pageTitle">Услуга — Mr.Car Автосервис Таллинн</title>
 
+    <!-- Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --bg-main: #111625;
+            --text-main: #FFFFFF;
+            --accent-primary: #FFB000;
+            --border-grid: #36415A;
+            --container-padding: 16px;
+            --space-md: 16px;
+        }
+        @media (min-width: 768px) { :root { --container-padding: 32px; } }
+        @media (min-width: 1200px) { :root { --container-padding: 64px; } }
+        body { background: var(--bg-main); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; }
+        .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(17,22,37,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-grid); height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--container-padding); }
+        .sd-hero { position: relative; min-height: 400px; background-size: cover; background-position: center; display: flex; align-items: center; border-bottom: 1px solid var(--border-grid); }
+        .sd-hero__content { position: relative; z-index: 2; padding: 64px var(--container-padding); }
+        .sd-hero__title { font-weight: 900; text-transform: uppercase; font-size: clamp(2rem, 8vw, 4rem); line-height: 1; margin: 0; }
+    </style>
+
     <!-- Fix 1: Canonical -->
     <link rel="canonical" id="canonicalLink" href="https://mrcar.ee/ru/services/">
     <link rel="alternate" hreflang="ru" id="hreflangRu" href="https://mrcar.ee/ru/">
@@ -31,6 +55,14 @@
     <script type="application/ld+json" id="ldJson"></script>
 
     <link rel="stylesheet" href="../../style.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="services-data.js"></script>
 </head>
