@@ -5,6 +5,7 @@
   from = "/homepage.html"
   to = "/ru/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/api/*"
