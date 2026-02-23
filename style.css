@@ -4,7 +4,7 @@
 
 /* --- Google Fonts --- */
 /* F-01 fix: Removed Oswald. Inter 900 replaces it for headings (2 families, not 3) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+/* Moved to HTML <link> for performance */
 
 /* --- CSS Reset --- */
 *,
