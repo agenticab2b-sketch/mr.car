@@ -2262,6 +2262,352 @@ h3 {
 }
 
 /* ============================================================
+   NEW SECTIONS: SEO Intro, Advantages, FAQ, Reviews, CTA Banner
+   ============================================================ */
+
+/* --- SEO Intro --- */
+.seo-intro {
+    padding: var(--space-section) 0;
+    border-bottom: var(--border);
+}
+
+.seo-intro__grid {
+    max-width: 900px;
+}
+
+.seo-intro__content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin: 0 0 var(--space-lg);
+}
+
+.seo-intro__content p:last-child {
+    margin-bottom: 0;
+}
+
+.seo-intro__content a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition-fast);
+}
+
+.seo-intro__content a:hover {
+    color: var(--accent-primary-hover);
+}
+
+.seo-intro__content strong {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+/* --- Advantages / USP --- */
+.advantages-section {
+    padding: var(--space-section) 0;
+    border-bottom: var(--border);
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-grid);
+    border: var(--border);
+    margin-top: var(--space-2xl);
+}
+
+.advantage-card {
+    background: var(--bg-main);
+    padding: var(--space-2xl) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: background var(--transition-fast);
+}
+
+.advantage-card:hover {
+    background: var(--bg-surface);
+}
+
+.advantage-card__icon {
+    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 176, 0, 0.08);
+}
+
+.advantage-card__title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.advantage-card__text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+    padding: var(--space-section) 0;
+    border-bottom: var(--border);
+}
+
+.faq-list {
+    margin-top: var(--space-2xl);
+    max-width: 900px;
+}
+
+.faq-item {
+    border: var(--border);
+    border-bottom: none;
+}
+
+.faq-item:last-child {
+    border-bottom: var(--border);
+}
+
+.faq-item__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-xl) var(--space-xl);
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background: var(--bg-main);
+    transition: background var(--transition-fast), color var(--transition-fast);
+    list-style: none;
+    gap: var(--space-md);
+}
+
+.faq-item__question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item__question::marker {
+    content: '';
+}
+
+.faq-item__question span {
+    flex: 1;
+}
+
+.faq-item__question iconify-icon {
+    color: var(--accent-primary);
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+}
+
+.faq-item[open] .faq-item__question iconify-icon {
+    transform: rotate(180deg);
+}
+
+.faq-item__question:hover {
+    background: var(--bg-surface);
+}
+
+.faq-item[open] .faq-item__question {
+    border-bottom: 1px solid var(--border-grid);
+    color: var(--accent-primary);
+}
+
+.faq-item__answer {
+    padding: var(--space-lg) var(--space-xl) var(--space-xl);
+    background: var(--bg-main);
+}
+
+.faq-item__answer p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.faq-item__answer a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* --- Reviews Section --- */
+.reviews-section {
+    padding: var(--space-section) 0;
+    border-bottom: var(--border);
+}
+
+.reviews__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    max-width: 1440px;
+    margin: 0 auto;
+    width: calc(100% - 2 * var(--container-padding));
+}
+
+.reviews__google-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-dimmed);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    margin-bottom: var(--space-md);
+}
+
+.reviews__google-link:hover {
+    color: var(--text-main);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-grid);
+    border: var(--border);
+    margin-top: var(--space-2xl);
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 2 * var(--container-padding));
+}
+
+.review-card {
+    background: var(--bg-main);
+    padding: var(--space-2xl) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.review-card__stars {
+    display: flex;
+    gap: 2px;
+    color: var(--accent-primary);
+}
+
+.review-card__text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-style: italic;
+    margin: 0;
+    flex: 1;
+}
+
+.review-card__author {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-main);
+    margin-top: auto;
+}
+
+@media (max-width: 1000px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+    padding: var(--space-3xl) 0;
+    border-bottom: var(--border);
+    background: linear-gradient(135deg, rgba(255, 176, 0, 0.06) 0%, transparent 60%);
+}
+
+.cta-banner__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: calc(100% - 2 * var(--container-padding));
+}
+
+.cta-banner__text h2 {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text-main);
+    margin: 0 0 var(--space-sm);
+    line-height: 1.15;
+}
+
+.cta-banner__text p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cta-banner__actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+    .cta-banner__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cta-banner__actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .cta-banner__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================================
    17. ANIMATIONS (Trend Layer)
    ============================================================ */
 .reveal {

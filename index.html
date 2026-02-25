@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Mr.Car Autoremont Tallinn — professionaalne autoremont, rehvivahetus ja diagnostika Koplis. Helista +372 5646 1210">
-    <title>Mr.Car Autoremont Tallinn — Professionaalne Autohooldus</title>
+        content="Professionaalne autoremont Tallinnas — Mr.Car autoteenindus Koplis. ✓ Garantii kõikidele töödele ✓ Aus hind ✓ Kiire teenindus. Diagnostika, rehvitööd, mootori- ja käigukastiremont. ☎ +372 5646 1210">
+    <title>Autoremont Tallinnas — Mr.Car Autoteenindus | Diagnostika, Rehvitööd, Hooldus</title>
 
     <!-- Preload LCP Image -->
     <link rel="preload" as="image" href="/pics/hero-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
@@ -15,7 +15,9 @@
     <!-- Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
 
     <!-- Critical CSS -->
     <style>
@@ -27,16 +29,79 @@
             --container-padding: 16px;
             --space-md: 16px;
         }
-        @media (min-width: 768px) { :root { --container-padding: 32px; } }
-        @media (min-width: 1200px) { :root { --container-padding: 64px; } }
-        body { background: var(--bg-main); color: var(--text-main); font-family: 'Inter', sans-serif; margin: 0; }
-        .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(17,22,37,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-grid); height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--container-padding); }
-        .hero { display: grid; grid-template-columns: 1fr; min-height: 90vh; border-bottom: 1px solid var(--border-grid); overflow: hidden; }
-        @media (min-width: 768px) { .hero { grid-template-columns: 1fr 1fr; } }
-        .hero__image { position: relative; background: #1a2133; }
-        .hero__image img { width: 100%; height: 100%; object-fit: cover; }
-        .hero__content { padding: 48px var(--container-padding); display: flex; flex-direction: column; justify-content: center; }
-        .h1, h1 { font-weight: 900; text-transform: uppercase; line-height: 1.05; margin: 0; }
+
+        @media (min-width: 768px) {
+            :root {
+                --container-padding: 32px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            :root {
+                --container-padding: 64px;
+            }
+        }
+
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(17, 22, 37, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-grid);
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--container-padding);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 90vh;
+            border-bottom: 1px solid var(--border-grid);
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .hero__image {
+            position: relative;
+            background: #1a2133;
+        }
+
+        .hero__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero__content {
+            padding: 48px var(--container-padding);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .h1,
+        h1 {
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.05;
+            margin: 0;
+        }
     </style>
 
     <!-- Canonical & hreflang -->
@@ -48,14 +113,14 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
-    <meta property="og:title" content="Mr.Car Autoremont Tallinn — Professionaalne Autohooldus">
+    <meta property="og:title" content="Autoremont Tallinnas — Mr.Car Autoteenindus | Diagnostika, Rehvitööd, Hooldus">
     <meta property="og:description"
-        content="Professionaalne autoteenindus Koplis. Remont, diagnostika, rehvivahetus. Helista +372 5646 1210.">
+        content="Professionaalne autoremont ja autohooldus Tallinnas. Garantii kõikidele töödele. Diagnostika, rehvitööd, mootoriremont. Kopli 82a. ☎ +372 5646 1210">
     <meta property="og:url" id="ogUrl" content="https://mrcar.ee/">
     <meta property="og:image" content="https://mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="et_EE">
     <script>
-        (function() {
+        (function () {
             var PROD = 'https://mrcar.ee';
             var STAGING = 'https://mrcartallinn.netlify.app';
             var isStaging = window.location.hostname.indexOf('netlify.app') !== -1;
@@ -65,41 +130,115 @@
     </script>
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- JSON-LD: LocalBusiness -->
+    <!-- JSON-LD: LocalBusiness + FAQ + AggregateRating -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AutoRepair",
-      "name": "Mr.Car Autoremont",
-      "url": "https://mrcar.ee",
-      "telephone": "+372 5646 1210",
-      "email": "info@mrcar.ee",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kopli 82a",
-        "addressLocality": "Tallinn",
-        "postalCode": "10412",
-        "addressCountry": "EE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 59.45,
-        "longitude": 24.7
-      },
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
+          "@type": "AutoRepair",
+          "name": "Mr.Car Autoremont",
+          "url": "https://mrcar.ee",
+          "telephone": "+372 5646 1210",
+          "email": "info@mrcar.ee",
+          "description": "Professionaalne autoremont ja autoteenindus Tallinnas. Diagnostika, rehvitööd, mootori- ja käigukastiremont, veermiku remont, kliimaseadmete hooldus.",
+          "image": "https://mrcar.ee/og-image.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kopli 82a",
+            "addressLocality": "Tallinn",
+            "postalCode": "10412",
+            "addressCountry": "EE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 59.45,
+            "longitude": 24.7
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "priceRange": "€€",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "103",
+            "bestRating": "5"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Autoteeninduse teenused",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Autoremont"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Autodiagnostika"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Rehvitööd ja rehvivahetus"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Veermiku ja pidurite remont"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mootoriremont"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Käigukasti remont"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kliimaseadme hooldus"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Õlivahetus"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Summuti ja keevitustööd"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Webasto remont"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Enne ostu kontroll"}}
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Kui kaua kestab autoremont Mr.Car-is?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enamik hooldus- ja remonditöid teeme samal päeval. Keerulisemad tööd (mootori kapitaalremont, käigukasti remont) võivad kesta 2–5 tööpäeva. Täpse aja ütleme pärast diagnostikat."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kas Mr.Car annab tehtud töödele garantii?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Jah, anname garantii kõikidele teostatud töödele. Kasutame ainult kvaliteetseid originaalvaruosi või kontrollitud tootjate analooge."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Milline on autoremoni hind Mr.Car-is?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Õlivahetus alates 35€, diagnostika alates 40€, rehvitööd alates 20€ ratas. Täpse hinnapakkumise teeme pärast auto ülevaatust. Töötunni hind alates 45€."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kus asub Mr.Car autoteenindus?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Asume Tallinnas, Kopli 82a (10412 Tallinn). Kopli piirkond — mõne minuti kaugusel kesklinnast. Oleme avatud E–R 09:00–18:00."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Milliseid automärke Mr.Car remondib?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Remondime kõiki automärke: Volkswagen, Audi, BMW, Mercedes-Benz, Toyota, Volvo, Ford, Škoda, Peugeot, Renault ja paljud teised. Ükskõik millisel autol on probleem — aitame kindlasti."
+              }
+            }
+          ]
         }
-      ],
-      "priceRange": "€€"
+      ]
     }
     </script>
 
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -248,8 +387,7 @@
                     <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
                     <span>Õli ja Filtrite vahetus</span>
                 </a>
-                <a href="/services/ostueelne-kontroll" class="mobile-mega-menu__item"
-                    onclick="closeMobileMenu()">
+                <a href="/services/ostueelne-kontroll" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
                     <span>Enne Ostu Kontroll</span>
                 </a>
@@ -294,11 +432,8 @@
                 <picture>
                     <source srcset="/pics/hero-mobile.webp" media="(max-width: 767px)" type="image/webp">
                     <source srcset="/pics/hero-desktop.webp" media="(min-width: 768px)" type="image/webp">
-                    <img src="/pics/hero-desktop.webp" 
-                         alt="Autoteenindus Mr.Car — meister tööl" 
-                         loading="eager" 
-                         fetchpriority="high" 
-                         decoding="async">
+                    <img src="/pics/hero-desktop.webp" alt="Autoteenindus Mr.Car — meister tööl" loading="eager"
+                        fetchpriority="high" decoding="async">
                 </picture>
             </div>
             <div class="hero__content reveal">
@@ -372,6 +507,41 @@
                 <span>—</span>
             </div>
         </div>
+
+        <!-- ========================================
+       3.5 SEO INTRO
+       ======================================== -->
+        <section class="seo-intro" id="intro">
+            <div class="site-container reveal">
+                <div class="seo-intro__grid">
+                    <div class="seo-intro__content">
+                        <div class="section-header">
+                            <span class="meta">/// Autoremont Tallinnas</span>
+                            <h2>Professionaalne autoremont ja autohooldus Tallinnas</h2>
+                        </div>
+                        <p>Mr.Car on usaldusväärne <strong>autoteenindus Tallinnas</strong>, mis asub Kopli piirkonnas —
+                            vaid mõne minuti kaugusel kesklinnast. Meie kogenud meistrid pakuvad laia valikut teenuseid:
+                            <a href="/services/autoremont">autoremont</a>, <a
+                                href="/services/hooldus-diagnostika">kompuuterdiagnostika</a>, <a
+                                href="/services/rehvitood">rehvitööd ja rehvivahetus</a>, <a
+                                href="/services/veermik-pidurid">veermiku ja pidurite remont</a>, <a
+                                href="/services/mootoriremont">mootori kapitaalremont</a>, <a
+                                href="/services/kaigukastiremont">käigukasti remont</a>, <a
+                                href="/services/kliimahooldus">kliimaseadmete hooldus</a> ning palju muud.</p>
+                        <p>Kasutame kaasaegseid diagnostikaseadmeid ja kvaliteetseid varuosasid tuntud tootjatelt. Iga
+                            remont algab põhjaliku ülevaatusega — defineerime probleemi, anname täpse hinnapakkumise ja
+                            lepime kokku tähtajad enne töö alustamist. <strong>Anname garantii kõikidele teostatud
+                                töödele.</strong></p>
+                        <p>Meie juures varasemalt hooldatud auto ajalugu salvestatakse andmebaasi, mis võimaldab
+                            õigeaegselt tuletada meelde järgmise hoolduse vajadusest. See aitab vältida ootamatuid
+                            kallimaid remonditöid ja hoida Teie auto alati tippvormis.</p>
+                        <p>Mr.Car autoremont — <strong>aus hind, kiire teenindus ja professionaalne lähenemine</strong>.
+                            Broneeri aeg <a href="tel:+37256461210">+372 5646 1210</a> või <a href="#contact">jäta
+                                päring veebis</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- ========================================
        4. SERVICES OVERVIEW (Icon Anchors)
@@ -607,6 +777,73 @@
         </section>
 
         <!-- ========================================
+       6.5 ADVANTAGES / USP
+       ======================================== -->
+        <section class="advantages-section" id="advantages">
+            <div class="site-container">
+                <div class="section-header">
+                    <span class="meta">/// Meie eelised</span>
+                    <h2>Miks kliendid valivad Mr.Car</h2>
+                </div>
+                <div class="advantages-grid reveal">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <iconify-icon icon="mdi:shield-check" width="36" height="36"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="advantage-card__title">Garantii kõikidele töödele</h3>
+                        <p class="advantage-card__text">Anname garantii igale teostatud tööle. Kasutame ainult
+                            originaalvaruosasid või kontrollitud tootjate kvaliteetseid analooge.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <iconify-icon icon="mdi:currency-eur" width="36" height="36"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="advantage-card__title">Aus ja läbipaistev hind</h3>
+                        <p class="advantage-card__text">Selgitame töö mahtu ja hinda enne alustamist. Ei ole varjatud
+                            kulusid — teate alati, mille eest maksate.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <iconify-icon icon="mdi:timer-outline" width="36" height="36"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="advantage-card__title">Kiire teenindus</h3>
+                        <p class="advantage-card__text">Enamik töid teeme samal päeval. Keerulisematel juhtudel lepime
+                            kokku realistliku tähtaja ja peame sellest kinni.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <iconify-icon icon="mdi:car-cog" width="36" height="36" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="advantage-card__title">Kaasaegne diagnostika</h3>
+                        <p class="advantage-card__text">Kompuuterdiagnostika kõigi autosüsteemide jaoks. Tuvastame
+                            probleemid täpselt ja kiiresti, et vältida ebavajalikke kulusid.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <iconify-icon icon="mdi:account-group" width="36" height="36"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="advantage-card__title">Kogenud meeskond</h3>
+                        <p class="advantage-card__text">Meie meistrite kogemus 10–15+ aastat. Remondime igapäevaautodest
+                            kuni keerulisemate mootoriteni.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">
+                            <iconify-icon icon="mdi:database-check" width="36" height="36"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="advantage-card__title">Hoolduse ajalugu</h3>
+                        <p class="advantage-card__text">Peame arvestust igast tehtud tööst. Auto müügi korral saate
+                            täieliku hooldusajaloo raportina — see tõstab teie auto väärtust.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
        7. GALLERY
        ======================================== -->
         <section class="gallery-section" id="gallery">
@@ -725,7 +962,170 @@
         </section>
 
         <!-- ========================================
-       10. CONTACT FORM
+       10. FAQ SECTION
+       ======================================== -->
+        <section class="faq-section" id="faq">
+            <div class="site-container">
+                <div class="section-header">
+                    <span class="meta">/// Korduma kippuvad küsimused</span>
+                    <h2>Küsimused ja vastused</h2>
+                </div>
+                <div class="faq-list reveal">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            <span>Kui kaua kestab autoremont Mr.Car-is?</span>
+                            <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Enamik hooldus- ja remonditöid teeme samal päeval. Keerulisemad tööd (mootori
+                                kapitaalremont, käigukasti remont) võivad kesta 2–5 tööpäeva. Täpse aja ütleme pärast
+                                diagnostikat.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            <span>Kas Mr.Car annab tehtud töödele garantii?</span>
+                            <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Jah, anname garantii kõikidele teostatud töödele. Kasutame ainult kvaliteetseid
+                                originaalvaruosi või kontrollitud tootjate analooge. Garantii kehtivus sõltub töö
+                                tüübist.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            <span>Milline on autoremondi hind Mr.Car-is?</span>
+                            <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Õlivahetus alates 35€, diagnostika alates 40€, rehvitööd alates 20€ ratas. Täpse
+                                hinnapakkumise teeme pärast auto ülevaatust. Töötunni hind alates 45€. Vaata meie <a
+                                    href="#pricing">hinnakiri</a> lisainfo saamiseks.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            <span>Kus asub Mr.Car autoteenindus?</span>
+                            <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Asume Tallinnas, Kopli 82a (10412 Tallinn). Kopli piirkond — mõne minuti kaugusel
+                                kesklinnast. Oleme avatud esmaspäevast reedeni kell 09:00–18:00. <a
+                                    href="#location">Vaata kaarti</a>.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            <span>Milliseid automärke Mr.Car remondib?</span>
+                            <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Remondime kõiki automärke: Volkswagen, Audi, BMW, Mercedes-Benz, Toyota, Volvo, Ford,
+                                Škoda, Peugeot, Renault ja paljud teised. Ükskõik millisel autol on probleem — aitame
+                                kindlasti.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+       11. REVIEWS
+       ======================================== -->
+        <section class="reviews-section" id="reviews">
+            <div class="site-container">
+                <div class="reviews__header">
+                    <div class="section-header">
+                        <span class="meta">/// Klientide tagasiside</span>
+                        <h2>Mida meie kliendid ütlevad</h2>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mr.Car+Autoremont+Tallinn" target="_blank"
+                        rel="noopener" class="reviews__google-link">
+                        <iconify-icon icon="logos:google" width="58" aria-hidden="true"></iconify-icon>
+                        <span>Vaata kõiki arvustusi</span>
+                    </a>
+                </div>
+                <div class="reviews-grid reveal">
+                    <div class="review-card">
+                        <div class="review-card__stars">
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                        </div>
+                        <p class="review-card__text">"Väga hea ja aus teenindus. Selgitasid täpselt, mida tuleb teha ja
+                            mida mitte. Hind oli mõistlik ja töö tehti kiiresti. Soovitan kindlasti!"</p>
+                        <div class="review-card__author">Andrei K.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__stars">
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                        </div>
+                        <p class="review-card__text">"Parim autoservis Tallinnas! Diagnostika oli kiire ja täpne.
+                            Parandati kõik mõistliku hinnaga. Nüüd käin ainult siin."</p>
+                        <div class="review-card__author">Marius T.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__stars">
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                        </div>
+                        <p class="review-card__text">"Olen kasutanud mitu korda. Alati tähtaegselt ja kvaliteetselt.
+                            Meistrid on kogenud ja sõbralikud. Väga rahul!"</p>
+                        <div class="review-card__author">Jelena S.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card__stars">
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                            <iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>
+                        </div>
+                        <p class="review-card__text">"Käigukast hakkas probleeme tekitama. Mr.Caris diagnoositi ruttu ja
+                            remont oli odavam, kui mujal pakuti. Soovitan!"</p>
+                        <div class="review-card__author">Viktor P.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+       12. CTA BANNER
+       ======================================== -->
+        <section class="cta-banner">
+            <div class="site-container">
+                <div class="cta-banner__inner">
+                    <div class="cta-banner__text">
+                        <h2>Vaja autoremonti?</h2>
+                        <p>Broneeri aeg juba täna — helistage või jätke päring ja vastame 24 tunni jooksul.</p>
+                    </div>
+                    <div class="cta-banner__actions">
+                        <a href="tel:+37256461210" class="btn btn-primary"><iconify-icon icon="mdi:phone" width="20"
+                                height="20" aria-hidden="true"></iconify-icon> +372 5646 1210</a>
+                        <a href="#contact" class="btn btn-secondary">Jäta päring <span class="arrow"
+                                aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+       13. CONTACT FORM
        ======================================== -->
         <section class="contact-section" id="contact">
             <div class="contact-grid site-container reveal">
