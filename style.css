@@ -256,6 +256,12 @@ h3 {
     gap: var(--space-sm);
 }
 
+/* Remove redundant margins inside the flex header */
+.section-header h2,
+.section-header h3 {
+    margin-bottom: 0;
+}
+
 /* ============================================================
    3. LAYOUT
    ============================================================ */
@@ -2273,6 +2279,11 @@ h3 {
 
 .seo-intro__grid {
     max-width: 900px;
+}
+
+/* Add proper spacing below the header in the SEO intro text block */
+.seo-intro__content .section-header {
+    margin-bottom: var(--space-xl);
 }
 
 .seo-intro__content p {

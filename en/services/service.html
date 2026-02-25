@@ -701,6 +701,85 @@
         renderService();
     </script>
 
+    <!-- ========================================
+       FLOATING CONTACT FAB
+       ======================================== -->
+    <div class="fab-contact" id="fabContact">
+        <div class="fab-contact__menu">
+            <a href="tel:+37256461210" class="fab-contact__action" id="fabCall">
+                <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Call us</span>
+            </a>
+            <a href="#request" class="fab-contact__action" id="fabForm" onclick="closeFab()">
+                <iconify-icon icon="mdi:email-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Book now</span>
+            </a>
+        </div>
+        <button class="fab-contact__trigger" id="fabTrigger" aria-label="Contact us">
+            <span class="fab-contact__icon-wrap">
+                <span class="fab-contact__icon fab-contact__icon--phone">
+                    <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
+                </span>
+                <span class="fab-contact__icon fab-contact__icon--envelope">
+                    <iconify-icon icon="mdi:email-outline" width="24" height="24" aria-hidden="true"></iconify-icon>
+                </span>
+                <span class="fab-contact__icon fab-contact__icon--close">
+                    <iconify-icon icon="mdi:close" width="24" height="24" aria-hidden="true"></iconify-icon>
+                </span>
+            </span>
+        </button>
+    </div>
+
+    <script>
+        // Floating Contact FAB
+        (function () {
+            const fab = document.getElementById('fabContact');
+            const trigger = document.getElementById('fabTrigger');
+            let iconInterval;
+
+            function startIconCycle() {
+                iconInterval = setInterval(() => {
+                    trigger.classList.toggle('icon-swap');
+                }, 3000);
+            }
+
+            function stopIconCycle() {
+                clearInterval(iconInterval);
+                trigger.classList.remove('icon-swap');
+            }
+
+            trigger.addEventListener('click', () => {
+                const isOpen = fab.classList.toggle('is-open');
+                if (isOpen) {
+                    stopIconCycle();
+                } else {
+                    startIconCycle();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && fab.classList.contains('is-open')) {
+                    closeFab();
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (fab.classList.contains('is-open') && !fab.contains(e.target)) {
+                    closeFab();
+                }
+            });
+
+            startIconCycle();
+        })();
+
+        function closeFab() {
+            const fab = document.getElementById('fabContact');
+            const trigger = document.getElementById('fabTrigger');
+            fab.classList.remove('is-open');
+            trigger.classList.remove('icon-swap');
+        }
+    </script>
+
 </body>
 
 </html>
