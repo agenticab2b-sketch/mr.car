@@ -3260,3 +3260,232 @@ h3 {
 .sd-map iframe {
     display: block;
 }
+
+/* ============================================================
+   FLOATING CONTACT FAB
+   ============================================================ */
+
+/* ── Container ── */
+.fab-contact {
+    position: fixed;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-sm);
+    pointer-events: none;
+}
+
+/* ── Expanded menu (hidden by default) ── */
+.fab-contact__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-grid);
+    border: 1px solid var(--border-grid);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px) scale(0.95);
+    transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+    pointer-events: none;
+    min-width: 200px;
+}
+
+.fab-contact.is-open .fab-contact__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.fab-contact__action {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+}
+
+.fab-contact__action iconify-icon {
+    color: var(--accent-primary);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: color var(--transition-fast);
+}
+
+.fab-contact__action:hover {
+    background: var(--accent-primary);
+    color: var(--text-on-accent);
+}
+
+.fab-contact__action:hover iconify-icon {
+    color: var(--text-on-accent);
+}
+
+/* ── Main FAB button ── */
+.fab-contact__trigger {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    background: var(--accent-primary);
+    color: var(--text-on-accent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.fab-contact__trigger:hover {
+    background: var(--accent-primary-hover);
+    transform: scale(1.05);
+}
+
+.fab-contact__trigger:active {
+    transform: scale(0.97);
+}
+
+/* ── Icon cycling animation ── */
+.fab-contact__icon-wrap {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.fab-contact__icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Phone icon: visible by default */
+.fab-contact__icon--phone {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Envelope icon: hidden by default */
+.fab-contact__icon--envelope {
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+/* Swap state: phone hides up, envelope slides in */
+.fab-contact__trigger.icon-swap .fab-contact__icon--phone {
+    opacity: 0;
+    transform: translateY(-12px);
+}
+
+.fab-contact__trigger.icon-swap .fab-contact__icon--envelope {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* When menu is open — show X icon */
+.fab-contact.is-open .fab-contact__icon--phone,
+.fab-contact.is-open .fab-contact__icon--envelope {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.fab-contact__icon--close {
+    opacity: 0;
+    transform: scale(0.5) rotate(-90deg);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fab-contact.is-open .fab-contact__icon--close {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* ── Pulse ring ── */
+.fab-contact__trigger::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 2px solid var(--accent-primary);
+    opacity: 0;
+    animation: fab-pulse 3s ease-in-out infinite;
+}
+
+.fab-contact.is-open .fab-contact__trigger::before {
+    animation: none;
+    opacity: 0;
+}
+
+@keyframes fab-pulse {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.15);
+    }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .fab-contact__icon {
+        transition: opacity 0.15s ease;
+        transform: none !important;
+    }
+
+    .fab-contact__trigger.icon-swap .fab-contact__icon--phone {
+        transform: none;
+    }
+
+    .fab-contact__trigger.icon-swap .fab-contact__icon--envelope {
+        transform: none;
+    }
+
+    .fab-contact__trigger::before {
+        animation: none;
+    }
+
+    .fab-contact__icon--close {
+        transition: opacity 0.15s ease;
+        transform: none !important;
+    }
+
+    .fab-contact.is-open .fab-contact__icon--close {
+        transform: none !important;
+    }
+}
+
+/* ── Mobile: shift up slightly so it doesn't conflict with browser UI ── */
+@media (max-width: 767px) {
+    .fab-contact {
+        bottom: var(--space-lg);
+        right: var(--space-md);
+    }
+
+    .fab-contact__trigger {
+        width: 52px;
+        height: 52px;
+    }
+}
