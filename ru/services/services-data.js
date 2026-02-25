@@ -141,7 +141,7 @@ const SERVICES = [
         symptoms: [
             { icon: "mdi:swap-vertical", text: "Толчки при переключении" },
             { icon: "mdi:volume-high", text: "Гул или вой коробки" },
-            { icon: "mdi:slip", text: "Проскальзывание передач" },
+            { icon: "mdi:rotate-right", text: "Проскальзывание передач" },
             { icon: "mdi:oil-level", text: "Утечка масла из КПП" },
             { icon: "mdi:alert-circle", text: "Ошибки на панели (АКПП)" },
             { icon: "mdi:timer-sand", text: "Задержка переключений" }

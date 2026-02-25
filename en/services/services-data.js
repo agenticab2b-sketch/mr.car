@@ -140,7 +140,7 @@ const SERVICES = [
         symptoms: [
             { icon: "mdi:swap-vertical", text: "Jerking when shifting" },
             { icon: "mdi:volume-high", text: "Humming or whining" },
-            { icon: "mdi:slip", text: "Gear slipping" },
+            { icon: "mdi:rotate-right", text: "Gear slipping" },
             { icon: "mdi:oil-level", text: "Transmission fluid leak" },
             { icon: "mdi:alert-circle", text: "Warning lights (Auto)" },
             { icon: "mdi:timer-sand", text: "Delayed shifting" }

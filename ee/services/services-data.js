@@ -141,7 +141,7 @@ const SERVICES = [
         symptoms: [
             { icon: "mdi:swap-vertical", text: "Tõkked käivahtusel" },
             { icon: "mdi:volume-high", text: "Käigukastist tulev mürin" },
-            { icon: "mdi:slip", text: "Käikude libisemine" },
+            { icon: "mdi:rotate-right", text: "Käikude libisemine" },
             { icon: "mdi:oil-level", text: "Õlileke käigukastist" },
             { icon: "mdi:alert-circle", text: "Automaatkasti veateated" },
             { icon: "mdi:timer-sand", text: "Käivahtumine hilineb" }
