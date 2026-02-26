@@ -1468,36 +1468,20 @@
             })();
 
             // Google Rating Fetch
-(function () {
-    const ratingContainer = document.getElementById('google-rating');
-    // Твои данные на случай, если интернет пропадет
-    const fallbackData = { rating: 5.0, user_ratings_total: 103 }; 
-    
-    // Твой новый адрес облачного сервиса
-    const CLOUD_FUNCTION_URL = 'https://getgooglerating-q5qj3yqjpa-uc.a.run.app';
+            (function () {
+                const ratingContainer = document.getElementById('google-rating');
+                const fallbackData = { rating: 4.9, user_ratings_total: 103 };
 
-    async function fetchRating() {
-        try {
-            const response = await fetch(CLOUD_FUNCTION_URL);
-            if (!response.ok) throw new Error('Network response was not ok');
-            
-            const data = await response.json();
-            
-            // Превращаем данные из облака в формат, который понимает твой интерфейс
-            updateUI({
-                rating: data.rating,
-                user_ratings_total: data.reviewsCount // Переименовываем для совместимости
-            });
-            
-            console.log("Живой рейтинг с Kopli 82a загружен!");
-        } catch (error) {
-            console.error('Error fetching rating:', error);
-            // Если что-то пошло не так, показываем старые добрые 4.9 или 5.0
-            updateUI(fallbackData);
-        }
-    }
-    // Не забудь вызвать функцию, чтобы она запустилась!
-    fetchRating();
+                async function fetchRating() {
+                    try {
+                        const response = await fetch('/api/google-rating');
+                        const data = await response.json();
+                        updateUI(data);
+                    } catch (error) {
+                        console.error('Error fetching rating:', error);
+                        updateUI(fallbackData);
+                    }
+                }
 
                 function updateUI(data) {
                     if (!ratingContainer) return;
