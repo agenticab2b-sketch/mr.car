@@ -28,6 +28,18 @@
   status = 200
 
 [[redirects]]
+  from = "/teenused/webasto-remont"
+  to = "/services/webasto-diagnostika"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/teenused/webasto-remont/webasto-vead-ja-symptomid"
+  to = "/services/webasto-sumptomid"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/services/:slug"
   to = "/ee/services/service.html?slug=:slug"
   status = 200

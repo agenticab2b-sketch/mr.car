@@ -3566,83 +3566,90 @@ h3 {
     margin: 0;
 }
 
-/* ── 5-step process timeline ── */
+/* ── 5-step process — card grid ── */
 .wb-process {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--border-grid);
+    border: var(--border);
+}
+
+@media (max-width: 1100px) {
+    .wb-process {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .wb-process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .wb-process {
+        grid-template-columns: 1fr;
+    }
 }
 
 .wb-step {
-    display: grid;
-    grid-template-columns: 64px 1fr;
-    gap: var(--space-lg);
-    position: relative;
-    padding-bottom: var(--space-2xl);
-}
-
-.wb-step:last-child {
-    padding-bottom: 0;
-}
-
-.wb-step__marker {
+    background: var(--bg-main);
+    padding: var(--space-xl) var(--space-lg);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: var(--space-md);
     position: relative;
+    overflow: hidden;
+    transition: background var(--transition-fast);
 }
 
+.wb-step:hover {
+    background: var(--bg-surface);
+}
+
+/* Decorative large number in background */
 .wb-step__number {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent-primary);
-    color: var(--text-on-accent);
+    position: absolute;
+    top: -8px;
+    right: var(--space-md);
     font-family: var(--font-heading);
+    font-size: 5rem;
     font-weight: 900;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
-}
-
-.wb-step__line {
-    width: 2px;
-    flex: 1;
-    background: var(--border-grid);
-    margin-top: var(--space-xs);
-}
-
-.wb-step:last-child .wb-step__line {
-    display: none;
+    line-height: 1;
+    color: var(--accent-primary);
+    opacity: 0.08;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.04em;
 }
 
 .wb-step__content {
-    padding-top: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex: 1;
 }
 
 .wb-step__title {
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 0.88rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    color: var(--text-main);
-    margin: 0 0 var(--space-sm);
+    color: var(--accent-primary);
+    margin: 0;
 }
 
 .wb-step__text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    line-height: 1.7;
+    line-height: 1.65;
     margin: 0;
 }
 
 .wb-step__list {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-xs);
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
@@ -3652,7 +3659,7 @@ h3 {
     display: flex;
     align-items: flex-start;
     gap: var(--space-sm);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
     line-height: 1.6;
 }
@@ -3661,19 +3668,6 @@ h3 {
     color: var(--accent-primary);
     flex-shrink: 0;
     margin-top: 2px;
-}
-
-@media (max-width: 500px) {
-    .wb-step {
-        grid-template-columns: 44px 1fr;
-        gap: var(--space-md);
-    }
-
-    .wb-step__number {
-        width: 40px;
-        height: 40px;
-        font-size: 0.95rem;
-    }
 }
 
 /* ── Checklist grid ── */
@@ -3983,4 +3977,290 @@ h3 {
     .wb-benefit {
         transition: none;
     }
+}
+
+/* ── Symptoms cards (icon-grid for sümptomid page) ── */
+.wb-symptoms {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-grid);
+    border: var(--border);
+}
+
+@media (max-width: 900px) {
+    .wb-symptoms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 460px) {
+    .wb-symptoms {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wb-symptom-card {
+    background: var(--bg-main);
+    padding: var(--space-xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    transition: background var(--transition-fast);
+    cursor: default;
+}
+
+.wb-symptom-card:hover {
+    background: var(--bg-surface);
+}
+
+.wb-symptom-card__icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 176, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.wb-symptom-card__text {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+/* ── Decision cards (when to repair / can wait) ── */
+.wb-decision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+@media (max-width: 700px) {
+    .wb-decision {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wb-decision__card {
+    padding: var(--space-2xl);
+    border: 1px solid var(--border-grid);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.wb-decision__card--repair {
+    border-color: rgba(52, 211, 153, 0.4);
+    background: rgba(52, 211, 153, 0.04);
+}
+
+.wb-decision__card--wait {
+    border-color: rgba(255, 176, 0, 0.3);
+    background: rgba(255, 176, 0, 0.03);
+}
+
+.wb-decision__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.wb-decision__icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.wb-decision__card--repair .wb-decision__icon {
+    color: var(--success);
+}
+
+.wb-decision__card--wait .wb-decision__icon {
+    color: var(--accent-primary);
+}
+
+.wb-decision__title {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--text-main);
+}
+
+.wb-decision__card--repair .wb-decision__title {
+    color: var(--success);
+}
+
+.wb-decision__card--wait .wb-decision__title {
+    color: var(--accent-primary);
+}
+
+.wb-decision__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.wb-decision__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.wb-decision__list li iconify-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.wb-decision__card--repair .wb-decision__list li iconify-icon {
+    color: var(--success);
+}
+
+.wb-decision__card--wait .wb-decision__list li iconify-icon {
+    color: var(--accent-primary);
+}
+
+/* ── Callout blocks ── */
+.wb-callout {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-xl) var(--space-2xl);
+    border-left: 4px solid var(--accent-primary);
+    background: rgba(255, 176, 0, 0.04);
+}
+
+.wb-callout--alert {
+    border-left-color: var(--error);
+    background: rgba(239, 68, 68, 0.04);
+}
+
+.wb-callout--success {
+    border-left-color: var(--success);
+    background: rgba(52, 211, 153, 0.04);
+}
+
+.wb-callout__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    color: var(--accent-primary);
+    margin-top: 2px;
+}
+
+.wb-callout--alert .wb-callout__icon {
+    color: var(--error);
+}
+
+.wb-callout--success .wb-callout__icon {
+    color: var(--success);
+}
+
+.wb-callout__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.wb-callout__title {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-main);
+}
+
+.wb-callout__text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+/* ── Consequences list (numbered) ── */
+.wb-consequences {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    counter-reset: consequence-counter;
+}
+
+.wb-consequence {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+    padding: var(--space-lg) var(--space-xl);
+    border: 1px solid var(--border-grid);
+    background: var(--bg-surface);
+}
+
+.wb-consequence__num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--border-grid);
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.wb-consequence__title {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 var(--space-xs);
+}
+
+.wb-consequence__text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ── "What to do now" action block (mini CTA) ── */
+.wb-action {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl) var(--space-2xl);
+    background: var(--accent-primary);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .wb-action {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wb-action__text {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--text-on-accent);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.wb-action .btn {
+    background: var(--text-on-accent);
+    color: var(--accent-primary);
+    white-space: nowrap;
+}
+
+.wb-action .btn:hover {
+    background: var(--bg-main);
+    color: var(--text-main);
 }
