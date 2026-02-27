@@ -1054,15 +1054,17 @@
         // Google Rating Fetch
         (function () {
             const ratingContainer = document.getElementById('google-rating');
+            const reviewsGrid = document.querySelector('.reviews-grid');
             const fallbackData = { rating: 4.9, user_ratings_total: 103 };
 
             async function fetchRating() {
                 try {
-                    const response = await fetch('https://getgooglerating-q5qj3yqjpa-uc.a.run.app');
+                    const response = await fetch('https://getgooglerating-q5qj3yqjpa-uc.a.run.app?lang=ru');
                     const data = await response.json();
                     const mappedData = {
                         rating: data.rating,
-                        user_ratings_total: data.reviewsCount
+                        user_ratings_total: data.reviewsCount,
+                        reviews: data.reviews
                     };
                     if (typeof updateUI === 'function') {
                         updateUI(mappedData);
@@ -1101,6 +1103,20 @@
                     </a>
                 `;
                 ratingContainer.style.opacity = '1';
+
+                if (reviewsGrid && data.reviews && data.reviews.length > 0) {
+                    const reviewsHtml = data.reviews.filter(r => r.text).slice(0, 4).map(r => {
+                        const stars = Array(Math.round(r.rating || 5)).fill('<iconify-icon icon="mdi:star" width="18" height="18"></iconify-icon>').join('\n                                ');
+                        return `<div class="review-card">
+                            <div class="review-card__stars">
+                                ${stars}
+                            </div>
+                            <p class="review-card__text">"${r.text}"</p>
+                            <div class="review-card__author">${r.author_name}</div>
+                        </div>`;
+                    }).join('\n                ');
+                    reviewsGrid.innerHTML = reviewsHtml;
+                }
             }
 
             fetchRating();
