@@ -323,13 +323,21 @@ function renderPage(s, services, cfg) {
           </div>
         </div>` : '';
 
-  const selfLangActive = cfg.selfLang;
-  const otherLangsHtml = cfg.otherLangs.map(l =>
-    `<a href="${l.href}" class="lang-link" title="${esc(l.title)}"><iconify-icon icon="${l.flag}" width="24" height="24"></iconify-icon></a>`
-  ).join('\n            ');
-  const mobileLangsHtml = cfg.otherLangs.map(l =>
-    `<a href="${l.href}" class="mobile-lang-link"><iconify-icon icon="${l.flag}" width="32" height="32"></iconify-icon><span>${esc(l.title)}</span></a>`
-  ).join('\n            ');
+  const allLangs = [
+    { href: '/', code: 'et', flag: 'circle-flags:ee', title: 'Eesti keel' },
+    { href: '/ru/', code: 'ru', flag: 'circle-flags:ru', title: 'Русский' },
+    { href: '/en/', code: 'en', flag: 'circle-flags:en', title: 'English' }
+  ];
+
+  const desktopLangsHtml = allLangs.map(l => {
+    const isActive = l.code === cfg.lang ? ' active' : '';
+    return `<a href="${l.href}" class="lang-link${isActive}" title="${esc(l.title)}"><iconify-icon icon="${l.flag}" width="24" height="24"></iconify-icon></a>`;
+  }).join('\n            ');
+
+  const mobileLangsHtml = allLangs.map(l => {
+    const isActive = l.code === cfg.lang ? ' active' : '';
+    return `<a href="${l.href}" class="mobile-lang-link${isActive}"><iconify-icon icon="${l.flag}" width="32" height="32"></iconify-icon><span>${esc(l.title)}</span></a>`;
+  }).join('\n            ');
 
   return `<!DOCTYPE html>
 <html lang="${esc(cfg.lang)}">
@@ -398,10 +406,7 @@ ${jsonLd}
       <span></span><span></span><span></span>
     </button>
     <div class="navbar__lang desktop-only">
-      <a href="${selfLangActive.href}" class="lang-link active" title="${esc(selfLangActive.title)}">
-        <iconify-icon icon="${selfLangActive.flag}" width="24" height="24"></iconify-icon>
-      </a>
-      ${otherLangsHtml}
+      ${desktopLangsHtml}
     </div>
   </header>
 
@@ -420,10 +425,6 @@ ${jsonLd}
     </nav>
     <a href="tel:${cfg.phoneHref}" class="mobile-menu__link" style="color:var(--accent-primary)">${cfg.phone}</a>
     <div class="mobile-menu__lang">
-      <a href="${selfLangActive.href}" class="mobile-lang-link active">
-        <iconify-icon icon="${selfLangActive.flag}" width="32" height="32"></iconify-icon>
-        <span>${esc(selfLangActive.title)}</span>
-      </a>
       ${mobileLangsHtml}
     </div>
   </div>
@@ -743,7 +744,7 @@ process.stdout.write(`\n✅ Done: ${totalGenerated} pages generated, ${totalSkip
 
 process.stdout.write('\n📄 Updating sitemap.xml…\n');
 
-const eeServices = loadServices('ee/services/services-data.js');
+const eeServices = loadServices('ee/services-data.js');
 const ruServices = loadServices('ru/services/services-data.js');
 const enServices = loadServices('en/services/services-data.js');
 
