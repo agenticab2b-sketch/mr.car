@@ -18,6 +18,16 @@
   status = 200
 
 [[redirects]]
+  from = "/services/webasto-diagnostika"
+  to = "/ee/services/webasto-diagnostika.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/webasto-sumptomid"
+  to = "/ee/services/webasto-sumptomid.html"
+  status = 200
+
+[[redirects]]
   from = "/services/:slug"
   to = "/ee/services/service.html?slug=:slug"
   status = 200

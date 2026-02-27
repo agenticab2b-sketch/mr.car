@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Webasto ei käivitu või ei soojenda? Mr.Car teeb Webasto diagnostikat ja remonti Tallinnas, Kopli 82a. Kiire kontroll, aus selgitus ja remont enne külmasid. Helista +372 5646 1210 või broneeri aeg.">
+    <title>Webasto diagnostika ja remont Tallinnas — Mr.Car Autoteenindus</title>
+
+    <!-- Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --bg-main: #111625;
+            --text-main: #FFFFFF;
+            --accent-primary: #FFB000;
+            --border-grid: #36415A;
+            --container-padding: 16px;
+            --space-md: 16px;
+        }
+
+        @media (min-width: 768px) {
+            :root {
+                --container-padding: 32px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            :root {
+                --container-padding: 64px;
+            }
+        }
+
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(17, 22, 37, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-grid);
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--container-padding);
+        }
+
+        .sd-hero {
+            position: relative;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-grid);
+        }
+
+        .sd-hero__content {
+            position: relative;
+            z-index: 2;
+            padding: 64px var(--container-padding);
+        }
+
+        .sd-hero__title {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: clamp(2rem, 8vw, 4rem);
+            line-height: 1;
+            margin: 0;
+        }
+    </style>
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://mrcar.ee/services/webasto-diagnostika">
+    <link rel="alternate" hreflang="et" href="https://mrcar.ee/services/webasto-diagnostika">
+    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/services/webasto">
+    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/services/webasto-diagnostika">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Webasto diagnostika ja remont Tallinnas — Mr.Car Autoteenindus">
+    <meta property="og:description"
+        content="Webasto ei käivitu või ei soojenda? Mr.Car teeb Webasto diagnostikat ja remonti Tallinnas, Kopli 82a. Kiire kontroll, aus selgitus ja remont enne külmasid.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80">
+    <meta property="og:url" content="https://mrcar.ee/services/webasto-diagnostika">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Webasto diagnostika ja remont Tallinnas — Mr.Car">
+    <meta name="twitter:description" content="Webasto diagnostika ja remont Tallinnas. Kopli 82a. +372 5646 1210">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AutoRepair",
+          "name": "Mr.Car Autoremont",
+          "url": "https://mrcar.ee",
+          "telephone": "+372 5646 1210",
+          "email": "info@mrcar.ee",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kopli 82a",
+            "addressLocality": "Tallinn",
+            "postalCode": "10412",
+            "addressCountry": "EE"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "103",
+            "bestRating": "5"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Webasto diagnostika ja remont",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mr.Car Autoremont",
+            "telephone": "+372 5646 1210",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Kopli 82a",
+              "addressLocality": "Tallinn"
+            }
+          },
+          "url": "https://mrcar.ee/services/webasto-diagnostika",
+          "description": "Webasto ja Eberspächeri eelsoojendite diagnostika, remont ja hooldus Tallinnas.",
+          "areaServed": { "@type": "City", "name": "Tallinn" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Kas Webasto võib aku tühjaks tõmmata?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Töökorras seade ja normaalne kasutus ei tohiks akut üle koormata. Kui aku on vana või sõidud väga lühikesed, võib mõju olla suurem — diagnostika käigus vaatame toitesüsteemi üle."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kas Webasto on ohutu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Jah. Probleemid on enamasti isetehtud ümberehituste või vigase paigalduse tagajärg. Korrektselt hooldatud Webasto on ohutu."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kas remondi jaoks tuleb salong lahti võtta?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oleneb autost. Meister selgitab enne tööde algust, mida täpselt tuleb eemaldada ja miks."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kas peab ette registreerima?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Soovitatav — nii on vähem ootamist. Võib ka lihtsalt läbi astuda, aga järjekorra võimalus on olemas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kas enne talve on mõistlik teha lihtsalt kontroll?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Jah. Lühike kontroll aitab vältida ebameeldivaid üllatusi kõige külmematel hommikutel."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kas te remondite ka vanemaid Webastosi?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Jah, vaatame üle nii uued kui vanad süsteemid ja ütleme, kas remont on mõistlik."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="/ee/services/services-data.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <a href="/" class="navbar__logo">Mr.Car</a>
+        <nav class="navbar__nav">
+            <div class="navbar__item has-dropdown">
+                <a href="/#services" class="navbar__link" style="color:var(--accent-primary)">[01] Teenused</a>
+                <div class="mega-menu" id="megaMenuDesktop"></div>
+            </div>
+            <a href="/#about" class="navbar__link">[02] Meist</a>
+            <a href="/#pricing" class="navbar__link">[03] Hinnad</a>
+            <a href="/#contact" class="navbar__link">[04] Kontakt</a>
+        </nav>
+        <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
+        <div class="navbar__cta">
+            <a href="#request" class="btn btn-primary">Broneeri aeg</a>
+        </div>
+        <button class="navbar__burger" id="burgerBtn" aria-label="Ava menüü">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="navbar__lang desktop-only">
+            <a href="/" class="lang-link active" title="Eesti keel">
+                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="/ru/" class="lang-link" title="Русский">
+                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="/en/" class="lang-link" title="English">
+                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
+            </a>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Sulge menüü">&times;</button>
+        <nav aria-label="Mobiilne navigatsioon">
+            <a href="/#services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+                Teenused
+                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
+                    height="24"></iconify-icon>
+            </a>
+            <div class="mobile-mega-menu" id="mobileMegaMenu"></div>
+            <a href="/#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
+            <a href="/#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
+            <a href="/#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
+        </nav>
+        <a href="tel:+37256461210" class="mobile-menu__link" style="color:var(--accent-primary)">+372 5646 1210</a>
+        <div class="mobile-menu__lang">
+            <a href="/" class="mobile-lang-link active">
+                <iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon>
+                <span>Eesti</span>
+            </a>
+            <a href="/ru/" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon>
+                <span>Русский</span>
+            </a>
+            <a href="/en/" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon>
+                <span>English</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ████ A) HERO ████ -->
+    <section class="sd-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80')">
+        <div class="sd-hero__overlay"></div>
+        <div class="sd-hero__content site-container">
+            <span class="sd-hero__meta">/// Webasto diagnostika ja remont</span>
+            <h1 class="sd-hero__title">Webasto diagnostika ja remont Tallinnas</h1>
+            <p class="sd-hero__lead">Talvega ei ole mõtet kakelda: kui Webasto ei tööta, on hommik külm ja mootor
+                saab rohkem vatti, kui vaja. Mr.Car teeb Webasto diagnostikat, kontrolli ja remonti sõiduautodel
+                ja kergekaaluliste tarbesõidukitel.</p>
+            <a href="#request" class="btn btn-primary sd-hero__cta">Broneeri diagnostika <span
+                    class="arrow">↗</span></a>
+        </div>
+    </section>
+
+    <!-- ████ B) BOOKING FORM ████ -->
+    <section class="sd-cta" id="request">
+        <div class="sd-cta__overlay"></div>
+        <div class="sd-cta__inner site-container">
+            <div class="sd-cta__info">
+                <h2 class="sd-cta__title">Broneeri aeg Webasto diagnostikaks</h2>
+                <p class="sd-cta__text">Kirjelda lühidalt, kuidas Webasto käitub — nii saame vea kiiremini kätte ja
+                    anda täpsema hinnavahemiku.</p>
+                <a href="tel:+37256461210" class="sd-cta__phone">
+                    <iconify-icon icon="mdi:phone" width="24" height="24"></iconify-icon>
+                    <span>+372 5646 1210</span>
+                </a>
+            </div>
+            <div class="sd-cta__form-wrap">
+                <div class="sd-cta__form-header">
+                    <h3>Saada päring</h3>
+                    <p>Vastame 30 minuti jooksul tööajal</p>
+                </div>
+                <form id="serviceForm">
+                    <div class="form-group">
+                        <label for="wb-name">Nimi</label>
+                        <input type="text" id="wb-name" name="name" placeholder="Sinu nimi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wb-car">Auto reg.number</label>
+                        <input type="text" id="wb-car" name="car" placeholder="123 ABC">
+                    </div>
+                    <div class="form-group">
+                        <label for="wb-phone">Telefon</label>
+                        <input type="tel" id="wb-phone" name="phone" placeholder="+372 ..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wb-email">E-post</label>
+                        <input type="email" id="wb-email" name="email" placeholder="email@näide.ee">
+                    </div>
+                    <div class="form-group">
+                        <label for="wb-message">Probleemi kirjeldus</label>
+                        <textarea id="wb-message" name="message"
+                            placeholder="Kirjelda, kuidas Webasto käitub — nt ei käivitu, kustub ise välja, suitsetab jne"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                        Saada päring <span class="arrow">↗</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ████ C) PROCESS — 5 STEPS ████ -->
+    <section class="wb-section">
+        <div class="site-container">
+            <div class="wb-section__header">
+                <span class="wb-section__meta">/// Meie lähenemine</span>
+                <h2 class="wb-section__title">Kuidas käib Webasto diagnostika ja remont?</h2>
+                <p class="wb-section__lead">Sirgjooneline: enne selge pilt, siis otsus, alles seejärel töö.</p>
+            </div>
+
+            <div class="wb-process">
+                <!-- Step 1 -->
+                <div class="wb-step">
+                    <div class="wb-step__marker">
+                        <div class="wb-step__number">01</div>
+                        <div class="wb-step__line"></div>
+                    </div>
+                    <div class="wb-step__content">
+                        <h3 class="wb-step__title">Võtke ühendust</h3>
+                        <p class="wb-step__text">Helistage, kirjutage või tulge tööajal kohale Kopli 82a. Kirjeldage,
+                            kuidas Webasto käitub — sellest on meistril palju kasu.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="wb-step">
+                    <div class="wb-step__marker">
+                        <div class="wb-step__number">02</div>
+                        <div class="wb-step__line"></div>
+                    </div>
+                    <div class="wb-step__content">
+                        <h3 class="wb-step__title">Diagnostika</h3>
+                        <p class="wb-step__text">Kontrollime seadme tööd ja otsime rikke algpõhjust:</p>
+                        <ul class="wb-step__list">
+                            <li>
+                                <iconify-icon icon="mdi:check" width="16" height="16"></iconify-icon>
+                                <span>kas Webasto käivitub ja kuidas töötab</span>
+                            </li>
+                            <li>
+                                <iconify-icon icon="mdi:check" width="16" height="16"></iconify-icon>
+                                <span>olulised sõlmed: pump, hõõgküünal, andurid, juhtplokk</span>
+                            </li>
+                            <li>
+                                <iconify-icon icon="mdi:check" width="16" height="16"></iconify-icon>
+                                <span>toitesüsteemi ja juhtmete seisukord</span>
+                            </li>
+                            <li>
+                                <iconify-icon icon="mdi:check" width="16" height="16"></iconify-icon>
+                                <span>veakoodid, kui auto neid näitab</span>
+                            </li>
+                        </ul>
+                        <p class="wb-step__text" style="margin-top: var(--space-md);">Eesmärk on leida päris põhjus,
+                            mitte kustutada vead ja loota, et probleem kaob.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="wb-step">
+                    <div class="wb-step__marker">
+                        <div class="wb-step__number">03</div>
+                        <div class="wb-step__line"></div>
+                    </div>
+                    <div class="wb-step__content">
+                        <h3 class="wb-step__title">Selge tagasiside</h3>
+                        <p class="wb-step__text">Pärast kontrolli ütleme:</p>
+                        <ul class="wb-step__list">
+                            <li>
+                                <iconify-icon icon="mdi:check" width="16" height="16"></iconify-icon>
+                                <span>mis on katki või vajab tähelepanu</span>
+                            </li>
+                            <li>
+                                <iconify-icon icon="mdi:check" width="16" height="16"></iconify-icon>
+                                <span>mis variandid on olemas</span>
+                            </li>
+                            <li>
+                                <iconify-icon icon="mdi:check" width="16" height="16"></iconify-icon>
+                                <span>kulu ja ajakulu hinnang</span>
+                            </li>
+                        </ul>
+                        <p class="wb-step__text" style="margin-top: var(--space-md);">Kõik tehakse alles pärast teie
+                            nõusolekut.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="wb-step">
+                    <div class="wb-step__marker">
+                        <div class="wb-step__number">04</div>
+                        <div class="wb-step__line"></div>
+                    </div>
+                    <div class="wb-step__content">
+                        <h3 class="wb-step__title">Remont</h3>
+                        <p class="wb-step__text">Tegeleme täpselt sellega, mis rikke põhjustab. Vajadusel vahetame
+                            detaile, puhastame kütteseadet, korrastame ühendusi või eemaldame tahma. Soovi korral
+                            näitame ka vanu detaile — midagi ei tehta "suletud ukse taga".</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="wb-step">
+                    <div class="wb-step__marker">
+                        <div class="wb-step__number">05</div>
+                    </div>
+                    <div class="wb-step__content">
+                        <h3 class="wb-step__title">Kontroll ja tagastus</h3>
+                        <p class="wb-step__text">Kui töö valmis, testime soojenemist ja käivitust ning anname
+                            kasutussoovitused, et Webasto kestaks kauem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ████ D) WHAT WE CHECK ████ -->
+    <section class="wb-section wb-section--surface">
+        <div class="site-container">
+            <div class="wb-section__header">
+                <span class="wb-section__meta">/// Diagnostika</span>
+                <h2 class="wb-section__title">Mida diagnostika käigus kontrollime</h2>
+            </div>
+            <div class="wb-check-grid">
+                <div class="wb-check-item">
+                    <iconify-icon icon="mdi:power" width="24" height="24"></iconify-icon>
+                    <span>Käivituse ja töörežiimide kontroll</span>
+                </div>
+                <div class="wb-check-item">
+                    <iconify-icon icon="mdi:fire" width="24" height="24"></iconify-icon>
+                    <span>Hõõgküünla seisukord</span>
+                </div>
+                <div class="wb-check-item">
+                    <iconify-icon icon="mdi:pump" width="24" height="24"></iconify-icon>
+                    <span>Kütusepumba töö</span>
+                </div>
+                <div class="wb-check-item">
+                    <iconify-icon icon="mdi:chip" width="24" height="24"></iconify-icon>
+                    <span>Juhtploki ja andurite kontroll</span>
+                </div>
+                <div class="wb-check-item">
+                    <iconify-icon icon="mdi:cable-data" width="24" height="24"></iconify-icon>
+                    <span>Juhtmestiku ja ühenduste seisukord</span>
+                </div>
+                <div class="wb-check-item">
+                    <iconify-icon icon="mdi:battery-check" width="24" height="24"></iconify-icon>
+                    <span>Toitesüsteemi ja aku kontroll</span>
+                </div>
+                <div class="wb-check-item">
+                    <iconify-icon icon="mdi:alert-decagram" width="24" height="24"></iconify-icon>
+                    <span>Veakoodide lugemine</span>
+                </div>
+                <div class="wb-check-item">
+                    <iconify-icon icon="mdi:thermometer-check" width="24" height="24"></iconify-icon>
+                    <span>Soojenemise ja väljundi test</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ████ E) WHY MR.CAR — BENEFITS ████ -->
+    <section class="wb-section">
+        <div class="site-container">
+            <div class="wb-section__header">
+                <span class="wb-section__meta">/// Miks just Mr.Car</span>
+                <h2 class="wb-section__title">Miks tulla Webasto remondiks just meile?</h2>
+            </div>
+            <div class="wb-benefits">
+                <div class="wb-benefit">
+                    <div class="wb-benefit__icon">
+                        <iconify-icon icon="mdi:target" width="28" height="28"></iconify-icon>
+                    </div>
+                    <div class="wb-benefit__title">Keskendume Webasto probleemidele</div>
+                    <div class="wb-benefit__text">Teeme seda iga päev — mida rohkem juhtumeid näed, seda kiiremini saad
+                        probleemist aru.</div>
+                </div>
+                <div class="wb-benefit">
+                    <div class="wb-benefit__icon">
+                        <iconify-icon icon="mdi:map-marker-radius" width="28" height="28"></iconify-icon>
+                    </div>
+                    <div class="wb-benefit__title">Lihtne asukoht</div>
+                    <div class="wb-benefit__text">Kopli 82a sobib hästi Põhja-Tallinna, Kopli, Pelguranna ja Kalamaja
+                        klientidele.</div>
+                </div>
+                <div class="wb-benefit">
+                    <div class="wb-benefit__icon">
+                        <iconify-icon icon="mdi:chat-processing-outline" width="28" height="28"></iconify-icon>
+                    </div>
+                    <div class="wb-benefit__title">Selge info iga sammu juures</div>
+                    <div class="wb-benefit__text">Räägime lihtsalt ja otse: mis on katki, miks see nii läks ja mis
+                        võimalused on.</div>
+                </div>
+                <div class="wb-benefit">
+                    <div class="wb-benefit__icon">
+                        <iconify-icon icon="mdi:calendar-check" width="28" height="28"></iconify-icon>
+                    </div>
+                    <div class="wb-benefit__title">Aja saab ette broneerida</div>
+                    <div class="wb-benefit__text">Pole vaja elavat järjekorda — leiame teile sobiva aja.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ████ F) CROSS-LINK TO SYMPTOMS PAGE ████ -->
+    <section class="wb-section wb-section--surface" style="padding: var(--space-2xl) 0;">
+        <div class="site-container">
+            <a href="/services/webasto-sumptomid" class="wb-crosslink">
+                <iconify-icon icon="mdi:alert-circle-outline" width="28" height="28"></iconify-icon>
+                <div class="wb-crosslink__text">
+                    <span class="wb-crosslink__label">Loe lähemalt</span>
+                    <span class="wb-crosslink__title">Webasto sümptomid ja tüüpilised vead →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ████ G) TESTIMONIALS ████ -->
+    <section class="wb-section">
+        <div class="site-container">
+            <div class="wb-section__header">
+                <span class="wb-section__meta">/// Klientide tagasiside</span>
+                <h2 class="wb-section__title">Mida meie kliendid ütlevad</h2>
+            </div>
+            <div class="wb-testimonials">
+                <!-- Placeholder testimonials — to be replaced with real reviews -->
+                <div class="wb-testimonial">
+                    <div class="wb-testimonial__stars">
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                    </div>
+                    <p class="wb-testimonial__text">"Webasto ei käivitunud üldse. Leidsid probleemi poole tunniga —
+                        hõõgküünal oli läbi. Vahetasid samal päeval. Soovitan!"</p>
+                    <span class="wb-testimonial__author">— Andrei M. / VW Transporter / Google'i arvustus</span>
+                </div>
+                <div class="wb-testimonial">
+                    <div class="wb-testimonial__stars">
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                    </div>
+                    <p class="wb-testimonial__text">"Aus teenindus. Selgitasid, mis katki on ja mis variandid on. Hind
+                        oli lubatud piires. Töötab jälle nagu uus."</p>
+                    <span class="wb-testimonial__author">— Maria K. / Škoda Octavia / Google'i arvustus</span>
+                </div>
+                <div class="wb-testimonial">
+                    <div class="wb-testimonial__stars">
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                        <iconify-icon icon="mdi:star" width="16" height="16"></iconify-icon>
+                    </div>
+                    <p class="wb-testimonial__text">"Teistes kohtades pakkusid kogu Webasto vahetust. Mr.Car-is leidsid,
+                        et viga oli ainult pumbas. Säästasin korralikult."</p>
+                    <span class="wb-testimonial__author">— Viktor S. / BMW X5 / Google'i arvustus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ████ H) FAQ ACCORDION ████ -->
+    <section class="wb-section wb-section--surface">
+        <div class="site-container">
+            <div class="wb-section__header">
+                <span class="wb-section__meta">/// Korduma kippuvad küsimused</span>
+                <h2 class="wb-section__title">KKK Webasto kohta</h2>
+            </div>
+            <div class="wb-faq" id="wbFaq">
+                <div class="wb-faq__item">
+                    <button class="wb-faq__q" aria-expanded="false">
+                        <span>Kas Webasto võib aku tühjaks tõmmata?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="wb-faq__a">
+                        <div class="wb-faq__a-inner">Töökorras seade ja normaalne kasutus ei tohiks akut üle koormata.
+                            Kui aku on vana või sõidud väga lühikesed, võib mõju olla suurem — diagnostika käigus
+                            vaatame toitesüsteemi üle.</div>
+                    </div>
+                </div>
+                <div class="wb-faq__item">
+                    <button class="wb-faq__q" aria-expanded="false">
+                        <span>Kas Webasto on ohutu?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="wb-faq__a">
+                        <div class="wb-faq__a-inner">Jah. Probleemid on enamasti isetehtud ümberehituste või vigase
+                            paigalduse tagajärg. Korrektselt hooldatud Webasto on ohutu.</div>
+                    </div>
+                </div>
+                <div class="wb-faq__item">
+                    <button class="wb-faq__q" aria-expanded="false">
+                        <span>Kas remondi jaoks tuleb salong lahti võtta?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="wb-faq__a">
+                        <div class="wb-faq__a-inner">Oleneb autost. Meister selgitab enne tööde algust, mida täpselt
+                            tuleb eemaldada ja miks.</div>
+                    </div>
+                </div>
+                <div class="wb-faq__item">
+                    <button class="wb-faq__q" aria-expanded="false">
+                        <span>Kas peab ette registreerima?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="wb-faq__a">
+                        <div class="wb-faq__a-inner">Soovitatav — nii on vähem ootamist. Võib ka lihtsalt läbi astuda,
+                            aga järjekorra võimalus on olemas.</div>
+                    </div>
+                </div>
+                <div class="wb-faq__item">
+                    <button class="wb-faq__q" aria-expanded="false">
+                        <span>Kas enne talve on mõistlik teha lihtsalt kontroll?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="wb-faq__a">
+                        <div class="wb-faq__a-inner">Jah. Lühike kontroll aitab vältida ebameeldivaid üllatusi kõige
+                            külmematel hommikutel.</div>
+                    </div>
+                </div>
+                <div class="wb-faq__item">
+                    <button class="wb-faq__q" aria-expanded="false">
+                        <span>Kas te remondite ka vanemaid Webastosi?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="wb-faq__a">
+                        <div class="wb-faq__a-inner">Jah, vaatame üle nii uued kui vanad süsteemid ja ütleme, kas
+                            remont on mõistlik.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ████ I) LOCATION ████ -->
+    <section class="wb-section">
+        <div class="site-container">
+            <div class="wb-section__header">
+                <span class="wb-section__meta">/// Kus me asume</span>
+                <h2 class="wb-section__title">Autoteenindus Mr.Car</h2>
+            </div>
+            <div class="wb-location">
+                <div class="wb-location__info">
+                    <div class="wb-location__address">Kopli 82a, 10412 Tallinn</div>
+                    <p class="wb-location__detail">Mugav koht Põhja-Tallinna, Kopli, Pelguranna ja Kalamaja
+                        klientidele — tee pealt saab korraks läbi astuda.</p>
+                    <p class="wb-location__detail">
+                        <strong style="color: var(--text-main);">E–R:</strong> 09:00 – 18:00<br>
+                        <strong style="color: var(--text-main);">L–P:</strong> Suletud
+                    </p>
+                    <a href="tel:+37256461210" class="sd-cta__phone">
+                        <iconify-icon icon="mdi:phone" width="24" height="24"></iconify-icon>
+                        <span>+372 5646 1210</span>
+                    </a>
+                </div>
+                <div class="wb-location__map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.5!2d24.7!3d59.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDI3JzAwLjAiTiAyNMKwNDInMDAuMCJF!5e0!3m2!1sen!2see!4v1&q=Kopli+82a,+Tallinn"
+                        allowfullscreen loading="lazy" title="Mr.Car kaardil"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ████ J) FINAL CTA ████ -->
+    <section class="wb-section wb-section--surface" style="border-bottom: none;">
+        <div class="site-container">
+            <div class="wb-cta-inline">
+                <p class="wb-cta-inline__text">Webasto ei tööta? Broneeri diagnostika ja saame probleemist aru.</p>
+                <a href="#request" class="btn btn-primary">Broneeri aeg <span class="arrow">↗</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ████ K) FOOTER ████ -->
+    <footer class="footer">
+        <div class="footer-grid site-container">
+            <div>
+                <div class="footer__col-title">Kontakt</div>
+                <div class="footer__text">
+                    <a href="tel:+37256461210">+372 5646 1210</a><br>
+                    <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
+                    Kopli 82a, 10412 Tallinn
+                </div>
+                <div class="footer__socials">
+                    <a href="#" class="footer__social-link" aria-label="Facebook">
+                        <iconify-icon icon="mdi:facebook"></iconify-icon>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Instagram">
+                        <iconify-icon icon="mdi:instagram"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="footer__col-title">Rekvisiidid</div>
+                <div class="footer__text"
+                    style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dimmed);">
+                    ANET EESTI OÜ<br>
+                    Reg. nr: 10233521<br>
+                    KMKR: EE100321511<br>
+                    LHV: EE54 7700 7710 0969 0559<br>
+                    SEB: EE10 1010 0520 0108 4005
+                </div>
+            </div>
+            <div>
+                <div class="footer__col-title">Lahtiolekuajad</div>
+                <div class="footer__text">
+                    Esmaspäev – Reede<br>
+                    <strong style="color: var(--text-main);">09:00 – 18:00</strong><br><br>
+                    Laupäev – Pühapäev<br>
+                    <span style="color: var(--text-dimmed);">Suletud</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>© 2025 Mr.Car Autoremont Tallinn</span>
+            <a href="/privaatsus/">Privaatsuspoliitika</a>
+            <span>Designed by <a href="https://agentica.ee" target="_blank" rel="noopener">Agentica</a></span>
+        </div>
+    </footer>
+
+    <!-- Snackbar -->
+    <div id="snackbar" class="snackbar">Päring edukalt saadetud!</div>
+
+    <!-- ████ SCRIPTS ████ -->
+    <script>
+        // ── Build nav menus from SERVICES data ──
+        function buildNavMenus() {
+            var desktopMenu = document.getElementById('megaMenuDesktop');
+            if (desktopMenu && typeof SERVICES !== 'undefined') {
+                desktopMenu.innerHTML = '';
+                SERVICES.forEach(function (s) {
+                    var a = document.createElement('a');
+                    a.href = '/services/' + s.slug;
+                    a.className = 'mega-menu__item';
+                    a.innerHTML = '<iconify-icon icon="' + s.icon + '" width="20" height="20" aria-hidden="true"></iconify-icon><span>' + s.navTitle + '</span>';
+                    desktopMenu.appendChild(a);
+                });
+            }
+
+            var mobileMenu = document.getElementById('mobileMegaMenu');
+            if (mobileMenu && typeof SERVICES !== 'undefined') {
+                mobileMenu.innerHTML = '';
+                SERVICES.forEach(function (s) {
+                    var a = document.createElement('a');
+                    a.href = '/services/' + s.slug;
+                    a.className = 'mobile-mega-menu__item';
+                    a.addEventListener('click', function () { closeMobileMenu(); });
+                    a.innerHTML = '<iconify-icon icon="' + s.icon + '" aria-hidden="true"></iconify-icon><span>' + s.navTitle + '</span>';
+                    mobileMenu.appendChild(a);
+                });
+            }
+        }
+
+        // ── Mobile menu ──
+        var burger = document.getElementById('burgerBtn');
+        var mobileMenuEl = document.getElementById('mobileMenu');
+        var closeBtn = document.getElementById('closeMenu');
+
+        burger.addEventListener('click', function () {
+            mobileMenuEl.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', closeMobileMenu);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mobileMenuEl.classList.contains('active')) {
+                closeMobileMenu();
+                burger.focus();
+            }
+        });
+
+        function closeMobileMenu() {
+            mobileMenuEl.classList.remove('active');
+            document.body.style.overflow = '';
+            var megaMenu = document.getElementById('mobileMegaMenu');
+            var toggleLink = document.querySelector('.mobile-menu__link[onclick="toggleMobileMegaMenu(event)"]');
+            if (megaMenu) megaMenu.classList.remove('is-open');
+            if (toggleLink) toggleLink.classList.remove('is-open');
+        }
+
+        function toggleMobileMegaMenu(e) {
+            e.preventDefault();
+            var megaMenu = document.getElementById('mobileMegaMenu');
+            var toggleLink = e.currentTarget;
+            megaMenu.classList.toggle('is-open');
+            toggleLink.classList.toggle('is-open');
+        }
+
+        // ── Navbar scroll ──
+        var navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function () {
+            navbar.style.borderBottomColor = window.scrollY > 100 ? 'var(--accent-primary)' : '';
+        });
+
+        // ── FAQ accordion ──
+        document.querySelectorAll('.wb-faq__q').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var item = this.closest('.wb-faq__item');
+                var isOpen = item.classList.contains('is-open');
+
+                // Close all
+                document.querySelectorAll('.wb-faq__item').forEach(function (el) {
+                    el.classList.remove('is-open');
+                    el.querySelector('.wb-faq__q').setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked if it wasn't already open
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ── Form handling ──
+        var serviceForm = document.getElementById('serviceForm');
+        if (serviceForm) {
+            serviceForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var btn = this.querySelector('button[type="submit"]');
+                var orig = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = 'Saatmine...';
+                setTimeout(function () {
+                    var sb = document.getElementById('snackbar');
+                    sb.className = 'snackbar show';
+                    setTimeout(function () { sb.className = sb.className.replace('show', ''); }, 3000);
+                    serviceForm.reset();
+                    btn.disabled = false;
+                    btn.innerHTML = orig;
+                }, 1000);
+            });
+        }
+
+        // ── Init ──
+        buildNavMenus();
+    </script>
+
+    <!-- FLOATING CONTACT FAB -->
+    <div class="fab-contact" id="fabContact">
+        <div class="fab-contact__menu">
+            <a href="tel:+37256461210" class="fab-contact__action" id="fabCall">
+                <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Helista</span>
+            </a>
+            <a href="#request" class="fab-contact__action" id="fabForm" onclick="closeFab()">
+                <iconify-icon icon="mdi:email-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Broneeri aeg</span>
+            </a>
+        </div>
+        <button class="fab-contact__trigger" id="fabTrigger" aria-label="Võta ühendust">
+            <span class="fab-contact__icon-wrap">
+                <span class="fab-contact__icon fab-contact__icon--phone">
+                    <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
+                </span>
+                <span class="fab-contact__icon fab-contact__icon--envelope">
+                    <iconify-icon icon="mdi:email-outline" width="24" height="24" aria-hidden="true"></iconify-icon>
+                </span>
+                <span class="fab-contact__icon fab-contact__icon--close">
+                    <iconify-icon icon="mdi:close" width="24" height="24" aria-hidden="true"></iconify-icon>
+                </span>
+            </span>
+        </button>
+    </div>
+
+    <script>
+        // Floating Contact FAB
+        (function () {
+            const fab = document.getElementById('fabContact');
+            const trigger = document.getElementById('fabTrigger');
+            let iconInterval;
+
+            function startIconCycle() {
+                iconInterval = setInterval(() => {
+                    trigger.classList.toggle('icon-swap');
+                }, 3000);
+            }
+
+            function stopIconCycle() {
+                clearInterval(iconInterval);
+                trigger.classList.remove('icon-swap');
+            }
+
+            trigger.addEventListener('click', () => {
+                const isOpen = fab.classList.toggle('is-open');
+                if (isOpen) {
+                    stopIconCycle();
+                } else {
+                    startIconCycle();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && fab.classList.contains('is-open')) {
+                    closeFab();
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (fab.classList.contains('is-open') && !fab.contains(e.target)) {
+                    closeFab();
+                }
+            });
+
+            startIconCycle();
+        })();
+
+        function closeFab() {
+            const fab = document.getElementById('fabContact');
+            const trigger = document.getElementById('fabTrigger');
+            fab.classList.remove('is-open');
+            trigger.classList.remove('icon-swap');
+        }
+    </script>
+
+</body>
+
+</html>
