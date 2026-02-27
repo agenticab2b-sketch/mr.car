@@ -5,172 +5,62 @@
  */
 const SERVICES = [
     // ═══════════════════════════════════
-    // CATEGORY: Diagnostika ja elektroonika
+    // JÄRJEKORD VASTAB PEALEHE MEGAMENÜÜLE
     // ═══════════════════════════════════
-    {
-        key: "electrical",
-        slug: "elektritood",
-        allSlugs: { ru: "elektrika", ee: "elektritood", en: "electrical-repair" },
-        category: "Diagnostika ja elektroonika",
-        navTitle: "Autoelekter",
-        icon: "mdi:lightning-bolt",
-        heroTitle: "Autoelekter",
-        heroLead: "Voolulekked, lühised, elektroonika tõrked — leiame ja kõrvaldame ilma arvamiseta.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
-        introTitle: "Autoelektri remont Mr.Car-is",
-        introText: [
-            "Elektrilised rikked on ühed kavalamaid. Vooluleke, lühis või ujuv viga võib põhjustada süsteemide täieliku rikke. Leiame probleemi algpõhjuse, mitte ei vaheta osi arvamise alusel.",
-            "Meie käsutuses on ostsilloskoobid, Fluke multimeetrid ja tehaseelektriskeemid — dekodeerime CAN/LIN-siine ja leiame katkestused tehase dokumentatsiooni järgi."
-        ],
-        symptomsTitle: "Millal pöörduda autoelektriku poole?",
-        symptoms: [
-            { icon: "mdi:battery-alert", text: "Aku tühjeneb kiiresti" },
-            { icon: "mdi:flash-off", text: "Tuled / suunatuled ei tööta" },
-            { icon: "mdi:car-key", text: "Stardiprobleemid" },
-            { icon: "mdi:shield-lock-outline", text: "Alarm / immobilisaator tõrkub" },
-            { icon: "mdi:window-open", text: "Aknatõstukid ei tööta" },
-            { icon: "mdi:fan-alert", text: "Ventilaatorid ei tööta" }
-        ],
-        afterSymptomsText: "Elekter pole koht katsetusteks. Oskamatu sekkumine võib põhjustada tulekahju. Usalda professionaalidele.",
-        servicesListTitle: "Meie autoelektri teenused:",
-        servicesList: [
-            "Voolulekke otsimine",
-            "Juhtmestiku ja kimpude remont",
-            "Stardi- / generaatori diagnostika ja remont",
-            "Alarmi paigaldus ja remont",
-            "Juhtplokkide (ECU / BCM) remont",
-            "CAN / LIN-siinide dekodeerimine",
-            "Valgustussüsteemide diagnostika"
-        ],
-        afterListText: "Töötame tehase skeemide ja dokumentatsiooniga. Pärast remonti testime kõiki elektroonilisi süsteeme.",
-        promoBanner: { enabled: false },
-        ctaSection: {
-            title: "Elektriprobleemid? Lahendame kiiresti",
-            text: "Ära riski ohutusega. Broneeri aeg — leiame ja kõrvaldame mis tahes rikke.",
-            phoneText: "Helista: +372 5646 1210",
-            phoneNumber: "+37256461210"
-        },
-        form: {
-            title: "Elektri remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
-        },
-        seo: {
-            title: "Autoelekter Tallinnas — Mr.Car | Elektrisüsteemide remont",
-            description: "Professionaalne autoelektri remont Tallinnas. Vooluleke, juhtmestik, CAN/LIN diagnostika. Kopli 82a. +372 5646 1210"
-        }
-    },
-
-    // ═══════════════════════════════════
-    // CATEGORY: Mootor ja seadmed
-    // ═══════════════════════════════════
-    {
-        key: "engine",
-        slug: "mootoriremont",
-        allSlugs: { ru: "remont-dvigatelya", ee: "mootoriremont", en: "engine-repair" },
-        category: "Mootor ja seadmed",
-        navTitle: "Mootori remont",
-        icon: "mdi:engine",
-        heroTitle: "Mootori remont",
-        heroLead: "Mootori kapitaalremont mikropragudest täieliku lahtivõtmiseni. Mehhaaniline töötlus 0,01 mm täpsusega.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Mootori remont Mr.Car-is",
-        introText: [
-            "Mootor on auto süda. Õlikulu, koputused, kompressiooni langus — kõik need on märgid, et mootor vajab professionaalset abi. Me ei diagnoosi kuulmise järgi — kasutame endoskoopiat ja kompressiomeetriat.",
-            "Mr.Car teostab täielikku mootori remonditsüklit: tihendite ja hammasrihmade vahetusest kuni kolvirühma kapitaalremondini. Kasutame originaalvaruosi ja kvaliteetseid analooge garantiiga."
-        ],
-        symptomsTitle: "Kuidas aru saada, et mootor vajab remonti?",
-        symptoms: [
-            { icon: "mdi:oil", text: "Suurenenud õlikulu" },
-            { icon: "mdi:volume-high", text: "Koputused ja võõrad helid" },
-            { icon: "mdi:speedometer-slow", text: "Võimsuse langus" },
-            { icon: "mdi:smoke-detector-variant", text: "Suits heitgaasidest" },
-            { icon: "mdi:thermometer-alert", text: "Mootori ülekuumenemine" },
-            { icon: "mdi:engine-off-outline", text: "Ebastabiilne töö tühikäigul" },
-            { icon: "mdi:water-alert", text: "Õli- või jahutusvedeliku leke" },
-            { icon: "mdi:vibrate", text: "Vibratsioon mootori töötamisel" }
-        ],
-        afterSymptomsText: "Kui märkad kas või ühte neist sümptomitest — broneeri diagnostika. Õigeaegne remont päästab mootori vahetamisest.",
-        servicesListTitle: "Meie mootori remonditeenused:",
-        servicesList: [
-            "Endoskoopia ja defekteerumine",
-            "Hammasrihma / ahela vahetus",
-            "Silindripea tihendi vahetus",
-            "Kolvirühma remont",
-            "Klappide lihvimine ja vahetus",
-            "Õlirõngaste vahetus",
-            "Turbokompressori remont",
-            "Mootori kinnituste vahetus"
-        ],
-        afterListText: "Kõigile töödele anname 12-kuulise garantii. Hind arvutatakse pärast defekteerimist — tead lõplikku hinda ette.",
-        promoBanner: {
-            enabled: true,
-            text: "Tasuta mootori endoskoopia remondibroneerimisel"
-        },
-        ctaSection: {
-            title: "Mootor vajab tähelepanu?",
-            text: "Ära oota, kuni väike probleem muutub kapitaalremondiks. Tule tasuta diagnostikale.",
-            phoneText: "Helista: +372 5646 1210",
-            phoneNumber: "+37256461210"
-        },
-        form: {
-            title: "Mootori remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
-        },
-        seo: {
-            title: "Mootori remont Tallinnas — Mr.Car Autoteenindus",
-            description: "Mootori kapitaalremont Tallinnas. Endoskoopia, hammasrihma vahetus, kolvirühm. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
-        }
-    },
 
     {
-        key: "transmission",
-        slug: "kaigukastiremont",
-        allSlugs: { ru: "remont-kpp", ee: "kaigukastiremont", en: "transmission-repair" },
-        category: "Mootor ja seadmed",
-        navTitle: "Käigukasti remont",
-        icon: "mdi:car-shift-pattern",
-        heroTitle: "Käigukasti remont",
-        heroLead: "Automaatkast, käsikäigukast, DSG, variator — diagnoosime ja remondime kõiki käigukastide tüüpe.",
+        key: "general_repair",
+        slug: "autoremont",
+        allSlugs: { ru: "autoremont", ee: "autoremont", en: "general-car-repair" },
+        category: "Hooldus",
+        navTitle: "Autoremont",
+        icon: "mdi:wrench",
+        heroTitle: "Üldine autoremont",
+        heroLead: "Igat marki autode kompleksremont. Väiksematest riketest kapitaalremondini.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Käigukasti remont Mr.Car-is",
+        introTitle: "Autoremont Mr.Car-is",
         introText: [
-            "Käigukast on auto keerulisemaid sõlme. Tõkked käivahtusel, libisemine või käigukastist tulev müra — kõik see nõuab spetsialisti kohest tähelepanu.",
-            "Mr.Car spetsialiseerub kõigi käigukastide remondile: manuaal-, automaatkast, robotkäigukast (DSG) ja variator (CVT). Kasutame originaalvaruosi ja spetsiaalset seadmestikku."
+            "Mr.Car on täisteenindusega autoteenindus, kus saab lahendada mis tahes autorikke. Pirnide vahetusest kapitaalremondini — kõik ühe katuse all.",
+            "Meie tiim töötab kõigi markide autodega: Euroopa, Jaapani, Korea autod. Iga meister spetsialiseerub oma valdkonnale, mis tagab töökvaliteedi."
         ],
-        symptomsTitle: "Käigukasti rikke tunnused",
+        symptomsTitle: "Millega meie poole pöördutakse?",
         symptoms: [
-            { icon: "mdi:swap-vertical", text: "Tõkked käivahtusel" },
-            { icon: "mdi:volume-high", text: "Käigukastist tulev mürin" },
-            { icon: "mdi:rotate-right", text: "Käikude libisemine" },
-            { icon: "mdi:oil-level", text: "Õlileke käigukastist" },
-            { icon: "mdi:alert-circle", text: "Automaatkasti veateated" },
-            { icon: "mdi:timer-sand", text: "Käivahtumine hilineb" }
+            { icon: "mdi:engine-outline", text: "Mootoriprobleemid" },
+            { icon: "mdi:car-brake-alert", text: "Põrutused vedrustuses" },
+            { icon: "mdi:lightning-bolt", text: "Elektroonilised rikked" },
+            { icon: "mdi:car-shift-pattern", text: "Käigukastiprobleemid" },
+            { icon: "mdi:oil-level", text: "Vedelike lekked" },
+            { icon: "mdi:car-cog", text: "Planeeritav hooldus" },
+            { icon: "mdi:car-side", text: "Tehnoülevaatuse ettevalmistus" },
+            { icon: "mdi:file-search-outline", text: "Kontroll enne ostmist" }
         ],
-        afterSymptomsText: "Käigukasti remondiga viivitamine toob kaasa kriitilise kahjustuse ja kogu sõlme vahetuse. Diagnostika on esimene samm lahenduse poole.",
-        servicesListTitle: "Meie käigukasti remonditeenused:",
+        afterSymptomsText: "Ei tea, mis täpselt katki on? Tule lihtsalt kohale — selgitame välja ja pakume lahenduse.",
+        servicesListTitle: "Meie valdkonnad:",
         servicesList: [
-            "Automaatkasti / käsikäigukasti / DSG diagnostika",
-            "Käigukastiõli ja filtri vahetus",
-            "Siduri ja hooratta vahetus",
-            "DSG mehatroonikute remont",
-            "Automaatkasti hüdroploki lahtivõtmine",
-            "Laagrite ja sünkronisaatorite vahetus"
+            "Mootori ja käigukasti remont",
+            "Vedrustus ja pidurdussüsteem",
+            "Autoelekter ja diagnostika",
+            "Õlivahetus ja hooldus",
+            "Rehvitööd ja tasakaalustamine",
+            "Kliimaseade ja konditsioneer",
+            "Keevitustööd",
+            "Müügieelne ettevalmistus"
         ],
-        afterListText: "Pärast remonti teeme proovisõidu ja käigukasti adaptatsioon. Garantii kõigile töödele — 12 kuud.",
+        afterListText: "Ütleme hinna alati enne töö algust. Garantii 12 kuud. Originaalvaruosad ja kvaliteetsed analoogid.",
         promoBanner: { enabled: false },
         ctaSection: {
-            title: "Käigukastiprobleemid?",
-            text: "Tõkked, libisemine või õlileke — tule tasuta käigukasti diagnostikale.",
+            title: "Vaja autoremonti?",
+            text: "Broneeri veebis või tule ilma broneerimiseta tööajal. Vaatame üle tasuta.",
             phoneText: "Helista: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Käigukasti remondi broneerimine",
+            title: "Remondi broneerimine",
             subtitle: "Jäta päring — helistame tagasi 30 minutiga"
         },
         seo: {
-            title: "Käigukasti remont Tallinnas — Automaatkast, DSG | Mr.Car",
-            description: "Käigukasti remont Tallinnas: automaatkast, käsikäigukast, DSG, variator. Diagnostika ja lahtivõtmine. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
+            title: "Autoremont Tallinnas — Mr.Car | Kõik tööliigid",
+            description: "Autoteenindus Mr.Car Tallinnas. Mootori, käigukasti, vedrustuse, elektroonika remont. Kõik margid. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
         }
     },
 
@@ -179,7 +69,7 @@ const SERVICES = [
         slug: "summutid-keevitus",
         allSlugs: { ru: "glushiteli-svarka", ee: "summutid-keevitus", en: "exhaust-welding" },
         category: "Mootor ja seadmed",
-        navTitle: "Summutid ja keevitus",
+        navTitle: "Summuti ja Keevitustööd",
         icon: "mdi:fire",
         heroTitle: "Summutid ja keevitustööd",
         heroLead: "Heitgaasisüsteemi remont ja vahetus. Argooni- ja poolautomaatkeevitus igasuguse keerukusega.",
@@ -227,15 +117,12 @@ const SERVICES = [
         }
     },
 
-    // ═══════════════════════════════════
-    // CATEGORY: Vedrustus ja pidurid
-    // ═══════════════════════════════════
     {
         key: "chassis_brakes",
         slug: "veermik-pidurid",
         allSlugs: { ru: "hodovaya-tormoza", ee: "veermik-pidurid", en: "chassis-brakes" },
         category: "Vedrustus ja pidurid",
-        navTitle: "Vedrustus ja pidurid",
+        navTitle: "Veermiku ja Pidurite remont",
         icon: "mdi:car-brake-alert",
         heroTitle: "Vedrustuse ja pidurite remont",
         heroLead: "Vedrustus, roolisüsteem, pidurdussüsteem — diagnostika ja remont garantiiga.",
@@ -341,15 +228,12 @@ const SERVICES = [
         }
     },
 
-    // ═══════════════════════════════════
-    // CATEGORY: Hooldus
-    // ═══════════════════════════════════
     {
         key: "maintenance_diag",
         slug: "hooldus-diagnostika",
         allSlugs: { ru: "to-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
         category: "Hooldus",
-        navTitle: "Tehniline ülevaatus ja hooldus",
+        navTitle: "Hooldus ja Diagnostika",
         icon: "mdi:car-cog",
         heroTitle: "Tehniline hooldus",
         heroLead: "Regulaarne hooldus tootja standardite järgi ilma edasimüüja garantii kaotamiseta.",
@@ -402,11 +286,175 @@ const SERVICES = [
     },
 
     {
+        key: "transmission",
+        slug: "kaigukastiremont",
+        allSlugs: { ru: "remont-kpp", ee: "kaigukastiremont", en: "transmission-repair" },
+        category: "Mootor ja seadmed",
+        navTitle: "Käigukasti tööd",
+        icon: "mdi:car-shift-pattern",
+        heroTitle: "Käigukasti remont",
+        heroLead: "Automaatkast, käsikäigukast, DSG, variator — diagnoosime ja remondime kõiki käigukastide tüüpe.",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        introTitle: "Käigukasti remont Mr.Car-is",
+        introText: [
+            "Käigukast on auto keerulisemaid sõlme. Tõkked käivahtusel, libisemine või käigukastist tulev müra — kõik see nõuab spetsialisti kohest tähelepanu.",
+            "Mr.Car spetsialiseerub kõigi käigukastide remondile: manuaal-, automaatkast, robotkäigukast (DSG) ja variator (CVT). Kasutame originaalvaruosi ja spetsiaalset seadmestikku."
+        ],
+        symptomsTitle: "Käigukasti rikke tunnused",
+        symptoms: [
+            { icon: "mdi:swap-vertical", text: "Tõkked käivahtusel" },
+            { icon: "mdi:volume-high", text: "Käigukastist tulev mürin" },
+            { icon: "mdi:rotate-right", text: "Käikude libisemine" },
+            { icon: "mdi:oil-level", text: "Õlileke käigukastist" },
+            { icon: "mdi:alert-circle", text: "Automaatkasti veateated" },
+            { icon: "mdi:timer-sand", text: "Käivahtumine hilineb" }
+        ],
+        afterSymptomsText: "Käigukasti remondiga viivitamine toob kaasa kriitilise kahjustuse ja kogu sõlme vahetuse. Diagnostika on esimene samm lahenduse poole.",
+        servicesListTitle: "Meie käigukasti remonditeenused:",
+        servicesList: [
+            "Automaatkasti / käsikäigukasti / DSG diagnostika",
+            "Käigukastiõli ja filtri vahetus",
+            "Siduri ja hooratta vahetus",
+            "DSG mehatroonikute remont",
+            "Automaatkasti hüdroploki lahtivõtmine",
+            "Laagrite ja sünkronisaatorite vahetus"
+        ],
+        afterListText: "Pärast remonti teeme proovisõidu ja käigukasti adaptatsioon. Garantii kõigile töödele — 12 kuud.",
+        promoBanner: { enabled: false },
+        ctaSection: {
+            title: "Käigukastiprobleemid?",
+            text: "Tõkked, libisemine või õlileke — tule tasuta käigukasti diagnostikale.",
+            phoneText: "Helista: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Käigukasti remondi broneerimine",
+            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+        },
+        seo: {
+            title: "Käigukasti remont Tallinnas — Automaatkast, DSG | Mr.Car",
+            description: "Käigukasti remont Tallinnas: automaatkast, käsikäigukast, DSG, variator. Diagnostika ja lahtivõtmine. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
+        }
+    },
+
+    {
+        key: "electrical",
+        slug: "elektritood",
+        allSlugs: { ru: "elektrika", ee: "elektritood", en: "electrical-repair" },
+        category: "Diagnostika ja elektroonika",
+        navTitle: "Elektritööd",
+        icon: "mdi:lightning-bolt",
+        heroTitle: "Autoelekter",
+        heroLead: "Voolulekked, lühised, elektroonika tõrked — leiame ja kõrvaldame ilma arvamiseta.",
+        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        introTitle: "Autoelektri remont Mr.Car-is",
+        introText: [
+            "Elektrilised rikked on ühed kavalamaid. Vooluleke, lühis või ujuv viga võib põhjustada süsteemide täieliku rikke. Leiame probleemi algpõhjuse, mitte ei vaheta osi arvamise alusel.",
+            "Meie käsutuses on ostsilloskoobid, Fluke multimeetrid ja tehaseelektriskeemid — dekodeerime CAN/LIN-siine ja leiame katkestused tehase dokumentatsiooni järgi."
+        ],
+        symptomsTitle: "Millal pöörduda autoelektriku poole?",
+        symptoms: [
+            { icon: "mdi:battery-alert", text: "Aku tühjeneb kiiresti" },
+            { icon: "mdi:flash-off", text: "Tuled / suunatuled ei tööta" },
+            { icon: "mdi:car-key", text: "Stardiprobleemid" },
+            { icon: "mdi:shield-lock-outline", text: "Alarm / immobilisaator tõrkub" },
+            { icon: "mdi:window-open", text: "Aknatõstukid ei tööta" },
+            { icon: "mdi:fan-alert", text: "Ventilaatorid ei tööta" }
+        ],
+        afterSymptomsText: "Elekter pole koht katsetusteks. Oskamatu sekkumine võib põhjustada tulekahju. Usalda professionaalidele.",
+        servicesListTitle: "Meie autoelektri teenused:",
+        servicesList: [
+            "Voolulekke otsimine",
+            "Juhtmestiku ja kimpude remont",
+            "Stardi- / generaatori diagnostika ja remont",
+            "Alarmi paigaldus ja remont",
+            "Juhtplokkide (ECU / BCM) remont",
+            "CAN / LIN-siinide dekodeerimine",
+            "Valgustussüsteemide diagnostika"
+        ],
+        afterListText: "Töötame tehase skeemide ja dokumentatsiooniga. Pärast remonti testime kõiki elektroonilisi süsteeme.",
+        promoBanner: { enabled: false },
+        ctaSection: {
+            title: "Elektriprobleemid? Lahendame kiiresti",
+            text: "Ära riski ohutusega. Broneeri aeg — leiame ja kõrvaldame mis tahes rikke.",
+            phoneText: "Helista: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Elektri remondi broneerimine",
+            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+        },
+        seo: {
+            title: "Autoelekter Tallinnas — Mr.Car | Elektrisüsteemide remont",
+            description: "Professionaalne autoelektri remont Tallinnas. Vooluleke, juhtmestik, CAN/LIN diagnostika. Kopli 82a. +372 5646 1210"
+        }
+    },
+
+    {
+        key: "engine",
+        slug: "mootoriremont",
+        allSlugs: { ru: "remont-dvigatelya", ee: "mootoriremont", en: "engine-repair" },
+        category: "Mootor ja seadmed",
+        navTitle: "Mootori tööd",
+        icon: "mdi:engine",
+        heroTitle: "Mootori remont",
+        heroLead: "Mootori kapitaalremont mikropragudest täieliku lahtivõtmiseni. Mehhaaniline töötlus 0,01 mm täpsusega.",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        introTitle: "Mootori remont Mr.Car-is",
+        introText: [
+            "Mootor on auto süda. Õlikulu, koputused, kompressiooni langus — kõik need on märgid, et mootor vajab professionaalset abi. Me ei diagnoosi kuulmise järgi — kasutame endoskoopiat ja kompressiomeetriat.",
+            "Mr.Car teostab täielikku mootori remonditsüklit: tihendite ja hammasrihmade vahetusest kuni kolvirühma kapitaalremondini. Kasutame originaalvaruosi ja kvaliteetseid analooge garantiiga."
+        ],
+        symptomsTitle: "Kuidas aru saada, et mootor vajab remonti?",
+        symptoms: [
+            { icon: "mdi:oil", text: "Suurenenud õlikulu" },
+            { icon: "mdi:volume-high", text: "Koputused ja võõrad helid" },
+            { icon: "mdi:speedometer-slow", text: "Võimsuse langus" },
+            { icon: "mdi:smoke-detector-variant", text: "Suits heitgaasidest" },
+            { icon: "mdi:thermometer-alert", text: "Mootori ülekuumenemine" },
+            { icon: "mdi:engine-off-outline", text: "Ebastabiilne töö tühikäigul" },
+            { icon: "mdi:water-alert", text: "Õli- või jahutusvedeliku leke" },
+            { icon: "mdi:vibrate", text: "Vibratsioon mootori töötamisel" }
+        ],
+        afterSymptomsText: "Kui märkad kas või ühte neist sümptomitest — broneeri diagnostika. Õigeaegne remont päästab mootori vahetamisest.",
+        servicesListTitle: "Meie mootori remonditeenused:",
+        servicesList: [
+            "Endoskoopia ja defekteerumine",
+            "Hammasrihma / ahela vahetus",
+            "Silindripea tihendi vahetus",
+            "Kolvirühma remont",
+            "Klappide lihvimine ja vahetus",
+            "Õlirõngaste vahetus",
+            "Turbokompressori remont",
+            "Mootori kinnituste vahetus"
+        ],
+        afterListText: "Kõigile töödele anname 12-kuulise garantii. Hind arvutatakse pärast defekteerimist — tead lõplikku hinda ette.",
+        promoBanner: {
+            enabled: true,
+            text: "Tasuta mootori endoskoopia remondibroneerimisel"
+        },
+        ctaSection: {
+            title: "Mootor vajab tähelepanu?",
+            text: "Ära oota, kuni väike probleem muutub kapitaalremondiks. Tule tasuta diagnostikale.",
+            phoneText: "Helista: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Mootori remondi broneerimine",
+            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+        },
+        seo: {
+            title: "Mootori remont Tallinnas — Mr.Car Autoteenindus",
+            description: "Mootori kapitaalremont Tallinnas. Endoskoopia, hammasrihma vahetus, kolvirühm. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
+        }
+    },
+
+    {
         key: "oil_change",
         slug: "olivahetus",
         allSlugs: { ru: "zamena-masla", ee: "olivahetus", en: "oil-change" },
         category: "Hooldus",
-        navTitle: "Õlivahetus ja filtrid",
+        navTitle: "Õli ja Filtrite vahetus",
         icon: "mdi:oil",
         heroTitle: "Õlivahetus ja filtrid",
         heroLead: "Kiire õlivahetus tootja lubade järgi sobiva õliga. Alates €35 koos filtriga.",
@@ -459,7 +507,7 @@ const SERVICES = [
         slug: "ostueelne-kontroll",
         allSlugs: { ru: "proverka-pered-pokupkoy", ee: "ostueelne-kontroll", en: "pre-purchase-inspection" },
         category: "Hooldus",
-        navTitle: "Kontroll enne ostmist",
+        navTitle: "Enne Ostu Kontroll",
         icon: "mdi:file-search-outline",
         heroTitle: "Auto kontroll enne ostmist",
         heroLead: "Sõltumatu tehniline ekspertiis — et ost ei muutuks pettumiseks.",
@@ -512,15 +560,12 @@ const SERVICES = [
         }
     },
 
-    // ═══════════════════════════════════
-    // CATEGORY: Kliimaseade ja lisavarustus
-    // ═══════════════════════════════════
     {
         key: "ac_service",
         slug: "kliimahooldus",
         allSlugs: { ru: "klimat-konditsioner", ee: "kliimahooldus", en: "ac-service" },
         category: "Kliimaseade ja lisavarustus",
-        navTitle: "Kliimaseade ja konditsioneer",
+        navTitle: "Kliima ja Konditsioneer",
         icon: "mdi:snowflake",
         heroTitle: "Kliimaseade ja konditsioneer",
         heroLead: "Kliimaseadme täitmine, diagnostika ja remont.",
@@ -570,8 +615,8 @@ const SERVICES = [
 
     {
         key: "webasto",
-        slug: "webasto-remont",
-        allSlugs: { ru: "webasto", ee: "webasto-remont", en: "webasto-repair" },
+        slug: "webasto-diagnostika",
+        allSlugs: { ru: "webasto", ee: "webasto-diagnostika", en: "webasto-repair" },
         category: "Kliimaseade ja lisavarustus",
         navTitle: "Webasto remont",
         icon: "mdi:radiator",
@@ -592,7 +637,7 @@ const SERVICES = [
             { icon: "mdi:timer-off-outline", text: "Kustub minuti pärast" },
             { icon: "mdi:calendar-check", text: "Planeeritav hooldus (kord aastas)" }
         ],
-        afterSymptomsText: "Webasto hooldus enne hooaega on parim viis külmas probleemide vältimiseks. Võtab 1–2 tundi.",
+        afterSymptomsText: "Webasto hooldus enne hooaega on parim viis külmas probleemide vältimiseks. Võtab 1–2 tundi. <br><br>👉 <a href=\"/services/webasto-sumptomid\" style=\"text-decoration: underline; font-weight: bold;\">Loe lähemalt Webasto sagedasematest sümptomitest ja veakoodidest</a>.",
         servicesListTitle: "Meie Webasto teenused:",
         servicesList: [
             "Eelsoojendi diagnostika",
@@ -621,62 +666,6 @@ const SERVICES = [
         seo: {
             title: "Webasto remont Tallinnas — Mr.Car | Diagnostika ja hooldus",
             description: "Webasto ja Eberspächeri remont ning hooldus Tallinnas. Diagnostika, hõõgküünal, puhastamine. Kopli 82a. +372 5646 1210"
-        }
-    },
-
-    {
-        key: "general_repair",
-        slug: "autoremont",
-        allSlugs: { ru: "autoremont", ee: "autoremont", en: "general-car-repair" },
-        category: "Hooldus",
-        navTitle: "Üldine autoremont",
-        icon: "mdi:wrench",
-        heroTitle: "Üldine autoremont",
-        heroLead: "Igat marki autode kompleksremont. Väiksematest riketest kapitaalremondini.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Autoremont Mr.Car-is",
-        introText: [
-            "Mr.Car on täisteenindusega autoteenindus, kus saab lahendada mis tahes autorikke. Pirnide vahetusest kapitaalremondini — kõik ühe katuse all.",
-            "Meie tiim töötab kõigi markide autodega: Euroopa, Jaapani, Korea autod. Iga meister spetsialiseerub oma valdkonnale, mis tagab töökvaliteedi."
-        ],
-        symptomsTitle: "Millega meie poole pöördutakse?",
-        symptoms: [
-            { icon: "mdi:engine-outline", text: "Mootoriprobleemid" },
-            { icon: "mdi:car-brake-alert", text: "Põrutused vedrustuses" },
-            { icon: "mdi:lightning-bolt", text: "Elektroonilised rikked" },
-            { icon: "mdi:car-shift-pattern", text: "Käigukastiprobleemid" },
-            { icon: "mdi:oil-level", text: "Vedelike lekked" },
-            { icon: "mdi:car-cog", text: "Planeeritav hooldus" },
-            { icon: "mdi:car-side", text: "Tehnoülevaatuse ettevalmistus" },
-            { icon: "mdi:file-search-outline", text: "Kontroll enne ostmist" }
-        ],
-        afterSymptomsText: "Ei tea, mis täpselt katki on? Tule lihtsalt kohale — selgitame välja ja pakume lahenduse.",
-        servicesListTitle: "Meie valdkonnad:",
-        servicesList: [
-            "Mootori ja käigukasti remont",
-            "Vedrustus ja pidurdussüsteem",
-            "Autoelekter ja diagnostika",
-            "Õlivahetus ja hooldus",
-            "Rehvitööd ja tasakaalustamine",
-            "Kliimaseade ja konditsioneer",
-            "Keevitustööd",
-            "Müügieelne ettevalmistus"
-        ],
-        afterListText: "Ütleme hinna alati enne töö algust. Garantii 12 kuud. Originaalvaruosad ja kvaliteetsed analoogid.",
-        promoBanner: { enabled: false },
-        ctaSection: {
-            title: "Vaja autoremonti?",
-            text: "Broneeri veebis või tule ilma broneerimiseta tööajal. Vaatame üle tasuta.",
-            phoneText: "Helista: +372 5646 1210",
-            phoneNumber: "+37256461210"
-        },
-        form: {
-            title: "Remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
-        },
-        seo: {
-            title: "Autoremont Tallinnas — Mr.Car | Kõik tööliigid",
-            description: "Autoteenindus Mr.Car Tallinnas. Mootori, käigukasti, vedrustuse, elektroonika remont. Kõik margid. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
         }
     }
 ];
