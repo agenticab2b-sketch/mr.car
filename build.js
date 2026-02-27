@@ -30,6 +30,7 @@ const TODAY = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
 // These standalone Webasto landing pages are NOT generated — they stay as-is.
 const SKIP_FILES = new Set([
+  'webasto-diagnostika',
   'webasto-sumptomid',
   'webasto-simptomy',
   'webasto-symptoms'
