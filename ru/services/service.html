@@ -354,9 +354,8 @@
     <script>
         // ── Constants ──
         var PROD_ORIGIN = 'https://mrcar.ee';
-        var STAGING_ORIGIN = 'https://mrcartallinn.netlify.app';
         // Determine current environment for OG tags
-        var CURRENT_ORIGIN = window.location.origin.indexOf('netlify.app') !== -1 ? STAGING_ORIGIN : PROD_ORIGIN;
+        var CURRENT_ORIGIN = PROD_ORIGIN;
 
         var DEFAULT_OG_IMAGE = 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80';
 
@@ -386,7 +385,7 @@
             var path = window.location.pathname;
             var parts = path.split('/').filter(Boolean);
             // Check for /ru/services/{slug}
-            if (parts.length >= 3 && parts[1] === 'services') {
+            if (parts.length >= 3 && parts[0] === 'ru' && parts[1] === 'services') {
                 return parts[2].replace('.html', '');
             }
             return null;

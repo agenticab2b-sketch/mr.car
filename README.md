@@ -1,6 +1,6 @@
 # Mr.Car Autoremont Tallinn — website
 
-Static website (HTML + CSS) deployed via Netlify with auto-deploy from GitHub.
+Static website (HTML + CSS) deployed via Google Cloud (Firebase Hosting).
 
 ## Languages (planned)
 The website will be multilingual:
@@ -20,24 +20,17 @@ Example pages:
 - `/ru/contacts/`, `/en/contacts/`, etc. (if needed later)
 
 ## Repository structure (current)
-- `index.html` — main entry point (Netlify)
+- `index.html` — main entry point
 - `style.css` — styles
 - (optional later) `assets/` — images, icons, fonts
 
-## Current deployment (Netlify)
-This repo is connected to Netlify.
-Every push to the `main` branch triggers an automatic deploy.
-
-Netlify settings for the current static version:
-- Branch: `main`
-- Base directory: *(empty)*
-- Build command: *(empty)*
-- Publish directory: `.`
+## Current deployment (Google Cloud / Firebase Hosting)
+This repo is configured for deployment to Firebase Hosting.
+It includes `firebase.json` containing the necessary rewrites and redirects for the single-page application behavior of the service pages.
 
 ## How to update the site
 1. Edit files
-2. Commit & push to `main`
-3. Netlify redeploys automatically
+2. Deploy via Firebase CLI: `firebase deploy`
 
 ## Multilingual rollout plan (static phase)
 When adding RU/EN in the static version, keep the structure clear:

@@ -5,7 +5,65 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "optimize.py"
+      "optimize.py",
+      "README.md",
+      "GEMINI.md",
+      "implementation_plan.md.resolved",
+      "functions/**"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(html|css|js|png|jpg|jpeg|gif|svg|webp|avif|ico|xml|json)",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow, noarchive"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/homepage.html",
+        "destination": "/ru/",
+        "type": 301
+      },
+      {
+        "source": "/teenused/webasto-remont",
+        "destination": "/services/webasto-diagnostika",
+        "type": 301
+      },
+      {
+        "source": "/teenused/webasto-remont/webasto-vead-ja-symptomid",
+        "destination": "/services/webasto-sumptomid",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/services/webasto-diagnostika",
+        "destination": "/ee/services/webasto-diagnostika.html"
+      },
+      {
+        "source": "/services/webasto-sumptomid",
+        "destination": "/ee/services/webasto-sumptomid.html"
+      },
+      {
+        "source": "/services/**",
+        "destination": "/ee/services/service.html"
+      },
+      {
+        "source": "/ee/services/**",
+        "destination": "/ee/services/service.html"
+      },
+      {
+        "source": "/ru/services/**",
+        "destination": "/ru/services/service.html"
+      },
+      {
+        "source": "/en/services/**",
+        "destination": "/en/services/service.html"
+      }
     ]
   },
   "functions": [

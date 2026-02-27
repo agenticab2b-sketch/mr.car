@@ -121,10 +121,7 @@
     <meta property="og:locale" content="et_EE">
     <script>
         (function () {
-            var PROD = 'https://mrcar.ee';
-            var STAGING = 'https://mrcartallinn.netlify.app';
-            var isStaging = window.location.hostname.indexOf('netlify.app') !== -1;
-            var origin = isStaging ? STAGING : PROD;
+            var origin = 'https://mrcar.ee';
             document.getElementById('ogUrl').setAttribute('content', origin + window.location.pathname);
         })();
     </script>
@@ -237,7 +234,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
