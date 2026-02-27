@@ -39,8 +39,8 @@ const LANGS = [
   {
     lang: 'et',
     prefix: '',                  // canonical: /services/{slug}
-    dir: 'ee/services',
-    dataFile: 'ee/services/services-data.js',
+    dir: 'services',
+    dataFile: 'ee/services-data.js',
     navLinks: [
       { href: '/#services', label: '[01] Teenused', style: 'color:var(--accent-primary)' },
       { href: '/#about', label: '[02] Meist' },
@@ -50,6 +50,8 @@ const LANGS = [
     phone: '+372 5646 1210',
     phoneHref: '+37256461210',
     bookLabel: 'Broneeri aeg',
+    fabCall: 'Helista',
+    fabBook: 'Broneeri aeg',
     formSubmit: 'Saada päring',
     formSending: 'Saatmine...',
     formOk: 'Päring saadetud! Helistame tagasi 30 minutiga.',
@@ -64,6 +66,16 @@ const LANGS = [
     serviceBase: '/services/',
     ruServiceBase: '/ru/services/',
     enServiceBase: '/en/services/',
+    footer: {
+      contacts: 'Kontaktid',
+      details: 'Rekvisiidid',
+      hours: 'Lahtiolekuajad',
+      workdays: 'Esmaspäev – Reede',
+      weekend: 'Laupäev – Pühapäev',
+      closed: 'Suletud',
+      privacy: 'Privaatsuspoliitika',
+      privacyHref: '/privaatsus/'
+    }
   },
   {
     lang: 'ru',
@@ -79,6 +91,8 @@ const LANGS = [
     phone: '+372 5646 1210',
     phoneHref: '+37256461210',
     bookLabel: 'Записаться',
+    fabCall: 'Позвонить',
+    fabBook: 'Записаться',
     formSubmit: 'Отправить заявку',
     formSending: 'Отправка...',
     formOk: 'Заявка отправлена! Перезвоним за 30 минут.',
@@ -93,6 +107,16 @@ const LANGS = [
     serviceBase: '/ru/services/',
     ruServiceBase: '/ru/services/',
     enServiceBase: '/en/services/',
+    footer: {
+      contacts: 'Контакты',
+      details: 'Реквизиты',
+      hours: 'Часы работы',
+      workdays: 'Понедельник – Пятница',
+      weekend: 'Суббота – Воскресенье',
+      closed: 'Закрыто',
+      privacy: 'Политика конфиденциальности',
+      privacyHref: '/ru/privaatsus/'
+    }
   },
   {
     lang: 'en',
@@ -108,6 +132,8 @@ const LANGS = [
     phone: '+372 5646 1210',
     phoneHref: '+37256461210',
     bookLabel: 'Book Now',
+    fabCall: 'Call Us',
+    fabBook: 'Book Now',
     formSubmit: 'Send Request',
     formSending: 'Sending...',
     formOk: 'Request sent! We\'ll call you back within 30 minutes.',
@@ -122,6 +148,16 @@ const LANGS = [
     serviceBase: '/en/services/',
     ruServiceBase: '/ru/services/',
     enServiceBase: '/en/services/',
+    footer: {
+      contacts: 'Contacts',
+      details: 'Details',
+      hours: 'Opening Hours',
+      workdays: 'Monday – Friday',
+      weekend: 'Saturday – Sunday',
+      closed: 'Closed',
+      privacy: 'Privacy Policy',
+      privacyHref: '/en/privacy/'
+    }
   },
 ];
 
@@ -507,11 +543,11 @@ ${jsonLd}
     <div class="fab-contact__menu">
       <a href="tel:${cfg.phoneHref}" class="fab-contact__action" id="fabCall">
         <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
-        <span>Helista</span>
+        <span>${esc(cfg.fabCall)}</span>
       </a>
       <a href="#request" class="fab-contact__action" id="fabForm" onclick="closeFab()">
         <iconify-icon icon="mdi:email-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
-        <span>${esc(cfg.bookLabel)}</span>
+        <span>${esc(cfg.fabBook)}</span>
       </a>
     </div>
     <button class="fab-contact__trigger" id="fabTrigger" aria-label="Võta ühendust">
@@ -528,6 +564,52 @@ ${jsonLd}
       </span>
     </button>
   </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid site-container">
+      <div>
+        <div class="footer__col-title">${esc(cfg.footer.contacts)}</div>
+        <div class="footer__text">
+          <a href="tel:${cfg.phoneHref}">${cfg.phone}</a><br>
+          <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
+          Kopli 82a, 10412 Tallinn
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.facebook.com/" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <iconify-icon icon="mdi:facebook" aria-hidden="true"></iconify-icon>
+          </a>
+          <a href="https://www.instagram.com/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <iconify-icon icon="mdi:instagram" aria-hidden="true"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">${esc(cfg.footer.details)}</div>
+        <div class="footer__text footer__text--rekvisiidid">
+          ANET EESTI OÜ<br>
+          Reg. nr: 10233521<br>
+          KMKR: EE100321511<br>
+          LHV: EE54 7700 7710 0969 0559<br>
+          SEB: EE10 1010 0520 0108 4005
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">${esc(cfg.footer.hours)}</div>
+        <div class="footer__text">
+          ${esc(cfg.footer.workdays)}<br>
+          <strong style="color: var(--text-main);">09:00 – 18:00</strong><br><br>
+          ${esc(cfg.footer.weekend)}<br>
+          <span style="color: var(--text-dimmed);">${esc(cfg.footer.closed)}</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Mr.Car Autoremont Tallinn</span>
+      <a href="${esc(cfg.footer.privacyHref)}">${esc(cfg.footer.privacy)}</a>
+      <span>Designed by <a href="https://agentica.ee" target="_blank" rel="noopener">Agentica</a></span>
+    </div>
+  </footer>
 
   <script>
     // Mobile menu

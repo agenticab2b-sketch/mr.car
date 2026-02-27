@@ -179,7 +179,7 @@ const SERVICES = [
     {
         key: "tire_service",
         slug: "tire-service",
-        allSlugs: { ru: "rehvitood", ee: "rehvitood", en: "tire-service" },
+        allSlugs: { ru: "shinomontazh", ee: "rehvitood", en: "tire-service" },
         category: "Suspension & Brakes",
         navTitle: "Tire Services",
         icon: "mdi:tire",
@@ -231,7 +231,7 @@ const SERVICES = [
     {
         key: "maintenance_diag",
         slug: "maintenance-diagnostics",
-        allSlugs: { ru: "to-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
+        allSlugs: { ru: "tehobsluzhivanie-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
         category: "Maintenance",
         navTitle: "Maintenance & Diagnostics",
         icon: "mdi:car-cog",

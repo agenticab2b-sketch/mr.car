@@ -46,16 +46,7 @@
         "type": 301
       }
     ],
-    "rewrites": [
-      {
-        "source": "/services/webasto-diagnostika",
-        "destination": "/ee/services/webasto-diagnostika.html"
-      },
-      {
-        "source": "/services/webasto-sumptomid",
-        "destination": "/ee/services/webasto-sumptomid.html"
-      }
-    ]
+    "rewrites": []
   },
   "functions": [
     {
