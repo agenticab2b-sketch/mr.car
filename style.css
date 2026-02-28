@@ -582,11 +582,12 @@ h3 {
     font-family: var(--font-mono);
     font-size: 0.875rem;
     font-weight: 700;
-    padding: 0 var(--space-md);
+    padding: 0 var(--space-lg);
     /* Removed vertical padding */
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: var(--accent-primary);
     border-left: var(--border);
     white-space: nowrap;
