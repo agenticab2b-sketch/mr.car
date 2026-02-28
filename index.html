@@ -338,9 +338,8 @@
                     </a>
                 </div>
             </div>
-            <a href="#about" class="navbar__link">[02] Meist</a>
-            <a href="#pricing" class="navbar__link">[03] Hinnad</a>
-            <a href="#contact" class="navbar__link">[04] Kontakt</a>
+            <a href="#pricing" class="navbar__link">[02] Hinnad</a>
+            <a href="#contact" class="navbar__link">[03] Kontakt</a>
         </nav>
         <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
         <div class="navbar__cta">
@@ -421,7 +420,6 @@
                     <span>Webasto remont</span>
                 </a>
             </div>
-            <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
             <a href="#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
             <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
@@ -545,7 +543,7 @@
                         <p>Mr.Car on usaldusväärne <strong>autoteenindus Tallinnas</strong>, mis asub Kopli piirkonnas —
                             vaid mõne minuti kaugusel kesklinnast. Meie kogenud meistrid pakuvad laia valikut teenuseid:
                             <a href="/services/autoremont">autoremont</a>, <a
-                                href="/services/hooldus-diagnostika">kompuuterdiagnostika</a>, <a
+                                href="/services/hooldus-diagnostika">arvutidiagnostika</a>, <a
                                 href="/services/rehvitood">rehvitööd ja rehvivahetus</a>, <a
                                 href="/services/veermik-pidurid">veermiku ja pidurite remont</a>, <a
                                 href="/services/mootoriremont">mootori kapitaalremont</a>, <a
@@ -584,9 +582,13 @@
                     </svg>
                     <span class="service-icon__label">Veermik</span>
                 </a>
-                <a href="/services/hooldus-diagnostika" class="service-icon">
-                    <iconify-icon icon="mdi:car-cog" width="48" height="48" aria-hidden="true"></iconify-icon>
-                    <span class="service-icon__label">Diagnostika</span>
+                <a href="/services/kaigukastiremont" class="service-icon">
+                    <iconify-icon icon="mdi:car-shift-pattern" width="48" height="48" aria-hidden="true"></iconify-icon>
+                    <span class="service-icon__label">Käigukast</span>
+                </a>
+                <a href="/services/mootoriremont" class="service-icon">
+                    <iconify-icon icon="mdi:engine" width="48" height="48" aria-hidden="true"></iconify-icon>
+                    <span class="service-icon__label">Mootor</span>
                 </a>
                 <a href="/services/rehvitood" class="service-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 512 512"
@@ -642,7 +644,7 @@
                         <iconify-icon icon="mdi:car-cog" width="28" height="28" aria-hidden="true"></iconify-icon>
                     </div>
                     <h3 class="service-card__title">Diagnostika</h3>
-                    <p class="service-card__description">Kõigi autosüsteemide kompuuterdiagnostika. Tuvastame vead
+                    <p class="service-card__description">Kõigi autosüsteemide arvutidiagnostika. Tuvastame vead
                         100% täpsusega. Kaasaegsed seadmed.</p>
                     <div class="service-card__footer">
                         <a href="/services/hooldus-diagnostika" class="btn-link">Broneeri aeg <span class="arrow"
@@ -751,54 +753,6 @@
             </div>
         </section>
 
-        <!-- ========================================
-       6. ABOUT / WHY US
-       ======================================== -->
-        <section class="about-section" id="about">
-            <div class="about-grid site-container reveal">
-                <div class="about__title-block">
-                    <div>
-                        <div class="section-header">
-                            <span class="meta">/// Miks meie</span>
-                            <h2>Mr.Car</h2>
-                        </div>
-                        <div class="accent-underline"></div>
-                    </div>
-                    <a href="#contact" class="btn btn-primary about__cta">Jäta päring <span class="arrow"
-                            aria-hidden="true">↗</span></a>
-                </div>
-                <div class="about__features">
-                    <div class="feature-block">
-                        <div class="feature-block__icon"><iconify-icon icon="mdi:cog" width="32" height="32"
-                                aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="feature-block__title">Kogemus</h3>
-                        <p class="feature-block__text">Remondime igapäevaautodest kuni keerukamate mootoriteni.</p>
-                    </div>
-                    <div class="feature-block">
-                        <div class="feature-block__icon"><iconify-icon icon="mdi:wrench" width="32" height="32"
-                                aria-hidden="true"></iconify-icon></div>
-                        <h3 class="feature-block__title">Seadmed</h3>
-                        <p class="feature-block__text">Kaasaegne arvutidiagnostika ja kvaliteetsed varuosad.
-                        </p>
-                    </div>
-                    <div class="feature-block">
-                        <div class="feature-block__icon"><iconify-icon icon="mdi:currency-eur" width="32" height="32"
-                                aria-hidden="true"></iconify-icon></div>
-                        <h3 class="feature-block__title">Aus hind</h3>
-                        <p class="feature-block__text">Selgitame töö ja hinna enne alustamist.
-                        </p>
-                    </div>
-                    <div class="feature-block">
-                        <div class="feature-block__icon"><iconify-icon icon="mdi:timer" width="32" height="32"
-                                aria-hidden="true"></iconify-icon></div>
-                        <h3 class="feature-block__title">Kiirus</h3>
-                        <p class="feature-block__text">Enamik töid teeme samal päeval.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ========================================
        6.5 ADVANTAGES / USP
@@ -842,7 +796,7 @@
                             <iconify-icon icon="mdi:car-cog" width="36" height="36" aria-hidden="true"></iconify-icon>
                         </div>
                         <h3 class="advantage-card__title">Kaasaegne diagnostika</h3>
-                        <p class="advantage-card__text">Kompuuterdiagnostika kõigi autosüsteemide jaoks. Tuvastame
+                        <p class="advantage-card__text">Arvutidiagnostika kõigi autosüsteemide jaoks. Tuvastame
                             probleemid täpselt ja kiiresti, et vältida ebavajalikke kulusid.</p>
                     </div>
                     <div class="advantage-card">
@@ -881,15 +835,15 @@
             <div class="gallery__images site-container reveal">
                 <div class="gallery__item">
                     <img src="homepage_pics/lowkey_portfolio_1_1771547397632.avif" alt="Mootori remont Mr.Car-is"
-                        loading="lazy">
+                        width="640" height="640" loading="lazy">
                 </div>
                 <div class="gallery__item">
-                    <img src="homepage_pics/lowkey_portfolio_2_1771547415128.avif" alt="Auto diagnostika"
-                        loading="lazy">
+                    <img src="homepage_pics/lowkey_portfolio_2_1771547415128.avif" alt="Auto diagnostika" width="640"
+                        height="640" loading="lazy">
                 </div>
                 <div class="gallery__item">
                     <img src="homepage_pics/lowkey_portfolio_3_1771547430620.avif" alt="Mr.Car töökoda seest"
-                        loading="lazy">
+                        width="640" height="640" loading="lazy">
                 </div>
             </div>
         </section>
@@ -964,18 +918,18 @@
             <div class="pricing-grid site-container reveal">
                 <div class="pricing-item">
                     <span class="pricing-item__service">Õlivahetus</span>
+                    <span class="pricing-item__price">alates €45</span>
+                    <span class="pricing-item__note">Töö</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-item__service">Diagnostika webasto</span>
+                    <span class="pricing-item__price">alates €45</span>
+                    <span class="pricing-item__note">Arvuti diagnostika</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-item__service">Veakoodide luugemine</span>
                     <span class="pricing-item__price">alates €35</span>
-                    <span class="pricing-item__note">Õli + filter</span>
-                </div>
-                <div class="pricing-item">
-                    <span class="pricing-item__service">Diagnostika</span>
-                    <span class="pricing-item__price">alates €40</span>
-                    <span class="pricing-item__note">Kompuuterdiagnostika</span>
-                </div>
-                <div class="pricing-item">
-                    <span class="pricing-item__service">Rehvitööd</span>
-                    <span class="pricing-item__price">alates €20</span>
-                    <span class="pricing-item__note">Üks ratas</span>
+                    <span class="pricing-item__note">Kiir diagnostika</span>
                 </div>
             </div>
 

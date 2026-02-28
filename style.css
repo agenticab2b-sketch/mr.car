@@ -1059,7 +1059,7 @@ h3 {
 }
 
 .services-overview .brutal-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
 }
 
 .service-icon {
@@ -1966,7 +1966,8 @@ a[href^="mailto:"] {
     align-items: center;
     min-height: 44px;
     padding: 4px 12px;
-    margin: -4px -12px; /* Compensate padding to keep layout visual alignment */
+    margin: -4px -12px;
+    /* Compensate padding to keep layout visual alignment */
     border-radius: 4px;
     transition: background-color var(--transition-fast);
 }

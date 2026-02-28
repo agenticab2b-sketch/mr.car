@@ -19,9 +19,8 @@
         <a href="/" class="navbar__logo">Mr.Car</a>
         <nav class="navbar__nav">
             <a href="#services" class="navbar__link">[01] Teenused</a>
-            <a href="#about" class="navbar__link">[02] Meist</a>
-            <a href="#pricing" class="navbar__link">[03] Hinnad</a>
-            <a href="#contact" class="navbar__link">[04] Kontakt</a>
+            <a href="#pricing" class="navbar__link">[02] Hinnad</a>
+            <a href="#contact" class="navbar__link">[03] Kontakt</a>
         </nav>
         <a href="tel:+3725646121" class="navbar__phone">+372 5646 1210</a>
         <div class="navbar__cta">
@@ -36,7 +35,6 @@
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
         <a href="#services" class="mobile-menu__link" onclick="closeMobileMenu()">Teenused</a>
-        <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
         <a href="#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
         <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
         <a href="tel:+3725646121" class="mobile-menu__link" style="color: var(--accent-primary);">+372 5646 1210</a>
@@ -109,15 +107,12 @@
                 <span class="service-icon__label">Ходовая</span>
             </a>
             <a href="#services" class="service-icon">
-                <svg viewBox="0 0 48 48">
-                    <rect x="10" y="6" width="28" height="36" />
-                    <line x1="16" y1="14" x2="32" y2="14" />
-                    <line x1="16" y1="20" x2="32" y2="20" />
-                    <line x1="16" y1="26" x2="26" y2="26" />
-                    <circle cx="30" cy="34" r="4" />
-                    <path d="M28 36 L32 32" />
-                </svg>
-                <span class="service-icon__label">Диагностика</span>
+                <iconify-icon icon="mdi:car-shift-pattern" width="48" height="48"></iconify-icon>
+                <span class="service-icon__label">Коробка</span>
+            </a>
+            <a href="#services" class="service-icon">
+                <iconify-icon icon="mdi:engine" width="48" height="48"></iconify-icon>
+                <span class="service-icon__label">Двигатель</span>
             </a>
             <a href="#services" class="service-icon">
                 <svg viewBox="0 0 48 48">
@@ -279,47 +274,6 @@
         </div>
     </section>
 
-    <!-- ========================================
-       6. ABOUT / WHY US
-       ======================================== -->
-    <section class="about-section" id="about">
-        <div class="about-grid site-container reveal">
-            <div class="about__title-block">
-                <div>
-                    <span class="meta">/// Почему мы</span>
-                    <h2 style="margin-top: var(--space-md);">Почему<br>Mr.Car</h2>
-                    <div class="accent-underline"></div>
-                </div>
-                <a href="#contact" class="btn btn-primary"
-                    style="margin-top: var(--space-xl); align-self: flex-start;">Записаться <span
-                        class="arrow">↗</span></a>
-            </div>
-            <div class="about__features">
-                <div class="feature-block">
-                    <div class="feature-block__icon">⚙️</div>
-                    <h3 class="feature-block__title">Опыт</h3>
-                    <p class="feature-block__text">Работаем в Kopli. Знаем каждый двигатель — от Volkswagen до BMW.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-block__icon">🔧</div>
-                    <h3 class="feature-block__title">Оборудование</h3>
-                    <p class="feature-block__text">Современная компьютерная диагностика. Оригинальные и качественные
-                        запчасти.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-block__icon">💰</div>
-                    <h3 class="feature-block__title">Честная цена</h3>
-                    <p class="feature-block__text">Называем стоимость до начала работы. Никаких скрытых доплат.</p>
-                </div>
-                <div class="feature-block">
-                    <div class="feature-block__icon">⏱️</div>
-                    <h3 class="feature-block__title">Скорость</h3>
-                    <p class="feature-block__text">Большинство работ выполняем в день обращения. Перезваниваем в течение
-                        30 минут.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ========================================
        7. GALLERY
