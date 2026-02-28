@@ -581,7 +581,7 @@ h3 {
 
 .navbar__phone {
     font-family: var(--font-mono);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 700;
     padding: 0 var(--space-md);
     /* Removed vertical padding */
@@ -804,7 +804,8 @@ h3 {
     color: var(--text-main);
     font-size: 2rem;
     cursor: pointer;
-    z-index: 1002; /* Ensure it stays above the menu content */
+    z-index: 1002;
+    /* Ensure it stays above the menu content */
 }
 
 
@@ -1753,6 +1754,7 @@ h3 {
 .contact-section {
     padding: var(--space-section) 0;
     border-bottom: var(--border);
+    background: linear-gradient(135deg, rgba(255, 176, 0, 0.06) 0%, transparent 60%);
 }
 
 .contact-grid {
@@ -1981,7 +1983,8 @@ h3 {
 /* Global touch target improvement for contact links - disabled to prevent navbar overflow */
 a[href^="tel:"].navbar__phone,
 a[href^="mailto:"].navbar__phone {
-    display: flex; /* Restore flex for navbar cell */
+    display: flex;
+    /* Restore flex for navbar cell */
     min-height: 100%;
     padding: 0 var(--space-md);
     margin: 0;
@@ -1990,7 +1993,8 @@ a[href^="mailto:"].navbar__phone {
 
 a[href^="tel:"].navbar__phone:hover,
 a[href^="mailto:"].navbar__phone:hover {
-    background-color: var(--bg-surface); /* Match other nav links */
+    background-color: var(--bg-surface);
+    /* Match other nav links */
     color: var(--text-main);
 }
 
@@ -2128,6 +2132,7 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 
 /* --- Mobile/Hamburger transition for Navbar --- */
 @media (max-width: 1150px) {
+
     .navbar__nav,
     .navbar__phone {
         display: none;
