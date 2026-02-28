@@ -2125,7 +2125,10 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     .navbar__cta {
         display: flex;
         align-items: center;
+        height: 100%; /* Ensure container takes full header height */
         margin-left: auto; /* Pushes CTA and Burger to the right */
+        padding: 0 var(--space-md);
+        border-left: var(--border);
     }
 
     .navbar__cta .btn {
@@ -2134,6 +2137,9 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         background-color: var(--accent-primary);
         color: var(--text-on-accent);
         border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .navbar {
