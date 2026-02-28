@@ -2115,17 +2115,17 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 
 /* --- Mobile/Hamburger transition for Navbar (triggered as soon as links start to hit lang icons) --- */
 @media (max-width: 1150px) {
-    /* P-02: Navbar mobile — hide CTA, show only logo + burger */
     /* P-02: Navbar mobile — show CTA (yellow button), hide nav/phone */
     .navbar__nav,
     .navbar__phone {
         display: none;
     }
 
-    /* Return CTA button */
+    /* Return CTA button and align to right */
     .navbar__cta {
         display: flex;
         align-items: center;
+        margin-left: auto; /* Pushes CTA and Burger to the right */
     }
 
     .navbar__cta .btn {
@@ -2137,9 +2137,10 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     }
 
     .navbar {
-        grid-template-columns: repeat(7, 1fr) auto;
-        gap: 0;
+        display: flex; /* Switch to flex for easier alignment */
+        justify-content: flex-start;
         align-items: stretch;
+        padding-right: 0; /* Burger has its own padding/border */
     }
 
     .navbar__lang.desktop-only {
@@ -2151,22 +2152,21 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         padding: var(--space-md);
         display: flex;
         align-items: center;
+        border-right: var(--border);
     }
 
     .navbar__cta {
         padding: 0 var(--space-md);
-        /* Remove vertical padding, let align-items center it */
+        border-left: var(--border);
     }
 
     .navbar__burger {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-left: 0;
         padding: 0 var(--container-padding) 0 var(--space-lg);
-        /* Horizontal padding only, vertical handled by flex/stretch */
         width: auto;
-        /* Let padding define width */
+        border-left: var(--border);
     }
 }
 
