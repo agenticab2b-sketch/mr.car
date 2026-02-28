@@ -571,13 +571,20 @@ h3 {
 }
 
 .navbar__cta {
-    padding: 0 var(--space-md);
-    /* Removed vertical padding */
+    padding: 0 var(--space-xs);
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-left: var(--border);
+}
+
+/* Ensure the button inside the navbar fits the equal cell */
+.navbar__cta .btn {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.8rem;
+    width: 100%;
+    justify-content: center;
 }
 
 .navbar__phone {
