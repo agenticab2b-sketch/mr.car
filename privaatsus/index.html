@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privaatsuspoliitika — Mr.Car</title>
-    <link rel="preload" href="/style.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/style.css?v=3"></noscript>
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --bg-main: #111625;
+            --text-main: #ffffff;
+            --container-padding: 16px;
+            --border-grid: #36415a;
+        }
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: sans-serif;
+            margin: 0;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+    <link rel="stylesheet" href="/style.css?v=3">
 </head>
 <body>
     <header class="navbar">
@@ -21,7 +39,7 @@
             <p>Me kogume andmeid, mida te edastate meile broneerimisvormi kaudu: nimi, telefoninumber, auto mark ja mudel ning teie sõnum.</p>
 
             <h2>2. Andmete kasutamine</h2>
-            <p>Kasutame teie andmeid ainult teenuste pakkumiseks, broneeringute kinnitamiseks ja teiega ühenduse võtmiseks seoses teie päringuga.</p>
+            <p>Kasutame teie данные ainult teenuste pakkumiseks, broneeringute kinnitamiseks ja teiega ühenduse võtmiseks seoses teie päringuga.</p>
 
             <h2>3. Andmete säilitamine</h2>
             <p>Säilitame teie andmeid ainult nii kaua, kui see on vajalik teenuse osutamiseks või seadusest tulenevate kohustuste täitmiseks.</p>
