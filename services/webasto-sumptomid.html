@@ -6,36 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Webasto ei käivitu, lülitub välja või ajab suitsu? Vaata 7 levinumat sümptomit, riske ja saa selgeks, millal on vaja diagnostikat. Küsi nõu Mr.Car meistritelt, Kopli 82a Tallinn.">
-    <title>Webasto sümptomid ja vead — Millal pöörduda Mr.Car Tallinnas?</title>
-
-    <!-- Font Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap"
-        rel="stylesheet">
+    <title>Webasto sümptomid ja vead — Millal pöörduda Mr.Car Tallinnas?</title>    <!-- Font Loading -->
+    <link rel="preload" href="/fonts/Inter-Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Critical CSS -->
     <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/Inter-Regular.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 900;
+            font-display: block;
+            src: url('/fonts/Inter-Black.woff2') format('woff2');
+        }
+
         :root {
             --bg-main: #111625;
-            --text-main: #FFFFFF;
-            --accent-primary: #FFB000;
-            --border-grid: #36415A;
+            --text-main: #ffffff;
             --container-padding: 16px;
-            --space-md: 16px;
-        }
-
-        @media (min-width: 768px) {
-            :root {
-                --container-padding: 32px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            :root {
-                --container-padding: 64px;
-            }
+            --border-grid: #36415a;
         }
 
         body {
@@ -46,7 +43,9 @@
         }
 
         .navbar {
-            position: sticky;
+            position: fixed;
+            left: 0;
+            right: 0;
             top: 0;
             z-index: 1000;
             background: rgba(17, 22, 37, 0.95);
@@ -59,28 +58,50 @@
             padding: 0 var(--container-padding);
         }
 
-        .sd-hero {
-            position: relative;
-            min-height: 380px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 400px;
+            height: 60vh;
             border-bottom: 1px solid var(--border-grid);
+            overflow: hidden;
+            background: #1a2133;
         }
 
-        .sd-hero__content {
+        @media (min-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr 1fr;
+                min-height: 500px;
+                height: 50vh;
+            }
+        }
+
+        .hero__image {
             position: relative;
-            z-index: 2;
-            padding: 64px var(--container-padding);
+            background: #1a2133;
+            overflow: hidden;
         }
 
-        .sd-hero__title {
+        .hero__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero__content {
+            padding: 48px var(--container-padding);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .h1,
+        h1 {
             font-weight: 900;
             text-transform: uppercase;
-            font-size: clamp(2rem, 8vw, 4rem);
-            line-height: 1;
+            line-height: 1.05;
             margin: 0;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 

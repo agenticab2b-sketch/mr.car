@@ -2,9 +2,39 @@
    Mr.Car Autoremont — Technical Brutalism Design System
    ============================================================ */
 
-/* --- Google Fonts --- */
-/* F-01 fix: Removed Oswald. Inter 900 replaces it for headings (2 families, not 3) */
-/* Moved to HTML <link> for performance */
+/* --- Local Fonts --- */
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    size-adjust: 107%;
+    ascent-override: 90%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/Inter-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/Inter-Black.woff2') format('woff2');
+}
 
 /* --- CSS Reset --- */
 *,
@@ -22,7 +52,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Inter Fallback', sans-serif;
     font-size: 1rem;
     /* F-05 fix: explicit body font-size */
     background-color: var(--bg-main);
@@ -129,10 +159,10 @@ ol {
     --on-success-container: #A3E8C5;
 
     /* — Typography — */
-    --font-heading: 'Inter', sans-serif;
+    --font-heading: 'Inter', 'Inter Fallback', sans-serif;
     /* F-01 fix: Inter 900 replaces Oswald */
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', 'Inter Fallback', sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
     /* — Spacing (8px grid) — */
     --space-xs: 4px;
@@ -1973,7 +2003,7 @@ h3 {
 @media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
-        min-height: auto;
+        min-height: 85vh;
     }
 
     .hero__image {
