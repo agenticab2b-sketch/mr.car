@@ -1,0 +1,28 @@
+Optimize LCP (Render Delay) across all HTML files in the project.
+
+**Task Description:**
+The website is currently suffering from Render-Blocking resources, specifically causing a 2.3s Render Delay for the LCP element. I need you to automatically apply two performance optimizations across ALL `.html` files in the project directory (including subdirectories like `ru/`, `en/`, `services/`, etc.).
+
+**Required Changes for EVERY .html file:**
+
+1.  **Iconify Script Optimization:**
+    Find the `<script>` tag loading the Iconify library:
+    `<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>`
+    And add the `defer` attribute to it:
+    `<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>`
+    *(Note: use `defer` to ensure it doesn't block parsing but executes in order, which is generally safer for web components across slower connections compared to `async`)*
+
+2.  **CSS Loading Optimization (Deferring `style.css`):**
+    Find the `<link>` tag loading the main stylesheet:
+    `<link rel="stylesheet" href="/style.css">`
+    And replace it with the following snippet to load it asynchronously while providing a fallback for users without JavaScript:
+    ```html
+    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/style.css"></noscript>
+    ```
+
+**Important Instructions:**
+*   You must find and modify *every single* HTML file in the project.
+*   Do not alter the `<!-- Critical CSS -->` block or any inline `<style>` tags.
+*   Do not change any other scripts or links in the `<head>`.
+*   Ensure the changes are applied consistently across all language versions (`/`, `/ru/`, `/en/`) and service pages.
