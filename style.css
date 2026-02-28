@@ -472,11 +472,9 @@ h3 {
 }
 
 .navbar__nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Let the 4 links take up 4 grid cells worth of space */
-    grid-column: span 4;
+    /* Make this wrapper transparent to the CSS grid so each child
+       link becomes its own equal 1fr column cell */
+    display: contents;
 }
 
 .navbar__link {
@@ -486,20 +484,14 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 0 var(--space-md);
-    /* Removed vertical padding, let align-items center */
     height: 100%;
     display: flex;
-    flex: 1;
     justify-content: center;
     align-items: center;
     border-left: var(--border);
     transition: background-color var(--transition-fast), color var(--transition-fast);
     color: var(--text-muted);
     white-space: nowrap;
-}
-
-.navbar__link:first-child {
-    border-left: none;
 }
 
 .navbar__link:hover {
@@ -511,6 +503,12 @@ h3 {
     position: relative;
     height: 100%;
     display: flex;
+    border-left: var(--border);
+}
+
+/* Inside .navbar__item the link fills the full cell — no double border */
+.navbar__item>.navbar__link {
+    border-left: none;
     flex: 1;
 }
 
