@@ -1,0 +1,27 @@
+[debug] [2026-02-28T21:31:08.093Z] ----------------------------------------------------------------------
+[debug] [2026-02-28T21:31:08.096Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\bumbo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only hosting
+[debug] [2026-02-28T21:31:08.097Z] CLI Version:   15.8.0
+[debug] [2026-02-28T21:31:08.097Z] Platform:      win32
+[debug] [2026-02-28T21:31:08.098Z] Node Version:  v22.19.0
+[debug] [2026-02-28T21:31:08.098Z] Time:          Sat Feb 28 2026 23:31:08 GMT+0200 (Восточная Европа, стандартное время)
+[debug] [2026-02-28T21:31:08.099Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-02-28T21:31:08.101Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-02-28T21:31:10.053Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-02-28T21:31:10.054Z] > authorizing via signed-in user (bumbox90@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2026-02-28T21:31:10.067Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] !  hosting: Hosting Emulator unable to start on port 5000, starting on 5002 instead. {"metadata":{"emulator":{"name":"hosting"},"message":"Hosting Emulator unable to start on port 5000, starting on 5002 instead."}}
+[debug] [2026-02-28T21:31:10.069Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-02-28T21:31:10.069Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-02-28T21:31:10.075Z] Write emulator hub locator at C:\Users\bumbo\AppData\Local\Temp\hub-mrcar-473416.json
+[debug] [2026-02-28T21:31:10.086Z] Checked if tokens are valid: false, expires at: 1772236193330
+[debug] [2026-02-28T21:31:10.087Z] Checked if tokens are valid: false, expires at: 1772236193330
+[debug] [2026-02-28T21:31:10.087Z] > refreshing access token with scopes: []
+[debug] [2026-02-28T21:31:10.088Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-02-28T21:31:10.088Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-02-28T21:31:10.165Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-02-28T21:31:10.165Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-02-28T21:31:10.174Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites 
+[debug] [2026-02-28T21:31:10.385Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-02-28T21:31:10.385Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
