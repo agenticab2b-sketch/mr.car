@@ -7,7 +7,10 @@
     <meta name="description"
         content="Mr.Car Autoremont Tallinn — professionaalne autoremont, rehvivahetus ja diagnostika Koplis. Helista +372 5646 1210">
     <title>Mr.Car Autoremont Tallinn — Professionaalne Autohooldus</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="/style.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/style.css?v=2">
+    </noscript>
 </head>
 
 <body>
@@ -16,7 +19,10 @@
        1. NAVBAR
        ======================================== -->
     <header class="navbar" id="navbar">
-        <a href="/" class="navbar__logo">Mr.Car</a>
+        <a href="/" class="navbar__logo">
+            <img src="/homepage_pics/mr-car-logo.avif" alt="Mr.Car Autoremont" height="40"
+                style="width: auto; object-fit: contain;">
+        </a>
         <nav class="navbar__nav">
             <a href="#services" class="navbar__link">[01] Teenused</a>
             <a href="#pricing" class="navbar__link">[02] Hinnad</a>

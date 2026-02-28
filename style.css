@@ -508,6 +508,7 @@ h3 {
     position: relative;
     height: 100%;
     display: flex;
+    flex: 1;
 }
 
 .mega-menu {
@@ -2047,6 +2048,11 @@ a[href^="mailto:"]:hover {
         grid-template-columns: 1fr;
     }
 
+    .seo-intro__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
     .contact-grid,
     .location-grid {
         grid-template-columns: 1fr;
@@ -2329,7 +2335,23 @@ a[href^="mailto:"]:hover {
 }
 
 .seo-intro__grid {
-    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+.seo-intro__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seo-intro__image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
 }
 
 /* Add proper spacing below the header in the SEO intro text block */

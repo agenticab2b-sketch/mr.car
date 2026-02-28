@@ -255,9 +255,9 @@
     }
     </script>
 
-    <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/style.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/style.css?v=2">
     </noscript>
 
     <!-- Favicons -->
@@ -279,7 +279,10 @@
        1. NAVBAR
        ======================================== -->
     <header class="navbar" id="navbar">
-        <a href="/" class="navbar__logo">Mr.Car</a>
+        <a href="/" class="navbar__logo">
+            <img src="/homepage_pics/mr-car-logo.avif" alt="Mr.Car Autoremont" height="40"
+                style="width: auto; object-fit: contain;">
+        </a>
         <nav class="navbar__nav">
             <div class="navbar__item has-dropdown">
                 <a href="#services" class="navbar__link">[01] Teenused</a>
@@ -560,6 +563,9 @@
                         <p>Mr.Car autoremont — <strong>aus hind, kiire teenindus ja professionaalne lähenemine</strong>.
                             Broneeri aeg <a href="tel:+37256461210">+372 5646 1210</a> või <a href="#contact">jäta
                                 päring veebis</a>.</p>
+                    </div>
+                    <div class="seo-intro__image">
+                        <img src="/homepage_pics/mr-car-logo.avif" alt="Mr.Car Autoremont Tallinnas">
                     </div>
                 </div>
             </div>
