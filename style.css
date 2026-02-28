@@ -1770,10 +1770,17 @@ h3 {
     color: var(--text-dimmed);
     text-transform: uppercase;
     margin-top: var(--space-xl);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
 }
 
 .contact__alt a {
     color: var(--accent-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    padding: 4px 0;
 }
 
 .contact__form {
@@ -1946,15 +1953,39 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border: var(--border);
     transition: all var(--transition-fast);
 }
 
-.footer__social-link:hover {
-    background-color: var(--accent-primary);
-    border-color: var(--accent-primary);
+/* Global touch target improvement for contact links */
+a[href^="tel:"],
+a[href^="mailto:"] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 4px 12px;
+    margin: -4px -12px; /* Compensate padding to keep layout visual alignment */
+    border-radius: 4px;
+    transition: background-color var(--transition-fast);
+}
+
+a[href^="tel:"]:hover,
+a[href^="mailto:"]:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-xl);
+}
+
+@media (max-width: 767px) {
+    .footer-grid {
+        gap: var(--space-2xl); /* More space between columns on mobile */
+    }
 }
 
 .footer__social-link svg,

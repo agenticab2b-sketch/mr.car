@@ -11,7 +11,8 @@
 
     <!-- Preload LCP Image -->
     <link rel="preload" as="image" href="/pics/hero-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
-    <link rel="preload" as="image" href="/pics/hero-desktop.webp" media="(min-width: 768px)" fetchpriority="high">    <!-- Font Loading -->
+    <link rel="preload" as="image" href="/pics/hero-desktop.webp" media="(min-width: 768px)" fetchpriority="high">
+    <!-- Font Loading -->
     <link rel="preload" href="/fonts/Inter-Black.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -81,8 +82,7 @@
         .hero {
             display: grid;
             grid-template-columns: 1fr;
-            min-height: 400px;
-            aspect-ratio: 4 / 3;
+            min-height: 100vh;
             border-bottom: 1px solid var(--border-grid);
             overflow: hidden;
             background: #1a2133;
@@ -91,8 +91,7 @@
         @media (min-width: 768px) {
             .hero {
                 grid-template-columns: 1fr 1fr;
-                min-height: 600px;
-                aspect-ratio: 16 / 9;
+                min-height: 100vh;
             }
         }
 
@@ -151,7 +150,9 @@
     </script>
 
     <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/style.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="/style.css">
+    </noscript>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -341,9 +342,9 @@
     <section class="hero" id="hero">
         <div class="hero__image">
             <picture>
-                
+
                 <source srcset="/pics/hero-mobile.webp" media="(max-width: 767px)" type="image/webp">
-                
+
                 <source srcset="/pics/hero-desktop.webp" media="(min-width: 768px)" type="image/webp">
                 <img src="/pics/hero-desktop.webp"
                     alt="РђРІС‚РѕСЃРµСЂРІРёСЃ Mr.Car вЂ” РјР°СЃС‚РµСЂ Р·Р° СЂР°Р±РѕС‚РѕР№" loading="eager"
