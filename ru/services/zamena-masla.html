@@ -82,13 +82,12 @@
   </script>
 
   <!-- Fonts -->
-  <!-- Font Loading -->
-    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/Inter-Black.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="preload" href="/style.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/style.css?v=3"></noscript>
+  <link rel="stylesheet" href="/style.css?v=3">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -97,7 +96,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="shortcut icon" href="/favicon.ico">
 
-  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 <body>
 
@@ -108,9 +107,17 @@
       <div class="navbar__item has-dropdown">
         <a href="/ru/#services" class="navbar__link" style="color:var(--accent-primary)">[01] Услуги</a>
         <div class="mega-menu" id="megaMenuDesktop">
-          <a href="/ru/services/autoremont" class="mega-menu__item">
-              <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Ремонт автомобилей</span>
+          <a href="/ru/services/elektrika" class="mega-menu__item">
+              <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Автоэлектрика</span>
+            </a>
+            <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
+              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Ремонт двигателя</span>
+            </a>
+            <a href="/ru/services/remont-kpp" class="mega-menu__item">
+              <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Ремонт КПП</span>
             </a>
             <a href="/ru/services/glushiteli-svarka" class="mega-menu__item">
               <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -120,25 +127,13 @@
               <iconify-icon icon="mdi:car-brake-alert" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Ходовая и тормоза</span>
             </a>
-            <a href="/ru/services/shinomontazh" class="mega-menu__item">
+            <a href="/ru/services/rehvitood" class="mega-menu__item">
               <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Шиномонтаж</span>
             </a>
             <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mega-menu__item">
               <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>ТО и диагностика</span>
-            </a>
-            <a href="/ru/services/remont-kpp" class="mega-menu__item">
-              <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Ремонт КПП</span>
-            </a>
-            <a href="/ru/services/elektrika" class="mega-menu__item">
-              <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Электроработы</span>
-            </a>
-            <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
-              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Ремонт двигателя</span>
             </a>
             <a href="/ru/services/zamena-masla" class="mega-menu__item">
               <iconify-icon icon="mdi:oil" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -156,13 +151,17 @@
               <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Ремонт Webasto</span>
             </a>
+            <a href="/ru/services/autoremont" class="mega-menu__item">
+              <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Общий авторемонт</span>
+            </a>
         </div>
       </div>
                   <a href="/ru/#about" class="navbar__link">[02] О нас</a>
                   <a href="/ru/#pricing" class="navbar__link">[03] Цены</a>
                   <a href="/ru/#contact" class="navbar__link">[04] Контакты</a>
     </nav>
-    <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
+    <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
     <div class="navbar__cta">
       <a href="#request" class="btn btn-primary">Записаться</a>
     </div>
@@ -185,9 +184,17 @@
         <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
       </a>
       <div class="mobile-mega-menu" id="mobileMegaMenu">
-        <a href="/ru/services/autoremont" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-              <span>Ремонт автомобилей</span>
+        <a href="/ru/services/elektrika" class="mobile-mega-menu__item">
+              <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+              <span>Автоэлектрика</span>
+            </a>
+            <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item">
+              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+              <span>Ремонт двигателя</span>
+            </a>
+            <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item">
+              <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+              <span>Ремонт КПП</span>
             </a>
             <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item">
               <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
@@ -197,25 +204,13 @@
               <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
               <span>Ходовая и тормоза</span>
             </a>
-            <a href="/ru/services/shinomontazh" class="mobile-mega-menu__item">
+            <a href="/ru/services/rehvitood" class="mobile-mega-menu__item">
               <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
               <span>Шиномонтаж</span>
             </a>
             <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mobile-mega-menu__item">
               <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
               <span>ТО и диагностика</span>
-            </a>
-            <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
-              <span>Ремонт КПП</span>
-            </a>
-            <a href="/ru/services/elektrika" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
-              <span>Электроработы</span>
-            </a>
-            <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-              <span>Ремонт двигателя</span>
             </a>
             <a href="/ru/services/zamena-masla" class="mobile-mega-menu__item">
               <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
@@ -233,12 +228,16 @@
               <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
               <span>Ремонт Webasto</span>
             </a>
+            <a href="/ru/services/autoremont" class="mobile-mega-menu__item">
+              <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+              <span>Общий авторемонт</span>
+            </a>
       </div>
       <a href="/ru/#about" class="mobile-menu__link" onclick="closeMobileMenu()">[02] О нас</a>
       <a href="/ru/#pricing" class="mobile-menu__link" onclick="closeMobileMenu()">[03] Цены</a>
       <a href="/ru/#contact" class="mobile-menu__link" onclick="closeMobileMenu()">[04] Контакты</a>
     </nav>
-    <a href="tel:+37256461210" class="mobile-menu__link" style="color:var(--accent-primary)">+372 5646 1210</a>
+    <a href="tel:+37256461210" class="mobile-menu__link" style="color:var(--accent-primary)">5646 1210</a>
     <div class="mobile-menu__lang">
       <a href="/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
             <a href="/ru/" class="mobile-lang-link active"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
@@ -252,7 +251,7 @@
     <div class="sd-hero__content site-container">
       <span class="sd-hero__meta">/// Mr.Car Autoteenindus</span>
       <h1 class="sd-hero__title">Замена масла и фильтров</h1>
-      <p class="sd-hero__lead">Быстрая замена масла по допускам производителя с правильным подбором. От €35 вместе с фильтром.</p>
+      <p class="sd-hero__lead">Быстрая замена масла с подбором по допускам производителя. От €35 с фильтром.</p>
       <a href="#request" class="btn btn-primary sd-hero__cta">Отправить заявку <span class="arrow">↗</span></a>
     </div>
   </section>
@@ -266,12 +265,47 @@
     <div class="sd-sidebar-mobile__content" id="sidebarMobileContent">
       
           <div class="sd-sidebar__category">
+            <div class="sd-sidebar__cat-title">Диагностика и электрика</div>
+            <ul class="sd-sidebar__list">
+              <li><a href="/ru/services/elektrika" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:lightning-bolt" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Автоэлектрика</span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="sd-sidebar__category">
+            <div class="sd-sidebar__cat-title">Двигатель и агрегаты</div>
+            <ul class="sd-sidebar__list">
+              <li><a href="/ru/services/remont-dvigatelya" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:engine" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Ремонт двигателя</span>
+              </a></li>
+              <li><a href="/ru/services/remont-kpp" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:car-shift-pattern" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Ремонт КПП</span>
+              </a></li>
+              <li><a href="/ru/services/glushiteli-svarka" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:fire" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Глушители и сварка</span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="sd-sidebar__category">
+            <div class="sd-sidebar__cat-title">Ходовая и тормоза</div>
+            <ul class="sd-sidebar__list">
+              <li><a href="/ru/services/hodovaya-tormoza" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Ходовая и тормоза</span>
+              </a></li>
+              <li><a href="/ru/services/rehvitood" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:tire" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Шиномонтаж</span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Обслуживание</div>
             <ul class="sd-sidebar__list">
-              <li><a href="/ru/services/autoremont" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:wrench" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Ремонт автомобилей</span>
-              </a></li>
               <li><a href="/ru/services/tehobsluzhivanie-diagnostika" class="sd-sidebar__link">
                 <iconify-icon icon="mdi:car-cog" width="18" height="18" aria-hidden="true"></iconify-icon>
                 <span>ТО и диагностика</span>
@@ -284,44 +318,9 @@
                 <iconify-icon icon="mdi:file-search-outline" width="18" height="18" aria-hidden="true"></iconify-icon>
                 <span>Проверка перед покупкой</span>
               </a></li>
-            </ul>
-          </div>
-          <div class="sd-sidebar__category">
-            <div class="sd-sidebar__cat-title">Двигатель и агрегаты</div>
-            <ul class="sd-sidebar__list">
-              <li><a href="/ru/services/glushiteli-svarka" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:fire" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Глушители и сварка</span>
-              </a></li>
-              <li><a href="/ru/services/remont-kpp" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:car-shift-pattern" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Ремонт КПП</span>
-              </a></li>
-              <li><a href="/ru/services/remont-dvigatelya" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:engine" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Ремонт двигателя</span>
-              </a></li>
-            </ul>
-          </div>
-          <div class="sd-sidebar__category">
-            <div class="sd-sidebar__cat-title">Ходовая и тормоза</div>
-            <ul class="sd-sidebar__list">
-              <li><a href="/ru/services/hodovaya-tormoza" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Ходовая и тормоза</span>
-              </a></li>
-              <li><a href="/ru/services/shinomontazh" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:tire" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Шиномонтаж</span>
-              </a></li>
-            </ul>
-          </div>
-          <div class="sd-sidebar__category">
-            <div class="sd-sidebar__cat-title">Диагностика и электрика</div>
-            <ul class="sd-sidebar__list">
-              <li><a href="/ru/services/elektrika" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:lightning-bolt" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Электроработы</span>
+              <li><a href="/ru/services/autoremont" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:wrench" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Общий авторемонт</span>
               </a></li>
             </ul>
           </div>
@@ -350,8 +349,8 @@
       <div class="sd-intro">
         <h2 class="sd-intro__title">Замена масла в Mr.Car</h2>
         <div class="sd-intro__text">
-          <p>Замена масла — базовая, но критически важная процедура. Старое масло теряет защитные свойства и начинает разрушать двигатель изнутри.</p>
-          <p>Мы подбираем масло строго по допускам производителя вашего авто. Используем Motul, Castrol, Mobil 1 и другие качественные бренды.</p>
+          <p>Замена масла — базовая, но критически важная процедура. Старое масло теряет свои защитные свойства и начинает разрушать двигатель изнутри.</p>
+          <p>Мы подбираем масло строго по допускам производителя вашего автомобиля. Используем масла Motul, Castrol, Mobil 1 и другие премиальные бренды.</p>
         </div>
       </div>
 
@@ -362,30 +361,30 @@
           
       <div class="sd-symptom">
         <iconify-icon icon="mdi:counter" width="28" height="28" aria-hidden="true"></iconify-icon>
-        <span>Каждые 10 000 – 15 000 км</span>
+        <span>Каждые 10 000–15 000 км</span>
       </div>
       <div class="sd-symptom">
         <iconify-icon icon="mdi:oil-level" width="28" height="28" aria-hidden="true"></iconify-icon>
-        <span>Темное масло на щупе</span>
+        <span>Тёмное масло на щупе</span>
       </div>
       <div class="sd-symptom">
         <iconify-icon icon="mdi:engine-outline" width="28" height="28" aria-hidden="true"></iconify-icon>
-        <span>Горит индикатор давления масла</span>
+        <span>Горит индикатор масла</span>
       </div>
       <div class="sd-symptom">
         <iconify-icon icon="mdi:volume-high" width="28" height="28" aria-hidden="true"></iconify-icon>
-        <span>Мотор стал работать громче</span>
+        <span>Двигатель работает громче</span>
       </div>
       <div class="sd-symptom">
         <iconify-icon icon="mdi:calendar-check" width="28" height="28" aria-hidden="true"></iconify-icon>
-        <span>Прошел год с прошлой замены</span>
+        <span>Прошёл год с замены</span>
       </div>
       <div class="sd-symptom">
         <iconify-icon icon="mdi:gas-station" width="28" height="28" aria-hidden="true"></iconify-icon>
-        <span>Увеличился расход топлива</span>
+        <span>Повышенный расход топлива</span>
       </div>
         </div>
-        <p class="sd-symptoms__after">Замена масла занимает 20-30 минут. Не экономьте на масле — это дешевле, чем ремонт двигателя.</p>
+        <p class="sd-symptoms__after">Замена масла занимает 20–30 минут. Не экономьте на масле — это дешевле, чем ремонт двигателя.</p>
       </div>
 
       <!-- Services list -->
@@ -394,14 +393,14 @@
         <ul class="sd-services-list__items">
           
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Подбор масла по допускам производителя</li>
-        <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Слив старого и заливка нового масла</li>
+        <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Замена моторного масла</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Замена масляного фильтра</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Замена воздушного фильтра</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Замена салонного фильтра</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Замена топливного фильтра</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Проверка уровня всех жидкостей</li>
         </ul>
-        <p class="sd-services-list__after">Цена от €35 (масло + фильтр). Точная стоимость зависит от объема двигателя и марки масла.</p>
+        <p class="sd-services-list__after">Стоимость от €35 (масло + фильтр). Точная цена зависит от объёма двигателя и марки масла.</p>
       </div>
 
       
@@ -411,12 +410,47 @@
     <aside class="sd-sidebar" id="sidebarDesktop">
       
           <div class="sd-sidebar__category">
+            <div class="sd-sidebar__cat-title">Диагностика и электрика</div>
+            <ul class="sd-sidebar__list">
+              <li><a href="/ru/services/elektrika" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:lightning-bolt" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Автоэлектрика</span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="sd-sidebar__category">
+            <div class="sd-sidebar__cat-title">Двигатель и агрегаты</div>
+            <ul class="sd-sidebar__list">
+              <li><a href="/ru/services/remont-dvigatelya" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:engine" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Ремонт двигателя</span>
+              </a></li>
+              <li><a href="/ru/services/remont-kpp" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:car-shift-pattern" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Ремонт КПП</span>
+              </a></li>
+              <li><a href="/ru/services/glushiteli-svarka" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:fire" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Глушители и сварка</span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="sd-sidebar__category">
+            <div class="sd-sidebar__cat-title">Ходовая и тормоза</div>
+            <ul class="sd-sidebar__list">
+              <li><a href="/ru/services/hodovaya-tormoza" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Ходовая и тормоза</span>
+              </a></li>
+              <li><a href="/ru/services/rehvitood" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:tire" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Шиномонтаж</span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Обслуживание</div>
             <ul class="sd-sidebar__list">
-              <li><a href="/ru/services/autoremont" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:wrench" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Ремонт автомобилей</span>
-              </a></li>
               <li><a href="/ru/services/tehobsluzhivanie-diagnostika" class="sd-sidebar__link">
                 <iconify-icon icon="mdi:car-cog" width="18" height="18" aria-hidden="true"></iconify-icon>
                 <span>ТО и диагностика</span>
@@ -429,44 +463,9 @@
                 <iconify-icon icon="mdi:file-search-outline" width="18" height="18" aria-hidden="true"></iconify-icon>
                 <span>Проверка перед покупкой</span>
               </a></li>
-            </ul>
-          </div>
-          <div class="sd-sidebar__category">
-            <div class="sd-sidebar__cat-title">Двигатель и агрегаты</div>
-            <ul class="sd-sidebar__list">
-              <li><a href="/ru/services/glushiteli-svarka" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:fire" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Глушители и сварка</span>
-              </a></li>
-              <li><a href="/ru/services/remont-kpp" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:car-shift-pattern" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Ремонт КПП</span>
-              </a></li>
-              <li><a href="/ru/services/remont-dvigatelya" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:engine" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Ремонт двигателя</span>
-              </a></li>
-            </ul>
-          </div>
-          <div class="sd-sidebar__category">
-            <div class="sd-sidebar__cat-title">Ходовая и тормоза</div>
-            <ul class="sd-sidebar__list">
-              <li><a href="/ru/services/hodovaya-tormoza" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Ходовая и тормоза</span>
-              </a></li>
-              <li><a href="/ru/services/shinomontazh" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:tire" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Шиномонтаж</span>
-              </a></li>
-            </ul>
-          </div>
-          <div class="sd-sidebar__category">
-            <div class="sd-sidebar__cat-title">Диагностика и электрика</div>
-            <ul class="sd-sidebar__list">
-              <li><a href="/ru/services/elektrika" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:lightning-bolt" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Электроработы</span>
+              <li><a href="/ru/services/autoremont" class="sd-sidebar__link">
+                <iconify-icon icon="mdi:wrench" width="18" height="18" aria-hidden="true"></iconify-icon>
+                <span>Общий авторемонт</span>
               </a></li>
             </ul>
           </div>
@@ -492,8 +491,8 @@
     <div class="sd-cta__inner site-container">
       <div class="sd-cta__info">
         <h2 class="sd-cta__title">Пора менять масло?</h2>
-        <p class="sd-cta__text">Приезжайте без записи или забронируйте время — заменим за 20 минут.</p>
-        <a href="tel:+37256461210" class="sd-cta__phone">
+        <p class="sd-cta__text">Приезжайте без записи или забронируйте время — замена за 20 минут.</p>
+        <a href="tel:+3725646121" class="sd-cta__phone">
           <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
           Звоните: +372 5646 1210
         </a>
@@ -510,8 +509,8 @@
         </div>
       </div>
       <div class="sd-cta__form-wrap">
-        <h3 class="sd-cta__form-title">Бронирование замены масла</h3>
-        <p class="sd-cta__form-subtitle">Оставьте заявку — перезвоним за 30 минут</p>
+        <h3 class="sd-cta__form-title">Запись на замену масла</h3>
+        <p class="sd-cta__form-subtitle">Оставьте заявку — перезвоним в течение 30 минут</p>
         <form class="sd-form" id="serviceForm" novalidate>
           <div class="sd-form__row">
             <input class="sd-form__input" type="text" name="name" placeholder="Nimi / Имя / Name" required>
@@ -567,7 +566,7 @@
       <div>
         <div class="footer__col-title">Контакты</div>
         <div class="footer__text">
-          <a href="tel:+37256461210">+372 5646 1210</a><br>
+          <a href="tel:+37256461210">5646 1210</a><br>
           <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
           Kopli 82a, 10412 Tallinn
         </div>

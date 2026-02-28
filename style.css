@@ -450,8 +450,8 @@ h3 {
     -webkit-backdrop-filter: blur(12px);
     border-bottom: var(--border);
     display: grid;
-    grid-template-columns: auto 1fr auto auto auto;
-    /* Added 5th column for language */
+    /* Divide the 7 items equally, auto for the language switcher */
+    grid-template-columns: repeat(7, 1fr) auto;
     align-items: stretch;
     /* Ensure full-height borders */
     padding-left: var(--container-padding);
@@ -468,12 +468,15 @@ h3 {
     letter-spacing: 0.02em;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .navbar__nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    /* Let the 4 links take up 4 grid cells worth of space */
+    grid-column: span 4;
 }
 
 .navbar__link {
@@ -575,6 +578,7 @@ h3 {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     border-left: var(--border);
 }
 
@@ -2122,11 +2126,11 @@ a[href^="mailto:"]:hover {
         border: none;
     }
 
-    /* Change text on mobile via CSS trick or just rely on HTML if it's already "Broneeri aeg". 
-       User said "The button should be 'Jäta päring'". 
+    /* Change text on mobile via CSS trick or just rely on HTML if it's already "Broneeri aeg".
+       User said "The button should be 'Jäta päring'".
        "Broneeri aeg" is "Book time". "Jäta päring" is "Leave request".
-       I will use a span in HTML to change text or just change it globally if acceptable, 
-       BUT better to keep desktop as is and change mobile if needed. 
+       I will use a span in HTML to change text or just change it globally if acceptable,
+       BUT better to keep desktop as is and change mobile if needed.
        Actually, the user audio said: "The button was yellow, bring it back... text 'Jäta päring'... make it adapted".
        I will set font-size small.
     */
@@ -2134,7 +2138,7 @@ a[href^="mailto:"]:hover {
 
 
     .navbar {
-        grid-template-columns: 1fr auto auto auto;
+        grid-template-columns: repeat(7, 1fr) auto;
         gap: 0;
         align-items: stretch;
     }

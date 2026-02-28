@@ -9,6 +9,7 @@ const SERVICES = [
     // ═══════════════════════════════════
     {
         slug: "elektrika",
+        allSlugs: { ru: "elektrika", ee: "elektritood", en: "electrical-repair" },
         category: "Диагностика и электрика",
         navTitle: "Автоэлектрика",
         icon: "mdi:lightning-bolt",
@@ -63,6 +64,7 @@ const SERVICES = [
     // ═══════════════════════════════════
     {
         slug: "remont-dvigatelya",
+        allSlugs: { ru: "remont-dvigatelya", ee: "mootoriremont", en: "engine-repair" },
         category: "Двигатель и агрегаты",
         navTitle: "Ремонт двигателя",
         icon: "mdi:engine",
@@ -120,6 +122,7 @@ const SERVICES = [
 
     {
         slug: "remont-kpp",
+        allSlugs: { ru: "remont-kpp", ee: "kaigukastiremont", en: "transmission-repair" },
         category: "Двигатель и агрегаты",
         navTitle: "Ремонт КПП",
         icon: "mdi:car-shift-pattern",
@@ -170,6 +173,7 @@ const SERVICES = [
 
     {
         slug: "glushiteli-svarka",
+        allSlugs: { ru: "glushiteli-svarka", ee: "summutid-keevitus", en: "exhaust-welding" },
         category: "Двигатель и агрегаты",
         navTitle: "Глушители и сварка",
         icon: "mdi:fire",
@@ -185,7 +189,7 @@ const SERVICES = [
         symptoms: [
             { icon: "mdi:volume-high", text: "Громкий звук выхлопа" },
             { icon: "mdi:smoke-detector-variant", text: "Запах выхлопа в салоне" },
-            { icon: "mdi:vibrate", text: "Вибрация при работе мотора" },
+            { icon: "mdi:vibrate", text: "Вибрации при работе мотора" },
             { icon: "mdi:water-alert", text: "Течь конденсата из стыков" },
             { icon: "mdi:car-brake-low-pressure", text: "Потеря мощности" },
             { icon: "mdi:flash-alert", text: "Ошибка катализатора (P0420)" }
@@ -224,6 +228,7 @@ const SERVICES = [
     // ═══════════════════════════════════
     {
         slug: "hodovaya-tormoza",
+        allSlugs: { ru: "hodovaya-tormoza", ee: "veermik-pidurid", en: "chassis-brakes" },
         category: "Ходовая и тормоза",
         navTitle: "Ходовая и тормоза",
         icon: "mdi:car-brake-alert",
@@ -281,6 +286,7 @@ const SERVICES = [
 
     {
         slug: "rehvitood",
+        allSlugs: { ru: "shinomontazh", ee: "rehvitood", en: "tire-service" },
         category: "Ходовая и тормоза",
         navTitle: "Шиномонтаж",
         icon: "mdi:tire",
@@ -333,7 +339,8 @@ const SERVICES = [
     // CATEGORY: Обслуживание
     // ═══════════════════════════════════
     {
-        slug: "to-diagnostika",
+        slug: "tehobsluzhivanie-diagnostika",
+        allSlugs: { ru: "tehobsluzhivanie-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
         category: "Обслуживание",
         navTitle: "ТО и диагностика",
         icon: "mdi:car-cog",
@@ -389,6 +396,7 @@ const SERVICES = [
 
     {
         slug: "zamena-masla",
+        allSlugs: { ru: "zamena-masla", ee: "olivahetus", en: "oil-change" },
         category: "Обслуживание",
         navTitle: "Замена масла и фильтров",
         icon: "mdi:oil",
@@ -440,6 +448,7 @@ const SERVICES = [
 
     {
         slug: "proverka-pered-pokupkoy",
+        allSlugs: { ru: "proverka-pered-pokupkoy", ee: "ostueelne-kontroll", en: "pre-purchase-inspection" },
         category: "Обслуживание",
         navTitle: "Проверка перед покупкой",
         icon: "mdi:file-search-outline",
@@ -499,6 +508,7 @@ const SERVICES = [
     // ═══════════════════════════════════
     {
         slug: "klimat-konditsioner",
+        allSlugs: { ru: "klimat-konditsioner", ee: "kliimahooldus", en: "ac-service" },
         category: "Климат и доп. оборудование",
         navTitle: "Климат и кондиционер",
         icon: "mdi:snowflake",
@@ -550,6 +560,7 @@ const SERVICES = [
 
     {
         slug: "webasto",
+        allSlugs: { ru: "webasto", ee: "webasto-diagnostika", en: "webasto-repair" },
         category: "Климат и доп. оборудование",
         navTitle: "Ремонт Webasto",
         icon: "mdi:radiator",
@@ -604,6 +615,7 @@ const SERVICES = [
 
     {
         slug: "autoremont",
+        allSlugs: { ru: "autoremont", ee: "autoremont", en: "general-car-repair" },
         category: "Обслуживание",
         navTitle: "Общий авторемонт",
         icon: "mdi:wrench",
