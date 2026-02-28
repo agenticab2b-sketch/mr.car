@@ -696,6 +696,18 @@ h3 {
     transform: translateX(100%);
     transition: transform var(--transition-base), visibility var(--transition-base);
     will-change: transform;
+    /* Added scrollability for landscape/small screens */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Optimization for small screen heights (like landscape mode) */
+@media (max-height: 500px) and (max-width: 1150px) {
+    .mobile-menu {
+        padding-top: var(--space-xl);
+        padding-bottom: var(--space-xl);
+    }
 }
 
 .mobile-menu.active {
@@ -784,7 +796,7 @@ h3 {
 }
 
 .mobile-menu__close {
-    position: absolute;
+    position: fixed;
     top: var(--space-md);
     right: var(--space-xl);
     background: none;
@@ -792,6 +804,7 @@ h3 {
     color: var(--text-main);
     font-size: 2rem;
     cursor: pointer;
+    z-index: 1002; /* Ensure it stays above the menu content */
 }
 
 
