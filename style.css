@@ -1965,9 +1965,25 @@ h3 {
     transition: all var(--transition-fast);
 }
 
-/* Global touch target improvement for contact links */
-a[href^="tel:"],
-a[href^="mailto:"] {
+/* Global touch target improvement for contact links - disabled to prevent navbar overflow */
+a[href^="tel:"].navbar__phone,
+a[href^="mailto:"].navbar__phone {
+    display: flex; /* Restore flex for navbar cell */
+    min-height: 100%;
+    padding: 0 var(--space-md);
+    margin: 0;
+    border-radius: 0;
+}
+
+a[href^="tel:"].navbar__phone:hover,
+a[href^="mailto:"].navbar__phone:hover {
+    background-color: var(--bg-surface); /* Match other nav links */
+    color: var(--text-main);
+}
+
+/* Original global rules (kept for other links, but restricted to non-navbar) */
+a[href^="tel:"]:not(.navbar__phone),
+a[href^="mailto:"]:not(.navbar__phone) {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
@@ -1978,8 +1994,8 @@ a[href^="mailto:"] {
     transition: background-color var(--transition-fast);
 }
 
-a[href^="tel:"]:hover,
-a[href^="mailto:"]:hover {
+a[href^="tel:"]:not(.navbar__phone):hover,
+a[href^="mailto:"]:not(.navbar__phone):hover {
     background-color: rgba(255, 215, 0, 0.1);
 }
 
