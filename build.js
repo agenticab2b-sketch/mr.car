@@ -398,8 +398,8 @@ ${jsonLd}
         </div>
       </div>
       ${navLinksHtml.split('\n').filter(l => !l.includes('services') && !l.includes('Teenused') && !l.includes('Услуги') && !l.includes('Services')).join('\n      ')}
+      <a href="tel:${cfg.phoneHref}" class="navbar__phone">${cfg.phone}</a>
     </nav>
-    <a href="tel:${cfg.phoneHref}" class="navbar__phone">${cfg.phone}</a>
     <div class="navbar__cta">
       <a href="#request" class="btn btn-primary">${esc(cfg.bookLabel)}</a>
     </div>

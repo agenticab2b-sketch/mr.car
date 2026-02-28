@@ -1,5 +1,29 @@
 # GEMINI.md — Global Rules (Antigravity)
 
+## Global Rules (Windows): Terminal Execution Policy
+
+Terminal execution policy (must)
+
+OS: Windows
+
+Every shell command MUST be executed via: cmd /c "<COMMAND>"
+
+Avoid interactive commands (anything that waits for user input).
+
+Prefer non-interactive flags (quiet/yes/force) when available.
+
+After each command, print a completion marker: && echo DONE
+
+If a command can take long or hang, add a hard stop when possible.
+
+If terminal hangs
+
+If the tool shows "Running..." longer than expected, do NOT retry blindly.
+
+Instead: re-run the same command through cmd /c, and add "&& echo DONE"
+
+If still stuck, switch to "text-only plan" and ask user to run the command manually.
+
 ## 1) Принцип по умолчанию: Skills-first
 Если задача про дизайн сайта (типографика, цвета, сетка, компоненты, тексты интерфейса, состояния, анимации, “вау-эффекты”) — работай через skills.
 Не импровизируй “из головы”, если есть подходящий skill.

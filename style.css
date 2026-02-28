@@ -450,8 +450,8 @@ h3 {
     -webkit-backdrop-filter: blur(12px);
     border-bottom: var(--border);
     display: grid;
-    grid-template-columns: auto 1fr auto auto auto;
-    /* Added 5th column for language */
+    grid-template-columns: auto 1fr auto auto;
+    /* Removed one auto column as phone moves into nav */
     align-items: stretch;
     /* Ensure full-height borders */
     padding-left: var(--container-padding);
@@ -508,6 +508,8 @@ h3 {
     position: relative;
     height: 100%;
     display: flex;
+    flex: 1;
+    /* Scale like .navbar__link */
 }
 
 .mega-menu {
@@ -585,6 +587,9 @@ h3 {
     /* Removed vertical padding */
     height: 100%;
     display: flex;
+    flex: 1;
+    /* Scale like .navbar__link */
+    justify-content: center;
     align-items: center;
     color: var(--accent-primary);
     border-left: var(--border);
