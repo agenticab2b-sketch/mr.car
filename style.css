@@ -589,10 +589,11 @@ h3 {
 
 .navbar__phone {
     font-family: var(--font-mono);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    padding: 0 var(--space-xs);
+    letter-spacing: -0.03em;
+    padding: 0;
+    overflow: hidden;
     /* Removed vertical padding */
     height: 100%;
     display: flex;
