@@ -2112,15 +2112,9 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 }
 
 /* Mobile */
-@media (max-width: 640px) {
-    :root {
-        --space-section: 48px;
-    }
 
-    .container {
-        padding: 0 var(--space-md);
-    }
-
+/* --- Mobile/Hamburger transition for Navbar (triggered as soon as links start to hit lang icons) --- */
+@media (max-width: 1150px) {
     /* P-02: Navbar mobile — hide CTA, show only logo + burger */
     /* P-02: Navbar mobile — show CTA (yellow button), hide nav/phone */
     .navbar__nav,
@@ -2142,24 +2136,11 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         border: none;
     }
 
-    /* Change text on mobile via CSS trick or just rely on HTML if it's already "Broneeri aeg".
-       User said "The button should be 'Jäta päring'".
-       "Broneeri aeg" is "Book time". "Jäta päring" is "Leave request".
-       I will use a span in HTML to change text or just change it globally if acceptable,
-       BUT better to keep desktop as is and change mobile if needed.
-       Actually, the user audio said: "The button was yellow, bring it back... text 'Jäta päring'... make it adapted".
-       I will set font-size small.
-    */
-
-
-
     .navbar {
         grid-template-columns: repeat(7, 1fr) auto;
         gap: 0;
         align-items: stretch;
     }
-
-
 
     .navbar__lang.desktop-only {
         display: none;
@@ -2177,8 +2158,6 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         /* Remove vertical padding, let align-items center it */
     }
 
-
-
     .navbar__burger {
         display: flex;
         flex-direction: column;
@@ -2188,6 +2167,17 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         /* Horizontal padding only, vertical handled by flex/stretch */
         width: auto;
         /* Let padding define width */
+    }
+}
+
+/* Mobile General Styles */
+@media (max-width: 640px) {
+    :root {
+        --space-section: 48px;
+    }
+
+    .container {
+        padding: 0 var(--space-md);
     }
 
 
