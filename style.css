@@ -450,8 +450,8 @@ h3 {
     -webkit-backdrop-filter: blur(12px);
     border-bottom: var(--border);
     display: grid;
-    /* Divide the 7 items equally, auto for the language switcher */
-    grid-template-columns: repeat(7, 1fr) auto;
+    /* Divide the 7 items equally strictly, auto for the language switcher */
+    grid-template-columns: repeat(7, minmax(0, 1fr)) auto;
     align-items: stretch;
     /* Ensure full-height borders */
     padding-left: var(--container-padding);
@@ -584,7 +584,7 @@ h3 {
     font-family: var(--font-mono);
     font-size: 0.875rem;
     font-weight: 700;
-    padding: 0 var(--space-lg);
+    padding: 0 var(--space-md);
     /* Removed vertical padding */
     height: 100%;
     display: flex;
