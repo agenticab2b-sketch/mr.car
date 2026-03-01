@@ -2196,14 +2196,6 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         border-left: var(--border);
         height: 100%;
     }
-
-    /* Hide SEO Intro Image in Hamburger mode */
-    .seo-intro__grid {
-        grid-template-columns: 1fr;
-    }
-    .seo-intro__image {
-        display: none;
-    }
 }
 
 /* Mobile General Styles */
@@ -2431,6 +2423,15 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 .seo-intro__content strong {
     color: var(--text-main);
     font-weight: 700;
+}
+
+@media (max-width: 1150px) {
+    .seo-intro__grid {
+        grid-template-columns: 1fr !important;
+    }
+    .seo-intro__image {
+        display: none !important;
+    }
 }
 
 /* --- Advantages / USP --- */
