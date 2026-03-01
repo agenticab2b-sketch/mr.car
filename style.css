@@ -2432,6 +2432,15 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     .seo-intro__image {
         display: none !important;
     }
+    .seo-intro__content {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 640px) {
+    .seo-intro__content {
+        max-width: 100%;
+    }
 }
 
 /* --- Advantages / USP --- */
