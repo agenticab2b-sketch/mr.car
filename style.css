@@ -2438,8 +2438,8 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 }
 
 @media (min-width: 641px) {
-    .seo-intro .container {
-        padding-left: 64px !important;
+    .seo-intro {
+        --container-padding: 64px !important;
     }
 }
 
