@@ -107,7 +107,8 @@
             height: 100%;
         }
 
-        .hero__image img {
+        .hero__image img,
+        .hero__image video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -342,15 +343,12 @@
        ======================================== -->
     <section class="hero" id="hero">
         <div class="hero__image">
-            <picture>
-
-                <source srcset="/pics/hero-mobile.webp" media="(max-width: 767px)" type="image/webp">
-
-                <source srcset="/pics/hero-desktop.webp" media="(min-width: 768px)" type="image/webp">
-                <img src="/pics/hero-desktop.webp"
-                    alt="РђРІС‚РѕСЃРµСЂРІРёСЃ Mr.Car вЂ” РјР°СЃС‚РµСЂ Р·Р° СЂР°Р±РѕС‚РѕР№" loading="eager"
-                    fetchpriority="high" decoding="async">
-            </picture>
+            <video autoplay muted loop playsinline preload="metadata"
+                aria-label="Cinematic close-up of a mechanic tightening a bolt with a ratchet wrench under the hood"
+                title="Mechanic working under the hood">
+                <source src="/video/master_ratchet_vp9_crf28.webm" type="video/webm">
+                <source src="/video/master_ratchet_h264_crf28.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="hero__content reveal">
             <div class="hero__status" id="serviceStatus">
