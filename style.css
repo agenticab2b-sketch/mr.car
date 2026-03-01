@@ -2095,11 +2095,6 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         grid-template-columns: 1fr;
     }
 
-    .seo-intro__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-xl);
-    }
-
     .contact-grid,
     .location-grid {
         grid-template-columns: 1fr;
@@ -2200,6 +2195,14 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         width: auto;
         border-left: var(--border);
         height: 100%;
+    }
+
+    /* Hide SEO Intro Image in Hamburger mode */
+    .seo-intro__grid {
+        grid-template-columns: 1fr;
+    }
+    .seo-intro__image {
+        display: none;
     }
 }
 
