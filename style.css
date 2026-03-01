@@ -2437,6 +2437,12 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     }
 }
 
+@media (min-width: 641px) {
+    .seo-intro .container {
+        padding-left: 64px !important;
+    }
+}
+
 @media (max-width: 640px) {
     .seo-intro__content {
         max-width: 100%;
