@@ -47,47 +47,52 @@ function buildCustomerEmail(lang, nameSuffix, carNumber, message, phone) {
   };
 
   const greetings = {
-    et: `Tere${nameSuffix}, Aitäh, et kirjutasite meile! Teie päring on kätte saadud ja võtame selle peagi ette. Vastame teile 24 tunni jooksul — e-posti teel või telefoni teel, sõltuvalt sellest, millised kontaktandmed te vormis jätsite. Kui soovite midagi täpsustada, helistage: +372 5646 1210. Parimate soovidega, Mr.Car Autoetteenindus`,
-    ru: `Здравствуйте${nameSuffix}! Спасибо за обращение — мы получили вашу заявку и уже взяли её в работу. Мы свяжемся с вами в течение 24 часов — по e-mail или телефону (в зависимости от того, какие данные вы указали). Если нужно что-то уточнить, звоните: +372 5646 1210. Mr.Car Autoetteenindus`,
-    en: `Hello${nameSuffix}, Thank you for contacting us — we've received your request and will review it shortly. We'll get back to you within 24 hours via email or phone (depending on the contact details you provided). If you need to add anything, feel free to call: +372 5646 1210. Mr.Car Autoetteenindus`,
-    fi: `Hei${nameSuffix}, Kiitos yhteydenotostasi — olemme vastaanottaneet pyyntösi ja käsittelemme sen pian. Otamme sinuun yhteyttä 24 tunnin kuluessa sähköpostitse tai puhelimitse (sen mukaan, mitä yhteystietoja annoit). Jos haluat täydentää tietoja, soita: +372 5646 1210. Parimate soovidega, Mr.Car Autoetteenindus`
+    et: `Tere${nameSuffix}, Aitäh, et kirjutasite meile! Teie päring on kätte saadud ja võtame selle peagi ette. Vastame teile 24 tunni jooksul — e-posti teel või telefoni teel, sõltuvalt sellest, millised kontaktandmed te vormis jätsite.`,
+    ru: `Здравствуйте${nameSuffix}! Спасибо за обращение — мы получили вашу заявку и уже взяли её в работу. Мы свяжемся с вами в течение 24 часов — по e-mail или телефону (в зависимости от того, какие данные вы указали).`,
+    en: `Hello${nameSuffix}, Thank you for contacting us — we’ve received your request and will review it shortly. We’ll get back to you within 24 hours via email or phone (depending on the contact details you provided).`,
+    fi: `Hei${nameSuffix}, Kiitos yhteydenotostasi — olemme vastaanottaneet pyyntösi ja käsittelemme sen pian. Otamme sinuun yhteyttä 24 tunnin kuluessa sähköpostitse tai puhelimitse (sen mukaan, mitä yhteystietoja annoit).`
   };
 
   const labels = {
-    et: { details: "Detailid:", car: "Autonumber", message: "Sõnum", phone: "Telefon" },
-    ru: { details: "Детали заявки:", car: "Номер авто", message: "Сообщение", phone: "Телефон" },
-    en: { details: "Request details:", car: "Car number", message: "Message", phone: "Phone" },
-    fi: { details: "Pyyntösi tiedot:", car: "Autonumero", message: "Viesti", phone: "Puhelin" }
+    et: { details: "Detailid:", car: "Autonumber", message: "Sõnum", phone: "Telefon", footer: "Kui soovite midagi täpsustada, helistage:" },
+    ru: { details: "Детали заявки:", car: "Номер авто", message: "Сообщение", phone: "Телефон", footer: "Если нужно что-то уточнить, звоните:" },
+    en: { details: "Request details:", car: "Car number", message: "Message", phone: "Phone", footer: "If you need to add anything, feel free to call:" },
+    fi: { details: "Pyyntösi tiedot:", car: "Autonumero", message: "Viesti", phone: "Puhelin", footer: "Jos haluat täydentää tietoja, soita:" }
   };
 
   const l = labels[lang] || labels.et;
   const greet = greetings[lang] || greetings.et;
+  const subject = subjects[lang] || subjects.et;
 
-  return {
-    subject: subjects[lang] || subjects.et,
-    html: `
-      <div style="background-color: #f4f4f4; padding: 20px; font-family: sans-serif;">
-        <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px; border-radius: 8px;">
-          <div style="text-align: center; margin-bottom: 30px;">
-            <img src="https://mrcar.ee/homepage_pics/logo_black.PNG" height="56" alt="MrCar">
+  const html = `
+    <div style="background-color: #f8f9fa; padding: 40px 20px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+      <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #eeeeee;">
+        <div style="text-align: center; margin-bottom: 35px;">
+          <img src="https://mrcar.ee/homepage_pics/logo_black.PNG" height="56" alt="MrCar" style="display: inline-block;">
+        </div>
+        <div style="color: #444444; line-height: 1.6; font-size: 16px;">
+          <p style="margin-top: 0; margin-bottom: 25px;">${greet}</p>
+          
+          <div style="margin: 30px 0; padding: 25px; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #f0f0f0;">
+            <h4 style="margin-top: 0; margin-bottom: 15px; color: #111111; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">${l.details}</h4>
+            <p style="margin: 0 0 10px 0; font-size: 15px;"><strong style="color: #666666;">${l.car}:</strong> ${carNumber}</p>
+            <p style="margin: 0 0 10px 0; font-size: 15px;"><strong style="color: #666666;">${l.message}:</strong> ${message}</p>
+            ${phone ? `<p style="margin: 0; font-size: 15px;"><strong style="color: #666666;">${l.phone}:</strong> ${phone}</p>` : ""}
           </div>
-          <div style="color: #333333; line-height: 1.6; font-size: 16px;">
-            <p>${greet}</p>
-            <div style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 4px;">
-              <h4 style="margin-top: 0;">${l.details}</h4>
-              <p style="margin-bottom: 8px;"><strong>${l.car}:</strong> ${carNumber}</p>
-              <p style="margin-bottom: 8px;"><strong>${l.message}:</strong> ${message}</p>
-              ${phone ? `<p style="margin-bottom: 0;"><strong>${l.phone}:</strong> ${phone}</p>` : ""}
-            </div>
-            <p style="margin-top: 30px; font-weight: bold;">
-              +372 5646 1210<br>
-              Mr.Car Autoetteenindus
-            </p>
+          
+          <div style="margin-top: 35px; padding-top: 25px; border-top: 1px solid #eeeeee;">
+            <p style="margin: 0 0 5px 0; font-size: 14px; color: #888888;">${l.footer}</p>
+            <p style="margin: 0; font-weight: bold; font-size: 18px; color: #111111;">+372 5646 1210</p>
+            <p style="margin: 15px 0 0 0; font-weight: bold; font-size: 15px; color: #111111;">Mr.Car Autoteenindus</p>
           </div>
         </div>
       </div>
-    `
-  };
+    </div>
+  `;
+
+  const text = `${greet}\n\n${l.details}\n${l.car}: ${carNumber}\n${l.message}: ${message}\n${phone ? `${l.phone}: ${phone}\n` : ""}\n${l.footer} +372 5646 1210\nMr.Car Autoteenindus`;
+
+  return { subject, html, text };
 }
 
 exports.lead = onRequest({
@@ -119,7 +124,7 @@ exports.lead = onRequest({
     return res.status(400).json({
       success: false,
       type: "validation",
-      message: "Необходимо заполнить выделенные поля",
+      message: "Необходимо заполнитель выделенные поля",
       fields: missingFields
     });
   }
@@ -139,34 +144,40 @@ exports.lead = onRequest({
       auth: { user: "info@mrcar.ee", pass: process.env.SMTP_PASS }
     });
 
-    // Email to admin
+    // Email to admin (ALWAYS in Russian)
     const adminEmail = {
       from: "info@mrcar.ee",
       to: "info@mrcar.ee",
       replyTo: email,
+      envelope: {
+        from: "info@mrcar.ee",
+        to: "info@mrcar.ee"
+      },
       subject: `Заявка с сайта MrCar — ${carNumber}`,
-      text: `
-Новая заявка с сайта MrCar
+      text: `Новая заявка с сайта MrCar
 
 Имя: ${name || "—"}
 Госномер: ${carNumber}
 Email: ${email}
 Телефон: ${phone || "—"}
 Сообщение: ${message}
-
-Язык: ${lang}
+Язык клиента: ${lang}
 URL страницы: ${pageUrl || "—"}
-Timestamp: ${new Date().toISOString()}
-      `
+Timestamp: ${new Date().toISOString()}`
     };
 
     // Email to customer
-    const { subject, html } = buildCustomerEmail(lang, nameSuffix, carNumber, message, phone);
+    const { subject, html, text } = buildCustomerEmail(lang, nameSuffix, carNumber, message, phone);
     const customerEmail = {
       from: "info@mrcar.ee",
       to: email,
+      envelope: {
+        from: "info@mrcar.ee",
+        to: email
+      },
       subject: subject,
-      html: html
+      html: html,
+      text: text
     };
 
     await Promise.all([
