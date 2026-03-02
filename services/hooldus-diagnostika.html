@@ -519,17 +519,31 @@
         <h3 class="sd-cta__form-title">Hoolduse broneerimine</h3>
         <p class="sd-cta__form-subtitle">Jäta päring — helistame tagasi 30 minutiga</p>
         <form class="sd-form" id="serviceForm" novalidate>
+          <input type="hidden" name="lang" value="et">
+          <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="tsStart" id="tsStart">
+          
+          <div id="formError" class="form-error-banner" style="display:none">Palun täitke kõik kohustuslikud väljad</div>
+
           <div class="sd-form__row">
-            <input class="sd-form__input" type="text" name="name" placeholder="Nimi / Имя / Name" required>
+            <label class="sd-form__label">Nimi</label>
+            <input class="sd-form__input" type="text" name="name" placeholder="Teie nimi">
           </div>
           <div class="sd-form__row">
-            <input class="sd-form__input" type="tel" name="phone" placeholder="Telefon +372..." required>
+            <label class="sd-form__label">Autonumber*</label>
+            <input class="sd-form__input" type="text" name="carNumber" placeholder="123 ABC" required>
           </div>
           <div class="sd-form__row">
-            <input class="sd-form__input" type="text" name="car" placeholder="Auto mark ja mudel / Марка и модель">
+            <label class="sd-form__label">E-post*</label>
+            <input class="sd-form__input" type="email" name="email" placeholder="teie@email.ee" required>
           </div>
           <div class="sd-form__row">
-            <textarea class="sd-form__textarea" name="message" placeholder="Kirjelda probleemi / Опишите проблему" rows="3"></textarea>
+            <label class="sd-form__label">Telefon</label>
+            <input class="sd-form__input" type="tel" name="phone" placeholder="+372 ...">
+          </div>
+          <div class="sd-form__row">
+            <label class="sd-form__label">Sõnum*</label>
+            <textarea class="sd-form__textarea" name="message" placeholder="Kirjeldage probleemi..." rows="3" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary sd-form__btn">Saada päring <span class="arrow">↗</span></button>
         </form>
@@ -538,7 +552,7 @@
   </section>
 
   <!-- SNACKBAR -->
-  <div id="snackbar" class="snackbar">Päring saadetud! Helistame tagasi 30 minutiga.</div>
+  <div id="snackbar" class="snackbar">undefined</div>
 
   <!-- FAB Contact -->
   <div class="fab-contact" id="fabContact">
@@ -655,21 +669,90 @@
     // Form handling
     const form = document.getElementById('serviceForm');
     if (form) {
+      // Set initial timestamp
+      const tsStartInput = document.getElementById('tsStart');
+      if (tsStartInput) tsStartInput.value = Date.now();
+
+      const requiredFields = form.querySelectorAll('[required]');
+      const formErrorBanner = document.getElementById('formError');
+
+      const clearFieldError = (field) => {
+        field.classList.remove('form-error');
+        const allRequiredFilled = Array.from(requiredFields).every(f => f.value.trim() !== '');
+        if (allRequiredFilled && formErrorBanner) {
+          formErrorBanner.style.display = 'none';
+        }
+      };
+
+      requiredFields.forEach(field => {
+        field.addEventListener('input', () => clearFieldError(field));
+        field.addEventListener('change', () => clearFieldError(field));
+      });
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        
+        let hasError = false;
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            field.classList.add('form-error');
+            hasError = true;
+          } else {
+            field.classList.remove('form-error');
+          }
+        });
+
+        if (hasError) {
+          if (formErrorBanner) formErrorBanner.style.display = 'block';
+          return;
+        }
+
         const btn  = this.querySelector('button[type="submit"]');
         const orig = btn.innerHTML;
         btn.disabled = true;
         btn.innerHTML = 'Saatmine...';
-        setTimeout(() => {
-          const sb = document.getElementById('snackbar');
-          sb.className = 'snackbar show';
-          setTimeout(() => { sb.className = sb.className.replace('show', ''); }, 3000);
-          form.reset();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        data.pageUrl = window.location.href;
+
+        fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+          if (result.success) {
+            showSnackbar('Aitäh! Päring on saadetud.');
+            form.reset();
+            if (tsStartInput) tsStartInput.value = Date.now();
+          } else {
+            showSnackbar('Päringut ei õnnestunud saata. Proovige uuesti.', true);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          showSnackbar('Päringut ei õnnestunud saata. Proovige uuesti.', true);
+        })
+        .finally(() => {
           btn.disabled = false;
           btn.innerHTML = orig;
-        }, 1000);
+        });
       });
+    }
+
+    function showSnackbar(message, isError = false) {
+      var x = document.getElementById("snackbar");
+      if (!x) return;
+      if (message) x.innerText = message;
+      x.className = "snackbar show";
+      if (isError) x.style.backgroundColor = "var(--error)";
+      else x.style.backgroundColor = "";
+      
+      setTimeout(function () { 
+        x.className = x.className.replace("show", ""); 
+      }, 4000);
     }
 
     // FAB

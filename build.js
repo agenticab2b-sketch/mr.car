@@ -55,7 +55,23 @@ const LANGS = [
     fabBook: 'Broneeri aeg',
     formSubmit: 'Saada päring',
     formSending: 'Saatmine...',
-    formOk: 'Päring saadetud! Helistame tagasi 30 minutiga.',
+    formLabels: {
+      name: 'Nimi',
+      carNumber: 'Autonumber*',
+      email: 'E-post*',
+      phone: 'Telefon',
+      message: 'Sõnum*',
+    },
+    formPlaceholder: {
+      name: 'Teie nimi',
+      carNumber: '123 ABC',
+      email: 'teie@email.ee',
+      phone: '+372 ...',
+      message: 'Kirjeldage probleemi...',
+    },
+    formValidation: 'Palun täitke kõik kohustuslikud väljad',
+    formError: 'Päringut ei õnnestunud saata. Proovige uuesti.',
+    formSuccess: 'Aitäh! Päring on saadetud.',
     sidebarTitle: 'Vali teenus',
     otherLangs: [
       { href: '/ru/', code: 'RU', flag: 'circle-flags:ru', title: 'Русский' },
@@ -96,7 +112,23 @@ const LANGS = [
     fabBook: 'Записаться',
     formSubmit: 'Отправить заявку',
     formSending: 'Отправка...',
-    formOk: 'Заявка отправлена! Перезвоним за 30 минут.',
+    formLabels: {
+      name: 'Имя',
+      carNumber: 'Госномер*',
+      email: 'E-mail*',
+      phone: 'Телефон',
+      message: 'Сообщение*',
+    },
+    formPlaceholder: {
+      name: 'Ваше имя',
+      carNumber: '123 ABC',
+      email: 'vash@email.ru',
+      phone: '+372 ...',
+      message: 'Опишите проблему...',
+    },
+    formValidation: 'Необходимо заполнить выделенные поля',
+    formError: 'Не удалось отправить заявку. Попробуйте ещё раз.',
+    formSuccess: 'Спасибо! Заявка отправлена.',
     sidebarTitle: 'Выбрать услугу',
     otherLangs: [
       { href: '/', code: 'ET', flag: 'circle-flags:ee', title: 'Eesti keel' },
@@ -137,7 +169,23 @@ const LANGS = [
     fabBook: 'Book Now',
     formSubmit: 'Send Request',
     formSending: 'Sending...',
-    formOk: 'Request sent! We\'ll call you back within 30 minutes.',
+    formLabels: {
+      name: 'Name',
+      carNumber: 'Car plate number*',
+      email: 'E-mail*',
+      phone: 'Phone',
+      message: 'Message*',
+    },
+    formPlaceholder: {
+      name: 'Your name',
+      carNumber: '123 ABC',
+      email: 'your@email.com',
+      phone: '+372 ...',
+      message: 'Describe your problem...',
+    },
+    formValidation: 'Please fill in all required fields',
+    formError: 'Failed to send request. Please try again.',
+    formSuccess: 'Thank you! Your request has been sent.',
     sidebarTitle: 'Select service',
     otherLangs: [
       { href: '/', code: 'ET', flag: 'circle-flags:ee', title: 'Eesti keel' },
@@ -519,17 +567,31 @@ ${jsonLd}
         <h3 class="sd-cta__form-title">${esc(s.form.title)}</h3>
         <p class="sd-cta__form-subtitle">${esc(s.form.subtitle)}</p>
         <form class="sd-form" id="serviceForm" novalidate>
+          <input type="hidden" name="lang" value="${esc(cfg.lang)}">
+          <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="tsStart" id="tsStart">
+          
+          <div id="formError" class="form-error-banner" style="display:none">${esc(cfg.formValidation)}</div>
+
           <div class="sd-form__row">
-            <input class="sd-form__input" type="text" name="name" placeholder="Nimi / Имя / Name" required>
+            <label class="sd-form__label">${esc(cfg.formLabels.name)}</label>
+            <input class="sd-form__input" type="text" name="name" placeholder="${esc(cfg.formPlaceholder.name)}">
           </div>
           <div class="sd-form__row">
-            <input class="sd-form__input" type="tel" name="phone" placeholder="Telefon +372..." required>
+            <label class="sd-form__label">${esc(cfg.formLabels.carNumber)}</label>
+            <input class="sd-form__input" type="text" name="carNumber" placeholder="${esc(cfg.formPlaceholder.carNumber)}" required>
           </div>
           <div class="sd-form__row">
-            <input class="sd-form__input" type="text" name="car" placeholder="Auto mark ja mudel / Марка и модель">
+            <label class="sd-form__label">${esc(cfg.formLabels.email)}</label>
+            <input class="sd-form__input" type="email" name="email" placeholder="${esc(cfg.formPlaceholder.email)}" required>
           </div>
           <div class="sd-form__row">
-            <textarea class="sd-form__textarea" name="message" placeholder="Kirjelda probleemi / Опишите проблему" rows="3"></textarea>
+            <label class="sd-form__label">${esc(cfg.formLabels.phone)}</label>
+            <input class="sd-form__input" type="tel" name="phone" placeholder="${esc(cfg.formPlaceholder.phone)}">
+          </div>
+          <div class="sd-form__row">
+            <label class="sd-form__label">${esc(cfg.formLabels.message)}</label>
+            <textarea class="sd-form__textarea" name="message" placeholder="${esc(cfg.formPlaceholder.message)}" rows="3" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary sd-form__btn">${esc(cfg.formSubmit)} <span class="arrow">↗</span></button>
         </form>
@@ -655,21 +717,90 @@ ${jsonLd}
     // Form handling
     const form = document.getElementById('serviceForm');
     if (form) {
+      // Set initial timestamp
+      const tsStartInput = document.getElementById('tsStart');
+      if (tsStartInput) tsStartInput.value = Date.now();
+
+      const requiredFields = form.querySelectorAll('[required]');
+      const formErrorBanner = document.getElementById('formError');
+
+      const clearFieldError = (field) => {
+        field.classList.remove('form-error');
+        const allRequiredFilled = Array.from(requiredFields).every(f => f.value.trim() !== '');
+        if (allRequiredFilled && formErrorBanner) {
+          formErrorBanner.style.display = 'none';
+        }
+      };
+
+      requiredFields.forEach(field => {
+        field.addEventListener('input', () => clearFieldError(field));
+        field.addEventListener('change', () => clearFieldError(field));
+      });
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        
+        let hasError = false;
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            field.classList.add('form-error');
+            hasError = true;
+          } else {
+            field.classList.remove('form-error');
+          }
+        });
+
+        if (hasError) {
+          if (formErrorBanner) formErrorBanner.style.display = 'block';
+          return;
+        }
+
         const btn  = this.querySelector('button[type="submit"]');
         const orig = btn.innerHTML;
         btn.disabled = true;
         btn.innerHTML = '${esc(cfg.formSending)}';
-        setTimeout(() => {
-          const sb = document.getElementById('snackbar');
-          sb.className = 'snackbar show';
-          setTimeout(() => { sb.className = sb.className.replace('show', ''); }, 3000);
-          form.reset();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        data.pageUrl = window.location.href;
+
+        fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+          if (result.success) {
+            showSnackbar('${esc(cfg.formSuccess)}');
+            form.reset();
+            if (tsStartInput) tsStartInput.value = Date.now();
+          } else {
+            showSnackbar('${esc(cfg.formError)}', true);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          showSnackbar('${esc(cfg.formError)}', true);
+        })
+        .finally(() => {
           btn.disabled = false;
           btn.innerHTML = orig;
-        }, 1000);
+        });
       });
+    }
+
+    function showSnackbar(message, isError = false) {
+      var x = document.getElementById("snackbar");
+      if (!x) return;
+      if (message) x.innerText = message;
+      x.className = "snackbar show";
+      if (isError) x.style.backgroundColor = "var(--error)";
+      else x.style.backgroundColor = "";
+      
+      setTimeout(function () { 
+        x.className = x.className.replace("show", ""); 
+      }, 4000);
     }
 
     // FAB

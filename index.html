@@ -1040,28 +1040,35 @@
                 </div>
                 <div class="contact__form">
                     <form id="contactForm">
+                        <input type="hidden" name="lang" value="et">
+                        <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="tsStart" id="tsStart">
+                        
+                        <div id="formError" class="form-error-banner" style="display:none">Palun täitke kõik kohustuslikud väljad</div>
+
                         <div class="form-group">
                             <label for="name">Nimi</label>
-                            <input type="text" id="name" name="name" placeholder="Teie nimi" required>
-                            <span class="form-error" id="nameError"></span>
+                            <input type="text" id="name" name="name" placeholder="Teie nimi">
+                        </div>
+                        <div class="form-group">
+                            <label for="carNumber">Autonumber*</label>
+                            <input type="text" id="carNumber" name="carNumber" placeholder="123 ABC" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-post*</label>
+                            <input type="email" id="email" name="email" placeholder="teie@email.ee" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+372 ..." required>
-                            <span class="form-error" id="phoneError"></span>
+                            <input type="tel" id="phone" name="phone" placeholder="+372 ...">
                         </div>
                         <div class="form-group">
-                            <label for="car">Auto mark ja mudel (valikuline)</label>
-                            <input type="text" id="car" name="car" placeholder="Nt: VW Golf 2019">
+                            <label for="message">Sõnum*</label>
+                            <textarea id="message" name="message" placeholder="Kirjeldage probleemi või soovitud tööd" required></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Kommentaar (valikuline)</label>
-                            <textarea id="message" name="message"
-                                placeholder="Kirjeldage probleemi või soovitud tööd"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary"
-                            style="width: 100%; justify-content: center;">Saada
-                            päring <span class="arrow">↗</span></button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            Saada päring <span class="arrow">↗</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1221,26 +1228,90 @@
             // Form handling
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
+                // Set initial timestamp
+                const tsStartInput = document.getElementById('tsStart');
+                if (tsStartInput) tsStartInput.value = Date.now();
+
+                const requiredFields = contactForm.querySelectorAll('[required]');
+                const formErrorBanner = document.getElementById('formError');
+
+                const clearFieldError = (field) => {
+                    field.classList.remove('form-error');
+                    const allRequiredFilled = Array.from(requiredFields).every(f => f.value.trim() !== '');
+                    if (allRequiredFilled && formErrorBanner) {
+                        formErrorBanner.style.display = 'none';
+                    }
+                };
+
+                requiredFields.forEach(field => {
+                    field.addEventListener('input', () => clearFieldError(field));
+                    field.addEventListener('change', () => clearFieldError(field));
+                });
+
                 contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
+                    
+                    let hasError = false;
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            field.classList.add('form-error');
+                            hasError = true;
+                        } else {
+                            field.classList.remove('form-error');
+                        }
+                    });
+
+                    if (hasError) {
+                        if (formErrorBanner) formErrorBanner.style.display = 'block';
+                        return;
+                    }
+
                     const btn = this.querySelector('button[type="submit"]');
                     const originalText = btn.innerHTML;
                     btn.disabled = true;
                     btn.innerHTML = 'Saatmine...';
 
-                    setTimeout(() => {
-                        showSnackbar();
-                        contactForm.reset();
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData.entries());
+                    data.pageUrl = window.location.href;
+
+                    fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            showSnackbar('Aitäh! Päring on saadetud.');
+                            contactForm.reset();
+                            if (tsStartInput) tsStartInput.value = Date.now();
+                        } else {
+                            showSnackbar('Päringut ei õnnestunud saata. Proovige uuesti.', true);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showSnackbar('Päringut ei õnnestunud saata. Proovige uuesti.', true);
+                    })
+                    .finally(() => {
                         btn.disabled = false;
                         btn.innerHTML = originalText;
-                    }, 1000);
+                    });
                 });
             }
 
-            function showSnackbar() {
+            function showSnackbar(message, isError = false) {
                 var x = document.getElementById("snackbar");
+                if (!x) return;
+                if (message) x.innerText = message;
                 x.className = "snackbar show";
-                setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+                if (isError) x.style.backgroundColor = "var(--error)";
+                else x.style.backgroundColor = "";
+                
+                setTimeout(function () { 
+                    x.className = x.className.replace("show", ""); 
+                }, 4000);
             }
 
             // Scroll Reveal

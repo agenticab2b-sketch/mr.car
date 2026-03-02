@@ -4340,3 +4340,22 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     background: var(--bg-main);
     color: var(--text-main);
 }
+
+/* --- Form Validation --- */
+.form-error-banner {
+    color: #EF4444; /* var(--error) */
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+.sd-form__input.form-error,
+.sd-form__textarea.form-error,
+.form-group input.form-error,
+.form-group textarea.form-error {
+    border-color: #EF4444 !important;
+    background-color: rgba(239, 68, 68, 0.02);
+}
