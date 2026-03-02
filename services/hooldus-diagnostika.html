@@ -492,67 +492,99 @@
     </aside>
   </section>
 
-  <!-- CTA + FORM -->
-  <section class="sd-cta" id="request">
-    <div class="sd-cta__overlay"></div>
-    <div class="sd-cta__inner site-container">
-      <div class="sd-cta__info">
-        <h2 class="sd-cta__title">Aeg hoolduseks?</h2>
-        <p class="sd-cta__text">Ära lükka edasi. Broneeri aeg — teeme kõik 1–2 tunniga.</p>
-        <a href="tel:+37256461210" class="sd-cta__phone">
-          <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
-          Helista: +372 5646 1210
-        </a>
-        <div class="sd-cta__map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.9!2d24.7367!3d59.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469294a73d8b6a69%3A0x4e7e0e6e7e6e7e6e!2sKopli+82a%2C+Tallinn!5e0!3m2!1set!2see!4v1600000000000!5m2!1set!2see"
-            width="100%" height="200" style="border:0;border-radius:8px;" allowfullscreen loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Mr.Car asukoht">
-          </iframe>
-          <p class="sd-cta__address">
-            <iconify-icon icon="mdi:map-marker" width="16" height="16" aria-hidden="true"></iconify-icon>
-            Kopli 82a, Tallinn
-          </p>
+  <!-- CONTACT FORM -->
+  <section class="contact-section" id="request">
+    <div class="contact-grid site-container">
+    <div class="contact__info">
+        <div class="section-header">
+            <span class="meta text-accent">/// Broneeri aeg</span>
+            <h2>Hoolduse broneerimine</h2>
         </div>
-      </div>
-      <div class="sd-cta__form-wrap">
-        <h3 class="sd-cta__form-title">Hoolduse broneerimine</h3>
-        <p class="sd-cta__form-subtitle">Jäta päring — helistame tagasi 30 minutiga</p>
-        <form class="sd-form" id="serviceForm" novalidate>
-          <input type="hidden" name="lang" value="et">
-          <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="tsStart" id="tsStart">
-          
-          <div id="formError" class="form-error-banner" style="display:none">Palun täitke kõik kohustuslikud väljad</div>
-
-          <div class="sd-form__row">
-            <label class="sd-form__label">Nimi</label>
-            <input class="sd-form__input" type="text" name="name" placeholder="Teie nimi">
-          </div>
-          <div class="sd-form__row">
-            <label class="sd-form__label">Autonumber*</label>
-            <input class="sd-form__input" type="text" name="carNumber" placeholder="123 ABC" required>
-          </div>
-          <div class="sd-form__row">
-            <label class="sd-form__label">E-post*</label>
-            <input class="sd-form__input" type="email" name="email" placeholder="teie@email.ee" required>
-          </div>
-          <div class="sd-form__row">
-            <label class="sd-form__label">Telefon</label>
-            <input class="sd-form__input" type="tel" name="phone" placeholder="+372 ...">
-          </div>
-          <div class="sd-form__row">
-            <label class="sd-form__label">Sõnum*</label>
-            <textarea class="sd-form__textarea" name="message" placeholder="Kirjeldage probleemi..." rows="3" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary sd-form__btn">Saada päring <span class="arrow">↗</span></button>
-        </form>
-      </div>
+        <p class="contact__promise">Jäta päring — helistame tagasi 30 minutiga</p>
+        <div class="accent-underline"></div>
+        <a href="tel:+37256461210"
+            style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: -0.01em; margin-top: 16px; width: fit-content; text-decoration: none; transition: all var(--transition-fast);">
+            <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
+            +372 5646 1210
+        </a>
     </div>
+    <div class="contact__form">
+        <form id="contactForm">
+            <input type="hidden" name="lang" value="et">
+            <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="tsStart" id="tsStart">
+            
+            <div id="formError" class="form-error-banner" style="display:none">Palun täitke kõik kohustuslikud väljad</div>
+
+            <div class="form-group">
+                <label for="name">Nimi</label>
+                <input type="text" id="name" name="name" placeholder="Teie nimi">
+            </div>
+            <div class="form-group">
+                <label for="carNumber">Autonumber*</label>
+                <input type="text" id="carNumber" name="carNumber" placeholder="123 ABC" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-post*</label>
+                <input type="email" id="email" name="email" placeholder="teie@email.ee" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="+372 ...">
+            </div>
+            <div class="form-group">
+                <label for="message">Sõnum*</label>
+                <textarea id="message" name="message" placeholder="Kirjeldage probleemi..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                Saada päring <span class="arrow">↗</span>
+            </button>
+        </form>
+    </div>
+</div>
+  </section>
+
+  <!-- MAP + LOCATION -->
+  <section class="location-section" id="location">
+    <div class="location-grid site-container">
+    <div class="location__info">
+        <div>
+            <div class="section-header">
+                <span class="meta text-accent">/// Kuidas meid leida</span>
+                <h2>Oleme lähedal</h2>
+            </div>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">Aadress</span>
+            <span class="location__value">Kopli 82a, 10412 Tallinn</span>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">Lahtiolekuajad</span>
+            <span class="location__value">Esmaspäev – Reede: 09:00 – 18:00</span>
+            <span class="location__value location__value--dimmed">Laupäev – Pühapäev: Suletud</span>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">Telefon</span>
+            <a href="tel:+37256461210" class="location__value" style="color: var(--accent-primary);">+372 5646 1210</a>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">Email</span>
+            <a href="mailto:info@mrcar.ee" class="location__value">info@mrcar.ee</a>
+        </div>
+        <a href="https://maps.google.com/?q=Kopli+82a+Tallinn" target="_blank" rel="noopener"
+            class="btn btn-secondary">Ava kaart <span class="arrow">↗</span></a>
+    </div>
+    <div class="location__map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.9!2d24.7367!3d59.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469294a73d8b6a69%3A0x4e7e0e6e7e6e7e6e!2sKopli+82a%2C+Tallinn!5e0!3m2!1set!2see!4v1600000000000!5m2!1set!2see"
+            allowfullscreen loading="lazy" title="Mr.Car kaardil"
+            aria-label="Mr.Car asukoht kaardil"></iframe>
+    </div>
+</div>
   </section>
 
   <!-- SNACKBAR -->
-  <div id="snackbar" class="snackbar">undefined</div>
+  <div id="snackbar" class="snackbar">Aitäh! Päring on saadetud.</div>
 
   <!-- FAB Contact -->
   <div class="fab-contact" id="fabContact">

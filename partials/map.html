@@ -1,0 +1,35 @@
+<div class="location-grid site-container">
+    <div class="location__info">
+        <div>
+            <div class="section-header">
+                <span class="meta text-accent">/// {{map_meta}}</span>
+                <h2>{{map_title}}</h2>
+            </div>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">{{map_address_label}}</span>
+            <span class="location__value">Kopli 82a, 10412 Tallinn</span>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">{{map_hours_label}}</span>
+            <span class="location__value">{{map_workdays}}: 09:00 – 18:00</span>
+            <span class="location__value location__value--dimmed">{{map_weekend}}: {{map_closed}}</span>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">{{map_phone_label}}</span>
+            <a href="tel:+37256461210" class="location__value" style="color: var(--accent-primary);">+372 5646 1210</a>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">{{map_email_label}}</span>
+            <a href="mailto:info@mrcar.ee" class="location__value">info@mrcar.ee</a>
+        </div>
+        <a href="https://maps.google.com/?q=Kopli+82a+Tallinn" target="_blank" rel="noopener"
+            class="btn btn-secondary">{{map_open_btn}} <span class="arrow">↗</span></a>
+    </div>
+    <div class="location__map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.9!2d24.7367!3d59.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469294a73d8b6a69%3A0x4e7e0e6e7e6e7e6e!2sKopli+82a%2C+Tallinn!5e0!3m2!1set!2see!4v1600000000000!5m2!1set!2see"
+            allowfullscreen loading="lazy" title="{{map_iframe_title}}"
+            aria-label="{{map_iframe_label}}"></iframe>
+    </div>
+</div>

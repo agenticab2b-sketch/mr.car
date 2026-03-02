@@ -1,0 +1,48 @@
+<div class="contact-grid site-container">
+    <div class="contact__info">
+        <div class="section-header">
+            <span class="meta text-accent">/// {{form_meta}}</span>
+            <h2>{{form_title}}</h2>
+        </div>
+        <p class="contact__promise">{{form_subtitle}}</p>
+        <div class="accent-underline"></div>
+        <a href="tel:+37256461210"
+            style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: -0.01em; margin-top: 16px; width: fit-content; text-decoration: none; transition: all var(--transition-fast);">
+            <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
+            +372 5646 1210
+        </a>
+    </div>
+    <div class="contact__form">
+        <form id="contactForm">
+            <input type="hidden" name="lang" value="{{lang}}">
+            <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="tsStart" id="tsStart">
+            
+            <div id="formError" class="form-error-banner" style="display:none">{{formValidation}}</div>
+
+            <div class="form-group">
+                <label for="name">{{formLabels_name}}</label>
+                <input type="text" id="name" name="name" placeholder="{{formPlaceholder_name}}">
+            </div>
+            <div class="form-group">
+                <label for="carNumber">{{formLabels_carNumber}}</label>
+                <input type="text" id="carNumber" name="carNumber" placeholder="{{formPlaceholder_carNumber}}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">{{formLabels_email}}</label>
+                <input type="email" id="email" name="email" placeholder="{{formPlaceholder_email}}" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">{{formLabels_phone}}</label>
+                <input type="tel" id="phone" name="phone" placeholder="{{formPlaceholder_phone}}">
+            </div>
+            <div class="form-group">
+                <label for="message">{{formLabels_message}}</label>
+                <textarea id="message" name="message" placeholder="{{formPlaceholder_message}}" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                {{formSubmit}} <span class="arrow">↗</span>
+            </button>
+        </form>
+    </div>
+</div>

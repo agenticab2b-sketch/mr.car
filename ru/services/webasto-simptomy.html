@@ -668,39 +668,97 @@
         </div>
     </section>
 
-    <!-- ████ J) FINAL CTA ████ -->
-    <section class="wb-section wb-section--surface" style="border-bottom: none;">
-        <div class="site-container">
-            <div class="wb-section__header">
-                <span class="wb-section__meta">/// Что дальше?</span>
-                <h2 class="wb-section__title">Забронировать диагностику Webasto</h2>
-                <p class="wb-section__lead">Если Webasto уже какое-то время ведет себя странно, разумнее починить его до
-                    холодов — сэкономите ресурс мотора и свое утро.</p>
-            </div>
+      <!-- CTA + FORM -->
+    <!-- CONTACT FORM -->
+  <section class="contact-section" id="request">
+    <div class="contact-grid site-container">
+    <div class="contact__info">
+        <div class="section-header">
+            <span class="meta text-accent">/// Запись на ремонт</span>
+            <h2>Забронировать диагностику</h2>
+        </div>
+        <p class="contact__promise">Оставьте заявку — мы перезвоним вам в течение 30 минут</p>
+        <div class="accent-underline"></div>
+        <a href="tel:+37256461210"
+            style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: -0.01em; margin-top: 16px; width: fit-content; text-decoration: none; transition: all var(--transition-fast);">
+            <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
+            +372 5646 1210
+        </a>
+    </div>
+    <div class="contact__form">
+        <form id="contactForm">
+            <input type="hidden" name="lang" value="ru">
+            <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="tsStart" id="tsStart">
+            
+            <div id="formError" class="form-error-banner" style="display:none">Необходимо заполнить выделенные поля</div>
 
-            <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
-                <a href="/ru/services/webasto#request" class="btn btn-primary">
-                    Записаться <span class="arrow">↗</span>
-                </a>
-                <a href="tel:+37256461210" class="sd-cta__phone">
-                    <iconify-icon icon="mdi:phone" width="24" height="24"></iconify-icon>
-                    <span>+372 5646 1210</span>
-                </a>
+            <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name" placeholder="Ваше имя">
             </div>
+            <div class="form-group">
+                <label for="carNumber">Госномер*</label>
+                <input type="text" id="carNumber" name="carNumber" placeholder="123 ABC" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail*</label>
+                <input type="email" id="email" name="email" placeholder="vash@email.ru" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="+372 ...">
+            </div>
+            <div class="form-group">
+                <label for="message">Сообщение*</label>
+                <textarea id="message" name="message" placeholder="Опишите проблему..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                Отправить заявку <span class="arrow">↗</span>
+            </button>
+        </form>
+    </div>
+</div>
+  </section>
 
-            <div style="margin-top: var(--space-2xl);">
-                <div class="wb-callout">
-                    <iconify-icon class="wb-callout__icon" icon="mdi:map-marker-outline" width="24"
-                        height="24"></iconify-icon>
-                    <div class="wb-callout__body">
-                        <span class="wb-callout__title">Автосервис Mr.Car</span>
-                        <p class="wb-callout__text">Kopli 82a, Таллинн — удобное расположение для клиентов из
-                            Пыхья-Таллинна, Копли, Пельгуранны и Каламая. Пн–Пт 08:00–18:00.</p>
-                    </div>
-                </div>
+  <!-- MAP + LOCATION -->
+  <section class="location-section" id="location">
+    <div class="location-grid site-container">
+    <div class="location__info">
+        <div>
+            <div class="section-header">
+                <span class="meta text-accent">/// Как нас найти</span>
+                <h2>Мы рядом</h2>
             </div>
         </div>
-    </section>
+        <div class="location__detail">
+            <span class="location__label">Адрес</span>
+            <span class="location__value">Kopli 82a, 10412 Tallinn</span>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">Часы работы</span>
+            <span class="location__value">Понедельник – Пятница: 09:00 – 18:00</span>
+            <span class="location__value location__value--dimmed">Суббота – Воскресенье: Закрыто</span>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">Телефон</span>
+            <a href="tel:+37256461210" class="location__value" style="color: var(--accent-primary);">+372 5646 1210</a>
+        </div>
+        <div class="location__detail">
+            <span class="location__label">Email</span>
+            <a href="mailto:info@mrcar.ee" class="location__value">info@mrcar.ee</a>
+        </div>
+        <a href="https://maps.google.com/?q=Kopli+82a+Tallinn" target="_blank" rel="noopener"
+            class="btn btn-secondary">Открыть карту <span class="arrow">↗</span></a>
+    </div>
+    <div class="location__map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.9!2d24.7367!3d59.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469294a73d8b6a69%3A0x4e7e0e6e7e6e7e6e!2sKopli+82a%2C+Tallinn!5e0!3m2!1set!2see!4v1600000000000!5m2!1set!2see"
+            allowfullscreen loading="lazy" title="Mr.Car на карте"
+            aria-label="Расположение Mr.Car на карте"></iframe>
+    </div>
+</div>
+  </section>
 
     <!-- ████ K) FOOTER ████ -->
     <footer class="footer">

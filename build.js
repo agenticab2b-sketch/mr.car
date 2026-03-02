@@ -23,6 +23,10 @@ const path = require('path');
 
 const ROOT = __dirname;
 
+// Load partials
+const FORM_PARTIAL = fs.readFileSync(path.join(ROOT, 'partials/form.html'), 'utf8');
+const MAP_PARTIAL = fs.readFileSync(path.join(ROOT, 'partials/map.html'), 'utf8');
+
 // ─── Configuration ────────────────────────────────────────────────────────────
 
 const PROD_ORIGIN = 'https://mrcar.ee';
@@ -54,6 +58,7 @@ const LANGS = [
     fabCall: 'Helista',
     fabBook: 'Broneeri aeg',
     formSubmit: 'Saada päring',
+    formMeta: 'Broneeri aeg',
     formSending: 'Saatmine...',
     formLabels: {
       name: 'Nimi',
@@ -79,6 +84,17 @@ const LANGS = [
     ],
     selfLang: { href: '/', flag: 'circle-flags:ee', title: 'Eesti keel' },
     mapLabel: 'Kopli 82a, Tallinn',
+    mapTranslations: {
+      meta: 'Kuidas meid leida',
+      title: 'Oleme lähedal',
+      addressLabel: 'Aadress',
+      hoursLabel: 'Lahtiolekuajad',
+      phoneLabel: 'Telefon',
+      emailLabel: 'Email',
+      openBtn: 'Ava kaart',
+      iframeTitle: 'Mr.Car kaardil',
+      iframeLabel: 'Mr.Car asukoht kaardil'
+    },
     hreflangSelf: 'et',
     serviceBase: '/services/',
     ruServiceBase: '/ru/services/',
@@ -111,6 +127,7 @@ const LANGS = [
     fabCall: 'Позвонить',
     fabBook: 'Записаться',
     formSubmit: 'Отправить заявку',
+    formMeta: 'Запись на ремонт',
     formSending: 'Отправка...',
     formLabels: {
       name: 'Имя',
@@ -136,6 +153,17 @@ const LANGS = [
     ],
     selfLang: { href: '/ru/', flag: 'circle-flags:ru', title: 'Русский' },
     mapLabel: 'Kopli 82a, Таллинн',
+    mapTranslations: {
+      meta: 'Как нас найти',
+      title: 'Мы рядом',
+      addressLabel: 'Адрес',
+      hoursLabel: 'Часы работы',
+      phoneLabel: 'Телефон',
+      emailLabel: 'Email',
+      openBtn: 'Открыть карту',
+      iframeTitle: 'Mr.Car на карте',
+      iframeLabel: 'Расположение Mr.Car на карте'
+    },
     hreflangSelf: 'ru',
     serviceBase: '/ru/services/',
     ruServiceBase: '/ru/services/',
@@ -168,6 +196,7 @@ const LANGS = [
     fabCall: 'Call Us',
     fabBook: 'Book Now',
     formSubmit: 'Send Request',
+    formMeta: 'Book a Repair',
     formSending: 'Sending...',
     formLabels: {
       name: 'Name',
@@ -193,6 +222,17 @@ const LANGS = [
     ],
     selfLang: { href: '/en/', flag: 'circle-flags:en', title: 'English' },
     mapLabel: 'Kopli 82a, Tallinn',
+    mapTranslations: {
+      meta: 'How to find us',
+      title: 'We are close by',
+      addressLabel: 'Address',
+      hoursLabel: 'Opening Hours',
+      phoneLabel: 'Phone',
+      emailLabel: 'Email',
+      openBtn: 'Open map',
+      iframeTitle: 'Mr.Car on map',
+      iframeLabel: 'Mr.Car location on map'
+    },
     hreflangSelf: 'en',
     serviceBase: '/en/services/',
     ruServiceBase: '/ru/services/',
@@ -363,6 +403,40 @@ function renderPage(s, services, cfg) {
   const jsonLd = buildJsonLd(s, cfg);
   const symptomCards = buildSymptomCards(s.symptoms || []);
   const servicesListHtml = buildServicesList(s.servicesList || []);
+
+  // Prepare Form Partial
+  let renderedForm = FORM_PARTIAL
+    .replace(/{{lang}}/g, esc(cfg.lang))
+    .replace(/{{form_meta}}/g, esc(cfg.formMeta))
+    .replace(/{{form_title}}/g, esc(s.form.title))
+    .replace(/{{form_subtitle}}/g, esc(s.form.subtitle))
+    .replace(/{{formValidation}}/g, esc(cfg.formValidation))
+    .replace(/{{formLabels_name}}/g, esc(cfg.formLabels.name))
+    .replace(/{{formPlaceholder_name}}/g, esc(cfg.formPlaceholder.name))
+    .replace(/{{formLabels_carNumber}}/g, esc(cfg.formLabels.carNumber))
+    .replace(/{{formPlaceholder_carNumber}}/g, esc(cfg.formPlaceholder.carNumber))
+    .replace(/{{formLabels_email}}/g, esc(cfg.formLabels.email))
+    .replace(/{{formPlaceholder_email}}/g, esc(cfg.formPlaceholder.email))
+    .replace(/{{formLabels_phone}}/g, esc(cfg.formLabels.phone))
+    .replace(/{{formPlaceholder_phone}}/g, esc(cfg.formPlaceholder.phone))
+    .replace(/{{formLabels_message}}/g, esc(cfg.formLabels.message))
+    .replace(/{{formPlaceholder_message}}/g, esc(cfg.formPlaceholder.message))
+    .replace(/{{formSubmit}}/g, esc(cfg.formSubmit));
+
+  // Prepare Map Partial
+  let renderedMap = MAP_PARTIAL
+    .replace(/{{map_meta}}/g, esc(cfg.mapTranslations.meta))
+    .replace(/{{map_title}}/g, esc(cfg.mapTranslations.title))
+    .replace(/{{map_address_label}}/g, esc(cfg.mapTranslations.addressLabel))
+    .replace(/{{map_hours_label}}/g, esc(cfg.mapTranslations.hoursLabel))
+    .replace(/{{map_workdays}}/g, esc(cfg.footer.workdays))
+    .replace(/{{map_weekend}}/g, esc(cfg.footer.weekend))
+    .replace(/{{map_closed}}/g, esc(cfg.footer.closed))
+    .replace(/{{map_phone_label}}/g, esc(cfg.mapTranslations.phoneLabel))
+    .replace(/{{map_email_label}}/g, esc(cfg.mapTranslations.emailLabel))
+    .replace(/{{map_open_btn}}/g, esc(cfg.mapTranslations.openBtn))
+    .replace(/{{map_iframe_title}}/g, esc(cfg.mapTranslations.iframeTitle))
+    .replace(/{{map_iframe_label}}/g, esc(cfg.mapTranslations.iframeLabel));
 
   const promoBanner = s.promoBanner && s.promoBanner.enabled ? `
         <div class="sd-promo">
@@ -540,67 +614,18 @@ ${jsonLd}
     </aside>
   </section>
 
-  <!-- CTA + FORM -->
-  <section class="sd-cta" id="request">
-    <div class="sd-cta__overlay"></div>
-    <div class="sd-cta__inner site-container">
-      <div class="sd-cta__info">
-        <h2 class="sd-cta__title">${esc(s.ctaSection.title)}</h2>
-        <p class="sd-cta__text">${esc(s.ctaSection.text)}</p>
-        <a href="tel:${esc(s.ctaSection.phoneNumber)}" class="sd-cta__phone">
-          <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
-          ${esc(s.ctaSection.phoneText)}
-        </a>
-        <div class="sd-cta__map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.9!2d24.7367!3d59.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469294a73d8b6a69%3A0x4e7e0e6e7e6e7e6e!2sKopli+82a%2C+Tallinn!5e0!3m2!1set!2see!4v1600000000000!5m2!1set!2see"
-            width="100%" height="200" style="border:0;border-radius:8px;" allowfullscreen loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" title="Mr.Car asukoht">
-          </iframe>
-          <p class="sd-cta__address">
-            <iconify-icon icon="mdi:map-marker" width="16" height="16" aria-hidden="true"></iconify-icon>
-            ${esc(cfg.mapLabel)}
-          </p>
-        </div>
-      </div>
-      <div class="sd-cta__form-wrap">
-        <h3 class="sd-cta__form-title">${esc(s.form.title)}</h3>
-        <p class="sd-cta__form-subtitle">${esc(s.form.subtitle)}</p>
-        <form class="sd-form" id="serviceForm" novalidate>
-          <input type="hidden" name="lang" value="${esc(cfg.lang)}">
-          <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="tsStart" id="tsStart">
-          
-          <div id="formError" class="form-error-banner" style="display:none">${esc(cfg.formValidation)}</div>
+  <!-- CONTACT FORM -->
+  <section class="contact-section" id="request">
+    ${renderedForm}
+  </section>
 
-          <div class="sd-form__row">
-            <label class="sd-form__label">${esc(cfg.formLabels.name)}</label>
-            <input class="sd-form__input" type="text" name="name" placeholder="${esc(cfg.formPlaceholder.name)}">
-          </div>
-          <div class="sd-form__row">
-            <label class="sd-form__label">${esc(cfg.formLabels.carNumber)}</label>
-            <input class="sd-form__input" type="text" name="carNumber" placeholder="${esc(cfg.formPlaceholder.carNumber)}" required>
-          </div>
-          <div class="sd-form__row">
-            <label class="sd-form__label">${esc(cfg.formLabels.email)}</label>
-            <input class="sd-form__input" type="email" name="email" placeholder="${esc(cfg.formPlaceholder.email)}" required>
-          </div>
-          <div class="sd-form__row">
-            <label class="sd-form__label">${esc(cfg.formLabels.phone)}</label>
-            <input class="sd-form__input" type="tel" name="phone" placeholder="${esc(cfg.formPlaceholder.phone)}">
-          </div>
-          <div class="sd-form__row">
-            <label class="sd-form__label">${esc(cfg.formLabels.message)}</label>
-            <textarea class="sd-form__textarea" name="message" placeholder="${esc(cfg.formPlaceholder.message)}" rows="3" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary sd-form__btn">${esc(cfg.formSubmit)} <span class="arrow">↗</span></button>
-        </form>
-      </div>
-    </div>
+  <!-- MAP + LOCATION -->
+  <section class="location-section" id="location">
+    ${renderedMap}
   </section>
 
   <!-- SNACKBAR -->
-  <div id="snackbar" class="snackbar">${esc(cfg.formOk)}</div>
+  <div id="snackbar" class="snackbar">${esc(cfg.formSuccess)}</div>
 
   <!-- FAB Contact -->
   <div class="fab-contact" id="fabContact">
