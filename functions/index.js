@@ -144,7 +144,7 @@ function buildCustomerEmail(lang, name, carNumber, email, phone, message) {
           <!-- Logo -->
           <tr>
             <td align="center" style="padding:36px 40px 28px 40px;">
-              <img src="https://mrcar.ee/homepage_pics/logo_black.PNG"
+              <img src="https://mrcar-473416.web.app/homepage_pics/logo_black.PNG"
                    alt="Mr.Car Autoteenindus"
                    width="180" height="auto"
                    style="display:block;max-width:180px;height:auto;border:0;line-height:1;">
