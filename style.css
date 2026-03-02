@@ -1106,7 +1106,7 @@ h3 {
 }
 
 .service-icon--mobile-cta {
-    display: none;
+    display: none !important;
 }
 
 .service-icon:hover {
@@ -2245,7 +2245,7 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     }
 
     .service-icon--mobile-cta {
-        display: flex;
+        display: flex !important;
         background-color: var(--bg-surface);
         /* Highlights the CTA cell */
     }
