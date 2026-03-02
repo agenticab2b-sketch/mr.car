@@ -1,0 +1,21 @@
+[debug] [2026-03-02T16:11:38.030Z] ----------------------------------------------------------------------
+[debug] [2026-03-02T16:11:38.033Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\bumbo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions:lead
+[debug] [2026-03-02T16:11:38.033Z] CLI Version:   15.8.0
+[debug] [2026-03-02T16:11:38.033Z] Platform:      win32
+[debug] [2026-03-02T16:11:38.033Z] Node Version:  v22.19.0
+[debug] [2026-03-02T16:11:38.034Z] Time:          Mon Mar 02 2026 18:11:38 GMT+0200 (Восточная Европа, стандартное время)
+[debug] [2026-03-02T16:11:38.034Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-02T16:11:39.465Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-02T16:11:39.465Z] > authorizing via signed-in user (bumbox90@gmail.com)
+[debug] [2026-03-02T16:11:39.466Z] [iam] checking project mrcar-473416 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2026-03-02T16:11:39.467Z] Checked if tokens are valid: false, expires at: 1772468296307
+[debug] [2026-03-02T16:11:39.467Z] Checked if tokens are valid: false, expires at: 1772468296307
+[debug] [2026-03-02T16:11:39.467Z] > refreshing access token with scopes: []
+[debug] [2026-03-02T16:11:39.469Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-02T16:11:39.469Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-02T16:11:39.592Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-03-02T16:11:39.592Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-02T16:11:39.600Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions [none]
+[debug] [2026-03-02T16:11:39.600Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions  x-goog-user-project=mrcar-473416
+[debug] [2026-03-02T16:11:39.600Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}

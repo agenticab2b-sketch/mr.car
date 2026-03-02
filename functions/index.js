@@ -2,6 +2,8 @@ const { onRequest } = require("firebase-functions/v2/https");
 const axios = require("axios");
 const nodemailer = require("nodemailer");
 
+// ─── Google Rating ────────────────────────────────────────────────────────────
+
 exports.getGoogleRating = onRequest({
   cors: true,
   secrets: ["GOOGLE_MAPS_API_KEY"]
@@ -34,11 +36,20 @@ exports.getGoogleRating = onRequest({
   }
 });
 
+// ─── Ping ─────────────────────────────────────────────────────────────────────
+
 exports.ping = onRequest({ cors: true }, (req, res) => {
   res.status(200).send("pong");
 });
 
+// ─── Email builder ────────────────────────────────────────────────────────────
+
+/**
+ * Builds the customer auto-reply email (HTML + plain text).
+ * {NAME} rule: if name present → ", name"; else "".
+ */
 function buildCustomerEmail(lang, nameSuffix, carNumber, message, phone) {
+
   const subjects = {
     et: "Täname! Oleme teie päringu kätte saanud",
     ru: "Спасибо! Мы получили вашу заявку",
@@ -46,143 +57,273 @@ function buildCustomerEmail(lang, nameSuffix, carNumber, message, phone) {
     fi: "Kiitos! Olemme vastaanottaneet pyyntösi"
   };
 
+  // Full greeting texts — phone number is embedded here, NOT repeated below.
   const greetings = {
-    et: `Tere${nameSuffix}, Aitäh, et kirjutasite meile! Teie päring on kätte saadud ja võtame selle peagi ette. Vastame teile 24 tunni jooksul — e-posti teel või telefoni teel, sõltuvalt sellest, millised kontaktandmed te vormis jätsite.`,
-    ru: `Здравствуйте${nameSuffix}! Спасибо за обращение — мы получили вашу заявку и уже взяли её в работу. Мы свяжемся с вами в течение 24 часов — по e-mail или телефону (в зависимости от того, какие данные вы указали).`,
-    en: `Hello${nameSuffix}, Thank you for contacting us — we’ve received your request and will review it shortly. We’ll get back to you within 24 hours via email or phone (depending on the contact details you provided).`,
-    fi: `Hei${nameSuffix}, Kiitos yhteydenotostasi — olemme vastaanottaneet pyyntösi ja käsittelemme sen pian. Otamme sinuun yhteyttä 24 tunnin kuluessa sähköpostitse tai puhelimitse (sen mukaan, mitä yhteystietoja annoit).`
+    et: `Tere${nameSuffix},<br><br>Aitäh, et kirjutasite meile! Teie päring on kätte saadud ja võtame selle peagi ette. Vastame teile 24 tunni jooksul — e-posti teel või telefoni teel, sõltuvalt sellest, millised kontaktandmed te vormis jätsite. Kui soovite midagi täpsustada, helistage: <strong>+372 5646 1210</strong>.`,
+    ru: `Здравствуйте${nameSuffix}!<br><br>Спасибо за обращение — мы получили вашу заявку и уже взяли её в работу. Мы свяжемся с вами в течение 24 часов — по e-mail или телефону (в зависимости от того, какие данные вы указали). Если нужно что-то уточнить, звоните: <strong>+372 5646 1210</strong>.`,
+    en: `Hello${nameSuffix},<br><br>Thank you for contacting us — we've received your request and will review it shortly. We'll get back to you within 24 hours via email or phone (depending on the contact details you provided). If you need to add anything, feel free to call: <strong>+372 5646 1210</strong>.`,
+    fi: `Hei${nameSuffix},<br><br>Kiitos yhteydenotostasi — olemme vastaanottaneet pyyntösi ja käsittelemme sen pian. Otamme sinuun yhteyttä 24 tunnin kuluessa sähköpostitse tai puhelimitse (sen mukaan, mitä yhteystietoja annoit). Jos haluat täydentää tietoja, soita: <strong>+372 5646 1210</strong>.`
   };
 
+  // Plain-text versions (no HTML)
+  const greetingsText = {
+    et: `Tere${nameSuffix},\n\nAitäh, et kirjutasite meile! Teie päring on kätte saadud ja võtame selle peagi ette. Vastame teile 24 tunni jooksul — e-posti teel või telefoni teel, sõltuvalt sellest, millised kontaktandmed te vormis jätsite. Kui soovite midagi täpsustada, helistage: +372 5646 1210.`,
+    ru: `Здравствуйте${nameSuffix}!\n\nСпасибо за обращение — мы получили вашу заявку и уже взяли её в работу. Мы свяжемся с вами в течение 24 часов — по e-mail или телефону (в зависимости от того, какие данные вы указали). Если нужно что-то уточнить, звоните: +372 5646 1210.`,
+    en: `Hello${nameSuffix},\n\nThank you for contacting us — we've received your request and will review it shortly. We'll get back to you within 24 hours via email or phone (depending on the contact details you provided). If you need to add anything, feel free to call: +372 5646 1210.`,
+    fi: `Hei${nameSuffix},\n\nKiitos yhteydenotostasi — olemme vastaanottaneet pyyntösi ja käsittelemme sen pian. Otamme sinuun yhteyttä 24 tunnin kuluessa sähköpostitse tai puhelimitse (sen mukaan, mitä yhteystietoja annoit). Jos haluat täydentää tietoja, soita: +372 5646 1210.`
+  };
+
+  // "Request details" block labels per language
   const labels = {
-    et: { details: "Detailid:", car: "Autonumber", message: "Sõnum", phone: "Telefon", footer: "Kui soovite midagi täpsustada, helistage:" },
-    ru: { details: "Детали заявки:", car: "Номер авто", message: "Сообщение", phone: "Телефон", footer: "Если нужно что-то уточнить, звоните:" },
-    en: { details: "Request details:", car: "Car number", message: "Message", phone: "Phone", footer: "If you need to add anything, feel free to call:" },
-    fi: { details: "Pyyntösi tiedot:", car: "Autonumero", message: "Viesti", phone: "Puhelin", footer: "Jos haluat täydentää tietoja, soita:" }
+    et: { details: "Teie päringu andmed", car: "Autonumber", msg: "Sõnum", phone: "Telefon" },
+    ru: { details: "Детали заявки", car: "Номер авто", msg: "Сообщение", phone: "Телефон" },
+    en: { details: "Request details", car: "Car plate", msg: "Message", phone: "Phone" },
+    fi: { details: "Pyyntösi tiedot", car: "Autonumero", msg: "Viesti", phone: "Puhelin" }
   };
 
   const l = labels[lang] || labels.et;
   const greet = greetings[lang] || greetings.et;
+  const greetText = greetingsText[lang] || greetingsText.et;
   const subject = subjects[lang] || subjects.et;
 
-  const html = `
-    <div style="background-color: #f8f9fa; padding: 40px 20px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
-      <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #eeeeee;">
-        <div style="text-align: center; margin-bottom: 35px;">
-          <img src="https://mrcar.ee/homepage_pics/logo_black.PNG" height="56" alt="MrCar" style="display: inline-block;">
-        </div>
-        <div style="color: #444444; line-height: 1.6; font-size: 16px;">
-          <p style="margin-top: 0; margin-bottom: 25px;">${greet}</p>
-          
-          <div style="margin: 30px 0; padding: 25px; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #f0f0f0;">
-            <h4 style="margin-top: 0; margin-bottom: 15px; color: #111111; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">${l.details}</h4>
-            <p style="margin: 0 0 10px 0; font-size: 15px;"><strong style="color: #666666;">${l.car}:</strong> ${carNumber}</p>
-            <p style="margin: 0 0 10px 0; font-size: 15px;"><strong style="color: #666666;">${l.message}:</strong> ${message}</p>
-            ${phone ? `<p style="margin: 0; font-size: 15px;"><strong style="color: #666666;">${l.phone}:</strong> ${phone}</p>` : ""}
-          </div>
-          
-          <div style="margin-top: 35px; padding-top: 25px; border-top: 1px solid #eeeeee;">
-            <p style="margin: 0 0 5px 0; font-size: 14px; color: #888888;">${l.footer}</p>
-            <p style="margin: 0; font-weight: bold; font-size: 18px; color: #111111;">+372 5646 1210</p>
-            <p style="margin: 15px 0 0 0; font-weight: bold; font-size: 15px; color: #111111;">Mr.Car Autoteenindus</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
+  // ── HTML email ──────────────────────────────────────────────────────────────
+  // Fully inline CSS for maximum email client compatibility (Gmail, Outlook, Apple Mail).
+  // Logo must use absolute HTTPS URL. PNG filename is uppercase as on the server.
+  const html = `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${subject}</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f4f4;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <!-- Card -->
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:12px;border:1px solid #e8e8e8;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
 
-  const text = `${greet}\n\n${l.details}\n${l.car}: ${carNumber}\n${l.message}: ${message}\n${phone ? `${l.phone}: ${phone}\n` : ""}\n${l.footer} +372 5646 1210\nMr.Car Autoteenindus`;
+          <!-- Logo -->
+          <tr>
+            <td align="center" style="padding:40px 40px 28px 40px;">
+              <img src="https://mrcar.ee/homepage_pics/logo_black.PNG"
+                   alt="Mr.Car Autoteenindus"
+                   width="180"
+                   height="auto"
+                   style="display:block;max-width:180px;height:auto;border:0;">
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td style="padding:0 40px;">
+              <hr style="border:none;border-top:1px solid #eeeeee;margin:0;">
+            </td>
+          </tr>
+
+          <!-- Greeting -->
+          <tr>
+            <td style="padding:32px 40px 20px 40px;color:#333333;font-size:16px;line-height:1.7;">
+              ${greet}
+            </td>
+          </tr>
+
+          <!-- Details block -->
+          <tr>
+            <td style="padding:0 40px 32px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                     style="background-color:#f9f9f9;border-radius:8px;border:1px solid #efefef;padding:0;">
+                <tr>
+                  <td style="padding:20px 24px;">
+                    <p style="margin:0 0 12px 0;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:0.08em;color:#999999;">${l.details}</p>
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="padding:5px 0;font-size:14px;color:#666666;width:120px;vertical-align:top;">${l.car}:</td>
+                        <td style="padding:5px 0;font-size:14px;color:#111111;font-weight:600;">${escHtml(carNumber)}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:5px 0;font-size:14px;color:#666666;vertical-align:top;">${l.msg}:</td>
+                        <td style="padding:5px 0;font-size:14px;color:#111111;">${escHtml(message)}</td>
+                      </tr>
+                      ${phone ? `<tr>
+                        <td style="padding:5px 0;font-size:14px;color:#666666;vertical-align:top;">${l.phone}:</td>
+                        <td style="padding:5px 0;font-size:14px;color:#111111;">${escHtml(phone)}</td>
+                      </tr>` : ""}
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer signature -->
+          <tr>
+            <td style="padding:0 40px 40px 40px;border-top:1px solid #eeeeee;padding-top:24px;">
+              <p style="margin:0;font-size:14px;font-weight:700;color:#111111;">Mr.Car Autoteenindus</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+
+  // ── Plain-text fallback ─────────────────────────────────────────────────────
+  const text = [
+    greetText,
+    "",
+    `── ${l.details} ──`,
+    `${l.car}: ${carNumber}`,
+    `${l.msg}: ${message}`,
+    phone ? `${l.phone}: ${phone}` : null,
+    "",
+    "Mr.Car Autoteenindus"
+  ].filter(line => line !== null).join("\n");
 
   return { subject, html, text };
 }
+
+// Simple HTML escaping for user-supplied values in the email body.
+function escHtml(str) {
+  return String(str || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// ─── Lead function ────────────────────────────────────────────────────────────
 
 exports.lead = onRequest({
   cors: true,
   region: "us-central1",
   secrets: ["SMTP_PASS"]
 }, async (req, res) => {
+
   if (req.method !== "POST") {
     return res.status(405).send("Method Not Allowed");
   }
 
-  const { name, carNumber, email, phone, message, lang: rawLang, hp, tsStart, pageUrl } = req.body;
+  const {
+    name,
+    carNumber,
+    email,
+    phone,
+    message,
+    lang: rawLang,
+    hp,
+    tsStart,
+    pageUrl
+  } = req.body;
 
-  // Anti-spam
+  // ── Anti-spam ───────────────────────────────────────────────────────────────
+
   if (hp) {
-    console.log("Honeypot filled, silent drop");
-    return res.status(200).json({ success: true });
-  }
-  if (Date.now() - (parseInt(tsStart) || 0) < 2000) {
-    console.log("Timing too fast, silent drop");
+    console.log("Honeypot filled — silent drop");
     return res.status(200).json({ success: true });
   }
 
-  // Server validation
+  if (Date.now() - (parseInt(tsStart) || 0) < 2000) {
+    console.log("Timing check failed — silent drop");
+    return res.status(200).json({ success: true });
+  }
+
+  // ── Validation ──────────────────────────────────────────────────────────────
+
   const requiredFields = { carNumber, email, message };
-  const missingFields = Object.keys(requiredFields).filter(key => !requiredFields[key] || typeof requiredFields[key] !== "string" || requiredFields[key].trim() === "");
+  const missingFields = Object.keys(requiredFields).filter(
+    key => !requiredFields[key] || typeof requiredFields[key] !== "string" || requiredFields[key].trim() === ""
+  );
 
   if (missingFields.length > 0) {
     return res.status(400).json({
       success: false,
       type: "validation",
-      message: "Необходимо заполнитель выделенные поля",
+      message: "Необходимо заполнить выделенные поля",
       fields: missingFields
     });
   }
 
-  // Determine lang
+  // ── Normalise lang ──────────────────────────────────────────────────────────
+
   const validLangs = ["et", "ru", "en", "fi"];
-  const lang = validLangs.includes(String(rawLang).toLowerCase()) ? String(rawLang).toLowerCase() : "et";
+  const lang = validLangs.includes(String(rawLang || "").toLowerCase())
+    ? String(rawLang).toLowerCase()
+    : "et";
 
-  // Build NAME substitution
-  const nameSuffix = name && typeof name === "string" && name.trim() ? ", " + name.trim() : "";
+  // ── NAME substitution ────────────────────────────────────────────────────────
 
+  const nameSuffix = name && typeof name === "string" && name.trim()
+    ? ", " + name.trim()
+    : "";
+
+  // ── SMTP transport ──────────────────────────────────────────────────────────
+
+  const FROM = '"Mr.Car Autoteenindus" <info@mrcar.ee>';
+
+  let transporter;
   try {
-    const transporter = nodemailer.createTransport({
+    transporter = nodemailer.createTransport({
       host: "smtp.zone.eu",
       port: 465,
-      secure: true,
-      auth: { user: "info@mrcar.ee", pass: process.env.SMTP_PASS }
+      secure: true,           // SSL/TLS
+      auth: {
+        user: "info@mrcar.ee",
+        pass: process.env.SMTP_PASS
+      }
     });
+  } catch (err) {
+    console.error("Transporter creation error:", err);
+    return res.status(500).json({
+      success: false,
+      type: "server",
+      message: "Не удалось отправить заявку. Попробуйте ещё раз."
+    });
+  }
 
-    // Email to admin (ALWAYS in Russian)
-    const adminEmail = {
-      from: "info@mrcar.ee",
-      to: "info@mrcar.ee",
-      replyTo: email,
-      envelope: {
-        from: "info@mrcar.ee",
-        to: "info@mrcar.ee"
-      },
-      subject: `Заявка с сайта MrCar — ${carNumber}`,
-      text: `Новая заявка с сайта MrCar
+  // ── Admin email (ALWAYS in Russian) ─────────────────────────────────────────
 
-Имя: ${name || "—"}
-Госномер: ${carNumber}
-Email: ${email}
-Телефон: ${phone || "—"}
-Сообщение: ${message}
-Язык клиента: ${lang}
-URL страницы: ${pageUrl || "—"}
-Timestamp: ${new Date().toISOString()}`
-    };
+  const timestamp = new Date().toLocaleString("ru-RU", { timeZone: "Europe/Tallinn" });
 
-    // Email to customer
-    const { subject, html, text } = buildCustomerEmail(lang, nameSuffix, carNumber, message, phone);
-    const customerEmail = {
-      from: "info@mrcar.ee",
-      to: email,
-      envelope: {
-        from: "info@mrcar.ee",
-        to: email
-      },
-      subject: subject,
-      html: html,
-      text: text
-    };
+  const adminEmailOptions = {
+    from: FROM,
+    to: "info@mrcar.ee",
+    replyTo: `${name ? escHtml(name) + " " : ""}<${email}>`,
+    subject: `Новая заявка с сайта MrCar — ${carNumber}`,
+    text: [
+      "Новая заявка с сайта MrCar",
+      "",
+      `Имя:            ${name || "—"}`,
+      `Госномер:       ${carNumber}`,
+      `Email:          ${email}`,
+      `Телефон:        ${phone || "—"}`,
+      `Сообщение:      ${message}`,
+      `Язык клиента:   ${lang}`,
+      `URL страницы:   ${pageUrl || "—"}`,
+      `Timestamp:      ${timestamp}`
+    ].join("\n")
+  };
 
+  // ── Customer email (language-specific) ──────────────────────────────────────
+
+  const { subject, html, text } = buildCustomerEmail(lang, nameSuffix, carNumber, message, phone);
+
+  const customerEmailOptions = {
+    from: FROM,
+    to: email,
+    subject,
+    html,
+    text  // multipart/alternative plain-text fallback
+  };
+
+  // ── Send both ────────────────────────────────────────────────────────────────
+
+  try {
     await Promise.all([
-      transporter.sendMail(adminEmail),
-      transporter.sendMail(customerEmail)
+      transporter.sendMail(adminEmailOptions),
+      transporter.sendMail(customerEmailOptions)
     ]);
 
     return res.status(200).json({
@@ -191,7 +332,7 @@ Timestamp: ${new Date().toISOString()}`
     });
 
   } catch (error) {
-    console.error("SMTP Error:", error);
+    console.error("SMTP send error:", error);
     return res.status(500).json({
       success: false,
       type: "server",
