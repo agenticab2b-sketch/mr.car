@@ -19,3 +19,88 @@
 [debug] [2026-03-02T16:11:39.600Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions [none]
 [debug] [2026-03-02T16:11:39.600Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions  x-goog-user-project=mrcar-473416
 [debug] [2026-03-02T16:11:39.600Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-03-02T16:11:40.447Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions 200
+[debug] [2026-03-02T16:11:40.447Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-03-02T16:11:40.448Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:40.448Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:40.448Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/mrcar-473416/serviceAccounts/mrcar-473416@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-02T16:11:40.448Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/mrcar-473416/serviceAccounts/mrcar-473416@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-02T16:11:41.297Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/mrcar-473416/serviceAccounts/mrcar-473416@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-03-02T16:11:41.297Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/mrcar-473416/serviceAccounts/mrcar-473416@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'mrcar-473416'...
+[info] 
+[info] i  deploying functions 
+[debug] [2026-03-02T16:11:41.300Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:41.300Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:41.301Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 [none]
+[debug] [2026-03-02T16:11:41.491Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 200
+[debug] [2026-03-02T16:11:41.491Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 {"projectNumber":"723126621967","projectId":"mrcar-473416","lifecycleState":"ACTIVE","name":"MrCar","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-09-27T16:01:53.885421Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-03-02T16:11:41.495Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:41.495Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:41.495Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig [none]
+[debug] [2026-03-02T16:11:42.464Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig 200
+[debug] [2026-03-02T16:11:42.465Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig {"projectId":"mrcar-473416","storageBucket":"mrcar-473416.firebasestorage.app"}
+[debug] [2026-03-02T16:11:42.466Z] Validating nodejs source
+[debug] [2026-03-02T16:11:43.332Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0",
+    "nodemailer": "^8.0.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.4.1"
+  },
+  "private": true
+}
+[debug] [2026-03-02T16:11:43.333Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-03-02T16:11:43.334Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-02T16:11:43.344Z] Found firebase-functions binary at 'E:\Antigravity\AntigravityAgents\mr.car\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8914
+
+[debug] [2026-03-02T16:11:43.893Z] Got response from /__/functions.yaml {"endpoints":{"getGoogleRating":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","secretEnvironmentVariables":[{"key":"GOOGLE_MAPS_API_KEY"}],"labels":{},"httpsTrigger":{},"entryPoint":"getGoogleRating"},"ping":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ping"},"lead":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"secretEnvironmentVariables":[{"key":"SMTP_PASS"}],"labels":{},"httpsTrigger":{},"entryPoint":"lead"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-03-02T16:11:47.948Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-02T16:11:47.949Z] > authorizing via signed-in user (bumbox90@gmail.com)
+[debug] [2026-03-02T16:11:47.949Z] [iam] checking project mrcar-473416 for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-03-02T16:11:47.949Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:47.949Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:47.949Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions [none]
+[debug] [2026-03-02T16:11:47.949Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions  x-goog-user-project=mrcar-473416
+[debug] [2026-03-02T16:11:47.949Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-02T16:11:48.755Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions 200
+[debug] [2026-03-02T16:11:48.755Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-02T16:11:48.756Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:48.756Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:48.756Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/mrcar-473416/instances pageSize=100&pageToken=
+[debug] [2026-03-02T16:11:49.691Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/mrcar-473416/instances 200
+[debug] [2026-03-02T16:11:49.691Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/mrcar-473416/instances {}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged E:\Antigravity\AntigravityAgents\mr.car\functions (73.95 KB) for uploading 
+[debug] [2026-03-02T16:11:49.735Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:49.735Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:49.735Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/mrcar-473416/locations/-/functions [none]
+[debug] [2026-03-02T16:11:50.610Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/mrcar-473416/locations/-/functions 200
+[debug] [2026-03-02T16:11:50.610Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/mrcar-473416/locations/-/functions {}
+[debug] [2026-03-02T16:11:50.610Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:50.611Z] Checked if tokens are valid: true, expires at: 1772471498592
+[debug] [2026-03-02T16:11:50.611Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/mrcar-473416/locations/-/functions filter=environment%3D%22GEN_2%22
