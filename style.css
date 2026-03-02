@@ -1105,6 +1105,10 @@ h3 {
     border-right: none;
 }
 
+.service-icon--mobile-cta {
+    display: none;
+}
+
 .service-icon:hover {
     background-color: var(--bg-surface);
 }
@@ -2238,6 +2242,21 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     /* P-04: Services overview — 2 cols on mobile (not 3, too cramped) */
     .services-overview .brutal-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-icon--mobile-cta {
+        display: flex;
+        background-color: var(--bg-surface);
+        /* Highlights the CTA cell */
+    }
+
+    .service-icon--mobile-cta iconify-icon {
+        color: var(--accent-primary) !important;
+    }
+
+    .service-icon--mobile-cta .service-icon__label {
+        color: var(--text-main);
+        font-weight: 700;
     }
 
     /* P-03: About features — single column on mobile */
