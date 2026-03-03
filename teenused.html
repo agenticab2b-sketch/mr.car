@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kõik autoteenused Tallinnas | Mr.Car Autoremont</title>
+    <meta name="description"
+        content="Üldine autoremont, veermik, mootor, rehvitööd, elektroonika ja palju muud. Leia endale vajalik teenus ja broneeri aeg!">
+
+    <!-- Canonical + hreflang -->
+    <link rel="canonical" href="https://mrcar.ee/teenused.html">
+    <link rel="alternate" hreflang="et" href="https://mrcar.ee/teenused.html">
+    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/uslugi.html">
+    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/teenused.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style.css?v=3">
+    <link rel="stylesheet" href="/services-listing.css?v=1">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <a href="/" class="navbar__logo">Mr.Car</a>
+        <nav class="navbar__nav">
+            <div class="navbar__item has-dropdown">
+                <a href="/teenused.html" class="navbar__link">[01] Teenused</a>
+                <div class="mega-menu">
+                    <a href="/services/autoremont" class="mega-menu__item">
+                        <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Autoremont</span>
+                    </a>
+                    <a href="/services/summutid-keevitus" class="mega-menu__item">
+                        <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Summuti ja Keevitustööd</span>
+                    </a>
+                    <a href="/services/veermik-pidurid" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-brake-alert" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Veermiku ja Pidurite remont</span>
+                    </a>
+                    <a href="/services/rehvitood" class="mega-menu__item">
+                        <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Rehvitööd</span>
+                    </a>
+                    <a href="/services/hooldus-diagnostika" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Hooldus ja Diagnostika</span>
+                    </a>
+                    <a href="/services/kaigukastiremont" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Käigukasti tööd</span>
+                    </a>
+                    <a href="/services/elektritood" class="mega-menu__item">
+                        <iconify-icon icon="mdi:lightning-bolt" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Elektritööd</span>
+                    </a>
+                    <a href="/services/mootoriremont" class="mega-menu__item">
+                        <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Mootori tööd</span>
+                    </a>
+                    <a href="/services/olivahetus" class="mega-menu__item">
+                        <iconify-icon icon="mdi:oil" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Õli ja Filtrite vahetus</span>
+                    </a>
+                    <a href="/services/ostueelne-kontroll" class="mega-menu__item">
+                        <iconify-icon icon="mdi:file-search-outline" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Enne Ostu Kontroll</span>
+                    </a>
+                    <a href="/services/kliimahooldus" class="mega-menu__item">
+                        <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Kliima ja Konditsioneer</span>
+                    </a>
+                    <a href="/services/webasto-diagnostika" class="mega-menu__item">
+                        <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Webasto remont</span>
+                    </a>
+                </div>
+            </div>
+            <a href="/#about" class="navbar__link">[02] Meist</a>
+            <a href="/prices.html" class="navbar__link">[03] Hinnad</a>
+            <a href="/#contact" class="navbar__link">[04] Kontakt</a>
+            <a href="/#gallery" class="navbar__link">[05] Galerii</a>
+            <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
+        </nav>
+        <div class="navbar__cta">
+            <a href="/#contact" class="btn btn-primary">Jäta päring</a>
+        </div>
+        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="navbar__lang desktop-only">
+            <a href="/teenused.html" class="lang-link active" title="Eesti keel">
+                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="/ru/uslugi.html" class="lang-link" title="Русский язык">
+                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="/en/services.html" class="lang-link" title="English">
+                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
+            </a>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
+        <nav aria-label="Mobiilne navigatsioon">
+            <a href="/teenused.html" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+                Teenused
+                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
+                    height="24"></iconify-icon>
+            </a>
+            <div class="mobile-mega-menu" id="mobileMegaMenu">
+                <a href="/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+                    <span>Autoremont</span>
+                </a>
+                <a href="/services/summutid-keevitus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+                    <span>Summuti ja Keevitustööd</span>
+                </a>
+                <a href="/services/veermik-pidurid" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
+                    <span>Veermiku ja Pidurite remont</span>
+                </a>
+                <a href="/services/rehvitood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
+                    <span>Rehvitööd</span>
+                </a>
+                <a href="/services/hooldus-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                    <span>Hooldus ja Diagnostika</span>
+                </a>
+                <a href="/services/kaigukastiremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                    <span>Käigukasti tööd</span>
+                </a>
+                <a href="/services/elektritood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+                    <span>Elektritööd</span>
+                </a>
+                <a href="/services/mootoriremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+                    <span>Mootori tööd</span>
+                </a>
+                <a href="/services/olivahetus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
+                    <span>Õli ja Filtrite vahetus</span>
+                </a>
+                <a href="/services/ostueelne-kontroll" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+                    <span>Enne Ostu Kontroll</span>
+                </a>
+                <a href="/services/kliimahooldus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+                    <span>Kliima ja Konditsioneer</span>
+                </a>
+                <a href="/services/webasto-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                    <span>Webasto remont</span>
+                </a>
+            </div>
+            <a href="/#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
+            <a href="/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
+            <a href="/#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
+            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
+                5646 1210</a>
+        </nav>
+        <div class="mobile-menu__lang">
+            <a href="/teenused.html" class="mobile-lang-link active">
+                <iconify-icon icon="circle-flags:ee" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>Eesti</span>
+            </a>
+            <a href="/ru/uslugi.html" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:ru" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>Русский</span>
+            </a>
+            <a href="/en/services.html" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:en" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>English</span>
+            </a>
+        </div>
+    </div>
+
+    <main style="padding-top: 72px;">
+        <!-- PAGE HEADER -->
+        <section class="site-container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-md);">
+            <span class="meta text-accent">/// Kuidas saame aidata?</span>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: var(--space-md);">Kõik teenused</h1>
+            <p class="body-text" style="max-width: 600px; color: var(--text-muted); font-size: 1.125rem;">Mr.Car pakub
+                täislahendust sinu autole — rehvivahetusest kuni keeruka mootoriremondini. Otsi märksõna järgi või sirvi
+                kategooriaid.</p>
+        </section>
+
+        <!-- FINDER AREA -->
+        <section class="services-finder">
+            <div class="finder-container">
+                <div class="finder-search">
+                    <iconify-icon icon="mdi:magnify"></iconify-icon>
+                    <input type="text" id="listingSearch" placeholder="Otsi teenust või sümptomit..."
+                        aria-label="Otsi teenust">
+                </div>
+                <div class="finder-filters">
+                    <button class="filter-chip active" data-filter="all">Kõik teenused</button>
+                    <button class="filter-chip" data-filter="repair">Üldremont</button>
+                    <button class="filter-chip" data-filter="chassis">Veermik & Väljalase</button>
+                    <button class="filter-chip" data-filter="diag">Hooldus & Diagnostika</button>
+                    <button class="filter-chip" data-filter="climate">Kliima & Webasto</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LISTING GRID -->
+        <section class="services-listing">
+            <div class="listing-grid">
+
+                <!-- Card 1: Autoremont -->
+                <div class="listing-card reveal-card" data-group="repair">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:wrench" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Autoremont</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">kolinad</span>
+                        <span class="listing-tag">lekked</span>
+                        <span class="listing-tag">üldine kulumine</span>
+                    </div>
+                    <p class="listing-card__desc">Üldine autoremont ja tõrkeotsing kõikidele automarkidele. Leiame vea
+                        ja eemaldame selle.</p>
+                    <ul class="listing-card__list">
+                        <li>Sildade remont ja kontroll</li>
+                        <li>Vedelikulekete likvideerimine</li>
+                        <li>Väiksemate rikete eemaldamine</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/autoremont" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Summutid ja Keevitus -->
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:fire" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Summutitööd</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">lärmakas väljalase</span>
+                        <span class="listing-tag">heitgaaside lõhn</span>
+                    </div>
+                    <p class="listing-card__desc">Summutite diagnoosimine, remont ja spetsiifilised keevitustööd, sh
+                        katalüsaatorite vahetus.</p>
+                    <ul class="listing-card__list">
+                        <li>Summuti sukkade vahetus</li>
+                        <li>DPF/Katalüsaatori asendus</li>
+                        <li>Professionaalne Mig/Tig keevitus</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/summutid-keevitus" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Veermik ja Pidurid -->
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-brake-alert" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Veermik ja Pidurid</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">pidurdamisel värin</span>
+                        <span class="listing-tag">kolin augus</span>
+                    </div>
+                    <p class="listing-card__desc">Alusvankri ja vedrustuse täielik kontroll, vajalike kuluvosade ning
+                        pidurisüsteemide vahetus.</p>
+                    <ul class="listing-card__list">
+                        <li>Piduriklotside & ketaste vahetus</li>
+                        <li>Õõtshoobade, pukside vahetus</li>
+                        <li>Amortisaatorite & vedrude vahetus</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/veermik-pidurid" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Rehvitööd -->
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:tire" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Rehvitööd</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">rehvi purunemine</span>
+                        <span class="listing-tag">vibratsioon roolis</span>
+                    </div>
+                    <p class="listing-card__desc">Rehvide kiire ja kvaliteetne paigaldus, hooajaline rehvivahetus ja
+                        tasakaalustamine.</p>
+                    <ul class="listing-card__list">
+                        <li>Suve/talverehvide vahetus</li>
+                        <li>Täpne rataste tasakaalustamine</li>
+                        <li>Rehvide parandamine (nööbiga)</li>
+                    </ul>
+                    <div class="listing-card__price">Hinnad alates <a href="/prices.html">€20</a></div>
+                    <div class="listing-card__footer">
+                        <a href="/services/rehvitood" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Hooldus ja Diagnostika -->
+                <div class="listing-card reveal-card" data-group="diag">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-cog" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Hooldus & Diagnostika</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">hooldusvälp käes</span>
+                        <span class="listing-tag">armatuuris veateade</span>
+                    </div>
+                    <p class="listing-card__desc">Kompuuterdiagnostika ja autotehase poolt ettenähtud korraline hooldus
+                        kõikidele markidele.</p>
+                    <ul class="listing-card__list">
+                        <li>Korraline tehasehooldus</li>
+                        <li>Veakoodide lugemine & kustutamine</li>
+                        <li>Live-data analüüs</li>
+                    </ul>
+                    <div class="listing-card__price">Hinnad alates <a href="/prices.html">€40</a></div>
+                    <div class="listing-card__footer">
+                        <a href="/services/hooldus-diagnostika" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Käigukasti tööd -->
+                <div class="listing-card reveal-card" data-group="repair">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-shift-pattern" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Käigukasti tööd</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">käigud ei lülitu</span>
+                        <span class="listing-tag">automaadi jõnksud</span>
+                    </div>
+                    <p class="listing-card__desc">Manuaal- ja automaatkäigukastide remont, hooldus ja dünaamiline
+                        õlivahetus.</p>
+                    <ul class="listing-card__list">
+                        <li>Dünaamiline kasti õlivahetus</li>
+                        <li>Sidurikomplekti vahetus</li>
+                        <li>Hüdraulika & mehhatroonika</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/kaigukastiremont" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 7: Elektritööd -->
+                <div class="listing-card reveal-card" data-group="diag">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:lightning-bolt" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Elektritööd</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">aku tühi</span>
+                        <span class="listing-tag">tuled ei põle</span>
+                    </div>
+                    <p class="listing-card__desc">Autode elektrisüsteemide keeruline diagnoos ja remont. Lühiste
+                        eemaldamine ja lisaseadmete paigaldus.</p>
+                    <ul class="listing-card__list">
+                        <li>Generaatori/Starteri remont</li>
+                        <li>Juhtmekimpude parandus</li>
+                        <li>Uute akude kontroll ja vahetus</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/elektritood" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 8: Mootori tööd -->
+                <div class="listing-card reveal-card" data-group="repair">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:engine" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Mootori tööd</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">suurenenud õlikulu</span>
+                        <span class="listing-tag">sinine suits</span>
+                    </div>
+                    <p class="listing-card__desc">Mootori kapitaalremont ja keerukamad mehhaanilised tööd staažika
+                        meistri poolt.</p>
+                    <ul class="listing-card__list">
+                        <li>Hammasrihma või keti vahetus</li>
+                        <li>Plokikaanetihendi vahetus</li>
+                        <li>Mootori täielik kapitaalremont</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/mootoriremont" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 9: Õlivahetus -->
+                <div class="listing-card reveal-card" data-group="diag">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:oil" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Õli ja Filtrid</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">õlivahetuse aeg</span>
+                        <span class="listing-tag">must õhk</span>
+                    </div>
+                    <p class="listing-card__desc">Kvaliteetsed õlid tuntud brändidelt ning auto hingamiseks vajalike
+                        filtrite asendus.</p>
+                    <ul class="listing-card__list">
+                        <li>Mootoriõli ja õlifiltri vahetus</li>
+                        <li>Õhu- ja kütusefiltri vahetus</li>
+                        <li>Salongifiltri uuendamine</li>
+                    </ul>
+                    <div class="listing-card__price">Hinnad alates <a href="/prices.html">€35</a></div>
+                    <div class="listing-card__footer">
+                        <a href="/services/olivahetus" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 10: Enne Ostu Kontroll -->
+                <div class="listing-card reveal-card" data-group="diag">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:file-search-outline" width="24" height="24"
+                                aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Ostueelne Kontroll</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">auto ostmine</span>
+                        <span class="listing-tag">varjatud vead</span>
+                    </div>
+                    <p class="listing-card__desc">Minimeerige riski ostes kasutatud autot meie sõltumatu ja põhjaliku
+                        raportiga.</p>
+                    <ul class="listing-card__list">
+                        <li>Kere ja värvikihi paksuse mõõtmine</li>
+                        <li>Põhjalik arvutidiagnostika</li>
+                        <li>Veermiku visuaalne audit</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/ostueelne-kontroll" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 11: Kliimahooldus -->
+                <div class="listing-card reveal-card" data-group="climate">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:snowflake" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Kliima hooldus</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">puhub sooja õhku</span>
+                        <span class="listing-tag">ebameeldiv lõhn</span>
+                    </div>
+                    <p class="listing-card__desc">Kliimasüsteemide kontroll, täitmine ja leketetõrje et sõiduajal oleks
+                        optimaalne temperatuur.</p>
+                    <ul class="listing-card__list">
+                        <li>Kliimasüsteemi täitmine gaasiga</li>
+                        <li>Lekketest rõhu abil</li>
+                        <li>Kompressori/radiaatori vahetus</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/kliimahooldus" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- Card 12: Webasto -->
+                <div class="listing-card reveal-card" data-group="climate">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:radiator" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Webasto remont</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span class="listing-tag">eelsoojendi ei tööta</span>
+                        <span class="listing-tag">salong on külm</span>
+                    </div>
+                    <p class="listing-card__desc">Põhjamaisesse kliimasse oluliste autonoomsete soojendite remont ja
+                        hooldus.</p>
+                    <ul class="listing-card__list">
+                        <li>Eberspächer / Webasto diagnostika</li>
+                        <li>Põlemiskambri lahtivõtmine ja puhastus</li>
+                        <li>Tsirkulatsioonipumpade vahetus</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/services/webasto-diagnostika" class="btn btn-primary">Loe edasi</a>
+                    </div>
+                </div>
+
+                <!-- No Results Node -->
+                <div id="noResults" class="listing-no-results">
+                    Selle otsinguga ei leitud ühtegi teenust. Proovi uusi märksõnu või tühjenda filter.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid site-container">
+            <div>
+                <div class="footer__col-title">Kontaktid</div>
+                <div class="footer__text">
+                    <a href="tel:+37256461210">+372 5646 1210</a><br>
+                    <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
+                    Kopli 82a, 10412 Tallinn
+                </div>
+                <div class="footer__socials">
+                    <a href="#" class="footer__social-link" aria-label="Facebook">
+                        <iconify-icon icon="mdi:facebook"></iconify-icon>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Instagram">
+                        <iconify-icon icon="mdi:instagram"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="footer__col-title">Rekvisiidid</div>
+                <div class="footer__text"
+                    style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dimmed);">
+                    ANET EESTI OÜ<br>
+                    Reg. nr: 10233521<br>
+                    KMKR: EE100321511<br>
+                    LHV: EE54 7700 7710 0969 0559<br>
+                    SEB: EE10 1010 0520 0108 4005
+                </div>
+            </div>
+            <div>
+                <div class="footer__col-title">Lahtiolekuajad</div>
+                <div class="footer__text">
+                    Esmaspäev – Reede<br>
+                    <strong style="color: var(--text-main);">09:00 – 18:00</strong><br><br>
+                    Laupäev – Pühapäev<br>
+                    <span style="color: var(--text-dimmed);">Suletud</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>© 2026 Mr.Car Autoremont Tallinn</span>
+            <a href="/privaatsus/">Privaatsuspoliitika</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/scripts/services-filter.js" defer></script>
+    <script>
+        // Mobile menu logic
+        const burger = document.getElementById('burgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.getElementById('closeMenu');
+
+        burger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', closeMobileMenu);
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function toggleMobileMegaMenu(e) {
+            e.preventDefault();
+            const icon = e.currentTarget.querySelector('.mobile-menu__toggle-icon');
+            const menu = document.getElementById('mobileMegaMenu');
+
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                menu.classList.add('active');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+
+</html>

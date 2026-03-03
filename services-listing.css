@@ -1,0 +1,392 @@
+/* ============================================================
+   Services Listing Page Styles
+   ============================================================ */
+
+/* --- Top Finder Area --- */
+.services-finder {
+    padding: var(--space-xl) 0 var(--space-md);
+    border-bottom: 1px solid var(--border-grid);
+    background-color: var(--bg-main);
+    position: relative;
+    z-index: 10;
+}
+
+.finder-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+    .finder-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* Search Input */
+.finder-search {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.finder-search input {
+    width: 100%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-grid);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: var(--space-md) var(--space-md) var(--space-md) 48px;
+    border-radius: var(--radius);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.finder-search input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 1px var(--accent-primary);
+}
+
+.finder-search input::placeholder {
+    color: var(--text-dimmed);
+}
+
+.finder-search iconify-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 20px;
+    pointer-events: none;
+}
+
+/* Filter Chips */
+.finder-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.filter-chip {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-grid);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 8px 16px;
+    border-radius: 4px;
+    /* Slight rounding for chips */
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .filter-chip {
+        transition: none;
+    }
+}
+
+.filter-chip:hover {
+    background-color: var(--bg-elevated);
+    color: var(--text-main);
+    border-color: var(--text-muted);
+}
+
+.filter-chip.active {
+    background-color: var(--accent-primary);
+    color: var(--text-on-accent);
+    border-color: var(--accent-primary);
+}
+
+/* --- Listing Grid --- */
+.services-listing {
+    padding: var(--space-xl) 0 var(--space-section);
+    background-color: var(--bg-main);
+}
+
+.listing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+@media (min-width: 768px) {
+    .listing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .listing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+    }
+}
+
+/* --- Service Card (Listing version) --- */
+.listing-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-grid);
+    padding: var(--space-lg);
+    transition: transform var(--transition-slow), border-color var(--transition-base), box-shadow var(--transition-base);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .listing-card {
+        transition: none;
+    }
+}
+
+.listing-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--text-dimmed);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.listing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 176, 0, 0.05) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.listing-card:hover::before {
+    opacity: 1;
+}
+
+/* Card Header: Icon + Title */
+.listing-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.listing-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-elevated);
+    color: var(--accent-primary);
+    border: 1px solid var(--border-grid);
+    flex-shrink: 0;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.listing-card:hover .listing-card__icon {
+    transform: scale(1.05) rotate(2deg);
+    background-color: rgba(255, 176, 0, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .listing-card:hover .listing-card__icon {
+        transform: none;
+    }
+}
+
+.listing-card__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--text-main);
+    text-transform: uppercase;
+    margin: 0;
+    align-self: center;
+}
+
+/* Card Description */
+.listing-card__desc {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+    flex-grow: 0;
+}
+
+/* Symptom Tags */
+.listing-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: var(--space-md);
+}
+
+.listing-tag {
+    background-color: var(--bg-elevated);
+    color: var(--text-dimmed);
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 2px;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+}
+
+/* Bullet list */
+.listing-card__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg) 0;
+    flex-grow: 1;
+}
+
+.listing-card__list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.listing-card__list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-primary);
+    font-weight: bold;
+}
+
+/* Card Price */
+.listing-card__price {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-main);
+    margin-bottom: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--border-grid);
+}
+
+.listing-card__price a {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.listing-card__price a:hover {
+    color: var(--accent-primary-hover);
+}
+
+/* Footer / CTAs */
+.listing-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-top: auto;
+}
+
+.listing-card .btn-primary {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.listing-card .btn-link {
+    font-size: 0.75rem;
+    color: var(--text-dimmed);
+    position: relative;
+}
+
+.listing-card .btn-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-main);
+    transition: width var(--transition-fast);
+}
+
+.listing-card .btn-link:hover {
+    color: var(--text-main);
+}
+
+.listing-card .btn-link:hover::after {
+    width: 100%;
+}
+
+/* --- Group Headings (Optional Anchor Points) --- */
+.listing-group {
+    grid-column: 1 / -1;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--border-grid);
+    display: none;
+    /* Handled dynamically or physically placed */
+}
+
+.listing-group.visible {
+    display: block;
+}
+
+.listing-group__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+/* --- No Results --- */
+.listing-no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-4xl) 0;
+    color: var(--text-dimmed);
+    font-family: var(--font-body);
+    display: none;
+}
+
+/* --- Motion (Reveal) --- */
+.listing-card.reveal-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .listing-card.reveal-card {
+        transition: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.listing-card.reveal-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

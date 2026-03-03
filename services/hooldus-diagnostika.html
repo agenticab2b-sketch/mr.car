@@ -107,7 +107,7 @@
         <a href="/" class="navbar__logo">Mr.Car</a>
         <nav class="navbar__nav">
             <div class="navbar__item has-dropdown">
-                <a href="#services" class="navbar__link">[01] Teenused</a>
+                <a href="/teenused.html" class="navbar__link">[01] Teenused</a>
                 <div class="mega-menu">
                     <a href="/services/autoremont" class="mega-menu__item">
                         <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -166,6 +166,7 @@
             <a href="#about" class="navbar__link">[02] Meist</a>
             <a href="/prices.html" class="navbar__link">[03] Hinnad</a>
             <a href="#contact" class="navbar__link">[04] Kontakt</a>
+            <a href="#gallery" class="navbar__link">[05] Galerii</a>
 
             <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
         </nav>
@@ -192,7 +193,7 @@
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
         <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
         <nav aria-label="Mobiilne navigatsioon">
-            <a href="#services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+            <a href="/teenused.html" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
                 Teenused
                 <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
                     height="24"></iconify-icon>
@@ -250,7 +251,7 @@
             <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
             <a href="/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
             <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
-            
+
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
                 5646
                 1210</a>
@@ -277,25 +278,6 @@
     <div class="sd-hero__content site-container">
       <span class="sd-hero__meta">/// Mr.Car Autoteenindus</span>
       <h1 class="sd-hero__title">Tehniline hooldus</h1>
-      <nav aria-label="Breadcrumb" style="margin-top: var(--space-md); margin-bottom: var(--space-md);">
-        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Avaleht</span></a>
-            <meta itemprop="position" content="1" />
-          </li>
-          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/#services" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Teenused</span></a>
-            <meta itemprop="position" content="2" />
-          </li>
-          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-          <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">Tehniline hooldus</span>
-            <meta itemprop="position" content="3" />
-          </li>
-        </ol>
-      </nav>
-        
       <p class="sd-hero__lead">Regulaarne hooldus tootja standardite järgi ilma edasimüüja garantii kaotamiseta.</p>
       <a href="#request" class="btn btn-primary sd-hero__cta">Saada päring <span class="arrow">↗</span></a>
     </div>
