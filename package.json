@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "update-headers": "node update-headers.js"
+  },
   "dependencies": {
     "image-size": "^2.0.2",
     "photoswipe": "^5.4.4",
