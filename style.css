@@ -985,7 +985,7 @@ h3 {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--text-dimmed);
+    color: var(--accent-primary);
 }
 
 /* Hero CTA — fullwidth bordered row (matching reference) */
