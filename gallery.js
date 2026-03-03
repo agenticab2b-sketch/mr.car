@@ -1,6 +1,6 @@
 import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
+async function initGallery() {
     const grid = document.getElementById('gallery-grid');
     if (!grid) return;
 
@@ -19,22 +19,22 @@ document.addEventListener('DOMContentLoaded', async () => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
             // Staggering effect on staggered load
-            item.style.transitionDelay = \`\${(index % 8) * 0.05}s\`;
+            item.style.transitionDelay = `${(index % 8) * 0.05}s`;
 
-            item.innerHTML = \`
-                <a href="\${img.src}" 
+            item.innerHTML = `
+                <a href="${img.src}" 
                    class="gallery-item__link" 
-                   data-pswp-width="\${img.width}" 
-                   data-pswp-height="\${img.height}" 
+                   data-pswp-width="${img.width}" 
+                   data-pswp-height="${img.height}" 
                    target="_blank">
-                    <img src="\${img.src}" 
-                         alt="\${img.alt}" 
+                    <img src="${img.src}" 
+                         alt="${img.alt}" 
                          class="gallery-item__img" 
                          loading="lazy"
-                         width="\${img.width}"
-                         height="\${img.height}">
+                         width="${img.width}"
+                         height="${img.height}">
                 </a>
-            \`;
+            `;
             fragment.appendChild(item);
         });
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Intersection Observer for scroll motion
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
+
         if (!prefersReducedMotion) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { 
+            }, {
                 rootMargin: '0px 0px -50px 0px', // trigger slightly before it comes into view
                 threshold: 0.1
             });
@@ -71,11 +71,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Director's polish: subtle zoom transition
             showHideAnimationType: 'zoom',
         });
-        
+
         lightbox.init();
 
     } catch (error) {
         console.error('Gallery initialization error:', error);
         grid.innerHTML = '<div style="color:red; text-align:center; padding:40px;">Galerii laadimine ebaõnnestus. Palun proovige hiljem uuesti.</div>';
     }
-});
+}
+
+initGallery();
