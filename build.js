@@ -107,7 +107,9 @@ const LANGS = [
       weekend: 'Laupäev – Pühapäev',
       closed: 'Suletud',
       privacy: 'Privaatsuspoliitika',
-      privacyHref: '/privaatsus/'
+      privacyHref: '/privaatsus/',
+      terms: 'Üldtingimused',
+      termsHref: '/tingimused.html'
     }
   },
   {
@@ -176,7 +178,9 @@ const LANGS = [
       weekend: 'Суббота – Воскресенье',
       closed: 'Закрыто',
       privacy: 'Политика конфиденциальности',
-      privacyHref: '/ru/privaatsus/'
+      privacyHref: '/ru/privaatsus/',
+      terms: 'Условия',
+      termsHref: '/ru/tingimused.html'
     }
   },
   {
@@ -245,7 +249,9 @@ const LANGS = [
       weekend: 'Saturday – Sunday',
       closed: 'Closed',
       privacy: 'Privacy Policy',
-      privacyHref: '/en/privacy/'
+      privacyHref: '/en/privacy/',
+      terms: 'Terms & Conditions',
+      termsHref: '/en/tingimused.html'
     }
   },
 ];
@@ -695,6 +701,7 @@ ${jsonLd}
     </div>
     <div class="footer__bottom">
       <span>© 2026 Mr.Car Autoremont Tallinn</span>
+      <a href="${esc(cfg.footer.termsHref)}">${esc(cfg.footer.terms)}</a>
       <a href="${esc(cfg.footer.privacyHref)}">${esc(cfg.footer.privacy)}</a>
       <span>Designed by <a href="https://agentica.ee" target="_blank" rel="noopener">Agentica</a></span>
     </div>
