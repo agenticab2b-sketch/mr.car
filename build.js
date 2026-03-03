@@ -29,7 +29,7 @@ const MAP_PARTIAL = fs.readFileSync(path.join(ROOT, 'partials/map.html'), 'utf8'
 
 // ─── Configuration ────────────────────────────────────────────────────────────
 
-const PROD_ORIGIN = 'https://mrcar.ee';
+const PROD_ORIGIN = 'https://www.mrcar.ee';
 const TODAY = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
 // These standalone Webasto landing pages are NOT generated — they stay as-is.

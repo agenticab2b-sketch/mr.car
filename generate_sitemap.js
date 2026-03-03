@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const domain = 'https://mrcar.ee';
+const domain = 'https://www.mrcar.ee';
 const rootDir = __dirname;
 const sitemapPath = path.join(rootDir, 'sitemap.xml');
 

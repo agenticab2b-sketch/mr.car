@@ -2,6 +2,19 @@
 <html lang="et">
 
 <head>
+    <!-- Global Noindex for Non-Canonical Hosts -->
+    <script>
+        (function() {
+            var host = window.location.hostname;
+            if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+                var meta = document.createElement('meta');
+                meta.name = 'robots';
+                meta.content = 'noindex, nofollow';
+                document.head.appendChild(meta);
+            }
+        })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -17,19 +30,19 @@
 
 
     <!-- Canonical & hreflang -->
-    <link rel="canonical" id="canonicalLink" href="https://mrcar.ee/prices.html">
-    <link rel="alternate" hreflang="et" href="https://mrcar.ee/prices.html">
-    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/prices.html">
-    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/prices.html">
-    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/prices.html">
+    <link rel="canonical" id="canonicalLink" href="https://www.mrcar.ee/prices.html">
+    <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/prices.html">
+    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/prices.html">
+    <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/prices.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/prices.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="Hinnakiri — Mr.Car Autoteenindus Tallinnas">
     <meta property="og:description"
         content="Mr.Car autoteeninduse hinnakiri. Remonditööd alates 45€/tund, rehvitööd alates 6€/ratas, diagnostika alates 40€. Ausad hinnad ja garantii töödele. ☎ +372 5646 1210">
-    <meta property="og:url" id="ogUrl" content="https://mrcar.ee/prices.html">
-    <meta property="og:image" content="https://mrcar.ee/og-image.jpg">
+    <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/prices.html">
+    <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="et_EE">
 
     <link rel="stylesheet" href="/style.css?v=3">

@@ -13,21 +13,66 @@
       "implementation_plan.md.resolved",
       "functions/**"
     ],
-    "headers": [
-      {
-        "source": "**/*.@(html|css|js|png|jpg|jpeg|gif|svg|webp|avif|ico|xml|json)",
-        "headers": [
-          {
-            "key": "X-Robots-Tag",
-            "value": "noindex, nofollow, noarchive"
-          }
-        ]
-      }
-    ],
+    "headers": [],
     "redirects": [
       {
         "source": "/homepage.html",
         "destination": "/ru/",
+        "type": 301
+      },
+      {
+        "source": "/kontakt",
+        "destination": "/ru/",
+        "type": 301
+      },
+      {
+        "source": "/teenused",
+        "destination": "/teenused.html",
+        "type": 301
+      },
+      {
+        "source": "/hinnad",
+        "destination": "/prices.html",
+        "type": 301
+      },
+      {
+        "source": "/privaatsuspoliitika",
+        "destination": "/privaatsus/",
+        "type": 301
+      },
+      {
+        "source": "/jata-paring",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/silindripea-remont",
+        "destination": "/services/mootoriremont",
+        "type": 301
+      },
+      {
+        "source": "/teenused/kaubiku-remont-hooldus-koplis",
+        "destination": "/services/autoremont",
+        "type": 301
+      },
+      {
+        "source": "/teenused/autoremont-hooldus-koplis",
+        "destination": "/services/autoremont",
+        "type": 301
+      },
+      {
+        "source": "/teenused/mootori-diagnostika",
+        "destination": "/services/hooldus-diagnostika",
+        "type": 301
+      },
+      {
+        "source": "/teenused/mootori-remont-ja-vahetus",
+        "destination": "/services/mootoriremont",
+        "type": 301
+      },
+      {
+        "source": "/teenused/mootori-ja-kaigukasti-remont",
+        "destination": "/services/mootoriremont",
         "type": 301
       },
       {

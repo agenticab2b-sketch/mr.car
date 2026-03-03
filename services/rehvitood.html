@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
+    <!-- Global Noindex for Non-Canonical Hosts -->
+    <script>
+        (function() {
+            var host = window.location.hostname;
+            if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+                var meta = document.createElement('meta');
+                meta.name = 'robots';
+                meta.content = 'noindex, nofollow';
+                document.head.appendChild(meta);
+            }
+        })();
+    </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rehvitööd Tallinnas — Mr.Car | alates €20</title>
   <meta name="description" content="Rehvitööd Tallinnas: hooajaline rehvivahetus, tasakaalustamine, torkeaukude remont. R13–R22. Alates €20. Kopli 82a. +372 5646 1210">
 
   <!-- Canonical + hreflang -->
-    <link rel="canonical" href="https://mrcar.ee/services/rehvitood">
-    <link rel="alternate" hreflang="et" href="https://mrcar.ee/services/rehvitood">
-    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/services/rehvitood">
-    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/services/tire-service">
-    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/services/rehvitood">
+    <link rel="canonical" href="https://www.mrcar.ee/services/rehvitood">
+    <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/services/rehvitood">
+    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/services/rehvitood">
+    <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/services/tire-service">
+    <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/services/rehvitood">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Rehvitööd Tallinnas — Mr.Car | alates €20">
   <meta property="og:description" content="Rehvitööd Tallinnas: hooajaline rehvivahetus, tasakaalustamine, torkeaukude remont. R13–R22. Alates €20. Kopli 82a. +372 5646 1210">
   <meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&amp;q=80">
-  <meta property="og:url" content="https://mrcar.ee/services/rehvitood">
+  <meta property="og:url" content="https://www.mrcar.ee/services/rehvitood">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +47,7 @@
     {
       "@type": "AutoRepair",
       "name": "Mr.Car Autoremont",
-      "url": "https://mrcar.ee/",
+      "url": "https://www.mrcar.ee/",
       "telephone": "+372 5646 1210",
       "image": "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
       "address": {
@@ -69,9 +82,9 @@
       "provider": {
         "@type": "AutoRepair",
         "name": "Mr.Car",
-        "url": "https://mrcar.ee/"
+        "url": "https://www.mrcar.ee/"
       },
-      "url": "https://mrcar.ee/services/rehvitood",
+      "url": "https://www.mrcar.ee/services/rehvitood",
       "areaServed": {
         "@type": "City",
         "name": "Tallinn"

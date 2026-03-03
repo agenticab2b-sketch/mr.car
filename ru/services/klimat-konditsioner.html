@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Global Noindex for Non-Canonical Hosts -->
+    <script>
+        (function() {
+            var host = window.location.hostname;
+            if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+                var meta = document.createElement('meta');
+                meta.name = 'robots';
+                meta.content = 'noindex, nofollow';
+                document.head.appendChild(meta);
+            }
+        })();
+    </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Заправка кондиционера авто — Mr.Car Таллинн</title>
   <meta name="description" content="Заправка и ремонт кондиционера автомобиля в Таллинне. Диагностика, поиск утечек, замена компрессора. Kopli 82a. +372 5646 1210">
 
   <!-- Canonical + hreflang -->
-    <link rel="canonical" href="https://mrcar.ee/ru/services/klimat-konditsioner">
-    <link rel="alternate" hreflang="et" href="https://mrcar.ee/services/kliimahooldus">
-    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/services/klimat-konditsioner">
-    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/services/ac-service">
-    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/services/kliimahooldus">
+    <link rel="canonical" href="https://www.mrcar.ee/ru/services/klimat-konditsioner">
+    <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/services/kliimahooldus">
+    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/services/klimat-konditsioner">
+    <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/services/ac-service">
+    <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/services/kliimahooldus">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Заправка кондиционера авто — Mr.Car Таллинн">
   <meta property="og:description" content="Заправка и ремонт кондиционера автомобиля в Таллинне. Диагностика, поиск утечек, замена компрессора. Kopli 82a. +372 5646 1210">
   <meta property="og:image" content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&amp;q=80">
-  <meta property="og:url" content="https://mrcar.ee/ru/services/klimat-konditsioner">
+  <meta property="og:url" content="https://www.mrcar.ee/ru/services/klimat-konditsioner">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +47,7 @@
     {
       "@type": "AutoRepair",
       "name": "Mr.Car Autoremont",
-      "url": "https://mrcar.ee/",
+      "url": "https://www.mrcar.ee/",
       "telephone": "+372 5646 1210",
       "image": "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
       "address": {
@@ -69,9 +82,9 @@
       "provider": {
         "@type": "AutoRepair",
         "name": "Mr.Car",
-        "url": "https://mrcar.ee/"
+        "url": "https://www.mrcar.ee/"
       },
-      "url": "https://mrcar.ee/ru/services/klimat-konditsioner",
+      "url": "https://www.mrcar.ee/ru/services/klimat-konditsioner",
       "areaServed": {
         "@type": "City",
         "name": "Tallinn"

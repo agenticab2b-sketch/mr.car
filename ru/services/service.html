@@ -2,6 +2,19 @@
 <html lang="ru">
 
 <head>
+    <!-- Global Noindex for Non-Canonical Hosts -->
+    <script>
+        (function() {
+            var host = window.location.hostname;
+            if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+                var meta = document.createElement('meta');
+                meta.name = 'robots';
+                meta.content = 'noindex, nofollow';
+                document.head.appendChild(meta);
+            }
+        })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" id="metaDescription"
@@ -396,7 +409,7 @@
     <script>
         // ── Constants ──
         // SEO: Canonical/OG/JSON-LD must always point to production domain
-        var SITE_ORIGIN = 'https://mrcar.ee';
+        var SITE_ORIGIN = 'https://www.mrcar.ee';
         var DEFAULT_OG_IMAGE = 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80';
 
         // ── Category labels (RU) ──

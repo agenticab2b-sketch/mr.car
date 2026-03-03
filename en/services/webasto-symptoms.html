@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+    <!-- Global Noindex for Non-Canonical Hosts -->
+    <script>
+        (function() {
+            var host = window.location.hostname;
+            if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+                var meta = document.createElement('meta');
+                meta.name = 'robots';
+                meta.content = 'noindex, nofollow';
+                document.head.appendChild(meta);
+            }
+        })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -106,11 +119,11 @@
     </style>
 
     <!-- Canonical & hreflang -->
-    <link rel="canonical" href="https://mrcar.ee/en/services/webasto-symptoms">
-    <link rel="alternate" hreflang="et" href="https://mrcar.ee/services/webasto-sumptomid">
-    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/services/webasto-simptomy">
-    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/services/webasto-symptoms">
-    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/services/webasto-sumptomid">
+    <link rel="canonical" href="https://www.mrcar.ee/en/services/webasto-symptoms">
+    <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/services/webasto-sumptomid">
+    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/services/webasto-simptomy">
+    <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/services/webasto-symptoms">
+    <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/services/webasto-sumptomid">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -118,7 +131,7 @@
     <meta property="og:description"
         content="Is your Webasto not starting, shutting off, or smoking? Discover 7 common symptoms and learn when repairs are necessary.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=80">
-    <meta property="og:url" content="https://mrcar.ee/en/services/webasto-symptoms">
+    <meta property="og:url" content="https://www.mrcar.ee/en/services/webasto-symptoms">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -134,7 +147,7 @@
         {
           "@type": "AutoRepair",
           "name": "Mr.Car Autoremont",
-          "url": "https://mrcar.ee/en/",
+          "url": "https://www.mrcar.ee/en/",
           "telephone": "+372 5646 1210",
           "address": {
             "@type": "PostalAddress",

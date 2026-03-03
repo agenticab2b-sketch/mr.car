@@ -2,6 +2,19 @@
 <html lang="ru">
 
 <head>
+    <!-- Global Noindex for Non-Canonical Hosts -->
+    <script>
+        (function() {
+            var host = window.location.hostname;
+            if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+                var meta = document.createElement('meta');
+                meta.name = 'robots';
+                meta.content = 'noindex, nofollow';
+                document.head.appendChild(meta);
+            }
+        })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -133,11 +146,11 @@
     </style>
 
     <!-- Canonical & hreflang -->
-    <link rel="canonical" href="https://mrcar.ee/ru/">
-    <link rel="alternate" hreflang="et" href="https://mrcar.ee/">
-    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/">
-    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/">
-    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/">
+    <link rel="canonical" href="https://www.mrcar.ee/ru/">
+    <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/">
+    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/">
+    <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/">
+    <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
@@ -145,12 +158,12 @@
         content="Mr.Car РђРІС‚РѕСЂРµРјРѕРЅС‚ РўР°Р»Р»РёРЅРЅ вЂ” РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅРѕРµ РѕР±СЃР»СѓР¶РёРІР°РЅРёРµ Р°РІС‚Рѕ">
     <meta property="og:description"
         content="РџСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ Р°РІС‚РѕСЃРµСЂРІРёСЃ РІ РљРѕРїР»Рё. Р РµРјРѕРЅС‚, РґРёР°РіРЅРѕСЃС‚РёРєР°, С€РёРЅРѕРјРѕРЅС‚Р°Р¶. Р—РІРѕРЅРёС‚Рµ +372 5646 1210.">
-    <meta property="og:url" id="ogUrl" content="https://mrcar.ee/ru/">
-    <meta property="og:image" content="https://mrcar.ee/og-image.jpg">
+    <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/ru/">
+    <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="ru_RU">
     <script>
         (function () {
-            var origin = 'https://mrcar.ee';
+            var origin = 'https://www.mrcar.ee';
             document.getElementById('ogUrl').setAttribute('content', origin + window.location.pathname);
         })();
     </script>

@@ -2,6 +2,19 @@
 <html lang="ru">
 
 <head>
+    <!-- Global Noindex for Non-Canonical Hosts -->
+    <script>
+        (function() {
+            var host = window.location.hostname;
+            if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+                var meta = document.createElement('meta');
+                meta.name = 'robots';
+                meta.content = 'noindex, nofollow';
+                document.head.appendChild(meta);
+            }
+        })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Все услуги автосервиса в Таллинне | Mr.Car Autoremont</title>
@@ -9,11 +22,11 @@
         content="Полный ремонт авто, ходовая, двигатель, шиномонтаж, электрика и многое другое. Найдите нужную услугу и запишитесь!">
 
     <!-- Canonical + hreflang -->
-    <link rel="canonical" href="https://mrcar.ee/ru/uslugi.html">
-    <link rel="alternate" hreflang="et" href="https://mrcar.ee/teenused.html">
-    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/uslugi.html">
-    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/services.html">
-    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/teenused.html">
+    <link rel="canonical" href="https://www.mrcar.ee/ru/uslugi.html">
+    <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/teenused.html">
+    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/uslugi.html">
+    <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/teenused.html">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
