@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mr.Car auto service price list. Repair works from 45€/hour, tire service from 6€/wheel, diagnostics from 40€. Honest prices and warranty for work. ☎ +372 5646 1210">
+    <title>Prices — Mr.Car Auto Service in Tallinn | Repair, Diagnostics, Tire Service</title>
+
+    <!-- Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" id="canonicalLink" href="https://mrcar.ee/en/prices.html">
+    <link rel="alternate" hreflang="et" href="https://mrcar.ee/prices.html">
+    <link rel="alternate" hreflang="ru" href="https://mrcar.ee/ru/prices.html">
+    <link rel="alternate" hreflang="en" href="https://mrcar.ee/en/prices.html">
+    <link rel="alternate" hreflang="x-default" href="https://mrcar.ee/prices.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="Prices — Mr.Car Auto Service in Tallinn">
+    <meta property="og:description"
+        content="Mr.Car auto service price list. Repair works from 45€/hour, tire service from 6€/wheel, diagnostics from 40€. Honest prices and warranty for work. ☎ +372 5646 1210">
+    <meta property="og:url" id="ogUrl" content="https://mrcar.ee/en/prices.html">
+    <meta property="og:image" content="https://mrcar.ee/og-image.jpg">
+    <meta property="og:locale" content="en_EE">
+
+    <link rel="stylesheet" href="/style.css?v=3">
+
+    <!-- Local CSS for Prices Page -->
+    <style>
+        .prices-hero {
+            padding: 120px var(--container-padding) 60px;
+            background: #1a2133;
+            border-bottom: 1px solid var(--border-grid);
+            text-align: center;
+        }
+
+        .prices-hero__title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .prices-hero__desc {
+            font-size: 1.125rem;
+            color: var(--text-dimmed);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .prices-section {
+            padding: 60px var(--container-padding) 100px;
+        }
+
+        /* Vehicle Selector */
+        .vehicle-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .vehicle-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-grid);
+            border-radius: 100px;
+            color: var(--text-main);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition-short) var(--ease-primary);
+        }
+
+        .vehicle-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .vehicle-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+        }
+
+        /* Prices Table */
+        .price-list {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            display: none;
+            /* Hidden by default, toggled via JS */
+        }
+
+        .price-list.active {
+            display: block;
+            animation: fadeIn 0.4s var(--ease-primary);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-grid);
+            gap: 1rem;
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-item__name {
+            font-weight: 700;
+            font-size: 1.125rem;
+            line-height: 1.3;
+        }
+
+        .price-item__value {
+            font-family: var(--font-mono);
+            color: var(--accent-primary);
+            font-size: 1.125rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* Section Title inside lists */
+        .price-list__header {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text-main);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-grid);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Tire Services Accordion */
+        .tire-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--border-grid);
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .tire-accordion__trigger {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background var(--transition-short);
+        }
+
+        .tire-accordion__trigger:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tire-accordion__trigger iconify-icon {
+            transition: transform var(--transition-primary);
+        }
+
+        .tire-accordion.is-open .tire-accordion__trigger iconify-icon {
+            transform: rotate(180deg);
+        }
+
+        .tire-accordion__content {
+            display: none;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .tire-accordion.is-open .tire-accordion__content {
+            display: block;
+            animation: fadeIn 0.4s var(--ease-primary);
+        }
+
+        /* Tire Table */
+        .tire-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            display: none;
+            /* Switched via JS */
+        }
+
+        .tire-table.active {
+            display: table;
+        }
+
+        .tire-table th,
+        .tire-table td {
+            padding: 1rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-grid);
+        }
+
+        .tire-table th:first-child,
+        .tire-table td:first-child {
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .tire-table th {
+            color: var(--text-dimmed);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tire-table td {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+        }
+
+        .tire-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Mobile adjustments for table */
+        @media (max-width: 600px) {
+            .tire-accordion__content {
+                padding: 0 1rem 1rem;
+                overflow-x: auto;
+            }
+
+            .tire-table th,
+            .tire-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .price-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+        }
+
+        .price-footer-note {
+            text-align: center;
+            color: var(--text-dimmed);
+            font-size: 0.875rem;
+            margin-top: 3rem;
+        }
+    </style>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
+</head>
+
+<body>
+    <!-- Skip to main content (a11y) -->
+    <a href="#prices-main" class="skip-link">Skip to main content</a>
+
+    <!-- ========================================
+       1. NAVBAR
+       ======================================== -->
+    <header class="navbar" id="navbar">
+        <a href="/en/" class="navbar__logo">Mr.Car</a>
+        <nav class="navbar__nav">
+            <div class="navbar__item has-dropdown">
+                <a href="/en/#services" class="navbar__link">[01] Services</a>
+                <div class="mega-menu">
+                    <a href="/en/services/autoremont" class="mega-menu__item">
+                        <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Car Repair</span>
+                    </a>
+                    <a href="/en/services/summutid-keevitus" class="mega-menu__item">
+                        <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Exhausts and Welding</span>
+                    </a>
+                    <a href="/en/services/veermik-pidurid" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-brake-alert" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Chassis and Brakes</span>
+                    </a>
+                    <a href="/en/services/rehvitood" class="mega-menu__item">
+                        <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Tire Services</span>
+                    </a>
+                    <a href="/en/services/hooldus-diagnostika" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Maintenance & Diagnostics</span>
+                    </a>
+                    <a href="/en/services/kaigukastiremont" class="mega-menu__item">
+                        <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Gearbox Repair</span>
+                    </a>
+                    <a href="/en/services/elektritood" class="mega-menu__item">
+                        <iconify-icon icon="mdi:lightning-bolt" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Electrical Work</span>
+                    </a>
+                    <a href="/en/services/mootoriremont" class="mega-menu__item">
+                        <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Engine Repair</span>
+                    </a>
+                    <a href="/en/services/olivahetus" class="mega-menu__item">
+                        <iconify-icon icon="mdi:oil" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Oil and Filter Change</span>
+                    </a>
+                    <a href="/en/services/ostueelne-kontroll" class="mega-menu__item">
+                        <iconify-icon icon="mdi:file-search-outline" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
+                        <span>Pre-purchase Inspection</span>
+                    </a>
+                    <a href="/en/services/kliimahooldus" class="mega-menu__item">
+                        <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>A/C Maintenance</span>
+                    </a>
+                    <a href="/en/services/webasto-diagnostika" class="mega-menu__item">
+                        <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <span>Webasto Repair</span>
+                    </a>
+                </div>
+            </div>
+            <a href="/en/#about" class="navbar__link">[02] About Us</a>
+            <a href="/en/prices.html" class="navbar__link" style="color:var(--accent-primary)">[03] Prices</a>
+            <a href="/en/#contact" class="navbar__link">[04] Contact</a>
+            <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
+        </nav>
+        <div class="navbar__cta">
+            <a href="/en/#contact" class="btn btn-primary">Book an Appointment</a>
+        </div>
+        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="navbar__lang desktop-only">
+            <a href="/prices.html" class="lang-link" title="Eesti keel">
+                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="/ru/prices.html" class="lang-link" title="Русский">
+                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
+            </a>
+            <a href="/en/prices.html" class="lang-link active" title="English">
+                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
+            </a>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
+        <nav aria-label="Mobile Navigation">
+            <a href="/en/#services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+                Services
+                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
+                    height="24"></iconify-icon>
+            </a>
+            <div class="mobile-mega-menu" id="mobileMegaMenu">
+                <a href="/en/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+                    <span>Car Repair</span>
+                </a>
+                <a href="/en/services/summutid-keevitus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+                    <span>Exhausts and Welding</span>
+                </a>
+                <a href="/en/services/veermik-pidurid" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
+                    <span>Chassis and Brakes</span>
+                </a>
+                <a href="/en/services/rehvitood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
+                    <span>Tire Services</span>
+                </a>
+                <a href="/en/services/hooldus-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                    <span>Maintenance & Diagnostics</span>
+                </a>
+                <a href="/en/services/kaigukastiremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                    <span>Gearbox Repair</span>
+                </a>
+                <a href="/en/services/elektritood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+                    <span>Electrical Work</span>
+                </a>
+                <a href="/en/services/mootoriremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+                    <span>Engine Repair</span>
+                </a>
+                <a href="/en/services/olivahetus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
+                    <span>Oil and Filter Change</span>
+                </a>
+                <a href="/en/services/ostueelne-kontroll" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+                    <span>Pre-purchase Inspection</span>
+                </a>
+                <a href="/en/services/kliimahooldus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+                    <span>A/C Maintenance</span>
+                </a>
+                <a href="/en/services/webasto-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                    <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                    <span>Webasto Repair</span>
+                </a>
+            </div>
+            <a href="/en/#about" class="mobile-menu__link" onclick="closeMobileMenu()">About Us</a>
+            <a href="/en/prices.html" class="mobile-menu__link" style="color:var(--accent-primary)"
+                onclick="closeMobileMenu()">Prices</a>
+            <a href="/en/#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
+            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
+                5646 1210</a>
+        </nav>
+        <div class="mobile-menu__lang">
+            <a href="/prices.html" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:ee" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>Eesti</span>
+            </a>
+            <a href="/ru/prices.html" class="mobile-lang-link">
+                <iconify-icon icon="circle-flags:ru" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>Русский</span>
+            </a>
+            <a href="/en/prices.html" class="mobile-lang-link active">
+                <iconify-icon icon="circle-flags:en" width="24" height="24" aria-hidden="true"></iconify-icon>
+                <span>English</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main id="prices-main">
+        <!-- HERO -->
+        <section class="prices-hero">
+            <h1 class="prices-hero__title">Prices</h1>
+            <p class="prices-hero__desc">Transparent prices with no hidden fees. Select your vehicle type to see the
+                current price list.</p>
+        </section>
+
+        <!-- PRICES SECTION -->
+        <section class="prices-section">
+
+            <!-- Vehicle Selector -->
+            <div class="vehicle-selector" role="tablist" aria-label="Vehicle type selection">
+                <button class="vehicle-btn active" role="tab" aria-selected="true" data-target="car">
+                    <iconify-icon icon="mdi:car" width="24" height="24"></iconify-icon>
+                    Passenger Car
+                </button>
+                <button class="vehicle-btn" role="tab" aria-selected="false" data-target="suv">
+                    <iconify-icon icon="mdi:car-estate" width="24" height="24"></iconify-icon>
+                    SUV
+                </button>
+                <button class="vehicle-btn" role="tab" aria-selected="false" data-target="van">
+                    <iconify-icon icon="mdi:van-utility" width="24" height="24"></iconify-icon>
+                    Van
+                </button>
+            </div>
+
+            <!-- PRICES: CAR -->
+            <div class="price-list active" id="prices-car" role="tabpanel">
+                <div class="price-list__header">
+                    <iconify-icon icon="mdi:tools"></iconify-icon> Maintenance and Repair
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">Car labor hour</span>
+                    <span class="price-item__value">43€ / hour</span>
+                </div>
+                <!-- Shared General Items -->
+                <div class="price-item"><span class="price-item__name">Brake discs and pads replacement</span><span
+                        class="price-item__value">65€ / axle</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and all filters
+                        replacement</span><span class="price-item__value">65€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement</span><span
+                        class="price-item__value">45€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
+                        increases by</span><span class="price-item__value">5€</span></div>
+                <div class="price-item"><span class="price-item__name">Welding works</span><span
+                        class="price-item__value">48€ / hour</span></div>
+                <div class="price-item"><span class="price-item__name">Technical inspection of the car with reading
+                        fault codes (pre-purchase inspection)</span><span class="price-item__value">55€ / once</span>
+                </div>
+                <div class="price-item"><span class="price-item__name">Technical inspection of the car (pre-purchase
+                        inspection)</span><span class="price-item__value">45€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Chassis inspection</span><span
+                        class="price-item__value">25€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Computer diagnostics and electrical
+                        work</span><span class="price-item__value">48€ / hour</span></div>
+                <div class="price-item"><span class="price-item__name">Reading / clearing fault codes</span><span
+                        class="price-item__value">35€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Minimum work price</span><span
+                        class="price-item__value">22€ / once</span></div>
+
+                <div class="price-list__header" style="margin-top: 3rem;">
+                    <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">Front axle adjustment</span>
+                    <span class="price-item__value">45€ / once</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">Front and rear axle adjustment</span>
+                    <span class="price-item__value">55€ / once</span>
+                </div>
+            </div>
+
+            <!-- PRICES: SUV -->
+            <div class="price-list" id="prices-suv" role="tabpanel">
+                <div class="price-list__header">
+                    <iconify-icon icon="mdi:tools"></iconify-icon> Maintenance and Repair
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">SUV labor hour</span>
+                    <span class="price-item__value">48€ / hour</span>
+                </div>
+                <!-- Shared General Items -->
+                <div class="price-item"><span class="price-item__name">Brake discs and pads replacement</span><span
+                        class="price-item__value">65€ / axle</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and all filters
+                        replacement</span><span class="price-item__value">65€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement</span><span
+                        class="price-item__value">45€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
+                        increases by</span><span class="price-item__value">5€</span></div>
+                <div class="price-item"><span class="price-item__name">Welding works</span><span
+                        class="price-item__value">48€ / hour</span></div>
+                <div class="price-item"><span class="price-item__name">Technical inspection of the car with reading
+                        fault codes (pre-purchase inspection)</span><span class="price-item__value">55€ / once</span>
+                </div>
+                <div class="price-item"><span class="price-item__name">Technical inspection of the car (pre-purchase
+                        inspection)</span><span class="price-item__value">45€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Chassis inspection</span><span
+                        class="price-item__value">25€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Computer diagnostics and electrical
+                        work</span><span class="price-item__value">48€ / hour</span></div>
+                <div class="price-item"><span class="price-item__name">Reading / clearing fault codes</span><span
+                        class="price-item__value">35€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Minimum work price</span><span
+                        class="price-item__value">22€ / once</span></div>
+
+                <div class="price-list__header" style="margin-top: 3rem;">
+                    <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">Front axle adjustment</span>
+                    <span class="price-item__value">55€ / once</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">Front and rear axle adjustment</span>
+                    <span class="price-item__value">65€ / once</span>
+                </div>
+            </div>
+
+            <!-- PRICES: VAN -->
+            <div class="price-list" id="prices-van" role="tabpanel">
+                <div class="price-list__header">
+                    <iconify-icon icon="mdi:tools"></iconify-icon> Maintenance and Repair
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">Van labor hour</span>
+                    <span class="price-item__value">48€ / hour</span>
+                </div>
+                <!-- Shared General Items -->
+                <div class="price-item"><span class="price-item__name">Brake discs and pads replacement</span><span
+                        class="price-item__value">65€ / axle</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and all filters
+                        replacement</span><span class="price-item__value">65€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement</span><span
+                        class="price-item__value">45€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
+                        increases by</span><span class="price-item__value">5€</span></div>
+                <div class="price-item"><span class="price-item__name">Welding works</span><span
+                        class="price-item__value">48€ / hour</span></div>
+                <div class="price-item"><span class="price-item__name">Technical inspection of the car with reading
+                        fault codes (pre-purchase inspection)</span><span class="price-item__value">55€ / once</span>
+                </div>
+                <div class="price-item"><span class="price-item__name">Technical inspection of the car (pre-purchase
+                        inspection)</span><span class="price-item__value">45€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Chassis inspection</span><span
+                        class="price-item__value">25€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Computer diagnostics and electrical
+                        work</span><span class="price-item__value">48€ / hour</span></div>
+                <div class="price-item"><span class="price-item__name">Reading / clearing fault codes</span><span
+                        class="price-item__value">35€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Minimum work price</span><span
+                        class="price-item__value">22€ / once</span></div>
+
+                <div class="price-list__header" style="margin-top: 3rem;">
+                    <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">Front axle adjustment</span>
+                    <span class="price-item__value">55€ / once</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-item__name">Front and rear axle adjustment</span>
+                    <span class="price-item__value">65€ / once</span>
+                </div>
+            </div>
+
+            <!-- TIRE SERVICES ACCORDION -->
+            <div class="tire-accordion" id="tireAccordion">
+                <button class="tire-accordion__trigger" aria-expanded="false" aria-controls="tireContent">
+                    <span><iconify-icon icon="mdi:tire" width="24"
+                            style="vertical-align:middle; margin-right:8px;"></iconify-icon> Tire Services</span>
+                    <iconify-icon icon="mdi:chevron-down" width="28"></iconify-icon>
+                </button>
+                <div class="tire-accordion__content" id="tireContent">
+
+                    <!-- Tire Table: CAR -->
+                    <table class="tire-table active" id="tire-table-car">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>13–16"</th>
+                                <th>17–18"</th>
+                                <th>19–20"</th>
+                                <th>21"</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Full tire change</td>
+                                <td>50€</td>
+                                <td>55€</td>
+                                <td>60€</td>
+                                <td>70€</td>
+                            </tr>
+                            <tr>
+                                <td>Wheel mounting</td>
+                                <td>4.20€</td>
+                                <td>4.60€</td>
+                                <td>5.00€</td>
+                                <td>6.00€</td>
+                            </tr>
+                            <tr>
+                                <td>Tire mounting</td>
+                                <td>4.20€</td>
+                                <td>4.60€</td>
+                                <td>5.00€</td>
+                                <td>6.00€</td>
+                            </tr>
+                            <tr>
+                                <td>Balancing</td>
+                                <td>4.20€</td>
+                                <td>4.60€</td>
+                                <td>5.00€</td>
+                                <td>6.00€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Tire Table: SUV & VAN (Same prices) -->
+                    <table class="tire-table" id="tire-table-suv-van">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>13–16"</th>
+                                <th>17–18"</th>
+                                <th>19–20"</th>
+                                <th>21"</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Full tire change</td>
+                                <td>60€</td>
+                                <td>65€</td>
+                                <td>70€</td>
+                                <td>80€</td>
+                            </tr>
+                            <tr>
+                                <td>Wheel mounting</td>
+                                <td>5.00€</td>
+                                <td>5.50€</td>
+                                <td>6.00€</td>
+                                <td>6.70€</td>
+                            </tr>
+                            <tr>
+                                <td>Tire mounting</td>
+                                <td>5.00€</td>
+                                <td>5.50€</td>
+                                <td>6.00€</td>
+                                <td>6.70€</td>
+                            </tr>
+                            <tr>
+                                <td>Balancing</td>
+                                <td>5.00€</td>
+                                <td>5.50€</td>
+                                <td>6.00€</td>
+                                <td>6.70€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Tire Extra Items -->
+                    <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-grid); padding-top: 1.5rem;">
+                        <div class="price-item" style="padding: 0.75rem 0;">
+                            <span class="price-item__name" style="font-size:1rem;">Tire repair</span>
+                            <span class="price-item__value" style="font-size:1rem;">from 15€ + tire services</span>
+                        </div>
+                        <div class="price-item" style="padding: 0.75rem 0;">
+                            <span class="price-item__name" style="font-size:1rem;">Tire disposal</span>
+                            <span class="price-item__value" style="font-size:1rem;">2€ / pcs</span>
+                        </div>
+                        <div class="price-item" style="padding: 0.75rem 0;">
+                            <span class="price-item__name" style="font-size:1rem;">Valve replacement</span>
+                            <span class="price-item__value" style="font-size:1rem;">2€ / pcs</span>
+                        </div>
+                        <div class="price-item" style="padding: 0.75rem 0; border-bottom: none;">
+                            <span class="price-item__name" style="font-size:1rem;">Tire bag</span>
+                            <span class="price-item__value" style="font-size:1rem;">0.5€ / pcs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="price-footer-note">PRICES INCLUDE 24% VAT</p>
+
+        </section>
+
+        <!-- CONTACT Section placeholder -->
+        <!-- In a real deployment, form.html and map.html partials would be rendered here via build.js or server -->
+        <section class="contact-section" id="contact"
+            style="padding: 60px var(--container-padding); border-top: 1px solid var(--border-grid); text-align: center;">
+            <div class="site-container">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase;">Book an
+                    Appointment</h2>
+                <p style="color: var(--text-dimmed); margin-bottom: 2rem;">Contact us and we will find a suitable time
+                    for your visit.</p>
+                <a href="/en/#contact" class="btn btn-primary"
+                    style="display: inline-flex; justify-content: center; width: auto; padding: 1rem 2rem;">Leave a
+                    Request <span class="arrow">↗</span></a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================
+       FOOTER
+       ======================================== -->
+    <footer class="footer">
+        <div class="footer-grid site-container">
+            <div>
+                <div class="footer__col-title">Contacts</div>
+                <div class="footer__text">
+                    <a href="tel:+37256461210">+372 5646 1210</a><br>
+                    <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
+                    Kopli 82a, 10412 Tallinn
+                </div>
+            </div>
+            <div>
+                <div class="footer__col-title">Company Details</div>
+                <div class="footer__text footer__text--rekvisiidid">
+                    ANET EESTI OÜ<br>
+                    Reg. no: 10233521<br>
+                    VAT no: EE100321511<br>
+                </div>
+            </div>
+            <div>
+                <div class="footer__col-title">Opening Hours</div>
+                <div class="footer__text">
+                    Monday – Friday<br>
+                    <strong style="color: var(--text-main);">09:00 – 18:00</strong><br><br>
+                    Saturday – Sunday<br>
+                    <span style="color: var(--text-dimmed);">Closed</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>© 2026 Mr.Car Auto Repair Tallinn</span>
+            <a href="/en/privaatsus/">Privacy Policy</a>
+            <span>Designed by <a href="https://agentica.ee" target="_blank" rel="noopener">Agentica</a></span>
+        </div>
+    </footer>
+
+    <script>
+        // Vehicle Selector Logic
+        const vehicleBtns = document.querySelectorAll('.vehicle-btn');
+        const priceLists = document.querySelectorAll('.price-list');
+        const tireTableCar = document.getElementById('tire-table-car');
+        const tireTableSuvVan = document.getElementById('tire-table-suv-van');
+
+        vehicleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state on buttons
+                vehicleBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                // Update active state on price lists
+                const targetId = `prices-${btn.dataset.target}`;
+                priceLists.forEach(list => {
+                    list.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+
+                // Update Tire Tables
+                if (btn.dataset.target === 'car') {
+                    tireTableSuvVan.classList.remove('active');
+                    tireTableCar.classList.add('active');
+                } else {
+                    tireTableCar.classList.remove('active');
+                    tireTableSuvVan.classList.add('active');
+                }
+            });
+        });
+
+        // Tire Accordion Logic
+        const accordionTrigger = document.querySelector('.tire-accordion__trigger');
+        const accordion = document.getElementById('tireAccordion');
+
+        accordionTrigger.addEventListener('click', () => {
+            const isOpen = accordion.classList.contains('is-open');
+            accordion.classList.toggle('is-open');
+            accordionTrigger.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // Mobile menu logic
+        const burger = document.getElementById('burgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeBtn = document.getElementById('closeMenu');
+
+        burger.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+        });
+
+        closeBtn.addEventListener('click', closeMobileMenu);
+
+        // ESC key closes mobile menu
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+                burger.focus();
+            }
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function toggleMobileMegaMenu(e) {
+            e.preventDefault();
+            const megaMenu = document.getElementById('mobileMegaMenu');
+            const toggleLink = e.currentTarget;
+
+            megaMenu.classList.toggle('is-open');
+            toggleLink.classList.toggle('is-open');
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > 100) {
+                navbar.style.borderBottomColor = 'var(--accent-primary)';
+            } else {
+                navbar.style.borderBottomColor = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
