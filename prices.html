@@ -11,7 +11,9 @@
     <!-- Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
 
 
     <!-- Canonical & hreflang -->
@@ -31,7 +33,7 @@
     <meta property="og:locale" content="et_EE">
 
     <link rel="stylesheet" href="/style.css?v=3">
-    
+
     <!-- Local CSS for Prices Page -->
     <style>
         .prices-hero {
@@ -100,7 +102,8 @@
         .price-list {
             max-width: 800px;
             margin: 0 auto 3rem;
-            display: none; /* Hidden by default, toggled via JS */
+            display: none;
+            /* Hidden by default, toggled via JS */
         }
 
         .price-list.active {
@@ -109,8 +112,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .price-item {
@@ -121,7 +131,7 @@
             border-bottom: 1px solid var(--border-grid);
             gap: 1rem;
         }
-        
+
         .price-item:last-child {
             border-bottom: none;
         }
@@ -209,20 +219,23 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 2rem;
-            display: none; /* Switched via JS */
+            display: none;
+            /* Switched via JS */
         }
 
         .tire-table.active {
             display: table;
         }
-        
-        .tire-table th, .tire-table td {
+
+        .tire-table th,
+        .tire-table td {
             padding: 1rem;
             text-align: right;
             border-bottom: 1px solid var(--border-grid);
         }
 
-        .tire-table th:first-child, .tire-table td:first-child {
+        .tire-table th:first-child,
+        .tire-table td:first-child {
             text-align: left;
             font-weight: 700;
         }
@@ -249,12 +262,13 @@
                 padding: 0 1rem 1rem;
                 overflow-x: auto;
             }
-            
-            .tire-table th, .tire-table td {
+
+            .tire-table th,
+            .tire-table td {
                 padding: 0.75rem 0.5rem;
                 font-size: 0.875rem;
             }
-            
+
             .price-item {
                 flex-direction: column;
                 align-items: flex-start;
@@ -434,7 +448,7 @@
             <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
             <a href="/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
             <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
-            
+
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
                 5646
                 1210</a>
@@ -459,13 +473,29 @@
     <main id="prices-main">
         <!-- HERO -->
         <section class="prices-hero">
+            <nav aria-label="Breadcrumb" style="display: flex; justify-content: center;">
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Avaleht</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Hinnakiri</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ol>
+            </nav>
             <h1 class="prices-hero__title">Hinnakiri</h1>
-            <p class="prices-hero__desc">Läbipaistvad hinnad ilma varjatud kuludeta. Vali oma sõidukitüüp, et näha aktuaalset hinnakirja.</p>
+            <p class="prices-hero__desc">Läbipaistvad hinnad ilma varjatud kuludeta. Vali oma sõidukitüüp, et näha
+                aktuaalset hinnakirja.</p>
         </section>
 
         <!-- PRICES SECTION -->
         <section class="prices-section">
-            
+
             <!-- Vehicle Selector -->
             <div class="vehicle-selector" role="tablist" aria-label="Sõidukitüübi valik">
                 <button class="vehicle-btn active" role="tab" aria-selected="true" data-target="car">
@@ -492,17 +522,29 @@
                     <span class="price-item__value">43€ / tund</span>
                 </div>
                 <!-- Shared General Items -->
-                <div class="price-item"><span class="price-item__name">Piduriketaste ja -klotside vahetus</span><span class="price-item__value">65€ / sild</span></div>
-                <div class="price-item"><span class="price-item__name">Mootoriõli ja kõikide filtrite vahetus</span><span class="price-item__value">65€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Mootoriõli ja õlifiltri vahetus</span><span class="price-item__value">45€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Kliendi varuosadega hinnale lisandub</span><span class="price-item__value">5€</span></div>
-                <div class="price-item"><span class="price-item__name">Keevitustööd</span><span class="price-item__value">48€ / tund</span></div>
-                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll koos veakoodide lugemisega (ostueelne kontroll)</span><span class="price-item__value">55€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll (ostueelne kontroll)</span><span class="price-item__value">45€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Veermiku kontroll</span><span class="price-item__value">25€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Arvutidiagnostika ja elektritööd</span><span class="price-item__value">48€ / tund</span></div>
-                <div class="price-item"><span class="price-item__name">Veakoodide lugemine / kustutamine</span><span class="price-item__value">35€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Tööde miinimumhind</span><span class="price-item__value">22€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Piduriketaste ja -klotside vahetus</span><span
+                        class="price-item__value">65€ / sild</span></div>
+                <div class="price-item"><span class="price-item__name">Mootoriõli ja kõikide filtrite
+                        vahetus</span><span class="price-item__value">65€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Mootoriõli ja õlifiltri vahetus</span><span
+                        class="price-item__value">45€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Kliendi varuosadega hinnale lisandub</span><span
+                        class="price-item__value">5€</span></div>
+                <div class="price-item"><span class="price-item__name">Keevitustööd</span><span
+                        class="price-item__value">48€ / tund</span></div>
+                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll koos veakoodide
+                        lugemisega (ostueelne kontroll)</span><span class="price-item__value">55€ / ühekordne</span>
+                </div>
+                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll (ostueelne
+                        kontroll)</span><span class="price-item__value">45€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Veermiku kontroll</span><span
+                        class="price-item__value">25€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Arvutidiagnostika ja elektritööd</span><span
+                        class="price-item__value">48€ / tund</span></div>
+                <div class="price-item"><span class="price-item__name">Veakoodide lugemine / kustutamine</span><span
+                        class="price-item__value">35€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Tööde miinimumhind</span><span
+                        class="price-item__value">22€ / ühekordne</span></div>
 
                 <div class="price-list__header" style="margin-top: 3rem;">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Sillastend
@@ -527,18 +569,30 @@
                     <span class="price-item__value">48€ / tund</span>
                 </div>
                 <!-- Shared General Items -->
-                <div class="price-item"><span class="price-item__name">Piduriketaste ja -klotside vahetus</span><span class="price-item__value">65€ / sild</span></div>
-                <div class="price-item"><span class="price-item__name">Mootoriõli ja kõikide filtrite vahetus</span><span class="price-item__value">65€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Mootoriõli ja õlifiltri vahetus</span><span class="price-item__value">45€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Kliendi varuosadega hinnale lisandub</span><span class="price-item__value">5€</span></div>
-                <div class="price-item"><span class="price-item__name">Keevitustööd</span><span class="price-item__value">48€ / tund</span></div>
-                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll koos veakoodide lugemisega (ostueelne kontroll)</span><span class="price-item__value">55€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll (ostueelne kontroll)</span><span class="price-item__value">45€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Veermiku kontroll</span><span class="price-item__value">25€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Arvutidiagnostika ja elektritööd</span><span class="price-item__value">48€ / tund</span></div>
-                <div class="price-item"><span class="price-item__name">Veakoodide lugemine / kustutamine</span><span class="price-item__value">35€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Tööde miinimumhind</span><span class="price-item__value">22€ / ühekordne</span></div>
-                
+                <div class="price-item"><span class="price-item__name">Piduriketaste ja -klotside vahetus</span><span
+                        class="price-item__value">65€ / sild</span></div>
+                <div class="price-item"><span class="price-item__name">Mootoriõli ja kõikide filtrite
+                        vahetus</span><span class="price-item__value">65€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Mootoriõli ja õlifiltri vahetus</span><span
+                        class="price-item__value">45€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Kliendi varuosadega hinnale lisandub</span><span
+                        class="price-item__value">5€</span></div>
+                <div class="price-item"><span class="price-item__name">Keevitustööd</span><span
+                        class="price-item__value">48€ / tund</span></div>
+                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll koos veakoodide
+                        lugemisega (ostueelne kontroll)</span><span class="price-item__value">55€ / ühekordne</span>
+                </div>
+                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll (ostueelne
+                        kontroll)</span><span class="price-item__value">45€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Veermiku kontroll</span><span
+                        class="price-item__value">25€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Arvutidiagnostika ja elektritööd</span><span
+                        class="price-item__value">48€ / tund</span></div>
+                <div class="price-item"><span class="price-item__name">Veakoodide lugemine / kustutamine</span><span
+                        class="price-item__value">35€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Tööde miinimumhind</span><span
+                        class="price-item__value">22€ / ühekordne</span></div>
+
                 <div class="price-list__header" style="margin-top: 3rem;">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Sillastend
                 </div>
@@ -562,17 +616,29 @@
                     <span class="price-item__value">48€ / tund</span>
                 </div>
                 <!-- Shared General Items -->
-                <div class="price-item"><span class="price-item__name">Piduriketaste ja -klotside vahetus</span><span class="price-item__value">65€ / sild</span></div>
-                <div class="price-item"><span class="price-item__name">Mootoriõli ja kõikide filtrite vahetus</span><span class="price-item__value">65€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Mootoriõli ja õlifiltri vahetus</span><span class="price-item__value">45€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Kliendi varuosadega hinnale lisandub</span><span class="price-item__value">5€</span></div>
-                <div class="price-item"><span class="price-item__name">Keevitustööd</span><span class="price-item__value">48€ / tund</span></div>
-                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll koos veakoodide lugemisega (ostueelne kontroll)</span><span class="price-item__value">55€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll (ostueelne kontroll)</span><span class="price-item__value">45€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Veermiku kontroll</span><span class="price-item__value">25€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Arvutidiagnostika ja elektritööd</span><span class="price-item__value">48€ / tund</span></div>
-                <div class="price-item"><span class="price-item__name">Veakoodide lugemine / kustutamine</span><span class="price-item__value">35€ / ühekordne</span></div>
-                <div class="price-item"><span class="price-item__name">Tööde miinimumhind</span><span class="price-item__value">22€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Piduriketaste ja -klotside vahetus</span><span
+                        class="price-item__value">65€ / sild</span></div>
+                <div class="price-item"><span class="price-item__name">Mootoriõli ja kõikide filtrite
+                        vahetus</span><span class="price-item__value">65€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Mootoriõli ja õlifiltri vahetus</span><span
+                        class="price-item__value">45€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Kliendi varuosadega hinnale lisandub</span><span
+                        class="price-item__value">5€</span></div>
+                <div class="price-item"><span class="price-item__name">Keevitustööd</span><span
+                        class="price-item__value">48€ / tund</span></div>
+                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll koos veakoodide
+                        lugemisega (ostueelne kontroll)</span><span class="price-item__value">55€ / ühekordne</span>
+                </div>
+                <div class="price-item"><span class="price-item__name">Auto tehniline kontroll (ostueelne
+                        kontroll)</span><span class="price-item__value">45€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Veermiku kontroll</span><span
+                        class="price-item__value">25€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Arvutidiagnostika ja elektritööd</span><span
+                        class="price-item__value">48€ / tund</span></div>
+                <div class="price-item"><span class="price-item__name">Veakoodide lugemine / kustutamine</span><span
+                        class="price-item__value">35€ / ühekordne</span></div>
+                <div class="price-item"><span class="price-item__name">Tööde miinimumhind</span><span
+                        class="price-item__value">22€ / ühekordne</span></div>
 
                 <div class="price-list__header" style="margin-top: 3rem;">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Sillastend
@@ -590,11 +656,12 @@
             <!-- TIRE SERVICES ACCORDION -->
             <div class="tire-accordion" id="tireAccordion">
                 <button class="tire-accordion__trigger" aria-expanded="false" aria-controls="tireContent">
-                    <span><iconify-icon icon="mdi:tire" width="24" style="vertical-align:middle; margin-right:8px;"></iconify-icon> Rehvitööd</span>
+                    <span><iconify-icon icon="mdi:tire" width="24"
+                            style="vertical-align:middle; margin-right:8px;"></iconify-icon> Rehvitööd</span>
                     <iconify-icon icon="mdi:chevron-down" width="28"></iconify-icon>
                 </button>
                 <div class="tire-accordion__content" id="tireContent">
-                    
+
                     <!-- Tire Table: CAR -->
                     <table class="tire-table active" id="tire-table-car">
                         <thead>
@@ -710,11 +777,16 @@
         <!-- CONTACT Section placeholder -->
         <!-- In a real deployment, form.html and map.html partials would be rendered here via build.js or server -->
         <!-- Since we are just adding static HTML like index.html, I will add the contact block code from index.html directly below if required, but let's just add the anchor and a link to the main page for booking. -->
-        <section class="contact-section" id="contact" style="padding: 60px var(--container-padding); border-top: 1px solid var(--border-grid); text-align: center;">
+        <section class="contact-section" id="contact"
+            style="padding: 60px var(--container-padding); border-top: 1px solid var(--border-grid); text-align: center;">
             <div class="site-container">
-                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase;">Broneeri aeg</h2>
-                <p style="color: var(--text-dimmed); margin-bottom: 2rem;">Võta meiega ühendust ja leiame sobiva aja sinu sõidukile.</p>
-                <a href="/#contact" class="btn btn-primary" style="display: inline-flex; justify-content: center; width: auto; padding: 1rem 2rem;">Jäta päring <span class="arrow">↗</span></a>
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase;">Broneeri aeg
+                </h2>
+                <p style="color: var(--text-dimmed); margin-bottom: 2rem;">Võta meiega ühendust ja leiame sobiva aja
+                    sinu sõidukile.</p>
+                <a href="/#contact" class="btn btn-primary"
+                    style="display: inline-flex; justify-content: center; width: auto; padding: 1rem 2rem;">Jäta päring
+                    <span class="arrow">↗</span></a>
             </div>
         </section>
 
@@ -850,4 +922,5 @@
         });
     </script>
 </body>
+
 </html>

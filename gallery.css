@@ -27,9 +27,10 @@
     width: 100%;
     margin-bottom: 20px;
     position: relative;
-    border-radius: 8px; /* shape-depth skill */
+    border-radius: 8px;
+    /* shape-depth skill */
     overflow: hidden;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     cursor: zoom-in;
     /* Trend layer scroll reveal base */
     opacity: 0;
@@ -51,24 +52,50 @@
     transform-origin: center center;
 }
 
+/* Overlay and Label */
+.gallery-item__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.2, 0, 0, 1);
+    pointer-events: none;
+}
+
+.gallery-item__label {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
 /* Hover Effect (Desktop Only) - Strong but elegant */
 @media (hover: hover) and (pointer: fine) {
     .gallery-item:hover .gallery-item__img {
-        transform: scale(1.05); /* Noticeable but elegant zoom */
-    }
-    
-    .gallery-item::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.2); /* Subtle dark overlay */
-        opacity: 0;
-        transition: opacity 0.4s cubic-bezier(0.2, 0, 0, 1);
-        pointer-events: none;
+        transform: scale(1.05);
+        /* Noticeable but elegant zoom */
     }
 
-    .gallery-item:hover::after {
+    .gallery-item:hover .gallery-item__overlay {
         opacity: 1;
+    }
+
+    .gallery-item:hover .gallery-item__label {
+        transform: translateY(0);
     }
 }
 
@@ -79,9 +106,11 @@
         opacity: 1;
         transform: none;
     }
+
     .gallery-item__img {
         transition: none;
     }
+
     .gallery-item:hover .gallery-item__img {
         transform: none;
     }

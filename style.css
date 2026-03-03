@@ -441,6 +441,52 @@ h3 {
 }
 
 /* ============================================================
+   BREADCRUMBS
+   ============================================================ */
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--text-dimmed);
+    margin-bottom: var(--space-md);
+    list-style: none;
+    padding: 0;
+}
+
+.breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.breadcrumbs__link {
+    color: var(--text-dimmed);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumbs__link:hover {
+    color: var(--text-main);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.breadcrumbs__separator {
+    color: var(--border-grid);
+    font-size: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbs__item--current {
+    color: var(--text-main);
+}
+
+/* ============================================================
  5. NAVBAR
    ============================================================ */
 .navbar {
@@ -1558,15 +1604,15 @@ h3 {
    11. GALLERY
    ============================================================ */
 .gallery-section {
-    padding: var(--space-section) 0;
     border-bottom: var(--border);
 }
 
 .gallery__header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: var(--space-2xl);
+    align-items: center;
+    padding: var(--container-padding);
+    border-bottom: var(--border);
 }
 
 .gallery__index {
@@ -2447,9 +2493,11 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     .seo-intro__grid {
         grid-template-columns: 1fr !important;
     }
+
     .seo-intro__image {
         display: none !important;
     }
+
     .seo-intro__content {
         max-width: 75%;
     }
@@ -4362,7 +4410,8 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 
 /* --- Form Validation --- */
 .form-error-banner {
-    color: #EF4444; /* var(--error) */
+    color: #EF4444;
+    /* var(--error) */
     font-size: 0.875rem;
     margin-bottom: 12px;
     padding: 8px 12px;
@@ -4371,6 +4420,7 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     font-family: var(--font-body);
     font-weight: 500;
 }
+
 .sd-form__input.form-error,
 .sd-form__textarea.form-error,
 .form-group input.form-error,
