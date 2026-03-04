@@ -2553,7 +2553,6 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     justify-content: center;
     width: 56px;
     height: 56px;
-    background: rgba(255, 176, 0, 0.08);
 }
 
 .advantage-card__title {
