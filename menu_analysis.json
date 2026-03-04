@@ -1,0 +1,6725 @@
+{
+  "404.html": {
+    "desktop": [],
+    "mobile": []
+  },
+  "galerii.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "hinnad.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "homepage.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "index.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "kontakt.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "prices.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "teenused.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "tingimused.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\contact.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\gallery.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\index.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\prices.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": ""
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\tingimused.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\ac-service.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\chassis-brakes.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\electrical-repair.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\engine-repair.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\exhaust-welding.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\general-car-repair.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\maintenance-diagnostics.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\oil-change.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\pre-purchase-inspection.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\tire-service.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\transmission-repair.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\webasto-repair.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "en\\services\\webasto-symptoms.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "functions\\node_modules\\bignumber.js\\doc\\API.html": {
+    "desktop": [],
+    "mobile": []
+  },
+  "functions\\node_modules\\sprintf-js\\demo\\angular.html": {
+    "desktop": [],
+    "mobile": []
+  },
+  "functions\\node_modules\\tslib\\tslib.es6.html": {
+    "desktop": [],
+    "mobile": []
+  },
+  "functions\\node_modules\\tslib\\tslib.html": {
+    "desktop": [],
+    "mobile": []
+  },
+  "partials\\form.html": {
+    "desktop": [],
+    "mobile": []
+  },
+  "partials\\header-en.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Car Repair"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Exhaust & Welding"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Suspension & Brakes"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Tire Services"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Maintenance & Diagnostics"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Gearbox Repair"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Electrical Works"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Engine Repair"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Oil & Filters"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Car Inspection"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "AC & Climate"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto Repair"
+      }
+    ],
+    "mobile": []
+  },
+  "partials\\header-et.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": []
+  },
+  "partials\\header-ru.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": []
+  },
+  "partials\\map.html": {
+    "desktop": [],
+    "mobile": []
+  },
+  "partials\\mobile-menu-en.html": {
+    "desktop": [],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Car Repair"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Exhaust & Welding"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Suspension & Brakes"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Tire Services"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Maintenance & Diagnostics"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Gearbox Repair"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Electrical Works"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Engine Repair"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Oil & Filters"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Car Inspection"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "AC & Climate"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto Repair"
+      }
+    ]
+  },
+  "partials\\mobile-menu-et.html": {
+    "desktop": [],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "partials\\mobile-menu-ru.html": {
+    "desktop": [],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "privaatsus\\index.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": []
+  },
+  "ru\\galereya.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\index.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\kontakt.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\prices.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\tingimused.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\tseny.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\uslugi.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\autoremont.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\elektrika.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\glushiteli-svarka.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\hodovaya-tormoza.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\klimat-konditsioner.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\proverka-pered-pokupkoy.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\rehvitood.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\remont-dvigatelya.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\remont-kpp.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\service.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\shinomontazh.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\tehobsluzhivanie-diagnostika.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\webasto-simptomy.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\webasto.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "ru\\services\\zamena-masla.html": {
+    "desktop": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/ru/services/autoremont",
+        "text": "Ремонт автомобилей"
+      },
+      {
+        "link": "/ru/services/glushiteli-svarka",
+        "text": "Глушители и сварка"
+      },
+      {
+        "link": "/ru/services/hodovaya-tormoza",
+        "text": "Ходовая и тормоза"
+      },
+      {
+        "link": "/ru/services/rehvitood",
+        "text": "Шиномонтаж"
+      },
+      {
+        "link": "/ru/services/to-diagnostika",
+        "text": "ТО и диагностика"
+      },
+      {
+        "link": "/ru/services/remont-kpp",
+        "text": "Ремонт КПП"
+      },
+      {
+        "link": "/ru/services/elektrika",
+        "text": "Электроработы"
+      },
+      {
+        "link": "/ru/services/remont-dvigatelya",
+        "text": "Ремонт двигателя"
+      },
+      {
+        "link": "/ru/services/zamena-masla",
+        "text": "Замена масла и фильтров"
+      },
+      {
+        "link": "/ru/services/proverka-pered-pokupkoy",
+        "text": "Проверка перед покупкой"
+      },
+      {
+        "link": "/ru/services/klimat-konditsioner",
+        "text": "Климат и кондиционер"
+      },
+      {
+        "link": "/ru/services/webasto",
+        "text": "Ремонт Webasto"
+      }
+    ]
+  },
+  "services\\autoremont.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\elektritood.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\hooldus-diagnostika.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\kaigukastiremont.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\kliimahooldus.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\mootoriremont.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\olivahetus.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\ostueelne-kontroll.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\rehvitood.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\summutid-keevitus.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\veermik-pidurid.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\webasto-diagnostika.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  },
+  "services\\webasto-sumptomid.html": {
+    "desktop": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ],
+    "mobile": [
+      {
+        "link": "/services/autoremont",
+        "text": "Autoremont"
+      },
+      {
+        "link": "/services/summutid-keevitus",
+        "text": "Summuti ja Keevitustööd"
+      },
+      {
+        "link": "/services/veermik-pidurid",
+        "text": "Veermiku ja Pidurite remont"
+      },
+      {
+        "link": "/services/rehvitood",
+        "text": "Rehvitööd"
+      },
+      {
+        "link": "/services/hooldus-diagnostika",
+        "text": "Hooldus ja Diagnostika"
+      },
+      {
+        "link": "/services/kaigukastiremont",
+        "text": "Käigukasti tööd"
+      },
+      {
+        "link": "/services/elektritood",
+        "text": "Elektritööd"
+      },
+      {
+        "link": "/services/mootoriremont",
+        "text": "Mootori tööd"
+      },
+      {
+        "link": "/services/olivahetus",
+        "text": "Õli ja Filtrite vahetus"
+      },
+      {
+        "link": "/services/ostueelne-kontroll",
+        "text": "Enne Ostu Kontroll"
+      },
+      {
+        "link": "/services/kliimahooldus",
+        "text": "Kliima ja Konditsioneer"
+      },
+      {
+        "link": "/services/webasto-diagnostika",
+        "text": "Webasto remont"
+      }
+    ]
+  }
+}
