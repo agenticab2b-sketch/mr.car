@@ -189,7 +189,8 @@
         <a href="/ru/" class="navbar__logo">Mr.Car</a>
         <nav class="navbar__nav">
             <div class="navbar__item has-dropdown">
-                <a href="/ru/uslugi.html" class="navbar__link">[01] Услуги</a><div class="mega-menu">
+                <a href="/ru/uslugi.html" class="navbar__link">[01] Услуги</a>
+                <div class="mega-menu">
                     <a href="/ru/services/autoremont" class="mega-menu__item">
                         <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Ремонт автомобилей</span>
@@ -199,7 +200,8 @@
                         <span>Глушители и сварка</span>
                     </a>
                     <a href="/ru/services/hodovaya-tormoza" class="mega-menu__item">
-                        <iconify-icon icon="mdi:car-brake-alert" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <iconify-icon icon="mdi:car-brake-alert" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
                         <span>Ходовая и тормоза</span>
                     </a>
                     <a href="/ru/services/rehvitood" class="mega-menu__item">
@@ -211,11 +213,13 @@
                         <span>ТО и диагностика</span>
                     </a>
                     <a href="/ru/services/remont-kpp" class="mega-menu__item">
-                        <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
                         <span>Ремонт КПП</span>
                     </a>
                     <a href="/ru/services/elektrika" class="mega-menu__item">
-                        <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <iconify-icon icon="mdi:lightning-bolt" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
                         <span>Электроработы</span>
                     </a>
                     <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
@@ -227,7 +231,8 @@
                         <span>Замена масла и фильтров</span>
                     </a>
                     <a href="/ru/services/proverka-pered-pokupkoy" class="mega-menu__item">
-                        <iconify-icon icon="mdi:file-search-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+                        <iconify-icon icon="mdi:file-search-outline" width="20" height="20"
+                            aria-hidden="true"></iconify-icon>
                         <span>Проверка перед покупкой</span>
                     </a>
                     <a href="/ru/services/klimat-konditsioner" class="mega-menu__item">
@@ -272,8 +277,10 @@
         <nav aria-label="Мобильная навигация">
             <a href="/ru/uslugi.html" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
                 Услуги
-                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
-            </a><div class="mobile-mega-menu" id="mobileMegaMenu">
+                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
+                    height="24"></iconify-icon>
+            </a>
+            <div class="mobile-mega-menu" id="mobileMegaMenu">
                 <a href="/ru/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
                     <span>Ремонт автомобилей</span>
@@ -310,7 +317,8 @@
                     <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
                     <span>Замена масла и фильтров</span>
                 </a>
-                <a href="/ru/services/proverka-pered-pokupkoy" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <a href="/ru/services/proverka-pered-pokupkoy" class="mobile-mega-menu__item"
+                    onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
                     <span>Проверка перед покупкой</span>
                 </a>
@@ -328,7 +336,8 @@
             <a href="/ru/tseny" class="mobile-menu__link" onclick="closeMobileMenu()">Цены</a>
             <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
             <a href="/ru/galereya.html" class="mobile-menu__link" onclick="closeMobileMenu()">Галерея</a>
-            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372 5646 1210</a>
+            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
+                5646 1210</a>
         </nav>
         <div class="mobile-menu__lang">
             <a href="/" class="mobile-lang-link">
@@ -513,6 +522,25 @@
                 <h3 class="service-card__title">Гарантия</h3>
                 <p class="service-card__description">Даём гарантию на все виды работ. Используем только оригинальные
                     запчасти и качественные аналоги от проверенных производителей.</p>
+                <div class="service-card__footer">
+                    <a href="/ru/services/autoremont" class="btn-link">Подробнее <span class="arrow"
+                            aria-hidden="true">→</span></a>
+                </div>
+            </div>
+
+            <!-- Card: Условия -->
+            <div class="service-card service-card--centered">
+                <div class="service-card__icon">
+                    <iconify-icon icon="mdi:file-document-outline" width="28" height="28"
+                        aria-hidden="true"></iconify-icon>
+                </div>
+                <h3 class="service-card__title">Общие условия</h3>
+                <p class="service-card__description">Ознакомьтесь с общими условиями нашего автосервиса. Прозрачность и
+                    четкие правила на каждом этапе работы.</p>
+                <div class="service-card__footer">
+                    <a href="/tingimused.html" class="btn-link">Подробнее <span class="arrow"
+                            aria-hidden="true">→</span></a>
+                </div>
             </div>
         </div>
 
