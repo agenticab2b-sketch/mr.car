@@ -22,7 +22,7 @@ ru_items = [
     {"href": "/ru/services/glushiteli-svarka", "icon": "mdi:fire", "text": "Глушители и сварка"},
     {"href": "/ru/services/hodovaya-tormoza", "icon": "mdi:car-brake-alert", "text": "Ходовая и тормоза"},
     {"href": "/ru/services/rehvitood", "icon": "mdi:tire", "text": "Шиномонтаж"},
-    {"href": "/ru/services/to-diagnostika", "icon": "mdi:car-cog", "text": "ТО и диагностика"},
+    {"href": "/ru/services/tehobsluzhivanie-diagnostika", "icon": "mdi:car-cog", "text": "ТО и диагностика"},
     {"href": "/ru/services/remont-kpp", "icon": "mdi:car-shift-pattern", "text": "Ремонт КПП"},
     {"href": "/ru/services/elektrika", "icon": "mdi:lightning-bolt", "text": "Электроработы"},
     {"href": "/ru/services/remont-dvigatelya", "icon": "mdi:engine", "text": "Ремонт двигателя"},
