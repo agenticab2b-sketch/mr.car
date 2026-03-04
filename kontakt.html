@@ -17,7 +17,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mr.Car autoteeninduse galerii. Meie tehtud tööde näited ja saavutused.">
+    <meta name="description" content="Võta ühendust ja leiame parima lahenduse Sinu autole. Broneeri aeg asjatundlikku remonditöökotta.">
     <title>Kontakt — Mr.Car Autoteenindus Tallinnas</title>
 
     <!-- Font Loading -->
@@ -31,22 +31,19 @@
     <!-- Canonical & hreflang -->
     <link rel="canonical" id="canonicalLink" href="https://www.mrcar.ee/kontakt.html">
     <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/kontakt.html">
-    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/contact.html">
+    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/kontakt.html">
     <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/contact.html">
     <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/kontakt.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="Kontakt — Mr.Car Autoteenindus Tallinnas">
-    <meta property="og:description" content="Mr.Car autoteeninduse galerii. Meie tehtud tööde näited ja saavutused.">
-    <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/prices.html">
+    <meta property="og:description" content="Võta ühendust ja leiame parima lahenduse Sinu autole. Broneeri aeg asjatundlikku remonditöökotta.">
+    <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/kontakt.html">
     <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="et_EE">
 
     <link rel="stylesheet" href="/style.css?v=3">
-
-    <!-- Local CSS for Prices Page -->
-    <link rel="stylesheet" href="/gallery.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -530,6 +527,26 @@
             } else {
                 navbar.style.borderBottomColor = '';
             }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
         });
     </script>
 </body>
