@@ -4,7 +4,7 @@
 <head>
     <!-- Global Noindex for Non-Canonical Hosts -->
     <script>
-        (function() {
+        (function () {
             var host = window.location.hostname;
             if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
                 var meta = document.createElement('meta');
@@ -107,33 +107,21 @@
                         <span>Kliima ja Konditsioneer</span>
                     </a>
                     <a href="/services/webasto-diagnostika" class="mega-menu__item">
-                        <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Webasto remont</span>
+                </div>
+                <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="navbar__lang desktop-only">
+                    <a href="/teenused.html" class="lang-link" title="Eesti keel">
+                        <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
+                    </a>
+                    <a href="/ru/uslugi.html" class="lang-link" title="Русский язык">
+                        <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
+                    </a>
+                    <a href="/en/services.html" class="lang-link active" title="English">
+                        <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
                     </a>
                 </div>
-            </div>
-            <a href="/en/prices.html" class="navbar__link">[02] Prices</a>
-            <a href="#contact" class="navbar__link">[03] Contact</a>
-            <a href="#gallery" class="navbar__link">[04] Gallery</a>
-            <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
-        </nav>
-        <div class="navbar__cta">
-            <a href="#contact" class="btn btn-primary">Book Appointment</a>
-        </div>
-        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
-            <span></span><span></span><span></span>
-        </button>
-        <div class="navbar__lang desktop-only">
-            <a href="/teenused.html" class="lang-link" title="Eesti keel">
-                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
-            </a>
-            <a href="/ru/uslugi.html" class="lang-link" title="Русский язык">
-                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
-            </a>
-            <a href="/en/services.html" class="lang-link active" title="English">
-                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
-            </a>
-        </div>
     </header>
 
     <!-- MOBILE MENU -->
@@ -196,7 +184,7 @@
                 </a>
             </div>
             <a href="/en/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Prices</a>
-            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
+            <a href="/en/contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
                 5646 1210</a>
         </nav>
@@ -467,7 +455,7 @@
                     </ul>
                     <div class="listing-card__price">Prices from <a href="/en/prices.html">€35</a></div>
                     <div class="listing-card__footer">
-                        <a href="/en/services/oil-change" class="btn btn-primary">Read More</a>
+                        <a href="/en/contact" class="btn btn-primary">Jäta päring</a>
                     </div>
                 </div>
 

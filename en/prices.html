@@ -4,7 +4,7 @@
 <head>
     <!-- Global Noindex for Non-Canonical Hosts -->
     <script>
-        (function() {
+        (function () {
             var host = window.location.hostname;
             if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
                 var meta = document.createElement('meta');
@@ -375,12 +375,12 @@
                 </div>
             </div>
             <a href="/en/prices.html" class="navbar__link">[02] Prices</a>
-            <a href="#contact" class="navbar__link">[03] Contact</a>
+            <a href="/en/contact" class="navbar__link">[03] Contact</a>
             <a href="#gallery" class="navbar__link">[04] Gallery</a>
             <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
         </nav>
         <div class="navbar__cta">
-            <a href="#contact" class="btn btn-primary">Jäta päring</a>
+            <a href="/en/contact" class="btn btn-primary">Jäta päring</a>
         </div>
         <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -458,7 +458,7 @@
                 </a>
             </div>
             <a href="/en/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Prices</a>
-            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
+            <a href="/en/contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
 
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
                 5646
@@ -484,21 +484,24 @@
     <main id="prices-main">
         <!-- HERO -->
         <section class="prices-hero">
-            
-      <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-lg); display: flex; justify-content: center;">
-        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/en/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Home</span></a>
-            <meta itemprop="position" content="1" />
-          </li>
-          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-          <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">Prices</span>
-            <meta itemprop="position" content="2" />
-          </li>
-        </ol>
-      </nav>
-        
+
+            <nav aria-label="Breadcrumb"
+                style="margin-bottom: var(--space-lg); display: flex; justify-content: center;">
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/en/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Home</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Prices</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ol>
+            </nav>
+
             <h1 class="prices-hero__title">Prices</h1>
             <p class="prices-hero__desc">Transparent prices with no hidden fees. Select your vehicle type to see the
                 current price list.</p>

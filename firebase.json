@@ -21,11 +21,6 @@
         "type": 301
       },
       {
-        "source": "/kontakt",
-        "destination": "/ru/",
-        "type": 301
-      },
-      {
         "source": "/teenused",
         "destination": "/teenused.html",
         "type": 301

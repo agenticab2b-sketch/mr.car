@@ -4,7 +4,7 @@
 <head>
     <!-- Global Noindex for Non-Canonical Hosts -->
     <script>
-        (function() {
+        (function () {
             var host = window.location.hostname;
             if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
                 var meta = document.createElement('meta');
@@ -17,8 +17,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Mr.Car auto service gallery. Examples of our work and achievements.">
+    <meta name="description" content="Mr.Car auto service gallery. Examples of our work and achievements.">
     <title>Gallery — Mr.Car Auto Service in Tallinn | Repair, Diagnostics, Tire Service</title>
 
     <!-- Font Loading -->
@@ -39,8 +38,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="Gallery — Mr.Car Auto Service in Tallinn">
-    <meta property="og:description"
-        content="Mr.Car auto service gallery. Examples of our work and achievements.">
+    <meta property="og:description" content="Mr.Car auto service gallery. Examples of our work and achievements.">
     <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/en/prices.html">
     <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="en_EE">
@@ -122,33 +120,21 @@
                         <span>Kliima ja Konditsioneer</span>
                     </a>
                     <a href="/services/webasto-diagnostika" class="mega-menu__item">
-                        <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Webasto remont</span>
+                </div>
+                <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="navbar__lang desktop-only">
+                    <a href="/" class="lang-link active" title="Eesti keel">
+                        <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
+                    </a>
+                    <a href="/ru/" class="lang-link" title="Русский язык">
+                        <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
+                    </a>
+                    <a href="/en/" class="lang-link" title="English">
+                        <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
                     </a>
                 </div>
-            </div>
-            <a href="/en/prices.html" class="navbar__link">[02] Prices</a>
-            <a href="#contact" class="navbar__link">[03] Contact</a>
-            <a href="#gallery" class="navbar__link">[04] Gallery</a>
-            <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
-        </nav>
-        <div class="navbar__cta">
-            <a href="#contact" class="btn btn-primary">Jäta päring</a>
-        </div>
-        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
-            <span></span><span></span><span></span>
-        </button>
-        <div class="navbar__lang desktop-only">
-            <a href="/" class="lang-link active" title="Eesti keel">
-                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
-            </a>
-            <a href="/ru/" class="lang-link" title="Русский язык">
-                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
-            </a>
-            <a href="/en/" class="lang-link" title="English">
-                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
-            </a>
-        </div>
     </header>
 
     <!-- Mobile Menu -->
@@ -211,7 +197,7 @@
                 </a>
             </div>
             <a href="/en/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Prices</a>
-            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
+            <a href="/en/contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
 
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
                 5646
@@ -237,28 +223,31 @@
     <main id="prices-main">
         <!-- HERO -->
         <section class="prices-hero">
-            
-      <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-lg); display: flex; justify-content: center;">
-        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/en/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Home</span></a>
-            <meta itemprop="position" content="1" />
-          </li>
-          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-          <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">Gallery</span>
-            <meta itemprop="position" content="2" />
-          </li>
-        </ol>
-      </nav>
-        
+
+            <nav aria-label="Breadcrumb"
+                style="margin-bottom: var(--space-lg); display: flex; justify-content: center;">
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/en/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Home</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Gallery</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ol>
+            </nav>
+
             <h1 class="prices-hero__title">Gallery</h1>
             <p class="prices-hero__desc">Transparent prices with no hidden fees. Select your vehicle type to see the
                 current price list.</p>
         </section>
 
         <!-- PRICES SECTION -->
-        
+
         <section class="gallery-section" style="padding: 60px var(--container-padding) 100px;">
             <div class="gallery-grid" id="gallery-grid">
                 <!-- Gallery items will be populated by JS -->
@@ -274,9 +263,7 @@
                     Appointment</h2>
                 <p style="color: var(--text-dimmed); margin-bottom: 2rem;">Contact us and we will find a suitable time
                     for your visit.</p>
-                <a href="/en/#contact" class="btn btn-primary"
-                    style="display: inline-flex; justify-content: center; width: auto; padding: 1rem 2rem;">Leave a
-                    Request <span class="arrow">↗</span></a>
+                <a href="/en/contact" class="btn btn-primary">Jäta päring</a>
             </div>
         </section>
 

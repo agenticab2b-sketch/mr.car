@@ -4,7 +4,7 @@
 <head>
     <!-- Global Noindex for Non-Canonical Hosts -->
     <script>
-        (function() {
+        (function () {
             var host = window.location.hostname;
             if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
                 var meta = document.createElement('meta');
@@ -115,13 +115,13 @@
             </div>
             <a href="/ru/prices.html" class="navbar__link">[02] Цены</a>
             <a href="#about" class="navbar__link">[03] О нас</a>
-            <a href="#contact" class="navbar__link">[04] Контакты</a>
+            <a href="/ru/contact" class="navbar__link">[04] Контакты</a>
             <a href="#gallery" class="navbar__link">[05] Галерея</a>
 
             <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
         </nav>
         <div class="navbar__cta">
-            <a href="#contact" class="btn btn-primary">Записаться</a>
+            <a href="/ru/contact" class="btn btn-primary">Записаться</a>
         </div>
         <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -201,7 +201,7 @@
             </div>
             <a href="/ru/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Цены</a>
             <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">О нас</a>
-            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
+            <a href="/ru/contact" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
             <a href="/ru/galereya.html" class="mobile-menu__link" onclick="closeMobileMenu()">Галерея</a>
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
                 5646 1210</a>
@@ -228,25 +228,30 @@
         <div class="sd-hero__content site-container">
             <span class="sd-hero__meta">/// Mr.Car Автосервис</span>
             <h1 class="sd-hero__title" id="heroTitle">Услуги автосервиса Mr.Car</h1>
-      <nav aria-label="Breadcrumb" style="margin-top: var(--space-md); margin-bottom: var(--space-md);">
-        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/ru/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Главная</span></a>
-            <meta itemprop="position" content="1" />
-          </li>
-          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/ru/uslugi.html" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Услуги</span></a>
-            <meta itemprop="position" content="2" />
-          </li>
-          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-          <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">Услуги автосервиса Mr.Car</span>
-            <meta itemprop="position" content="3" />
-          </li>
-        </ol>
-      </nav>
-        
+            <nav aria-label="Breadcrumb" style="margin-top: var(--space-md); margin-bottom: var(--space-md);">
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/ru/" class="breadcrumbs__link" itemprop="item"><span
+                                itemprop="name">Главная</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/ru/uslugi.html" class="breadcrumbs__link" itemprop="item"><span
+                                itemprop="name">Услуги</span></a>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Услуги автосервиса Mr.Car</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </nav>
+
             <p class="sd-hero__lead" id="heroLead"></p>
             <a href="#request" class="btn btn-primary sd-hero__cta">Отправить запрос <span class="arrow">↗</span></a>
         </div>
@@ -541,7 +546,7 @@
             var seoTitle = (s.seo && s.seo.title)
                 ? s.seo.title
                 : s.heroTitle + ' — Mr.Car, Таллинн';
-            
+
             // Point 7: Fallback meta description 140-160 chars
             var seoDesc = (s.seo && s.seo.description)
                 ? s.seo.description
