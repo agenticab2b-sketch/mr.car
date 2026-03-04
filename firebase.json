@@ -21,18 +21,48 @@
         "type": 301
       },
       {
-        "source": "/teenused",
-        "destination": "/teenused.html",
+        "source": "/teenused.html",
+        "destination": "/teenused",
         "type": 301
       },
       {
-        "source": "/hinnad",
-        "destination": "/prices.html",
+        "source": "/prices",
+        "destination": "/hinnad",
+        "type": 301
+      },
+      {
+        "source": "/prices.html",
+        "destination": "/hinnad",
+        "type": 301
+      },
+      {
+        "source": "/ru/prices",
+        "destination": "/ru/tseny",
+        "type": 301
+      },
+      {
+        "source": "/ru/prices.html",
+        "destination": "/ru/tseny",
+        "type": 301
+      },
+      {
+        "source": "/en/prices.html",
+        "destination": "/en/prices",
         "type": 301
       },
       {
         "source": "/privaatsuspoliitika",
         "destination": "/privaatsus/",
+        "type": 301
+      },
+      {
+        "source": "/ru/contact",
+        "destination": "/ru/kontakt",
+        "type": 301
+      },
+      {
+        "source": "/ru/contact.html",
+        "destination": "/ru/kontakt",
         "type": 301
       },
       {
@@ -86,7 +116,12 @@
         "type": 301
       }
     ],
-    "rewrites": []
+    "rewrites": [
+      {
+        "source": "/robots.txt",
+        "function": "robots"
+      }
+    ]
   },
   "functions": [
     {

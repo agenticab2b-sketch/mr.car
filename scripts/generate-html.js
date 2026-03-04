@@ -23,8 +23,10 @@ function generatePage(lang, srcFile, destFile, title, h1, desc) {
     let beforeMain = beforeMainMatches[1];
 
     // Update navigation active states
-    beforeMain = beforeMain.replace(/style="color:var\(--accent-primary\)"/g, ''); // Remove active from prices
-    beforeMain = beforeMain.replace('href="/prices.html" class="active"', 'href="/prices.html"'); // Remove active from mobile lang? No, lang links shouldn't be touched unless we need to update hreflang.
+    beforeMain = beforeMain.replace(/style="color:var\(--accent-primary\)"/g, ''); // Remove active
+    beforeMain = beforeMain.replace('href="/hinnad" class="active"', 'href="/hinnad"');
+    beforeMain = beforeMain.replace('href="/ru/tseny" class="active"', 'href="/ru/tseny"');
+    beforeMain = beforeMain.replace('href="/en/prices" class="active"', 'href="/en/prices"');
 
     // Let's just find the closing main
     const afterMainMatches = newContent.match(/<\/main>([\s\S]*)/s);
@@ -54,10 +56,10 @@ function generatePage(lang, srcFile, destFile, title, h1, desc) {
 }
 
 // ET
-generatePage('et', 'prices.html', 'galerii.html', 'Galerii', 'Galerii', 'Pildid meie tegemistest ja tehtud töödest. Mr.Car Autoteenindus Tallinnas.');
+generatePage('et', 'hinnad.html', 'galerii.html', 'Galerii', 'Galerii', 'Pildid meie tegemistest ja tehtud töödest. Mr.Car Autoteenindus Tallinnas.');
 
 // RU
-generatePage('ru', 'ru/prices.html', 'ru/galereya.html', 'Галерея', 'Галерея', 'Фотографии наших работ и автосервиса. Автосервис Mr.Car в Таллинне.');
+generatePage('ru', 'ru/tseny.html', 'ru/galereya.html', 'Галерея', 'Галерея', 'Фотографии наших работ и автосервиса. Автосервис Mr.Car в Таллинне.');
 
 // EN
 generatePage('en', 'en/prices.html', 'en/gallery.html', 'Gallery', 'Gallery', 'Photos of our recent work and facilities. Mr.Car Auto Repair in Tallinn.');

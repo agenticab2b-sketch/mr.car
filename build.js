@@ -49,7 +49,7 @@ const LANGS = [
     navLinks: [
       { href: '/#services', label: '[01] Teenused', style: 'color:var(--accent-primary)' },
       { href: '/#about', label: '[02] Meist' },
-      { href: '/prices.html', label: '[03] Hinnad' },
+      { href: '/hinnad', label: '[03] Hinnad' },
       { href: '/kontakt', label: '[04] Kontakt' },
     ],
     phone: '5646 1210',
@@ -120,7 +120,7 @@ const LANGS = [
     navLinks: [
       { href: '/ru/#services', label: '[01] Услуги', style: 'color:var(--accent-primary)' },
       { href: '/ru/#about', label: '[02] О нас' },
-      { href: '/ru/prices.html', label: '[03] Цены' },
+      { href: '/ru/tseny', label: '[03] Цены' },
       { href: '/ru/contact', label: '[04] Контакты' },
     ],
     phone: '5646 1210',
@@ -191,7 +191,7 @@ const LANGS = [
     navLinks: [
       { href: '/en/#services', label: '[01] Services', style: 'color:var(--accent-primary)' },
       { href: '/en/#about', label: '[02] About' },
-      { href: '/en/prices.html', label: '[03] Prices' },
+      { href: '/en/prices', label: '[03] Prices' },
       { href: '/en/contact', label: '[04] Contact' },
     ],
     phone: '5646 1210',

@@ -42,6 +42,17 @@ exports.ping = onRequest({ cors: true }, (req, res) => {
   res.status(200).send("pong");
 });
 
+// ─── Robots.txt (Anti-indexing technical domains) ───────────────────────────
+
+exports.robots = onRequest({ cors: true }, (req, res) => {
+  const host = req.headers.host || "";
+  if (host.includes("web.app") || host.includes("firebaseapp.com")) {
+    res.type("text/plain").send("User-agent: *\nDisallow: /");
+  } else {
+    res.type("text/plain").send("User-agent: *\nDisallow:\nSitemap: https://www.mrcar.ee/sitemap.xml");
+  }
+});
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function escHtml(str) {

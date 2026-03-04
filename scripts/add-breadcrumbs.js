@@ -5,10 +5,10 @@ const rootDir = path.join(__dirname, '..');
 
 const configs = [
     // ET
-    { file: 'prices.html', locale: 'et', type: 'flat' },
+    { file: 'hinnad.html', locale: 'et', type: 'flat' },
     { file: 'tingimused.html', locale: 'et', type: 'flat' },
     // RU
-    { file: 'ru/prices.html', locale: 'ru', type: 'flat' },
+    { file: 'ru/tseny.html', locale: 'ru', type: 'flat' },
     { file: 'ru/tingimused.html', locale: 'ru', type: 'flat' },
     // EN
     { file: 'en/prices.html', locale: 'en', type: 'flat' },
@@ -124,7 +124,7 @@ configs.forEach(({ file, locale, type }) => {
       </nav>
         `;
 
-        if (file.includes('prices')) {
+        if (file.includes('prices') || file.includes('hinnad') || file.includes('tseny')) {
             // prices has section.prices-hero
             content = content.replace(/(<h1[^>]*class="prices-hero__title"[^>]*>)/i, `${breadcrumbHtml}\n            $1`);
         } else if (file.includes('tingimused')) {
