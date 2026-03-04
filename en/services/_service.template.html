@@ -4,7 +4,7 @@
 <head>
     <!-- Global Noindex for Non-Canonical Hosts -->
     <script>
-        (function() {
+        (function () {
             var host = window.location.hostname;
             if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
                 var meta = document.createElement('meta');
@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" id="metaDescription"
         content="Mr.Car Auto Service in Tallinn — professional repair and maintenance.">
-    <title id="pageTitle">Service — Mr.Car Auto Service Tallinn</title>    <!-- Font Loading -->
+    <title id="pageTitle">Service — Mr.Car Auto Service Tallinn</title> <!-- Font Loading -->
     <link rel="preload" href="/fonts/Inter-Black.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -203,12 +203,12 @@
                 </div>
             </div>
             <a href="/en/prices.html" class="navbar__link">[02] Prices</a>
-            <a href="#contact" class="navbar__link">[03] Contact</a>
+            <a href="/en/contact" class="navbar__link">[03] Contact</a>
             <a href="#gallery" class="navbar__link">[04] Gallery</a>
             <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
         </nav>
         <div class="navbar__cta">
-            <a href="#contact" class="btn btn-primary">Jäta päring</a>
+            <a href="/en/contact" class="btn btn-primary">Jäta päring</a>
         </div>
         <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -286,7 +286,7 @@
                 </a>
             </div>
             <a href="/en/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Prices</a>
-            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
+            <a href="/en/contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
 
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
                 5646
@@ -314,27 +314,31 @@
         <div class="sd-hero__content site-container">
             <span class="sd-hero__meta">/// Mr.Car Auto Workshop</span>
             <h1 class="sd-hero__title" id="heroTitle">Mr.Car Auto Services</h1>
-      <nav aria-label="Breadcrumb" style="margin-top: var(--space-md); margin-bottom: var(--space-md);">
-        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/en/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Home</span></a>
-            <meta itemprop="position" content="1" />
-          </li>
-          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/en/services.html" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Services</span></a>
-            <meta itemprop="position" content="2" />
-          </li>
-          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-          <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">Mr.Car Auto Services</span>
-            <meta itemprop="position" content="3" />
-          </li>
-        </ol>
-      </nav>
-        
+            <nav aria-label="Breadcrumb" style="margin-top: var(--space-md); margin-bottom: var(--space-md);">
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/en/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Home</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/en/services.html" class="breadcrumbs__link" itemprop="item"><span
+                                itemprop="name">Services</span></a>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Mr.Car Auto Services</span>
+                        <meta itemprop="position" content="3" />
+                    </li>
+                </ol>
+            </nav>
+
             <p class="sd-hero__lead" id="heroLead"></p>
-            <a href="#request" class="btn btn-primary sd-hero__cta">Send Request <span class="arrow">↗</span></a>
+            <a href="/en/contact" class="btn btn-primary sd-hero__cta">Send Request <span class="arrow">↗</span></a>
         </div>
     </section>
 
@@ -850,7 +854,7 @@
                 <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
                 <span>Call us</span>
             </a>
-            <a href="#request" class="fab-contact__action" id="fabForm" onclick="closeFab()">
+            <a href="/en/contact" class="fab-contact__action" id="fabForm" onclick="closeFab()">
                 <iconify-icon icon="mdi:email-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
                 <span>Book now</span>
             </a>

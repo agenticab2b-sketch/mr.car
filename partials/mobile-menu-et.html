@@ -1,82 +1,82 @@
 <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
-        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
-        <nav aria-label="Mobiilne navigatsioon">
-            <a href="/teenused.html" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
-                Teenused
-                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
-                    height="24"></iconify-icon>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
+    <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
+    <nav aria-label="Mobiilne navigatsioon">
+        <a href="/teenused.html" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+            Teenused
+            <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
+                height="24"></iconify-icon>
+        </a>
+        <div class="mobile-mega-menu" id="mobileMegaMenu">
+            <a href="/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+                <span>Autoremont</span>
             </a>
-            <div class="mobile-mega-menu" id="mobileMegaMenu">
-                <a href="/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-                    <span>Autoremont</span>
-                </a>
-                <a href="/services/summutid-keevitus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
-                    <span>Summuti ja Keevitustööd</span>
-                </a>
-                <a href="/services/veermik-pidurid" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
-                    <span>Veermiku ja Pidurite remont</span>
-                </a>
-                <a href="/services/rehvitood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
-                    <span>Rehvitööd</span>
-                </a>
-                <a href="/services/hooldus-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
-                    <span>Hooldus ja Diagnostika</span>
-                </a>
-                <a href="/services/kaigukastiremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
-                    <span>Käigukasti tööd</span>
-                </a>
-                <a href="/services/elektritood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
-                    <span>Elektritööd</span>
-                </a>
-                <a href="/services/mootoriremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-                    <span>Mootori tööd</span>
-                </a>
-                <a href="/services/olivahetus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
-                    <span>Õli ja Filtrite vahetus</span>
-                </a>
-                <a href="/services/ostueelne-kontroll" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
-                    <span>Enne Ostu Kontroll</span>
-                </a>
-                <a href="/services/kliimahooldus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
-                    <span>Kliima ja Konditsioneer</span>
-                </a>
-                <a href="/services/webasto-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
-                    <span>Webasto remont</span>
-                </a>
-            </div>
-            <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
-            <a href="/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
-            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
-
-            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
-                5646
-                1210</a>
-        </nav>
-        <div class="mobile-menu__lang">
-            <a href="/" class="mobile-lang-link active">
-                <iconify-icon icon="circle-flags:ee" width="24" height="24" aria-hidden="true"></iconify-icon>
-                <span>Eesti</span>
+            <a href="/services/summutid-keevitus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+                <span>Summuti ja Keevitustööd</span>
             </a>
-            <a href="/ru/" class="mobile-lang-link">
-                <iconify-icon icon="circle-flags:ru" width="24" height="24" aria-hidden="true"></iconify-icon>
-                <span>Русский</span>
+            <a href="/services/veermik-pidurid" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
+                <span>Veermiku ja Pidurite remont</span>
             </a>
-            <a href="/en/" class="mobile-lang-link">
-                <iconify-icon icon="circle-flags:en" width="24" height="24" aria-hidden="true"></iconify-icon>
-                <span>English</span>
+            <a href="/services/rehvitood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
+                <span>Rehvitööd</span>
+            </a>
+            <a href="/services/hooldus-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                <span>Hooldus ja Diagnostika</span>
+            </a>
+            <a href="/services/kaigukastiremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                <span>Käigukasti tööd</span>
+            </a>
+            <a href="/services/elektritood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+                <span>Elektritööd</span>
+            </a>
+            <a href="/services/mootoriremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+                <span>Mootori tööd</span>
+            </a>
+            <a href="/services/olivahetus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
+                <span>Õli ja Filtrite vahetus</span>
+            </a>
+            <a href="/services/ostueelne-kontroll" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+                <span>Enne Ostu Kontroll</span>
+            </a>
+            <a href="/services/kliimahooldus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+                <span>Kliima ja Konditsioneer</span>
+            </a>
+            <a href="/services/webasto-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                <span>Webasto remont</span>
             </a>
         </div>
+        <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
+        <a href="/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
+        <a href="/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
+
+        <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
+            5646
+            1210</a>
+    </nav>
+    <div class="mobile-menu__lang">
+        <a href="/" class="mobile-lang-link active">
+            <iconify-icon icon="circle-flags:ee" width="24" height="24" aria-hidden="true"></iconify-icon>
+            <span>Eesti</span>
+        </a>
+        <a href="/ru/" class="mobile-lang-link">
+            <iconify-icon icon="circle-flags:ru" width="24" height="24" aria-hidden="true"></iconify-icon>
+            <span>Русский</span>
+        </a>
+        <a href="/en/" class="mobile-lang-link">
+            <iconify-icon icon="circle-flags:en" width="24" height="24" aria-hidden="true"></iconify-icon>
+            <span>English</span>
+        </a>
     </div>
+</div>

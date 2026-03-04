@@ -4,7 +4,7 @@
 <head>
     <!-- Global Noindex for Non-Canonical Hosts -->
     <script>
-        (function() {
+        (function () {
             var host = window.location.hostname;
             if (host !== 'www.mrcar.ee' && host !== 'mrcar.ee' && !host.includes('localhost') && !host.includes('127.0.0.1')) {
                 var meta = document.createElement('meta');
@@ -17,8 +17,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Mr.Car autoteeninduse galerii. Meie tehtud tööde näited ja saavutused.">
+    <meta name="description" content="Mr.Car autoteeninduse galerii. Meie tehtud tööde näited ja saavutused.">
     <title>Kontakt — Mr.Car Autoteenindus Tallinnas</title>
 
     <!-- Font Loading -->
@@ -39,8 +38,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="Kontakt — Mr.Car Autoteenindus Tallinnas">
-    <meta property="og:description"
-        content="Mr.Car autoteeninduse galerii. Meie tehtud tööde näited ja saavutused.">
+    <meta property="og:description" content="Mr.Car autoteeninduse galerii. Meie tehtud tööde näited ja saavutused.">
     <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/prices.html">
     <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="et_EE">
@@ -129,13 +127,13 @@
             </div>
             <a href="#about" class="navbar__link">[02] Meist</a>
             <a href="/prices.html" class="navbar__link">[03] Hinnad</a>
-            <a href="#contact" class="navbar__link">[04] Kontakt</a>
+            <a href="/kontakt" class="navbar__link">[04] Kontakt</a>
             <a href="#gallery" class="navbar__link">[05] Galerii</a>
 
             <a href="tel:+37256461210" class="navbar__phone">+372 5646 1210</a>
         </nav>
         <div class="navbar__cta">
-            <a href="#contact" class="btn btn-primary">Jäta päring</a>
+            <a href="/kontakt" class="btn btn-primary">Jäta päring</a>
         </div>
         <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
@@ -214,7 +212,7 @@
             </div>
             <a href="#about" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
             <a href="/prices.html" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
-            <a href="#contact" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
+            <a href="/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
 
             <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">+372
                 5646
@@ -256,7 +254,8 @@
                 </ol>
             </nav>
             <h1 class="prices-hero__title">Kontakt</h1>
-            <p class="prices-hero__desc" style="max-width: 600px; margin: 0 auto;">Võta ühendust ja leiame parima lahenduse Sinu autole. Broneeri aeg asjatundlikku remonditöökotta.</p>
+            <p class="prices-hero__desc" style="max-width: 600px; margin: 0 auto;">Võta ühendust ja leiame parima
+                lahenduse Sinu autole. Broneeri aeg asjatundlikku remonditöökotta.</p>
         </section>
 
         <section class="contact-section" id="contact">
@@ -395,71 +394,97 @@
         </div>
     </footer>
 
-    
+
     <script>
-        
+
         // Form handling
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                // Set initial timestamp
-                const tsStartInput = document.getElementById('tsStart');
-                if (tsStartInput) tsStartInput.value = Date.now();
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            // Set initial timestamp
+            const tsStartInput = document.getElementById('tsStart');
+            if (tsStartInput) tsStartInput.value = Date.now();
 
-                const requiredFields = contactForm.querySelectorAll('[required]');
-                const formErrorBanner = document.getElementById('formError');
+            const requiredFields = contactForm.querySelectorAll('[required]');
+            const formErrorBanner = document.getElementById('formError');
 
-                const clearFieldError = (field) => {
-                    field.classList.remove('form-error');
-                    const allRequiredFilled = Array.from(requiredFields).every(f => f.value.trim() !== '');
-                    if (allRequiredFilled && formErrorBanner) {
-                        formErrorBanner.style.display = 'none';
-                    }
-                };
+            const clearFieldError = (field) => {
+                field.classList.remove('form-error');
+                const allRequiredFilled = Array.from(requiredFields).every(f => f.value.trim() !== '');
+                if (allRequiredFilled && formErrorBanner) {
+                    formErrorBanner.style.display = 'none';
+                }
+            };
 
+            requiredFields.forEach(field => {
+                field.addEventListener('input', () => clearFieldError(field));
+                field.addEventListener('change', () => clearFieldError(field));
+            });
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                let hasError = false;
                 requiredFields.forEach(field => {
-                    field.addEventListener('input', () => clearFieldError(field));
-                    field.addEventListener('change', () => clearFieldError(field));
+                    if (!field.value.trim()) {
+                        field.classList.add('form-error');
+                        hasError = true;
+                    } else {
+                        field.classList.remove('form-error');
+                    }
                 });
 
-                contactForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
+                if (hasError) {
+                    if (formErrorBanner) formErrorBanner.style.display = 'block';
+                    return;
+                }
 
-                    let hasError = false;
-                    requiredFields.forEach(field => {
-                        if (!field.value.trim()) {
-                            field.classList.add('form-error');
-                            hasError = true;
+                const btn = this.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = 'Saatmine...';
+
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+                data.pageUrl = window.location.href;
+
+                fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            showSnackbar('Aitäh! Päring on saadetud.');
+                            contactForm.reset();
+                            if (tsStartInput) tsStartInput.value = Date.now();
                         } else {
-                            field.classList.remove('form-error');
+                            showSnackbar('Päringu saatmine ebaõnnestus. Palun proovige uuesti.', true);
                         }
-                    });
-
-                    if (hasError) {
-                        if (formErrorBanner) formErrorBanner.style.display = 'block';
-                        return;
-                    }
-
-                    const btn = this.querySelector('button[type="submit"]');
-                    const originalText = btn.innerHTML;
-                    btn.disabled = true;
-                    btn.innerHTML = 'Saatmine...';
-
-                    const formData = new FormData(contactForm);
-                    const data = Object.fromEntries(formData.entries());
-                    data.pageUrl = window.location.href;
-
-                    fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(data)
                     })
-                        .then(response => response.json())
-                        .then(result => {
-                            if (result.success) {
-                                showSnackbar('Aitäh! Päring on saadetud.');
-                                contactForm.reset();
-                                if (tsStartInput) tsStartInput.value = Date.now();
-                            }
+                    .catch(error => {
+                        console.error('Viga päringu saatmisel:', error);
+                        showSnackbar('Päringu saatmine ebaõnnestus. Palun proovige uuesti.', true);
+                    })
+                    .finally(() => {
+                        btn.disabled = false;
+                        btn.innerHTML = originalText;
+                    });
+            });
+        }
+
+        function showSnackbar(message, isError = false) {
+            var x = document.getElementById("snackbar");
+            if (!x) return;
+            if (message) x.innerText = message;
+            x.className = "snackbar show";
+            if (isError) x.style.backgroundColor = "var(--error)";
+            else x.style.backgroundColor = "";
+
+            setTimeout(function () {
+                x.className = x.className.replace("show", "");
+            }, 4000);
+        }
 
         // Mobile menu logic
         const burger = document.getElementById('burgerBtn');
