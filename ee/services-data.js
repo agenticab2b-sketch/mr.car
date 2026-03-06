@@ -179,7 +179,7 @@ const SERVICES = [
     {
         key: "tire_service",
         slug: "rehvitood",
-        allSlugs: { ru: "rehvitood", ee: "rehvitood", en: "tire-service" },
+        allSlugs: { ru: "shinomontazh", ee: "rehvitood", en: "tire-service" },
         category: "Vedrustus ja pidurid",
         navTitle: "Rehvitööd",
         icon: "mdi:tire",
