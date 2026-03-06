@@ -35,10 +35,10 @@ htmlFiles.forEach(file => {
 
     // index.html at root should just be /
     if (relativePath === 'index.html') relativePath = '';
-    // ru/index.html should be ru/
-    if (relativePath === 'ru/index.html') relativePath = 'ru/';
-    // en/index.html should be en/
-    if (relativePath === 'en/index.html') relativePath = 'en/';
+    // ru/index.html should be ru
+    if (relativePath === 'ru/index.html') relativePath = 'ru';
+    // en/index.html should be en
+    if (relativePath === 'en/index.html') relativePath = 'en';
 
     const url = `${domain}/${relativePath}`;
 
