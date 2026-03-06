@@ -107,7 +107,47 @@
       },
       {
         "source": "/privaatsuspoliitika",
-        "destination": "/privaatsus/",
+        "destination": "/privaatsus",
+        "type": 301
+      },
+      {
+        "source": "/galerii.html",
+        "destination": "/galerii",
+        "type": 301
+      },
+      {
+        "source": "/hinnad.html",
+        "destination": "/hinnad",
+        "type": 301
+      },
+      {
+        "source": "/tingimused.html",
+        "destination": "/tingimused",
+        "type": 301
+      },
+      {
+        "source": "/en/tingimused.html",
+        "destination": "/en/tingimused",
+        "type": 301
+      },
+      {
+        "source": "/ru/tingimused.html",
+        "destination": "/ru/tingimused",
+        "type": 301
+      },
+      {
+        "source": "/ru/uslugi.html",
+        "destination": "/ru/uslugi",
+        "type": 301
+      },
+      {
+        "source": "/ru/galereya.html",
+        "destination": "/ru/galereya",
+        "type": 301
+      },
+      {
+        "source": "/en/gallery.html",
+        "destination": "/en/gallery",
         "type": 301
       },
       {

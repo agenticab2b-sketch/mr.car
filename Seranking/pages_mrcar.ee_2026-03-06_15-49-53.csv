@@ -1,0 +1,41 @@
+﻿"URL-адрес страницы",Ошибки,"Общий траффик","Код ответа сервера страницы","Можно проиндексировать","Статус индексируемости","Ссылающиеся страницы",Глубина,"Ключевых слов","Протокол URL",Блокировка,Title,"Длина Title","Длина Description","Каноническая ссылка",H1,"Длина H1","Единственный H1","Дублирующийся H1",H2,"Длина H2","Единственный H2","Время переадресации Refresh",Nofollow/Dofollow,"Внутренние ссылки на страницу",Dofollow-ссылки,"Внутренние ссылки со страницы","Внешние ссылки со страницы"
+https://mrcar.ee/en/,1,,301,Нет,"Код состояния не 200",19,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,38,38,0,0
+https://mrcar.ee/ru/,1,,301,Нет,"Код состояния не 200",19,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,38,38,0,0
+https://mrcar.ee/privaatsus/,1,,301,Нет,"Код состояния не 200",19,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,19,19,0,0
+https://www.mrcar.ee/privaatsus/,1,,301,Нет,"Код состояния не 200",19,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,19,19,0,0
+https://mrcar.ee/services/olivahetus,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Õlivahetus Tallinnas — Mr.Car | alates €35",42,122,https://www.mrcar.ee/services/olivahetus,"Õlivahetus ja filtrid",21,Да,Нет,"Õlivahetus Mr.Car-is",20,Нет,,Dofollow,20,20,25,4
+https://mrcar.ee/kontakt,3,,200,Нет,Non-canonical,18,2,,https,Нет,"Kontakt — Mr.Car Autoteenindus Tallinnas",40,97,https://www.mrcar.ee/kontakt,Kontakt,7,Да,Нет,"Broneeri aeg",12,Нет,,Dofollow,43,43,30,2
+https://mrcar.ee/services/webasto-diagnostika,3,,200,Нет,Non-canonical,18,2,,https,Нет,"Webasto diagnostika ja remont Tallinnas Mr.Car Autoteenindus",60,196,https://www.mrcar.ee/services/webasto-diagnostika,"Webasto diagnostika ja remont Tallinnas",39,Да,Нет,"Broneeri aeg",12,Нет,,Dofollow,22,22,36,2
+https://mrcar.ee/services/kliimahooldus,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Kliimaseadme täitmine — Mr.Car Tallinn | Konditsioneer",54,115,https://www.mrcar.ee/services/kliimahooldus,"Kliimaseade ja konditsioneer",28,Да,Нет,"Kliimaseadme hooldus Mr.Car-is",30,Нет,,Dofollow,22,22,25,4
+https://mrcar.ee/services/ostueelne-kontroll,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Auto kontroll enne ostmist — Mr.Car Tallinn | €80",49,118,https://www.mrcar.ee/services/ostueelne-kontroll,"Auto kontroll enne ostmist",26,Да,Нет,"Ostueelne kontroll Mr.Car-is",28,Нет,,Dofollow,20,20,25,4
+https://mrcar.ee/services/mootoriremont,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Mootori remont Tallinnas — Mr.Car Autoteenindus",47,122,https://www.mrcar.ee/services/mootoriremont,"Mootori remont",14,Да,Нет,"Mootori remont Mr.Car-is",24,Нет,,Dofollow,22,22,25,4
+https://mrcar.ee/services/elektritood,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Autoelekter Tallinnas — Mr.Car | Elektrisüsteemide remont",57,115,https://www.mrcar.ee/services/elektritood,Autoelekter,11,Да,Нет,"Autoelektri remont Mr.Car-is",28,Нет,,Dofollow,21,21,25,4
+https://mrcar.ee/services/kaigukastiremont,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Käigukasti remont Tallinnas — Automaatkast, DSG | Mr.Car",56,145,https://www.mrcar.ee/services/kaigukastiremont,"Käigukasti remont",17,Да,Нет,"Käigukasti remont Mr.Car-is",27,Нет,,Dofollow,22,22,25,4
+https://mrcar.ee/services/hooldus-diagnostika,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Tehniline hooldus — Mr.Car Tallinn | Autoteenindus",50,130,https://www.mrcar.ee/services/hooldus-diagnostika,"Tehniline hooldus",17,Да,Нет,"Tehniline hooldus Mr.Car-is",27,Нет,,Dofollow,22,22,25,4
+https://mrcar.ee/services/rehvitood,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Rehvitööd Tallinnas — Mr.Car | alates €20",41,130,https://www.mrcar.ee/services/rehvitood,Rehvitööd,9,Да,Нет,"Rehvitööd Mr.Car-is",19,Нет,,Dofollow,21,21,25,4
+https://mrcar.ee/services/veermik-pidurid,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Vedrustuse ja pidurite remont — Mr.Car Tallinn",46,139,https://www.mrcar.ee/services/veermik-pidurid,"Vedrustuse ja pidurite remont",29,Да,Нет,"Vedrustuse remont Mr.Car-is",27,Нет,,Dofollow,22,22,25,4
+https://mrcar.ee/services/summutid-keevitus,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Summuti remont, keevitustööd — Mr.Car Tallinn",45,97,https://www.mrcar.ee/services/summutid-keevitus,"Summutid ja keevitustööd",24,Да,Нет,"Summutite remont и keevitustööd",31,Нет,,Dofollow,20,20,25,4
+https://mrcar.ee/services/autoremont,4,,200,Нет,Non-canonical,18,2,,https,Нет,"Autoremont Tallinnas — Mr.Car | Kõik tööliigid",46,142,https://www.mrcar.ee/services/autoremont,"Üldine autoremont",17,Да,Нет,"Autoremont Mr.Car-is",20,Нет,,Dofollow,24,24,25,4
+https://mrcar.ee/,3,,200,Нет,Non-canonical,18,1,,https,Нет,"Autoremont Tallinnas — Mr.Car Autoteenindus | Diagnostika, Rehvitööd, Hooldus",77,197,https://www.mrcar.ee/,"Mr.Carautoremont Tallinn",24,Да,Нет,"Professionaalne autoremont ja autohooldus Tallinnas",51,Нет,,Dofollow,82,82,62,6
+https://www.mrcar.ee/tingimused.html,1,,301,Нет,"Код состояния не 200",14,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,15,15,0,0
+https://www.mrcar.ee/en/tingimused.html,1,,301,Нет,"Код состояния не 200",14,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,14,14,0,0
+https://www.mrcar.ee/ru/tingimused.html,1,,301,Нет,"Код состояния не 200",13,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,13,13,0,0
+https://mrcar.ee/tingimused.html,1,,301,Нет,"Код состояния не 200",13,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,14,14,0,0
+https://mrcar.ee/hinnad,3,,200,Нет,Non-canonical,12,3,,https,Нет,"Hinnakiri — Mr.Car Autoteenindus Tallinnas | Remont, Diagnostika, Rehvitööd",75,163,https://www.mrcar.ee/hinnad,Hinnakiri,9,Да,Нет,"Broneeri aeg",12,Да,,Dofollow,14,14,31,1
+https://www.mrcar.ee/ru/galereya.html,1,,301,Нет,"Код состояния не 200",11,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,19,19,0,0
+https://mrcar.ee/galerii.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,17,17,0,0
+https://www.mrcar.ee/teenused.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,16,16,0,0
+https://www.mrcar.ee/hinnad.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,16,16,0,0
+https://www.mrcar.ee/galerii.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,17,17,0,0
+https://mrcar.ee/hinnad.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,16,16,0,0
+https://mrcar.ee/teenused.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,16,16,0,0
+https://www.mrcar.ee/ru/uslugi.html,1,,301,Нет,"Код состояния не 200",7,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,14,14,0,0
+https://www.mrcar.ee/en/gallery.html,1,,301,Нет,"Код состояния не 200",6,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,13,13,0,0
+http://www.mrcar.ee/,1,,301,Нет,"Код состояния не 200",4,4,,http,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,4,4,0,0
+https://www.mrcar.ee/en/prices.html,1,,301,Нет,"Код состояния не 200",1,3,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,3,3,0,0
+https://www.mrcar.ee/ru/services/to-diagnostika,1,,404,Нет,"Код состояния не 200",1,2,,https,Нет,"Page Not Found",14,,,"Page Not Found",14,Да,Нет,404,3,Да,,Dofollow,1,1,0,0
+https://www.mrcar.ee/ru/privaatsus/,1,,404,Нет,"Код состояния не 200",1,2,,https,Нет,"Page Not Found",14,,,"Page Not Found",14,Да,Нет,404,3,Да,,Dofollow,1,1,0,0
+https://mrcar.ee/services/webasto-sumptomid,3,,200,Нет,Non-canonical,1,3,,https,Нет,"Webasto sümptomid ja vead — Millal pöörduda Mr.Car Tallinnas?",61,178,https://www.mrcar.ee/services/webasto-sumptomid,"Webasto sümptomid ja vead",25,Да,Нет,"Millal tasub Webasto üle kontrollida?",37,Нет,,Dofollow,3,3,37,2
+https://mrcar.ee/tingimused,3,,200,Нет,Non-canonical,0,3,,https,Нет,"Üldtingimused — Mr.Car Autoremont",33,57,https://www.mrcar.ee/tingimused,"Töövõtulepingu üldtingimused",28,Да,Нет,"1. Üldsätted",12,Нет,,Dofollow,0,0,33,1
+https://mrcar.ee/galerii,5,,200,Нет,Non-canonical,0,3,,https,Нет,"Galerii — Mr.Car Autoteenindus",30,74,https://www.mrcar.ee/galerii,Galerii,7,Да,Нет,,,Да,,Dofollow,0,0,29,1
+https://mrcar.ee/teenused,3,,200,Нет,Non-canonical,0,3,,https,Нет,"Kõik autoteenused Tallinnas | Mr.Car Autoremont",47,118,https://www.mrcar.ee/teenused,"Kõik teenused",13,Да,Нет,,,Да,,Dofollow,0,0,44,0
