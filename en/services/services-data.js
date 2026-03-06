@@ -616,7 +616,7 @@ const SERVICES = [
     {
         key: "webasto",
         slug: "webasto-repair",
-        allSlugs: { ru: "webasto", ee: "webasto-diagnostika", en: "webasto-repair" },
+        allSlugs: { ru: "webasto", ee: "webastehobsluzhivanie-diagnostika", en: "webasto-repair" },
         category: "Climate & Accessories",
         navTitle: "Webasto Repair",
         icon: "mdi:radiator",

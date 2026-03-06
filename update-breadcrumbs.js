@@ -13,15 +13,15 @@ function replaceInFiles(dir, lang) {
         let updated = false;
 
         if (lang === 'et' && content.includes('href="/#services"')) {
-            content = content.replace(/href="\/\#services"/g, 'href="/teenused.html"');
+            content = content.replace(/href="\/\#services"/g, 'href="/teenused"');
             updated = true;
         }
         if (lang === 'ru' && content.includes('href="/ru/#services"')) {
-            content = content.replace(/href="\/ru\/#services"/g, 'href="/ru/uslugi.html"');
+            content = content.replace(/href="\/ru\/#services"/g, 'href="/ru/uslugi"');
             updated = true;
         }
         if (lang === 'en' && content.includes('href="/en/#services"')) {
-            content = content.replace(/href="\/en\/#services"/g, 'href="/en/services.html"');
+            content = content.replace(/href="\/en\/#services"/g, 'href="/en/services"');
             updated = true;
         }
 

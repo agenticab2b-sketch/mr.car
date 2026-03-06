@@ -231,7 +231,7 @@ const SERVICES = [
     {
         key: "maintenance_diag",
         slug: "hooldus-diagnostika",
-        allSlugs: { ru: "to-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
+        allSlugs: { ru: "tehobsluzhivanie-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
         category: "Hooldus",
         navTitle: "Hooldus ja Diagnostika",
         icon: "mdi:car-cog",
@@ -615,8 +615,8 @@ const SERVICES = [
 
     {
         key: "webasto",
-        slug: "webasto-diagnostika",
-        allSlugs: { ru: "webasto", ee: "webasto-diagnostika", en: "webasto-repair" },
+        slug: "webastehobsluzhivanie-diagnostika",
+        allSlugs: { ru: "webasto", ee: "webastehobsluzhivanie-diagnostika", en: "webasto-repair" },
         category: "Kliimaseade ja lisavarustus",
         navTitle: "Webasto remont",
         icon: "mdi:radiator",

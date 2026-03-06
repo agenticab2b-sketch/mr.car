@@ -560,7 +560,7 @@ const SERVICES = [
 
     {
         slug: "webasto",
-        allSlugs: { ru: "webasto", ee: "webasto-diagnostika", en: "webasto-repair" },
+        allSlugs: { ru: "webasto", ee: "webastehobsluzhivanie-diagnostika", en: "webasto-repair" },
         category: "Климат и доп. оборудование",
         navTitle: "Ремонт Webasto",
         icon: "mdi:radiator",

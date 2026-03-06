@@ -9,11 +9,11 @@ function replaceInFile(filePath) {
     const isEstonian = !isRussian && !isEnglish;
 
     if (isEstonian) {
-        content = content.replace(/href="(\/)?#gallery"/g, 'href="/galerii.html"');
+        content = content.replace(/href="(\/)?#gallery"/g, 'href="/galerii"');
     } else if (isRussian) {
-        content = content.replace(/href="(\/ru\/)?#gallery"/g, 'href="/ru/galereya.html"');
+        content = content.replace(/href="(\/ru\/)?#gallery"/g, 'href="/ru/galereya"');
     } else if (isEnglish) {
-        content = content.replace(/href="(\/en\/)?#gallery"/g, 'href="/en/gallery.html"');
+        content = content.replace(/href="(\/en\/)?#gallery"/g, 'href="/en/gallery"');
     }
 
     if (raw !== content) {
