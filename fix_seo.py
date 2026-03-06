@@ -36,16 +36,16 @@ def fix_seo_issues(directory):
         content = re.sub(r'href=["\'](/[^"\']+)\.html["\']', r'href="\1"', content)
 
         # 4. Fix 301: Remove trailing slashes from all internal links
-        # href="/something/" -> href="/something"
-        # Avoid root "/"
         content = re.sub(r'href=["\'](/[^"\']+)/["\']', r'href="\1"', content)
 
-        # 5. Fix 301: Handle language roots specially if needed (already handled by rule 4, but let's be sure)
-        # href="/ru/" -> href="/ru"
-        
+        # 5. Fix 301: Replace absolute http links to homepage with root "/"
+        content = content.replace('href="http://www.mrcar.ee"', 'href="/"')
+        content = content.replace('href="http://mrcar.ee"', 'href="/"')
+        content = content.replace('href="https://www.mrcar.ee/"', 'href="/"')
+        content = content.replace('href="https://mrcar.ee/"', 'href="/"')
+
         # 6. Fix canonical links (Remove .html and trailing slash)
         content = re.sub(r'href=["\'](https://www.mrcar.ee/[^"\']+)\.html["\']', r'href="\1"', content)
-        # Remove trailing slash from canonical
         content = re.sub(r'(<link rel="canonical" href="https://www.mrcar.ee/[^"]+)/"', r'\1"', content)
 
         if content != original_content:

@@ -178,7 +178,7 @@ const LANGS = [
       weekend: 'Суббота – Воскресенье',
       closed: 'Закрыто',
       privacy: 'Политика конфиденциальности',
-      privacyHref: '/ru/privaatsus/',
+      privacyHref: '/ru/privaatsus',
       terms: 'Условия',
       termsHref: '/ru/tingimused.html'
     }
