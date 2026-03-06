@@ -1,0 +1,33 @@
+﻿"URL-адрес страницы",Ошибки,"Общий траффик","Код ответа сервера страницы","Можно проиндексировать","Статус индексируемости","Ссылающиеся страницы",Глубина,"Ключевых слов","Протокол URL",Блокировка,Title,"Длина Title","Длина Description","Каноническая ссылка",H1,"Длина H1","Единственный H1","Дублирующийся H1",H2,"Длина H2","Единственный H2","Время переадресации Refresh",Nofollow/Dofollow,"Внутренние ссылки на страницу",Dofollow-ссылки,"Внутренние ссылки со страницы","Внешние ссылки со страницы"
+https://www.mrcar.ee/ru/,1,,301,Нет,"Код состояния не 200",54,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,145,145,0,0
+https://www.mrcar.ee/en/,1,,301,Нет,"Код состояния не 200",54,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,138,138,0,0
+https://mrcar.ee/ru/,1,,301,Нет,"Код состояния не 200",19,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,38,38,0,0
+https://mrcar.ee/en/,1,,301,Нет,"Код состояния не 200",19,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,38,38,0,0
+https://mrcar.ee/privaatsus/,1,,301,Нет,"Код состояния не 200",19,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,19,19,0,0
+https://www.mrcar.ee/privaatsus/,1,,301,Нет,"Код состояния не 200",19,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,19,19,0,0
+https://www.mrcar.ee/ru/privaatsus/,1,,404,Нет,"Код состояния не 200",17,2,,https,Нет,"Page Not Found",14,,,"Page Not Found",14,Да,Нет,404,3,Да,,Dofollow,17,17,0,0
+https://www.mrcar.ee/ru/tingimused.html,1,,301,Нет,"Код состояния не 200",13,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,18,18,0,0
+https://www.mrcar.ee/ru/contact,1,,301,Нет,"Код состояния не 200",13,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,13,13,0,0
+https://www.mrcar.ee/en/tingimused.html,1,,301,Нет,"Код состояния не 200",13,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,18,18,0,0
+https://mrcar.ee/tingimused.html,1,,301,Нет,"Код состояния не 200",13,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,14,14,0,0
+https://www.mrcar.ee/tingimused.html,1,,301,Нет,"Код состояния не 200",13,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,24,24,0,0
+https://www.mrcar.ee/en/privacy/,1,,404,Нет,"Код состояния не 200",12,2,,https,Нет,"Page Not Found",14,,,"Page Not Found",14,Да,Нет,404,3,Да,,Dofollow,12,12,0,0
+https://www.mrcar.ee/galerii.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,17,17,0,0
+https://www.mrcar.ee/hinnad.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,16,16,0,0
+https://www.mrcar.ee/teenused.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,26,26,0,0
+https://mrcar.ee/galerii.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,17,17,0,0
+https://mrcar.ee/teenused.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,16,16,0,0
+https://mrcar.ee/hinnad.html,1,,301,Нет,"Код состояния не 200",8,2,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,16,16,0,0
+https://www.mrcar.ee/ru/uslugi.html,1,,301,Нет,"Код состояния не 200",6,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,17,17,0,0
+https://www.mrcar.ee/ru/galereya.html,1,,301,Нет,"Код состояния не 200",6,3,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,12,12,0,0
+https://www.mrcar.ee/en/gallery.html,1,,301,Нет,"Код состояния не 200",5,3,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,10,10,0,0
+https://www.mrcar.ee/en/privaatsus/,1,,404,Нет,"Код состояния не 200",4,3,,https,Нет,"Page Not Found",14,,,"Page Not Found",14,Да,Нет,404,3,Да,,Dofollow,4,4,0,0
+http://www.mrcar.ee/,1,,301,Нет,"Код состояния не 200",4,4,,http,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,4,4,0,0
+https://www.mrcar.ee/en/prices.html,1,,301,Нет,"Код состояния не 200",1,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,13,13,0,0
+https://www.mrcar.ee/ru/services/to-diagnostika,1,,404,Нет,"Код состояния не 200",1,1,,https,Нет,"Page Not Found",14,,,"Page Not Found",14,Да,Нет,404,3,Да,,Dofollow,3,3,0,0
+https://www.mrcar.ee/ru/prices.html,1,,301,Нет,"Код состояния не 200",0,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,10,10,0,0
+https://www.mrcar.ee/en/services.html,1,,301,Нет,"Код состояния не 200",0,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,5,5,0,0
+https://www.mrcar.ee/en/contact.html,1,,301,Нет,"Код состояния не 200",0,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,5,5,0,0
+https://www.mrcar.ee/ru/kontakt.html,1,,301,Нет,"Код состояния не 200",0,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,5,5,0,0
+https://www.mrcar.ee/prices.html,1,,301,Нет,"Код состояния не 200",0,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,20,20,0,0
+https://www.mrcar.ee/kontakt.html,1,,301,Нет,"Код состояния не 200",0,1,,https,Нет,,,,,,,Да,Нет,,,Да,,Dofollow,10,10,0,0
