@@ -130,12 +130,21 @@
             height: 100%;
         }
 
-        .hero__image img,
-        .hero__image video {
+        .hero__image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            aspect-ratio: inherit;
+            display: block;
+        }
+
+        .hero__image video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s ease-in;
         }
 
         .hero__content {
@@ -198,8 +207,8 @@
                         href="/ru/services/hodovaya-tormoza" class="mega-menu__item"><iconify-icon
                             icon="mdi:car-brake-alert" width="20" height="20"
                             aria-hidden="true"></iconify-icon><span>Ходовая и тормоза</span></a><a
-                        href="/ru/services/rehvitood" class="mega-menu__item"><iconify-icon icon="mdi:tire" width="20"
-                            height="20" aria-hidden="true"></iconify-icon><span>Шиномонтаж</span></a><a
+                        href="/ru/services/shinomontazh" class="mega-menu__item"><iconify-icon icon="mdi:tire"
+                            width="20" height="20" aria-hidden="true"></iconify-icon><span>Шиномонтаж</span></a><a
                         href="/ru/services/tehobsluzhivanie-diagnostika" class="mega-menu__item"><iconify-icon
                             icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon><span>ТО и
                             диагностика</span></a><a href="/ru/services/remont-kpp"
@@ -247,7 +256,7 @@
                     href="/ru/services/hodovaya-tormoza" class="mobile-mega-menu__item"
                     onclick="closeMobileMenu()"><iconify-icon icon="mdi:car-brake-alert"
                         aria-hidden="true"></iconify-icon><span>Ходовая и тормоза</span></a><a
-                    href="/ru/services/rehvitood" class="mobile-mega-menu__item"
+                    href="/ru/services/shinomontazh" class="mobile-mega-menu__item"
                     onclick="closeMobileMenu()"><iconify-icon icon="mdi:tire"
                         aria-hidden="true"></iconify-icon><span>Шиномонтаж</span></a><a
                     href="/ru/services/tehobsluzhivanie-diagnostika" class="mobile-mega-menu__item"
@@ -286,12 +295,21 @@
                     height="32"></iconify-icon><span>English</span></a></div>
     </div><!--========================================2. HERO========================================-->
     <section class="hero" id="hero">
-        <div class="hero__image"><video autoplay muted loop playsinline preload="metadata"
+        <div class="hero__image">
+            <!-- LCP Image — instant base layer, matches preload in <head> -->
+            <picture>
+                <source media="(min-width: 768px)" srcset="/pics/hero-desktop.webp">
+                <img src="/pics/hero-mobile.webp" alt="Mr.Car авторемонт в Таллинне — работа мастера"
+                    fetchpriority="high" width="960" height="1080">
+            </picture>
+            <!-- Video overlay — fades in when ready, no blocking -->
+            <video autoplay muted loop playsinline preload="metadata"
                 aria-label="Cinematic close-up of a mechanic tightening a bolt with a ratchet wrench under the hood"
-                title="Mechanic working under the hood">
+                title="Mechanic working under the hood" oncanplay="this.style.opacity=1">
                 <source src="/video/master_ratchet_vp9_crf28.webm" type="video/webm">
                 <source src="/video/master_ratchet_h264_crf28.mp4" type="video/mp4">
-            </video></div>
+            </video>
+        </div>
         <div class="hero__content reveal">
             <div class="hero__status" id="serviceStatus"><span class="hero__status-dot"></span><span
                     class="hero__status-label">Статус сервиса:</span><span class="hero__status-state"
@@ -403,7 +421,7 @@
                     href="/ru/services/hodovaya-tormoza" class="services-all__item"><span
                         class="services-all__number"><iconify-icon icon="mdi:car-brake-alert" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span><span class="services-all__name">Ходовая и
-                        тормоза</span><span class="services-all__arrow">→</span></a><a href="/ru/services/rehvitood"
+                        тормоза</span><span class="services-all__arrow">→</span></a><a href="/ru/services/shinomontazh"
                     class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:tire"
                             width="24" height="24" aria-hidden="true"></iconify-icon></span><span
                         class="services-all__name">Шиномонтаж</span><span class="services-all__arrow">→</span></a><a

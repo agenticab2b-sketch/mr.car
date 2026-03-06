@@ -285,7 +285,7 @@ const SERVICES = [
     },
 
     {
-        slug: "rehvitood",
+        slug: "shinomontazh",
         allSlugs: { ru: "shinomontazh", ee: "rehvitood", en: "tire-service" },
         category: "Ходовая и тормоза",
         navTitle: "Шиномонтаж",

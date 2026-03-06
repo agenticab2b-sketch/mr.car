@@ -34,7 +34,7 @@ function generatePage(lang, srcFile, destFile, title, h1, desc) {
     const afterMain = afterMainMatches[1];
 
     // Add gallery CSS & JS links to head
-    beforeMain = beforeMain.replace('</head>', `    <link rel="stylesheet" href="/gallery.css">\n    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">\n</head>`);
+    beforeMain = beforeMain.replace('</head>', `    <link rel="stylesheet" href="/gallery.css">\n    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.4.4/dist/photoswipe.css">\n</head>`);
 
     // Build main content
     const mainHTML = `<main id="gallery-main" class="gallery-page">

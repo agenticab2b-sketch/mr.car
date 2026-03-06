@@ -209,6 +209,11 @@
         "source": "/teenused/webasto-remont/webasto-vead-ja-symptomid",
         "destination": "/services/webasto-sumptomid",
         "type": 301
+      },
+      {
+        "source": "/ru/services/shinomontazh",
+        "destination": "/ru/services/shinomontazh",
+        "type": 301
       }
     ],
     "rewrites": [

@@ -1,0 +1,4 @@
+﻿"URL-адрес страницы","Код ответа сервера для URL-адреса CSS","URL-адрес CSS","Ссылающиеся страницы","Размер CSS","Скорость загрузки"
+https://www.mrcar.ee/galerii,302,https://unpkg.com/photoswipe@5/dist/photoswipe.css,8,"96.35 KB",0.191
+https://www.mrcar.ee/ru/galereya,302,https://unpkg.com/photoswipe@5/dist/photoswipe.css,11,"96.35 KB",0.044
+https://www.mrcar.ee/en/gallery,302,https://unpkg.com/photoswipe@5/dist/photoswipe.css,5,"96.35 KB",0.081

@@ -21,7 +21,7 @@ ru_items = [
     {"href": "/ru/services/autoremont", "icon": "mdi:wrench", "text": "Ремонт автомобилей"},
     {"href": "/ru/services/glushiteli-svarka", "icon": "mdi:fire", "text": "Глушители и сварка"},
     {"href": "/ru/services/hodovaya-tormoza", "icon": "mdi:car-brake-alert", "text": "Ходовая и тормоза"},
-    {"href": "/ru/services/rehvitood", "icon": "mdi:tire", "text": "Шиномонтаж"},
+    {"href": "/ru/services/shinomontazh", "icon": "mdi:tire", "text": "Шиномонтаж"},
     {"href": "/ru/services/tehobsluzhivanie-diagnostika", "icon": "mdi:car-cog", "text": "ТО и диагностика"},
     {"href": "/ru/services/remont-kpp", "icon": "mdi:car-shift-pattern", "text": "Ремонт КПП"},
     {"href": "/ru/services/elektrika", "icon": "mdi:lightning-bolt", "text": "Электроработы"},
@@ -73,11 +73,11 @@ def process_file(file_path):
         content = f.read()
 
     # Determine lang
-    rel_path = os.path.relpath(file_path, 'c:/Users/Admin/Documents/GitHub/mrCar').replace('\\', '/')
+    rel_path = os.path.relpath(file_path, '.').replace('\\', '/')
     
-    if rel_path.startswith('ru/'):
+    if rel_path.startswith('ru/') or '-ru.html' in rel_path:
         items = ru_items
-    elif rel_path.startswith('en/'):
+    elif rel_path.startswith('en/') or '-en.html' in rel_path:
         items = en_items
     else:
         items = et_items
@@ -93,9 +93,9 @@ def process_file(file_path):
             f.write(new_content)
         print(f"Updated {rel_path}")
 
-html_files = glob.glob('c:/Users/Admin/Documents/GitHub/mrCar/**/*.html', recursive=True)
+html_files = glob.glob('**/*.html', recursive=True)
 for f in html_files:
-    if 'temp_docs' in f or '_service.template.html' in f:
+    if 'temp_docs' in f or '_service.template.html' in f or 'node_modules' in f:
         continue
     process_file(f)
 

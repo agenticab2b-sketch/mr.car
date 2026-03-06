@@ -114,12 +114,21 @@
             height: 100%;
         }
 
-        .hero__image img,
-        .hero__image video {
+        .hero__image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            aspect-ratio: inherit;
+            display: block;
+        }
+
+        .hero__image video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s ease-in;
         }
 
         .hero__content {
@@ -278,12 +287,21 @@
                     aria-hidden="true"></iconify-icon><span>English</span></a></div>
     </div><!-- HERO -->
     <section class="hero" id="hero">
-        <div class="hero__image"><video autoplay muted loop playsinline preload="metadata"
+        <div class="hero__image">
+            <!-- LCP Image — instant base layer, matches preload in <head> -->
+            <picture>
+                <source media="(min-width: 768px)" srcset="/pics/hero-desktop.webp">
+                <img src="/pics/hero-mobile.webp" alt="Mr.Car auto repair in Tallinn — mechanic at work"
+                    fetchpriority="high" width="960" height="1080">
+            </picture>
+            <!-- Video overlay — fades in when ready, no blocking -->
+            <video autoplay muted loop playsinline preload="metadata"
                 aria-label="Cinematic close-up of a mechanic tightening a bolt with a ratchet wrench under the hood"
-                title="Mechanic working under the hood">
+                title="Mechanic working under the hood" oncanplay="this.style.opacity=1">
                 <source src="/video/master_ratchet_vp9_crf28.webm" type="video/webm">
                 <source src="/video/master_ratchet_h264_crf28.mp4" type="video/mp4">
-            </video></div>
+            </video>
+        </div>
         <div class="hero__content reveal">
             <div class="hero__status" id="serviceStatus"><span class="hero__status-dot"></span><span
                     class="hero__status-label">Service status:</span><span class="hero__status-state"
