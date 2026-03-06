@@ -2210,7 +2210,7 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         padding: 0 var(--space-md);
         display: flex;
         align-items: center;
-        border-right: var(--border);
+        border-right: none;
         height: 100%;
         line-height: 1;
     }
@@ -2220,7 +2220,7 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         display: grid;
         place-items: center;
         padding: 0 var(--space-md);
-        border-left: var(--border);
+        border-left: none;
         height: 100%;
     }
 
