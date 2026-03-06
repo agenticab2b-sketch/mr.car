@@ -107,7 +107,7 @@ const LANGS = [
       weekend: 'Laupäev – Pühapäev',
       closed: 'Suletud',
       privacy: 'Privaatsuspoliitika',
-      privacyHref: '/privaatsus/',
+      privacyHref: '/privaatsus',
       terms: 'Üldtingimused',
       termsHref: '/tingimused.html'
     }
@@ -249,7 +249,7 @@ const LANGS = [
       weekend: 'Saturday – Sunday',
       closed: 'Closed',
       privacy: 'Privacy Policy',
-      privacyHref: '/en/privacy/',
+      privacyHref: '/privaatsus',
       terms: 'Terms & Conditions',
       termsHref: '/en/tingimused.html'
     }
