@@ -13,7 +13,62 @@
       "implementation_plan.md.resolved",
       "functions/**"
     ],
-    "headers": [],
+    "headers": [
+      {
+        "source": "/fonts/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/video/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/**/*.@(webp|avif|jpg|jpeg|png|gif|ico|svg)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/**/*.@(woff|woff2|ttf|otf|eot)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/**/*.@(css|js)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/**/*.@(html)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=300, must-revalidate"
+          }
+        ]
+      }
+    ],
     "redirects": [
       {
         "source": "/homepage.html",
