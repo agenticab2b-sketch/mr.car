@@ -506,7 +506,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     '<ul class="sd-sidebar__list">';
                 services.forEach(function (s) {
                     var active = s.slug === currentSlug ? ' active' : '';
-                    html += '<li><a href="/ru/services/' + s.slug + '" class="sd-sidebar__link' + active + '">' +
+                    html += '<li><a href="/ru/services" + s.slug + '" class="sd-sidebar__link' + active + '">' +
                         '<iconify-icon icon="' + s.icon + '" width="18" height="18" aria-hidden="true"></iconify-icon>' +
                         '<span>' + s.navTitle + '</span>' +
                         '</a></li>';

@@ -615,8 +615,8 @@ const SERVICES = [
 
     {
         key: "webasto",
-        slug: "webastehobsluzhivanie-diagnostika",
-        allSlugs: { ru: "webasto", ee: "webastehobsluzhivanie-diagnostika", en: "webasto-repair" },
+        slug: "webasto-diagnostika",
+        allSlugs: { ru: "webasto", ee: "webasto-diagnostika", en: "webasto-repair" },
         category: "Kliimaseade ja lisavarustus",
         navTitle: "Webasto remont",
         icon: "mdi:radiator",

@@ -10,7 +10,7 @@
  *   ru/services/{slug}.html  — 11 files
  *   en/services/{slug}.html  — 11 files
  *
- * Webasto standalone pages (webastehobsluzhivanie-diagnostika.html, webasto-sumptomid.html)
+ * Webasto standalone pages (webasto-diagnostika.html, webasto-sumptomid.html)
  * are NOT touched — they are excluded via SKIP_FILES constant.
  *
  * Run: node build.js
@@ -34,7 +34,7 @@ const TODAY = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
 // These standalone Webasto landing pages are NOT generated — they stay as-is.
 const SKIP_FILES = new Set([
-  'webastehobsluzhivanie-diagnostika',
+  'webasto-diagnostika',
   'webasto-sumptomid',
   'webasto-simptomy',
   'webasto-symptoms'

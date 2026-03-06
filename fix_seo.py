@@ -25,25 +25,28 @@ def fix_seo_issues(directory):
 
         original_content = content
 
-        # 1. Fix 404: to-diagnostika -> tehobsluzhivanie-diagnostika
-        content = content.replace('to-diagnostika', 'tehobsluzhivanie-diagnostika')
+        # 1. ROLLBACK PREVIOUS ERROR (Safety check)
+        content = content.replace('webastehobsluzhivanie-diagnostika', 'webasto-diagnostika')
 
-        # 2. Fix 301: Remove .html from internal links
-        # Matches href="/something.html" or href="something.html"
-        # Be careful not to replace external links ending in .html or canonical tags if they need .html (though cleanUrls implies they don't)
-        # We will only target specific known pages to be safe, or just use regex for local links.
-        # Let's target href="/..."
+        # 2. Fix 404: to-diagnostika -> tehobsluzhivanie-diagnostika
+        content = content.replace('/services/to-diagnostika', '/services/tehobsluzhivanie-diagnostika')
+        content = content.replace('"ru": "to-diagnostika"', '"ru": "tehobsluzhivanie-diagnostika"')
+
+        # 3. Fix 301: Remove .html from internal links
         content = re.sub(r'href=["\'](/[^"\']+)\.html["\']', r'href="\1"', content)
 
-        # 3. Fix 301: Remove trailing slashes from language roots (except root /)
-        # href="/ru/" -> href="/ru"
-        # href="/en/" -> href="/en"
-        content = re.sub(r'href=["\']/ru/["\']', r'href="/ru"', content)
-        content = re.sub(r'href=["\']/en/["\']', r'href="/en"', content)
+        # 4. Fix 301: Remove trailing slashes from all internal links
+        # href="/something/" -> href="/something"
+        # Avoid root "/"
+        content = re.sub(r'href=["\'](/[^"\']+)/["\']', r'href="\1"', content)
 
-        # Let's also check for canonical links just in case they have .html or trailing slashes
+        # 5. Fix 301: Handle language roots specially if needed (already handled by rule 4, but let's be sure)
+        # href="/ru/" -> href="/ru"
+        
+        # 6. Fix canonical links (Remove .html and trailing slash)
         content = re.sub(r'href=["\'](https://www.mrcar.ee/[^"\']+)\.html["\']', r'href="\1"', content)
-        content = re.sub(r'href=["\'](https://www.mrcar.ee/(ru|en))/["\']', r'href="\1"', content)
+        # Remove trailing slash from canonical
+        content = re.sub(r'(<link rel="canonical" href="https://www.mrcar.ee/[^"]+)/"', r'\1"', content)
 
         if content != original_content:
             with open(filepath, 'w', encoding='utf-8') as f:
