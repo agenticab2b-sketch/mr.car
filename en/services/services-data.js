@@ -457,7 +457,7 @@ const SERVICES = [
         navTitle: "Oil & Filter Change",
         icon: "mdi:oil",
         heroTitle: "Oil & Filter Change",
-        heroLead: "Quick oil change according to manufacturer specs with correct matching. From €35 including filter.",
+        heroLead: "Quick oil change according to manufacturer specs with correct matching. From €45 including filter.",
         heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
         introTitle: "Oil Change at Mr.Car",
         introText: [
@@ -484,7 +484,7 @@ const SERVICES = [
             "Fuel filter replacement",
             "All fluid level checks"
         ],
-        afterListText: "Price from €35 (oil + filter). Exact cost depends on engine size and oil brand.",
+        afterListText: "Price from €45 (oil + filter). Exact cost depends on engine size and oil brand.",
         promoBanner: { enabled: false },
         ctaSection: {
             title: "Time for an oil change?",
@@ -497,8 +497,8 @@ const SERVICES = [
             subtitle: "Leave a request — we'll call back within 30 minutes"
         },
         seo: {
-            title: "Oil Change in Tallinn — Mr.Car | from €35",
-            description: "Oil and filter change in Tallinn. Selection by manufacturer specs. Motul, Castrol, Mobil 1. From €35. Kopli 82a. +372 5646 1210"
+            title: "Oil Change in Tallinn — Mr.Car | from €45",
+            description: "Oil and filter change in Tallinn. Selection by manufacturer specs. Motul, Castrol, Mobil 1. From €45. Kopli 82a. +372 5646 1210"
         }
     },
 

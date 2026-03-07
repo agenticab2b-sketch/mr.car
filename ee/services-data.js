@@ -457,7 +457,7 @@ const SERVICES = [
         navTitle: "Õli ja Filtrite vahetus",
         icon: "mdi:oil",
         heroTitle: "Õlivahetus ja filtrid",
-        heroLead: "Kiire õlivahetus tootja lubade järgi sobiva õliga. Alates €35 koos filtriga.",
+        heroLead: "Kiire õlivahetus tootja lubade järgi sobiva õliga. Alates €45 koos filtriga.",
         heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
         introTitle: "Õlivahetus Mr.Car-is",
         introText: [
@@ -484,7 +484,7 @@ const SERVICES = [
             "Kütusefilteri vahetus",
             "Kõigi vedelike taseme kontroll"
         ],
-        afterListText: "Hind alates €35 (õli + filter). Täpne hind sõltub mootori mahust ja õli margist.",
+        afterListText: "Hind alates €45 (õli + filter). Täpne hind sõltub mootori mahust ja õli margist.",
         promoBanner: { enabled: false },
         ctaSection: {
             title: "Aeg õlivahetuseks?",
@@ -497,8 +497,8 @@ const SERVICES = [
             subtitle: "Jäta päring — helistame tagasi 30 minutiga"
         },
         seo: {
-            title: "Õlivahetus Tallinnas — Mr.Car | alates €35",
-            description: "Õlivahetus ja filtrid Tallinnas. Valik tootja lubade järgi. Motul, Castrol, Mobil 1. Alates €35. Kopli 82a. +372 5646 1210"
+            title: "Õlivahetus Tallinnas — Mr.Car | alates €45",
+            description: "Õlivahetus ja filtrid Tallinnas. Valik tootja lubade järgi. Motul, Castrol, Mobil 1. Alates €45. Kopli 82a. +372 5646 1210"
         }
     },
 
