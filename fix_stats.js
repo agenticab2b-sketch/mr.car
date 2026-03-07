@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const files = [
-    { file: 'ru/o-nas.html', rating: '4,9 ★', rText: 'Рейтинг Google', clients: '500+', cText: 'Довольных клиентов', warranty: '100%', wText: 'Гарантия на работы', company: 'Anet Eesti OÜ', coText: 'Официальная лицензия' },
-    { file: 'en/about.html', rating: '4.9 ★', rText: 'Google Rating', clients: '500+', cText: 'Satisfied Clients', warranty: '100%', wText: 'Work Warranty', company: 'Anet Eesti OÜ', coText: 'Official License' },
-    { file: 'meist.html', rating: '4,9 ★', rText: 'Google hinnang', clients: '500+', cText: 'Rahulolev klient', warranty: '100%', wText: 'Garantii töödele', company: 'Anet Eesti OÜ', coText: 'Ametlik tegevusluba' }
+    { file: 'ru/o-nas.html', rating: '4,9 ★', rText: 'Рейтинг Google', clients: '500+', cText: 'Довольных клиентов', warranty: '100%', wText: 'Гарантия на работы', company: 'Anet Eesti OÜ', coText: 'Kopli 82a, Tallinn' },
+    { file: 'en/about.html', rating: '4.9 ★', rText: 'Google Rating', clients: '500+', cText: 'Satisfied Clients', warranty: '100%', wText: 'Work Warranty', company: 'Anet Eesti OÜ', coText: 'Kopli 82a, Tallinn' },
+    { file: 'meist.html', rating: '4,9 ★', rText: 'Google hinnang', clients: '500+', cText: 'Rahulolev klient', warranty: '100%', wText: 'Garantii töödele', company: 'Anet Eesti OÜ', coText: 'Kopli 82a, Tallinn' }
 ];
 
 files.forEach(item => {
