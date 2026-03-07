@@ -2,16 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W48VVTPC');</script>
-    <!-- End Google Tag Manager -->
+
     <!-- Global Noindex for Non-Canonical Hosts -->
     <script>
         (function () {
@@ -145,6 +136,46 @@
             margin: 0;
         }
     </style>
+    <!-- Resource Hints for Performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Balanced Deferred GTM -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function loadGTM() {
+            if (window.gtmLoaded) return;
+            window.gtmLoaded = true;
+
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), 
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-W48VVTPC');
+        }
+
+        function scheduleGTM() {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGTM, { timeout: 2000 });
+            } else {
+                setTimeout(loadGTM, 1500);
+            }
+        }
+
+        if (window.innerWidth <= 768) {
+            window.addEventListener('load', scheduleGTM);
+        } else {
+            window.addEventListener('DOMContentLoaded', function () {
+                setTimeout(scheduleGTM, 800);
+            });
+        }
+    </script>
 
     <!-- Canonical & hreflang -->
     <link rel="canonical" href="https://www.mrcar.ee/en">
@@ -292,12 +323,11 @@
                     fetchpriority="high" width="720" height="540">
             </picture>
             <!-- Video overlay — fades in when ready, no blocking -->
-            <video autoplay muted loop playsinline preload="metadata"
+            <video id="heroVideo" muted loop playsinline preload="none"
                 aria-label="Cinematic close-up of a mechanic tightening a bolt with a ratchet wrench under the hood"
                 title="Mechanic working under the hood" oncanplay="this.style.opacity=1">
-                <source src="/video/master_ratchet_vp9_crf28.webm" type="video/webm">
-                <source src="/video/master_ratchet_h264_crf28.mp4" type="video/mp4">
-            </video>
+                    <!-- sources load via JS purely to save LCP bandwidth -->
+                </video>
         </div>
         <div class="hero__content reveal">
             <div class="hero__status" id="serviceStatus"><span class="hero__status-dot"></span><span
@@ -362,7 +392,7 @@
                             href="/en/contact">leave a request online</a>.</p>
                 </div>
                 <div class="seo-intro__image">
-                    <img src="/homepage_pics/mr-car-logo.avif" alt="Mr.Car Car Repair in Tallinn">
+                    <img src="/homepage_pics/mr-car-logo.avif" alt="Mr.Car Car Repair in Tallinn" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1079,6 +1109,24 @@
             // Re-init interval if needed (handled by toggle above)
         }
 
+    </script>
+
+    <!-- Lazy load hero video after LCP to preserve mobile bandwidth -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var v = document.getElementById("heroVideo");
+            if (v) {
+                var delay = window.innerWidth < 768 ? 3000 : 0;
+                setTimeout(function () {
+                    v.innerHTML = '<source src="/video/master_ratchet_vp9_crf28.webm" type="video/webm"><source src="/video/master_ratchet_h264_crf28.mp4" type="video/mp4">';
+                    v.load();
+                    var playPromise = v.play();
+                    if(playPromise !== undefined) {
+                        playPromise.catch(function(e) { });
+                    }
+                }, delay);
+            }
+        });
     </script>
 </body>
 

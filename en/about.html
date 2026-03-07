@@ -248,100 +248,337 @@
         </div>
     </div>
 
+
     <!-- MAIN CONTENT -->
-        <main id="about-main">
+    <main id="about-main">
+
         <!-- HERO -->
-        <section class="prices-hero">
+        <section class="prices-hero"
+            style="padding: 120px var(--container-padding) 60px; background: var(--bg-surface); border-bottom: 1px solid var(--border-grid); text-align: center;">
             <nav aria-label="Breadcrumb" style="display: flex; justify-content: center;">
                 <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
                         <a href="/en" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Home</span></a>
                         <meta itemprop="position" content="1" />
                     </li>
                     <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
-                    <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
                         <span itemprop="name">About Us</span>
                         <meta itemprop="position" content="2" />
                     </li>
                 </ol>
             </nav>
-            <h1 class="prices-hero__title">Your Reliable Partner</h1>
-            <p class="prices-hero__desc" style="max-width: 600px; margin: 0 auto;">Learn more about our company and processes. Mr.Car is designed to provide the best service.</p>
+            <h1 class="prices-hero__title">Your Reliable Auto Partner</h1>
+            <p class="prices-hero__desc"
+                style="max-width: 600px; margin: 1rem auto 0; font-size: 1.125rem; color: var(--text-dimmed); line-height: 1.7;">
+                A modern and reliable car service in
+                Tallinn where you can be sure of work quality and clear communication.</p>
         </section>
 
-        <!-- SEO Intro Component -->
-        <section class="seo-intro" style="padding-top: var(--space-4xl); padding-bottom: var(--space-xxl);">
+        <!-- STATS STRIP -->
+        <div style="background: var(--bg-surface); border-top: 1px solid var(--border-grid); border-bottom: 1px solid var(--border-grid);">
+            <div class="site-container stats-strip">
+                <div class="stats-strip__item">
+                    <div class="stats-strip__value">4.9 ★</div>
+                    <div class="stats-strip__label">Google Rating</div>
+                </div>
+                <div class="stats-strip__item">
+                    <div class="stats-strip__value">500+</div>
+                    <div class="stats-strip__label">Satisfied Clients</div>
+                </div>
+                <div class="stats-strip__item">
+                    <div class="stats-strip__value">100%</div>
+                    <div class="stats-strip__label">Work Warranty</div>
+                </div>
+                <div class="stats-strip__item stats-strip__item--full">
+                    <div class="stats-strip__value">Anet Eesti OÜ</div>
+                    <div class="stats-strip__label">Official License</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTRO + IMAGE -->
+        <section class="seo-intro">
             <div class="site-container reveal">
                 <div class="seo-intro__grid">
                     <div class="seo-intro__content">
                         <div class="section-header">
-                            <span class="meta text-accent">/// Car Repair in Tallinn</span>
-                            <h2>A Thoughtful and Professional Approach</h2>
+                            <span class="meta text-accent">/// Who We Are</span>
+                            <h2>A Reliable Partner for Your Car</h2>
                         </div>
-                        <p><strong>Mr.Car Autoremont Tallinnas</strong> is a modern and reliable car repair shop in Tallinn, officially operating under Anet Eesti OÜ. We service and repair passenger cars and vans, helping tallinn and Harjumaa car owners keep their vehicles safe, reliable, and technically sound year-round.</p>
-                        <p>At the Mr.Car auto center in Tallinn, every job is based on a clear and professional process. Maintenance and repairs are carried out in accordance with car manufacturers' technical requirements and documentation.</p>
-                        <p>We follow the repair technology and the correct sequence of work to ensure the result is durable and the car works as it should after the repair. We do not use temporary or simplified solutions if they could affect the vehicle's safety, reliability, or future use.</p>
+                        <p><strong>Mr.Car Autoremont Tallinnas</strong> is a modern and reliable car repair shop in
+                            Tallinn, officially operating under Anet Eesti OÜ. We service and repair passenger cars and
+                            vans, helping Tallinn and Harjumaa car owners keep their vehicles safe, reliable, and
+                            technically sound year-round.</p>
+                        <p>Our goal is to provide a car service where the customer can be confident in both the quality
+                            of the work and in open, understandable communication — from the first diagnostics to the
+                            final handover of the vehicle.</p>
+                        <div
+                            style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center; margin-top: var(--space-lg);">
+                            <a href="/en/contact" class="btn btn-primary">Book an Appointment <span
+                                    class="arrow">↗</span></a>
+                            <a href="tel:+37256461210"
+                                style="display: inline-flex; align-items: center; gap: 8px; color: var(--accent-primary); font-family: var(--font-mono); font-weight: 700; font-size: 1rem; text-decoration: none; padding: var(--space-md) 0; white-space: nowrap; transition: color var(--transition-fast);"
+                                onmouseover="this.style.color='var(--accent-primary-hover)'"
+                                onmouseout="this.style.color='var(--accent-primary)'"><iconify-icon icon="mdi:phone"
+                                    width="18" aria-hidden="true"></iconify-icon> +372 5646 1210</a>
+                        </div>
                     </div>
                     <div class="seo-intro__image">
-                        <img src="${bgImage}" alt="Mr.Car Car Repair Tallinn - workflow">
+                        <img src="/homepage_pics/mr-car-logo.avif" alt="Mr.Car Auto Service in Tallinn">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services All Grid Component -->
-        <section class="services-section" style="padding-top: var(--space-2xl);">
-            <div class="services-section__header site-container" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
-                <div>
-                    <span class="meta text-accent">/// Services</span>
-                    <h2>Car Repair Services in Tallinn</h2>
+        <!-- HOW WE WORK — STEPS -->
+        <section
+            style="background: var(--bg-surface); padding: var(--space-section) 0; border-top: 1px solid var(--border-grid); border-bottom: 1px solid var(--border-grid);">
+            <div class="site-container reveal">
+                <div class="section-header" style="margin-bottom: var(--space-2xl);">
+                    <span class="meta text-accent">/// How We Work</span>
+                    <h2>A Thoughtful Work Process</h2>
                 </div>
-            </div>
-            <div class="services-all site-container reveal">
-                <div class="services-all__grid">
-                    <a href="/en/services/maintenance-diagnostics" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:car-cog" width="24" height="24"></iconify-icon></span><span class="services-all__name">Scheduled maintenance (oil change, filters)</span><span class="services-all__arrow">→</span></a>
-                    <a href="/en/services/engine-repair" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:engine" width="24" height="24"></iconify-icon></span><span class="services-all__name">Engine and transmission repair</span><span class="services-all__arrow">→</span></a>
-                    <a href="/en/services/chassis-brakes" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:car-brake-alert" width="24" height="24"></iconify-icon></span><span class="services-all__name">Braking system and chassis repair</span><span class="services-all__arrow">→</span></a>
-                    <a href="/en/services/exhaust-welding" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:fire" width="24" height="24"></iconify-icon></span><span class="services-all__name">Exhaust system repair and welding</span><span class="services-all__arrow">→</span></a>
-                    <a href="#about-main" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:car-shift-pattern" width="24" height="24"></iconify-icon></span><span class="services-all__name">Wheel alignment</span><span class="services-all__arrow">→</span></a>
-                    <a href="/en/services/ac-service" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:snowflake" width="24" height="24"></iconify-icon></span><span class="services-all__name">Climate and AC system maintenance & filling</span><span class="services-all__arrow">→</span></a>
-                    <a href="/en/services/maintenance-diagnostics" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:laptop-mac" width="24" height="24"></iconify-icon></span><span class="services-all__name">Computer diagnostics and electronic coding</span><span class="services-all__arrow">→</span></a>
-                    <a href="/en/services/webasto-repair" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:radiator" width="24" height="24"></iconify-icon></span><span class="services-all__name">Webasto installation and maintenance</span><span class="services-all__arrow">→</span></a>
-                    <a href="#about-main" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:remote" width="24" height="24"></iconify-icon></span><span class="services-all__name">Remote start installation</span><span class="services-all__arrow">→</span></a>
-                    <a href="#about-main" class="services-all__item"><span class="services-all__number"><iconify-icon icon="mdi:tools" width="24" height="24"></iconify-icon></span><span class="services-all__name">Various technical modifications (retrofitting)</span><span class="services-all__arrow">→</span></a>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div
+                            style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-primary); display: flex; align-items: center; justify-content: center; color: #000; font-family: var(--font-heading); font-weight:900; font-size: 1.1rem; flex-shrink: 0;">
+                            1</div>
+                        <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin: 0;">Diagnostics
+                        </h3>
+                        <p style="color: var(--text-dimmed); font-size: 0.9rem; margin: 0; line-height: 1.6;">Every job
+                            starts with thorough diagnostics. We determine the fault accurately, not approximately.</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div
+                            style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-primary); display: flex; align-items: center; justify-content: center; color: #000; font-family: var(--font-heading); font-weight:900; font-size: 1.1rem; flex-shrink: 0;">
+                            2</div>
+                        <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin: 0;">Explanation &
+                            Quote</h3>
+                        <p style="color: var(--text-dimmed); font-size: 0.9rem; margin: 0; line-height: 1.6;">We explain
+                            the problem, discuss the necessary work, and agree on the cost before starting.</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div
+                            style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-primary); display: flex; align-items: center; justify-content: center; color: #000; font-family: var(--font-heading); font-weight:900; font-size: 1.1rem; flex-shrink: 0;">
+                            3</div>
+                        <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin: 0;">Standardized
+                            Repair</h3>
+                        <p style="color: var(--text-dimmed); font-size: 0.9rem; margin: 0; line-height: 1.6;">We adhere
+                            to the manufacturers' technical requirements and follow the correct repair procedures.</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div
+                            style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-primary); display: flex; align-items: center; justify-content: center; color: #000; font-family: var(--font-heading); font-weight:900; font-size: 1.1rem; flex-shrink: 0;">
+                            4</div>
+                        <h3 style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin: 0;">Handover &
+                            Warranty</h3>
+                        <p style="color: var(--text-dimmed); font-size: 0.9rem; margin: 0; line-height: 1.6;">Upon
+                            completion, we give you a clear overview of the work done. All repairs come with a warranty.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Values Component -->
-        <section class="services-section" style="background-color: var(--bg-surface); margin-top: var(--space-3xl); padding-top: var(--space-2xl); padding-bottom: var(--space-4xl);">
-            <div class="services-section__header site-container">
-                <span class="meta text-accent">/// Why Choose Us</span>
-                <h2>Mr.Car Values</h2>
+        <!-- SERVICES GRID -->
+        <section class="services-section">
+            <div class="sd-main site-container reveal">
+                <!-- LEFT: Content -->
+                <article class="sd-content">
+                    <div class="section-header">
+                        <span class="meta text-accent">/// What We Offer</span>
+                        <h2>Our Car Repair Services in Tallinn</h2>
+                    </div>
+                    <p style="color: var(--text-dimmed); font-size: 0.95rem; line-height: 1.8; margin: 0 0 1.5rem 0; max-width: 600px;">
+                        We offer a full range of car maintenance and repair services — from scheduled oil changes to complex engine repairs. All work is carried out to manufacturer standards.
+                    </p>
+                    <div class="services-all__grid">
+                    <a href="/en/services/maintenance-diagnostics" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:car-cog" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Scheduled
+                            maintenance</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/engine-repair" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:engine" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Engine & transmission
+                            repair</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/chassis-brakes" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:car-brake-alert" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Brakes & suspension
+                            repair</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/exhaust-welding" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:fire" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Exhaust system repair
+                            & welding</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/ac-service" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:snowflake" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">AC & climate control
+                            service</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/maintenance-diagnostics" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:laptop-mac" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Computer diagnostics
+                            & coding</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/webasto-repair" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:radiator" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Webasto installation
+                            & service</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/tire-service" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:tire" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Tire
+                            services</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/oil-change" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:oil" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Oil & filters
+                            change</span><span class="services-all__arrow">→</span></a>
+                    <a href="/en/services/pre-purchase-inspection" class="services-all__item"><span
+                            class="services-all__number"><iconify-icon icon="mdi:file-search-outline" width="24"
+                                height="24"></iconify-icon></span><span class="services-all__name">Pre-purchase
+                            inspection</span><span class="services-all__arrow">→</span></a>
+                </div>
+                </article>
+
+                <!-- RIGHT: Services sidebar -->
+                <aside class="sd-sidebar" style="position: sticky; top: 120px;">
+                    <div class="sd-sidebar__category">
+                        <div class="sd-sidebar__cat-title">Diagnostics & Electrical</div>
+                        <ul class="sd-sidebar__list">
+                            <li><a href="/en/services/electrical-repair" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:lightning-bolt" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Electrical repair</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="sd-sidebar__category">
+                        <div class="sd-sidebar__cat-title">Engine & Drivetrain</div>
+                        <ul class="sd-sidebar__list">
+                            <li><a href="/en/services/engine-repair" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:engine" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Engine repair</span>
+                            </a></li>
+                            <li><a href="/en/services/transmission-repair" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:car-shift-pattern" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Transmission repair</span>
+                            </a></li>
+                            <li><a href="/en/services/exhaust-welding" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:fire" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Exhaust & welding</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="sd-sidebar__category">
+                        <div class="sd-sidebar__cat-title">Chassis & Brakes</div>
+                        <ul class="sd-sidebar__list">
+                            <li><a href="/en/services/chassis-brakes" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Brakes & suspension</span>
+                            </a></li>
+                            <li><a href="/en/services/tire-service" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:tire" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Tire service</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="sd-sidebar__category">
+                        <div class="sd-sidebar__cat-title">Maintenance</div>
+                        <ul class="sd-sidebar__list">
+                            <li><a href="/en/services/maintenance-diagnostics" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:car-cog" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Maintenance & diagnostics</span>
+                            </a></li>
+                            <li><a href="/en/services/oil-change" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:oil" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Oil & filter change</span>
+                            </a></li>
+                            <li><a href="/en/services/pre-purchase-inspection" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:file-search-outline" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Pre-purchase inspection</span>
+                            </a></li>
+                            <li><a href="/en/services/general-car-repair" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:wrench" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>General car repair</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="sd-sidebar__category">
+                        <div class="sd-sidebar__cat-title">Climate & Equipment</div>
+                        <ul class="sd-sidebar__list">
+                            <li><a href="/en/services/ac-service" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:snowflake" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>AC & climate service</span>
+                            </a></li>
+                            <li><a href="/en/services/webasto-repair" class="sd-sidebar__link">
+                                <iconify-icon icon="mdi:radiator" width="18" height="18" aria-hidden="true"></iconify-icon>
+                                <span>Webasto repair</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
-            <div class="services-grid site-container reveal" style="padding-top: var(--space-lg);">
+        </section>
+
+        <!-- VALUES CARDS -->
+        <section
+            style="background: var(--bg-surface); border-top: 1px solid var(--border-grid); border-bottom: 1px solid var(--border-grid); padding: var(--space-section) 0;">
+            <div class="services-section__header site-container">
+                <div class="section-header">
+                    <span class="meta text-accent">/// Why Choose Us</span>
+                    <h2>Why Clients Trust Mr.Car</h2>
+                </div>
+            </div>
+            <div class="services-grid site-container reveal">
                 <div class="service-card service-card--centered">
-                    <div class="service-card__icon"><iconify-icon icon="mdi:message-check" width="28" height="28" aria-hidden="true"></iconify-icon></div>
-                    <h3 class="service-card__title">Clear and Honest Communication</h3>
-                    <p class="service-card__description">We prioritize transparent customer communication. Before starting, we explain the car's technical condition, discuss the work, and agree on the cost.</p>
+                    <div class="service-card__icon"><iconify-icon icon="mdi:message-check" width="28" height="28"
+                            aria-hidden="true"></iconify-icon></div>
+                    <h3 class="service-card__title">Honest Communication</h3>
+                    <p class="service-card__description">We explain what needs to be fixed and agree on the cost before
+                        starting any work. No hidden fees.</p>
                 </div>
                 <div class="service-card service-card--featured service-card--centered">
-                    <div class="service-card__icon"><iconify-icon icon="mdi:star-circle" width="28" height="28" aria-hidden="true"></iconify-icon></div>
-                    <h3 class="service-card__title">Customer Trust</h3>
-                    <p class="service-card__description">The quality of our work is confirmed by customer feedback – a 4.9-star Google rating based on hundreds of real reviews.</p>
+                    <div class="service-card__icon"><iconify-icon icon="mdi:star-circle" width="28" height="28"
+                            aria-hidden="true"></iconify-icon></div>
+                    <h3 class="service-card__title">4.9 ★ on Google</h3>
+                    <p class="service-card__description">The quality of our work is confirmed by real clients. A
+                        4.9-star rating on Google is our best proof.</p>
                 </div>
                 <div class="service-card service-card--centered">
-                    <div class="service-card__icon"><iconify-icon icon="mdi:shield-check" width="28" height="28" aria-hidden="true"></iconify-icon></div>
-                    <h3 class="service-card__title">Reliable Service</h3>
-                    <p class="service-card__description">If you are looking for a car repair shop in Tallinn where a professional approach, an honest attitude, and consistent quality meet, Mr.Car is your safe choice.</p>
+                    <div class="service-card__icon"><iconify-icon icon="mdi:shield-check" width="28" height="28"
+                            aria-hidden="true"></iconify-icon></div>
+                    <h3 class="service-card__title">Warranty on Everything</h3>
+                    <p class="service-card__description">We use original parts or high-quality analogs from verified
+                        manufacturers. All work is covered by a warranty.</p>
+                </div>
+                <div class="service-card service-card--centered">
+                    <div class="service-card__icon"><iconify-icon icon="mdi:tools" width="28" height="28"
+                            aria-hidden="true"></iconify-icon></div>
+                    <h3 class="service-card__title">Correct Procedures</h3>
+                    <p class="service-card__description">We strictly follow manufacturers' requirements and repair
+                        procedures. We don't use shortcut solutions.</p>
                 </div>
             </div>
         </section>
 
-        <section class="site-container reveal" style="padding: var(--space-3xl) 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-            <p style="margin-bottom: var(--space-lg); max-width: 600px; color: var(--text-main);">If necessary, we also offer detailing services to make the car look as good as it drives.</p>
-            <a href="/en/contact" class="btn btn-primary" style="display: inline-flex;">Book an Appointment <span class="arrow">↗</span></a>
-        </section>
+        <!-- CTA -->
+        <section style="border-top: 1px solid var(--border-grid);">
+            <div class="site-container reveal"
+                style="padding: var(--space-section) 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: var(--space-lg);">
+                <div class="section-header" style="align-items: center;">
+                    <span class="meta text-accent">/// Ready to Start?</span>
+                    <h2 style="margin: 0; max-width: 480px;">Book an Appointment or Call Us</h2>
+                </div>
+                <p style="max-width: 520px; color: var(--text-dimmed); margin: 0;">Leave a request, and we will call you
+                    back within 24 hours during working days. Kopli 82a, 10412 Tallinn — Mon-Fri 09:00-18:00.</p>
+                <div
+                    style="display: flex; gap: var(--space-xl); flex-wrap: wrap; justify-content: center; align-items: center;">
+                    <a href="/en/contact" class="btn btn-primary">Book an Appointment <span class="arrow">↗</span></a>
+                    <a href="tel:+37256461210"
+                        style="display: inline-flex; align-items: center; gap: 8px; color: var(--accent-primary); font-family: var(--font-mono); font-weight: 700; font-size: 1rem; text-decoration: none; white-space: nowrap; transition: color var(--transition-fast);"
+                        onmouseover="this.style.color='var(--accent-primary-hover)'"
+                        onmouseout="this.style.color='var(--accent-primary)'"><iconify-icon icon="mdi:phone" width="18"
+                            aria-hidden="true"></iconify-icon> +372 5646 1210</a>
+                </div>
+            </div>
 
     </main>
 
