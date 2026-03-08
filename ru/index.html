@@ -335,7 +335,7 @@
                     fetchpriority="high" width="720" height="540">
             </picture>
             <!-- Video overlay — fades in when ready, no blocking -->
-            <video id="heroVideo" muted loop playsinline preload="none"
+            <video id="heroVideo" muted loop playsinline preload="none" poster="/pics/hero-mobile.webp"
                 aria-label="Cinematic close-up of a mechanic tightening a bolt with a ratchet wrench under the hood"
                 title="Mechanic working under the hood" oncanplay="this.style.opacity=1">
                     <!-- sources load via JS purely to save LCP bandwidth -->
@@ -1070,6 +1070,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             var v = document.getElementById("heroVideo");
             if (v) {
+                v.poster = window.innerWidth < 768 ? '/pics/hero-mobile.webp' : '/pics/hero-desktop.webp';
                 var delay = window.innerWidth < 768 ? 3000 : 0;
                 setTimeout(function () {
                     v.innerHTML = '<source src="/video/master_ratchet_vp9_crf28.webm" type="video/webm"><source src="/video/master_ratchet_h264_crf28.mp4" type="video/mp4">';

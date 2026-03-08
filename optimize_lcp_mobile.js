@@ -26,7 +26,7 @@ files.forEach(file => {
 
     // Check if hasn't been replaced yet
     if (videoRegex.test(content)) {
-        const replacementVideo = `<video id="heroVideo" muted loop playsinline preload="none"$1>
+        const replacementVideo = `<video id="heroVideo" muted loop playsinline preload="none" poster="/pics/hero-mobile.webp"$1>
                     <!-- sources load via JS purely to save LCP bandwidth -->
                 </video>`;
         content = content.replace(videoRegex, replacementVideo);
@@ -37,6 +37,7 @@ files.forEach(file => {
         document.addEventListener("DOMContentLoaded", function () {
             var v = document.getElementById("heroVideo");
             if (v) {
+                v.poster = window.innerWidth < 768 ? '/pics/hero-mobile.webp' : '/pics/hero-desktop.webp';
                 var delay = window.innerWidth < 768 ? 3000 : 0;
                 setTimeout(function () {
                     v.innerHTML = '<source src="/video/master_ratchet_vp9_crf28.webm" type="video/webm"><source src="/video/master_ratchet_h264_crf28.mp4" type="video/mp4">';
