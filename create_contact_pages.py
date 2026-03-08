@@ -1,9 +1,9 @@
 import re
 
 base_paths = {
-    'et': {'gallery': 'galerii.html', 'index': 'index.html', 'output': 'kontakt.html', 'title': 'Kontakt', 'desc': 'Võta ühendust ja leiame parima lahenduse Sinu autole. Broneeri aeg asjatundlikku remonditöökotta.', 'home_url': '/', 'home_name': 'Avaleht', 'lang_ext': '', 'success_msg': 'Aitäh! Päring on saadetud.', 'err_msg': 'Päringut ei õnnestunud saata. Proovige uuesti.', 'sending_msg': 'Saatmine...', 'req_msg': 'Palun täitke kõik kohustuslikud väljad', 'canonical': 'https://www.mrcar.ee/kontakt.html'},
-    'ru': {'gallery': 'ru/galereya.html', 'index': 'ru/index.html', 'output': 'ru/contact.html', 'title': 'Контакты', 'desc': 'Свяжитесь с нами и мы найдем лучшее решение для вашего автомобиля. Запишитесь на ремонт.', 'home_url': '/ru/', 'home_name': 'Главная', 'lang_ext': '/ru', 'success_msg': 'Спасибо! Заявка отправлена.', 'err_msg': 'Не удалось отправить заявку. Попробуйте ещё раз.', 'sending_msg': 'Отправка...', 'req_msg': 'Необходимо заполнить выделенные поля', 'canonical': 'https://www.mrcar.ee/ru/contact.html'},
-    'en': {'gallery': 'en/gallery.html', 'index': 'en/index.html', 'output': 'en/contact.html', 'title': 'Contact', 'desc': 'Contact us and we will find the best solution for your car. Book an appointment.', 'home_url': '/en/', 'home_name': 'Home', 'lang_ext': '/en', 'success_msg': 'Thank you! Your request has been sent.', 'err_msg': 'Failed to send request. Please try again.', 'sending_msg': 'Sending...', 'req_msg': 'Please fill in all required fields', 'canonical': 'https://www.mrcar.ee/en/contact.html'}
+    'et': {'gallery': 'galerii.html', 'index': 'index.html', 'output': 'kontakt.html', 'title': 'Kontakt', 'desc': 'Võta ühendust ja leiame parima lahenduse Sinu autole. Broneeri aeg asjatundlikku remonditöökotta.', 'home_url': '/', 'home_name': 'Avaleht', 'lang_ext': '', 'success_msg': 'Aitäh! Päring on saadetud.', 'err_msg': 'Päringut ei õnnestunud saata. Proovige uuesti.', 'sending_msg': 'Saatmine...', 'req_msg': 'Palun täitke kõik kohustuslikud väljad', 'canonical': 'https://www.mrcar.ee/kontakt'},
+    'ru': {'gallery': 'ru/galereya.html', 'index': 'ru/index.html', 'output': 'ru/kontakt.html', 'title': 'Контакты', 'desc': 'Свяжитесь с нами и мы найдем лучшее решение для вашего автомобиля. Запишитесь на ремонт.', 'home_url': '/ru/', 'home_name': 'Главная', 'lang_ext': '/ru', 'success_msg': 'Спасибо! Заявка отправлена.', 'err_msg': 'Не удалось отправить заявку. Попробуйте ещё раз.', 'sending_msg': 'Отправка...', 'req_msg': 'Необходимо заполнить выделенные поля', 'canonical': 'https://www.mrcar.ee/ru/kontakt'},
+    'en': {'gallery': 'en/gallery.html', 'index': 'en/index.html', 'output': 'en/contact.html', 'title': 'Contact', 'desc': 'Contact us and we will find the best solution for your car. Book an appointment.', 'home_url': '/en/', 'home_name': 'Home', 'lang_ext': '/en', 'success_msg': 'Thank you! Your request has been sent.', 'err_msg': 'Failed to send request. Please try again.', 'sending_msg': 'Sending...', 'req_msg': 'Please fill in all required fields', 'canonical': 'https://www.mrcar.ee/en/contact'}
 }
 
 for lang, config in base_paths.items():
@@ -40,10 +40,10 @@ for lang, config in base_paths.items():
     new_html = re.sub(r'id="canonicalLink"\s+href="[^"]+"', f'id="canonicalLink" href="{config["canonical"]}"', new_html)
 
     # Update hreflangs
-    new_html = re.sub(r'<link rel="alternate" hreflang="et"[^>]+>', '<link rel="alternate" hreflang="et" href="https://www.mrcar.ee/kontakt.html">', new_html)
-    new_html = re.sub(r'<link rel="alternate" hreflang="ru"[^>]+>', '<link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/contact.html">', new_html)
-    new_html = re.sub(r'<link rel="alternate" hreflang="en"[^>]+>', '<link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/contact.html">', new_html)
-    new_html = re.sub(r'<link rel="alternate" hreflang="x-default"[^>]+>', '<link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/kontakt.html">', new_html)
+    new_html = re.sub(r'<link rel="alternate" hreflang="et"[^>]+>', '<link rel="alternate" hreflang="et" href="https://www.mrcar.ee/kontakt">', new_html)
+    new_html = re.sub(r'<link rel="alternate" hreflang="ru"[^>]+>', '<link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/kontakt">', new_html)
+    new_html = re.sub(r'<link rel="alternate" hreflang="en"[^>]+>', '<link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/contact">', new_html)
+    new_html = re.sub(r'<link rel="alternate" hreflang="x-default"[^>]+>', '<link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/kontakt">', new_html)
 
     # 2. Main content replacement
     main_pattern = r'<main id="prices-main">.*?</main>'
@@ -98,3 +98,4 @@ for lang, config in base_paths.items():
         f.write(new_html)
     
     print(f"Created {config['output']}")
+

@@ -9,7 +9,7 @@ files = [
         "title": "Üldtingimused",
         "desc": "Tutvuge meie autoteeninduse üldtingimustega. Läbipaistvus ja selged reeglid igas tööetapis.",
         "link_text": "Loe lähemalt",
-        "link_url": "/tingimused.html"
+        "link_url": "/tingimused"
     },
     {
         "path": "ru/index.html",
@@ -18,7 +18,7 @@ files = [
         "title": "Условия",
         "desc": "Ознакомьтесь с общими условиями нашего автосервиса. Прозрачность и четкие правила на каждом этапе работы.",
         "link_text": "Узнать больше",
-        "link_url": "/ru/tingimused.html"
+        "link_url": "/ru/tingimused"
     },
     {
         "path": "en/index.html",
@@ -27,7 +27,7 @@ files = [
         "title": "Terms & Conditions",
         "desc": "Read the general terms and conditions of our car service. Transparency and clear rules at every stage of work.",
         "link_text": "Learn more",
-        "link_url": "/en/tingimused.html"
+        "link_url": "/en/tingimused"
     }
 ]
 
@@ -84,3 +84,4 @@ for file_info in files:
         f.write(content)
 
 print("Done.")
+

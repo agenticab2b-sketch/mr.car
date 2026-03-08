@@ -213,6 +213,14 @@
     ],
     "rewrites": [
       {
+        "source": "/api/lead",
+        "function": "lead"
+      },
+      {
+        "source": "/api/google-rating",
+        "function": "getGoogleRating"
+      },
+      {
         "source": "/robots.txt",
         "function": "robots"
       }

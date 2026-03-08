@@ -109,7 +109,7 @@ const LANGS = [
       privacy: 'Privaatsuspoliitika',
       privacyHref: '/privaatsus',
       terms: 'Üldtingimused',
-      termsHref: '/tingimused.html'
+      termsHref: '/tingimused'
     }
   },
   {
@@ -121,7 +121,7 @@ const LANGS = [
       { href: '/ru/#services', label: '[01] Услуги', style: 'color:var(--accent-primary)' },
       { href: '/ru/#about', label: '[02] О нас' },
       { href: '/ru/tseny', label: '[03] Цены' },
-      { href: '/ru/contact', label: '[04] Контакты' },
+      { href: '/ru/kontakt', label: '[04] Контакты' },
     ],
     phone: '5646 1210',
     phoneHref: '+37256461210',
@@ -180,7 +180,7 @@ const LANGS = [
       privacy: 'Политика конфиденциальности',
       privacyHref: '/ru/privaatsus',
       terms: 'Условия',
-      termsHref: '/ru/tingimused.html'
+      termsHref: '/ru/tingimused'
     }
   },
   {
@@ -251,7 +251,7 @@ const LANGS = [
       privacy: 'Privacy Policy',
       privacyHref: '/privaatsus',
       terms: 'Terms & Conditions',
-      termsHref: '/en/tingimused.html'
+      termsHref: '/en/tingimused'
     }
   },
 ];
@@ -808,7 +808,7 @@ ${jsonLd}
         const data = Object.fromEntries(formData.entries());
         data.pageUrl = window.location.href;
 
-        fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
+        fetch('/api/lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -961,3 +961,4 @@ ${sitemapEntries.join('\n')}
 
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemapXml, 'utf8');
 process.stdout.write('✅ sitemap.xml updated.\n\n');
+

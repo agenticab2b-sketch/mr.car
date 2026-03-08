@@ -179,7 +179,7 @@
           </a>
         </div>
       </div>
-      <a href="/ru/o-nas.html" class="navbar__link">[02] О нас</a>
+      <a href="/ru/o-nas" class="navbar__link">[02] О нас</a>
       <a href="/ru/tseny" class="navbar__link">[03] Цены</a>
       <a href="/ru/kontakt" class="navbar__link">[04] Контакты</a>
       <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
@@ -258,7 +258,7 @@
           <span>Общий авторемонт</span>
         </a>
       </div>
-      <a href="/ru/o-nas.html" class="mobile-menu__link" onclick="closeMobileMenu()">[02] О нас</a>
+      <a href="/ru/o-nas" class="mobile-menu__link" onclick="closeMobileMenu()">[02] О нас</a>
       <a href="/ru/tseny" class="mobile-menu__link" onclick="closeMobileMenu()">[03] Цены</a>
       <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">[04] Контакты</a>
     </nav>
@@ -800,7 +800,7 @@
         const data = Object.fromEntries(formData.entries());
         data.pageUrl = window.location.href;
 
-        fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
+        fetch('/api/lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)

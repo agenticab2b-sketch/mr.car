@@ -44,7 +44,7 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.mrcar.ee/meist.html</loc>
+    <loc>https://www.mrcar.ee/meist</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -172,7 +172,7 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.mrcar.ee/ru/o-nas.html</loc>
+    <loc>https://www.mrcar.ee/ru/o-nas</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -300,7 +300,7 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.mrcar.ee/en/about.html</loc>
+    <loc>https://www.mrcar.ee/en/about</loc>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -387,3 +387,4 @@
   </url>
 
 </urlset>
+

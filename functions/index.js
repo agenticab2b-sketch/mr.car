@@ -5,13 +5,22 @@ const nodemailer = require("nodemailer");
 // ─── Google Rating ────────────────────────────────────────────────────────────
 
 exports.getGoogleRating = onRequest({
-  cors: true,
+  cors: false,
   secrets: ["GOOGLE_MAPS_API_KEY"]
 }, async (req, res) => {
+  if (req.method !== "GET") {
+    return res.status(405).send("Method Not Allowed");
+  }
+
+  const host = String(req.headers.host || "").toLowerCase().replace(/:\d+$/, "");
+  if (!isAllowedHostname(host)) {
+    return res.status(403).json({ error: "Forbidden host" });
+  }
 
   const placeId = "ChIJdfSH80STkkYRqucRClE5ook";
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
-  const lang = req.query.lang || "et";
+  const requestedLang = String(req.query.lang || "").toLowerCase();
+  const lang = ["et", "ru", "en", "fi"].includes(requestedLang) ? requestedLang : "et";
 
   try {
     const response = await axios.get(
@@ -35,7 +44,6 @@ exports.getGoogleRating = onRequest({
     res.status(500).json({ error: error.message });
   }
 });
-
 // ─── Ping ─────────────────────────────────────────────────────────────────────
 
 exports.ping = onRequest({ cors: true }, (req, res) => {
@@ -61,6 +69,82 @@ function escHtml(str) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+const ALLOWED_EXACT_HOSTS = new Set(["mrcar.ee", "www.mrcar.ee", "localhost", "127.0.0.1"]);
+const FIREBASE_HOST_RE = /^mrcar-473416(?:--[a-z0-9-]+)?\.(web\.app|firebaseapp\.com)$/i;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_RE = /^[0-9+()\-\s]{5,40}$/;
+
+function getHostnameFromUrl(value) {
+  if (!value || typeof value !== "string") {
+    return "";
+  }
+
+  try {
+    return new URL(value).hostname.toLowerCase();
+  } catch (error) {
+    return "";
+  }
+}
+
+function isAllowedHostname(hostname) {
+  const normalized = String(hostname || "").toLowerCase().replace(/:\d+$/, "");
+  if (!normalized) {
+    return false;
+  }
+
+  return ALLOWED_EXACT_HOSTS.has(normalized) ||
+    normalized.endsWith(".mrcar.ee") ||
+    FIREBASE_HOST_RE.test(normalized);
+}
+
+function normaliseSingleLine(value, maxLength) {
+  if (typeof value !== "string") {
+    return "";
+  }
+
+  return value
+    .replace(/\u0000/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, maxLength);
+}
+
+function normaliseMultiline(value, maxLength) {
+  if (typeof value !== "string") {
+    return "";
+  }
+
+  return value
+    .replace(/\u0000/g, "")
+    .replace(/\r\n/g, "\n")
+    .trim()
+    .slice(0, maxLength);
+}
+
+function normalisePageUrl(value) {
+  if (typeof value !== "string" || value.trim() === "") {
+    return "";
+  }
+
+  try {
+    const url = new URL(value);
+    if (!isAllowedHostname(url.hostname)) {
+      return "";
+    }
+    return url.toString().slice(0, 300);
+  } catch (error) {
+    return "";
+  }
+}
+
+function isValidEmail(email) {
+  return EMAIL_RE.test(email) && email.length <= 160;
+}
+
+function isValidPhone(phone) {
+  return PHONE_RE.test(phone);
 }
 
 // ─── Customer auto-reply email builder ───────────────────────────────────────
@@ -278,7 +362,7 @@ function buildCustomerEmail(lang, name, carNumber, email, phone, message) {
 // ─── Lead function ────────────────────────────────────────────────────────────
 
 exports.lead = onRequest({
-  cors: true,
+  cors: false,
   region: "us-central1",
   secrets: ["SMTP_PASS"]
 }, async (req, res) => {
@@ -287,17 +371,38 @@ exports.lead = onRequest({
     return res.status(405).send("Method Not Allowed");
   }
 
-  const {
-    name,
-    carNumber,
-    email,
-    phone,
-    message,
-    lang: rawLang,
-    hp,
-    tsStart,
-    pageUrl
-  } = req.body;
+  if (!req.is("application/json")) {
+    return res.status(415).json({
+      success: false,
+      type: "validation",
+      message: "Неверный формат запроса."
+    });
+  }
+
+  const host = String(req.headers.host || "").toLowerCase().replace(/:\d+$/, "");
+  const originHost = getHostnameFromUrl(req.headers.origin);
+  const refererHost = getHostnameFromUrl(req.headers.referer);
+
+  if (!isAllowedHostname(host) ||
+      (originHost && (!isAllowedHostname(originHost) || originHost !== host)) ||
+      (refererHost && (!isAllowedHostname(refererHost) || refererHost !== host))) {
+    return res.status(403).json({
+      success: false,
+      type: "validation",
+      message: "Forbidden origin."
+    });
+  }
+
+  const body = req.body && typeof req.body === "object" ? req.body : {};
+  const cleanName = normaliseSingleLine(body.name, 80);
+  const cleanCarNumber = normaliseSingleLine(body.carNumber, 32);
+  const cleanEmail = normaliseSingleLine(body.email, 160).toLowerCase();
+  const cleanPhone = normaliseSingleLine(body.phone, 40);
+  const cleanMessage = normaliseMultiline(body.message, 2000);
+  const rawLang = normaliseSingleLine(body.lang, 8).toLowerCase();
+  const hp = normaliseSingleLine(body.hp, 200);
+  const tsStart = Number.parseInt(body.tsStart, 10);
+  const cleanPageUrl = normalisePageUrl(body.pageUrl);
 
   // ── Anti-spam ─────────────────────────────────────────────────────────────
 
@@ -306,37 +411,45 @@ exports.lead = onRequest({
     return res.status(200).json({ success: true });
   }
 
-  if (Date.now() - (parseInt(tsStart) || 0) < 2000) {
+  const now = Date.now();
+  if (!Number.isFinite(tsStart) || now - tsStart < 2000 || now - tsStart > 86400000) {
     console.log("Timing check failed — silent drop");
     return res.status(200).json({ success: true });
   }
 
   // ── Validation ────────────────────────────────────────────────────────────
 
-  const requiredFields = { carNumber, email, message };
-  const missingFields = Object.keys(requiredFields).filter(
-    key => !requiredFields[key] || typeof requiredFields[key] !== "string" || requiredFields[key].trim() === ""
-  );
+  const invalidFields = [];
+  if (cleanCarNumber.length < 2) {
+    invalidFields.push("carNumber");
+  }
+  if (!isValidEmail(cleanEmail)) {
+    invalidFields.push("email");
+  }
+  if (cleanMessage.length < 5) {
+    invalidFields.push("message");
+  }
+  if (cleanPhone && !isValidPhone(cleanPhone)) {
+    invalidFields.push("phone");
+  }
 
-  if (missingFields.length > 0) {
+  if (invalidFields.length > 0) {
     return res.status(400).json({
       success: false,
       type: "validation",
       message: "Необходимо заполнить выделенные поля",
-      fields: missingFields
+      fields: invalidFields
     });
   }
 
   // ── Normalise lang ────────────────────────────────────────────────────────
 
   const validLangs = ["et", "ru", "en", "fi"];
-  const lang = validLangs.includes(String(rawLang || "").toLowerCase())
-    ? String(rawLang).toLowerCase()
-    : "et";
+  const lang = validLangs.includes(rawLang) ? rawLang : "et";
 
   // ── SMTP transport ────────────────────────────────────────────────────────
 
-  const FROM = '"Mr.Car Autoteenindus" <info@mrcar.ee>';
+  const FROM = "\"Mr.Car Autoteenindus\" <info@mrcar.ee>";
 
   let transporter;
   try {
@@ -365,18 +478,18 @@ exports.lead = onRequest({
   const adminEmailOptions = {
     from: FROM,
     to: "info@mrcar.ee",
-    replyTo: name ? `${name} <${email}>` : email,
-    subject: `Uus päring MrCar veebilehelt — ${carNumber}`,
+    replyTo: cleanName ? { name: cleanName, address: cleanEmail } : cleanEmail,
+    subject: `Uus päring MrCar veebilehelt — ${cleanCarNumber}`,
     text: [
       "Uus päring MrCar veebilehelt",
       "",
-      `Nimi:          ${name || "—"}`,
-      `Autonumber:    ${carNumber}`,
-      `Email:         ${email}`,
-      `Telefon:       ${phone || "—"}`,
-      `Sõnum:         ${message}`,
+      `Nimi:          ${cleanName || "—"}`,
+      `Autonumber:    ${cleanCarNumber}`,
+      `Email:         ${cleanEmail}`,
+      `Telefon:       ${cleanPhone || "—"}`,
+      `Sõnum:         ${cleanMessage}`,
       `Kliendi keel:  ${lang}`,
-      `Lehe URL:      ${pageUrl || "—"}`,
+      `Lehe URL:      ${cleanPageUrl || "—"}`,
       `Aeg:           ${timestamp}`
     ].join("\n")
   };
@@ -385,16 +498,16 @@ exports.lead = onRequest({
 
   const { subject, html, text } = buildCustomerEmail(
     lang,
-    name || "",
-    carNumber,
-    email,
-    phone || "",
-    message
+    cleanName,
+    cleanCarNumber,
+    cleanEmail,
+    cleanPhone,
+    cleanMessage
   );
 
   const customerEmailOptions = {
     from: FROM,
-    to: email,
+    to: cleanEmail,
     subject,
     html,
     text

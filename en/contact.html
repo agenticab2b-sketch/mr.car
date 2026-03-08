@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -134,7 +134,7 @@
                 </div>
             </div>
 
-            <a href="/en/about.html" class="navbar__link">[02] About</a>
+            <a href="/en/about" class="navbar__link">[02] About</a>
             <a href="/en/prices" class="navbar__link">[03] Prices</a>
             <a href="/en/contact" class="navbar__link">[04] Contact</a>
             <a href="/en/gallery" class="navbar__link">[05] Gallery</a>
@@ -219,7 +219,7 @@
                 </a>
             </div>
 
-            <a href="/en/about.html" class="mobile-menu__link" onclick="closeMobileMenu()">About</a>
+            <a href="/en/about" class="mobile-menu__link" onclick="closeMobileMenu()">About</a>
             <a href="/en/prices" class="mobile-menu__link" onclick="closeMobileMenu()">Prices</a>
             <a href="/en/contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
             <a href="/en/gallery" class="mobile-menu__link" onclick="closeMobileMenu()">Gallery</a>
@@ -456,7 +456,7 @@
                 const data = Object.fromEntries(formData.entries());
                 data.pageUrl = window.location.href;
 
-                fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
+                fetch('/api/lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
