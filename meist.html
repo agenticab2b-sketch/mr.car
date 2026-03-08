@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="et">
 
 <head>
@@ -32,18 +32,18 @@
 
     <title>Meist — Mr.Car Autoteenindus Tallinnas</title>
     <!-- Canonical & hreflang -->
-    <link rel="canonical" id="canonicalLink" href="https://www.mrcar.ee/meist.html">
-    <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/meist.html">
-    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/o-nas.html">
-    <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/about.html">
-    <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/meist.html">
+    <link rel="canonical" id="canonicalLink" href="https://www.mrcar.ee/meist">
+    <link rel="alternate" hreflang="et" href="https://www.mrcar.ee/meist">
+    <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/o-nas">
+    <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/about">
+    <link rel="alternate" hreflang="x-default" href="https://www.mrcar.ee/meist">
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
     <meta property="og:title" content="Meist — Mr.Car Autoteenindus Tallinnas">
     <meta property="og:description"
         content="Mr.Car autoremont Tallinnas on kaasaegne ja usaldusväärne autoteenindus. Pakume sõiduautode hooldust ja remonti.">
-    <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/meist.html">
+    <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/meist">
     <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="et_EE">
     <link rel="stylesheet" href="/style.css?v=3">
@@ -130,7 +130,7 @@
                 </div>
             </div>
 
-            <a href="/meist.html" class="navbar__link">[02] Meist</a>
+            <a href="/meist" class="navbar__link">[02] Meist</a>
             <a href="/hinnad" class="navbar__link">[03] Hinnad</a>
             <a href="/kontakt" class="navbar__link">[04] Kontakt</a>
             <a href="/galerii" class="navbar__link">[05] Galerii</a>
@@ -215,7 +215,7 @@
                 </a>
             </div>
 
-            <a href="/meist.html" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
+            <a href="/meist" class="mobile-menu__link" onclick="closeMobileMenu()">Meist</a>
             <a href="/hinnad" class="mobile-menu__link" onclick="closeMobileMenu()">Hinnad</a>
             <a href="/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
             <a href="/galerii" class="mobile-menu__link" onclick="closeMobileMenu()">Galerii</a>
@@ -681,7 +681,7 @@
                 const data = Object.fromEntries(formData.entries());
                 data.pageUrl = window.location.href;
 
-                fetch('https://lead-q5qj3yqjpa-uc.a.run.app', {
+                fetch('/api/lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
