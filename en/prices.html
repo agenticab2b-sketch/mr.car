@@ -160,9 +160,32 @@
         }
 
         .price-item__name {
+            display: block;
+            flex: 1 1 auto;
             font-weight: 700;
             font-size: 1.125rem;
             line-height: 1.3;
+        }
+
+        .price-item__meta {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            width: fit-content;
+            margin-top: 0.45rem;
+            padding: 0.3rem 0.7rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-dimmed);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .price-item__meta iconify-icon {
+            color: var(--accent-primary);
+            flex: 0 0 auto;
         }
 
         .price-item__value {
@@ -545,15 +568,25 @@
                     <iconify-icon icon="mdi:tools"></iconify-icon> Maintenance and Repair
                 </div>
                 <div class="price-item">
-                    <span class="price-item__name">Car labor hour</span>
+                    <span class="price-item__name">Passenger car repair work</span>
                     <span class="price-item__value">43€ / hour</span>
                 </div>
                 <!-- Shared General Items -->
-                <div class="price-item"><span class="price-item__name">Brake discs and pads replacement</span><span
-                        class="price-item__value">65€ / axle</span></div>
+                <div class="price-item"><span class="price-item__name">Brake pads replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
+                        class="price-item__value">48€ (includes consumables)</span></div>
+                <div class="price-item"><span class="price-item__name">Brake pads and discs replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
+                        class="price-item__value">70€ (includes consumables)</span></div>
                 <div class="price-item"><span class="price-item__name">Engine oil and all filters
-                        replacement</span><span class="price-item__value">65€ / once</span></div>
-                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement</span><span
+                        replacement<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
+                        class="price-item__value">65€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
                         class="price-item__value">45€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
                         increases by</span><span class="price-item__value">5€</span></div>
@@ -592,15 +625,25 @@
                     <iconify-icon icon="mdi:tools"></iconify-icon> Maintenance and Repair
                 </div>
                 <div class="price-item">
-                    <span class="price-item__name">SUV labor hour</span>
+                    <span class="price-item__name">SUV repair work</span>
                     <span class="price-item__value">48€ / hour</span>
                 </div>
                 <!-- Shared General Items -->
-                <div class="price-item"><span class="price-item__name">Brake discs and pads replacement</span><span
-                        class="price-item__value">65€ / axle</span></div>
+                <div class="price-item"><span class="price-item__name">Brake pads replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
+                        class="price-item__value">53€ (includes consumables)</span></div>
+                <div class="price-item"><span class="price-item__name">Brake pads and discs replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
+                        class="price-item__value">77€ (includes consumables)</span></div>
                 <div class="price-item"><span class="price-item__name">Engine oil and all filters
-                        replacement</span><span class="price-item__value">65€ / once</span></div>
-                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement</span><span
+                        replacement<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
+                        class="price-item__value">65€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
                         class="price-item__value">45€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
                         increases by</span><span class="price-item__value">5€</span></div>
@@ -639,15 +682,25 @@
                     <iconify-icon icon="mdi:tools"></iconify-icon> Maintenance and Repair
                 </div>
                 <div class="price-item">
-                    <span class="price-item__name">Van labor hour</span>
+                    <span class="price-item__name">Van repair work</span>
                     <span class="price-item__value">48€ / hour</span>
                 </div>
                 <!-- Shared General Items -->
-                <div class="price-item"><span class="price-item__name">Brake discs and pads replacement</span><span
-                        class="price-item__value">65€ / axle</span></div>
+                <div class="price-item"><span class="price-item__name">Brake pads replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
+                        class="price-item__value">53€ (includes consumables)</span></div>
+                <div class="price-item"><span class="price-item__name">Brake pads and discs replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
+                        class="price-item__value">77€ (includes consumables)</span></div>
                 <div class="price-item"><span class="price-item__name">Engine oil and all filters
-                        replacement</span><span class="price-item__value">65€ / once</span></div>
-                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement</span><span
+                        replacement<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
+                        class="price-item__value">65€ / once</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
                         class="price-item__value">45€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
                         increases by</span><span class="price-item__value">5€</span></div>
