@@ -31,6 +31,21 @@ const MAP_PARTIAL = fs.readFileSync(path.join(ROOT, 'partials/map.html'), 'utf8'
 
 const PROD_ORIGIN = 'https://www.mrcar.ee';
 const TODAY = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+const SERVICE_NAV_ORDER = [
+  'autoremont',
+  'summutid-keevitus',
+  'veermik-pidurid',
+  'rehvitood',
+  'hooldus-diagnostika',
+  'kaigukastiremont',
+  'elektritood',
+  'mootoriremont',
+  'olivahetus',
+  'ostueelne-kontroll',
+  'kliimahooldus',
+  'webasto-diagnostika'
+];
+const SERVICE_NAV_RANK = new Map(SERVICE_NAV_ORDER.map((slug, index) => [slug, index]));
 
 // These standalone Webasto landing pages are NOT generated — they stay as-is.
 const SKIP_FILES = new Set([
@@ -48,7 +63,7 @@ const LANGS = [
     dataFile: 'ee/services-data.js',
     navLinks: [
       { href: '/#services', label: '[01] Teenused', style: 'color:var(--accent-primary)' },
-      { href: '/#about', label: '[02] Meist' },
+      { href: '/meist', label: '[02] Meist' },
       { href: '/hinnad', label: '[03] Hinnad' },
       { href: '/kontakt', label: '[04] Kontakt' },
     ],
@@ -119,7 +134,7 @@ const LANGS = [
     dataFile: 'ru/services/services-data.js',
     navLinks: [
       { href: '/ru/#services', label: '[01] Услуги', style: 'color:var(--accent-primary)' },
-      { href: '/ru/#about', label: '[02] О нас' },
+      { href: '/ru/o-nas', label: '[02] О нас' },
       { href: '/ru/tseny', label: '[03] Цены' },
       { href: '/ru/kontakt', label: '[04] Контакты' },
     ],
@@ -190,7 +205,7 @@ const LANGS = [
     dataFile: 'en/services/services-data.js',
     navLinks: [
       { href: '/en/#services', label: '[01] Services', style: 'color:var(--accent-primary)' },
-      { href: '/en/#about', label: '[02] About' },
+      { href: '/en/about', label: '[02] About' },
       { href: '/en/prices', label: '[03] Prices' },
       { href: '/en/contact', label: '[04] Contact' },
     ],
@@ -265,7 +280,15 @@ function loadServices(dataFile) {
   const sandbox = {};
   // eslint-disable-next-line no-new-func
   new Function('exports', src + '\nexports.SERVICES = SERVICES;')(sandbox);
-  return sandbox.SERVICES;
+  return [...sandbox.SERVICES].sort((a, b) => {
+    const aKey = a?.allSlugs?.ee || a?.slug || '';
+    const bKey = b?.allSlugs?.ee || b?.slug || '';
+    const aRank = SERVICE_NAV_RANK.has(aKey) ? SERVICE_NAV_RANK.get(aKey) : Number.MAX_SAFE_INTEGER;
+    const bRank = SERVICE_NAV_RANK.has(bKey) ? SERVICE_NAV_RANK.get(bKey) : Number.MAX_SAFE_INTEGER;
+
+    if (aRank !== bRank) return aRank - bRank;
+    return aKey.localeCompare(bKey);
+  });
 }
 
 // ─── HTML helpers ─────────────────────────────────────────────────────────────
@@ -961,4 +984,3 @@ ${sitemapEntries.join('\n')}
 
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemapXml, 'utf8');
 process.stdout.write('✅ sitemap.xml updated.\n\n');
-

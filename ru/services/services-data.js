@@ -617,7 +617,7 @@ const SERVICES = [
         slug: "autoremont",
         allSlugs: { ru: "autoremont", ee: "autoremont", en: "general-car-repair" },
         category: "Обслуживание",
-        navTitle: "Общий авторемонт",
+        navTitle: "Ремонт автомобилей",
         icon: "mdi:wrench",
         heroTitle: "Общий авторемонт",
         heroLead: "Комплексный ремонт автомобилей любых марок. От мелких неисправностей до капитального ремонта.",
