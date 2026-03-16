@@ -124,6 +124,7 @@ const LANGS = [
       workdays: 'Esmaspäev – Reede',
       weekend: 'Laupäev – Pühapäev',
       closed: 'Suletud',
+      vatLabel: 'KMKR',
       privacy: 'Privaatsuspoliitika',
       privacyHref: '/privaatsus',
       terms: 'Üldtingimused',
@@ -198,6 +199,7 @@ const LANGS = [
       workdays: 'Понедельник – Пятница',
       weekend: 'Суббота – Воскресенье',
       closed: 'Закрыто',
+      vatLabel: 'НДС',
       privacy: 'Политика конфиденциальности',
       privacyHref: '/ru/privaatsus',
       terms: 'Условия',
@@ -272,6 +274,7 @@ const LANGS = [
       workdays: 'Monday – Friday',
       weekend: 'Saturday – Sunday',
       closed: 'Closed',
+      vatLabel: 'VAT',
       privacy: 'Privacy Policy',
       privacyHref: '/privaatsus',
       terms: 'Terms & Conditions',
@@ -412,6 +415,54 @@ function buildMobileMegaMenu(services, cfg) {
   ).join('\n            ');
 }
 
+function buildFooter(cfg) {
+  return `<footer class="footer">
+    <div class="footer-grid site-container">
+      <div>
+        <div class="footer__col-title">${esc(cfg.footer.contacts)}</div>
+        <div class="footer__text">
+          <a href="tel:${cfg.phoneHref}">${esc(cfg.phone)}</a><br>
+          <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
+          Kopli 82a, 10412 Tallinn
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.facebook.com/" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <iconify-icon icon="mdi:facebook" aria-hidden="true"></iconify-icon>
+          </a>
+          <a href="https://www.instagram.com/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <iconify-icon icon="mdi:instagram" aria-hidden="true"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">${esc(cfg.footer.details)}</div>
+        <div class="footer__text footer__text--rekvisiidid">
+          ANET EESTI OÜ<br>
+          Reg. nr: 10233521<br>
+          ${esc(cfg.footer.vatLabel)}: EE100321511<br>
+          LHV: EE54 7700 7710 0969 0559<br>
+          SEB: EE10 1010 0520 0108 4005
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">${esc(cfg.footer.hours)}</div>
+        <div class="footer__text">
+          ${esc(cfg.footer.workdays)}<br>
+          <strong style="color: var(--text-main);">09:00 – 18:00</strong><br><br>
+          ${esc(cfg.footer.weekend)}<br>
+          <span style="color: var(--text-dimmed);">${esc(cfg.footer.closed)}</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Mr.Car Autoremont Tallinn</span>
+      <a href="${esc(cfg.footer.termsHref)}">${esc(cfg.footer.terms)}</a>
+      <a href="${esc(cfg.footer.privacyHref)}">${esc(cfg.footer.privacy)}</a>
+      <span>Designed by <a href="https://agentica.ee" target="_blank" rel="noopener">Agentica</a></span>
+    </div>
+  </footer>`;
+}
+
 function buildHreflang(s, cfg) {
   const eeSlug = s.allSlugs.ee;
   const ruSlug = s.allSlugs.ru;
@@ -465,6 +516,74 @@ function buildJsonLd(s, cfg) {
   return JSON.stringify(ld, null, 2);
 }
 
+function detectLangFromPath(relPath) {
+  const normalized = relPath.replace(/\\/g, '/').toLowerCase();
+  const fileName = path.basename(normalized);
+
+  if (normalized.startsWith('en/') || fileName === 'temp_en.html') return 'en';
+  if (normalized.startsWith('ru/') || fileName === 'temp_ru.html') return 'ru';
+  return 'et';
+}
+
+function collectFooterTargetFiles() {
+  const targets = [
+    { dir: ROOT, recursive: false },
+    { dir: path.join(ROOT, 'services'), recursive: true },
+    { dir: path.join(ROOT, 'en'), recursive: true },
+    { dir: path.join(ROOT, 'ru'), recursive: true },
+    { dir: path.join(ROOT, 'privaatsus'), recursive: true }
+  ];
+
+  const files = new Set();
+
+  function visit(dir, recursive) {
+    if (!fs.existsSync(dir)) return;
+
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        if (recursive) visit(fullPath, true);
+        continue;
+      }
+
+      if (entry.isFile() && entry.name.toLowerCase().endsWith('.html')) {
+        files.add(fullPath);
+      }
+    }
+  }
+
+  for (const target of targets) {
+    visit(target.dir, target.recursive);
+  }
+
+  return [...files];
+}
+
+function syncGlobalFooters() {
+  const cfgByLang = new Map(LANGS.map(cfg => [cfg.lang, cfg]));
+  let updated = 0;
+
+  for (const filePath of collectFooterTargetFiles()) {
+    const source = fs.readFileSync(filePath, 'utf8');
+    const match = source.match(/<footer class="footer">[\s\S]*?<\/footer>/);
+    if (!match) continue;
+
+    const relPath = path.relative(ROOT, filePath);
+    const lang = detectLangFromPath(relPath);
+    const cfg = cfgByLang.get(lang);
+    const footerHtml = buildFooter(cfg);
+    const next = source.replace(/<footer class="footer">[\s\S]*?<\/footer>/, footerHtml);
+
+    if (next !== source) {
+      fs.writeFileSync(filePath, next, 'utf8');
+      updated++;
+    }
+  }
+
+  return updated;
+}
+
 // ─── Main HTML template ───────────────────────────────────────────────────────
 
 function renderPage(s, services, cfg) {
@@ -481,6 +600,7 @@ function renderPage(s, services, cfg) {
   const jsonLd = buildJsonLd(s, cfg);
   const symptomCards = buildSymptomCards(s.symptoms || []);
   const servicesListHtml = buildServicesList(s.servicesList || []);
+  const footerHtml = buildFooter(cfg);
 
   // Prepare Form Partial
   let renderedForm = FORM_PARTIAL
@@ -745,51 +865,7 @@ ${jsonLd}
   </div>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid site-container">
-      <div>
-        <div class="footer__col-title">${esc(cfg.footer.contacts)}</div>
-        <div class="footer__text">
-          <a href="tel:${cfg.phoneHref}">${cfg.phone}</a><br>
-          <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
-          Kopli 82a, 10412 Tallinn
-        </div>
-        <div class="footer__socials">
-          <a href="https://www.facebook.com/" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
-            <iconify-icon icon="mdi:facebook" aria-hidden="true"></iconify-icon>
-          </a>
-          <a href="https://www.instagram.com/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
-            <iconify-icon icon="mdi:instagram" aria-hidden="true"></iconify-icon>
-          </a>
-        </div>
-      </div>
-      <div>
-        <div class="footer__col-title">${esc(cfg.footer.details)}</div>
-        <div class="footer__text footer__text--rekvisiidid">
-          ANET EESTI OÜ<br>
-          Reg. nr: 10233521<br>
-          KMKR: EE100321511<br>
-          LHV: EE54 7700 7710 0969 0559<br>
-          SEB: EE10 1010 0520 0108 4005
-        </div>
-      </div>
-      <div>
-        <div class="footer__col-title">${esc(cfg.footer.hours)}</div>
-        <div class="footer__text">
-          ${esc(cfg.footer.workdays)}<br>
-          <strong style="color: var(--text-main);">09:00 – 18:00</strong><br><br>
-          ${esc(cfg.footer.weekend)}<br>
-          <span style="color: var(--text-dimmed);">${esc(cfg.footer.closed)}</span>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2026 Mr.Car Autoremont Tallinn</span>
-      <a href="${esc(cfg.footer.termsHref)}">${esc(cfg.footer.terms)}</a>
-      <a href="${esc(cfg.footer.privacyHref)}">${esc(cfg.footer.privacy)}</a>
-      <span>Designed by <a href="https://agentica.ee" target="_blank" rel="noopener">Agentica</a></span>
-    </div>
-  </footer>
+  ${footerHtml}
 
   <script>
     // Mobile menu
@@ -987,6 +1063,10 @@ for (const cfg of LANGS) {
 }
 
 process.stdout.write(`\n✅ Done: ${totalGenerated} pages generated, ${totalSkipped} skipped.\n`);
+
+process.stdout.write('\n🦶 Syncing global footers…\n');
+const totalFootersSynced = syncGlobalFooters();
+process.stdout.write(`✅ Global footers synced in ${totalFootersSynced} files.\n`);
 
 // ─── Update sitemap.xml ───────────────────────────────────────────────────────
 
