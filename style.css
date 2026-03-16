@@ -486,6 +486,29 @@ h3 {
     color: var(--text-main);
 }
 
+/* Shared hero block used by prices, gallery, about and contact pages */
+.prices-hero {
+    padding: 120px var(--container-padding) 60px;
+    background: #1a2133;
+    border-bottom: 1px solid var(--border-grid);
+    text-align: center;
+}
+
+.prices-hero__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.prices-hero__desc {
+    font-size: 1.125rem;
+    color: var(--text-dimmed);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* ============================================================
  5. NAVBAR
    ============================================================ */

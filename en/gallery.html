@@ -497,6 +497,21 @@
     <!-- MAIN CONTENT -->
     <main id="gallery-main" class="gallery-page">
         <section class="prices-hero" style="padding-bottom: 40px;">
+            <nav aria-label="Breadcrumb" style="display: flex; justify-content: center;">
+                <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/en" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Home</span></a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__separator">›</span></li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">Gallery</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ol>
+            </nav>
             <h1 class="prices-hero__title"
                 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; text-transform: uppercase;">Gallery</h1>
             <p class="prices-hero__desc">Photos of our recent work and facilities. Mr.Car Auto Repair in Tallinn.</p>
