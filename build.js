@@ -62,13 +62,16 @@ const LANGS = [
     dir: 'services',
     dataFile: 'ee/services-data.js',
     navLinks: [
-      { href: '/#services', label: '[01] Teenused', style: 'color:var(--accent-primary)' },
+      { href: '/teenused', label: '[01] Teenused', style: 'color:var(--accent-primary)' },
       { href: '/meist', label: '[02] Meist' },
       { href: '/hinnad', label: '[03] Hinnad' },
       { href: '/kontakt', label: '[04] Kontakt' },
+      { href: '/galerii', label: '[05] Galerii' },
     ],
     phone: '5646 1210',
     phoneHref: '+37256461210',
+    headerCtaLabel: 'Jäta päring',
+    headerCtaHref: '/kontakt',
     bookLabel: 'Broneeri aeg',
     fabCall: 'Helista',
     fabBook: 'Broneeri aeg',
@@ -133,13 +136,16 @@ const LANGS = [
     dir: 'ru/services',
     dataFile: 'ru/services/services-data.js',
     navLinks: [
-      { href: '/ru/#services', label: '[01] Услуги', style: 'color:var(--accent-primary)' },
+      { href: '/ru/uslugi', label: '[01] Услуги', style: 'color:var(--accent-primary)' },
       { href: '/ru/o-nas', label: '[02] О нас' },
       { href: '/ru/tseny', label: '[03] Цены' },
       { href: '/ru/kontakt', label: '[04] Контакты' },
+      { href: '/ru/galereya', label: '[05] Галерея' },
     ],
     phone: '5646 1210',
     phoneHref: '+37256461210',
+    headerCtaLabel: 'Оставить заявку',
+    headerCtaHref: '/ru/kontakt',
     bookLabel: 'Записаться',
     fabCall: 'Позвонить',
     fabBook: 'Записаться',
@@ -204,13 +210,16 @@ const LANGS = [
     dir: 'en/services',
     dataFile: 'en/services/services-data.js',
     navLinks: [
-      { href: '/en/#services', label: '[01] Services', style: 'color:var(--accent-primary)' },
+      { href: '/en/services', label: '[01] Services', style: 'color:var(--accent-primary)' },
       { href: '/en/about', label: '[02] About' },
       { href: '/en/prices', label: '[03] Prices' },
       { href: '/en/contact', label: '[04] Contact' },
+      { href: '/en/gallery', label: '[05] Gallery' },
     ],
     phone: '5646 1210',
     phoneHref: '+37256461210',
+    headerCtaLabel: 'Send request',
+    headerCtaHref: '/en/contact',
     bookLabel: 'Book Now',
     fabCall: 'Call Us',
     fabBook: 'Book Now',
@@ -301,6 +310,46 @@ function esc(str) {
     .replace(/"/g, '&quot;');
 }
 
+function getLangLocale(lang) {
+  if (lang === 'ru') return 'ru-RU';
+  if (lang === 'et') return 'et-EE';
+  return 'en-US';
+}
+
+const SIDEBAR_CASE_EXCEPTIONS = {
+  ru: [
+    { pattern: /(^|[^\p{L}\p{N}])(то)(?=$|[^\p{L}\p{N}])/giu, replacement: '$1ТО' }
+  ],
+  et: [],
+  en: [
+    { pattern: /(^|[^\p{L}\p{N}])(ac)(?=$|[^\p{L}\p{N}])/giu, replacement: '$1AC' }
+  ]
+};
+
+function toSentenceCaseLabel(value, lang) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+
+  const locale = getLangLocale(lang);
+  const chars = Array.from(text.toLocaleLowerCase(locale));
+  const firstLetterIndex = chars.findIndex(char => /\p{L}/u.test(char));
+
+  if (firstLetterIndex === -1) {
+    return applySidebarCaseExceptions(chars.join(''), lang);
+  }
+
+  chars[firstLetterIndex] = chars[firstLetterIndex].toLocaleUpperCase(locale);
+  return applySidebarCaseExceptions(chars.join(''), lang);
+}
+
+function applySidebarCaseExceptions(text, lang) {
+  const replacements = SIDEBAR_CASE_EXCEPTIONS[lang] || [];
+  return replacements.reduce(
+    (result, { pattern, replacement }) => result.replace(pattern, replacement),
+    text
+  );
+}
+
 function buildSymptomCards(symptoms) {
   return symptoms.map(s => `
       <div class="sd-symptom">
@@ -330,13 +379,13 @@ function buildSidebar(services, currentSlug, cfg) {
   let html = '';
   for (const [cat, items] of Object.entries(cats)) {
     html += `\n          <div class="sd-sidebar__category">
-            <div class="sd-sidebar__cat-title">${esc(cat)}</div>
+            <div class="sd-sidebar__cat-title">${esc(toSentenceCaseLabel(cat, cfg.lang))}</div>
             <ul class="sd-sidebar__list">`;
     for (const s of items) {
       const active = s.slug === currentSlug ? ' active' : '';
       html += `\n              <li><a href="${cfg.serviceBase}${esc(s.slug)}" class="sd-sidebar__link${active}">
                 <iconify-icon icon="${esc(s.icon)}" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>${esc(s.navTitle)}</span>
+                <span>${esc(toSentenceCaseLabel(s.navTitle, cfg.lang))}</span>
               </a></li>`;
     }
     html += `\n            </ul>
@@ -564,7 +613,7 @@ ${jsonLd}
       <a href="tel:${cfg.phoneHref}" class="navbar__phone">${cfg.phone}</a>
     </nav>
     <div class="navbar__cta">
-      <a href="#request" class="btn btn-primary">${esc(cfg.bookLabel)}</a>
+      <a href="${esc(cfg.headerCtaHref)}" class="btn btn-primary">${esc(cfg.headerCtaLabel)}</a>
     </div>
     <button class="navbar__burger" id="burgerBtn" aria-label="Ava menüü">
       <span></span><span></span><span></span>
@@ -578,7 +627,7 @@ ${jsonLd}
   <div class="mobile-menu" id="mobileMenu">
     <button class="mobile-menu__close" id="closeMenu" aria-label="Sulge menüü">&times;</button>
     <nav aria-label="Mobiilne navigatsioon">
-      <a href="${cfg.prefix ? cfg.prefix + '/#services' : '/#services'}" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+      <a href="${cfg.navLinks[0].href}" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
         ${cfg.navLinks[0].label}
         <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
       </a>
