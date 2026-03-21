@@ -470,14 +470,22 @@
     <!-- LEFT: Content -->
     <article class="sd-content">
 
-<nav class="gb-local-nav">
-        <a href="/services/kaigukastiremont.html" class="gb-local-nav__link">
-          <iconify-icon icon="mdi:arrow-left"></iconify-icon> Käigukasti remont
+<nav class="gb-local-nav" aria-label="Automaatkäigukasti teemad">
+        <a href="/services/kaigukastiremont.html" class="gb-local-nav__pill">
+          <iconify-icon icon="mdi:arrow-left" width="18"></iconify-icon> Käigukasti remont
         </a>
-        <a href="#sumptomid" class="gb-local-nav__link">Sümptomid</a>
-        <a href="#diagnostika" class="gb-local-nav__link">Diagnostika</a>
-        <a href="#dsg-zf" class="gb-local-nav__link">DSG & ZF</a>
-        <a href="#faq" class="gb-local-nav__link">FAQ</a>
+        <a href="#sumptomid" class="gb-local-nav__pill">
+          <iconify-icon icon="mdi:alert-circle-outline" width="18"></iconify-icon> Sümptomid
+        </a>
+        <a href="#diagnostika" class="gb-local-nav__pill">
+          <iconify-icon icon="mdi:magnify" width="18"></iconify-icon> Diagnostika
+        </a>
+        <a href="#dsg-zf" class="gb-local-nav__pill">
+          <iconify-icon icon="mdi:car-shift-pattern" width="18"></iconify-icon> DSG & ZF
+        </a>
+        <a href="#faq" class="gb-local-nav__pill">
+          <iconify-icon icon="mdi:frequently-asked-questions" width="18"></iconify-icon> FAQ
+        </a>
       </nav>
 
       <!-- Intro Section -->
@@ -491,21 +499,19 @@
 
       <!-- Urgency Block -->
       <div class="gb-urgency-block">
-        <div class="gb-urgency-block__icon">
-          <iconify-icon icon="mdi:alert-decagram"></iconify-icon>
+        <div class="gb-urgency-block__title">
+          <iconify-icon icon="mdi:alert-decagram" width="24"></iconify-icon>
+          Miks ei tohi automaatkäigukasti probleemidega viivitada?
         </div>
-        <div class="gb-urgency-block__content">
-          <h3 class="gb-urgency-block__title">Miks ei tohi automaatkäigukasti probleemidega viivitada?</h3>
-          <p class="gb-urgency-block__text">Automaatkäigukasti rike ei lase end lihtsalt oodata — kahjustused süvenevad iga sõidetud kilomeetriga. Metallipuru levib süsteemis, ummistab klapikorpuse kanaleid ja hävitab hüdraulikadetaile. Mida varem pöördud, seda väiksem on remondi ulatus ja hind. Viivitamine tähendab sageli käigukasti täielikku asendamist uue vastu.</p>
+        <div class="gb-urgency-block__text">
+          Automaatkäigukasti rike ei lase end lihtsalt oodata — kahjustused süvenevad iga sõidetud kilomeetriga. Metallipuru levib süsteemis, ummistab klapikorpuse kanaleid ja hävitab hüdraulikadetaile. <strong>Mida varem pöördud, seda väiksem on remondi ulatus ja hind.</strong> Viivitamine tähendab sageli käigukasti täielikku asendamist uue vastu.
         </div>
       </div>
 
       <!-- Symptoms Grid -->
       <section id="sumptomid" class="gb-page-section">
-        <div class="gb-section-header">
-          <h2>Kuidas tunda ära automaatkäigukasti rike?</h2>
-          <p class="gb-section-subtitle">Peamised sümptomid, mida ei tohiks eirata</p>
-        </div>
+        <h3 class="gb-section-title">Kuidas tunda ära automaatkäigukasti rike?</h3>
+        <p class="gb-section-text">Peamised sümptomid, mida ei tohiks eirata</p>
         
         <div class="gb-symptoms">
           <div class="gb-symptom-card">
@@ -548,9 +554,7 @@
 
       <!-- Risk Stages Block -->
       <section class="gb-page-section">
-        <div class="gb-section-header">
-          <h3>Mida tähendab automaatkäigukasti rikke eiramine?</h3>
-        </div>
+        <h3 class="gb-section-title">Mida tähendab automaatkäigukasti rikke eiramine?</h3>
         <div class="gb-risk-stages">
           <div class="gb-risk-stage">
             <div class="gb-risk-stage__marker">1</div>
@@ -577,35 +581,23 @@
       </section>
 
       <!-- Diagnostics Card -->
-      <section id="diagnostika" class="gb-page-section">
-        <div class="gb-diagnostics-card">
-          <div class="gb-diagnostics-card__content">
-            <h3>Automaatkäigukasti diagnostika — ainuõige esimene samm</h3>
-            <p>Automaatkäigukasti remondi edukus algab alati täpsest diagnostikast. Pimesi osade vahetamine raiskab eelarvet ja ei pruugi algpõhjust lahendada.</p>
-            
-            <ul class="gb-checklist">
-              <li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Arvutidiagnostika — tõrkekoodide ja live-andmete lugemine</li>
-              <li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Hüdraulikarõhkude mõõtmine — klapikorpuse funktsionaalsuse kontroll</li>
-              <li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Õlianalüüs — metallipuru ja kulumise tuvastamine</li>
-            </ul>
-            
-            <a href="/services/automaatkasti-diagnostika" class="gb-link-card">
-              <span>Tutvu automaatkäigukasti diagnostika protsessiga täpsemalt</span>
-              <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-            </a>
-          </div>
-          <div class="gb-diagnostics-card__image">
-            <img src="https://images.unsplash.com/photo-1502877338535-346ce14de93d?w=600&q=80" alt="Käigukasti diagnostika">
-          </div>
-        </div>
-      </section>
+      <div class="gb-diagnostics-card" id="diagnostika">
+        <h3 class="gb-section-title">Automaatkäigukasti diagnostika — ainuõige esimene samm</h3>
+        <p class="gb-section-text">Automaatkäigukasti remondi edukus algab alati täpsest diagnostikast. Pimesi osade vahetamine raiskab eelarvet ja ei pruugi algpõhjust lahendada.</p>
+        <ul class="gb-checklist">
+          <li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Arvutidiagnostika — tõrkekoodide ja live-andmete lugemine</li>
+          <li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Hüdraulikarõhkude mõõtmine — klapikorpuse funktsionaalsuse kontroll</li>
+          <li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Õlianalüüs — metallipuru ja kulumise tuvastamine</li>
+        </ul>
+        <p class="gb-section-text" style="margin-top:1rem">
+          <a href="/services/automaatkasti-diagnostika">Tutvu käigukasti diagnostika protsessiga täpsemalt →</a>
+        </p>
+      </div>
 
       <!-- Repair Pathways -->
       <section id="pathways" class="gb-page-section">
-        <div class="gb-section-header">
-          <h2>Peamised automaatkäigukasti remondi lahendused</h2>
-          <p class="gb-section-subtitle">Sõltuvalt diagnostika tulemustest valime sobivaima tee</p>
-        </div>
+        <h3 class="gb-section-title">Peamised automaatkäigukasti remondi lahendused</h3>
+        <p class="gb-section-text">Sõltuvalt diagnostika tulemustest valime sobivaima tee</p>
         <div class="gb-symptoms">
           <div class="gb-symptom-card">
             <iconify-icon icon="mdi:oil"></iconify-icon>
@@ -627,9 +619,7 @@
 
       <!-- Process Steps -->
       <section class="gb-page-section">
-        <div class="gb-section-header">
-          <h3>Kuidas käib automaatkäigukasti remont Mr.Caris?</h3>
-        </div>
+        <h3 class="gb-section-title">Kuidas käib automaatkäigukasti remont Mr.Caris?</h3>
         <div class="gb-steps">
           <div class="gb-step">
             <div class="gb-step__num">01</div>
@@ -663,139 +653,84 @@
       </section>
 
       <!-- DSG / ZF Section -->
-      <section id="dsg-zf" class="gb-page-section gb-manual">
-        <div class="gb-section-header">
-          <h2>DSG ja ZF käigukastid — kõrgtehnoloogilised lahendused</h2>
-        </div>
-        <div class="gb-section-text">
-          <p><strong>DSG (Direct Shift Gearbox)</strong> on Volkswagen Grupi välja töötatud kahesiduriklutšiga käigukast, mida leidub VW, Audi, Škoda ja SEAT sõidukites. DSG on tundlik õliseisundile ja mehatroonika hälvetele — tüüpilised rikked hõlmavad siduripakirike ja mehatroonikamooduli tõrkeid. Mr.Car remondib DSG käigukaste eriseadmetega.</p>
-          <p><strong>ZF</strong> (ZF Friedrichshafen) toodab laialt levinud automaatkäigukaste (8HP, 9HP), mida kasutatakse BMW, Volvo, Land Rover ja teistes premium-sõidukites. ZF käigukastid nõuavad spetsiifilisi diagnostikaseadmeid ja erilise viskoossusega transmisooniõli. Mr.Car tegeleb ZF käigukastide diagnostika ja remondiga.</p>
-        </div>
+      <section id="dsg-zf" class="gb-page-section">
+        <h3 class="gb-section-title">DSG ja ZF käigukastid — kõrgtehnoloogilised lahendused</h3>
+        <p class="gb-section-text"><strong>DSG (Direct Shift Gearbox)</strong> on Volkswagen Grupi välja töötatud kahesiduriklutšiga käigukast, mida leidub VW, Audi, Škoda ja SEAT sõidukites. DSG on tundlik õliseisundile ja mehatroonika hälvetele — tüüpilised rikked hõlmavad siduripakirike ja mehatroonikamooduli tõrkeid. Mr.Car remondib DSG käigukaste eriseadmetega.</p>
+        <p class="gb-section-text"><strong>ZF</strong> (ZF Friedrichshafen) toodab laialt levinud automaatkäigukaste (8HP, 9HP), mida kasutatakse BMW, Volvo, Land Rover ja teistes premium-sõidukites. ZF käigukastid nõuavad spetsiifilisi diagnostikaseadmeid ja erilise viskoossusega transmisooniõli. Mr.Car tegeleb ZF käigukastide diagnostika ja remondiga.</p>
         
         <div class="gb-entities">
-          <div class="gb-entities__header">Levinumad diagnostika allikad</div>
+          <div style="font-weight: 700; color: var(--text-main);">Spetsialiseerume:</div>
           <div class="gb-entity-grid">
-            <span class="gb-entity-badge">DSG</span>
-            <span class="gb-entity-badge">ZF</span>
-            <span class="gb-entity-badge">7DCT</span>
-            <span class="gb-entity-badge">8HP</span>
+            <div class="gb-entity-item"><iconify-icon icon="mdi:car-cog" width="20"></iconify-icon> DSG</div>
+            <div class="gb-entity-item"><iconify-icon icon="mdi:car-cog" width="20"></iconify-icon> ZF</div>
+            <div class="gb-entity-item"><iconify-icon icon="mdi:car-cog" width="20"></iconify-icon> 7DCT</div>
+            <div class="gb-entity-item"><iconify-icon icon="mdi:car-cog" width="20"></iconify-icon> 8HP</div>
           </div>
         </div>
       </section>
 
       <!-- Trust Block -->
-      <section class="gb-trust gb-page-section">
-        <div class="gb-trust__item">
+      <div class="gb-trust">
+        <div class="gb-trust-item">
           <iconify-icon icon="mdi:shield-check"></iconify-icon>
-          <strong>Garantii</strong>
-          <p>1 aasta / 20 000 km tehtud töödele</p>
+          <div class="gb-trust-item__title">Garantii on 12 kuud</div>
+          <div class="gb-trust-item__desc">1 aasta / 20 000 km tehtud töödele, kirjalik garantii osadele ja tööle.</div>
         </div>
-        <div class="gb-trust__item">
-          <iconify-icon icon="mdi:cog-refresh"></iconify-icon>
-          <strong>Originaalosad</strong>
-          <p>Otsesed tarnijad, OEM kvaliteet</p>
+        <div class="gb-trust-item">
+          <iconify-icon icon="mdi:cog"></iconify-icon>
+          <div class="gb-trust-item__title">Originaalosad ja kvaliteet</div>
+          <div class="gb-trust-item__desc">Otsesed tarnijad, OEM kvaliteet — kasutame ainult tunnustatud varuosi.</div>
         </div>
-        <div class="gb-trust__item">
-          <iconify-icon icon="mdi:cash-check"></iconify-icon>
-          <strong>Selge hind</strong>
-          <p>Auskalkulatsioon enne töö algust</p>
+        <div class="gb-trust-item">
+          <iconify-icon icon="mdi:wrench-clock"></iconify-icon>
+          <div class="gb-trust-item__title">Hinnastame selgelt</div>
+          <div class="gb-trust-item__desc">Enne remonti teavitame täpselt, mis maksab diagnostika ja mis remont ise.</div>
         </div>
-      </section>
+      </div>
 
-      <!-- FAQ Section -->
-      <section id="faq" class="gb-page-section">
-        <div class="gb-section-header">
-          <h2>Korduma kippuvad küsimused</h2>
-        </div>
-        <div class="gb-faq">
-          <details class="gb-faq__item" name="faq">
-            <summary class="gb-faq__q">
-              Mis vahe on klassikalisel automaatkäigukastil ja DSG-l?
-              <iconify-icon icon="mdi:chevron-down"></iconify-icon>
-            </summary>
-            <div class="gb-faq__a">Klassikaline automaatkäigukast (hüdromehaaniline) kasutab väänet edastavat hüdrotransformaatorit, mis tagab väga sujuva sõidu. DSG (Direct Shift Gearbox) on kahesiduriklutšiga käigukast, mis vahetab käike oluliselt kiiremini ja efektiivsemalt, kuid on ehituselt teistsugune ja nõuab spetsiifilist hooldust.</div>
-          </details>
-          <details class="gb-faq__item" name="faq">
-            <summary class="gb-faq__q">
-              Mis vahe on automaatkäigukastil ja CVT-l?
-              <iconify-icon icon="mdi:chevron-down"></iconify-icon>
-            </summary>
-            <div class="gb-faq__a">CVT (Continuously Variable Transmission) ehk variaatorkäigukast sarnaneb sõidu poolelt automaatkastiga, kuid tal pole astmelisi käike. Mr.Car spetsialiseerub ainult astmelistele automaatkäigukastidele (sh DSG ja ZF), CVT-tüüpi käigukaste me ei remondi.</div>
-          </details>
-          <details class="gb-faq__item" name="faq">
-            <summary class="gb-faq__q">
-              Kui palju maksab automaatkäigukasti remont?
-              <iconify-icon icon="mdi:chevron-down"></iconify-icon>
-            </summary>
-            <div class="gb-faq__a">Kuna automaatkäigukast on väga keeruline seade, selgub remondi maksumus alles peale diagnostikat. Arvutidiagnostika ja õlirõhkude mõõtmine annavad selge pildi, mis detail vajab taastamist või vahetamist. Esitame selge pakkumise enne tööde algust.</div>
-          </details>
-          <details class="gb-faq__item" name="faq">
-            <summary class="gb-faq__q">
-              Kas automaatkäigukasti saab remontida avariirežiimis?
-              <iconify-icon icon="mdi:chevron-down"></iconify-icon>
-            </summary>
-            <div class="gb-faq__a">Avariirežiim on kaitsefunktsioon, mis pannakse peale kasti eluga päästmiseks. Autoga avariirežiimis sõita ei tohi! Sõiduk tuleb toimetada koheselt töökotta diagnostikale.</div>
-          </details>
-          <details class="gb-faq__item" name="faq">
-            <summary class="gb-faq__q">
-              Kui tihti peaks automaatkäigukasti õlivahetust tegema?
-              <iconify-icon icon="mdi:chevron-down"></iconify-icon>
-            </summary>
-            <div class="gb-faq__a">Automaatkäigukasti õli ning filtri vahetus on soovituslik teha iga 60 000 – 80 000 km tagant, et tagada käigukasti pikk eluiga ning sujuv töö.</div>
-          </details>
-          <details class="gb-faq__item" name="faq">
-            <summary class="gb-faq__q">
-              Mis juhtub, kui õlivahetus liiga kaua edasi lükata?
-              <iconify-icon icon="mdi:chevron-down"></iconify-icon>
-            </summary>
-            <div class="gb-faq__a">Vana õli kaotab oma määrdeomadused ning korjab endasse kuluosadest tekkivat metallipuru, mis omakorda toimib nagu abrasiiv, kulutades tihendeid, klappe ja filtreid. See toob kaasa rõhulangused ja käigukasti hävinemise.</div>
-          </details>
-        </div>
-      </section>
+      <!-- FAQ -->
+      <div class="gb-faq">
+        <h3 class="gb-section-title">Korduma kippuvad küsimused</h3>
+        
+        <details class="gb-faq-item">
+          <summary>Mis vahe on klassikalisel automaatkäigukastil ja DSG-l? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary>
+          <div class="gb-faq-item__content">Klassikaline automaatkäigukast (hüdromehaaniline) kasutab väänet edastavat hüdrotransformaatorit, mis tagab väga sujuva sõidu. DSG (Direct Shift Gearbox) on kahesiduriklutšiga käigukast, mis vahetab käike oluliselt kiiremini ja efektiivsemalt, kuid on ehituselt teistsugune ja nõuab spetsiifilist hooldust.</div>
+        </details>
+        
+        <details class="gb-faq-item">
+          <summary>Mis vahe on automaatkäigukastil ja CVT-l? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary>
+          <div class="gb-faq-item__content">CVT (Continuously Variable Transmission) ehk variaatorkäigukast sarnaneb sõidu poolelt automaatkastiga, kuid tal pole astmelisi käike. Mr.Car spetsialiseerub ainult astmelistele automaatkäigukastidele (sh DSG ja ZF), CVT-tüüpi käigukaste me ei remondi.</div>
+        </details>
+        
+        <details class="gb-faq-item">
+          <summary>Kui palju maksab automaatkäigukasti remont? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary>
+          <div class="gb-faq-item__content">Kuna automaatkäigukast on väga keeruline seade, selgub remondi maksumus alles peale diagnostikat. Arvutidiagnostika ja õlirõhkude mõõtmine annavad selge pildi, mis detail vajab taastamist või vahetamist. Esitame selge pakkumise enne tööde algust.</div>
+        </details>
 
-      <!-- Routing Grid Section -->
-      <section class="gb-page-section">
-        <div class="gb-section-header">
-          <h3>Täpsem info automaatkäigukasti probleemide kohta</h3>
-        </div>
-        <div class="gb-routing-grid">
-          <a href="/services/automaatkasti-diagnostika" class="gb-routing-card active">
-            <span>Automaatkäigukasti diagnostika</span>
-            <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-          </a>
-          <a href="/services/automaatkast-jouksutab" class="gb-routing-card" rel="nofollow">
-            <span>Jõnksumine ja löögid</span>
-            <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-          </a>
-          <a href="/services/automaatkast-libiseb" class="gb-routing-card" rel="nofollow">
-            <span>Libisemine</span>
-            <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-          </a>
-          <a href="/services/automaatkast-avariireziim" class="gb-routing-card" rel="nofollow">
-            <span>Avariirežiim</span>
-            <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-          </a>
-          <a href="/services/automaatkasti-olileke" class="gb-routing-card" rel="nofollow">
-            <span>Õlileke</span>
-            <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-          </a>
-          <a href="/services/kaiguvahetus-viibib" class="gb-routing-card" rel="nofollow">
-            <span>Käiguvahetuse viivitused</span>
-            <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-          </a>
-          <a href="/services/automaatkastioli-vahetus" class="gb-routing-card" rel="nofollow">
-            <span>Õlivahetus</span>
-            <iconify-icon icon="mdi:arrow-right"></iconify-icon>
-          </a>
-        </div>
-      </section>
+        <details class="gb-faq-item">
+          <summary>Kas automaatkäigukasti saab remontida avariirežiimis? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary>
+          <div class="gb-faq-item__content">Avariirežiim on kaitsefunktsioon, mis pannakse peale kasti eluga päästmiseks. Autoga avariirežiimis sõita ei tohi! Sõiduk tuleb toimetada koheselt töökotta diagnostikale.</div>
+        </details>
 
-      <!-- Internal CTA -->
-      <section class="gb-cta-block gb-page-section">
-        <h3 class="gb-cta-block__title">Kahtlustad automaatkäigukasti probleemi?</h3>
-        <p class="gb-cta-block__text">Ära oota lõpliku blokeerumiseni. Diagnostika tuvastab probleemi põhjusse ja säästab raha remondil.</p>
-        <a href="#request" class="btn btn--primary">Broneeri diagnostika</a>
-      </section>
+        <details class="gb-faq-item">
+          <summary>Kui tihti peaks automaatkäigukasti õlivahetust tegema? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary>
+          <div class="gb-faq-item__content">Automaatkäigukasti õli ning filtri vahetus on soovituslik teha iga 60 000 – 80 000 km tagant, et tagada käigukasti pikk eluiga ning sujuv töö.</div>
+        </details>
+
+        <details class="gb-faq-item">
+          <summary>Mis juhtub, kui õlivahetus liiga kaua edasi lükata? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary>
+          <div class="gb-faq-item__content">Vana õli kaotab oma määrdeomadused ning korjab endasse kuluosadest tekkivat metallipuru, mis omakorda toimib nagu abrasiiv, kulutades tihendeid, klappe ja filtreid. See toob kaasa rõhulangused ja käigukasti hävinemise.</div>
+        </details>
+      </div>
+
+
+
+      <!-- CTA -->
+      <div class="gb-cta-block">
+        <div class="gb-cta-block__title">Kahtlustad automaatkäigukasti probleemi?</div>
+        <div class="gb-cta-block__desc">Ära oota lõpliku blokeerumiseni. Diagnostika tuvastab probleemi põhjusse ja säästab raha remondil.</div>
+        <a href="#request" class="btn btn-primary" style="background:var(--accent-primary); border:none;">Broneeri diagnostika <span class="arrow">↗</span></a>
+      </div>
 
 </article>
 
