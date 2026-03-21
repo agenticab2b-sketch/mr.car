@@ -61,15 +61,15 @@ These files are part of the live site surface and may be referenced directly by 
 - `en/services/services-data.js`
 - `scripts/services-filter.js`
 
-### Active operational scripts
+### Maintained tooling
 
-These scripts are part of the current workflow or clearly retained tooling:
+These scripts are retained intentionally and should be run only when a task explicitly calls for them:
 
 - `.github/scripts/quality-gate.js`
 - `build.js`
 - `update-headers.js`
 
-Run them intentionally and review their effects before deploy.
+Do not treat every retained script as part of the everyday workflow.
 
 ### Legacy or one-off maintenance scripts
 
@@ -90,5 +90,3 @@ These are not the default workflow and should not be run casually. Treat them as
 2. Review before merge for routing, SEO-global, forms, Firebase, and deploy-related changes.
 3. Merge to `main`.
 4. Deploy only from reviewed `main`.
-
-Firebase Hosting now includes a minimal predeploy quality gate in CI before preview/live deploy.

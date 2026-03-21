@@ -43,7 +43,7 @@ This file stores the current working truth about the site structure.
 - no new URL should be introduced without checking redirects, existing equivalents, and intent overlap
 - `partials/` and `temp_docs/` are source/build artifacts, not public runtime surface
 - root-level maintenance scripts are not part of the default workflow unless a task explicitly says so
-- `ru/services/service.html` is a legacy shell and is excluded from public Hosting publish
+- `ru/services/service.html` is a legacy shell and should not be treated as the canonical current service-page implementation
 
 ## Review-required changes
 
