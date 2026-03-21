@@ -39,7 +39,10 @@ for (const filePath of PUBLIC_HTML) {
   checkPlaceholderSocials(relPath, content);
   checkServiceFormLeadWiring(relPath, content);
   checkServiceLinks(relPath, content);
+  checkCanonicalAndHreflang(relPath, content);
 }
+
+checkSitemap();
 
 if (failures.length) {
   console.error('Quality gate failed:\n');
@@ -125,6 +128,7 @@ function checkServiceLinks(relPath, content) {
 
   while ((match = hrefRegex.exec(content)) !== null) {
     const href = match[1];
+    if (href.endsWith('.css') || href.endsWith('.js')) continue;
     const normalized = href.replace(/\.html$/i, '').replace(/\/+$/, '');
     const parts = normalized.split('/').filter(Boolean);
 
@@ -139,7 +143,7 @@ function checkServiceLinks(relPath, content) {
       slug = parts[2];
     }
 
-    if (!serviceMaps[lang] || !serviceMaps[lang].has(slug)) {
+    if (!serviceMaps[lang].has(slug)) {
       failures.push({
         type: 'service-link',
         file: relPath,
@@ -159,4 +163,64 @@ function isServicePage(relPath) {
 
 function toPosix(value) {
   return value.split(path.sep).join('/');
+}
+
+function checkCanonicalAndHreflang(relPath, content) {
+  if (relPath === '404.html' || relPath === 'google6aff4100d8f2567c.html' || relPath === 'googlef4bd042d0039292d.html') return;
+
+  const canonicalMatch = content.match(/<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i);
+  if (!canonicalMatch) {
+    failures.push({
+      type: 'canonical-missing',
+      file: relPath,
+      message: 'missing canonical link tag',
+    });
+  } else {
+    const canonicalHref = canonicalMatch[1];
+    if (canonicalHref.endsWith('.html')) {
+      failures.push({
+        type: 'canonical-format',
+        file: relPath,
+        message: `canonical href ends with .html: ${canonicalHref}`,
+      });
+    }
+  }
+
+  const hreflangRegex = /<link\s+rel=["']alternate["'][^>]*href=["']([^"']+)["'][^>]*hreflang/gi;
+  let match;
+  while ((match = hreflangRegex.exec(content)) !== null) {
+    const href = match[1];
+    if (href.endsWith('.html')) {
+      failures.push({
+        type: 'hreflang-format',
+        file: relPath,
+        message: `hreflang href ends with .html: ${href}`,
+      });
+    }
+  }
+}
+
+function checkSitemap() {
+  const sitemapPath = path.join(ROOT, 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) {
+    failures.push({
+      type: 'sitemap',
+      file: 'sitemap.xml',
+      message: 'sitemap.xml not found',
+    });
+    return;
+  }
+  const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+  const locRegex = /<loc>(.+?)<\/loc>/g;
+  let match;
+  while ((match = locRegex.exec(sitemapContent)) !== null) {
+    const loc = match[1];
+    if (loc.endsWith('.html')) {
+      failures.push({
+        type: 'sitemap-format',
+        file: 'sitemap.xml',
+        message: `URL in sitemap ends with .html: ${loc}`,
+      });
+    }
+  }
 }

@@ -154,3 +154,316 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2026-03-08T03:49:32.905Z] <<< [apiv2][body] GET https://us-central1-mrcar-473416.cloudfunctions.net/getGoogleRating/api/google-rating [stream]
 [info] i  hosting: 127.0.0.1 - - [08/Mar/2026:03:49:32 +0000] "GET /api/google-rating?lang=et HTTP/1.1" 200 3622 "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [08/Mar/2026:03:49:32 +0000] \"GET /api/google-rating?lang=et HTTP/1.1\" 200 3622 \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\""}}
 [info] i  hosting: 127.0.0.1 - - [08/Mar/2026:03:50:16 +0000] "GET /video/master_ratchet_vp9_crf28.webm HTTP/1.1" 200 1054545 "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [08/Mar/2026:03:50:16 +0000] \"GET /video/master_ratchet_vp9_crf28.webm HTTP/1.1\" 200 1054545 \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36\""}}
+[debug] [2026-03-21T16:44:44.988Z] ----------------------------------------------------------------------
+[debug] [2026-03-21T16:44:44.992Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2026-03-21T16:44:44.993Z] CLI Version:   15.8.0
+[debug] [2026-03-21T16:44:44.993Z] Platform:      win32
+[debug] [2026-03-21T16:44:44.993Z] Node Version:  v24.13.1
+[debug] [2026-03-21T16:44:44.993Z] Time:          Sat Mar 21 2026 18:44:44 GMT+0200 (Восточная Европа, стандартное время)
+[debug] [2026-03-21T16:44:44.994Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-21T16:44:47.761Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-21T16:44:47.762Z] > authorizing via signed-in user (bumbox90@gmail.com)
+[debug] [2026-03-21T16:44:47.762Z] [iam] checking project mrcar-473416 for permissions ["firebase.projects.get"]
+[debug] [2026-03-21T16:44:47.763Z] Checked if tokens are valid: false, expires at: 1774108546581
+[debug] [2026-03-21T16:44:47.763Z] Checked if tokens are valid: false, expires at: 1774108546581
+[debug] [2026-03-21T16:44:47.764Z] > refreshing access token with scopes: []
+[debug] [2026-03-21T16:44:47.766Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-21T16:44:47.767Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-21T16:44:47.850Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-03-21T16:44:47.850Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-21T16:44:47.864Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions [none]
+[debug] [2026-03-21T16:44:47.864Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions  x-goog-user-project=mrcar-473416
+[debug] [2026-03-21T16:44:47.864Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-21T16:44:48.645Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions 200
+[debug] [2026-03-21T16:44:48.646Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-21T16:44:48.647Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:48.647Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:48.647Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 [none]
+[debug] [2026-03-21T16:44:48.849Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 200
+[debug] [2026-03-21T16:44:48.849Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 {"projectNumber":"723126621967","projectId":"mrcar-473416","lifecycleState":"ACTIVE","name":"MrCar","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-09-27T16:01:53.885421Z"}
+[info] 
+[info] === Serving from 'C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main'...
+[info] 
+[debug] [2026-03-21T16:44:48.853Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:48.853Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:48.865Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites 
+[debug] [2026-03-21T16:44:48.876Z] defaultcredentials: writing to file C:\Users\Admin\AppData\Roaming\firebase\bumbox90_gmail_com_application_default_credentials.json
+[debug] [2026-03-21T16:44:48.879Z] Setting GAC to C:\Users\Admin\AppData\Roaming\firebase\bumbox90_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Admin\\AppData\\Roaming\\firebase\\bumbox90_gmail_com_application_default_credentials.json"}}
+[debug] [2026-03-21T16:44:48.879Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:48.880Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:48.880Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig [none]
+[debug] [2026-03-21T16:44:49.169Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig 200
+[debug] [2026-03-21T16:44:49.169Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig {"projectId":"mrcar-473416","storageBucket":"mrcar-473416.firebasestorage.app"}
+[debug] [2026-03-21T16:44:50.027Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites 200
+[debug] [2026-03-21T16:44:50.027Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites {"sites":[{"name":"projects/mrcar-473416/sites/mrcar-473416","defaultUrl":"https://mrcar-473416.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2026-03-21T16:44:50.027Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:50.027Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:50.027Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/webApps/-/config [none]
+[debug] [2026-03-21T16:44:50.613Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/webApps/-/config 200
+[debug] [2026-03-21T16:44:50.613Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/webApps/-/config {"projectId":"mrcar-473416","storageBucket":"mrcar-473416.firebasestorage.app","apiKey":"AIzaSyBGtmJn5yXXJFvnpLx5pWaeYlaxKbnj-Ho","authDomain":"mrcar-473416.firebaseapp.com","messagingSenderId":"723126621967","projectNumber":"723126621967","version":"2"}
+[debug] [2026-03-21T16:44:50.626Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:50.626Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T16:44:50.627Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416 [none]
+[debug] [2026-03-21T16:44:51.059Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416 200
+[debug] [2026-03-21T16:44:51.060Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416 {"projectId":"mrcar-473416","projectNumber":"723126621967","displayName":"MrCar","name":"projects/mrcar-473416","resources":{"hostingSite":"mrcar-473416"},"state":"ACTIVE","etag":"1_f980a2dd-e20d-4e53-913d-a62f966f0122"}
+[info] i  functions: Watching "C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Admin\\Documents\\GitHub\\MrCar in github\\mr.car-main (1)\\mr.car-main\\functions\" for Cloud Functions..."}}
+[info] +  hosting[mrcar-473416]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2026-03-21T16:44:51.093Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2026-03-21T16:44:52.498Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0",
+    "nodemailer": "^8.0.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.4.1"
+  },
+  "private": true
+}
+[debug] [2026-03-21T16:44:52.499Z] Building nodejs source
+[debug] [2026-03-21T16:44:52.499Z] Failed to find version of module node: reached end of search path C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main\functions\node_modules
+[info] +  functions: Using node@24 from host. 
+[debug] [2026-03-21T16:44:52.501Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-21T16:44:52.513Z] Found firebase-functions binary at 'C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8349
+
+[error] (node:5980) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[debug] [2026-03-21T16:44:53.563Z] Got response from /__/functions.yaml {"endpoints":{"getGoogleRating":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west4"],"secretEnvironmentVariables":[{"key":"GOOGLE_MAPS_API_KEY"}],"labels":{},"httpsTrigger":{},"entryPoint":"getGoogleRating"},"ping":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west4"],"labels":{},"httpsTrigger":{},"entryPoint":"ping"},"robots":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west4"],"labels":{},"httpsTrigger":{},"entryPoint":"robots"},"lead":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west4"],"secretEnvironmentVariables":[{"key":"SMTP_PASS"}],"labels":{},"httpsTrigger":{},"entryPoint":"lead"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: getGoogleRating, ping, robots, lead. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getGoogleRating, ping, robots, lead."}}
+[info] +  functions[europe-west4-getGoogleRating]: http function initialized (http://localhost:5001/mrcar-473416/europe-west4/getGoogleRating). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mrcar-473416/europe-west4/getGoogleRating)."}}
+[info] +  functions[europe-west4-ping]: http function initialized (http://localhost:5001/mrcar-473416/europe-west4/ping). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mrcar-473416/europe-west4/ping)."}}
+[info] +  functions[europe-west4-robots]: http function initialized (http://localhost:5001/mrcar-473416/europe-west4/robots). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mrcar-473416/europe-west4/robots)."}}
+[info] +  functions[europe-west4-lead]: http function initialized (http://localhost:5001/mrcar-473416/europe-west4/lead). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mrcar-473416/europe-west4/lead)."}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:45:58 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:45:58 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] [hosting] Rewriting /api/google-rating?lang=et to http://localhost:5001/mrcar-473416/us-central1/getGoogleRating for local Function us-central1/getGoogleRating
+[debug] [2026-03-21T16:45:58.874Z] >>> [apiv2][query] GET http://localhost:5001/mrcar-473416/us-central1/getGoogleRating/api/google-rating lang=et
+[debug] [2026-03-21T16:45:58.882Z] [work-queue] {"queuedWork":["/mrcar-473416/us-central1/getGoogleRating/api/google-rating-2026-03-21T16:45:58.882Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-03-21T16:45:58.883Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/mrcar-473416/us-central1/getGoogleRating/api/google-rating-2026-03-21T16:45:58.882Z"],"workRunningCount":1}
+[debug] [2026-03-21T16:45:58.886Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-03-21T16:45:58.887Z] <<< [apiv2][status] GET http://localhost:5001/mrcar-473416/us-central1/getGoogleRating/api/google-rating 404
+[debug] [2026-03-21T16:45:58.887Z] <<< [apiv2][body] GET http://localhost:5001/mrcar-473416/us-central1/getGoogleRating/api/google-rating [stream]
+[info] i  hosting: ::1 - - [21/Mar/2026:16:45:58 +0000] "GET /api/google-rating?lang=et HTTP/1.1" 404 161 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:45:58 +0000] \"GET /api/google-rating?lang=et HTTP/1.1\" 404 161 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:45:59 +0000] "GET /favicon.ico HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:45:59 +0000] \"GET /favicon.ico HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:46:03 +0000] "GET /services/kaigukastiremont HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:46:03 +0000] \"GET /services/kaigukastiremont HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:46:03 +0000] "GET /services/transmission.css?v=2 HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:46:03 +0000] \"GET /services/transmission.css?v=2 HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:48:11 +0000] "GET /services/kaigukastiremont HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:48:11 +0000] \"GET /services/kaigukastiremont HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:48:11 +0000] "GET /services/transmission.css?v=2 HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:48:11 +0000] \"GET /services/transmission.css?v=2 HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:48:13 +0000] "GET /services/automaatkasti-remont HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:48:13 +0000] \"GET /services/automaatkasti-remont HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:48:13 +0000] "GET /services/transmission.css?v=3 HTTP/1.1" 200 - "http://localhost:5000/services/automaatkasti-remont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:48:13 +0000] \"GET /services/transmission.css?v=3 HTTP/1.1\" 200 - \"http://localhost:5000/services/automaatkasti-remont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:48:13 +0000] "GET /styles.css HTTP/1.1" 404 - "http://localhost:5000/services/automaatkasti-remont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:48:13 +0000] \"GET /styles.css HTTP/1.1\" 404 - \"http://localhost:5000/services/automaatkasti-remont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:52:54 +0000] "GET /services/automaatkasti-remont HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:52:54 +0000] \"GET /services/automaatkasti-remont HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:52:54 +0000] "GET /services/transmission.css?v=2 HTTP/1.1" 200 - "http://localhost:5000/services/automaatkasti-remont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:52:54 +0000] \"GET /services/transmission.css?v=2 HTTP/1.1\" 200 - \"http://localhost:5000/services/automaatkasti-remont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:57:46 +0000] "GET /services/kaigukastiremont HTTP/1.1" 200 - "http://localhost:5000/services/automaatkasti-remont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:57:46 +0000] \"GET /services/kaigukastiremont HTTP/1.1\" 200 - \"http://localhost:5000/services/automaatkasti-remont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:57:46 +0000] "GET /services/transmission.css?v=2 HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:57:46 +0000] \"GET /services/transmission.css?v=2 HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:58:16 +0000] "GET /services/kaigukastiremont HTTP/1.1" 200 - "http://localhost:5000/services/automaatkasti-remont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:58:16 +0000] \"GET /services/kaigukastiremont HTTP/1.1\" 200 - \"http://localhost:5000/services/automaatkasti-remont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:16:59:01 +0000] "GET /services/automaatkasti-remont HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:16:59:01 +0000] \"GET /services/automaatkasti-remont HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[debug] [2026-03-21T17:09:37.440Z] ----------------------------------------------------------------------
+[debug] [2026-03-21T17:09:37.445Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2026-03-21T17:09:37.446Z] CLI Version:   15.8.0
+[debug] [2026-03-21T17:09:37.446Z] Platform:      win32
+[debug] [2026-03-21T17:09:37.446Z] Node Version:  v24.13.1
+[debug] [2026-03-21T17:09:37.446Z] Time:          Sat Mar 21 2026 19:09:37 GMT+0200 (Восточная Европа, стандартное время)
+[debug] [2026-03-21T17:09:37.447Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-21T17:09:39.954Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-21T17:09:39.954Z] > authorizing via signed-in user (bumbox90@gmail.com)
+[debug] [2026-03-21T17:09:39.954Z] [iam] checking project mrcar-473416 for permissions ["firebase.projects.get"]
+[debug] [2026-03-21T17:09:39.955Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:09:39.955Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:09:39.956Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions [none]
+[debug] [2026-03-21T17:09:39.956Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions  x-goog-user-project=mrcar-473416
+[debug] [2026-03-21T17:09:39.956Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-21T17:09:40.731Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions 200
+[debug] [2026-03-21T17:09:40.731Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-21T17:09:40.732Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:09:40.732Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:09:40.732Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 [none]
+[debug] [2026-03-21T17:09:40.934Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 200
+[debug] [2026-03-21T17:09:40.934Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 {"projectNumber":"723126621967","projectId":"mrcar-473416","lifecycleState":"ACTIVE","name":"MrCar","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-09-27T16:01:53.885421Z"}
+[info] 
+[info] === Serving from 'C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main'...
+[info] 
+[debug] [2026-03-21T17:09:40.940Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:09:40.940Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:09:40.952Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites 
+[debug] [2026-03-21T17:09:40.966Z] defaultcredentials: writing to file C:\Users\Admin\AppData\Roaming\firebase\bumbox90_gmail_com_application_default_credentials.json
+[debug] [2026-03-21T17:09:40.969Z] Setting GAC to C:\Users\Admin\AppData\Roaming\firebase\bumbox90_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Admin\\AppData\\Roaming\\firebase\\bumbox90_gmail_com_application_default_credentials.json"}}
+[debug] [2026-03-21T17:09:40.970Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:09:40.970Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:09:40.970Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig [none]
+[debug] [2026-03-21T17:09:41.444Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig 200
+[debug] [2026-03-21T17:09:41.444Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig {"projectId":"mrcar-473416","storageBucket":"mrcar-473416.firebasestorage.app"}
+[debug] [2026-03-21T17:09:41.462Z] Error: listen EADDRINUSE: address already in use ::1:5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at GetAddrInfoReqWrap.callback (node:net:2206:7)
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-03-21T17:10:14.070Z] ----------------------------------------------------------------------
+[debug] [2026-03-21T17:10:14.073Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --debug
+[debug] [2026-03-21T17:10:14.075Z] CLI Version:   15.8.0
+[debug] [2026-03-21T17:10:14.075Z] Platform:      win32
+[debug] [2026-03-21T17:10:14.075Z] Node Version:  v24.13.1
+[debug] [2026-03-21T17:10:14.076Z] Time:          Sat Mar 21 2026 19:10:14 GMT+0200 (Восточная Европа, стандартное время)
+[debug] [2026-03-21T17:10:14.076Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-21T17:10:16.183Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-21T17:10:16.184Z] > authorizing via signed-in user (bumbox90@gmail.com)
+[debug] [2026-03-21T17:10:16.184Z] [iam] checking project mrcar-473416 for permissions ["firebase.projects.get"]
+[debug] [2026-03-21T17:10:16.186Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:10:16.186Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:10:16.188Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions [none]
+[debug] [2026-03-21T17:10:16.189Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions  x-goog-user-project=mrcar-473416
+[debug] [2026-03-21T17:10:16.189Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-21T17:10:16.970Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions 200
+[debug] [2026-03-21T17:10:16.970Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-21T17:10:16.972Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:10:16.972Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:10:16.972Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 [none]
+[debug] [2026-03-21T17:10:17.151Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 200
+[debug] [2026-03-21T17:10:17.152Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 {"projectNumber":"723126621967","projectId":"mrcar-473416","lifecycleState":"ACTIVE","name":"MrCar","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-09-27T16:01:53.885421Z"}
+[info] 
+[info] === Serving from 'C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main'...
+[info] 
+[debug] [2026-03-21T17:10:17.158Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:10:17.159Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:10:17.170Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites 
+[debug] [2026-03-21T17:10:17.182Z] defaultcredentials: writing to file C:\Users\Admin\AppData\Roaming\firebase\bumbox90_gmail_com_application_default_credentials.json
+[debug] [2026-03-21T17:10:17.184Z] Setting GAC to C:\Users\Admin\AppData\Roaming\firebase\bumbox90_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Admin\\AppData\\Roaming\\firebase\\bumbox90_gmail_com_application_default_credentials.json"}}
+[debug] [2026-03-21T17:10:17.185Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:10:17.185Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:10:17.186Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig [none]
+[debug] [2026-03-21T17:10:17.452Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig 200
+[debug] [2026-03-21T17:10:17.453Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig {"projectId":"mrcar-473416","storageBucket":"mrcar-473416.firebasestorage.app"}
+[debug] [2026-03-21T17:10:17.470Z] Error: listen EADDRINUSE: address already in use ::1:5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at GetAddrInfoReqWrap.callback (node:net:2206:7)
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:134:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-03-21T17:11:30.068Z] ----------------------------------------------------------------------
+[debug] [2026-03-21T17:11:30.071Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2026-03-21T17:11:30.071Z] CLI Version:   15.8.0
+[debug] [2026-03-21T17:11:30.072Z] Platform:      win32
+[debug] [2026-03-21T17:11:30.072Z] Node Version:  v24.13.1
+[debug] [2026-03-21T17:11:30.072Z] Time:          Sat Mar 21 2026 19:11:30 GMT+0200 (Восточная Европа, стандартное время)
+[debug] [2026-03-21T17:11:30.072Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-21T17:11:31.812Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-21T17:11:31.812Z] > authorizing via signed-in user (bumbox90@gmail.com)
+[debug] [2026-03-21T17:11:31.812Z] [iam] checking project mrcar-473416 for permissions ["firebase.projects.get"]
+[debug] [2026-03-21T17:11:31.813Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:31.813Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:31.814Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions [none]
+[debug] [2026-03-21T17:11:31.814Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions  x-goog-user-project=mrcar-473416
+[debug] [2026-03-21T17:11:31.814Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-21T17:11:32.582Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions 200
+[debug] [2026-03-21T17:11:32.583Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2026-03-21T17:11:32.584Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:32.584Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:32.584Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 [none]
+[debug] [2026-03-21T17:11:32.779Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 200
+[debug] [2026-03-21T17:11:32.779Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/mrcar-473416 {"projectNumber":"723126621967","projectId":"mrcar-473416","lifecycleState":"ACTIVE","name":"MrCar","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-09-27T16:01:53.885421Z"}
+[info] 
+[info] === Serving from 'C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main'...
+[info] 
+[debug] [2026-03-21T17:11:32.784Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:32.784Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:32.795Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites 
+[debug] [2026-03-21T17:11:32.802Z] defaultcredentials: writing to file C:\Users\Admin\AppData\Roaming\firebase\bumbox90_gmail_com_application_default_credentials.json
+[debug] [2026-03-21T17:11:32.804Z] Setting GAC to C:\Users\Admin\AppData\Roaming\firebase\bumbox90_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Admin\\AppData\\Roaming\\firebase\\bumbox90_gmail_com_application_default_credentials.json"}}
+[debug] [2026-03-21T17:11:32.804Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:32.805Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:32.805Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig [none]
+[debug] [2026-03-21T17:11:33.277Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig 200
+[debug] [2026-03-21T17:11:33.277Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/adminSdkConfig {"projectId":"mrcar-473416","storageBucket":"mrcar-473416.firebasestorage.app"}
+[debug] [2026-03-21T17:11:33.758Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites 200
+[debug] [2026-03-21T17:11:33.758Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/mrcar-473416/sites {"sites":[{"name":"projects/mrcar-473416/sites/mrcar-473416","defaultUrl":"https://mrcar-473416.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2026-03-21T17:11:33.758Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:33.758Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:33.759Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/webApps/-/config [none]
+[debug] [2026-03-21T17:11:34.366Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/webApps/-/config 200
+[debug] [2026-03-21T17:11:34.366Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416/webApps/-/config {"projectId":"mrcar-473416","storageBucket":"mrcar-473416.firebasestorage.app","apiKey":"AIzaSyBGtmJn5yXXJFvnpLx5pWaeYlaxKbnj-Ho","authDomain":"mrcar-473416.firebaseapp.com","messagingSenderId":"723126621967","projectNumber":"723126621967","version":"2"}
+[debug] [2026-03-21T17:11:34.377Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:34.377Z] Checked if tokens are valid: true, expires at: 1774115086851
+[debug] [2026-03-21T17:11:34.377Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416 [none]
+[debug] [2026-03-21T17:11:34.775Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416 200
+[debug] [2026-03-21T17:11:34.775Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mrcar-473416 {"projectId":"mrcar-473416","projectNumber":"723126621967","displayName":"MrCar","name":"projects/mrcar-473416","resources":{"hostingSite":"mrcar-473416"},"state":"ACTIVE","etag":"1_f980a2dd-e20d-4e53-913d-a62f966f0122"}
+[info] i  functions: Watching "C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Admin\\Documents\\GitHub\\MrCar in github\\mr.car-main (1)\\mr.car-main\\functions\" for Cloud Functions..."}}
+[info] +  hosting[mrcar-473416]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2026-03-21T17:11:34.806Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2026-03-21T17:11:36.431Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0",
+    "nodemailer": "^8.0.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.4.1"
+  },
+  "private": true
+}
+[debug] [2026-03-21T17:11:36.431Z] Building nodejs source
+[debug] [2026-03-21T17:11:36.432Z] Failed to find version of module node: reached end of search path C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main\functions\node_modules
+[info] +  functions: Using node@24 from host. 
+[debug] [2026-03-21T17:11:36.434Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-21T17:11:36.449Z] Found firebase-functions binary at 'C:\Users\Admin\Documents\GitHub\MrCar in github\mr.car-main (1)\mr.car-main\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8198
+
+[error] (node:12180) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[debug] [2026-03-21T17:11:37.487Z] Got response from /__/functions.yaml {"endpoints":{"getGoogleRating":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west4"],"secretEnvironmentVariables":[{"key":"GOOGLE_MAPS_API_KEY"}],"labels":{},"httpsTrigger":{},"entryPoint":"getGoogleRating"},"ping":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west4"],"labels":{},"httpsTrigger":{},"entryPoint":"ping"},"robots":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west4"],"labels":{},"httpsTrigger":{},"entryPoint":"robots"},"lead":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west4"],"secretEnvironmentVariables":[{"key":"SMTP_PASS"}],"labels":{},"httpsTrigger":{},"entryPoint":"lead"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: getGoogleRating, ping, robots, lead. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getGoogleRating, ping, robots, lead."}}
+[info] +  functions[europe-west4-getGoogleRating]: http function initialized (http://localhost:5001/mrcar-473416/europe-west4/getGoogleRating). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mrcar-473416/europe-west4/getGoogleRating)."}}
+[info] +  functions[europe-west4-ping]: http function initialized (http://localhost:5001/mrcar-473416/europe-west4/ping). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mrcar-473416/europe-west4/ping)."}}
+[info] +  functions[europe-west4-robots]: http function initialized (http://localhost:5001/mrcar-473416/europe-west4/robots). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mrcar-473416/europe-west4/robots)."}}
+[info] +  functions[europe-west4-lead]: http function initialized (http://localhost:5001/mrcar-473416/europe-west4/lead). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/mrcar-473416/europe-west4/lead)."}}
+[info] i  hosting: ::1 - - [21/Mar/2026:17:11:56 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:17:11:56 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] [hosting] Rewriting /api/google-rating?lang=et to http://localhost:5001/mrcar-473416/us-central1/getGoogleRating for local Function us-central1/getGoogleRating
+[debug] [2026-03-21T17:11:57.545Z] >>> [apiv2][query] GET http://localhost:5001/mrcar-473416/us-central1/getGoogleRating/api/google-rating lang=et
+[debug] [2026-03-21T17:11:57.552Z] [work-queue] {"queuedWork":["/mrcar-473416/us-central1/getGoogleRating/api/google-rating-2026-03-21T17:11:57.552Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-03-21T17:11:57.552Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/mrcar-473416/us-central1/getGoogleRating/api/google-rating-2026-03-21T17:11:57.552Z"],"workRunningCount":1}
+[debug] [2026-03-21T17:11:57.555Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-03-21T17:11:57.558Z] <<< [apiv2][status] GET http://localhost:5001/mrcar-473416/us-central1/getGoogleRating/api/google-rating 404
+[debug] [2026-03-21T17:11:57.558Z] <<< [apiv2][body] GET http://localhost:5001/mrcar-473416/us-central1/getGoogleRating/api/google-rating [stream]
+[info] i  hosting: ::1 - - [21/Mar/2026:17:11:57 +0000] "GET /api/google-rating?lang=et HTTP/1.1" 404 161 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:17:11:57 +0000] \"GET /api/google-rating?lang=et HTTP/1.1\" 404 161 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:17:12:03 +0000] "GET /services/kaigukastiremont HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:17:12:03 +0000] \"GET /services/kaigukastiremont HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:17:12:03 +0000] "GET /services/transmission.css?v=2 HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:17:12:03 +0000] \"GET /services/transmission.css?v=2 HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:17:12:20 +0000] "GET /services/automaatkasti-remont HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:17:12:20 +0000] \"GET /services/automaatkasti-remont HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [21/Mar/2026:17:13:32 +0000] "GET /services/automaatkasti-remont HTTP/1.1" 200 - "http://localhost:5000/services/kaigukastiremont" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [21/Mar/2026:17:13:32 +0000] \"GET /services/automaatkasti-remont HTTP/1.1\" 200 - \"http://localhost:5000/services/kaigukastiremont\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36\""}}
