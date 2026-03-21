@@ -39,7 +39,10 @@ This file stores the current working truth about the site structure.
 
 - ET remains the default language root
 - localized pages should stay structurally aligned where practical
+- new transmission pages should be implemented in ET first, then adapted to RU and EN after ET approval
 - service-page expansion should follow an approved page map before bulk generation
+- the existing global service sidebar remains the default sidebar across service pages
+- transmission-only internal navigation may be added inside gearbox / AKPP pages without changing the global sidebar pattern
 - no new URL should be introduced without checking redirects, existing equivalents, and intent overlap
 - `partials/` and `temp_docs/` are source/build artifacts, not public runtime surface
 - root-level maintenance scripts are not part of the default workflow unless a task explicitly says so
