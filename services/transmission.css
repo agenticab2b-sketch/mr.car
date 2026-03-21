@@ -1,0 +1,288 @@
+/* transmission.css */
+/* Reusable styling pattern for the Transmission/Gearbox cluster */
+
+.gb-page-section {
+  margin-bottom: 3rem;
+}
+
+.gb-local-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.gb-local-nav__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--background-elevated, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-full, 9999px);
+  color: var(--text-main, #0f172a);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all var(--transition-fast, 0.2s ease);
+}
+
+.gb-local-nav__pill:hover,
+.gb-local-nav__pill.active {
+  background: var(--accent-primary, #ea580c);
+  color: #fff;
+  border-color: var(--accent-primary, #ea580c);
+}
+
+.gb-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-main, #0f172a);
+}
+
+.gb-symptoms {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.gb-symptom-card {
+  padding: 1.5rem;
+  background: var(--background-elevated, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 0.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform var(--transition-fast, 0.2s ease), box-shadow var(--transition-fast, 0.2s ease);
+}
+.gb-symptom-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+}
+
+.gb-symptom-card__icon {
+  color: var(--accent-primary, #ea580c);
+  background: rgba(234, 88, 12, 0.1);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gb-symptom-card__title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--text-main, #0f172a);
+}
+.gb-symptom-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-muted, #475569);
+  line-height: 1.5;
+}
+
+.gb-urgency-block {
+  background: rgba(234, 88, 12, 0.05);
+  border-left: 4px solid var(--accent-primary, #ea580c);
+  padding: 1.5rem;
+  border-radius: 0 var(--radius-md, 0.5rem) var(--radius-md, 0.5rem) 0;
+  margin-bottom: 2rem;
+}
+
+.gb-urgency-block__title {
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gb-urgency-block__title iconify-icon {
+  color: var(--accent-primary, #ea580c);
+}
+.gb-urgency-block__text {
+  font-size: 0.9375rem;
+  color: var(--text-muted, #475569);
+  line-height: 1.6;
+}
+
+.gb-diagnostics-card {
+  background: var(--background-main, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 1rem);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.1));
+}
+
+.gb-routing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.gb-route-card {
+  display: block;
+  text-decoration: none;
+  background: var(--background-elevated, #f8fafc);
+  border: 2px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 1rem);
+  padding: 2rem;
+  transition: all var(--transition-fast, 0.2s ease);
+}
+.gb-route-card.gb-route-card--primary {
+  border-color: rgba(234, 88, 12, 0.3);
+}
+
+.gb-route-card:hover {
+  border-color: var(--accent-primary, #ea580c);
+  background: var(--background-main, #ffffff);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+}
+
+.gb-route-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.gb-route-card__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-primary, #ea580c);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md, 0.5rem);
+}
+.gb-route-card__arrow {
+  color: var(--accent-primary, #ea580c);
+}
+
+.gb-route-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 0.5rem;
+}
+.gb-route-card__desc {
+  font-size: 0.9375rem;
+  color: var(--text-muted, #475569);
+  line-height: 1.5;
+}
+
+.gb-entities {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  background: var(--background-elevated, #f8fafc);
+  border-radius: var(--radius-md, 0.5rem);
+  margin-bottom: 3rem;
+  align-items: center;
+}
+.gb-entity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted, #475569);
+  font-weight: 500;
+}
+.gb-entity-item iconify-icon {
+  color: var(--text-main, #0f172a);
+}
+
+.gb-faq {
+  margin-bottom: 3rem;
+}
+.gb-faq-item {
+  background: var(--background-main, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 0.5rem);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.gb-faq-item summary {
+  padding: 1.25rem 1.5rem;
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gb-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.gb-faq-item summary::after {
+  content: '+';
+  font-size: 1.25rem;
+  color: var(--accent-primary, #ea580c);
+  transition: transform 0.2s ease;
+}
+.gb-faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+.gb-faq-item__content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: var(--text-muted, #475569);
+  line-height: 1.6;
+}
+
+.gb-trust {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.gb-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.gb-trust-item iconify-icon {
+  color: var(--accent-primary, #ea580c);
+  font-size: 2rem;
+}
+.gb-trust-item__title {
+  font-weight: 700;
+  color: var(--text-main, #0f172a);
+}
+.gb-trust-item__desc {
+  font-size: 0.875rem;
+  color: var(--text-muted, #475569);
+}
+
+.gb-cta-block {
+  background: var(--text-main, #0f172a);
+  color: #fff;
+  border-radius: var(--radius-lg, 1rem);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.gb-cta-block__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.gb-cta-block__desc {
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
