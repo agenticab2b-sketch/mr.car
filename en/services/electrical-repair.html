@@ -709,7 +709,7 @@
     });
 
     // Form handling
-    const form = document.getElementById('serviceForm');
+    const form = document.getElementById('serviceForm') || document.getElementById('contactForm');
     if (form) {
       // Set initial timestamp
       const tsStartInput = document.getElementById('tsStart');
