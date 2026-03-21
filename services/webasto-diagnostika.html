@@ -968,22 +968,88 @@
                 // -- Form handling --
                 var contactForm = document.getElementById('contactForm');
                 if (contactForm) {
+                    var tsStartInput = document.getElementById('tsStart');
+                    if (tsStartInput) tsStartInput.value = Date.now();
+
+                    var requiredFields = contactForm.querySelectorAll('[required]');
+                    var formErrorBanner = document.getElementById('formError');
+
+                    var clearFieldError = function (field) {
+                        field.classList.remove('form-error');
+                        var allRequiredFilled = Array.from(requiredFields).every(function (f) { return f.value.trim() !== ''; });
+                        if (allRequiredFilled && formErrorBanner) {
+                            formErrorBanner.style.display = 'none';
+                        }
+                    };
+
+                    requiredFields.forEach(function (field) {
+                        field.addEventListener('input', function () { clearFieldError(field); });
+                        field.addEventListener('change', function () { clearFieldError(field); });
+                    });
+
                     contactForm.addEventListener('submit', function (e) {
                         e.preventDefault();
+
+                        var hasError = false;
+                        requiredFields.forEach(function (field) {
+                            if (!field.value.trim()) {
+                                field.classList.add('form-error');
+                                hasError = true;
+                            } else {
+                                field.classList.remove('form-error');
+                            }
+                        });
+
+                        if (hasError) {
+                            if (formErrorBanner) formErrorBanner.style.display = 'block';
+                            return;
+                        }
+
                         var btn = this.querySelector('button[type="submit"]');
                         var orig = btn.innerHTML;
                         btn.disabled = true;
                         btn.innerHTML = 'Saatmine...';
-                        setTimeout(function () {
-                            var sb = document.getElementById('snackbar');
-                            sb.className = 'snackbar show';
-                            setTimeout(function () { sb.className = sb.className.replace('show', ''); }, 3000);
-                            contactForm.reset();
-                            btn.disabled = false;
-                            btn.innerHTML = orig;
-                        }, 1000);
+
+                        var formData = new FormData(contactForm);
+                        var data = Object.fromEntries(formData.entries());
+                        data.pageUrl = window.location.href;
+
+                        fetch('/api/lead', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(data)
+                        })
+                            .then(function (response) { return response.json(); })
+                            .then(function (result) {
+                                if (result.success) {
+                                    showSnackbar('Aitah! Paring on saadetud.');
+                                    contactForm.reset();
+                                    if (tsStartInput) tsStartInput.value = Date.now();
+                                } else {
+                                    showSnackbar('Paringut ei onnestunud saata. Proovige uuesti.', true);
+                                }
+                            })
+                            .catch(function (error) {
+                                console.error('Error:', error);
+                                showSnackbar('Paringut ei onnestunud saata. Proovige uuesti.', true);
+                            })
+                            .finally(function () {
+                                btn.disabled = false;
+                                btn.innerHTML = orig;
+                            });
                     });
-        }
+                }
+
+                function showSnackbar(message, isError) {
+                    var sb = document.getElementById('snackbar');
+                    if (!sb) return;
+                    if (message) sb.innerText = message;
+                    sb.className = 'snackbar show';
+                    sb.style.backgroundColor = isError ? 'var(--error)' : '';
+                    setTimeout(function () {
+                        sb.className = sb.className.replace('show', '');
+                    }, 4000);
+                }
 
                 // -- Init --
                 buildNavMenus();

@@ -930,7 +930,7 @@
                         var item = this.closest('.wb-faq__item');
                         var isOpen = item.classList.contains('is-open');
 
-                        document.querySelectorAll('.wb-faq__item').forEach(function (el) {
+                document.querySelectorAll('.wb-faq__item').forEach(function (el) {
                             el.classList.remove('is-open');
                             el.querySelector('.wb-faq__q').setAttribute('aria-expanded', 'false');
                         });
@@ -941,6 +941,92 @@
                         }
                     });
         });
+
+                // ── Form handling ──
+                var contactForm = document.getElementById('contactForm');
+                if (contactForm) {
+                    var tsStartInput = document.getElementById('tsStart');
+                    if (tsStartInput) tsStartInput.value = Date.now();
+
+                    var requiredFields = contactForm.querySelectorAll('[required]');
+                    var formErrorBanner = document.getElementById('formError');
+
+                    var clearFieldError = function (field) {
+                        field.classList.remove('form-error');
+                        var allRequiredFilled = Array.from(requiredFields).every(function (f) { return f.value.trim() !== ''; });
+                        if (allRequiredFilled && formErrorBanner) {
+                            formErrorBanner.style.display = 'none';
+                        }
+                    };
+
+                    requiredFields.forEach(function (field) {
+                        field.addEventListener('input', function () { clearFieldError(field); });
+                        field.addEventListener('change', function () { clearFieldError(field); });
+                    });
+
+                    contactForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        var hasError = false;
+                        requiredFields.forEach(function (field) {
+                            if (!field.value.trim()) {
+                                field.classList.add('form-error');
+                                hasError = true;
+                            } else {
+                                field.classList.remove('form-error');
+                            }
+                        });
+
+                        if (hasError) {
+                            if (formErrorBanner) formErrorBanner.style.display = 'block';
+                            return;
+                        }
+
+                        var btn = this.querySelector('button[type="submit"]');
+                        var orig = btn.innerHTML;
+                        btn.disabled = true;
+                        btn.innerHTML = 'Saatmine...';
+
+                        var formData = new FormData(contactForm);
+                        var data = Object.fromEntries(formData.entries());
+                        data.pageUrl = window.location.href;
+
+                        fetch('/api/lead', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(data)
+                        })
+                            .then(function (response) { return response.json(); })
+                            .then(function (result) {
+                                if (result.success) {
+                                    showSnackbar('Aitah! Paring on saadetud.');
+                                    contactForm.reset();
+                                    if (tsStartInput) tsStartInput.value = Date.now();
+                                } else {
+                                    showSnackbar('Paringut ei onnestunud saata. Proovige uuesti.', true);
+                                }
+                            })
+                            .catch(function (error) {
+                                console.error('Error:', error);
+                                showSnackbar('Paringut ei onnestunud saata. Proovige uuesti.', true);
+                            })
+                            .finally(function () {
+                                btn.disabled = false;
+                                btn.innerHTML = orig;
+                            });
+                    });
+                }
+
+                function showSnackbar(message, isError) {
+                    var x = document.getElementById('snackbar');
+                    if (!x) return;
+                    if (message) x.innerText = message;
+                    x.className = 'snackbar show';
+                    x.style.backgroundColor = isError ? 'var(--error)' : '';
+                    setTimeout(function () {
+                        x.className = x.className.replace('show', '');
+                    }, 4000);
+                }
 
                 // ── Init ──
                 buildNavMenus();
