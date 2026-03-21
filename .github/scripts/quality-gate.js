@@ -20,6 +20,7 @@ const IGNORE_DIRS = new Set([
 const PUBLIC_HTML = [];
 const failures = [];
 const LEGACY_EXCLUDED_HTML = new Set([
+  // Legacy dynamic shell kept in git history but explicitly excluded from Hosting publish.
   'ru/services/service.html',
 ]);
 

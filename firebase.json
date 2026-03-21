@@ -11,6 +11,7 @@
       "project-control/**",
       "partials/**",
       "temp_docs/**",
+      "ru/services/service.html",
       "**/*.md",
       "**/*.py",
       "**/*.ps1",
