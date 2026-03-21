@@ -55,7 +55,7 @@
     <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="en_EE">
 
-    <link rel="stylesheet" href="/style.css?v=3">
+    <link rel="stylesheet" href="/style.css?v=4">
 
     <!-- Local CSS for Prices Page -->
     <style>
@@ -119,13 +119,26 @@
             background: rgba(255, 176, 0, 0.05);
             color: var(--accent-primary);
             border-color: rgba(255, 176, 0, 0.3);
-            box-shadow: none;
+            box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.2);
+            animation: tab-pulse 2.5s infinite;
         }
 
         .vehicle-btn.active:hover {
             background: rgba(255, 176, 0, 0.05);
             border-color: rgba(255, 176, 0, 0.3);
             transform: none;
+        }
+
+        @keyframes tab-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.3); }
+            70% { box-shadow: 0 0 0 9px rgba(255, 176, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .vehicle-btn.active {
+                animation: none;
+            }
         }
 
         /* Prices Table */
@@ -895,10 +908,10 @@
           Kopli 82a, 10412 Tallinn
         </div>
         <div class="footer__socials">
-          <a href="https://www.facebook.com/" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <a href="https://www.facebook.com/profile.php?id=61578161038234" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
             <iconify-icon icon="mdi:facebook" aria-hidden="true"></iconify-icon>
           </a>
-          <a href="https://www.instagram.com/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/mrcar.ee/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
             <iconify-icon icon="mdi:instagram" aria-hidden="true"></iconify-icon>
           </a>
         </div>

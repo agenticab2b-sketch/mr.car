@@ -280,7 +280,8 @@ h3 {
     width: 60px;
     height: 4px;
     background: var(--accent-gradient);
-    margin-top: var(--space-md);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
 /* Unified section heading: meta tag + h2/h3 with consistent gap */
@@ -1863,7 +1864,7 @@ h3 {
     font-size: 0.875rem;
     color: var(--text-muted);
     margin-top: var(--space-md);
-    margin-bottom: var(--space-xl);
+    margin-bottom: 0;
 }
 
 .contact__alt {

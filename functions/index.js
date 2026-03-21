@@ -6,6 +6,8 @@ const nodemailer = require("nodemailer");
 
 exports.getGoogleRating = onRequest({
   cors: false,
+  region: "europe-west4",
+  maxInstances: 10,
   secrets: ["GOOGLE_MAPS_API_KEY"]
 }, async (req, res) => {
   if (req.method !== "GET") {
@@ -46,13 +48,21 @@ exports.getGoogleRating = onRequest({
 });
 // ─── Ping ─────────────────────────────────────────────────────────────────────
 
-exports.ping = onRequest({ cors: true }, (req, res) => {
+exports.ping = onRequest({ 
+  cors: true,
+  region: "europe-west4",
+  maxInstances: 10
+}, (req, res) => {
   res.status(200).send("pong");
 });
 
 // ─── Robots.txt (Anti-indexing technical domains) ───────────────────────────
 
-exports.robots = onRequest({ cors: true }, (req, res) => {
+exports.robots = onRequest({ 
+  cors: true,
+  region: "europe-west4",
+  maxInstances: 10 
+}, (req, res) => {
   const host = req.headers.host || "";
   if (host.includes("web.app") || host.includes("firebaseapp.com")) {
     res.type("text/plain").send("User-agent: *\nDisallow: /");
@@ -363,7 +373,8 @@ function buildCustomerEmail(lang, name, carNumber, email, phone, message) {
 
 exports.lead = onRequest({
   cors: false,
-  region: "us-central1",
+  region: "europe-west4",
+  maxInstances: 10,
   secrets: ["SMTP_PASS"]
 }, async (req, res) => {
 

@@ -11,6 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run quality gate
+        run: node .github/scripts/quality-gate.js
+      - name: Check Generated Output Synchronization
+        run: |
+          node build.js
+          if [[ `git status --porcelain` ]]; then
+            echo "Generated output is out of sync. Please run build.js locally and commit the changes."
+            git status --porcelain
+            exit 1
+          fi
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}

@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "quality-gate": "node .github/scripts/quality-gate.js",
     "update-headers": "node update-headers.js"
   },
   "dependencies": {

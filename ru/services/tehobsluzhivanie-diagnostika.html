@@ -95,7 +95,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/style.css?v=3">
+  <link rel="stylesheet" href="/style.css?v=4">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -640,10 +640,10 @@
           Kopli 82a, 10412 Tallinn
         </div>
         <div class="footer__socials">
-          <a href="https://www.facebook.com/" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <a href="https://www.facebook.com/profile.php?id=61578161038234" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
             <iconify-icon icon="mdi:facebook" aria-hidden="true"></iconify-icon>
           </a>
-          <a href="https://www.instagram.com/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/mrcar.ee/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
             <iconify-icon icon="mdi:instagram" aria-hidden="true"></iconify-icon>
           </a>
         </div>
@@ -716,7 +716,7 @@
     });
 
     // Form handling
-    const form = document.getElementById('serviceForm');
+    const form = document.getElementById('serviceForm') || document.getElementById('contactForm');
     if (form) {
       // Set initial timestamp
       const tsStartInput = document.getElementById('tsStart');
