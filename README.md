@@ -1,55 +1,94 @@
-# Mr.Car Autoremont Tallinn — website
+# Mr.Car Website
 
-Static website (HTML + CSS) deployed via Google Cloud (Firebase Hosting).
+Mr.Car is a static multilingual auto service website built with HTML, CSS, and JavaScript.
 
-## Languages (planned)
-The website will be multilingual:
-- **ET (Estonian)** — primary language (default)
-- RU (Russian)
-- EN (English)
+Production hosting runs through Firebase Hosting, and selected backend routes are handled by Firebase Functions.
 
-Target structure (recommended):
-- `/` → Estonian (default)
-- `/ru/` → Russian
-- `/en/` → English
+## Current site model
 
-Example pages:
-- `/` (ET)
-- `/ru/`
-- `/en/`
-- `/ru/contacts/`, `/en/contacts/`, etc. (if needed later)
+- ET is the default language at `/`
+- RU lives under `/ru/`
+- EN lives under `/en/`
+- service pages live under:
+  - `/services/`
+  - `/ru/services/`
+  - `/en/services/`
 
-## Repository structure (current)
-- `index.html` — main entry point
-- `style.css` — styles
-- (optional later) `assets/` — images, icons, fonts
+This repository is the active source tree for the current static site. It is not a single-page app and it is not currently a Next.js app.
 
-## Current deployment (Google Cloud / Firebase Hosting)
-This repo is configured for deployment to Firebase Hosting.
-It includes `firebase.json` containing the necessary rewrites and redirects for the single-page application behavior of the service pages.
+## Source of truth
 
-## How to update the site
-1. Edit files
-2. Deploy via Firebase CLI: `firebase deploy`
+Use these files as the working truth:
 
-## Multilingual rollout plan (static phase)
-When adding RU/EN in the static version, keep the structure clear:
-- ET remains the default entry (`/`)
-- RU and EN live in their own folders (`/ru/`, `/en/`)
-- Use consistent URLs for the same page across languages (e.g. Contacts)
+- site structure and working rules:
+  - [project-control/README.md](./project-control/README.md)
+  - [project-control/STRUCTURE.md](./project-control/STRUCTURE.md)
+  - [project-control/DECISIONS.md](./project-control/DECISIONS.md)
+- hosting and public routing:
+  - [firebase.json](./firebase.json)
+- backend and lead flow:
+  - [functions/index.js](./functions/index.js)
+- CI/deploy behavior:
+  - [.github/workflows/firebase-hosting-pull-request.yml](./.github/workflows/firebase-hosting-pull-request.yml)
+  - [.github/workflows/firebase-hosting-merge.yml](./.github/workflows/firebase-hosting-merge.yml)
 
-A simple language switcher should link to:
-- ET → `/`
-- RU → `/ru/`
-- EN → `/en/`
+If a document conflicts with the actual shipped site code or Firebase configuration, the code and config win until the docs are updated.
 
-## Planned migration to Next.js (future)
-When migrating to Next.js, ensure multilingual support keeps ET as the default language and preserves stable URLs:
-- Default language: ET
-- Secondary languages: RU, EN
-- Prefer the same URL layout: `/`, `/ru/`, `/en/`
+## Important folders
 
-Recommended workflow:
-- Keep `main` stable
-- Create a staging branch (e.g. `nextjs`) for the migration
-- Deploy previews and switch production only when everything matches the static version
+- `/` — default ET pages
+- `/ru/` — RU pages
+- `/en/` — EN pages
+- `/services/`, `/ru/services/`, `/en/services/` — service pages
+- `/functions/` — Firebase Functions
+- `/scripts/` — utility scripts
+- `/partials/` — source fragments for generation/build work, not public runtime surface
+- `/project-control/` — lightweight operating docs for the team
+
+## Script ownership
+
+### Public runtime assets
+
+These files are part of the live site surface and may be referenced directly by public pages:
+
+- `style.css`
+- `gallery.css`
+- `gallery.js`
+- `services-listing.css`
+- `gallery-data.json`
+- `ee/services-data.js`
+- `ru/services/services-data.js`
+- `en/services/services-data.js`
+- `scripts/services-filter.js`
+
+### Active operational scripts
+
+These scripts are part of the current workflow or clearly retained tooling:
+
+- `.github/scripts/quality-gate.js`
+- `build.js`
+- `update-headers.js`
+
+Run them intentionally and review their effects before deploy.
+
+### Legacy or one-off maintenance scripts
+
+The repository root also contains many historical scripts such as:
+
+- `fix_*`
+- `update_*`
+- `check_*`
+- `generate_*`
+- `clean_*`
+- `extract_*`
+
+These are not the default workflow and should not be run casually. Treat them as legacy maintenance tooling unless a task explicitly calls for them and the scope is reviewed first.
+
+## Deploy path
+
+1. Work in a feature branch.
+2. Review before merge for routing, SEO-global, forms, Firebase, and deploy-related changes.
+3. Merge to `main`.
+4. Deploy only from reviewed `main`.
+
+Firebase Hosting now includes a minimal predeploy quality gate in CI before preview/live deploy.

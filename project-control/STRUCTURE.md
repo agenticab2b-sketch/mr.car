@@ -29,9 +29,11 @@ This file stores the current working truth about the site structure.
 - `services/`
 - `ru/`
 - `en/`
+- `.github/`
 - `partials/`
 - `functions/`
 - `scripts/`
+- `project-control/`
 
 ## Current structure rules
 
@@ -39,6 +41,9 @@ This file stores the current working truth about the site structure.
 - localized pages should stay structurally aligned where practical
 - service-page expansion should follow an approved page map before bulk generation
 - no new URL should be introduced without checking redirects, existing equivalents, and intent overlap
+- `partials/` and `temp_docs/` are source/build artifacts, not public runtime surface
+- root-level maintenance scripts are not part of the default workflow unless a task explicitly says so
+- `ru/services/service.html` is a legacy shell and is excluded from public Hosting publish
 
 ## Review-required changes
 
