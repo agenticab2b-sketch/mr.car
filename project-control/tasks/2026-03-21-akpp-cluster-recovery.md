@@ -59,6 +59,8 @@ These corrections override the historical draft where they conflict:
 - Remove error-code / code-number pages from the active scope.
 - Do not ignore gearbox-family search entities such as `DSG` and `ZF`; keep them as supporting searchable entities where justified.
 - Do not turn `DSG` / `ZF` into a large separate branch by default.
+- ET is the primary default locale because the site is in Estonia.
+- RU and EN must not become permanently reduced versions; the target state is parity of structure and depth across ET / RU / EN.
 - Prefer deep user-facing pages about symptoms, risks, diagnostics, and next steps over overly technical specialist pages.
 - Content should help normal drivers understand what is happening and what to do next, not read like a transmission engineer handbook.
 
@@ -208,6 +210,7 @@ Items in historical cluster 6 are not automatically approved. Variator is now ou
 - Do not keep error-code pages in the active rollout.
 - Remember that the site needs one general gearbox hub plus a deeper AKPP branch and a lighter manual branch.
 - Keep `DSG` / `ZF` visible where they help real search intent, but prefer sections, entity blocks, FAQs, or a tightly justified supporting page over a whole separate branch.
+- Treat ET / RU / EN as a parity target even if rollout happens in phases.
 
 ### What Elvis should do next
 

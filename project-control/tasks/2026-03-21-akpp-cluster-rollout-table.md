@@ -69,9 +69,10 @@ For each approved page include:
    - defer
 
 2. `Locale rollout`
-   - ET only for now
+   - ET first
    - ET + RU
    - ET + RU + EN
+   - phased to parity
    - defer locale expansion
 
 3. `Page type`
@@ -108,6 +109,7 @@ For each approved page include:
   - split current page
   - keep current page as is
 - If a page should exist only in one locale first, explain why.
+- If rollout is phased, make clear whether the final target is full ET / RU / EN parity.
 - If a page is deferred, keep it in the table with a short reason.
 
 ### Required structure of the result
@@ -122,6 +124,7 @@ Return:
 6. `Deferred pages table`
 7. `Key internal-linking rules`
 8. `Rollout notes for Antigravity`
+9. `Parity notes by locale`
 
 ### Rollout notes for Antigravity must include
 
@@ -147,3 +150,4 @@ Return:
 - Do not include error-code pages.
 - Do not over-specialize the table around engineering-level topics if the user-facing job can be done better by a broader symptom / risk / next-step page.
 - `DSG` and `ZF` can appear in the table only as controlled supporting entities, not as a signal to expand into brand/model sprawl.
+- ET is the default domain locale, but the final planned experience across ET / RU / EN should be parity in seriousness and depth.

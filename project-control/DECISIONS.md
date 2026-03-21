@@ -53,3 +53,10 @@ Record only decisions that affect future work.
 - Why: Mr.Car is a general auto service, not a narrow transmission-only specialist. The content must help normal drivers understand symptoms, risks, and next steps without drifting into overly specialized or thin SEO pages.
 - Approved by: owner
 - Related task: AKPP cluster recovery / validation
+
+## 2026-03-21 - ET is primary by domain, but ET/RU/EN must reach parity
+
+- Decision: Estonian remains the default language on the main domain because the business is in Estonia, but ET, RU, and EN must ultimately be structurally and content-wise equivalent in seriousness, depth, and completeness. Rollout may be phased, but the target state is parity, not a permanently reduced English version.
+- Why: the site must look equally trustworthy and complete across all three languages while still reflecting the local reality that the default domain opens in Estonian.
+- Approved by: owner
+- Related task: AKPP cluster validation / rollout

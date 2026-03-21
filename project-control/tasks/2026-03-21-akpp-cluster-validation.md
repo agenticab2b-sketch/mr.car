@@ -64,6 +64,7 @@ The validated result must follow the owner-approved scope:
 - no error-code pages in this phase
 - `DSG` and `ZF` should not be ignored, but they also should not explode into a separate oversized branch by default
 - pages must be deep and helpful for ordinary drivers, not overly specialized for transmission professionals
+- ET is the primary default locale on the domain, but ET / RU / EN should converge to parity in structural depth and seriousness
 
 ### Required method
 
@@ -83,6 +84,7 @@ Use these criteria explicitly:
 - search intent uniqueness
 - fit with current Mr.Car service structure
 - ET / RU / EN parity needs
+- local default-locale logic vs final multilingual parity
 - risk of cannibalization
 - usefulness for users
 - commercial value
@@ -111,8 +113,9 @@ Return the result in this shape:
 5. `Manual branch scope`
 6. `Pages to defer or drop`
 7. `ET / RU / EN rollout logic`
-8. `Cannibalization risks`
-9. `Stop-gate verdict`
+8. `ET / RU / EN parity notes`
+9. `Cannibalization risks`
+10. `Stop-gate verdict`
 
 ### Stop-gate rule
 
@@ -131,3 +134,4 @@ Do not move on to content planning until this validation is complete.
 - Prefer pages that help users understand symptoms, risk, urgency, and next steps.
 - Move overly narrow technical ideas into sections or FAQs unless there is a strong reason for a standalone page.
 - `DSG` and `ZF` may survive as searchable entities, but only in a controlled way that does not distort the main user-facing structure.
+- Do not treat EN as a permanently compact or “lite” branch. If rollout is phased, mark it as phased, not as lower-value.
