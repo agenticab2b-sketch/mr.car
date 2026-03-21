@@ -62,6 +62,7 @@ The validated result must follow the owner-approved scope:
 - no variator / CVT pages in this phase
 - no brand / model pages in this phase
 - no error-code pages in this phase
+- `DSG` and `ZF` should not be ignored, but they also should not explode into a separate oversized branch by default
 - pages must be deep and helpful for ordinary drivers, not overly specialized for transmission professionals
 
 ### Required method
@@ -96,7 +97,7 @@ Check especially:
 - how automatic-transmission pages should branch from that hub
 - how much manual-transmission coverage is needed without building a large separate cluster
 - whether `repair`, `diagnostics`, `oil change`, `pricing`, and `symptom` pages are already partially covered
-- whether DSG should remain visible as a separate page or a narrower sub-branch
+- whether `DSG` and `ZF` should remain visible as sections, entity-focused supporting pages, or narrower sub-branches
 - which topics should stay as sections instead of standalone pages
 
 ### Required output format
@@ -129,3 +130,4 @@ Do not move on to content planning until this validation is complete.
 - Do not keep error-code pages in this phase.
 - Prefer pages that help users understand symptoms, risk, urgency, and next steps.
 - Move overly narrow technical ideas into sections or FAQs unless there is a strong reason for a standalone page.
+- `DSG` and `ZF` may survive as searchable entities, but only in a controlled way that does not distort the main user-facing structure.

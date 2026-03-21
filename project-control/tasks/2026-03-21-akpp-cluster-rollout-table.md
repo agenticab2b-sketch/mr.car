@@ -90,6 +90,10 @@ For each approved page include:
 9. `Main internal links in`
 10. `Reason this page should exist`
 11. `Notes / risks`
+12. `Entity focus if applicable`
+   - none
+   - DSG
+   - ZF
 
 ### Required decision rules
 
@@ -142,3 +146,4 @@ Return:
 - Do not include brand / model pages.
 - Do not include error-code pages.
 - Do not over-specialize the table around engineering-level topics if the user-facing job can be done better by a broader symptom / risk / next-step page.
+- `DSG` and `ZF` can appear in the table only as controlled supporting entities, not as a signal to expand into brand/model sprawl.

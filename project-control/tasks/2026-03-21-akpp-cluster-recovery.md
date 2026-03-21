@@ -57,6 +57,8 @@ These corrections override the historical draft where they conflict:
 - Remove variator / CVT pages from the active scope.
 - Remove brand / model pages from the active scope.
 - Remove error-code / code-number pages from the active scope.
+- Do not ignore gearbox-family search entities such as `DSG` and `ZF`; keep them as supporting searchable entities where justified.
+- Do not turn `DSG` / `ZF` into a large separate branch by default.
 - Prefer deep user-facing pages about symptoms, risks, diagnostics, and next steps over overly technical specialist pages.
 - Content should help normal drivers understand what is happening and what to do next, not read like a transmission engineer handbook.
 
@@ -132,7 +134,7 @@ Do not treat this list as fully approved in its original form. It still contains
 27. Ремонт DSG
 28. Ремонт вариатора
 
-Items in historical cluster 6 are not automatically approved. Variator is now out of scope, brand pages are out of scope for this phase, and DSG must be justified separately if kept.
+Items in historical cluster 6 are not automatically approved. Variator is now out of scope, brand pages are out of scope for this phase, and `DSG` / `ZF` should be treated as controlled searchable entities, not as a default large standalone cluster.
 
 ### Recovered menu logic
 
@@ -205,6 +207,7 @@ Items in historical cluster 6 are not automatically approved. Variator is now ou
 - Do not keep brand / model pages in the active rollout.
 - Do not keep error-code pages in the active rollout.
 - Remember that the site needs one general gearbox hub plus a deeper AKPP branch and a lighter manual branch.
+- Keep `DSG` / `ZF` visible where they help real search intent, but prefer sections, entity blocks, FAQs, or a tightly justified supporting page over a whole separate branch.
 
 ### What Elvis should do next
 
