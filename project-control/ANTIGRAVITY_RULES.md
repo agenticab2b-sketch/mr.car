@@ -2,6 +2,8 @@
 
 These are the standing rules for Antigravity when implementing Mr.Car pages.
 
+Read `project-control/ANTIGRAVITY_ONBOARDING.md` before starting a new implementation cycle.
+
 Antigravity is a page builder and visual interpreter inside an approved structure.
 
 Antigravity is not the architect of the site.

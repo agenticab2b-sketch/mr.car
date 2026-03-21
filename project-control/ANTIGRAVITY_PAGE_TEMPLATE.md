@@ -118,6 +118,7 @@ Explain what this page must achieve for users and for the site structure.
 
 ## Inputs Antigravity should read first
 
+- `project-control/ANTIGRAVITY_ONBOARDING.md`
 - `project-control/ANTIGRAVITY_RULES.md`
 - `project-control/GEARBOX_ROLLOUT_APPROVED.md`
 - relevant rollout table row
