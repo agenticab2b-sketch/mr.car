@@ -46,3 +46,10 @@ Record only decisions that affect future work.
 - Why: this reduces accidental reliance on ad-hoc historical scripts and clarifies ownership of the normal workflow.
 - Approved by: owner
 - Related task: fourth correction item
+
+## 2026-03-21 - Use one gearbox hub with AKPP priority and lighter manual branch
+
+- Decision: for transmission-related expansion, use one general gearbox repair hub page, then split into a primary automatic-transmission branch and a lighter manual-transmission branch. Exclude variator pages, brand/model pages, and error-code pages from the current phase.
+- Why: Mr.Car is a general auto service, not a narrow transmission-only specialist. The content must help normal drivers understand symptoms, risks, and next steps without drifting into overly specialized or thin SEO pages.
+- Approved by: owner
+- Related task: AKPP cluster recovery / validation

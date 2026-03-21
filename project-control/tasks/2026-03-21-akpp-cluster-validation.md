@@ -22,6 +22,9 @@ Take the recovered AKPP cluster structure from task `2026-03-21-akpp-cluster-rec
 
 - current Mr.Car transmission-related pages in ET / RU / EN
 - recovered AKPP cluster map
+- general gearbox hub logic
+- AKPP priority branch
+- lighter manual gearbox branch
 - page intent overlap
 - first wave / second wave / defer prioritization
 - multilingual rollout logic
@@ -51,6 +54,16 @@ Do not rebuild the AKPP cluster from scratch.
 The recovered task is treated as the restored working draft.  
 Your job is to validate it against the actual Mr.Car structure and current transmission-related pages.
 
+The validated result must follow the owner-approved scope:
+
+- one general gearbox hub page
+- automatic transmission as the priority branch
+- manual transmission as a lighter secondary branch
+- no variator / CVT pages in this phase
+- no brand / model pages in this phase
+- no error-code pages in this phase
+- pages must be deep and helpful for ordinary drivers, not overly specialized for transmission professionals
+
 ### Required method
 
 For each important page or cluster item, determine one of these states:
@@ -79,21 +92,26 @@ Use these criteria explicitly:
 Check especially:
 
 - existing transmission / gearbox pages already present in Mr.Car
+- whether the current generic gearbox page should act as the top hub
+- how automatic-transmission pages should branch from that hub
+- how much manual-transmission coverage is needed without building a large separate cluster
 - whether `repair`, `diagnostics`, `oil change`, `pricing`, and `symptom` pages are already partially covered
-- whether DSG and CVT / variator should stay inside the same cluster or be treated as separate service branches
-- whether brand pages are justified now or should be deferred
+- whether DSG should remain visible as a separate page or a narrower sub-branch
+- which topics should stay as sections instead of standalone pages
 
 ### Required output format
 
 Return the result in this shape:
 
 1. `Confirmed current coverage`
-2. `Pages to create in first wave`
-3. `Pages to create in second wave`
-4. `Pages to defer or drop`
-5. `ET / RU / EN rollout logic`
-6. `Cannibalization risks`
-7. `Stop-gate verdict`
+2. `Recommended gearbox hub structure`
+3. `AKPP pages to create in first wave`
+4. `AKPP pages to create in second wave`
+5. `Manual branch scope`
+6. `Pages to defer or drop`
+7. `ET / RU / EN rollout logic`
+8. `Cannibalization risks`
+9. `Stop-gate verdict`
 
 ### Stop-gate rule
 
@@ -106,3 +124,8 @@ Do not move on to content planning until this validation is complete.
 - Do not duplicate pages with the same intent under slightly different names.
 - If the recovered structure is changed, explain each important change directly.
 - If current Mr.Car already covers a page partially, say whether it should be expanded, split, or left as is.
+- Do not keep variator / CVT pages in this phase.
+- Do not keep brand / model pages in this phase.
+- Do not keep error-code pages in this phase.
+- Prefer pages that help users understand symptoms, risk, urgency, and next steps.
+- Move overly narrow technical ideas into sections or FAQs unless there is a strong reason for a standalone page.

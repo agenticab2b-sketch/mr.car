@@ -21,6 +21,8 @@ Turn the validated AKPP cluster into a concrete implementation table that Mr.Car
 ## Scope
 
 - validated AKPP cluster only
+- general gearbox hub
+- lighter manual branch
 - first-wave and second-wave pages
 - ET / RU / EN rollout mapping
 - URL planning
@@ -74,10 +76,11 @@ For each approved page include:
 
 3. `Page type`
    - core
+   - gearbox hub
    - supporting symptom
    - supporting procedure
    - supporting commercial
-   - brand / type page
+   - manual branch page
 
 4. `Suggested URL`
 5. `Suggested H1`
@@ -92,6 +95,10 @@ For each approved page include:
 
 - One page = one clear intent.
 - Avoid near-duplicate pages under different wording.
+- The whole structure must fit this hierarchy:
+  - gearbox hub
+  - AKPP priority branch
+  - lighter manual branch
 - If a page is already partially covered by Mr.Car, say whether to:
   - expand current page
   - split current page
@@ -103,12 +110,14 @@ For each approved page include:
 
 Return:
 
-1. `Core pages table`
-2. `Supporting pages first wave table`
-3. `Supporting pages second wave table`
-4. `Deferred pages table`
-5. `Key internal-linking rules`
-6. `Rollout notes for Antigravity`
+1. `Gearbox hub table`
+2. `AKPP core pages table`
+3. `AKPP supporting pages first wave table`
+4. `AKPP supporting pages second wave table`
+5. `Manual branch table`
+6. `Deferred pages table`
+7. `Key internal-linking rules`
+8. `Rollout notes for Antigravity`
 
 ### Rollout notes for Antigravity must include
 
@@ -129,3 +138,7 @@ Return:
 - Do not produce vague generic labels instead of real page definitions.
 - Do not recommend multilingual duplication unless it is justified.
 - If URL naming is still uncertain, mark it as provisional instead of pretending it is final.
+- Do not include variator / CVT pages.
+- Do not include brand / model pages.
+- Do not include error-code pages.
+- Do not over-specialize the table around engineering-level topics if the user-facing job can be done better by a broader symptom / risk / next-step page.
