@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="et">
 
 <head>
@@ -55,7 +55,7 @@
     <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="et_EE">
 
-    <link rel="stylesheet" href="/style.css?v=3">
+    <link rel="stylesheet" href="/style.css?v=4">
 
     <!-- Local CSS for Prices Page -->
     <style>
@@ -119,13 +119,26 @@
             background: rgba(255, 176, 0, 0.05);
             color: var(--accent-primary);
             border-color: rgba(255, 176, 0, 0.3);
-            box-shadow: none;
+            box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.2);
+            animation: tab-pulse 2.5s infinite;
         }
 
         .vehicle-btn.active:hover {
             background: rgba(255, 176, 0, 0.05);
             border-color: rgba(255, 176, 0, 0.3);
             transform: none;
+        }
+
+        @keyframes tab-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.3); }
+            70% { box-shadow: 0 0 0 9px rgba(255, 176, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .vehicle-btn.active {
+                animation: none;
+            }
         }
 
         /* Prices Table */
