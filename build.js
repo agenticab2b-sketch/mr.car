@@ -47,12 +47,15 @@ const SERVICE_NAV_ORDER = [
 ];
 const SERVICE_NAV_RANK = new Map(SERVICE_NAV_ORDER.map((slug, index) => [slug, index]));
 
-// These standalone Webasto landing pages are NOT generated — they stay as-is.
+// These standalone Webasto and AKPP landing pages are NOT generated — they stay as-is.
 const SKIP_FILES = new Set([
   'webasto-diagnostika',
   'webasto-sumptomid',
   'webasto-simptomy',
-  'webasto-symptoms'
+  'webasto-symptoms',
+  'automaatkasti-remont',
+  'remont-akpp',
+  'automatic-transmission-repair'
 ]);
 
 const LANGS = [
@@ -426,10 +429,10 @@ function buildFooter(cfg) {
           Kopli 82a, 10412 Tallinn
         </div>
         <div class="footer__socials">
-          <a href="https://www.facebook.com/" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
+          <a href="https://www.facebook.com/profile.php?id=61578161038234" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
             <iconify-icon icon="mdi:facebook" aria-hidden="true"></iconify-icon>
           </a>
-          <a href="https://www.instagram.com/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/mrcar.ee/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
             <iconify-icon icon="mdi:instagram" aria-hidden="true"></iconify-icon>
           </a>
         </div>
@@ -1093,16 +1096,19 @@ const sitemapEntries = [
   '  <!-- Услуги ET -->',
   // Filter out SKIP_FILES slugs — they are added separately below as standalone pages
   ...eeServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/services/${s.slug}`)),
-  // Webasto standalone landing pages (not in services array generation)
+  // Standalone landing pages (not in services array generation)
   sitemapUrl(`${PROD_ORIGIN}/services/webasto-sumptomid`),
+  sitemapUrl(`${PROD_ORIGIN}/services/automaatkasti-remont`),
   '',
   '  <!-- Услуги RU -->',
   ...ruServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/ru/services/${s.slug}`)),
   sitemapUrl(`${PROD_ORIGIN}/ru/services/webasto-simptomy`),
+  sitemapUrl(`${PROD_ORIGIN}/ru/services/remont-akpp`),
   '',
   '  <!-- Услуги EN -->',
   ...enServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/en/services/${s.slug}`)),
   sitemapUrl(`${PROD_ORIGIN}/en/services/webasto-symptoms`),
+  sitemapUrl(`${PROD_ORIGIN}/en/services/automatic-transmission-repair`),
 ];
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>

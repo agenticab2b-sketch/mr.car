@@ -62,7 +62,7 @@ replacements_ru = {
     
     '<meta property="og:title" content="Automaatkäigukasti remont Tallinnas — DSG, ZF ja teised | Mr.Car">': '<meta property="og:title" content="Ремонт АКПП в Таллинне — DSG, ZF и другие | Mr.Car">',
     '<meta property="og:description" content="Professionaalne automaatkäigukasti remont Tallinnas. Diagnostika, DSG ja ZF hooldus, mehatroonika taastamine. Garantii 12 kuud. Kopli 82a.">': '<meta property="og:description" content="Профессиональный ремонт АКПП в Таллинне. Диагностика, обслуживание DSG и ZF, восстановление мехатроника. Гарантия 12 месяцев. Kopli 82a.">',
-    '<meta property="og:url" content="https://mrcar.ee/services/automaatkasti-remont.html">': '<meta property="og:url" content="https://mrcar.ee/ru/services/remont-akpp.html">',
+    '<meta property="og:url" content="https://mrcar.ee/services/automaatkasti-remont.html">': '<meta property="og:url" content="https://mrcar.ee/ru/services/remont-akpp">',
     
     '<meta name="twitter:title" content="Käigukasti remont Tallinnas — Diagnostika ja hooldus | Mr.Car">': '<meta name="twitter:title" content="Ремонт АКПП в Таллинне — Диагностика и обслуживание | Mr.Car">',
     '<meta name="twitter:description" content="Professionaalne käigukasti remont Tallinnas. Diagnostika, hooldus ja remont nii automaat- (sh DSG, ZF) kui ka manuaalkäigukastidele. Garantii 12 kuud. Kopli 82a.">': '<meta name="twitter:description" content="Профессиональный ремонт АКПП в Таллинне. Диагностика, обслуживание и ремонт автоматов (DSG, ZF). Гарантия 12 месяцев. Kopli 82a.">',
@@ -70,9 +70,15 @@ replacements_ru = {
     '"name": "Automaatkäigukasti remont"': '"name": "Ремонт АКПП"',
     '"description": "Professionaalne automaatkäigukasti remont Tallinnas. Diagnostika, DSG ja ZF hooldus, mehatroonika taastamine. Garantii 12 kuud. Kopli 82a."': '"description": "Профессиональный ремонт АКПП в Таллинне. Диагностика, обслуживание DSG и ZF, восстановление мехатроника. Гарантия 12 месяцев. Kopli 82a."',
     '"url": "https://www.mrcar.ee/services/automaatkasti-remont"': '"url": "https://www.mrcar.ee/ru/services/remont-akpp"',
-    '"url": "https://www.mrcar.ee/services/automaatkasti-remont.html"': '"url": "https://www.mrcar.ee/ru/services/remont-akpp.html"',
+    '"url": "https://www.mrcar.ee/services/automaatkasti-remont.html"': '"url": "https://www.mrcar.ee/ru/services/remont-akpp"',
 
-    '/// Mr.Car Autoteenindus': '/// Автосервис Mr.Car',
+    '<link rel="canonical" href="https://mrcar.ee/services/automaatkasti-remont">': '<link rel="canonical" href="https://mrcar.ee/ru/services/remont-akpp">',
+    '<!-- <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/services/remont-akpp"> -->': '<link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/services/remont-akpp">',
+    '<!-- <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/services/automatic-transmission-repair"> -->': '<link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/services/automatic-transmission-repair">',
+    'aria-label="Automaatkäigukasti teemad"': 'aria-label="Темы по АКПП"',
+    'Automaatkäigukasti rikke peamised sümptomid': 'Основные симптомы неисправности АКПП',
+    'Nõkutamine ja kolin': 'Пинки и стуки',
+    'Tugevad nõksud või kolksud käiguvahetusel – eriti kiirendades või pidurdades. See viitab hüdrosüsteemi või mehatroonika tõrgetele.': 'Сильные рывки или удары при переключении передач – особенно при ускорении или торможении. Это указывает на сбои в гидравлической системе или мехатронике.',
     'Automaatkäigukasti remont ja diagnostika': 'Ремонт и диагностика АКПП',
     'Likvideerime jõnksutamise, käikude libisemise ja avariirežiimi 100% täpsusega. Päästame kasti kulukast kapitaalremondist, kui pöördute õigel ajal.': 'Устраняем пинки, пробуксовки и аварийный режим со 100% точностью. Спасём коробку от дорогостоящего капитального ремонта при своевременном обращении.',
     'Saada päring <span class="arrow">↗</span>': 'Оставить заявку <span class="arrow">↗</span>',
@@ -197,7 +203,7 @@ replacements_en = {
     
     '<meta property="og:title" content="Automaatkäigukasti remont Tallinnas — DSG, ZF ja teised | Mr.Car">': '<meta property="og:title" content="Automatic Transmission Repair in Tallinn — DSG, ZF & More | Mr.Car">',
     '<meta property="og:description" content="Professionaalne automaatkäigukasti remont Tallinnas. Diagnostika, DSG ja ZF hooldus, mehatroonika taastamine. Garantii 12 kuud. Kopli 82a.">': '<meta property="og:description" content="Professional automatic transmission repair in Tallinn. Diagnostics, DSG and ZF service, mechatronics restoration. 12-month warranty. Kopli 82a.">',
-    '<meta property="og:url" content="https://mrcar.ee/services/automaatkasti-remont.html">': '<meta property="og:url" content="https://mrcar.ee/en/services/automatic-transmission-repair.html">',
+    '<meta property="og:url" content="https://mrcar.ee/services/automaatkasti-remont.html">': '<meta property="og:url" content="https://mrcar.ee/en/services/automatic-transmission-repair">',
     
     '<meta name="twitter:title" content="Käigukasti remont Tallinnas — Diagnostika ja hooldus | Mr.Car">': '<meta name="twitter:title" content="Automatic Transmission Repair in Tallinn — Diagnostics & Service | Mr.Car">',
     '<meta name="twitter:description" content="Professionaalne käigukasti remont Tallinnas. Diagnostika, hooldus ja remont nii automaat- (sh DSG, ZF) kui ka manuaalkäigukastidele. Garantii 12 kuud. Kopli 82a.">': '<meta name="twitter:description" content="Professional automatic transmission repair in Tallinn. Diagnostics, service, and automatic gearbox repairs (DSG, ZF). 12-month warranty. Kopli 82a.">',
@@ -205,8 +211,15 @@ replacements_en = {
     '"name": "Automaatkäigukasti remont"': '"name": "Automatic Transmission Repair"',
     '"description": "Professionaalne automaatkäigukasti remont Tallinnas. Diagnostika, DSG ja ZF hooldus, mehatroonika taastamine. Garantii 12 kuud. Kopli 82a."': '"description": "Professional automatic transmission repair in Tallinn. Diagnostics, DSG and ZF service, mechatronics restoration. 12-month warranty. Kopli 82a."',
     '"url": "https://www.mrcar.ee/services/automaatkasti-remont"': '"url": "https://www.mrcar.ee/en/services/automatic-transmission-repair"',
-    '"url": "https://www.mrcar.ee/services/automaatkasti-remont.html"': '"url": "https://www.mrcar.ee/en/services/automatic-transmission-repair.html"',
+    '"url": "https://www.mrcar.ee/services/automaatkasti-remont.html"': '"url": "https://www.mrcar.ee/en/services/automatic-transmission-repair"',
 
+    '<link rel="canonical" href="https://mrcar.ee/services/automaatkasti-remont">': '<link rel="canonical" href="https://mrcar.ee/en/services/automatic-transmission-repair">',
+    '<!-- <link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/services/remont-akpp"> -->': '<link rel="alternate" hreflang="ru" href="https://www.mrcar.ee/ru/services/remont-akpp">',
+    '<!-- <link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/services/automatic-transmission-repair"> -->': '<link rel="alternate" hreflang="en" href="https://www.mrcar.ee/en/services/automatic-transmission-repair">',
+    'aria-label="Automaatkäigukasti teemad"': 'aria-label="Transmission topics"',
+    'Automaatkäigukasti rikke peamised sümptomid': 'Main symptoms of automatic transmission failure',
+    'Nõkutamine ja kolin': 'Jerking and Clunking',
+    'Tugevad nõksud või kolksud käiguvahetusel – eriti kiirendades või pidurdades. See viitab hüdrosüsteemi või mehatroonika tõrgetele.': 'Strong jerks or clunks during shifting – especially when accelerating or braking. This indicates hydraulic system or mechatronics issues.',
     '/// Mr.Car Autoteenindus': '/// Mr.Car Auto Service',
     'Automaatkäigukasti remont ja diagnostika': 'Automatic Transmission Repair & Diagnostics',
     'Likvideerime jõnksutamise, käikude libisemise ja avariirežiimi 100% täpsusega. Päästame kasti kulukast kapitaalremondist, kui pöördute õigel ajal.': 'We eliminate jerking, gear slipping, and limp mode with 100% accuracy. Save your transmission from an expensive overhaul by getting professional help in time.',
@@ -252,7 +265,7 @@ replacements_en = {
     'Auto lülitub ohurežiimi ja kuvab veateate — kaitsefunktsioon, mis väldib käigukasti täielikku blokeerumist. Vajalik on kohene diagnostika.': 'The car enters safe mode and displays an error message on the dash — a protective function to prevent total gearbox lockup. Immediate diagnostics required.',
     'LOE, MIDA TEHA AVARIIREŽIIMIS →': 'WHAT TO DO IN LIMP MODE →',
     
-    'href="/services/kaigukastiremont.html"': 'href="/en/services/transmission-repair.html"',
+    'href="/services/kaigukastiremont.html"': 'href="/en/services/transmission-repair"',
     'href="/services/automaatkast-jouksutab"': 'href="/en/services/akpp-jerking"',
     'href="/services/automaatkast-libiseb"': 'href="/en/services/akpp-slipping"',
     'href="/services/kaiguvahetus-viibib"': 'href="/en/services/akpp-delays"',
