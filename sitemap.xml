@@ -68,6 +68,10 @@
     <loc>https://www.mrcar.ee/services/webasto-sumptomid</loc>
     <lastmod>2026-03-16</lastmod>
   </url>
+  <url>
+    <loc>https://www.mrcar.ee/services/automaatkasti-remont</loc>
+    <lastmod>2026-03-21</lastmod>
+  </url>
 
   <!-- Услуги RU -->
   <url>
@@ -122,6 +126,10 @@
     <loc>https://www.mrcar.ee/ru/services/webasto-simptomy</loc>
     <lastmod>2026-03-16</lastmod>
   </url>
+  <url>
+    <loc>https://www.mrcar.ee/ru/services/remont-akpp</loc>
+    <lastmod>2026-03-21</lastmod>
+  </url>
 
   <!-- Услуги EN -->
   <url>
@@ -175,5 +183,9 @@
   <url>
     <loc>https://www.mrcar.ee/en/services/webasto-symptoms</loc>
     <lastmod>2026-03-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mrcar.ee/en/services/automatic-transmission-repair</loc>
+    <lastmod>2026-03-21</lastmod>
   </url>
 </urlset>
