@@ -476,15 +476,15 @@
       <!-- HERO STATS -->
       <div class="gb-hero-stats gb-reveal">
         <div class="gb-hero-stat">
-          <div class="gb-hero-stat__number">2500+</div>
+          <div class="gb-hero-stat__number"><span class="timer" data-from="0" data-to="2500" data-speed="1500" data-refresh-interval="50">2500</span>+</div>
           <div class="gb-hero-stat__label">Коробок отремонтировано</div>
         </div>
         <div class="gb-hero-stat">
-          <div class="gb-hero-stat__number">15+</div>
+          <div class="gb-hero-stat__number"><span class="timer" data-from="0" data-to="15" data-speed="1500" data-refresh-interval="50">15</span>+</div>
           <div class="gb-hero-stat__label">Лет специализации</div>
         </div>
         <div class="gb-hero-stat">
-          <div class="gb-hero-stat__number">98%</div>
+          <div class="gb-hero-stat__number"><span class="timer" data-from="0" data-to="98" data-speed="1500" data-refresh-interval="50">98</span>%</div>
           <div class="gb-hero-stat__label">Клиентов возвращаются</div>
         </div>
       </div>
@@ -1274,13 +1274,25 @@
         entries.forEach(function(e) {
           if (e.isIntersecting) {
             e.target.classList.add('gb-visible');
+            // Initialize countTo when stats block becomes visible
+            if (e.target.classList.contains('gb-hero-stats')) {
+               if (typeof $.fn.countTo === 'function') {
+                 $(e.target).find('.timer').each(function(){
+                    $(this).countTo();
+                 });
+               }
+            }
             io.unobserve(e.target);
           }
         });
       }, { rootMargin: '0px 0px -60px 0px' });
       reveals.forEach(function(el) { io.observe(el); });
     })();
-  </script>
+    </script>
 
-</body>
+    <!-- Dependencies for countTo -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"></script>
+
+    </body>
 </html>
