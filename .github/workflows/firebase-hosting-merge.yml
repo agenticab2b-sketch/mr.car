@@ -24,8 +24,9 @@ jobs:
             git status --porcelain
             exit 1
           fi
-      - uses: google-github-actions/auth@v2
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          credentials_json: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MRCAR_473416 }}'
-      - name: Deploy Hosting and Functions
-        run: npx firebase-tools deploy --only hosting,functions --project mrcar-473416 --non-interactive
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MRCAR_473416 }}
+          channelId: live
+          projectId: mrcar-473416
