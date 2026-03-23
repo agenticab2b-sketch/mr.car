@@ -8,13 +8,17 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..', '..');
 const IGNORE_DIRS = new Set([
   '.agent',
+  '.claude',
   '.git',
   '.github',
   'functions',
   'node_modules',
   'partials',
   'project-control',
+  'Seranking',
   'temp_docs',
+  'Test html',
+  'wix',
 ]);
 
 const PUBLIC_HTML = [];
