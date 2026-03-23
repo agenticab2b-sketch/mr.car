@@ -168,34 +168,44 @@ function toPosix(value) {
 function checkCanonicalAndHreflang(relPath, content) {
   if (relPath === '404.html' || relPath === 'google6aff4100d8f2567c.html' || relPath === 'googlef4bd042d0039292d.html') return;
 
-  const canonicalMatch = content.match(/<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i);
-  if (!canonicalMatch) {
+  // Improved check for canonical: match the whole tag then extract href
+  const canonicalTagMatch = content.match(/<link[^>]+rel=["']canonical["'][^>]*>/i);
+  if (!canonicalTagMatch) {
     failures.push({
       type: 'canonical-missing',
       file: relPath,
       message: 'missing canonical link tag',
     });
   } else {
-    const canonicalHref = canonicalMatch[1];
-    if (canonicalHref.endsWith('.html')) {
-      failures.push({
-        type: 'canonical-format',
-        file: relPath,
-        message: `canonical href ends with .html: ${canonicalHref}`,
-      });
+    const tag = canonicalTagMatch[0];
+    const hrefMatch = tag.match(/href=["']([^"']+)["']/i);
+    if (hrefMatch) {
+      const canonicalHref = hrefMatch[1];
+      if (canonicalHref.endsWith('.html')) {
+        failures.push({
+          type: 'canonical-format',
+          file: relPath,
+          message: `canonical href ends with .html: ${canonicalHref}`,
+        });
+      }
     }
   }
 
-  const hreflangRegex = /<link\s+rel=["']alternate["'][^>]*href=["']([^"']+)["'][^>]*hreflang/gi;
-  let match;
-  while ((match = hreflangRegex.exec(content)) !== null) {
-    const href = match[1];
-    if (href.endsWith('.html')) {
-      failures.push({
-        type: 'hreflang-format',
-        file: relPath,
-        message: `hreflang href ends with .html: ${href}`,
-      });
+  // Improved check for hreflang: find all alternate cards and check hrefs
+  const alternateRegex = /<link[^>]+rel=["']alternate["'][^>]*>/gi;
+  let altMatch;
+  while ((altMatch = alternateRegex.exec(content)) !== null) {
+    const tag = altMatch[0];
+    const hrefMatch = tag.match(/href=["']([^"']+)["']/i);
+    if (hrefMatch) {
+      const href = hrefMatch[1];
+      if (href.endsWith('.html')) {
+        failures.push({
+          type: 'hreflang-format',
+          file: relPath,
+          message: `hreflang href ends with .html: ${href}`,
+        });
+      }
     }
   }
 }

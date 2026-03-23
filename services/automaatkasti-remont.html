@@ -471,7 +471,7 @@
     <article class="sd-content">
 
 <nav class="gb-local-nav" aria-label="Automaatkäigukasti teemad">
-        <a href="/services/kaigukastiremont.html" class="gb-local-nav__pill">
+        <a href="/services/kaigukastiremont" class="gb-local-nav__pill">
           <iconify-icon icon="mdi:arrow-left" width="18"></iconify-icon> Käigukasti remont
         </a>
         <a href="#sumptomid" class="gb-local-nav__pill">
@@ -494,10 +494,10 @@
         <div class="gb-section-text">
           <p>Automaatkäigukast on tänapäevase auto üks keerulisemaid sõlmi — selles on sadu hüdraulilisi, mehaanilisi ja elektroonilisi komponente, mis töötavad kõrge täpsuse ja rõhu all. Rike ühes detailis võib kiiresti laieneda kogu süsteemile.</p>
           <p>Mr.Car on spetsialiseerunud automaatkäigukastide diagnostikale ja remondile. Kasutame tootjaspetsiifilisi eriseadmeid, et tuvastada rikke täpne põhjus ja vältida kogu sõlme kallist asendamist. Remondime klassikalisi automaatkäigukaste, DSG- ja ZF-käigukaste.</p>
-        </div>
-      </section>
+          </div>
+          </section>
 
-      <!-- Urgency Block -->
+          <!-- Urgency Block -->
       <div class="gb-urgency-block">
         <div class="gb-urgency-block__title">
           <iconify-icon icon="mdi:alert-decagram" width="24"></iconify-icon>
@@ -508,50 +508,42 @@
         </div>
       </div>
 
-      <!-- Symptoms Grid -->
-      <section id="sumptomid" class="gb-page-section">
-        <h3 class="gb-section-title">Kuidas tunda ära automaatkäigukasti rike?</h3>
-        <p class="gb-section-text">Peamised sümptomid, mida ei tohiks eirata</p>
-        
+      <!-- Sümptomid Grid -->
+      <div class="gb-page-section" id="sumptomid">
+        <h3 class="gb-section-title">Automaatkäigukasti rikke peamised sümptomid</h3>
         <div class="gb-symptoms">
-          <div class="gb-symptom-card">
-            <iconify-icon icon="mdi:swap-vertical" width="28" height="28"></iconify-icon>
-            <h3>Jõnksumine ja löögid</h3>
-            <p>Tugevad tõmbed käiguvahetusel viitavad ventiilikorpuse kulumisele, madala õlirõhule või hüdrotransformaatori veale automaatkäigukastis.</p>
-            <a href="/services/automaatkast-jouksutab" class="gb-symptom-card__link" rel="nofollow">LOE, MIKS KÄIGUKAST JÕNKSUB →</a>
+          <div class="gb-symptom-card" id="nokutamine">
+            <div class="gb-symptom-card__icon"><iconify-icon icon="mdi:swap-vertical" width="24"></iconify-icon></div>
+            <div class="gb-symptom-card__title">Nõkutamine ja kolin</div>
+            <div class="gb-symptom-card__desc">Tugevad nõksud või kolksud käiguvahetusel – eriti kiirendades või pidurdades. See viitab hüdrosüsteemi või mehatroonika tõrgetele.</div>
           </div>
-          <div class="gb-symptom-card">
-            <iconify-icon icon="mdi:rotate-right" width="28" height="28"></iconify-icon>
-            <h3>Libisemine</h3>
-            <p>Pöörete tõus ilma vastavate kiirendamiseta — tähendab, et automaatkäigukasti sidurite pakid ei hoia enam käiku ja pöördemoment kadub.</p>
-            <a href="/services/automaatkast-libiseb" class="gb-symptom-card__link" rel="nofollow">LOE, MIDA LIBISEMINE TÄHENDAB →</a>
+          <div class="gb-symptom-card" id="libisemine">
+            <div class="gb-symptom-card__icon"><iconify-icon icon="mdi:rotate-right" width="24"></iconify-icon></div>
+            <div class="gb-symptom-card__title">Libisemine</div>
+            <div class="gb-symptom-card__desc">Pöörded tõusevad, aga auto ei võta kiirust üles. Siduripaketid libisevad ja jõud ei jõua ratasteni.</div>
           </div>
-          <div class="gb-symptom-card">
-            <iconify-icon icon="mdi:timer-sand" width="28" height="28"></iconify-icon>
-            <h3>Viivitused käiguvahetusel</h3>
-            <p>Automaatkäigukast lülitab käiku aeglustatud viitega — põhjuseks võib olla madal rõhk, ventiilikorpuse ummistus või mehatroonika tõrge.</p>
-            <a href="/services/kaiguvahetus-viibib" class="gb-symptom-card__link" rel="nofollow">LOE KÄIGUVAHETUSE VIIVITUSTE KOHTA →</a>
+          <div class="gb-symptom-card" id="viivitused">
+            <div class="gb-symptom-card__icon"><iconify-icon icon="mdi:timer-sand" width="24"></iconify-icon></div>
+            <div class="gb-symptom-card__title">Viivitused (uimane lülitamine)</div>
+            <div class="gb-symptom-card__desc">Auto "mõtleb" enne käigu sisselülitamist või jääb käikude vahele paus – käiguvahetus on ebaloomulikult aeglane.</div>
           </div>
-          <div class="gb-symptom-card">
-            <iconify-icon icon="mdi:volume-high" width="28" height="28"></iconify-icon>
-            <h3>Müra ja undamine</h3>
-            <p>Undamine, sahisemine või kolinad automaatkäigukastist viitavad laagrite, hammasrataste või hüdrotransformaatori kulumisele.</p>
-            <a href="/services/automaatkasti-mura" class="gb-symptom-card__link" rel="nofollow">LOE AUTOMAATKÄIGUKASTI MÜRA KOHTA →</a>
+          <div class="gb-symptom-card" id="mura">
+            <div class="gb-symptom-card__icon"><iconify-icon icon="mdi:volume-high" width="24"></iconify-icon></div>
+            <div class="gb-symptom-card__title">Müra ja vilin</div>
+            <div class="gb-symptom-card__desc">Sõidu ajal või kiirendades on kuulda ebatavalist vilinat, undamist või metalsest kolinat.</div>
           </div>
-          <div class="gb-symptom-card">
-            <iconify-icon icon="mdi:oil-level" width="28" height="28"></iconify-icon>
-            <h3>Õlileke</h3>
-            <p>Punakad-pruunid plekid auto all → rõhktihendite kulumine automaatkäigukastis. Õlitaseme langus viib kiire ja kallite kahjustusteni.</p>
-            <a href="/services/automaatkasti-olileke" class="gb-symptom-card__link" rel="nofollow">LOE ÕLILEKKE PEATAMISEST →</a>
+          <div class="gb-symptom-card" id="lekked">
+            <div class="gb-symptom-card__icon"><iconify-icon icon="mdi:oil-level" width="24"></iconify-icon></div>
+            <div class="gb-symptom-card__title">Õlilekked</div>
+            <div class="gb-symptom-card__desc">Auto all on näha tumedaid või punakaid õlilaike. Õlitaseme langus põhjustab käigukasti ülikiire kulumise.</div>
           </div>
-          <div class="gb-symptom-card">
-            <iconify-icon icon="mdi:alert-circle" width="28" height="28"></iconify-icon>
-            <h3>Avariirežiim</h3>
-            <p>Auto lülitub ohurežiimi ja kuvab veateate — kaitsefunktsioon, mis väldib käigukasti täielikku blokeerumist. Vajalik on kohene diagnostika.</p>
-            <a href="/services/automaatkast-avariireziim" class="gb-symptom-card__link" rel="nofollow">LOE, MIDA TEHA AVARIIREŽIIMIS →</a>
+          <div class="gb-symptom-card" id="avariireziim">
+            <div class="gb-symptom-card__icon"><iconify-icon icon="mdi:alert-circle" width="24"></iconify-icon></div>
+            <div class="gb-symptom-card__title">Avariirežiim</div>
+            <div class="gb-symptom-card__desc">Armatuuril süttib veateade ja auto lülitub avariirežiimi, et vältida suuremaid kahjustusi. Vajalik on kohene diagnostika.</div>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- Risk Stages Block -->
       <section class="gb-page-section">
@@ -591,7 +583,7 @@
           <li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Õlianalüüs — metallipuru ja kulumise tuvastamine</li>
         </ul>
         <p class="gb-section-text" style="margin-top:1rem">
-          <a href="/services/automaatkasti-diagnostika">Tutvu käigukasti diagnostika protsessiga täpsemalt →</a>
+          <a href="#diagnostika">Tutvu käigukasti diagnostika protsessiga täpsemalt →</a>
         </p>
       </div>
 
@@ -600,7 +592,7 @@
         <h3 class="gb-section-title">Peamised automaatkäigukasti remondi lahendused</h3>
         <p class="gb-section-text">Sõltuvalt diagnostika tulemustest valime sobivaima tee</p>
         <div class="gb-symptoms">
-          <div class="gb-symptom-card">
+          <div class="gb-symptom-card" id="olivahetus">
             <iconify-icon icon="mdi:oil" width="28" height="28"></iconify-icon>
             <h3>1. Õli ja filtri vahetus</h3>
             <p>Dünaamiline õlivahetus ja süsteemi läbipesu. Eemaldab vanast õlist tekkinud kulumisjäägid ja lahendab kergemad jõnksumised varases faasis.</p>
@@ -619,7 +611,7 @@
       </section>
 
       <!-- Process Steps -->
-      <section class="gb-page-section">
+      <section class="gb-page-section" id="protsess">
         <h3 class="gb-section-title">Kuidas käib automaatkäigukasti remont Mr.Caris?</h3>
         <div class="gb-steps">
           <div class="gb-step">
@@ -640,14 +632,14 @@
             <div class="gb-step__num">03</div>
             <div>
               <strong>Remont tehasestandardis</strong>
-              Vahetame/taastame ainult kulunud osad, originaaldetailid
+              Vahetame või taastame ainult reaalselt kulunud osad. Kasutame originaalosi ja eriseadmeid.
             </div>
           </div>
           <div class="gb-step">
             <div class="gb-step__num">04</div>
             <div>
               <strong>Garantii 12 kuud</strong>
-              Kirjalik garantii osadele ja tehtud tööle
+              Iga teostatud töö saab kirjaliku garantii nii osadele kui tehtud tööle.
             </div>
           </div>
         </div>
