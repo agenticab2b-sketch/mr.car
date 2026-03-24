@@ -10,8 +10,7 @@
  *   ru/services/{slug}.html  — 11 files
  *   en/services/{slug}.html  — 11 files
  *
- * Webasto standalone pages (webasto-diagnostika.html, webasto-sumptomid.html)
- * are NOT touched — they are excluded via SKIP_FILES constant.
+ * Standalone service pages are NOT touched — they are excluded via SKIP_FILES constant.
  *
  * Run: node build.js
  */
@@ -47,12 +46,14 @@ const SERVICE_NAV_ORDER = [
 ];
 const SERVICE_NAV_RANK = new Map(SERVICE_NAV_ORDER.map((slug, index) => [slug, index]));
 
-// These standalone Webasto and AKPP landing pages are NOT generated — they stay as-is.
+// These standalone landing pages are NOT generated — they stay as-is.
 const SKIP_FILES = new Set([
   'webasto-diagnostika',
   'webasto-sumptomid',
   'webasto-simptomy',
   'webasto-symptoms',
+  'kaigukastiremont',
+  'remont-kpp',
   'automaatkasti-remont',
   'remont-akpp',
   'automatic-transmission-repair'
@@ -1049,9 +1050,9 @@ for (const cfg of LANGS) {
   for (const s of services) {
     const outFile = path.join(outDir, `${s.slug}.html`);
 
-    // Skip standalone Webasto landing pages
+    // Skip standalone landing pages
     if (SKIP_FILES.has(s.slug)) {
-      process.stdout.write(`  ⏭ SKIP  ${s.slug}.html  (standalone Webasto page)\n`);
+      process.stdout.write(`  ⏭ SKIP  ${s.slug}.html  (standalone page)\n`);
       totalSkipped++;
       continue;
     }
@@ -1097,11 +1098,13 @@ const sitemapEntries = [
   // Filter out SKIP_FILES slugs — they are added separately below as standalone pages
   ...eeServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/services/${s.slug}`)),
   // Standalone landing pages (not in services array generation)
+  sitemapUrl(`${PROD_ORIGIN}/services/kaigukastiremont`),
   sitemapUrl(`${PROD_ORIGIN}/services/webasto-sumptomid`),
   sitemapUrl(`${PROD_ORIGIN}/services/automaatkasti-remont`),
   '',
   '  <!-- Услуги RU -->',
   ...ruServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/ru/services/${s.slug}`)),
+  sitemapUrl(`${PROD_ORIGIN}/ru/services/remont-kpp`),
   sitemapUrl(`${PROD_ORIGIN}/ru/services/webasto-simptomy`),
   sitemapUrl(`${PROD_ORIGIN}/ru/services/remont-akpp`),
   '',
