@@ -8,6 +8,7 @@
       "**/.*",
       "**/node_modules/**",
       ".agent/**",
+      "Test html/**",
       "project-control/**",
       "partials/**",
       "temp_docs/**",

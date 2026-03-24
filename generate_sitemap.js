@@ -5,7 +5,7 @@ const domain = 'https://www.mrcar.ee';
 const rootDir = __dirname;
 const sitemapPath = path.join(rootDir, 'sitemap.xml');
 
-const ignoreDirs = ['node_modules', '.git', '.agent', '.agents', '_agent', '_agents', 'partials', 'styles', 'scripts', 'temp_docs'];
+const ignoreDirs = ['node_modules', '.git', '.agent', '.agents', '_agent', '_agents', 'partials', 'styles', 'scripts', 'temp_docs', 'Test html'];
 const ignoreFiles = ['404.html', 'homepage.html', 'service.html', 'service.template.html'];
 
 function walkDir(dir, fileList = []) {
@@ -39,6 +39,8 @@ htmlFiles.forEach(file => {
     if (relativePath === 'ru/index.html') relativePath = 'ru';
     // en/index.html should be en
     if (relativePath === 'en/index.html') relativePath = 'en';
+    // Firebase cleanUrls serves HTML files without the .html suffix
+    if (relativePath.endsWith('.html')) relativePath = relativePath.slice(0, -5);
 
     const url = `${domain}/${relativePath}`;
 
