@@ -54,6 +54,7 @@ const SKIP_FILES = new Set([
   'webasto-symptoms',
   'kaigukastiremont',
   'remont-kpp',
+  'transmission-repair',
   'automaatkasti-remont',
   'remont-akpp',
   'automatic-transmission-repair'
@@ -1110,6 +1111,7 @@ const sitemapEntries = [
   '',
   '  <!-- Услуги EN -->',
   ...enServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/en/services/${s.slug}`)),
+  sitemapUrl(`${PROD_ORIGIN}/en/services/transmission-repair`),
   sitemapUrl(`${PROD_ORIGIN}/en/services/webasto-symptoms`),
   sitemapUrl(`${PROD_ORIGIN}/en/services/automatic-transmission-repair`),
 ];
