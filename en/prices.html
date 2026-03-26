@@ -59,32 +59,6 @@
 
     <!-- Local CSS for Prices Page -->
     <style>
-        .prices-hero {
-            padding: 120px var(--container-padding) 60px;
-            background: #1a2133;
-            border-bottom: 1px solid var(--border-grid);
-            text-align: center;
-        }
-
-        .prices-hero__title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .prices-hero__desc {
-            font-size: 1.125rem;
-            color: var(--text-dimmed);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .prices-section {
-            padding: 60px var(--container-padding) 100px;
-        }
-
         /* Vehicle Selector */
         .vehicle-selector {
             display: flex;
@@ -98,47 +72,41 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
+            justify-content: center;
+            min-width: 180px;
+            padding: 0.875rem 1.25rem;
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-grid);
-            border-radius: 100px;
-            color: var(--text-main);
-            font-family: var(--font-heading);
+            border-radius: 0;
+            color: var(--text-dimmed);
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
             font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             cursor: pointer;
-            transition: all var(--transition-short) var(--ease-primary);
+            transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
         }
 
         .vehicle-btn:hover {
-            background: rgba(255, 176, 0, 0.03);
-            border-color: rgba(255, 176, 0, 0.18);
+            background: rgba(255, 176, 0, 0.08);
+            border-color: var(--accent-primary);
+            color: var(--text-main);
             transform: translateY(-1px);
         }
 
         .vehicle-btn.active {
-            background: rgba(255, 176, 0, 0.05);
-            color: var(--accent-primary);
-            border-color: rgba(255, 176, 0, 0.3);
-            box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.2);
-            animation: tab-pulse 2.5s infinite;
+            background: var(--accent-primary);
+            color: var(--text-on-accent);
+            border-color: var(--accent-primary);
+            box-shadow: none;
         }
 
         .vehicle-btn.active:hover {
-            background: rgba(255, 176, 0, 0.05);
-            border-color: rgba(255, 176, 0, 0.3);
+            background: var(--accent-primary-hover);
+            border-color: var(--accent-primary-hover);
             transform: none;
-        }
-
-        @keyframes tab-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.3); }
-            70% { box-shadow: 0 0 0 9px rgba(255, 176, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .vehicle-btn.active {
-                animation: none;
-            }
+            color: var(--text-on-accent);
         }
 
         /* Prices Table */
@@ -229,6 +197,10 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .price-list__header--spaced {
+            margin-top: 3rem;
         }
 
         /* Tire Services Accordion */
@@ -327,11 +299,32 @@
             background: rgba(255, 255, 255, 0.03);
         }
 
+        @media (max-width: 900px) {
+            .price-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.35rem;
+            }
+
+            .price-item__value {
+                white-space: normal;
+                text-align: left;
+            }
+
+            .tire-accordion__content {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tire-table {
+                min-width: 560px;
+            }
+        }
+
         /* Mobile adjustments for table */
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
             .tire-accordion__content {
                 padding: 0 1rem 1rem;
-                overflow-x: auto;
             }
 
             .tire-table th,
@@ -340,10 +333,19 @@
                 font-size: 0.875rem;
             }
 
-            .price-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.25rem;
+            .vehicle-selector {
+                gap: 0.75rem;
+                margin-bottom: 2rem;
+            }
+
+            .vehicle-btn {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .tire-accordion__trigger {
+                padding: 1.25rem 1rem;
+                font-size: 1rem;
             }
         }
 
@@ -353,6 +355,22 @@
             font-size: 0.875rem;
             margin-top: 3rem;
         }
+
+        .price-extra-list {
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border-grid);
+            padding-top: 1.5rem;
+        }
+
+        .price-item--compact {
+            padding: 0.75rem 0;
+        }
+
+        .price-item--compact .price-item__name,
+        .price-item--compact .price-item__value {
+            font-size: 1rem;
+        }
+
     </style>
 
     <!-- Favicons -->
@@ -384,7 +402,7 @@
                 <div class="mega-menu">
                     <a href="/en/services/general-car-repair" class="mega-menu__item">
                         <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Car Repair</span>
+                        <span>General Car Repair</span>
                     </a>
                     <a href="/en/services/exhaust-welding" class="mega-menu__item">
                         <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -461,7 +479,7 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
         <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
-        <nav aria-label="Mobiilne navigatsioon">
+        <nav aria-label="Mobile navigation">
             <a href="/en/services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
                 Services
                 <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
@@ -470,7 +488,7 @@
             <div class="mobile-mega-menu" id="mobileMegaMenu">
                 <a href="/en/services/general-car-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-                    <span>Car Repair</span>
+                    <span>General Car Repair</span>
                 </a>
                 <a href="/en/services/exhaust-welding" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
@@ -545,8 +563,7 @@
         <!-- HERO -->
         <section class="prices-hero">
 
-            <nav aria-label="Breadcrumb"
-                style="margin-bottom: var(--space-lg); display: flex; justify-content: center;">
+            <nav aria-label="Breadcrumb" class="prices-hero__breadcrumbs">
                 <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
                         itemtype="https://schema.org/ListItem">
@@ -568,7 +585,7 @@
         </section>
 
         <!-- PRICES SECTION -->
-        <section class="prices-section">
+        <section class="prices-section prices-section--canonical">
 
             <!-- Vehicle Selector -->
             <div class="vehicle-selector" role="tablist" aria-label="Vehicle type selection">
@@ -630,7 +647,7 @@
                 <div class="price-item"><span class="price-item__name">Minimum work price</span><span
                         class="price-item__value">22€ / once</span></div>
 
-                <div class="price-list__header" style="margin-top: 3rem;">
+                <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
                 </div>
                 <div class="price-item">
@@ -687,7 +704,7 @@
                 <div class="price-item"><span class="price-item__name">Minimum work price</span><span
                         class="price-item__value">22€ / once</span></div>
 
-                <div class="price-list__header" style="margin-top: 3rem;">
+                <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
                 </div>
                 <div class="price-item">
@@ -744,7 +761,7 @@
                 <div class="price-item"><span class="price-item__name">Minimum work price</span><span
                         class="price-item__value">22€ / once</span></div>
 
-                <div class="price-list__header" style="margin-top: 3rem;">
+                <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
                 </div>
                 <div class="price-item">
@@ -853,22 +870,22 @@
                     </table>
 
                     <!-- Tire Extra Items -->
-                    <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-grid); padding-top: 1.5rem;">
-                        <div class="price-item" style="padding: 0.75rem 0;">
-                            <span class="price-item__name" style="font-size:1rem;">Tire repair</span>
-                            <span class="price-item__value" style="font-size:1rem;">from 15€ + tire services</span>
+                    <div class="price-extra-list">
+                        <div class="price-item price-item--compact">
+                            <span class="price-item__name">Tire repair</span>
+                            <span class="price-item__value">from 15€ + tire services</span>
                         </div>
-                        <div class="price-item" style="padding: 0.75rem 0;">
-                            <span class="price-item__name" style="font-size:1rem;">Tire disposal</span>
-                            <span class="price-item__value" style="font-size:1rem;">2€ / pcs</span>
+                        <div class="price-item price-item--compact">
+                            <span class="price-item__name">Tire disposal</span>
+                            <span class="price-item__value">2€ / pcs</span>
                         </div>
-                        <div class="price-item" style="padding: 0.75rem 0;">
-                            <span class="price-item__name" style="font-size:1rem;">Valve replacement</span>
-                            <span class="price-item__value" style="font-size:1rem;">2€ / pcs</span>
+                        <div class="price-item price-item--compact">
+                            <span class="price-item__name">Valve replacement</span>
+                            <span class="price-item__value">2€ / pcs</span>
                         </div>
-                        <div class="price-item" style="padding: 0.75rem 0; border-bottom: none;">
-                            <span class="price-item__name" style="font-size:1rem;">Tire bag</span>
-                            <span class="price-item__value" style="font-size:1rem;">0.5€ / pcs</span>
+                        <div class="price-item price-item--compact">
+                            <span class="price-item__name">Tire bag</span>
+                            <span class="price-item__value">0.5€ / pcs</span>
                         </div>
                     </div>
                 </div>
@@ -878,20 +895,61 @@
 
         </section>
 
-        <!-- CONTACT Section placeholder -->
-        <!-- In a real deployment, form.html and map.html partials would be rendered here via build.js or server -->
-        <section class="contact-section" id="contact"
-            style="padding: 60px var(--container-padding); border-top: 1px solid var(--border-grid); text-align: center;">
-            <div class="site-container">
-                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase;">Book an
-                    Appointment</h2>
-                <p style="color: var(--text-dimmed); margin-bottom: 2rem;">Contact us and we will find a suitable time
-                    for your visit.</p>
-                <a href="/en/contact" class="btn btn-primary"
-                    style="display: inline-flex; justify-content: center; width: auto; padding: 1rem 2rem;">Submit
-                    Request <span class="arrow">↗</span></a>
+        <section class="contact-section" id="contact">
+            <div class="contact-grid site-container reveal">
+                <div class="contact__info">
+                    <div class="section-header">
+                        <span class="meta text-accent">/// Request Service From Pricing</span>
+                        <h2>Send a request directly from the pricing page</h2>
+                    </div>
+                    <p class="contact__promise">Describe the work you need or mention an item from the price list. Your
+                        request can be sent directly from this page.</p>
+                    <div class="accent-underline"></div>
+                    <a href="tel:+37256461210" class="contact__phone">
+                        <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        +372 5646 1210
+                    </a>
+                    <p class="contact__alt">Or call us if you want to confirm the visit and scope of work by phone first.</p>
+                </div>
+                <div class="contact__form">
+                    <form id="contactForm">
+                        <input type="hidden" name="lang" value="en">
+                        <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="tsStart" id="tsStart">
+
+                        <div id="formError" class="form-error-banner" style="display:none">Please fill in all required
+                            fields</div>
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="carNumber">Car plate number*</label>
+                            <input type="text" id="carNumber" name="carNumber" placeholder="123 ABC" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail*</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+372 ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message*</label>
+                            <textarea id="message" name="message"
+                                placeholder="Describe the work you need or mention a selected item from the pricing page" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            Send Request <span class="arrow">↗</span>
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
+
+        <div id="snackbar" class="snackbar">Thank you! Request sent.</div>
 
     </main>
 
@@ -989,6 +1047,94 @@
             accordionTrigger.setAttribute('aria-expanded', !isOpen);
         });
 
+        // Form handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            const tsStartInput = document.getElementById('tsStart');
+            if (tsStartInput) tsStartInput.value = Date.now();
+
+            const requiredFields = contactForm.querySelectorAll('[required]');
+            const formErrorBanner = document.getElementById('formError');
+
+            const clearFieldError = (field) => {
+                field.classList.remove('form-error');
+                const allRequiredFilled = Array.from(requiredFields).every(f => f.value.trim() !== '');
+                if (allRequiredFilled && formErrorBanner) {
+                    formErrorBanner.style.display = 'none';
+                }
+            };
+
+            requiredFields.forEach(field => {
+                field.addEventListener('input', () => clearFieldError(field));
+                field.addEventListener('change', () => clearFieldError(field));
+            });
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                let hasError = false;
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add('form-error');
+                        hasError = true;
+                    } else {
+                        field.classList.remove('form-error');
+                    }
+                });
+
+                if (hasError) {
+                    if (formErrorBanner) formErrorBanner.style.display = 'block';
+                    return;
+                }
+
+                const btn = this.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = 'Sending...';
+
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+                data.pageUrl = window.location.href;
+
+                fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            showSnackbar('Thank you! Request sent.');
+                            contactForm.reset();
+                            if (tsStartInput) tsStartInput.value = Date.now();
+                        } else {
+                            showSnackbar('Failed to send request. Please try again.', true);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showSnackbar('Failed to send request. Please try again.', true);
+                    })
+                    .finally(() => {
+                        btn.disabled = false;
+                        btn.innerHTML = originalText;
+                    });
+            });
+        }
+
+        function showSnackbar(message, isError = false) {
+            const snackbar = document.getElementById('snackbar');
+            if (!snackbar) return;
+            if (message) snackbar.innerText = message;
+            snackbar.className = 'snackbar show';
+            if (isError) snackbar.style.backgroundColor = 'var(--error)';
+            else snackbar.style.backgroundColor = '';
+
+            setTimeout(() => {
+                snackbar.className = snackbar.className.replace('show', '');
+            }, 4000);
+        }
+
         // Mobile menu logic
         const burger = document.getElementById('burgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1038,3 +1184,4 @@
 </body>
 
 </html>
+

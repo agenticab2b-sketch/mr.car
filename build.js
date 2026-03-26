@@ -67,7 +67,7 @@ const LANGS = [
     dir: 'services',
     dataFile: 'ee/services-data.js',
     navLinks: [
-      { href: '/teenused', label: '[01] Teenused', style: 'color:var(--accent-primary)' },
+      { href: '/teenused', label: '[01] Teenused' },
       { href: '/meist', label: '[02] Meist' },
       { href: '/hinnad', label: '[03] Hinnad' },
       { href: '/kontakt', label: '[04] Kontakt' },
@@ -75,6 +75,11 @@ const LANGS = [
     ],
     phone: '5646 1210',
     phoneHref: '+37256461210',
+    menuOpenLabel: 'Ava menüü',
+    menuCloseLabel: 'Sulge menüü',
+    mobileNavLabel: 'Mobiilne navigatsioon',
+    heroMetaLabel: '/// Mr.Car Autoteenindus',
+    fabTriggerLabel: 'Võta ühendust',
     headerCtaLabel: 'Jäta päring',
     headerCtaHref: '/kontakt',
     bookLabel: 'Broneeri aeg',
@@ -142,7 +147,7 @@ const LANGS = [
     dir: 'ru/services',
     dataFile: 'ru/services/services-data.js',
     navLinks: [
-      { href: '/ru/uslugi', label: '[01] Услуги', style: 'color:var(--accent-primary)' },
+      { href: '/ru/uslugi', label: '[01] Услуги' },
       { href: '/ru/o-nas', label: '[02] О нас' },
       { href: '/ru/tseny', label: '[03] Цены' },
       { href: '/ru/kontakt', label: '[04] Контакты' },
@@ -150,6 +155,11 @@ const LANGS = [
     ],
     phone: '5646 1210',
     phoneHref: '+37256461210',
+    menuOpenLabel: 'Открыть меню',
+    menuCloseLabel: 'Закрыть меню',
+    mobileNavLabel: 'Мобильная навигация',
+    heroMetaLabel: '/// Автосервис Mr.Car',
+    fabTriggerLabel: 'Связаться',
     headerCtaLabel: 'Оставить заявку',
     headerCtaHref: '/ru/kontakt',
     bookLabel: 'Записаться',
@@ -217,7 +227,7 @@ const LANGS = [
     dir: 'en/services',
     dataFile: 'en/services/services-data.js',
     navLinks: [
-      { href: '/en/services', label: '[01] Services', style: 'color:var(--accent-primary)' },
+      { href: '/en/services', label: '[01] Services' },
       { href: '/en/about', label: '[02] About' },
       { href: '/en/prices', label: '[03] Prices' },
       { href: '/en/contact', label: '[04] Contact' },
@@ -225,6 +235,11 @@ const LANGS = [
     ],
     phone: '5646 1210',
     phoneHref: '+37256461210',
+    menuOpenLabel: 'Open menu',
+    menuCloseLabel: 'Close menu',
+    mobileNavLabel: 'Mobile navigation',
+    heroMetaLabel: '/// Mr.Car Auto Service',
+    fabTriggerLabel: 'Contact us',
     headerCtaLabel: 'Send request',
     headerCtaHref: '/en/contact',
     bookLabel: 'Book Now',
@@ -334,6 +349,8 @@ const SIDEBAR_CASE_EXCEPTIONS = {
   ]
 };
 
+const NAV_ORDINAL_RE = /^\[\d+\]\s*/;
+
 function toSentenceCaseLabel(value, lang) {
   const text = String(value || '').trim();
   if (!text) return '';
@@ -356,6 +373,10 @@ function applySidebarCaseExceptions(text, lang) {
     (result, { pattern, replacement }) => result.replace(pattern, replacement),
     text
   );
+}
+
+function stripNavOrdinal(label) {
+  return String(label || '').replace(NAV_ORDINAL_RE, '').trim();
 }
 
 function buildSymptomCards(symptoms) {
@@ -393,7 +414,7 @@ function buildSidebar(services, currentSlug, cfg) {
       const active = s.slug === currentSlug ? ' active' : '';
       html += `\n              <li><a href="${cfg.serviceBase}${esc(s.slug)}" class="sd-sidebar__link${active}">
                 <iconify-icon icon="${esc(s.icon)}" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>${esc(toSentenceCaseLabel(s.navTitle, cfg.lang))}</span>
+                <span>${esc(s.navTitle)}</span>
               </a></li>`;
     }
     html += `\n            </ul>
@@ -740,7 +761,7 @@ ${jsonLd}
     <div class="navbar__cta">
       <a href="${esc(cfg.headerCtaHref)}" class="btn btn-primary">${esc(cfg.headerCtaLabel)}</a>
     </div>
-    <button class="navbar__burger" id="burgerBtn" aria-label="Ava menüü">
+    <button class="navbar__burger" id="burgerBtn" aria-label="${esc(cfg.menuOpenLabel)}">
       <span></span><span></span><span></span>
     </button>
     <div class="navbar__lang desktop-only">
@@ -750,8 +771,8 @@ ${jsonLd}
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-menu__close" id="closeMenu" aria-label="Sulge menüü">&times;</button>
-    <nav aria-label="Mobiilne navigatsioon">
+    <button class="mobile-menu__close" id="closeMenu" aria-label="${esc(cfg.menuCloseLabel)}">&times;</button>
+    <nav aria-label="${esc(cfg.mobileNavLabel)}">
       <a href="${cfg.navLinks[0].href}" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
         ${cfg.navLinks[0].label}
         <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
@@ -759,7 +780,7 @@ ${jsonLd}
       <div class="mobile-mega-menu" id="mobileMegaMenu">
         ${mobileMegaMenu}
       </div>
-      ${cfg.navLinks.slice(1).map(n => `<a href="${n.href}" class="mobile-menu__link" onclick="closeMobileMenu()">${esc(n.label)}</a>`).join('\n      ')}
+      ${cfg.navLinks.slice(1).map(n => `<a href="${n.href}" class="mobile-menu__link" onclick="closeMobileMenu()">${esc(stripNavOrdinal(n.label))}</a>`).join('\n      ')}
     </nav>
     <a href="tel:${cfg.phoneHref}" class="mobile-menu__link" style="color:var(--accent-primary)">${cfg.phone}</a>
     <div class="mobile-menu__lang">
@@ -771,7 +792,7 @@ ${jsonLd}
   <section class="sd-hero" style="background-image:url('${esc(s.heroImage)}')">
     <div class="sd-hero__overlay"></div>
     <div class="sd-hero__content site-container">
-      <span class="sd-hero__meta">/// Mr.Car Autoteenindus</span>
+      <span class="sd-hero__meta">${esc(cfg.heroMetaLabel)}</span>
       <h1 class="sd-hero__title">${esc(s.heroTitle)}</h1>
       <p class="sd-hero__lead">${esc(s.heroLead)}</p>
       <a href="#request" class="btn btn-primary sd-hero__cta">${esc(cfg.formSubmit)} <span class="arrow">↗</span></a>
@@ -854,7 +875,7 @@ ${jsonLd}
         <span>${esc(cfg.fabBook)}</span>
       </a>
     </div>
-    <button class="fab-contact__trigger" id="fabTrigger" aria-label="Võta ühendust">
+    <button class="fab-contact__trigger" id="fabTrigger" aria-label="${esc(cfg.fabTriggerLabel)}">
       <span class="fab-contact__icon-wrap">
         <span class="fab-contact__icon fab-contact__icon--phone">
           <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
@@ -1090,30 +1111,84 @@ function sitemapUrl(url, priority, changefreq) {
   </url>`;
 }
 
+const STATIC_SITEMAP_PATHS = [
+  '/en/about',
+  '/en/contact',
+  '/en/gallery',
+  '/en',
+  '/en/prices',
+  '/en/services',
+  '/en/tingimused',
+  '/galerii',
+  '/google6aff4100d8f2567c',
+  '/googlef4bd042d0039292d',
+  '/hinnad',
+  '/',
+  '/kontakt',
+  '/meist',
+  '/prices',
+  '/privaatsus/index',
+  '/ru/galereya',
+  '/ru',
+  '/ru/kontakt',
+  '/ru/o-nas',
+  '/ru/prices',
+  '/ru/privaatsus/index',
+  '/ru/tingimused',
+  '/ru/tseny',
+  '/ru/uslugi',
+  '/teenused',
+  '/temp_en',
+  '/temp_et',
+  '/temp_ru',
+  '/tingimused'
+];
+
+const STATIC_SERVICE_SITEMAP_PATHS = {
+  et: [
+    '/services/kaigukastiremont',
+    '/services/kasikasti-remont',
+    '/services/automaatkasti-remont',
+    '/services/webasto-diagnostika',
+    '/services/webasto-sumptomid'
+  ],
+  ru: [
+    '/ru/services/remont-kpp',
+    '/ru/services/remont-mkpp',
+    '/ru/services/remont-akpp',
+    '/ru/services/webasto-simptomy'
+  ],
+  en: [
+    '/en/services/transmission-repair',
+    '/en/services/manual-transmission-repair',
+    '/en/services/automatic-transmission-repair',
+    '/en/services/webasto-symptoms'
+  ]
+};
+
+function buildServiceSitemapPaths(services, basePath, standalonePaths) {
+  return [
+    ...services
+      .filter(s => !SKIP_FILES.has(s.slug))
+      .map(s => `${basePath}${s.slug}`),
+    ...standalonePaths
+  ];
+}
+
+function staticPathToUrl(relativePath) {
+  return relativePath === '/' ? `${PROD_ORIGIN}/` : `${PROD_ORIGIN}${relativePath}`;
+}
+
 const sitemapEntries = [
-  sitemapUrl(`${PROD_ORIGIN}/`, '1.0', 'weekly'),
-  sitemapUrl(`${PROD_ORIGIN}/ru/`, '0.9', 'weekly'),
-  sitemapUrl(`${PROD_ORIGIN}/en/`, '0.9', 'weekly'),
-  '',
-  '  <!-- Услуги ET -->',
-  // Filter out SKIP_FILES slugs — they are added separately below as standalone pages
-  ...eeServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/services/${s.slug}`)),
-  // Standalone landing pages (not in services array generation)
-  sitemapUrl(`${PROD_ORIGIN}/services/kaigukastiremont`),
-  sitemapUrl(`${PROD_ORIGIN}/services/webasto-sumptomid`),
-  sitemapUrl(`${PROD_ORIGIN}/services/automaatkasti-remont`),
-  '',
-  '  <!-- Услуги RU -->',
-  ...ruServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/ru/services/${s.slug}`)),
-  sitemapUrl(`${PROD_ORIGIN}/ru/services/remont-kpp`),
-  sitemapUrl(`${PROD_ORIGIN}/ru/services/webasto-simptomy`),
-  sitemapUrl(`${PROD_ORIGIN}/ru/services/remont-akpp`),
-  '',
-  '  <!-- Услуги EN -->',
-  ...enServices.filter(s => !SKIP_FILES.has(s.slug)).map(s => sitemapUrl(`${PROD_ORIGIN}/en/services/${s.slug}`)),
-  sitemapUrl(`${PROD_ORIGIN}/en/services/transmission-repair`),
-  sitemapUrl(`${PROD_ORIGIN}/en/services/webasto-symptoms`),
-  sitemapUrl(`${PROD_ORIGIN}/en/services/automatic-transmission-repair`),
+  ...STATIC_SITEMAP_PATHS.map(relativePath =>
+    sitemapUrl(staticPathToUrl(relativePath), relativePath === '/' ? '1.0' : '0.8', 'weekly')
+  ),
+  ...buildServiceSitemapPaths(eeServices, '/services/', STATIC_SERVICE_SITEMAP_PATHS.et)
+    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly')),
+  ...buildServiceSitemapPaths(ruServices, '/ru/services/', STATIC_SERVICE_SITEMAP_PATHS.ru)
+    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly')),
+  ...buildServiceSitemapPaths(enServices, '/en/services/', STATIC_SERVICE_SITEMAP_PATHS.en)
+    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly'))
 ];
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>

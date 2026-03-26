@@ -27,8 +27,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact us and we will find the best solution for your car. Book an appointment.">
-    <title>Contact — Mr.Car Autoteenindus Tallinnas</title>
+    <meta name="description" content="Contact Mr.Car auto service and request a quote. We are located in Tallinn at Kopli 82a and respond quickly.">
+    <title>Contact — Mr.Car Auto Service in Tallinn</title>
 
     <!-- Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,9 +47,9 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
-    <meta property="og:title" content="Contact — Mr.Car Autoteenindus Tallinnas">
+    <meta property="og:title" content="Contact — Mr.Car Auto Service in Tallinn">
     <meta property="og:description"
-        content="Contact us and we will find the best solution for your car. Book an appointment.">
+        content="Contact Mr.Car auto service and request a quote. We are located in Tallinn at Kopli 82a and respond quickly.">
     <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/en/contact.html">
     <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="en_EE">
@@ -72,7 +72,7 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Skip to main content (a11y) -->
-    <a href="#prices-main" class="skip-link">Skip to main content</a>
+    <a href="#contact-main" class="skip-link">Skip to main content</a>
 
     <!-- ========================================
        1. NAVBAR
@@ -85,7 +85,7 @@
                 <div class="mega-menu">
                     <a href="/en/services/general-car-repair" class="mega-menu__item">
                         <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Car Repair</span>
+                        <span>General Car Repair</span>
                     </a>
                     <a href="/en/services/exhaust-welding" class="mega-menu__item">
                         <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -162,7 +162,7 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
         <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
-        <nav aria-label="Mobiilne navigatsioon">
+        <nav aria-label="Mobile navigation">
             <a href="/en/services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
                 Services
                 <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
@@ -171,7 +171,7 @@
             <div class="mobile-mega-menu" id="mobileMegaMenu">
                 <a href="/en/services/general-car-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-                    <span>Car Repair</span>
+                    <span>General Car Repair</span>
                 </a>
                 <a href="/en/services/exhaust-welding" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
@@ -245,7 +245,7 @@
     <main id="contact-main">
         <!-- HERO -->
         <section class="prices-hero">
-            <nav aria-label="Breadcrumb" style="display: flex; justify-content: center;">
+            <nav aria-label="Breadcrumb" class="prices-hero__breadcrumbs">
                 <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
                         itemtype="https://schema.org/ListItem">
@@ -261,25 +261,22 @@
                 </ol>
             </nav>
             <h1 class="prices-hero__title">Contact</h1>
-            <p class="prices-hero__desc" style="max-width: 600px; margin: 0 auto;">Contact us and we will find the best
+            <p class="prices-hero__desc">Contact us and we will find the best
                 solution for your car. Book an appointment.</p>
         </section>
 
         <section class="contact-section" id="contact">
-            <div class="container site-container">
-                <div class="section-header">
-                    <span class="meta text-accent">/// Book Appointment</span>
-                </div>
-            </div>
             <div class="contact-grid site-container reveal">
                 <div class="contact__info">
-                    <h2>Book<br>Appointment</h2>
+                    <div class="section-header">
+                        <span class="meta text-accent">/// Book Appointment</span>
+                        <h2>Book<br>Appointment</h2>
+                    </div>
                     <p class="contact__promise">Leave a request — we'll call back within 30 minutes during working
                         hours.
                     </p>
                     <div class="accent-underline"></div>
-                    <a href="tel:+37256461210"
-                        style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: -0.01em; margin-top: 16px; width: fit-content; text-decoration: none; transition: all var(--transition-fast);">
+                    <a href="tel:+37256461210" class="contact__phone">
                         <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
                         +372 5646 1210
                     </a>

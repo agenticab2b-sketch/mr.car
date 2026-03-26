@@ -19,9 +19,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Mr.Car Auto Repair Tallinn — professional car repair, tire works and diagnostics in Kopli. Call +372 5646 1210">
+        content="Professional auto repair in Tallinn — Mr.Car auto service in Kopli. ✓ Warranty on all work ✓ Transparent pricing ✓ Fast service. Diagnostics, tire service, engine and gearbox repair. ☎ +372 5646 1210">
 
-    <title>Mr.Car Auto Repair Tallinn — Professional Car Maintenance</title>
+    <title>Auto Repair in Tallinn — Mr.Car Auto Service | Diagnostics, Tire Service, Maintenance</title>
 
     <!-- Preload LCP Image -->
     <link rel="preload" as="image" href="/pics/hero-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
@@ -186,9 +186,9 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
-    <meta property="og:title" content="Mr.Car Auto Repair Tallinn — Professional Car Maintenance">
+    <meta property="og:title" content="Auto Repair in Tallinn — Mr.Car Auto Service | Diagnostics, Tire Service, Maintenance">
     <meta property="og:description"
-        content="Professional car service in Kopli. Repair, diagnostics, tire service. Call +372 5646 1210.">
+        content="Professional auto repair and car service in Tallinn. Warranty on all work, transparent pricing and fast service. Kopli 82a. ☎ +372 5646 1210">
     <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/en">
     <meta property="og:image" content="https://www.mrcar.ee/og/en.jpg">
     <meta property="og:locale" content="en_US">
@@ -199,6 +199,111 @@
             var origin = 'https://www.mrcar.ee';
             document.getElementById('ogUrl').setAttribute('content', origin + window.location.pathname);
         })();
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AutoRepair",
+          "name": "Mr.Car Auto Service",
+          "url": "https://www.mrcar.ee/en",
+          "telephone": "+372 5646 1210",
+          "email": "info@mrcar.ee",
+          "description": "Professional auto repair and car service in Tallinn. Diagnostics, tire service, engine repair, gearbox repair, suspension work and AC service.",
+          "image": "https://www.mrcar.ee/og/en.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kopli 82a",
+            "addressLocality": "Tallinn",
+            "postalCode": "10412",
+            "addressCountry": "EE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 59.45,
+            "longitude": 24.7
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "priceRange": "€€",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "103",
+            "bestRating": "5"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Auto repair services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "General Car Repair"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Car Diagnostics"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tire Services and Tire Change"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Suspension and Brake Repair"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Engine Repair"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gearbox Repair"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AC Service"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Oil Change"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Exhaust and Welding"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Webasto Repair"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pre-purchase Inspection"}}
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How long does car repair take at Mr.Car?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most maintenance and repair work is completed on the same day. More complex jobs, such as engine overhauls or gearbox repair, may take 2–5 business days. We confirm the exact timing after diagnostics."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Mr.Car provide a warranty on completed work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide a warranty on all completed work. We use only quality original parts or proven alternatives."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does car repair cost at Mr.Car?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oil change starts from 35€, diagnostics from 40€, and tire services from 20€ per wheel. We provide an exact quote after inspecting the car. Labour starts from 45€ per hour."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where is Mr.Car auto service located?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We are located in Tallinn at Kopli 82a, just a few minutes from the city centre. We are open Monday to Friday from 09:00 to 18:00."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which car brands does Mr.Car repair?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We repair all car brands, including Volkswagen, Audi, BMW, Mercedes-Benz, Toyota, Volvo, Ford, Skoda, Peugeot, Renault and many others."
+              }
+            }
+          ]
+        }
+      ]
+    }
     </script>
     <link rel="stylesheet" href="/style.css?v=4"><!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -216,8 +321,8 @@
         <nav class="navbar__nav">
             <div class="navbar__item has-dropdown"><a href="/en/services" class="navbar__link">[01] Services</a>
                 <div class="mega-menu"><a href="/en/services/general-car-repair" class="mega-menu__item"><iconify-icon
-                            icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon><span>Car
-                            Repair</span></a><a href="/en/services/exhaust-welding"
+                            icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon><span>General
+                            Car Repair</span></a><a href="/en/services/exhaust-welding"
                         class="mega-menu__item"><iconify-icon icon="mdi:fire" width="20" height="20"
                             aria-hidden="true"></iconify-icon><span>Exhaust & Welding</span></a><a
                         href="/en/services/chassis-brakes" class="mega-menu__item"><iconify-icon
@@ -263,12 +368,12 @@
     <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon"><button
             class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;
         </button>
-        <nav aria-label="Mobiilne navigatsioon"><a href="/en/services" class="mobile-menu__link"
+        <nav aria-label="Mobile navigation"><a href="/en/services" class="mobile-menu__link"
                 onclick="toggleMobileMegaMenu(event)">Services <iconify-icon icon="mdi:chevron-down"
                     class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon></a>
             <div class="mobile-mega-menu" id="mobileMegaMenu"><a href="/en/services/general-car-repair"
                     class="mobile-mega-menu__item" onclick="closeMobileMenu()"><iconify-icon icon="mdi:wrench"
-                        aria-hidden="true"></iconify-icon><span>Car Repair</span></a><a
+                    aria-hidden="true"></iconify-icon><span>General Car Repair</span></a><a
                     href="/en/services/exhaust-welding" class="mobile-mega-menu__item"
                     onclick="closeMobileMenu()"><iconify-icon icon="mdi:fire"
                         aria-hidden="true"></iconify-icon><span>Exhaust & Welding</span></a><a
@@ -372,7 +477,7 @@
                     </div>
                     <p>Mr.Car is a reliable <strong>car service in Tallinn</strong>, located in the Kopli area — just a
                         few minutes from the city center. Our experienced mechanics offer a wide range of services:
-                        <a href="/en/services/general-car-repair">car repair</a>, <a
+                        <a href="/en/services/general-car-repair">general car repair</a>, <a
                             href="/en/services/maintenance-diagnostics">computer diagnostics</a>, <a
                             href="/en/services/tire-service">tire works and replacement</a>, <a
                             href="/en/services/chassis-brakes">suspension and brake repair</a>, <a
@@ -469,8 +574,8 @@
         <div class="services-all site-container">
             <div class="services-all__grid"><a href="/en/services/general-car-repair" class="services-all__item"><span
                         class="services-all__number"><iconify-icon icon="mdi:wrench" width="24" height="24"
-                            aria-hidden="true"></iconify-icon></span><span class="services-all__name">Car
-                        Repair</span><span class="services-all__arrow">→</span></a><a
+                            aria-hidden="true"></iconify-icon></span><span class="services-all__name">General
+                        Car Repair</span><span class="services-all__arrow">→</span></a><a
                     href="/en/services/exhaust-welding" class="services-all__item"><span
                         class="services-all__number"><iconify-icon icon="mdi:fire" width="24" height="24"
                             aria-hidden="true"></iconify-icon></span><span class="services-all__name">Exhaust &
@@ -545,9 +650,75 @@
             <div class="pricing-item"><span class="pricing-item__service">Tire Services</span><span
                     class="pricing-item__price">from €20</span><span class="pricing-item__note">Per wheel</span></div>
         </div>
-        <div class="pricing__cta-wrapper"><a href="https://mrcar-473416.web.app/hinnad" class="btn btn-secondary">Full
+        <div class="pricing__cta-wrapper"><a href="/en/prices" class="btn btn-secondary">Full
                 Price List <iconify-icon icon="mdi:arrow-top-right" width="16" height="16" aria-hidden="true"
                     class="btn__icon"></iconify-icon></a></div>
+    </section>
+    <section class="faq-section" id="faq">
+        <div class="site-container">
+            <div class="section-header">
+                <span class="meta text-accent">/// Frequently asked questions</span>
+                <h2>Questions and answers</h2>
+            </div>
+            <div class="faq-list reveal">
+                <details class="faq-item">
+                    <summary class="faq-item__question">
+                        <span>How long does car repair take at Mr.Car?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                            aria-hidden="true"></iconify-icon>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Most maintenance and repair work is completed on the same day. More complex jobs can take
+                            2–5 business days. We confirm the exact timing after diagnostics.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__question">
+                        <span>Does Mr.Car provide a warranty on completed work?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                            aria-hidden="true"></iconify-icon>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Yes, we provide a warranty on all completed work. We use only quality original parts or
+                            proven alternatives. Warranty terms depend on the type of work performed.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__question">
+                        <span>How much does car repair cost at Mr.Car?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                            aria-hidden="true"></iconify-icon>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Oil change starts from 35€, diagnostics from 40€, and tire services from 20€ per wheel. We
+                            provide an exact quote after inspecting the car. Labour starts from 45€ per hour. See the
+                            <a href="#pricing">pricing section</a> for more details.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__question">
+                        <span>Where is Mr.Car auto service located?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                            aria-hidden="true"></iconify-icon>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>We are located in Tallinn at Kopli 82a, just a few minutes from the city centre. We are open
+                            Monday to Friday from 09:00 to 18:00. <a href="#location">Open the map</a>.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-item__question">
+                        <span>Which car brands does Mr.Car repair?</span>
+                        <iconify-icon icon="mdi:chevron-down" width="24" height="24"
+                            aria-hidden="true"></iconify-icon>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>We repair all car brands, including Volkswagen, Audi, BMW, Mercedes-Benz, Toyota, Volvo,
+                            Ford, Skoda, Peugeot, Renault and many others.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
     </section><!--========================================11. REVIEWS========================================-->
     <section class="reviews-section" id="reviews">
         <div class="site-container">
@@ -607,17 +778,14 @@
         </div>
     </section><!-- CONTACT FORM -->
     <section class="contact-section" id="contact">
-        <div class="container site-container">
-            <div class="section-header"><span class="meta text-accent"> /// Book Appointment</span>
-            </div>
-        </div>
         <div class="contact-grid site-container reveal">
             <div class="contact__info">
-                <h2>Book<br>Appointment</h2>
+                <div class="section-header"><span class="meta text-accent"> /// Book Appointment</span>
+                    <h2>Book<br>Appointment</h2>
+                </div>
                 <p class="contact__promise">Leave a request — we'll call back within 30 minutes during working hours.
                 </p>
-                <div class="accent-underline"></div><a href="tel:+37256461210"
-                    style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: -0.01em; margin-top: 16px; width: fit-content; text-decoration: none; transition: all var(--transition-fast);"><iconify-icon
+                <div class="accent-underline"></div><a href="tel:+37256461210" class="contact__phone"><iconify-icon
                         icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>+372 5646 1210 </a>
             </div>
             <div class="contact__form">

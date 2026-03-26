@@ -13,7 +13,7 @@ const SERVICES = [
         slug: "general-car-repair",
         allSlugs: { ru: "autoremont", ee: "autoremont", en: "general-car-repair" },
         category: "Maintenance",
-        navTitle: "Car Repair",
+        navTitle: "General Car Repair",
         icon: "mdi:wrench",
         heroTitle: "General Car Repair",
         heroLead: "Comprehensive repair for all car makes. From minor issues to major overhauls.",

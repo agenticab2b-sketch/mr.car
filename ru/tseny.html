@@ -59,32 +59,6 @@
 
     <!-- Local CSS for Prices Page -->
     <style>
-        .prices-hero {
-            padding: 120px var(--container-padding) 60px;
-            background: #1a2133;
-            border-bottom: 1px solid var(--border-grid);
-            text-align: center;
-        }
-
-        .prices-hero__title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .prices-hero__desc {
-            font-size: 1.125rem;
-            color: var(--text-dimmed);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .prices-section {
-            padding: 60px var(--container-padding) 100px;
-        }
-
         /* Vehicle Selector */
         .vehicle-selector {
             display: flex;
@@ -98,47 +72,41 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
+            justify-content: center;
+            min-width: 180px;
+            padding: 0.875rem 1.25rem;
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-grid);
-            border-radius: 100px;
-            color: var(--text-main);
-            font-family: var(--font-heading);
+            border-radius: 0;
+            color: var(--text-dimmed);
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
             font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
             cursor: pointer;
-            transition: all var(--transition-short) var(--ease-primary);
+            transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
         }
 
         .vehicle-btn:hover {
-            background: rgba(255, 176, 0, 0.03);
-            border-color: rgba(255, 176, 0, 0.18);
+            background: rgba(255, 176, 0, 0.08);
+            border-color: var(--accent-primary);
+            color: var(--text-main);
             transform: translateY(-1px);
         }
 
         .vehicle-btn.active {
-            background: rgba(255, 176, 0, 0.05);
-            color: var(--accent-primary);
-            border-color: rgba(255, 176, 0, 0.3);
-            box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.2);
-            animation: tab-pulse 2.5s infinite;
+            background: var(--accent-primary);
+            color: var(--text-on-accent);
+            border-color: var(--accent-primary);
+            box-shadow: none;
         }
 
         .vehicle-btn.active:hover {
-            background: rgba(255, 176, 0, 0.05);
-            border-color: rgba(255, 176, 0, 0.3);
+            background: var(--accent-primary-hover);
+            border-color: var(--accent-primary-hover);
             transform: none;
-        }
-
-        @keyframes tab-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0.3); }
-            70% { box-shadow: 0 0 0 9px rgba(255, 176, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 176, 0, 0); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .vehicle-btn.active {
-                animation: none;
-            }
+            color: var(--text-on-accent);
         }
 
         /* Prices Table */
@@ -229,6 +197,10 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .price-list__header--spaced {
+            margin-top: 3rem;
         }
 
         /* Tire Services Accordion */
@@ -327,11 +299,32 @@
             background: rgba(255, 255, 255, 0.03);
         }
 
+        @media (max-width: 900px) {
+            .price-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.35rem;
+            }
+
+            .price-item__value {
+                white-space: normal;
+                text-align: left;
+            }
+
+            .tire-accordion__content {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tire-table {
+                min-width: 560px;
+            }
+        }
+
         /* Mobile adjustments for table */
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
             .tire-accordion__content {
                 padding: 0 1rem 1rem;
-                overflow-x: auto;
             }
 
             .tire-table th,
@@ -340,10 +333,19 @@
                 font-size: 0.875rem;
             }
 
-            .price-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.25rem;
+            .vehicle-selector {
+                gap: 0.75rem;
+                margin-bottom: 2rem;
+            }
+
+            .vehicle-btn {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .tire-accordion__trigger {
+                padding: 1.25rem 1rem;
+                font-size: 1rem;
             }
         }
 
@@ -353,6 +355,22 @@
             font-size: 0.875rem;
             margin-top: 3rem;
         }
+
+        .price-extra-list {
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border-grid);
+            padding-top: 1.5rem;
+        }
+
+        .price-item--compact {
+            padding: 0.75rem 0;
+        }
+
+        .price-item--compact .price-item__name,
+        .price-item--compact .price-item__value {
+            font-size: 1rem;
+        }
+
     </style>
 
     <!-- Favicons -->
@@ -384,7 +402,7 @@
                 <div class="mega-menu">
                     <a href="/ru/services/autoremont" class="mega-menu__item">
                         <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Ремонт автомобилей</span>
+                        <span>Общий авторемонт</span>
                     </a>
                     <a href="/ru/services/glushiteli-svarka" class="mega-menu__item">
                         <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -470,7 +488,7 @@
             <div class="mobile-mega-menu" id="mobileMegaMenu">
                 <a href="/ru/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-                    <span>Ремонт автомобилей</span>
+                    <span>Общий авторемонт</span>
                 </a>
                 <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
@@ -545,8 +563,7 @@
         <!-- HERO -->
         <section class="prices-hero">
 
-            <nav aria-label="Breadcrumb"
-                style="margin-bottom: var(--space-lg); display: flex; justify-content: center;">
+            <nav aria-label="Breadcrumb" class="prices-hero__breadcrumbs">
                 <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
                         itemtype="https://schema.org/ListItem">
@@ -568,7 +585,7 @@
         </section>
 
         <!-- PRICES SECTION -->
-        <section class="prices-section">
+        <section class="prices-section prices-section--canonical">
 
             <!-- Vehicle Selector -->
             <div class="vehicle-selector" role="tablist" aria-label="Выбор типа транспортного средства">
@@ -629,7 +646,7 @@
                 <div class="price-item"><span class="price-item__name">Минимальная стоимость работ</span><span
                         class="price-item__value">22€ / 1 раз</span></div>
 
-                <div class="price-list__header" style="margin-top: 3rem;">
+                <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> Расход-схождение 3D
                 </div>
                 <div class="price-item">
@@ -685,7 +702,7 @@
                 <div class="price-item"><span class="price-item__name">Минимальная стоимость работ</span><span
                         class="price-item__value">22€ / 1 раз</span></div>
 
-                <div class="price-list__header" style="margin-top: 3rem;">
+                <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> Расход-схождение 3D
                 </div>
                 <div class="price-item">
@@ -741,7 +758,7 @@
                 <div class="price-item"><span class="price-item__name">Минимальная стоимость работ</span><span
                         class="price-item__value">22€ / 1 раз</span></div>
 
-                <div class="price-list__header" style="margin-top: 3rem;">
+                <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> Расход-схождение 3D
                 </div>
                 <div class="price-item">
@@ -850,22 +867,22 @@
                     </table>
 
                     <!-- Tire Extra Items -->
-                    <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-grid); padding-top: 1.5rem;">
-                        <div class="price-item" style="padding: 0.75rem 0;">
-                            <span class="price-item__name" style="font-size:1rem;">Ремонт шины</span>
-                            <span class="price-item__value" style="font-size:1rem;">от 15€ + шиномонтаж</span>
+                    <div class="price-extra-list">
+                        <div class="price-item price-item--compact">
+                            <span class="price-item__name">Ремонт шины</span>
+                            <span class="price-item__value">от 15€ + шиномонтаж</span>
                         </div>
-                        <div class="price-item" style="padding: 0.75rem 0;">
-                            <span class="price-item__name" style="font-size:1rem;">Утилизация шины</span>
-                            <span class="price-item__value" style="font-size:1rem;">2€ / шт</span>
+                        <div class="price-item price-item--compact">
+                            <span class="price-item__name">Утилизация шины</span>
+                            <span class="price-item__value">2€ / шт</span>
                         </div>
-                        <div class="price-item" style="padding: 0.75rem 0;">
-                            <span class="price-item__name" style="font-size:1rem;">Замена вентилей</span>
-                            <span class="price-item__value" style="font-size:1rem;">2€ / шт</span>
+                        <div class="price-item price-item--compact">
+                            <span class="price-item__name">Замена вентилей</span>
+                            <span class="price-item__value">2€ / шт</span>
                         </div>
-                        <div class="price-item" style="padding: 0.75rem 0; border-bottom: none;">
-                            <span class="price-item__name" style="font-size:1rem;">Пакет для шин</span>
-                            <span class="price-item__value" style="font-size:1rem;">0,5€ / шт</span>
+                        <div class="price-item price-item--compact">
+                            <span class="price-item__name">Пакет для шин</span>
+                            <span class="price-item__value">0,5€ / шт</span>
                         </div>
                     </div>
                 </div>
@@ -875,20 +892,61 @@
 
         </section>
 
-        <!-- CONTACT Section placeholder -->
-        <!-- In a real deployment, form.html and map.html partials would be rendered here via build.js or server -->
-        <section class="contact-section" id="contact"
-            style="padding: 60px var(--container-padding); border-top: 1px solid var(--border-grid); text-align: center;">
-            <div class="site-container">
-                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase;">Записаться
-                </h2>
-                <p style="color: var(--text-dimmed); margin-bottom: 2rem;">Свяжитесь с нами и мы подберем удобное время
-                    для визита.</p>
-                <a href="/ru/kontakt" class="btn btn-primary"
-                    style="display: inline-flex; justify-content: center; width: auto; padding: 1rem 2rem;">Оставить
-                    заявку <span class="arrow">↗</span></a>
+        <section class="contact-section" id="contact">
+            <div class="contact-grid site-container reveal">
+                <div class="contact__info">
+                    <div class="section-header">
+                        <span class="meta text-accent">/// Оставить заявку из прайса</span>
+                        <h2>Отправить заявку прямо со страницы цен</h2>
+                    </div>
+                    <p class="contact__promise">Опишите нужные работы или укажите позицию из прайса. Заявка
+                        отправляется прямо с этой страницы.</p>
+                    <div class="accent-underline"></div>
+                    <a href="tel:+37256461210" class="contact__phone">
+                        <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        +372 5646 1210
+                    </a>
+                    <p class="contact__alt">Или позвоните, если хотите сразу согласовать удобное время и объём работ.</p>
+                </div>
+                <div class="contact__form">
+                    <form id="contactForm">
+                        <input type="hidden" name="lang" value="ru">
+                        <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="tsStart" id="tsStart">
+
+                        <div id="formError" class="form-error-banner" style="display:none">Необходимо заполнить
+                            выделенные поля</div>
+
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group">
+                            <label for="carNumber">Госномер*</label>
+                            <input type="text" id="carNumber" name="carNumber" placeholder="123 ABC" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail*</label>
+                            <input type="email" id="email" name="email" placeholder="vash@email.ru" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+372 ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение*</label>
+                            <textarea id="message" name="message"
+                                placeholder="Опишите нужные работы или укажите позицию из прайса" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            Отправить заявку <span class="arrow">↗</span>
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
+
+        <div id="snackbar" class="snackbar">Спасибо! Заявка отправлена.</div>
 
     </main>
 
@@ -986,6 +1044,94 @@
             accordionTrigger.setAttribute('aria-expanded', !isOpen);
         });
 
+        // Form handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            const tsStartInput = document.getElementById('tsStart');
+            if (tsStartInput) tsStartInput.value = Date.now();
+
+            const requiredFields = contactForm.querySelectorAll('[required]');
+            const formErrorBanner = document.getElementById('formError');
+
+            const clearFieldError = (field) => {
+                field.classList.remove('form-error');
+                const allRequiredFilled = Array.from(requiredFields).every(f => f.value.trim() !== '');
+                if (allRequiredFilled && formErrorBanner) {
+                    formErrorBanner.style.display = 'none';
+                }
+            };
+
+            requiredFields.forEach(field => {
+                field.addEventListener('input', () => clearFieldError(field));
+                field.addEventListener('change', () => clearFieldError(field));
+            });
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                let hasError = false;
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.classList.add('form-error');
+                        hasError = true;
+                    } else {
+                        field.classList.remove('form-error');
+                    }
+                });
+
+                if (hasError) {
+                    if (formErrorBanner) formErrorBanner.style.display = 'block';
+                    return;
+                }
+
+                const btn = this.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = 'Отправка...';
+
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+                data.pageUrl = window.location.href;
+
+                fetch('/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            showSnackbar('Спасибо! Заявка отправлена.');
+                            contactForm.reset();
+                            if (tsStartInput) tsStartInput.value = Date.now();
+                        } else {
+                            showSnackbar('Не удалось отправить заявку. Попробуйте ещё раз.', true);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showSnackbar('Не удалось отправить заявку. Попробуйте ещё раз.', true);
+                    })
+                    .finally(() => {
+                        btn.disabled = false;
+                        btn.innerHTML = originalText;
+                    });
+            });
+        }
+
+        function showSnackbar(message, isError = false) {
+            const snackbar = document.getElementById('snackbar');
+            if (!snackbar) return;
+            if (message) snackbar.innerText = message;
+            snackbar.className = 'snackbar show';
+            if (isError) snackbar.style.backgroundColor = 'var(--error)';
+            else snackbar.style.backgroundColor = '';
+
+            setTimeout(() => {
+                snackbar.className = snackbar.className.replace('show', '');
+            }, 4000);
+        }
+
         // Mobile menu logic
         const burger = document.getElementById('burgerBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1035,3 +1181,4 @@
 </body>
 
 </html>
+

@@ -28,8 +28,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Свяжитесь с нами и мы найдем лучшее решение для вашего автомобиля. Запишитесь на ремонт.">
-    <title>Контакты — Mr.Car Autoteenindus Tallinnas</title>
+        content="Свяжитесь с автосервисом Mr.Car и запросите расчёт стоимости. Мы находимся в Таллинне, Kopli 82a, и отвечаем быстро.">
+    <title>Контакты — автосервис Mr.Car в Таллинне</title>
 
     <!-- Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,9 +48,9 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="business.business">
-    <meta property="og:title" content="Контакты — Mr.Car Autoteenindus Tallinnas">
+    <meta property="og:title" content="Контакты — автосервис Mr.Car в Таллинне">
     <meta property="og:description"
-        content="Свяжитесь с нами и мы найдем лучшее решение для вашего автомобиля. Запишитесь на ремонт.">
+        content="Свяжитесь с автосервисом Mr.Car и запросите расчёт стоимости. Мы находимся в Таллинне, Kopli 82a, и отвечаем быстро.">
     <meta property="og:url" id="ogUrl" content="https://www.mrcar.ee/ru/kontakt.html">
     <meta property="og:image" content="https://www.mrcar.ee/og-image.jpg">
     <meta property="og:locale" content="ru_EE">
@@ -73,7 +73,7 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Skip to main content (a11y) -->
-    <a href="#prices-main" class="skip-link">Перейти к основному контенту</a>
+    <a href="#contact-main" class="skip-link">Перейти к основному контенту</a>
 
     <!-- ========================================
        1. NAVBAR
@@ -86,7 +86,7 @@
                 <div class="mega-menu">
                     <a href="/ru/services/autoremont" class="mega-menu__item">
                         <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Ремонт автомобилей</span>
+                        <span>Общий авторемонт</span>
                     </a>
                     <a href="/ru/services/glushiteli-svarka" class="mega-menu__item">
                         <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -172,7 +172,7 @@
             <div class="mobile-mega-menu" id="mobileMegaMenu">
                 <a href="/ru/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-                    <span>Ремонт автомобилей</span>
+                    <span>Общий авторемонт</span>
                 </a>
                 <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
@@ -246,7 +246,7 @@
     <main id="contact-main">
         <!-- HERO -->
         <section class="prices-hero">
-            <nav aria-label="Breadcrumb" style="display: flex; justify-content: center;">
+            <nav aria-label="Breadcrumb" class="prices-hero__breadcrumbs">
                 <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
                         itemtype="https://schema.org/ListItem">
@@ -263,23 +263,20 @@
                 </ol>
             </nav>
             <h1 class="prices-hero__title">Контакты</h1>
-            <p class="prices-hero__desc" style="max-width: 600px; margin: 0 auto;">Свяжитесь с нами и мы найдем лучшее
+            <p class="prices-hero__desc">Свяжитесь с нами и мы найдем лучшее
                 решение для вашего автомобиля. Запишитесь на ремонт.</p>
         </section>
 
         <section class="contact-section" id="contact">
-            <div class="container site-container">
-                <div class="section-header">
-                    <span class="meta text-accent">/// Запись на ремонт</span>
-                </div>
-            </div>
             <div class="contact-grid site-container reveal">
                 <div class="contact__info">
-                    <h2>Записаться<br>на ремонт</h2>
+                    <div class="section-header">
+                        <span class="meta text-accent">/// Запись на ремонт</span>
+                        <h2>Записаться<br>на ремонт</h2>
+                    </div>
                     <p class="contact__promise">Оставьте заявку — перезвоним в течение 30 минут в рабочее время.</p>
                     <div class="accent-underline"></div>
-                    <a href="tel:+37256461210"
-                        style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: -0.01em; margin-top: 16px; width: fit-content; text-decoration: none; transition: all var(--transition-fast);">
+                    <a href="tel:+37256461210" class="contact__phone">
                         <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
                         +372 5646 1210
                     </a>
@@ -336,8 +333,8 @@
                     </div>
                     <div class="location__detail">
                         <span class="location__label">Часы работы</span>
-                        <span class="location__value">E–R: 09:00 – 18:00</span>
-                        <span class="location__value" style="color: var(--text-dimmed);">L–P: Suletud</span>
+                        <span class="location__value">Пн–Пт: 09:00 – 18:00</span>
+                        <span class="location__value" style="color: var(--text-dimmed);">Сб–Вс: Закрыто</span>
                     </div>
                     <div class="location__detail">
                         <span class="location__label">Телефон</span>
