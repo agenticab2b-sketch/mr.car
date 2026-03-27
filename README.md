@@ -3,6 +3,7 @@
 Mr.Car is a static multilingual auto service website built with HTML, CSS, and JavaScript.
 
 Production hosting runs through Firebase Hosting, and selected backend routes are handled by Firebase Functions.
+Vercel is not part of this project's deploy path and this repo should not be linked to Vercel.
 
 ## Current site model
 

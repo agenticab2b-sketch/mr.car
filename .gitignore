@@ -1,6 +1,7 @@
 publish.cmd
 desktop.ini
 .env
+.vercel/
 node_modules/
 tmp/
 Test html/

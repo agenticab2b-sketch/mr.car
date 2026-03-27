@@ -14,6 +14,12 @@ Current site stack:
 - Firebase Hosting
 - selected `/api/*` routes through Firebase Functions
 
+Hosting boundary:
+
+- this project deploys through Firebase, not Vercel
+- do not ask for a Vercel connection for this repo
+- do not create `.vercel/`, `vercel.json`, or other Vercel-specific project setup unless the owner explicitly approves a hosting change
+
 Languages:
 
 - ET is the default root language
@@ -108,6 +114,7 @@ There are two different navigation layers.
 - invent new branches
 - change approved URLs
 - change approved H1 logic
+- request or set up Vercel for this project
 - turn DSG or ZF into an oversized branch
 - reintroduce CVT / variator pages
 - introduce brand/model or error-code page sprawl

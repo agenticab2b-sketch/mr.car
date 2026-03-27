@@ -387,8 +387,9 @@
 }
 
 .gb-faq-item {
-  background: var(--bg-main);
-  border: 1px solid var(--border-grid);
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 2px solid var(--accent-primary);
   margin-bottom: var(--space-sm);
 }
 
@@ -429,17 +430,18 @@
 .gb-trust {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-xl);
+  gap: var(--space-md);
   margin-bottom: var(--space-3xl);
-  padding: var(--space-xl) 0;
-  border-top: 1px solid var(--border-grid);
-  border-bottom: 1px solid var(--border-grid);
 }
 
 .gb-trust-item {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  background: var(--bg-surface);
+  padding: var(--space-xl);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 3px solid var(--accent-primary);
 }
 
 .gb-trust-item iconify-icon {
@@ -1400,6 +1402,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 
 /* --- Info Article --- */
 .gb-info-article {

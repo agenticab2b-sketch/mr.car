@@ -88,3 +88,10 @@ Record only decisions that affect future work.
 - Why: the global sidebar preserves site-wide service navigation, while transmission pages need their own deeper internal-linking system without polluting the rest of the service section.
 - Approved by: owner
 - Related task: Antigravity transmission implementation workflow
+
+## 2026-03-27 - Keep Firebase as the only hosting target for the current repo
+
+- Decision: this repository remains on Firebase Hosting plus Firebase Functions, and it must not be linked or configured for Vercel unless the owner explicitly changes the hosting strategy.
+- Why: the live project already deploys through Firebase, and allowing Vercel prompts or setup creates unnecessary confusion and the wrong execution path for Antigravity and other agents.
+- Approved by: owner
+- Related task: remove Vercel prompts from project workflow

@@ -25,6 +25,7 @@ Antigravity should not:
 - change approved H1 logic
 - widen the approved SEO/entity scope
 - silently redesign site architecture
+- request, create, or rely on a Vercel connection for this project
 
 ## Core working model
 
@@ -35,6 +36,13 @@ Antigravity should not:
 - review comes back to Codex
 - ET-first for new transmission pages
 - RU and EN are derived only after the ET version is approved
+- hosting stays on Firebase unless the owner explicitly approves a platform change
+
+## Hosting rule
+
+- Firebase Hosting plus Firebase Functions is the active deploy target
+- Vercel is not used for this repo
+- Antigravity must not ask to connect Vercel, add Vercel config files, or treat Vercel as the deployment default
 
 ## Locked vs flexible
 

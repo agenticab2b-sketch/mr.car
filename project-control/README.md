@@ -9,6 +9,7 @@ This folder is the lightweight working layer for Mr.Car.
 - One task equals one owner.
 - GitHub is the only sync bridge between local work, Elvis, Codex, Antigravity, and Gemini CLI.
 - Deploy happens only from reviewed `main` and only by the owner.
+- Hosting for this project stays on Firebase; do not connect or configure Vercel for this repo unless the owner explicitly changes hosting strategy.
 
 ## Branch prefixes
 
