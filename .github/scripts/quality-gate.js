@@ -17,6 +17,7 @@ const IGNORE_DIRS = new Set([
   'project-control',
   'Seranking',
   'temp_docs',
+  'tmp',
   'Test html',
   'wix',
 ]);
