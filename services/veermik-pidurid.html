@@ -358,7 +358,7 @@
   <section class="sd-main site-container">
     <!-- LEFT: Content -->
     <article class="sd-content">
-
+      
       <!-- Intro -->
       <div class="sd-intro">
         <h2 class="sd-intro__title">Vedrustuse remont Mr.Car-is</h2>
@@ -724,7 +724,7 @@
     });
 
     // Form handling
-    const form = document.getElementById('serviceForm');
+    const form = document.getElementById('contactForm') || document.getElementById('serviceForm');
     if (form) {
       // Set initial timestamp
       const tsStartInput = document.getElementById('tsStart');

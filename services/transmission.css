@@ -907,7 +907,7 @@
 /* --- Type Cards (АКПП, CVT, DSG, Tiptronic) --- */
 .gb-types-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1px;
   background: var(--border-grid);
   border: 1px solid var(--border-grid);
@@ -1186,6 +1186,198 @@
 
 .gb-rating-summary__meta strong {
   color: var(--text-main);
+}
+
+/* --- Post-pricing cluster --- */
+.gb-postpricing {
+  padding: 0 0 var(--space-3xl);
+}
+
+.gb-postpricing__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.gb-postpricing__panel,
+.gb-crosslink--postpricing {
+  border: 1px solid var(--border-grid);
+  background: var(--bg-surface);
+  box-shadow: 0 20px 48px -36px rgba(0, 0, 0, 0.7);
+}
+
+.gb-postpricing__panel {
+  padding: clamp(1.25rem, 1.8vw, 2rem);
+}
+
+.gb-postpricing__panel .gb-section-title {
+  margin-bottom: var(--space-xl);
+}
+
+.gb-postpricing .gb-rating-summary {
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-xl);
+  background: linear-gradient(180deg, rgba(255, 176, 0, 0.08) 0%, rgba(255, 176, 0, 0.03) 100%);
+  border: 1px solid rgba(255, 176, 0, 0.16);
+  margin-bottom: var(--space-xl);
+}
+
+.gb-postpricing .gb-reviews-grid,
+.gb-postpricing .gb-trust,
+.gb-postpricing .gb-faq {
+  margin: 0;
+}
+
+.gb-postpricing .gb-reviews-grid,
+.gb-postpricing .gb-trust {
+  display: grid;
+  gap: 1px;
+  background: var(--border-grid);
+  border: 1px solid var(--border-grid);
+}
+
+.gb-postpricing .gb-reviews-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gb-postpricing .gb-trust {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0;
+  border-top: none;
+  border-bottom: none;
+}
+
+.gb-postpricing .gb-review-card,
+.gb-postpricing .gb-trust-item,
+.gb-postpricing .gb-faq-item {
+  background: var(--bg-main);
+}
+
+.gb-postpricing .gb-review-card,
+.gb-postpricing .gb-trust-item {
+  min-height: 100%;
+  padding: var(--space-xl);
+}
+
+.gb-postpricing .gb-review-card {
+  gap: var(--space-md);
+  border: none;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.gb-postpricing .gb-review-card:hover {
+  transform: translateY(-2px);
+  border-color: transparent;
+  background: linear-gradient(180deg, rgba(255, 176, 0, 0.06) 0%, var(--bg-main) 100%);
+}
+
+.gb-postpricing .gb-review-card__text {
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.gb-postpricing .gb-review-card__author {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-grid);
+}
+
+.gb-postpricing .gb-trust-item {
+  gap: var(--space-md);
+}
+
+.gb-postpricing .gb-trust-item iconify-icon {
+  font-size: 1.4rem;
+}
+
+.gb-postpricing .gb-trust-item__title {
+  font-size: 0.9rem;
+}
+
+.gb-postpricing .gb-trust-item__desc {
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.gb-postpricing .gb-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 0;
+  border: 1px solid var(--border-grid);
+  background: var(--border-grid);
+}
+
+.gb-postpricing .gb-faq > .gb-section-title {
+  margin: 0;
+  padding: 0 0 var(--space-xl);
+}
+
+.gb-postpricing .gb-faq-item summary {
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.gb-postpricing .gb-faq-item__content {
+  padding: 0 var(--space-xl) var(--space-xl);
+  border-top: 1px solid var(--border-grid);
+}
+
+.gb-crosslink--postpricing {
+  align-items: center;
+  padding: var(--space-xl);
+  background: linear-gradient(180deg, rgba(255, 176, 0, 0.04) 0%, var(--bg-surface) 100%);
+}
+
+.gb-crosslink--postpricing:hover {
+  background: linear-gradient(180deg, rgba(255, 176, 0, 0.08) 0%, var(--bg-surface) 100%);
+}
+
+@media (max-width: 1100px) {
+  .gb-postpricing .gb-reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gb-postpricing .gb-trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .gb-postpricing {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .gb-postpricing__stack {
+    gap: var(--space-lg);
+  }
+
+  .gb-postpricing__panel,
+  .gb-crosslink--postpricing {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .gb-postpricing .gb-reviews-grid,
+  .gb-postpricing .gb-trust {
+    grid-template-columns: 1fr;
+  }
+
+  .gb-postpricing .gb-rating-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-lg);
+  }
+
+  .gb-postpricing .gb-faq-item summary,
+  .gb-postpricing .gb-faq-item__content {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .gb-crosslink--postpricing {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- Info Article --- */

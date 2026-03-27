@@ -333,6 +333,20 @@ function esc(str) {
     .replace(/"/g, '&quot;');
 }
 
+function toPublicAssetPath(assetPath) {
+  const value = String(assetPath || '').trim();
+  if (!value) return '';
+  if (/^https?:\/\//i.test(value)) return value;
+  return value.startsWith('/') ? value : `/${value}`;
+}
+
+function toAbsoluteSiteUrl(assetPath) {
+  const publicPath = toPublicAssetPath(assetPath);
+  if (!publicPath) return '';
+  if (/^https?:\/\//i.test(publicPath)) return publicPath;
+  return `${PROD_ORIGIN}${publicPath}`;
+}
+
 function getLangLocale(lang) {
   if (lang === 'ru') return 'ru-RU';
   if (lang === 'et') return 'et-EE';
@@ -390,6 +404,346 @@ function buildSymptomCards(symptoms) {
 function buildServicesList(list) {
   return list.map(item => `
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>${esc(item)}</li>`).join('');
+}
+
+function getInPageNavLabel(lang) {
+  if (lang === 'ru') return 'Навигация по странице';
+  if (lang === 'et') return 'Lehesisene navigeerimine';
+  return 'Page navigation';
+}
+
+function getPricingLabels(lang) {
+  if (lang === 'ru') return { service: 'Услуга', price: 'Стоимость' };
+  if (lang === 'et') return { service: 'Teenus', price: 'Hind' };
+  return { service: 'Service', price: 'Price' };
+}
+
+function buildHeroStats(stats) {
+  if (!Array.isArray(stats) || stats.length === 0) return '';
+  return `<div class="gb-hero-stats">
+        ${stats.map(stat => `<div class="gb-hero-stat">
+          <div class="gb-hero-stat__value">${esc(stat.value || '')}</div>
+          <div class="gb-hero-stat__label">${esc(stat.label || '')}</div>
+        </div>`).join('')}
+      </div>`;
+}
+
+function buildLocalNav(items, lang) {
+  if (!Array.isArray(items) || items.length === 0) return '';
+  return `<nav class="gb-local-nav" aria-label="${esc(getInPageNavLabel(lang))}">
+        ${items.map(item => `<a href="${esc(item.href || '#')}" class="gb-local-nav__pill">
+          <iconify-icon icon="${esc(item.icon || 'mdi:bookmark-outline')}" width="16" height="16" aria-hidden="true"></iconify-icon>
+          <span>${esc(item.label || '')}</span>
+        </a>`).join('')}
+      </nav>`;
+}
+
+function buildBrandPills(brands) {
+  if (!Array.isArray(brands) || brands.length === 0) return '';
+  return `<div class="gb-brands-bar">
+        ${brands.map(brand => `<span class="gb-brand-pill">${esc(brand)}</span>`).join('')}
+      </div>`;
+}
+
+function buildUrgencyBlock(block) {
+  if (!block || !block.title || !block.text) return '';
+  return `<div class="gb-urgency-block">
+        <div class="gb-urgency-block__title">
+          <iconify-icon icon="${esc(block.icon || 'mdi:alert-decagram')}" width="24" height="24" aria-hidden="true"></iconify-icon>
+          <span>${esc(block.title)}</span>
+        </div>
+        <p class="gb-urgency-block__text">${esc(block.text)}</p>
+      </div>`;
+}
+
+function buildDetailedSymptoms(cards) {
+  if (!Array.isArray(cards) || cards.length === 0) return '';
+  return `<div class="gb-symptoms-grid">
+        ${cards.map(card => {
+          const toneClass = card.tone ? ` gb-symptom-card--${esc(card.tone)}` : '';
+          return `<div class="gb-symptom-card${toneClass}">
+            <div class="gb-symptom-card__icon">
+              <iconify-icon icon="${esc(card.icon || 'mdi:alert-circle-outline')}" width="22" height="22" aria-hidden="true"></iconify-icon>
+            </div>
+            <div class="gb-symptom-card__title">${esc(card.title || '')}</div>
+            <p class="gb-symptom-card__desc">${esc(card.desc || '')}</p>
+          </div>`;
+        }).join('')}
+      </div>`;
+}
+
+function buildRiskStages(stages) {
+  if (!Array.isArray(stages) || stages.length === 0) return '';
+  return `<div class="gb-risk-stages">
+        ${stages.map(stage => `<div class="gb-risk-stage">
+          <div class="gb-risk-stage__marker">${esc(stage.marker || '')}</div>
+          <div class="gb-risk-stage__content">
+            <strong>${esc(stage.title || '')}</strong>
+            <p>${esc(stage.text || '')}</p>
+          </div>
+        </div>`).join('')}
+      </div>`;
+}
+
+function buildTypeCards(types) {
+  if (!Array.isArray(types) || types.length === 0) return '';
+  return `<div class="gb-types-grid">
+        ${types.map(type => `<div class="gb-type-card">
+          <iconify-icon icon="${esc(type.icon || 'mdi:engine-outline')}" width="28" height="28" class="gb-type-card__icon" aria-hidden="true"></iconify-icon>
+          <div class="gb-type-card__title">${esc(type.title || '')}</div>
+          <p class="gb-type-card__desc">${esc(type.desc || '')}</p>
+          ${Array.isArray(type.brands) && type.brands.length > 0 ? `<div class="gb-type-card__brands">
+            ${type.brands.map(brand => `<span class="gb-type-card__brand-chip">${esc(brand)}</span>`).join('')}
+          </div>` : ''}
+        </div>`).join('')}
+      </div>`;
+}
+
+function buildChecklist(items) {
+  if (!Array.isArray(items) || items.length === 0) return '';
+  return `<ul class="gb-checklist">
+        ${items.map(item => `<li class="gb-checklist__item">
+          <iconify-icon icon="mdi:check-circle" width="18" height="18" aria-hidden="true"></iconify-icon>
+          <span>${esc(item)}</span>
+        </li>`).join('')}
+      </ul>`;
+}
+
+function buildServiceCards(cards) {
+  if (!Array.isArray(cards) || cards.length === 0) return '';
+  return `<div class="gb-services-grid">
+        ${cards.map(card => `<div class="gb-service-card${card.featured ? ' gb-service-card--featured' : ''}">
+          <iconify-icon icon="${esc(card.icon || 'mdi:wrench')}" width="24" height="24" class="gb-service-card__icon" aria-hidden="true"></iconify-icon>
+          <div class="gb-service-card__title">${esc(card.title || '')}</div>
+          <p class="gb-service-card__desc">${esc(card.desc || '')}</p>
+          ${(card.price || card.time) ? `<div class="gb-service-card__footer">
+            ${card.price ? `<span class="gb-service-card__price">${esc(card.price)}</span>` : ''}
+            ${card.time ? `<span class="gb-service-card__time">${esc(card.time)}</span>` : ''}
+          </div>` : ''}
+        </div>`).join('')}
+      </div>`;
+}
+
+function buildProcessSteps(steps) {
+  if (!Array.isArray(steps) || steps.length === 0) return '';
+  return `<div class="gb-steps">
+        ${steps.map(step => `<div class="gb-step">
+          <div class="gb-step__num">${esc(step.num || '')}</div>
+          <div>
+            <strong>${esc(step.title || '')}</strong>
+            <p>${esc(step.text || '')}</p>
+          </div>
+        </div>`).join('')}
+      </div>`;
+}
+
+function buildPricingRows(rows, labels) {
+  if (!Array.isArray(rows) || rows.length === 0) return '';
+  return rows.map(row => `<tr>
+            <td data-label="${esc(labels.service)}">${esc(row.service || '')}</td>
+            <td data-label="${esc(labels.price)}" class="gb-price">${esc(row.price || '')}</td>
+          </tr>`).join('');
+}
+
+function buildReviewCards(reviews) {
+  if (!Array.isArray(reviews) || reviews.length === 0) return '';
+  return `<div class="gb-reviews-grid">
+        ${reviews.map(review => `<div class="gb-review-card">
+          <div class="gb-review-card__stars">★★★★★</div>
+          <div class="gb-review-card__text">${esc(review.text || '')}</div>
+          <div class="gb-review-card__author">
+            <span class="gb-review-card__name">${esc(review.author || '')}</span>
+            <span class="gb-review-card__car">${esc(review.car || '')}</span>
+          </div>
+        </div>`).join('')}
+      </div>`;
+}
+
+function buildTrustItems(items) {
+  if (!Array.isArray(items) || items.length === 0) return '';
+  return `<div class="gb-trust">
+        ${items.map(item => `<div class="gb-trust-item">
+          <iconify-icon icon="${esc(item.icon || 'mdi:shield-check')}" width="28" height="28" aria-hidden="true"></iconify-icon>
+          <div class="gb-trust-item__title">${esc(item.title || '')}</div>
+          <p class="gb-trust-item__desc">${esc(item.desc || '')}</p>
+        </div>`).join('')}
+      </div>`;
+}
+
+function buildFaqItems(items, title) {
+  if (!Array.isArray(items) || items.length === 0) return '';
+  return `<section id="faq">
+        <h3 class="gb-section-title">${esc(title || '')}</h3>
+        <div class="gb-faq">
+          ${items.map((item, index) => `<details class="gb-faq-item"${index === 0 ? ' open' : ''}>
+            <summary>${esc(item.q || '')}<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary>
+            <div class="gb-faq-item__content">${esc(item.a || '')}</div>
+          </details>`).join('')}
+        </div>
+      </section>`;
+}
+
+function buildArticle(article) {
+  if (!article || !article.title) return '';
+
+  const sectionsHtml = (article.sections || []).map(section => {
+    const headingHtml = section.heading ? `<h4>${esc(section.heading)}</h4>` : '';
+    const paragraphsHtml = (section.paragraphs || []).map(paragraph => `<p>${esc(paragraph)}</p>`).join('');
+    const columnsHtml = Array.isArray(section.columns) && section.columns.length > 0 ? `<div class="gb-article__cols">
+            ${section.columns.map(column => `<div>
+              <div class="gb-article__col-title">${esc(column.title || '')}</div>
+              <ul class="gb-article__list">
+                ${(column.items || []).map(item => `<li>${esc(item)}</li>`).join('')}
+              </ul>
+            </div>`).join('')}
+          </div>` : '';
+    return `${headingHtml}${paragraphsHtml}${columnsHtml}`;
+  }).join('');
+
+  return `<div class="gb-article" id="article">
+        <div class="gb-article__header">
+          <div class="gb-article__title">${esc(article.title)}</div>
+        </div>
+        <div class="gb-article__body">
+          ${sectionsHtml}
+        </div>
+      </div>`;
+}
+
+function buildCrossLinks(links) {
+  if (!Array.isArray(links) || links.length === 0) return '';
+  return `<div class="gb-crosslinks">
+        ${links.map(link => `<a href="${esc(link.href || '#')}" class="gb-crosslink">
+          <iconify-icon icon="${esc(link.icon || 'mdi:arrow-top-right')}" width="28" height="28" aria-hidden="true"></iconify-icon>
+          <div>
+            <div class="gb-crosslink__label">${esc(link.label || '')}</div>
+            <div class="gb-crosslink__title">${esc(link.title || '')}</div>
+          </div>
+        </a>`).join('')}
+      </div>`;
+}
+
+function renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner) {
+  return `
+      <!-- Intro -->
+      <div class="sd-intro">
+        <h2 class="sd-intro__title">${esc(s.introTitle)}</h2>
+        <div class="sd-intro__text">
+          ${(s.introText || []).map(p => `<p>${esc(p)}</p>`).join('\n          ')}
+        </div>
+      </div>
+
+      <!-- Symptoms -->
+      <div class="sd-symptoms">
+        <h3 class="sd-symptoms__title">${esc(s.symptomsTitle)}</h3>
+        <div class="sd-symptoms__grid">
+          ${symptomCards}
+        </div>
+        <p class="sd-symptoms__after">${esc(s.afterSymptomsText || '')}</p>
+      </div>
+
+      <!-- Services list -->
+      <div class="sd-services-list">
+        <h3 class="sd-services-list__title">${esc(s.servicesListTitle)}</h3>
+        <ul class="sd-services-list__items">
+          ${servicesListHtml}
+        </ul>
+        <p class="sd-services-list__after">${esc(s.afterListText || '')}</p>
+      </div>
+
+      ${promoBanner}`;
+}
+
+function renderDeepDiveContent(s, cfg) {
+  const pricingLabels = getPricingLabels(cfg.lang);
+  const heroStatsHtml = buildHeroStats(s.heroStats || []);
+  const localNavHtml = buildLocalNav(s.localNav || [], cfg.lang);
+  const brandsHtml = buildBrandPills(s.brands || []);
+  const urgencyHtml = buildUrgencyBlock(s.urgencyBlock);
+  const detailedSymptomsHtml = buildDetailedSymptoms(s.detailedSymptoms || []);
+  const riskStagesHtml = buildRiskStages(s.riskStages || []);
+  const typeCardsHtml = buildTypeCards(s.engineTypes || []);
+  const diagnosticsChecklistHtml = buildChecklist(s.diagnosticsChecklist || []);
+  const serviceCardsHtml = buildServiceCards(s.serviceCards || []);
+  const processStepsHtml = buildProcessSteps(s.processSteps || []);
+  const pricingRowsHtml = buildPricingRows(s.pricingRows || [], pricingLabels);
+  const reviewCardsHtml = buildReviewCards(s.reviews || []);
+  const trustItemsHtml = buildTrustItems(s.trustItems || []);
+  const faqHtml = buildFaqItems(s.faqItems || [], s.faqTitle || '');
+  const articleHtml = buildArticle(s.article);
+  const crossLinksHtml = buildCrossLinks(s.crossLinks || []);
+
+  return `
+      ${heroStatsHtml}
+      ${localNavHtml}
+
+      <div class="sd-intro">
+        <h2 class="sd-intro__title">${esc(s.introTitle)}</h2>
+        <div class="sd-intro__text">
+          ${(s.introText || []).map(p => `<p>${esc(p)}</p>`).join('\n          ')}
+        </div>
+      </div>
+
+      ${brandsHtml}
+      ${urgencyHtml}
+
+      ${detailedSymptomsHtml ? `<section id="symptoms">
+        <h3 class="gb-section-title">${esc(s.detailedSymptomsTitle || '')}</h3>
+        ${detailedSymptomsHtml}
+      </section>` : ''}
+
+      ${riskStagesHtml ? `<section>
+        <h3 class="gb-section-title">${esc(s.riskStagesTitle || '')}</h3>
+        ${riskStagesHtml}
+      </section>` : ''}
+
+      ${typeCardsHtml ? `<section id="types">
+        <h3 class="gb-section-title">${esc(s.engineTypesTitle || '')}</h3>
+        ${typeCardsHtml}
+      </section>` : ''}
+
+      ${(s.diagnosticsTitle || diagnosticsChecklistHtml) ? `<section id="diagnostika">
+        <div class="gb-diagnostics-card">
+          <h3 class="gb-section-title">${esc(s.diagnosticsTitle || '')}</h3>
+          ${s.diagnosticsText ? `<p class="gb-section-text">${esc(s.diagnosticsText)}</p>` : ''}
+          ${diagnosticsChecklistHtml}
+        </div>
+      </section>` : ''}
+
+      ${serviceCardsHtml ? `<section id="services">
+        <h3 class="gb-section-title">${esc(s.serviceCardsTitle || '')}</h3>
+        ${serviceCardsHtml}
+      </section>` : ''}
+
+      ${processStepsHtml ? `<section id="process">
+        <h3 class="gb-section-title">${esc(s.processTitle || '')}</h3>
+        ${processStepsHtml}
+      </section>` : ''}
+
+      ${pricingRowsHtml ? `<section id="pricing">
+        <h3 class="gb-section-title">${esc(s.pricingTitle || '')}</h3>
+        <table class="gb-pricing-table">
+          <thead><tr><th>${esc(pricingLabels.service)}</th><th>${esc(pricingLabels.price)}</th></tr></thead>
+          <tbody>
+            ${pricingRowsHtml}
+          </tbody>
+        </table>
+        ${s.pricingNote ? `<p class="gb-pricing-note">${esc(s.pricingNote)}</p>` : ''}
+      </section>` : ''}
+
+      ${reviewCardsHtml ? `<section id="reviews">
+        <h3 class="gb-section-title">${esc(s.reviewsTitle || '')}</h3>
+        ${s.ratingSummary ? `<div class="gb-rating-summary">
+          <div class="gb-rating-summary__score">${esc(s.ratingSummary.score || '')}</div>
+          <div class="gb-rating-summary__meta"><strong>${esc(s.ratingSummary.metaStrong || '')}</strong>${s.ratingSummary.metaText ? ` · ${esc(s.ratingSummary.metaText)}` : ''}</div>
+        </div>` : ''}
+        ${reviewCardsHtml}
+      </section>` : ''}
+
+      ${trustItemsHtml}
+      ${faqHtml}
+      ${articleHtml}
+      ${crossLinksHtml}`;
 }
 
 function buildNavLinks(navLinks) {
@@ -503,8 +857,7 @@ function buildHreflang(s, cfg) {
 
 function buildJsonLd(s, cfg) {
   const canonicalUrl = `${PROD_ORIGIN}${cfg.serviceBase}${s.slug}`;
-  const absImage = s.heroImage && s.heroImage.startsWith('http') ? s.heroImage
-    : `${PROD_ORIGIN}/${s.heroImage}`;
+  const absImage = toAbsoluteSiteUrl(s.heroImage) || `${PROD_ORIGIN}/android-chrome-512x512.png`;
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
@@ -532,13 +885,41 @@ function buildJsonLd(s, cfg) {
       {
         "@type": "Service",
         "name": s.heroTitle,
-        "description": s.seo && s.seo.description ? s.seo.description : s.heroLead,
+        "description": s.jsonLdServiceDescription || (s.seo && s.seo.description ? s.seo.description : s.heroLead),
         "provider": { "@type": "AutoRepair", "name": "Mr.Car", "url": `${PROD_ORIGIN}/` },
         "url": canonicalUrl,
         "areaServed": { "@type": "City", "name": "Tallinn" }
       }
     ]
   };
+
+  if (Array.isArray(s.faqItems) && s.faqItems.length > 0) {
+    ld["@graph"].push({
+      "@type": "FAQPage",
+      "mainEntity": s.faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    });
+  }
+
+  if (s.articleSchema && s.articleSchema.headline) {
+    ld["@graph"].push({
+      "@type": "Article",
+      "headline": s.articleSchema.headline,
+      "description": s.articleSchema.description || s.jsonLdServiceDescription || (s.seo && s.seo.description ? s.seo.description : s.heroLead),
+      "datePublished": s.articleSchema.datePublished || TODAY,
+      "dateModified": s.articleSchema.dateModified || TODAY,
+      "author": { "@type": "Organization", "name": "Mr.Car Autoremont" },
+      "publisher": { "@type": "Organization", "name": "Mr.Car Autoremont", "url": `${PROD_ORIGIN}/` },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl }
+    });
+  }
+
   return JSON.stringify(ld, null, 2);
 }
 
@@ -616,7 +997,8 @@ function renderPage(s, services, cfg) {
   const seoTitle = (s.seo && s.seo.title) ? s.seo.title : `${s.heroTitle} — Mr.Car, Tallinn`;
   const seoDesc = (s.seo && s.seo.description) ? s.seo.description : `${s.heroTitle} Mr.Car autoteeninduses. Kopli 82a, Tallinn. +372 5646 1210`;
   const canonicalUrl = `${PROD_ORIGIN}${cfg.serviceBase}${s.slug}`;
-  const ogImage = s.heroImage || `${PROD_ORIGIN}/android-chrome-512x512.png`;
+  const heroImageUrl = toPublicAssetPath(s.heroImage);
+  const ogImage = toAbsoluteSiteUrl(s.heroImage) || `${PROD_ORIGIN}/android-chrome-512x512.png`;
 
   const sidebarHtml = buildSidebar(services, s.slug, cfg);
   const megaMenuHtml = buildMegaMenu(services, cfg);
@@ -627,6 +1009,16 @@ function renderPage(s, services, cfg) {
   const symptomCards = buildSymptomCards(s.symptoms || []);
   const servicesListHtml = buildServicesList(s.servicesList || []);
   const footerHtml = buildFooter(cfg);
+  const promoBanner = s.promoBanner && s.promoBanner.enabled ? `
+        <div class="sd-promo">
+          <div class="sd-promo__content">
+            <iconify-icon icon="mdi:tag-outline" width="28" height="28" aria-hidden="true"></iconify-icon>
+            <p class="sd-promo__text">${esc(s.promoBanner.text)}</p>
+          </div>
+        </div>` : '';
+  const mainContentHtml = s.templateVariant === 'service-deep-dive-v2'
+    ? renderDeepDiveContent(s, cfg)
+    : renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner);
 
   // Prepare Form Partial
   let renderedForm = FORM_PARTIAL
@@ -661,14 +1053,6 @@ function renderPage(s, services, cfg) {
     .replace(/{{map_open_btn}}/g, esc(cfg.mapTranslations.openBtn))
     .replace(/{{map_iframe_title}}/g, esc(cfg.mapTranslations.iframeTitle))
     .replace(/{{map_iframe_label}}/g, esc(cfg.mapTranslations.iframeLabel));
-
-  const promoBanner = s.promoBanner && s.promoBanner.enabled ? `
-        <div class="sd-promo">
-          <div class="sd-promo__content">
-            <iconify-icon icon="mdi:tag-outline" width="28" height="28" aria-hidden="true"></iconify-icon>
-            <p class="sd-promo__text">${esc(s.promoBanner.text)}</p>
-          </div>
-        </div>` : '';
 
   const allLangs = [
     { href: '/', code: 'et', flag: 'circle-flags:ee', title: 'Eesti keel' },
@@ -789,7 +1173,7 @@ ${jsonLd}
   </div>
 
   <!-- HERO -->
-  <section class="sd-hero" style="background-image:url('${esc(s.heroImage)}')">
+  <section class="sd-hero" style="background-image:url('${esc(heroImageUrl)}')">
     <div class="sd-hero__overlay"></div>
     <div class="sd-hero__content site-container">
       <span class="sd-hero__meta">${esc(cfg.heroMetaLabel)}</span>
@@ -814,34 +1198,7 @@ ${jsonLd}
   <section class="sd-main site-container">
     <!-- LEFT: Content -->
     <article class="sd-content">
-
-      <!-- Intro -->
-      <div class="sd-intro">
-        <h2 class="sd-intro__title">${esc(s.introTitle)}</h2>
-        <div class="sd-intro__text">
-          ${(s.introText || []).map(p => `<p>${esc(p)}</p>`).join('\n          ')}
-        </div>
-      </div>
-
-      <!-- Symptoms -->
-      <div class="sd-symptoms">
-        <h3 class="sd-symptoms__title">${esc(s.symptomsTitle)}</h3>
-        <div class="sd-symptoms__grid">
-          ${symptomCards}
-        </div>
-        <p class="sd-symptoms__after">${esc(s.afterSymptomsText || '')}</p>
-      </div>
-
-      <!-- Services list -->
-      <div class="sd-services-list">
-        <h3 class="sd-services-list__title">${esc(s.servicesListTitle)}</h3>
-        <ul class="sd-services-list__items">
-          ${servicesListHtml}
-        </ul>
-        <p class="sd-services-list__after">${esc(s.afterListText || '')}</p>
-      </div>
-
-      ${promoBanner}
+      ${mainContentHtml}
     </article>
 
     <!-- RIGHT: Sidebar -->
@@ -933,7 +1290,7 @@ ${jsonLd}
     });
 
     // Form handling
-    const form = document.getElementById('serviceForm');
+    const form = document.getElementById('contactForm') || document.getElementById('serviceForm');
     if (form) {
       // Set initial timestamp
       const tsStartInput = document.getElementById('tsStart');
