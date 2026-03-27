@@ -5138,8 +5138,12 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 
 .gb-rating-summary {
     display: flex;
-    align-items: baseline;
-    gap: var(--space-md);
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-xl);
+    background: linear-gradient(135deg, rgba(255, 176, 0, 0.07) 0%, var(--bg-surface) 100%);
+    border: var(--border);
+    border-left: 3px solid var(--accent-primary);
     margin-bottom: var(--space-lg);
 }
 

@@ -1080,33 +1080,7 @@
   text-transform: uppercase;
 }
 
-/* Overall Rating */
-.gb-rating-summary {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  padding: var(--space-lg);
-  background: rgba(255, 176, 0, 0.05);
-  border: 1px solid rgba(255, 176, 0, 0.15);
-  margin-bottom: var(--space-lg);
-}
 
-.gb-rating-summary__score {
-  font-family: var(--font-heading);
-  font-weight: 900;
-  font-size: 2rem;
-  color: var(--accent-primary);
-  line-height: 1;
-}
-
-.gb-rating-summary__meta {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.gb-rating-summary__meta strong {
-  color: var(--text-main);
-}
 
 /* --- Post-pricing cluster --- */
 .gb-postpricing {
