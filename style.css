@@ -63,6 +63,14 @@ body {
     overflow-x: hidden;
 }
 
+.service-kpp-page,
+.service-akpp-page,
+.service-mkpp-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -3254,23 +3262,27 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 /* ── MAIN 2-COL LAYOUT ── */
 .sd-main {
     display: grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: minmax(0, 1fr) 320px;
     gap: var(--space-3xl);
     padding-top: var(--space-3xl);
     padding-bottom: var(--space-3xl);
     align-items: start;
 }
 
+.sd-main > * {
+    min-width: 0;
+}
+
 @media (max-width: 1100px) {
     .sd-main {
-        grid-template-columns: 1fr 280px;
+        grid-template-columns: minmax(0, 1fr) 280px;
         gap: var(--space-xl);
     }
 }
 
 @media (max-width: 900px) {
     .sd-main {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 
@@ -3279,6 +3291,13 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     display: flex;
     flex-direction: column;
     gap: var(--space-3xl);
+    width: 100%;
+    min-width: 0;
+}
+
+.sd-content > * {
+    min-width: 0;
+    max-width: 100%;
 }
 
 /* Intro */
