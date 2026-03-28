@@ -855,9 +855,46 @@ function buildHreflang(s, cfg) {
     <link rel="alternate" hreflang="x-default" href="${PROD_ORIGIN}/services/${eeSlug}">`;
 }
 
-function buildJsonLd(s, cfg) {
+function readTextIfExists(filePath) {
+  return fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : '';
+}
+
+function normalizeLineEndings(text) {
+  return String(text || '').replace(/\r\n?/g, '\n');
+}
+
+function extractArticleDatesFromHtml(html) {
+  if (!html) return { datePublished: null, dateModified: null };
+
+  const datePublished = html.match(/"datePublished":\s*"(\d{4}-\d{2}-\d{2})"/)?.[1] || null;
+  const dateModified = html.match(/"dateModified":\s*"(\d{4}-\d{2}-\d{2})"/)?.[1] || null;
+
+  return { datePublished, dateModified };
+}
+
+function normalizeArticleDatesInHtml(html) {
+  return normalizeLineEndings(html)
+    .replace(/"datePublished":\s*"\d{4}-\d{2}-\d{2}"/g, '"datePublished": "__DATE_PUBLISHED__"')
+    .replace(/"dateModified":\s*"\d{4}-\d{2}-\d{2}"/g, '"dateModified": "__DATE_MODIFIED__"');
+}
+
+function parseSitemapLastmods(xml) {
+  const lastmods = new Map();
+  if (!xml) return lastmods;
+
+  const urlPattern = /<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>[\s\S]*?<\/url>/g;
+  for (const match of xml.matchAll(urlPattern)) {
+    lastmods.set(match[1], match[2]);
+  }
+
+  return lastmods;
+}
+
+function buildJsonLd(s, cfg, articleDates = {}) {
   const canonicalUrl = `${PROD_ORIGIN}${cfg.serviceBase}${s.slug}`;
   const absImage = toAbsoluteSiteUrl(s.heroImage) || `${PROD_ORIGIN}/android-chrome-512x512.png`;
+  const publishedAt = articleDates.datePublished || (s.articleSchema && s.articleSchema.datePublished) || TODAY;
+  const modifiedAt = articleDates.dateModified || (s.articleSchema && s.articleSchema.dateModified) || publishedAt;
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
@@ -912,8 +949,8 @@ function buildJsonLd(s, cfg) {
       "@type": "Article",
       "headline": s.articleSchema.headline,
       "description": s.articleSchema.description || s.jsonLdServiceDescription || (s.seo && s.seo.description ? s.seo.description : s.heroLead),
-      "datePublished": s.articleSchema.datePublished || TODAY,
-      "dateModified": s.articleSchema.dateModified || TODAY,
+      "datePublished": publishedAt,
+      "dateModified": modifiedAt,
       "author": { "@type": "Organization", "name": "Mr.Car Autoremont" },
       "publisher": { "@type": "Organization", "name": "Mr.Car Autoremont", "url": `${PROD_ORIGIN}/` },
       "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl }
@@ -993,7 +1030,7 @@ function syncGlobalFooters() {
 
 // ─── Main HTML template ───────────────────────────────────────────────────────
 
-function renderPage(s, services, cfg) {
+function renderPage(s, services, cfg, articleDates = {}) {
   const seoTitle = (s.seo && s.seo.title) ? s.seo.title : `${s.heroTitle} — Mr.Car, Tallinn`;
   const seoDesc = (s.seo && s.seo.description) ? s.seo.description : `${s.heroTitle} Mr.Car autoteeninduses. Kopli 82a, Tallinn. +372 5646 1210`;
   const canonicalUrl = `${PROD_ORIGIN}${cfg.serviceBase}${s.slug}`;
@@ -1005,7 +1042,7 @@ function renderPage(s, services, cfg) {
   const mobileMegaMenu = buildMobileMegaMenu(services, cfg);
   const navLinksHtml = buildNavLinks(cfg.navLinks);
   const hreflangHtml = buildHreflang(s, cfg);
-  const jsonLd = buildJsonLd(s, cfg);
+  const jsonLd = buildJsonLd(s, cfg, articleDates);
   const symptomCards = buildSymptomCards(s.symptoms || []);
   const servicesListHtml = buildServicesList(s.servicesList || []);
   const footerHtml = buildFooter(cfg);
@@ -1410,6 +1447,7 @@ ${jsonLd}
 
 let totalGenerated = 0;
 let totalSkipped = 0;
+const changedGeneratedUrls = new Set();
 
 process.stdout.write('\n🚀 Build started...\n');
 
@@ -1437,8 +1475,28 @@ for (const cfg of LANGS) {
     }
 
     process.stdout.write(`  ⚙  Rendering ${s.slug}…`);
-    const html = renderPage(s, services, cfg);
-    fs.writeFileSync(outFile, html, 'utf8');
+    const existingHtml = readTextIfExists(outFile);
+    const existingArticleDates = extractArticleDatesFromHtml(existingHtml);
+    const articleDates = {
+      datePublished: (s.articleSchema && s.articleSchema.datePublished) || existingArticleDates.datePublished || TODAY,
+      dateModified: (s.articleSchema && s.articleSchema.dateModified) || existingArticleDates.dateModified || existingArticleDates.datePublished || TODAY
+    };
+
+    let html = renderPage(s, services, cfg, articleDates);
+    const contentChanged = !existingHtml || normalizeArticleDatesInHtml(existingHtml) !== normalizeArticleDatesInHtml(html);
+
+    if (contentChanged && !(s.articleSchema && s.articleSchema.dateModified)) {
+      articleDates.dateModified = TODAY;
+      html = renderPage(s, services, cfg, articleDates);
+    }
+
+    if (contentChanged) {
+      changedGeneratedUrls.add(`${PROD_ORIGIN}${cfg.serviceBase}${s.slug}`);
+    }
+
+    if (normalizeLineEndings(html) !== normalizeLineEndings(existingHtml)) {
+      fs.writeFileSync(outFile, html, 'utf8');
+    }
     process.stdout.write(` ✓  (${html.length} bytes)\n`);
     totalGenerated++;
   }
@@ -1458,13 +1516,18 @@ process.stdout.write('\n📄 Updating sitemap.xml…\n');
 const eeServices = loadServices('ee/services-data.js');
 const ruServices = loadServices('ru/services/services-data.js');
 const enServices = loadServices('en/services/services-data.js');
+const existingSitemapLastmods = parseSitemapLastmods(readTextIfExists(path.join(ROOT, 'sitemap.xml')));
 
-function sitemapUrl(url, priority, changefreq) {
+function resolveSitemapLastmod(url) {
+  return changedGeneratedUrls.has(url) ? TODAY : (existingSitemapLastmods.get(url) || TODAY);
+}
+
+function sitemapUrl(url, priority, changefreq, lastmod) {
   const prio = priority ? `\n    <priority>${priority}</priority>` : '';
   const change = changefreq ? `\n    <changefreq>${changefreq}</changefreq>` : '';
   return `  <url>
     <loc>${url}</loc>
-    <lastmod>${TODAY}</lastmod>${change}${prio}
+    <lastmod>${lastmod}</lastmod>${change}${prio}
   </url>`;
 }
 
@@ -1538,14 +1601,19 @@ function staticPathToUrl(relativePath) {
 
 const sitemapEntries = [
   ...STATIC_SITEMAP_PATHS.map(relativePath =>
-    sitemapUrl(staticPathToUrl(relativePath), relativePath === '/' ? '1.0' : '0.8', 'weekly')
+    sitemapUrl(
+      staticPathToUrl(relativePath),
+      relativePath === '/' ? '1.0' : '0.8',
+      'weekly',
+      resolveSitemapLastmod(staticPathToUrl(relativePath))
+    )
   ),
   ...buildServiceSitemapPaths(eeServices, '/services/', STATIC_SERVICE_SITEMAP_PATHS.et)
-    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly')),
+    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly', resolveSitemapLastmod(staticPathToUrl(relativePath)))),
   ...buildServiceSitemapPaths(ruServices, '/ru/services/', STATIC_SERVICE_SITEMAP_PATHS.ru)
-    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly')),
+    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly', resolveSitemapLastmod(staticPathToUrl(relativePath)))),
   ...buildServiceSitemapPaths(enServices, '/en/services/', STATIC_SERVICE_SITEMAP_PATHS.en)
-    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly'))
+    .map(relativePath => sitemapUrl(staticPathToUrl(relativePath), '0.8', 'weekly', resolveSitemapLastmod(staticPathToUrl(relativePath))))
 ];
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
