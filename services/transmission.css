@@ -1427,6 +1427,236 @@
   animation: gb-float 1.5s ease-in-out infinite;
 }
 
+/* --- service-page lower-section normalization --- */
+.service-kpp-page .gb-postpricing {
+  padding-top: var(--space-xl);
+}
+
+.service-kpp-page .gb-postpricing__stack {
+  gap: var(--space-lg);
+}
+
+.service-kpp-page .gb-postpricing__panel--trust,
+.service-kpp-page .gb-postpricing__panel--faq {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.service-kpp-page .gb-postpricing__panel--trust .gb-trust,
+.service-kpp-page .gb-postpricing__panel--faq .gb-faq {
+  border: 1px solid var(--border-grid);
+  background: var(--border-grid);
+}
+
+.service-kpp-page .gb-postpricing__panel--trust .gb-trust {
+  gap: 1px;
+}
+
+.service-kpp-page .gb-postpricing .gb-trust-item,
+.service-kpp-page .gb-postpricing .gb-faq-item {
+  background: var(--bg-main);
+}
+
+.service-kpp-page .gb-postpricing .gb-trust-item {
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.service-kpp-page .gb-postpricing .gb-faq {
+  gap: 1px;
+}
+
+.service-kpp-page .gb-postpricing .gb-faq > .gb-section-title {
+  margin: 0;
+  padding: var(--space-lg) var(--space-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018) 0%, rgba(255, 255, 255, 0) 100%),
+    var(--bg-surface);
+  border-bottom: 1px solid var(--border-grid);
+}
+
+.service-kpp-page .gb-postpricing .gb-faq-item {
+  margin: 0;
+  border: none;
+}
+
+.service-kpp-page .gb-postpricing .gb-faq-item summary,
+.service-kpp-page .gb-postpricing .gb-faq-item__content {
+  background: var(--bg-main);
+}
+
+.service-kpp-page .gb-postpricing .gb-cta-block--postpricing {
+  border: 1px solid var(--border-grid);
+  border-left: 4px solid var(--accent-primary);
+  background:
+    linear-gradient(90deg, rgba(255, 176, 0, 0.08) 0%, rgba(255, 176, 0, 0) 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0) 100%),
+    var(--bg-surface);
+  box-shadow: none;
+}
+
+.service-kpp-page .gb-postpricing .gb-cta-block__desc {
+  color: var(--text-muted);
+}
+
+.service-akpp-page .gb-lower-section,
+.service-mkpp-page .gb-lower-section {
+  margin-bottom: var(--space-lg);
+}
+
+.service-akpp-page .gb-lower-section--trust,
+.service-mkpp-page .gb-lower-section--trust .gb-trust {
+  gap: 1px;
+  padding: 0;
+  background: var(--border-grid);
+  border: 1px solid var(--border-grid);
+}
+
+.service-akpp-page .gb-lower-section--trust .gb-trust-item,
+.service-mkpp-page .gb-lower-section--trust .gb-trust-item {
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--bg-main);
+}
+
+.service-akpp-page .gb-lower-section--faq .gb-section-title,
+.service-mkpp-page .gb-lower-section--faq .gb-section-title {
+  margin-bottom: 0;
+  padding: var(--space-lg) var(--space-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018) 0%, rgba(255, 255, 255, 0) 100%),
+    var(--bg-surface);
+  border: 1px solid var(--border-grid);
+  border-bottom: none;
+}
+
+.service-akpp-page .gb-lower-section--faq .gb-faq,
+.service-mkpp-page .gb-lower-section--faq .gb-faq {
+  margin-bottom: 0;
+  gap: 1px;
+  background: var(--border-grid);
+  border: 1px solid var(--border-grid);
+  border-top: none;
+}
+
+.service-akpp-page .gb-lower-section--faq .gb-faq-item,
+.service-mkpp-page .gb-lower-section--faq .gb-faq-item {
+  margin-bottom: 0;
+  border: none;
+  background: var(--bg-main);
+}
+
+.service-akpp-page .gb-lower-section--article {
+  padding: clamp(1.4rem, 2vw, 2rem);
+  border: 1px solid var(--border-grid);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018) 0%, rgba(255, 255, 255, 0) 100%),
+    var(--bg-surface);
+}
+
+.service-akpp-page .gb-lower-section--article .gb-compare-table th {
+  background: var(--bg-main);
+}
+
+.service-akpp-page .gb-lower-section--article .gb-compare-table tr:hover td {
+  background: var(--bg-elevated);
+}
+
+.service-akpp-page .gb-lower-section--cta {
+  border: 1px solid var(--border-grid);
+  border-left: 4px solid var(--accent-primary);
+  background:
+    linear-gradient(90deg, rgba(255, 176, 0, 0.08) 0%, rgba(255, 176, 0, 0) 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0) 100%),
+    var(--bg-surface);
+  box-shadow: none;
+}
+
+.service-akpp-page .gb-lower-section--cta .gb-cta-block__desc {
+  color: var(--text-muted);
+}
+
+.service-mkpp-page .gb-lower-section--reviews {
+  padding: clamp(1.4rem, 2vw, 2rem);
+  border: 1px solid var(--border-grid);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018) 0%, rgba(255, 255, 255, 0) 100%),
+    var(--bg-surface);
+}
+
+.service-mkpp-page .gb-lower-section--reviews .gb-section-title {
+  margin-bottom: var(--space-xl);
+}
+
+.service-mkpp-page .gb-lower-section--reviews .gb-rating-summary {
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--bg-main);
+  border: 1px solid var(--border-grid);
+  border-left: 3px solid var(--accent-primary);
+}
+
+.service-mkpp-page .gb-lower-section--reviews .gb-reviews-grid {
+  gap: 1px;
+  margin-bottom: 0;
+  background: var(--border-grid);
+  border: 1px solid var(--border-grid);
+}
+
+.service-mkpp-page .gb-lower-section--reviews .gb-review-card {
+  border: none;
+  background: var(--bg-main);
+}
+
+.service-mkpp-page .gb-lower-section--reviews .gb-review-card:hover {
+  background: var(--bg-elevated);
+}
+
+.service-mkpp-page .gb-lower-section--crosslink .gb-crosslink {
+  border: 1px solid var(--border-grid);
+  background:
+    linear-gradient(90deg, rgba(255, 176, 0, 0.06) 0%, rgba(255, 176, 0, 0) 20%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0) 100%),
+    var(--bg-surface);
+}
+
+.service-akpp-page .contact-section--service,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-cta {
+  background:
+    linear-gradient(180deg, rgba(26, 33, 51, 0.96) 0%, rgba(17, 22, 37, 1) 100%);
+}
+
+.service-akpp-page .contact-section--service {
+  padding-top: var(--space-3xl);
+  border-top: 1px solid var(--border-grid);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-cta__overlay {
+  background: linear-gradient(135deg, rgba(255, 176, 0, 0.045) 0%, rgba(255, 176, 0, 0.01) 34%, transparent 72%);
+}
+
+.service-akpp-page .contact-grid > *,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .location-grid > * {
+  background-color: var(--bg-surface);
+}
+
+.service-akpp-page .contact__info,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .location__info {
+  background:
+    linear-gradient(180deg, rgba(26, 33, 51, 0.98) 0%, rgba(17, 22, 37, 0.96) 100%);
+}
+
+.service-akpp-page .contact__form,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .contact__form {
+  background:
+    linear-gradient(180deg, rgba(17, 22, 37, 0.98) 0%, rgba(17, 22, 37, 0.92) 100%) !important;
+  border: 1px solid var(--border-grid) !important;
+  box-shadow: none;
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .location__map {
+  background-color: var(--bg-main);
+}
+
 /* Reduced motion: kill everything */
 @media (prefers-reduced-motion: reduce) {
   .gb-reveal {

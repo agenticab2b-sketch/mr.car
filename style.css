@@ -3300,6 +3300,148 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     max-width: 100%;
 }
 
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) {
+    --service-flow-space: var(--space-2xl);
+    --service-flow-space-tight: var(--space-xl);
+    --service-title-space: var(--space-lg);
+    --service-copy-space: var(--space-md);
+    --service-panel-pad: var(--space-xl);
+    --service-panel-pad-wide: var(--space-2xl);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-main {
+    gap: var(--service-flow-space);
+    padding-top: var(--service-flow-space);
+    padding-bottom: var(--service-flow-space);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-content {
+    gap: var(--service-flow-space);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-content > :where(section, article, div, nav) {
+    margin-block: 0;
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-intro > :is(h2, .sd-intro__title),
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-choice-title,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-section-title {
+    margin: 0 0 var(--service-title-space);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-intro__text p,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-section-text,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-section-text p {
+    margin: 0 0 var(--service-copy-space);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-intro__text p:last-child,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-section-text:last-child,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-section-text p:last-child {
+    margin-bottom: 0;
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-local-nav,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-page-section,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-gearbox-choice,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-hero-stats,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-urgency-block,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-diagnostics-card,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-info-article,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-cta-block,
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .brands-marquee {
+    margin-bottom: 0;
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-local-nav {
+    gap: var(--space-xs);
+    padding-top: 0;
+    padding-bottom: var(--space-md);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .brands-marquee {
+    padding-top: var(--service-title-space);
+    padding-bottom: var(--service-title-space);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) :is(.gb-rating-summary, .gb-crosslink) {
+    padding: var(--service-panel-pad) var(--service-panel-pad-wide);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) :is(.gb-diagnostics-card, .gb-cta-block) {
+    padding: var(--service-panel-pad-wide);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) :is(.gb-symptom-card, .gb-type-card, .gb-trust-item, .gb-review-card, .gb-service-card, .gb-risk-stage, .gb-step) {
+    padding: var(--service-panel-pad) var(--space-lg);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) :is(.gb-rating-summary, .gb-pricing-table, .gb-reviews-grid, .gb-trust, .gb-faq, .gb-crosslink, .gb-compare-table) {
+    margin: 0;
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-checklist {
+    margin-top: var(--service-title-space);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-review-card__author {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-info-article h3 {
+    margin-top: var(--service-flow-space-tight);
+    margin-bottom: var(--service-copy-space);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-info-article ul {
+    margin-bottom: var(--service-copy-space);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-pricing-note {
+    margin-top: var(--space-md);
+}
+
+body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-section-action {
+    margin-top: var(--service-title-space);
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-main {
+        gap: var(--service-flow-space-tight);
+    }
+}
+
+@media (max-width: 640px) {
+    body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) {
+        --service-flow-space: var(--space-xl);
+        --service-flow-space-tight: var(--space-lg);
+        --service-title-space: var(--space-md);
+        --service-copy-space: var(--space-sm);
+        --service-panel-pad: var(--space-lg);
+        --service-panel-pad-wide: var(--space-lg);
+    }
+
+    body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-sidebar-mobile {
+        padding-top: var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+
+    body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .sd-main {
+        padding-top: var(--service-flow-space);
+        padding-bottom: var(--service-flow-space);
+    }
+
+    body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-local-nav {
+        padding-bottom: var(--space-sm);
+    }
+
+    body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-local-nav__pill {
+        padding: 0.72rem 0.9rem;
+    }
+}
+
 /* Intro */
 .sd-intro__title {
     font-size: clamp(1.5rem, 3vw, 2rem);

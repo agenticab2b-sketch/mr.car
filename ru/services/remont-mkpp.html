@@ -152,8 +152,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/style.css?v=5">
-  <link rel="stylesheet" href="/services/transmission.css?v=3">
+  <link rel="stylesheet" href="/style.css?v=6">
+  <link rel="stylesheet" href="/services/transmission.css?v=4">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -444,7 +444,7 @@
     </section>
 
     <!-- BRANDS MARQUEE (Looping Logos) -->
-    <div class="brands-marquee gb-reveal">
+    <div class="brands-marquee">
       <div class="brands-marquee__inner">
         <div class="brands-marquee__track">
           <div class="brands-marquee__item" aria-label="BMW"><iconify-icon icon="simple-icons:bmw"></iconify-icon></div>
@@ -570,10 +570,10 @@
           <tr><td data-label="Услуга">Капитальный ремонт МКПП</td><td data-label="Стоимость" class="gb-price">от 600€</td></tr>
         </tbody>
       </table>
-      <p class="gb-section-text" style="font-size:.8rem;margin-top:var(--space-md)">* Точная стоимость определяется после диагностики. Цены включают работу. Запчасти рассчитываются отдельно.</p>
+      <p class="gb-pricing-note">* Точная стоимость определяется после диагностики. Цены включают работу. Запчасти рассчитываются отдельно.</p>
     </section>
 
-    <section class="gb-page-section gb-reveal" id="reviews">
+    <section class="gb-page-section gb-reveal gb-lower-section gb-lower-section--reviews" id="reviews">
       <h3 class="gb-section-title">Отзывы клиентов</h3>
       <div class="gb-rating-summary">
         <div class="gb-rating-summary__score">4.9</div>
@@ -586,7 +586,7 @@
       </div>
     </section>
 
-    <div class="gb-page-section gb-reveal" aria-label="Преимущества сервиса">
+    <div class="gb-page-section gb-reveal gb-lower-section gb-lower-section--trust" aria-label="Преимущества сервиса">
       <div class="gb-trust">
         <div class="gb-trust-item"><iconify-icon icon="mdi:shield-check"></iconify-icon><div class="gb-trust-item__title">Гарантия 12 месяцев</div><div class="gb-trust-item__desc">1 год / 20 000 км на работу. Письменная гарантия на детали и ремонт.</div></div>
         <div class="gb-trust-item"><iconify-icon icon="mdi:cog"></iconify-icon><div class="gb-trust-item__title">Оригинальные запчасти</div><div class="gb-trust-item__desc">LUK, Sachs, Valeo, Getrag OEM — только надёжные поставщики.</div></div>
@@ -594,7 +594,7 @@
       </div>
     </div>
 
-    <section class="gb-page-section gb-reveal" id="faq">
+    <section class="gb-page-section gb-reveal gb-lower-section gb-lower-section--faq" id="faq">
       <h3 class="gb-section-title">Частые вопросы о ремонте МКПП</h3>
       <div class="gb-faq">
         <details class="gb-faq-item"><summary>Чем отличается ремонт МКПП от ремонта АКПП? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content">МКПП — механическая коробка без гидравлики и электронного управления. Ремонт, как правило, дешевле и быстрее: основные неисправности — износ синхронизаторов, подшипников и сцепления. АКПП значительно сложнее и дороже в восстановлении.</div></details>
@@ -608,7 +608,7 @@
       </div>
     </section>
 
-    <div class="gb-page-section gb-reveal">
+    <div class="gb-page-section gb-reveal gb-lower-section gb-lower-section--crosslink">
       <a href="/ru/services/remont-akpp" class="gb-crosslink">
         <iconify-icon icon="mdi:compare-horizontal" width="28" aria-hidden="true"></iconify-icon>
         <div>
@@ -712,7 +712,7 @@
         </div>
         <p class="contact__promise">Оставьте заявку — перезвоним в течение 30 минут</p>
         <div class="accent-underline"></div>
-        <a href="tel:+37256461210" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-heading);font-weight:900;font-size:1.5rem;color:var(--accent-primary);letter-spacing:-0.01em;margin-top:16px;text-decoration:none;transition:all var(--transition-fast);">
+        <a href="tel:+37256461210" class="gb-phone-link">
           <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
           +372 5646 1210
         </a>
