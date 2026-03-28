@@ -1165,36 +1165,42 @@ h3 {
     padding: var(--space-2xl) 0;
     border-bottom: var(--border);
     border-top: var(--border);
+}
+
+/* Inner wrapper holds BOTH tracks side-by-side and scrolls together */
+.brands-marquee__inner {
     display: flex;
-    align-items: center;
+    width: max-content;
+    will-change: transform;
+    animation: marquee-scroll 35s linear infinite;
+}
+
+.brands-marquee:hover .brands-marquee__inner {
+    animation-play-state: paused;
 }
 
 .brands-marquee__track {
     display: flex;
     align-items: center;
     gap: var(--space-4xl);
-    padding-right: var(--space-4xl); /* Must match gap for seamless layout */
-    animation: marquee-scroll 35s linear infinite;
-    min-width: 100%; /* Ensure it spans at least screen width */
+    padding-right: var(--space-4xl); /* Matches gap for seamless join */
     flex-shrink: 0;
-    will-change: transform;
-}
-
-.brands-marquee:hover .brands-marquee__track {
-    animation-play-state: paused;
+    white-space: nowrap;
 }
 
 .brands-marquee__item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--text-muted);
     transition: color var(--transition-fast), transform var(--transition-base);
     opacity: 0.6;
+    flex-shrink: 0;
 }
 
 .brands-marquee__item iconify-icon {
-    font-size: 3rem; /* Approximates a 48px box */
+    font-size: 2.5rem;
+    display: block;
 }
 
 .brands-marquee__item a {
@@ -1209,12 +1215,13 @@ h3 {
     opacity: 1;
 }
 
+/* Animation: move left by exactly 50% (one of two identical tracks) */
 @keyframes marquee-scroll {
     from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
