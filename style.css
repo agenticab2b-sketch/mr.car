@@ -1175,9 +1175,7 @@ h3 {
     animation: marquee-scroll 35s linear infinite;
 }
 
-.brands-marquee:hover .brands-marquee__inner {
-    animation-play-state: paused;
-}
+/* Hover pause intentionally disabled — marquee runs continuously */
 
 .brands-marquee__track {
     display: flex;
@@ -1199,7 +1197,7 @@ h3 {
 }
 
 .brands-marquee__item iconify-icon {
-    font-size: 2.5rem;
+    font-size: 5rem;
     display: block;
 }
 
