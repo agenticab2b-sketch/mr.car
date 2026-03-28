@@ -1155,6 +1155,70 @@ h3 {
 }
 
 /* ============================================================
+   7.1 BRANDS MARQUEE (Infinite Logo Strip)
+   ============================================================ */
+.brands-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bg-surface);
+    padding: var(--space-2xl) 0;
+    border-bottom: var(--border);
+    border-top: var(--border);
+    display: flex;
+    align-items: center;
+}
+
+.brands-marquee__track {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4xl);
+    padding-right: var(--space-4xl); /* Must match gap for seamless layout */
+    animation: marquee-scroll 35s linear infinite;
+    min-width: 100%; /* Ensure it spans at least screen width */
+    flex-shrink: 0;
+    will-change: transform;
+}
+
+.brands-marquee:hover .brands-marquee__track {
+    animation-play-state: paused;
+}
+
+.brands-marquee__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: color var(--transition-fast), transform var(--transition-base);
+    opacity: 0.6;
+}
+
+.brands-marquee__item iconify-icon {
+    font-size: 3rem; /* Approximates a 48px box */
+}
+
+.brands-marquee__item a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+}
+
+.brands-marquee__item:hover {
+    color: var(--accent-primary);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* ============================================================
    8. SERVICES OVERVIEW (Icon Anchors)
    ============================================================ */
 .services-overview {
