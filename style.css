@@ -1158,6 +1158,9 @@ h3 {
    7.1 BRANDS MARQUEE (Infinite Logo Strip)
    ============================================================ */
 .brands-marquee {
+    --brands-marquee-gap: var(--space-4xl);
+    --brands-marquee-duration: 35s;
+    --brands-marquee-icon-size: 5rem;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -1165,14 +1168,23 @@ h3 {
     padding: var(--space-2xl) 0;
     border-bottom: var(--border);
     border-top: var(--border);
+    contain: paint;
+}
+
+.brands-marquee--home {
+    --brands-marquee-icon-size: 3.5rem;
 }
 
 /* Inner wrapper holds BOTH tracks side-by-side and scrolls together */
 .brands-marquee__inner {
     display: flex;
+    align-items: center;
     width: max-content;
+    min-width: max-content;
     will-change: transform;
-    animation: marquee-scroll 35s linear infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    animation: marquee-scroll var(--brands-marquee-duration) linear infinite;
 }
 
 /* Hover pause intentionally disabled — marquee runs continuously */
@@ -1180,9 +1192,10 @@ h3 {
 .brands-marquee__track {
     display: flex;
     align-items: center;
-    gap: var(--space-4xl);
-    padding-right: var(--space-4xl); /* Matches gap for seamless join */
-    flex-shrink: 0;
+    gap: var(--brands-marquee-gap);
+    padding-right: var(--brands-marquee-gap);
+    flex: none;
+    min-width: max-content;
     white-space: nowrap;
 }
 
@@ -1191,13 +1204,17 @@ h3 {
     align-items: center;
     justify-content: center;
     color: var(--text-muted);
-    transition: color var(--transition-fast), transform var(--transition-base);
     opacity: 0.6;
-    flex-shrink: 0;
+    flex: none;
+    line-height: 1;
+    pointer-events: none;
+    transform: translateZ(0);
 }
 
 .brands-marquee__item iconify-icon {
-    font-size: 5rem;
+    font-size: var(--brands-marquee-icon-size);
+    width: 1em;
+    height: 1em;
     display: block;
 }
 
@@ -1207,19 +1224,13 @@ h3 {
     display: flex;
 }
 
-.brands-marquee__item:hover {
-    color: var(--accent-primary);
-    transform: scale(1.1);
-    opacity: 1;
-}
-
 /* Animation: move left by exactly 50% (one of two identical tracks) */
 @keyframes marquee-scroll {
     from {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     to {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
@@ -2560,6 +2571,11 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 
     .trust-bar__content {
         animation: none;
+    }
+
+    .brands-marquee__inner {
+        animation: none;
+        transform: none;
     }
 
     .hero__image img {
