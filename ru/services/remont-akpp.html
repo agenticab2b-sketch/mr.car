@@ -676,12 +676,18 @@
             </div>
           </div>
           <div class="gb-type-card gb-type-card--photo gb-reveal">
-            <img
-              src="/pics/automatic-transmission-cross-section-gen.png"
-              alt="Автоматическая коробка передач в разрезе"
-              class="gb-type-card__photo"
-              loading="lazy"
+            <video
+              class="gb-type-card__video"
+              data-pingpong-video
+              autoplay
+              muted
+              playsinline
+              preload="auto"
+              aria-label="Автоматическая коробка передач в разрезе"
             >
+              <source src="/video/gearbox.webm" type="video/webm">
+              Ваш браузер не поддерживает видео.
+            </video>
           </div>
         </div>
       </section>
@@ -1279,6 +1285,69 @@
       document.getElementById('fabContact').classList.remove('is-open');
       document.getElementById('fabTrigger').classList.remove('icon-swap');
     }
+
+    // Ping-pong video loop for the AKPP type card
+    (function() {
+      var video = document.querySelector('[data-pingpong-video]');
+      if (!video) return;
+
+      var reverseFrameId = null;
+      var lastTimestamp = null;
+      var startThreshold = 0.02;
+
+      function stopReverse() {
+        if (reverseFrameId !== null) {
+          cancelAnimationFrame(reverseFrameId);
+          reverseFrameId = null;
+        }
+        lastTimestamp = null;
+      }
+
+      function playForward() {
+        stopReverse();
+        video.currentTime = Math.max(0, video.currentTime);
+        video.playbackRate = 1;
+        video.muted = true;
+        var playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function() {});
+        }
+      }
+
+      function playBackward() {
+        stopReverse();
+        video.pause();
+
+        function step(timestamp) {
+          if (lastTimestamp === null) {
+            lastTimestamp = timestamp;
+          }
+
+          var delta = (timestamp - lastTimestamp) / 1000;
+          lastTimestamp = timestamp;
+          video.currentTime = Math.max(0, video.currentTime - delta);
+
+          if (video.currentTime <= startThreshold) {
+            video.currentTime = 0;
+            playForward();
+            return;
+          }
+
+          reverseFrameId = requestAnimationFrame(step);
+        }
+
+        reverseFrameId = requestAnimationFrame(step);
+      }
+
+      video.addEventListener('ended', playBackward);
+      video.addEventListener('play', stopReverse);
+
+      if (video.readyState >= 2) {
+        playForward();
+      } else {
+        video.addEventListener('loadeddata', playForward, { once: true });
+      }
+    })();
 
     // Scroll-reveal (gb-reveal → gb-visible)
     (function() {
