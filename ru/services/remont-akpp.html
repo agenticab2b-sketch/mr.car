@@ -1292,8 +1292,16 @@
       if (!video) return;
 
       var reverseFrameId = null;
+      var forwardWatchId = null;
       var lastTimestamp = null;
-      var startThreshold = 0.02;
+      var edgeThreshold = 0.08;
+
+      function cancelForwardWatch() {
+        if (forwardWatchId !== null) {
+          cancelAnimationFrame(forwardWatchId);
+          forwardWatchId = null;
+        }
+      }
 
       function stopReverse() {
         if (reverseFrameId !== null) {
@@ -1303,19 +1311,45 @@
         lastTimestamp = null;
       }
 
-      function playForward() {
+      function watchForwardEdge() {
+        cancelForwardWatch();
+
+        function check() {
+          if (reverseFrameId !== null || video.paused) {
+            forwardWatchId = null;
+            return;
+          }
+
+          if (video.duration && video.duration - video.currentTime <= edgeThreshold) {
+            playBackward();
+            return;
+          }
+
+          forwardWatchId = requestAnimationFrame(check);
+        }
+
+        forwardWatchId = requestAnimationFrame(check);
+      }
+
+      function playForward(startAt) {
         stopReverse();
-        video.currentTime = Math.max(0, video.currentTime);
+        cancelForwardWatch();
+        if (typeof startAt === 'number') {
+          video.currentTime = Math.max(0, startAt);
+        }
         video.playbackRate = 1;
         video.muted = true;
         var playPromise = video.play();
         if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(function() {});
+          playPromise.then(watchForwardEdge).catch(function() {});
+        } else {
+          watchForwardEdge();
         }
       }
 
       function playBackward() {
         stopReverse();
+        cancelForwardWatch();
         video.pause();
 
         function step(timestamp) {
@@ -1327,9 +1361,9 @@
           lastTimestamp = timestamp;
           video.currentTime = Math.max(0, video.currentTime - delta);
 
-          if (video.currentTime <= startThreshold) {
+          if (video.currentTime <= edgeThreshold) {
             video.currentTime = 0;
-            playForward();
+            playForward(0);
             return;
           }
 
@@ -1339,13 +1373,23 @@
         reverseFrameId = requestAnimationFrame(step);
       }
 
-      video.addEventListener('ended', playBackward);
-      video.addEventListener('play', stopReverse);
+      video.addEventListener('ended', function() {
+        if (reverseFrameId === null) {
+          playBackward();
+        }
+      });
+      video.addEventListener('pause', function() {
+        if (reverseFrameId === null) {
+          cancelForwardWatch();
+        }
+      });
 
       if (video.readyState >= 2) {
-        playForward();
+        playForward(0);
       } else {
-        video.addEventListener('loadeddata', playForward, { once: true });
+        video.addEventListener('loadeddata', function() {
+          playForward(0);
+        }, { once: true });
       }
     })();
 
