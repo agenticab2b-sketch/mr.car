@@ -752,6 +752,14 @@ function buildNavLinks(navLinks) {
   ).join('\n            ');
 }
 
+function isRuTransmissionParent(cfg, slug) {
+  return cfg.lang === 'ru' && slug === 'remont-kpp';
+}
+
+function isRuTransmissionFamily(cfg, slug) {
+  return cfg.lang === 'ru' && ['remont-kpp', 'remont-akpp', 'remont-mkpp'].includes(slug);
+}
+
 function buildSidebar(services, currentSlug, cfg) {
   // Group by category
   const cats = {};
@@ -765,6 +773,27 @@ function buildSidebar(services, currentSlug, cfg) {
             <div class="sd-sidebar__cat-title">${esc(toSentenceCaseLabel(cat, cfg.lang))}</div>
             <ul class="sd-sidebar__list">`;
     for (const s of items) {
+      if (isRuTransmissionParent(cfg, s.slug)) {
+        const isFamilyPage = isRuTransmissionFamily(cfg, currentSlug);
+        const transmissionParentActive = isFamilyPage ? ' active' : '';
+        const transmissionItemOpen = isFamilyPage ? ' sd-sidebar__item--open' : '';
+        const akppActive = currentSlug === 'remont-akpp' ? ' active' : '';
+        const mkppActive = currentSlug === 'remont-mkpp' ? ' active' : '';
+
+        html += `\n              <li class="sd-sidebar__item sd-sidebar__item--has-children${transmissionItemOpen}">
+                <a href="${cfg.serviceBase}${esc(s.slug)}" class="sd-sidebar__link${transmissionParentActive}">
+                  <iconify-icon icon="${esc(s.icon)}" width="18" height="18" aria-hidden="true"></iconify-icon>
+                  <span>${esc(s.navTitle)}</span>
+                  <iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>
+                </a>
+                <ul class="sd-sidebar__sublist">
+                  <li><a href="${cfg.serviceBase}remont-akpp" class="sd-sidebar__sublink${akppActive}">Автоматические коробки передач</a></li>
+                  <li><a href="${cfg.serviceBase}remont-mkpp" class="sd-sidebar__sublink${mkppActive}">Механические коробки передач</a></li>
+                </ul>
+              </li>`;
+        continue;
+      }
+
       const active = s.slug === currentSlug ? ' active' : '';
       html += `\n              <li><a href="${cfg.serviceBase}${esc(s.slug)}" class="sd-sidebar__link${active}">
                 <iconify-icon icon="${esc(s.icon)}" width="18" height="18" aria-hidden="true"></iconify-icon>
@@ -778,21 +807,50 @@ function buildSidebar(services, currentSlug, cfg) {
 }
 
 function buildMegaMenu(services, cfg) {
-  return services.map(s =>
-    `<a href="${cfg.serviceBase}${esc(s.slug)}" class="mega-menu__item">
+  return services.map(s => {
+    if (isRuTransmissionParent(cfg, s.slug)) {
+      return `<div class="mega-menu__group">
+              <a href="${cfg.serviceBase}${esc(s.slug)}" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="${esc(s.icon)}" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>${esc(s.navTitle)}</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="${cfg.serviceBase}remont-akpp" class="mega-menu__subitem">Автоматические коробки передач</a>
+                <a href="${cfg.serviceBase}remont-mkpp" class="mega-menu__subitem">Механические коробки передач</a>
+              </div>
+            </div>`;
+    }
+
+    return `<a href="${cfg.serviceBase}${esc(s.slug)}" class="mega-menu__item">
               <iconify-icon icon="${esc(s.icon)}" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>${esc(s.navTitle)}</span>
-            </a>`
-  ).join('\n            ');
+            </a>`;
+  }).join('\n            ');
 }
 
 function buildMobileMegaMenu(services, cfg) {
-  return services.map(s =>
-    `<a href="${cfg.serviceBase}${esc(s.slug)}" class="mobile-mega-menu__item">
+  return services.map(s => {
+    if (isRuTransmissionParent(cfg, s.slug)) {
+      return `<div class="mobile-mega-menu__group">
+              <a href="${cfg.serviceBase}${esc(s.slug)}" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="${esc(s.icon)}" aria-hidden="true"></iconify-icon>
+                <span>${esc(s.navTitle)}</span>
+              </a>
+              <a href="${cfg.serviceBase}remont-akpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Автоматические коробки передач</span>
+              </a>
+              <a href="${cfg.serviceBase}remont-mkpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Механические коробки передач</span>
+              </a>
+            </div>`;
+    }
+
+    return `<a href="${cfg.serviceBase}${esc(s.slug)}" class="mobile-mega-menu__item">
               <iconify-icon icon="${esc(s.icon)}" aria-hidden="true"></iconify-icon>
               <span>${esc(s.navTitle)}</span>
-            </a>`
-  ).join('\n            ');
+            </a>`;
+  }).join('\n            ');
 }
 
 function buildFooter(cfg) {
