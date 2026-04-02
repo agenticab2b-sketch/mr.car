@@ -678,8 +678,8 @@
           <div class="gb-type-card gb-type-card--photo gb-reveal">
             <video
               class="gb-type-card__video"
-              data-pingpong-video
               autoplay
+              loop
               muted
               playsinline
               preload="auto"
@@ -1285,113 +1285,6 @@
       document.getElementById('fabContact').classList.remove('is-open');
       document.getElementById('fabTrigger').classList.remove('icon-swap');
     }
-
-    // Ping-pong video loop for the AKPP type card
-    (function() {
-      var video = document.querySelector('[data-pingpong-video]');
-      if (!video) return;
-
-      var reverseFrameId = null;
-      var forwardWatchId = null;
-      var lastTimestamp = null;
-      var edgeThreshold = 0.08;
-
-      function cancelForwardWatch() {
-        if (forwardWatchId !== null) {
-          cancelAnimationFrame(forwardWatchId);
-          forwardWatchId = null;
-        }
-      }
-
-      function stopReverse() {
-        if (reverseFrameId !== null) {
-          cancelAnimationFrame(reverseFrameId);
-          reverseFrameId = null;
-        }
-        lastTimestamp = null;
-      }
-
-      function watchForwardEdge() {
-        cancelForwardWatch();
-
-        function check() {
-          if (reverseFrameId !== null || video.paused) {
-            forwardWatchId = null;
-            return;
-          }
-
-          if (video.duration && video.duration - video.currentTime <= edgeThreshold) {
-            playBackward();
-            return;
-          }
-
-          forwardWatchId = requestAnimationFrame(check);
-        }
-
-        forwardWatchId = requestAnimationFrame(check);
-      }
-
-      function playForward(startAt) {
-        stopReverse();
-        cancelForwardWatch();
-        if (typeof startAt === 'number') {
-          video.currentTime = Math.max(0, startAt);
-        }
-        video.playbackRate = 1;
-        video.muted = true;
-        var playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.then(watchForwardEdge).catch(function() {});
-        } else {
-          watchForwardEdge();
-        }
-      }
-
-      function playBackward() {
-        stopReverse();
-        cancelForwardWatch();
-        video.pause();
-
-        function step(timestamp) {
-          if (lastTimestamp === null) {
-            lastTimestamp = timestamp;
-          }
-
-          var delta = (timestamp - lastTimestamp) / 1000;
-          lastTimestamp = timestamp;
-          video.currentTime = Math.max(0, video.currentTime - delta);
-
-          if (video.currentTime <= edgeThreshold) {
-            video.currentTime = 0;
-            playForward(0);
-            return;
-          }
-
-          reverseFrameId = requestAnimationFrame(step);
-        }
-
-        reverseFrameId = requestAnimationFrame(step);
-      }
-
-      video.addEventListener('ended', function() {
-        if (reverseFrameId === null) {
-          playBackward();
-        }
-      });
-      video.addEventListener('pause', function() {
-        if (reverseFrameId === null) {
-          cancelForwardWatch();
-        }
-      });
-
-      if (video.readyState >= 2) {
-        playForward(0);
-      } else {
-        video.addEventListener('loadeddata', function() {
-          playForward(0);
-        }, { once: true });
-      }
-    })();
 
     // Scroll-reveal (gb-reveal → gb-visible)
     (function() {
