@@ -178,10 +178,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>ТО и диагностика</span>
                     </a>
-                    <a href="/ru/services/remont-kpp" class="mega-menu__item">
-                        <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Коробка передач</span>
-                    </a>
+                    <div class="mega-menu__group">
+                        <a href="/ru/services/remont-kpp" class="mega-menu__item mega-menu__item--has-submenu">
+                            <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
+                            <span>Коробка передач</span>
+                            <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+                        </a>
+                        <div class="mega-menu__submenu">
+                            <a href="/ru/services/remont-akpp" class="mega-menu__subitem">Автоматические коробки передач</a>
+                            <a href="/ru/services/remont-mkpp" class="mega-menu__subitem">Механические коробки передач</a>
+                        </div>
+                    </div>
                     <a href="/ru/services/elektrika" class="mega-menu__item">
                         <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Автоэлектрика</span>
@@ -262,10 +269,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
                     <span>ТО и диагностика</span>
                 </a>
-                <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
-                    <span>Коробка передач</span>
-                </a>
+                <div class="mobile-mega-menu__group">
+                    <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                        <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                        <span>Коробка передач</span>
+                    </a>
+                    <a href="/ru/services/remont-akpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                        <span>Автоматические коробки передач</span>
+                    </a>
+                    <a href="/ru/services/remont-mkpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                        <span>Механические коробки передач</span>
+                    </a>
+                </div>
                 <a href="/ru/services/elektrika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
                         <span>Автоэлектрика</span>
@@ -581,6 +596,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // ── Build sidebar navigation ──
         function buildSidebar(currentSlug) {
             var categories = {};
+            var isKppFamily = currentSlug === 'remont-kpp' || currentSlug === 'remont-akpp' || currentSlug === 'remont-mkpp';
             SERVICES.forEach(function (s) {
                 if (!categories[s.category]) categories[s.category] = [];
                 categories[s.category].push(s);
@@ -596,11 +612,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     '<div class="sd-sidebar__cat-title">' + label + '</div>' +
                     '<ul class="sd-sidebar__list">';
                 services.forEach(function (s) {
-                    var active = s.slug === currentSlug ? ' active' : '';
-                    html += '<li><a href="/ru/services" + s.slug + '" class="sd-sidebar__link' + active + '">' +
-                        '<iconify-icon icon="' + s.icon + '" width="18" height="18" aria-hidden="true"></iconify-icon>' +
-                        '<span>' + s.navTitle + '</span>' +
-                        '</a></li>';
+                    if (s.slug === 'remont-kpp') {
+                        html += '<li class="sd-sidebar__item sd-sidebar__item--has-children' + (isKppFamily ? ' sd-sidebar__item--open' : '') + '">' +
+                            '<a href="/ru/services/remont-kpp" class="sd-sidebar__link' + (isKppFamily ? ' active' : '') + '">' +
+                            '<iconify-icon icon="' + s.icon + '" width="18" height="18" aria-hidden="true"></iconify-icon>' +
+                            '<span>' + s.navTitle + '</span>' +
+                            '<iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>' +
+                            '</a>' +
+                            '<ul class="sd-sidebar__sublist">' +
+                            '<li><a href="/ru/services/remont-akpp" class="sd-sidebar__sublink' + (currentSlug === 'remont-akpp' ? ' active' : '') + '">Автоматические коробки передач</a></li>' +
+                            '<li><a href="/ru/services/remont-mkpp" class="sd-sidebar__sublink' + (currentSlug === 'remont-mkpp' ? ' active' : '') + '">Механические коробки передач</a></li>' +
+                            '</ul></li>';
+                    } else {
+                        var active = s.slug === currentSlug ? ' active' : '';
+                        html += '<li><a href="/ru/services/' + s.slug + '" class="sd-sidebar__link' + active + '">' +
+                            '<iconify-icon icon="' + s.icon + '" width="18" height="18" aria-hidden="true"></iconify-icon>' +
+                            '<span>' + s.navTitle + '</span>' +
+                            '</a></li>';
+                    }
                 });
                 html += '</ul></div>';
             }
