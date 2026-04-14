@@ -1335,6 +1335,31 @@ h3 {
     display: flex;
 }
 
+.brands-marquee--partners {
+    --brands-marquee-gap: clamp(var(--space-2xl), 5vw, var(--space-4xl));
+    --brands-marquee-duration: 68s;
+    --brands-marquee-icon-size: clamp(1.8rem, 5vw, 3rem);
+    padding: var(--space-xl) 0;
+    border-top: 0;
+}
+
+.brands-marquee--partners .brands-marquee__inner {
+    animation-direction: reverse;
+}
+
+.brands-marquee--partners .brands-marquee__item {
+    opacity: 0.68;
+}
+
+.brands-marquee__graphic {
+    display: block;
+    height: var(--brands-marquee-icon-size);
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    flex: none;
+}
+
 /* Animation: move left by exactly 50% (one of two identical tracks) */
 @keyframes marquee-scroll {
     from {
