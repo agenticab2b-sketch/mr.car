@@ -21,6 +21,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
+const SR_ONLY_INLINE_STYLE = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
 
 // Load partials
 const FORM_PARTIAL = fs.readFileSync(path.join(ROOT, 'partials/form.html'), 'utf8');
@@ -331,6 +332,10 @@ function esc(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function srOnlySpan(text) {
+  return `<span style="${SR_ONLY_INLINE_STYLE}">${esc(text)}</span>`;
 }
 
 function toPublicAssetPath(assetPath) {
@@ -868,9 +873,11 @@ function buildFooter(cfg) {
         <div class="footer__socials">
           <a href="https://www.facebook.com/profile.php?id=61578161038234" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener">
             <iconify-icon icon="mdi:facebook" aria-hidden="true"></iconify-icon>
+            ${srOnlySpan('Facebook')}
           </a>
           <a href="https://www.instagram.com/mrcar.ee/" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
             <iconify-icon icon="mdi:instagram" aria-hidden="true"></iconify-icon>
+            ${srOnlySpan('Instagram')}
           </a>
         </div>
       </div>
@@ -1088,6 +1095,134 @@ function syncGlobalFooters() {
   return updated;
 }
 
+function getMetaContent(html, attrName, attrValue) {
+  const escapedValue = attrValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const patterns = [
+    new RegExp(`<meta[^>]*${attrName}=["']${escapedValue}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'i'),
+    new RegExp(`<meta[^>]*content=["']([^"']*)["'][^>]*${attrName}=["']${escapedValue}["'][^>]*>`, 'i')
+  ];
+
+  for (const pattern of patterns) {
+    const match = html.match(pattern);
+    if (match) return match[1];
+  }
+
+  return '';
+}
+
+function getDocumentTitle(html) {
+  return html.match(/<title>([^<]*)<\/title>/i)?.[1]?.trim() || '';
+}
+
+function ensureLangLinkAnchorText(html) {
+  return html.replace(/<a([^>]*)>([\s\S]*?)<\/a>/g, (match, attrs, inner) => {
+    const classValue = attrs.match(/\bclass="([^"]+)"/i)?.[1] || '';
+    const classes = classValue.split(/\s+/).filter(Boolean);
+    if (!classes.includes('lang-link')) return match;
+    if (/clip:rect\(0,0,0,0\)/i.test(inner)) return match;
+
+    const title = attrs.match(/\btitle="([^"]+)"/i)?.[1] || 'Language';
+    return `<a${attrs}>${inner}${srOnlySpan(title)}</a>`;
+  });
+}
+
+function cleanMobileLangLinkAnchorText(html) {
+  return html.replace(/<a([^>]*)>([\s\S]*?)<\/a>/g, (match, attrs, inner) => {
+    const classValue = attrs.match(/\bclass="([^"]+)"/i)?.[1] || '';
+    const classes = classValue.split(/\s+/).filter(Boolean);
+    if (!classes.includes('mobile-lang-link')) return match;
+
+    const cleanedInner = inner.replace(/<span[^>]*clip:rect\(0,0,0,0\)[^>]*>[\s\S]*?<\/span>/gi, '');
+    return cleanedInner === inner ? match : `<a${attrs}>${cleanedInner}</a>`;
+  });
+}
+
+function ensureSocialLinkAnchorText(html) {
+  return html.replace(/<a([^>]*class="[^"]*\bfooter__social-link\b[^"]*"[^>]*)>([\s\S]*?)<\/a>/g, (match, attrs, inner) => {
+    if (/clip:rect\(0,0,0,0\)/i.test(inner)) return match;
+
+    const label = attrs.match(/\baria-label="([^"]+)"/i)?.[1] || 'Social link';
+    return `<a${attrs}>${inner}${srOnlySpan(label)}</a>`;
+  });
+}
+
+function ensurePartnerLogoAlt(html) {
+  return html.replace(
+    /aria-label="([^"]+)"><img([^>]*?)alt="" aria-hidden="true"([^>]*?)>/g,
+    (_, label, beforeAlt, afterHidden) => `aria-label="${label}"><img${beforeAlt}alt="${esc(label)} logo"${afterHidden}>`
+  );
+}
+
+function ensureTwitterCards(html) {
+  const missing = [];
+
+  if (!/name=["']twitter:card["']/i.test(html)) {
+    missing.push('<meta name="twitter:card" content="summary_large_image">');
+  }
+
+  if (!/name=["']twitter:title["']/i.test(html)) {
+    const title = getMetaContent(html, 'property', 'og:title') || getDocumentTitle(html);
+    if (title) missing.push(`<meta name="twitter:title" content="${title}">`);
+  }
+
+  if (!/name=["']twitter:description["']/i.test(html)) {
+    const description = getMetaContent(html, 'property', 'og:description') || getMetaContent(html, 'name', 'description');
+    if (description) missing.push(`<meta name="twitter:description" content="${description}">`);
+  }
+
+  if (!/name=["']twitter:image["']/i.test(html)) {
+    const image = getMetaContent(html, 'property', 'og:image') || `${PROD_ORIGIN}/og-image.jpg`;
+    if (image) missing.push(`<meta name="twitter:image" content="${image}">`);
+  }
+
+  if (missing.length === 0) return html;
+
+  const twitterBlock = `\n  <!-- Twitter Card -->\n  ${missing.join('\n  ')}\n`;
+
+  if (/<script type="application\/ld\+json">/i.test(html)) {
+    return html.replace(/<script type="application\/ld\+json">/i, `${twitterBlock}<script type="application/ld+json">`);
+  }
+
+  return html.replace(/<\/head>/i, `${twitterBlock}</head>`);
+}
+
+function shouldSyncSharedHtml(relPath) {
+  const normalized = relPath.replace(/\\/g, '/').toLowerCase();
+  const base = path.basename(normalized);
+
+  if (base === '404.html') return false;
+  if (base === 'homepage.html') return false;
+  if (base.startsWith('google')) return false;
+  if (base.startsWith('temp_')) return false;
+
+  return true;
+}
+
+function syncSharedHtmlPatterns() {
+  let updated = 0;
+
+  for (const filePath of collectFooterTargetFiles()) {
+    const relPath = path.relative(ROOT, filePath);
+    if (!shouldSyncSharedHtml(relPath)) continue;
+
+    const source = fs.readFileSync(filePath, 'utf8');
+    let next = source;
+
+    next = cleanMobileLangLinkAnchorText(next);
+    next = ensureLangLinkAnchorText(next);
+    next = ensureSocialLinkAnchorText(next);
+    next = ensurePartnerLogoAlt(next);
+    next = ensureTwitterCards(next);
+
+    if (next !== source) {
+      fs.writeFileSync(filePath, next, 'utf8');
+      updated++;
+    }
+  }
+
+  return updated;
+}
+
 // ─── Main HTML template ───────────────────────────────────────────────────────
 
 function renderPage(s, services, cfg, articleDates = {}) {
@@ -1159,7 +1294,7 @@ function renderPage(s, services, cfg, articleDates = {}) {
 
   const desktopLangsHtml = allLangs.map(l => {
     const isActive = l.code === cfg.lang ? ' active' : '';
-    return `<a href="${l.href}" class="lang-link${isActive}" title="${esc(l.title)}"><iconify-icon icon="${l.flag}" width="24" height="24"></iconify-icon></a>`;
+    return `<a href="${l.href}" class="lang-link${isActive}" title="${esc(l.title)}"><iconify-icon icon="${l.flag}" width="24" height="24"></iconify-icon>${srOnlySpan(l.title)}</a>`;
   }).join('\n            ');
 
   const mobileLangsHtml = allLangs.map(l => {
@@ -1568,6 +1703,10 @@ process.stdout.write(`\n✅ Done: ${totalGenerated} pages generated, ${totalSkip
 process.stdout.write('\n🦶 Syncing global footers…\n');
 const totalFootersSynced = syncGlobalFooters();
 process.stdout.write(`✅ Global footers synced in ${totalFootersSynced} files.\n`);
+
+process.stdout.write('\n🧩 Syncing shared SEO and accessibility HTML patterns…\n');
+const totalSharedHtmlSynced = syncSharedHtmlPatterns();
+process.stdout.write(`✅ Shared HTML patterns synced in ${totalSharedHtmlSynced} files.\n`);
 
 // ─── Update sitemap.xml ───────────────────────────────────────────────────────
 
