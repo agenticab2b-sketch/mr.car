@@ -28,6 +28,31 @@ const LEGACY_EXCLUDED_HTML = new Set([
   // Legacy dynamic shell kept in git history but explicitly excluded from Hosting publish.
   'ru/services/service.html',
 ]);
+const PRIORITY_SEO_LIMITS = new Map([
+  ['index.html', { maxTitle: 65, maxDescription: 158 }],
+  ['ru/index.html', { maxTitle: 65, maxDescription: 158 }],
+  ['en/index.html', { maxTitle: 65, maxDescription: 158 }],
+  ['hinnad.html', { maxTitle: 65, maxDescription: 158 }],
+  ['ru/tseny.html', { maxTitle: 65, maxDescription: 158 }],
+  ['en/prices.html', { maxTitle: 65, maxDescription: 158 }],
+  ['services/kaigukastiremont.html', { maxTitle: 65, maxDescription: 158 }],
+  ['ru/services/remont-kpp.html', { maxTitle: 65, maxDescription: 158 }],
+  ['en/services/transmission-repair.html', { maxTitle: 65, maxDescription: 158 }],
+  ['services/automaatkasti-remont.html', { maxTitle: 65, maxDescription: 158 }],
+  ['ru/services/remont-akpp.html', { maxTitle: 65, maxDescription: 158 }],
+  ['en/services/automatic-transmission-repair.html', { maxTitle: 65, maxDescription: 158 }],
+  ['services/kasikasti-remont.html', { maxTitle: 65, maxDescription: 158 }],
+  ['ru/services/remont-mkpp.html', { maxTitle: 65, maxDescription: 158 }],
+  ['en/services/manual-transmission-repair.html', { maxTitle: 65, maxDescription: 158 }],
+]);
+const REQUIRED_INTERNAL_LINKS = new Map([
+  ['services/webasto-diagnostika.html', ['/services/webasto-sumptomid']],
+  ['ru/services/webasto.html', ['/ru/services/webasto-simptomy']],
+  ['en/services/webasto-repair.html', ['/en/services/webasto-symptoms']],
+  ['teenused.html', ['/services/webasto-sumptomid']],
+  ['ru/uslugi.html', ['/ru/services/webasto-simptomy']],
+  ['en/services.html', ['/en/services/webasto-symptoms']],
+]);
 
 const serviceMaps = {
   et: loadServiceSlugs(path.join(ROOT, 'services')),
@@ -44,7 +69,10 @@ for (const filePath of PUBLIC_HTML) {
   checkPlaceholderSocials(relPath, content);
   checkServiceFormLeadWiring(relPath, content);
   checkServiceLinks(relPath, content);
+  checkInternalNofollow(relPath, content);
+  checkRequiredInternalLinks(relPath, content);
   checkCanonicalAndHreflang(relPath, content);
+  checkPrioritySeoMeta(relPath, content);
 }
 
 checkSitemap();
@@ -158,6 +186,48 @@ function checkServiceLinks(relPath, content) {
   }
 }
 
+function checkInternalNofollow(relPath, content) {
+  const anchorRegex = /<a\b[^>]*>/gi;
+  let match;
+
+  while ((match = anchorRegex.exec(content)) !== null) {
+    const tag = match[0];
+    const hrefMatch = tag.match(/\shref=["']([^"']+)["']/i);
+    if (!hrefMatch) continue;
+
+    const href = hrefMatch[1].trim();
+    if (!isInternalHref(href)) continue;
+
+    const relMatch = tag.match(/\srel=["']([^"']+)["']/i);
+    if (!relMatch) continue;
+
+    const relValues = relMatch[1].toLowerCase().split(/\s+/).filter(Boolean);
+    if (!relValues.includes('nofollow')) continue;
+
+    failures.push({
+      type: 'internal-nofollow',
+      file: relPath,
+      message: `internal link must not use nofollow: ${href}`,
+    });
+  }
+}
+
+function checkRequiredInternalLinks(relPath, content) {
+  const requiredLinks = REQUIRED_INTERNAL_LINKS.get(relPath);
+  if (!requiredLinks) return;
+
+  for (const href of requiredLinks) {
+    const pattern = new RegExp(`<a\\b[^>]*href=["']${escapeForRegex(href)}["']`, 'i');
+    if (!pattern.test(content)) {
+      failures.push({
+        type: 'required-internal-link',
+        file: relPath,
+        message: `missing required internal link: ${href}`,
+      });
+    }
+  }
+}
+
 function isServicePage(relPath) {
   return (
     relPath.startsWith('services/') ||
@@ -170,8 +240,70 @@ function toPosix(value) {
   return value.split(path.sep).join('/');
 }
 
+function isInternalHref(href) {
+  return (
+    href.startsWith('/') ||
+    href.startsWith('https://www.mrcar.ee/') ||
+    href.startsWith('https://mrcar.ee/')
+  );
+}
+
+function escapeForRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function isSeoTechnicalPage(relPath) {
+  return relPath === '404.html' || /^google.*\.html$/i.test(relPath);
+}
+
+function extractTitle(content) {
+  const match = content.match(/<title>([\s\S]*?)<\/title>/i);
+  return match ? match[1].replace(/\s+/g, ' ').trim() : '';
+}
+
+function extractMetaDescription(content) {
+  const match = content.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i);
+  return match ? match[1].replace(/\s+/g, ' ').trim() : '';
+}
+
+function checkPrioritySeoMeta(relPath, content) {
+  const limits = PRIORITY_SEO_LIMITS.get(relPath);
+  if (!limits) return;
+
+  const title = extractTitle(content);
+  const description = extractMetaDescription(content);
+
+  if (!title) {
+    failures.push({
+      type: 'seo-title-missing',
+      file: relPath,
+      message: 'priority page is missing a title',
+    });
+  } else if (title.length > limits.maxTitle) {
+    failures.push({
+      type: 'seo-title-length',
+      file: relPath,
+      message: `priority page title too long (${title.length} > ${limits.maxTitle})`,
+    });
+  }
+
+  if (!description) {
+    failures.push({
+      type: 'seo-description-missing',
+      file: relPath,
+      message: 'priority page is missing a meta description',
+    });
+  } else if (description.length > limits.maxDescription) {
+    failures.push({
+      type: 'seo-description-length',
+      file: relPath,
+      message: `priority page description too long (${description.length} > ${limits.maxDescription})`,
+    });
+  }
+}
+
 function checkCanonicalAndHreflang(relPath, content) {
-  if (relPath === '404.html' || relPath === 'google6aff4100d8f2567c.html' || relPath === 'googlef4bd042d0039292d.html') return;
+  if (isSeoTechnicalPage(relPath)) return;
 
   // Improved check for canonical: match the whole tag then extract href
   const canonicalTagMatch = content.match(/<link[^>]+rel=["']canonical["'][^>]*>/i);
@@ -191,6 +323,13 @@ function checkCanonicalAndHreflang(relPath, content) {
           type: 'canonical-format',
           file: relPath,
           message: `canonical href ends with .html: ${canonicalHref}`,
+        });
+      }
+      if (canonicalHref.startsWith('https://mrcar.ee/')) {
+        failures.push({
+          type: 'canonical-host',
+          file: relPath,
+          message: `canonical href uses bare domain instead of www: ${canonicalHref}`,
         });
       }
     }
@@ -235,6 +374,46 @@ function checkSitemap() {
         type: 'sitemap-format',
         file: 'sitemap.xml',
         message: `URL in sitemap ends with .html: ${loc}`,
+      });
+    }
+
+    let parsed;
+    try {
+      parsed = new URL(loc);
+    } catch (error) {
+      failures.push({
+        type: 'sitemap-url',
+        file: 'sitemap.xml',
+        message: `URL in sitemap is invalid: ${loc}`,
+      });
+      continue;
+    }
+
+    if (parsed.hostname !== 'www.mrcar.ee') {
+      failures.push({
+        type: 'sitemap-host',
+        file: 'sitemap.xml',
+        message: `URL in sitemap must use www host: ${loc}`,
+      });
+    }
+
+    const forbiddenPaths = new Set([
+      '/404',
+      '/prices',
+      '/ru/prices',
+      '/privaatsus/index',
+      '/ru/privaatsus/index',
+    ]);
+
+    if (
+      forbiddenPaths.has(parsed.pathname) ||
+      parsed.pathname.startsWith('/google') ||
+      parsed.pathname.startsWith('/temp_')
+    ) {
+      failures.push({
+        type: 'sitemap-forbidden',
+        file: 'sitemap.xml',
+        message: `URL in sitemap must not be published: ${loc}`,
       });
     }
   }
