@@ -637,7 +637,8 @@ const SERVICES = [
             { icon: "mdi:timer-off-outline", text: "Shuts off after a minute" },
             { icon: "mdi:calendar-check", text: "Scheduled maintenance (once a year)" }
         ],
-        afterSymptomsText: "Webasto service before the season is the best way to avoid problems in the cold. Takes 1-2 hours. <br><br>👉 <a href=\"/en/services/webasto-symptoms\" style=\"text-decoration: underline; font-weight: bold;\">Read more about common Webasto symptoms and error codes</a>.",
+        afterSymptomsText: "Webasto service before the season is the best way to avoid problems in the cold. Takes 1-2 hours.",
+        afterSymptomsHtml: "Webasto service before the season is the best way to avoid problems in the cold. Takes 1-2 hours.<br><br>👉 <a href=\"/en/services/webasto-symptoms\" style=\"text-decoration: underline; font-weight: bold;\">Read more about common Webasto symptoms and error codes</a>.",
         servicesListTitle: "Our Webasto services:",
         servicesList: [
             "Heater diagnostics",

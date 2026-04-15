@@ -1135,6 +1135,7 @@ const SERVICES = [
             { icon: "mdi:calendar-check", text: "Плановое ТО (раз в год)" }
         ],
         afterSymptomsText: "Обслуживание Webasto перед сезоном — лучший способ избежать проблем в мороз. Займёт 1–2 часа.",
+        afterSymptomsHtml: "Обслуживание Webasto перед сезоном — лучший способ избежать проблем в мороз. Займёт 1–2 часа.<br><br>👉 <a href=\"/ru/services/webasto-simptomy\" style=\"text-decoration: underline; font-weight: bold;\">Подробнее о типичных симптомах и кодах ошибок Webasto</a>.",
         servicesListTitle: "Наши услуги по Webasto:",
         servicesList: [
             "Диагностика предпускового подогревателя",

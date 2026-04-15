@@ -624,6 +624,8 @@ function buildCrossLinks(links) {
 }
 
 function renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner) {
+  const afterSymptomsHtml = s.afterSymptomsHtml || esc(s.afterSymptomsText || '');
+
   return `
       <!-- Intro -->
       <div class="sd-intro">
@@ -639,7 +641,7 @@ function renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner
         <div class="sd-symptoms__grid">
           ${symptomCards}
         </div>
-        <p class="sd-symptoms__after">${esc(s.afterSymptomsText || '')}</p>
+        <p class="sd-symptoms__after">${afterSymptomsHtml}</p>
       </div>
 
       <!-- Services list -->
