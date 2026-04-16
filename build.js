@@ -759,12 +759,35 @@ function buildNavLinks(navLinks) {
   ).join('\n            ');
 }
 
-function isRuTransmissionParent(cfg, slug) {
-  return cfg.lang === 'ru' && slug === 'remont-kpp';
+const TRANSMISSION_MENU = {
+  ru: {
+    parent: 'remont-kpp',
+    children: [
+      { slug: 'remont-akpp', label: 'Автоматические коробки передач' },
+      { slug: 'remont-mkpp', label: 'Механические коробки передач' },
+    ],
+  },
+  et: {
+    parent: 'kaigukastiremont',
+    children: [
+      { slug: 'automaatkasti-remont', label: 'Automaatkäigukastid' },
+      { slug: 'kasikasti-remont', label: 'Manuaalkäigukastid' },
+    ],
+  },
+};
+
+function getTransmissionMenu(cfg) {
+  return TRANSMISSION_MENU[cfg.lang] || null;
 }
 
-function isRuTransmissionFamily(cfg, slug) {
-  return cfg.lang === 'ru' && ['remont-kpp', 'remont-akpp', 'remont-mkpp'].includes(slug);
+function isTransmissionParent(cfg, slug) {
+  const menu = getTransmissionMenu(cfg);
+  return !!menu && slug === menu.parent;
+}
+
+function isTransmissionFamily(cfg, slug) {
+  const menu = getTransmissionMenu(cfg);
+  return !!menu && [menu.parent, ...menu.children.map(child => child.slug)].includes(slug);
 }
 
 function buildSidebar(services, currentSlug, cfg) {
@@ -780,12 +803,15 @@ function buildSidebar(services, currentSlug, cfg) {
             <div class="sd-sidebar__cat-title">${esc(toSentenceCaseLabel(cat, cfg.lang))}</div>
             <ul class="sd-sidebar__list">`;
     for (const s of items) {
-      if (isRuTransmissionParent(cfg, s.slug)) {
-        const isFamilyPage = isRuTransmissionFamily(cfg, currentSlug);
+      if (isTransmissionParent(cfg, s.slug)) {
+        const menu = getTransmissionMenu(cfg);
+        const isFamilyPage = isTransmissionFamily(cfg, currentSlug);
         const transmissionParentActive = isFamilyPage ? ' active' : '';
         const transmissionItemOpen = isFamilyPage ? ' sd-sidebar__item--open' : '';
-        const akppActive = currentSlug === 'remont-akpp' ? ' active' : '';
-        const mkppActive = currentSlug === 'remont-mkpp' ? ' active' : '';
+        const childrenHtml = menu.children.map(child => {
+          const childActive = currentSlug === child.slug ? ' active' : '';
+          return `<li><a href="${cfg.serviceBase}${esc(child.slug)}" class="sd-sidebar__sublink${childActive}">${esc(child.label)}</a></li>`;
+        }).join('\n                  ');
 
         html += `\n              <li class="sd-sidebar__item sd-sidebar__item--has-children${transmissionItemOpen}">
                 <a href="${cfg.serviceBase}${esc(s.slug)}" class="sd-sidebar__link${transmissionParentActive}">
@@ -794,8 +820,7 @@ function buildSidebar(services, currentSlug, cfg) {
                   <iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>
                 </a>
                 <ul class="sd-sidebar__sublist">
-                  <li><a href="${cfg.serviceBase}remont-akpp" class="sd-sidebar__sublink${akppActive}">Автоматические коробки передач</a></li>
-                  <li><a href="${cfg.serviceBase}remont-mkpp" class="sd-sidebar__sublink${mkppActive}">Механические коробки передач</a></li>
+                  ${childrenHtml}
                 </ul>
               </li>`;
         continue;
@@ -815,7 +840,12 @@ function buildSidebar(services, currentSlug, cfg) {
 
 function buildMegaMenu(services, cfg) {
   return services.map(s => {
-    if (isRuTransmissionParent(cfg, s.slug)) {
+    if (isTransmissionParent(cfg, s.slug)) {
+      const menu = getTransmissionMenu(cfg);
+      const submenuHtml = menu.children.map(child =>
+        `<a href="${cfg.serviceBase}${esc(child.slug)}" class="mega-menu__subitem">${esc(child.label)}</a>`
+      ).join('\n                ');
+
       return `<div class="mega-menu__group">
               <a href="${cfg.serviceBase}${esc(s.slug)}" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="${esc(s.icon)}" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -823,8 +853,7 @@ function buildMegaMenu(services, cfg) {
                 <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
               </a>
               <div class="mega-menu__submenu">
-                <a href="${cfg.serviceBase}remont-akpp" class="mega-menu__subitem">Автоматические коробки передач</a>
-                <a href="${cfg.serviceBase}remont-mkpp" class="mega-menu__subitem">Механические коробки передач</a>
+                ${submenuHtml}
               </div>
             </div>`;
     }
@@ -838,18 +867,20 @@ function buildMegaMenu(services, cfg) {
 
 function buildMobileMegaMenu(services, cfg) {
   return services.map(s => {
-    if (isRuTransmissionParent(cfg, s.slug)) {
+    if (isTransmissionParent(cfg, s.slug)) {
+      const menu = getTransmissionMenu(cfg);
+      const mobileSubmenuHtml = menu.children.map(child =>
+        `<a href="${cfg.serviceBase}${esc(child.slug)}" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>${esc(child.label)}</span>
+              </a>`
+      ).join('\n              ');
+
       return `<div class="mobile-mega-menu__group">
               <a href="${cfg.serviceBase}${esc(s.slug)}" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                 <iconify-icon icon="${esc(s.icon)}" aria-hidden="true"></iconify-icon>
                 <span>${esc(s.navTitle)}</span>
               </a>
-              <a href="${cfg.serviceBase}remont-akpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
-                <span>Автоматические коробки передач</span>
-              </a>
-              <a href="${cfg.serviceBase}remont-mkpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
-                <span>Механические коробки передач</span>
-              </a>
+              ${mobileSubmenuHtml}
             </div>`;
     }
 

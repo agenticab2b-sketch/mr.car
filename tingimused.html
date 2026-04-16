@@ -157,10 +157,17 @@
                         <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Hooldus ja Diagnostika</span>
                     </a>
-                    <a href="/services/kaigukastiremont" class="mega-menu__item">
-                        <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Käigukasti tööd</span>
-                    </a>
+                    <div class="mega-menu__group">
+              <a href="/services/kaigukastiremont" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Käigukasti tööd</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/services/automaatkasti-remont" class="mega-menu__subitem">Automaatkäigukastid</a>
+                <a href="/services/kasikasti-remont" class="mega-menu__subitem">Manuaalkäigukastid</a>
+              </div>
+            </div>
                     <a href="/services/elektritood" class="mega-menu__item">
                         <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
                         <span>Elektritööd</span>
@@ -243,10 +250,18 @@
                     <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
                     <span>Hooldus ja Diagnostika</span>
                 </a>
-                <a href="/services/kaigukastiremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
-                    <span>Käigukasti tööd</span>
-                </a>
+                <div class="mobile-mega-menu__group">
+              <a href="/services/kaigukastiremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                <span>Käigukasti tööd</span>
+              </a>
+              <a href="/services/automaatkasti-remont" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Automaatkäigukastid</span>
+              </a>
+              <a href="/services/kasikasti-remont" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Manuaalkäigukastid</span>
+              </a>
+            </div>
                 <a href="/services/elektritood" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                     <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
                     <span>Elektritööd</span>
