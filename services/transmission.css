@@ -67,7 +67,8 @@
   gap: var(--space-md);
 }
 
-@media (min-width: 768px) {
+/* Keep gearbox choice cards stacked until the desktop navbar returns. */
+@media (min-width: 1151px) {
   .gb-choice-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
