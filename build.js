@@ -790,6 +790,20 @@ function isTransmissionFamily(cfg, slug) {
   return !!menu && [menu.parent, ...menu.children.map(child => child.slug)].includes(slug);
 }
 
+function renderTransmissionSubmenuArrow(cfg) {
+  if (cfg.lang === 'et') {
+    return '<span class="mega-menu__submenu-arrow" aria-hidden="true">&rsaquo;</span>';
+  }
+  return '<iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>';
+}
+
+function renderTransmissionSidebarCaret(cfg) {
+  if (cfg.lang === 'et') {
+    return '<span class="sd-sidebar__caret" aria-hidden="true">&#9662;</span>';
+  }
+  return '<iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>';
+}
+
 function buildSidebar(services, currentSlug, cfg) {
   // Group by category
   const cats = {};
@@ -817,7 +831,7 @@ function buildSidebar(services, currentSlug, cfg) {
                 <a href="${cfg.serviceBase}${esc(s.slug)}" class="sd-sidebar__link${transmissionParentActive}">
                   <iconify-icon icon="${esc(s.icon)}" width="18" height="18" aria-hidden="true"></iconify-icon>
                   <span>${esc(s.navTitle)}</span>
-                  <iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>
+                  ${renderTransmissionSidebarCaret(cfg)}
                 </a>
                 <ul class="sd-sidebar__sublist">
                   ${childrenHtml}
@@ -850,7 +864,7 @@ function buildMegaMenu(services, cfg) {
               <a href="${cfg.serviceBase}${esc(s.slug)}" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="${esc(s.icon)}" width="20" height="20" aria-hidden="true"></iconify-icon>
                 <span>${esc(s.navTitle)}</span>
-                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+                ${renderTransmissionSubmenuArrow(cfg)}
               </a>
               <div class="mega-menu__submenu">
                 ${submenuHtml}
