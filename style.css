@@ -1340,7 +1340,6 @@ h3 {
     --brands-marquee-duration: 68s;
     --brands-marquee-icon-size: clamp(1.8rem, 5vw, 3rem);
     padding: var(--space-xl) 0;
-    border-top: 0;
 }
 
 .brands-marquee--partners .brands-marquee__inner {
@@ -1368,71 +1367,6 @@ h3 {
     to {
         transform: translate3d(-50%, 0, 0);
     }
-}
-
-/* ============================================================
-   8. SERVICES OVERVIEW (Icon Anchors)
-   ============================================================ */
-.services-overview {
-    border-bottom: var(--border);
-}
-
-.services-overview .brutal-grid {
-    grid-template-columns: repeat(7, 1fr);
-}
-
-.service-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-xl) var(--space-md);
-    gap: var(--space-md);
-    /* Increased from sm (8px) to md (16px) */
-    cursor: pointer;
-    transition: background-color var(--transition-fast);
-    text-align: center;
-    /* Ensure text centers */
-    border-right: var(--border);
-}
-
-.service-icon:last-child {
-    border-right: none;
-}
-
-.service-icon--mobile-cta {
-    display: none !important;
-}
-
-.service-icon:hover {
-    background-color: var(--bg-surface);
-}
-
-.service-icon svg,
-.service-icon iconify-icon {
-    width: 48px;
-    height: 48px;
-    stroke: var(--text-muted);
-    stroke-width: 1.5;
-    fill: none;
-    color: var(--text-muted);
-    transition: stroke var(--transition-fast), color var(--transition-fast);
-}
-
-.service-icon:hover svg,
-.service-icon:hover iconify-icon {
-    stroke: var(--accent-primary);
-    color: var(--accent-primary);
-}
-
-.service-icon__label {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    /* F-07 fix: raised from 0.625rem (10px → 11px minimum) */
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-dimmed);
-    text-align: center;
 }
 
 /* ============================================================
@@ -2432,10 +2366,6 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .services-overview .brutal-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .about-grid {
         grid-template-columns: 1fr;
     }
@@ -2474,6 +2404,30 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
 
     .pricing-card .btn {
         align-self: flex-end;
+    }
+
+    .services-section__header {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+    }
+
+    .services-section__header .section-header {
+        order: 1;
+        width: 100%;
+    }
+
+    .services__rating {
+        order: 0;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .services__rating-link {
+        box-sizing: border-box;
+        width: 100%;
+        justify-content: flex-end !important;
+        padding-right: var(--container-padding, 16px);
     }
 }
 
@@ -2584,26 +2538,6 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
         justify-content: flex-end;
     }
 
-    /* P-04: Services overview — 2 cols on mobile (not 3, too cramped) */
-    .services-overview .brutal-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-icon--mobile-cta {
-        display: flex !important;
-        background-color: var(--bg-surface);
-        /* Highlights the CTA cell */
-    }
-
-    .service-icon--mobile-cta iconify-icon {
-        color: var(--accent-primary) !important;
-    }
-
-    .service-icon--mobile-cta .service-icon__label {
-        color: var(--text-main);
-        font-weight: 700;
-    }
-
     /* P-03: About features — single column on mobile */
     .about__features {
         grid-template-columns: 1fr;
@@ -2613,22 +2547,6 @@ a[href^="mailto:"]:not(.navbar__phone):hover {
     .mobile-menu__link {
         font-family: var(--font-body);
         font-weight: 500;
-    }
-
-    /* Refine service icons on mobile */
-    .service-icon {
-        padding: var(--space-lg);
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .service-icon svg,
-    .service-icon iconify-icon {
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px;
-        min-height: 40px;
-        flex-shrink: 0;
     }
 
     .service-card__number {
