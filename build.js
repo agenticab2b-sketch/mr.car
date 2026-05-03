@@ -423,9 +423,9 @@ function getInPageNavLabel(lang) {
 }
 
 function getPricingLabels(lang) {
-  if (lang === 'ru') return { service: 'Услуга', price: 'Стоимость' };
-  if (lang === 'et') return { service: 'Teenus', price: 'Hind' };
-  return { service: 'Service', price: 'Price' };
+  if (lang === 'ru') return { service: 'Услуга', price: 'Стоимость', price2: 'Под ключ от' };
+  if (lang === 'et') return { service: 'Teenus', price: 'Hind', price2: 'Koos varuosadega alates' };
+  return { service: 'Service', price: 'Price', price2: 'All-in from' };
 }
 
 function buildHeroStats(stats) {
@@ -547,11 +547,12 @@ function buildProcessSteps(steps) {
       </div>`;
 }
 
-function buildPricingRows(rows, labels) {
+function buildPricingRows(rows, labels, hasSecondPrice = false) {
   if (!Array.isArray(rows) || rows.length === 0) return '';
   return rows.map(row => `<tr>
             <td data-label="${esc(labels.service)}">${esc(row.service || '')}</td>
             <td data-label="${esc(labels.price)}" class="gb-price">${esc(row.price || '')}</td>
+            ${hasSecondPrice ? `<td data-label="${esc(labels.price2 || '')}">${esc(row.price2 || '')}</td>` : ''}
           </tr>`).join('');
 }
 
@@ -678,7 +679,8 @@ function renderDeepDiveContent(s, cfg) {
   const diagnosticsChecklistHtml = buildChecklist(s.diagnosticsChecklist || []);
   const serviceCardsHtml = buildServiceCards(s.serviceCards || []);
   const processStepsHtml = buildProcessSteps(s.processSteps || []);
-  const pricingRowsHtml = buildPricingRows(s.pricingRows || [], pricingLabels);
+  const hasSecondPrice = Array.isArray(s.pricingRows) && s.pricingRows.some(row => row.price2);
+  const pricingRowsHtml = buildPricingRows(s.pricingRows || [], pricingLabels, hasSecondPrice);
   const reviewCardsHtml = buildReviewCards(s.reviews || []);
   const trustItemsHtml = buildTrustItems(s.trustItems || []);
   const faqHtml = buildFaqItems(s.faqItems || [], s.faqTitle || '');
@@ -735,7 +737,7 @@ function renderDeepDiveContent(s, cfg) {
       ${pricingRowsHtml ? `<section id="pricing">
         <h3 class="gb-section-title">${esc(s.pricingTitle || '')}</h3>
         <table class="gb-pricing-table">
-          <thead><tr><th>${esc(pricingLabels.service)}</th><th>${esc(pricingLabels.price)}</th></tr></thead>
+          <thead><tr><th>${esc(pricingLabels.service)}</th><th>${esc(pricingLabels.price)}</th>${hasSecondPrice ? `<th>${esc(pricingLabels.price2 || '')}</th>` : ''}</tr></thead>
           <tbody>
             ${pricingRowsHtml}
           </tbody>
@@ -1375,6 +1377,9 @@ function renderPage(s, services, cfg, articleDates = {}) {
   const breadcrumbsHtml = buildBreadcrumbs(s, cfg);
   const hreflangHtml = buildHreflang(s, cfg);
   const jsonLd = buildJsonLd(s, cfg, articleDates);
+  const extraStylesHtml = Array.isArray(s.extraStyles)
+    ? s.extraStyles.map(href => `  <link rel="stylesheet" href="${esc(href)}">`).join('\n')
+    : '';
   const symptomCards = buildSymptomCards(s.symptoms || []);
   const servicesListHtml = buildServicesList(s.servicesList || []);
   const footerHtml = buildFooter(cfg);
@@ -1481,7 +1486,7 @@ ${jsonLd}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/style.css?v=${GLOBAL_STYLE_VERSION}">
+  <link rel="stylesheet" href="/style.css?v=${GLOBAL_STYLE_VERSION}">${extraStylesHtml ? `\n${extraStylesHtml}` : ''}
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -1492,7 +1497,7 @@ ${jsonLd}
 
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
-<body>
+<body${s.bodyClass ? ` class="${esc(s.bodyClass)}"` : ''}>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W48VVTPC"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
