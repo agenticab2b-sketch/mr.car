@@ -109,6 +109,38 @@ body.service-disc-brakes-page :is(.gb-rating-summary, .gb-pricing-table, .gb-rev
   margin: 0;
 }
 
+body.service-disc-brakes-page .gb-crosslink {
+  grid-template-columns: 32px minmax(0, 1fr);
+  row-gap: var(--space-xs);
+}
+
+body.service-disc-brakes-page .gb-crosslink > iconify-icon {
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+
+body.service-disc-brakes-page .gb-crosslink > div {
+  grid-column: 2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+body.service-disc-brakes-page .gb-crosslink__title {
+  margin-top: 0;
+  overflow-wrap: anywhere;
+}
+
+body.service-disc-brakes-page .gb-crosslink > div > div:last-child {
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.55;
+  text-transform: none;
+}
+
 body.service-disc-brakes-page .gb-checklist {
   margin-top: var(--service-title-space);
 }
