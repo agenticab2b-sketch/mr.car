@@ -39,8 +39,8 @@ body.service-brakes-page .gb-choice-card--drum .gb-choice-card__icon {
   color: var(--accent-primary);
 }
 
-/* Disc brake deep page follows the АКПП/MКПП service rhythm. */
-body.service-disc-brakes-page {
+/* Brake deep pages follow the АКПП/MКПП service rhythm. */
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) {
   --service-flow-space: var(--space-2xl);
   --service-flow-space-tight: var(--space-xl);
   --service-title-space: var(--space-lg);
@@ -49,77 +49,77 @@ body.service-disc-brakes-page {
   --service-panel-pad-wide: var(--space-2xl);
 }
 
-body.service-disc-brakes-page .sd-main {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-main {
   gap: var(--service-flow-space);
   padding-top: var(--service-flow-space);
   padding-bottom: var(--service-flow-space);
 }
 
-body.service-disc-brakes-page .sd-content {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-content {
   gap: var(--service-flow-space);
 }
 
-body.service-disc-brakes-page .sd-content > :where(section, article, div, nav) {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-content > :where(section, article, div, nav) {
   margin-block: 0;
 }
 
-body.service-disc-brakes-page .sd-intro > h2,
-body.service-disc-brakes-page .gb-section-title {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-intro > h2,
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-section-title {
   margin: 0 0 var(--service-title-space);
 }
 
-body.service-disc-brakes-page .gb-section-text,
-body.service-disc-brakes-page .gb-section-text p {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-section-text,
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-section-text p {
   margin: 0 0 var(--service-copy-space);
 }
 
-body.service-disc-brakes-page .gb-section-text:last-child,
-body.service-disc-brakes-page .gb-section-text p:last-child {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-section-text:last-child,
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-section-text p:last-child {
   margin-bottom: 0;
 }
 
-body.service-disc-brakes-page :is(.gb-local-nav, .gb-page-section, .gb-hero-stats, .gb-urgency-block, .gb-diagnostics-card, .gb-cta-block, .brands-marquee) {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) :is(.gb-local-nav, .gb-page-section, .gb-hero-stats, .gb-urgency-block, .gb-diagnostics-card, .gb-cta-block, .brands-marquee) {
   margin-bottom: 0;
 }
 
-body.service-disc-brakes-page .gb-local-nav {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-local-nav {
   gap: var(--space-xs);
   padding-top: 0;
   padding-bottom: var(--space-md);
 }
 
-body.service-disc-brakes-page .brands-marquee {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .brands-marquee {
   padding-top: var(--service-title-space);
   padding-bottom: var(--service-title-space);
 }
 
-body.service-disc-brakes-page :is(.gb-rating-summary, .gb-crosslink) {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) :is(.gb-rating-summary, .gb-crosslink) {
   padding: var(--service-panel-pad) var(--service-panel-pad-wide);
 }
 
-body.service-disc-brakes-page :is(.gb-diagnostics-card, .gb-cta-block) {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) :is(.gb-diagnostics-card, .gb-cta-block) {
   padding: var(--service-panel-pad-wide);
 }
 
-body.service-disc-brakes-page :is(.gb-symptom-card, .gb-type-card, .gb-trust-item, .gb-review-card, .gb-service-card, .gb-risk-stage, .gb-step) {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) :is(.gb-symptom-card, .gb-type-card, .gb-trust-item, .gb-review-card, .gb-service-card, .gb-risk-stage, .gb-step) {
   padding: var(--service-panel-pad) var(--space-lg);
 }
 
-body.service-disc-brakes-page :is(.gb-rating-summary, .gb-pricing-table, .gb-reviews-grid, .gb-trust, .gb-faq, .gb-crosslink) {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) :is(.gb-rating-summary, .gb-pricing-table, .gb-reviews-grid, .gb-trust, .gb-faq, .gb-crosslink) {
   margin: 0;
 }
 
-body.service-disc-brakes-page .gb-crosslink {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-crosslink {
   grid-template-columns: 32px minmax(0, 1fr);
   row-gap: var(--space-xs);
 }
 
-body.service-disc-brakes-page .gb-crosslink > iconify-icon {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-crosslink > iconify-icon {
   grid-column: 1;
   grid-row: 1 / -1;
 }
 
-body.service-disc-brakes-page .gb-crosslink > div {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-crosslink > div {
   grid-column: 2;
   min-width: 0;
   display: flex;
@@ -127,34 +127,36 @@ body.service-disc-brakes-page .gb-crosslink > div {
   gap: 0.35rem;
 }
 
-body.service-disc-brakes-page .gb-crosslink__title {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-crosslink__title {
   margin-top: 0;
   overflow-wrap: anywhere;
 }
 
-body.service-disc-brakes-page .gb-crosslink > div > div:last-child {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-crosslink > div > div:last-child,
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-crosslink > div > p {
   color: var(--text-muted);
   font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 400;
   line-height: 1.55;
   text-transform: none;
+  margin: 0;
 }
 
-body.service-disc-brakes-page .gb-checklist {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-checklist {
   margin-top: var(--service-title-space);
 }
 
-body.service-disc-brakes-page .gb-review-card__author {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-review-card__author {
   margin-top: var(--space-sm);
   padding-top: var(--space-sm);
 }
 
-body.service-disc-brakes-page .gb-pricing-note {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-pricing-note {
   margin-top: var(--space-md);
 }
 
-body.service-disc-brakes-page .gb-lower-section--faq .gb-faq {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-lower-section--faq .gb-faq {
   margin-bottom: 0;
   gap: 1px;
   background: var(--border-grid);
@@ -162,13 +164,13 @@ body.service-disc-brakes-page .gb-lower-section--faq .gb-faq {
   border-top: none;
 }
 
-body.service-disc-brakes-page .gb-lower-section--faq .gb-faq-item {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-lower-section--faq .gb-faq-item {
   margin-bottom: 0;
   border: none;
   background: var(--bg-main);
 }
 
-body.service-disc-brakes-page .gb-lower-section--cta {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-lower-section--cta {
   border: 1px solid var(--border-grid);
   border-left: 4px solid var(--accent-primary);
   background:
@@ -178,18 +180,18 @@ body.service-disc-brakes-page .gb-lower-section--cta {
   box-shadow: none;
 }
 
-body.service-disc-brakes-page .gb-lower-section--cta .gb-cta-block__desc {
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-lower-section--cta .gb-cta-block__desc {
   color: var(--text-muted);
 }
 
 @media (max-width: 900px) {
-  body.service-disc-brakes-page .sd-main {
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-main {
     gap: var(--service-flow-space-tight);
   }
 }
 
 @media (max-width: 640px) {
-  body.service-disc-brakes-page {
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) {
     --service-flow-space: var(--space-xl);
     --service-flow-space-tight: var(--space-lg);
     --service-title-space: var(--space-md);
@@ -198,21 +200,21 @@ body.service-disc-brakes-page .gb-lower-section--cta .gb-cta-block__desc {
     --service-panel-pad-wide: var(--space-lg);
   }
 
-  body.service-disc-brakes-page .sd-sidebar-mobile {
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-sidebar-mobile {
     padding-top: var(--space-md);
     padding-bottom: var(--space-md);
   }
 
-  body.service-disc-brakes-page .sd-main {
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-main {
     padding-top: var(--service-flow-space);
     padding-bottom: var(--service-flow-space);
   }
 
-  body.service-disc-brakes-page .gb-local-nav {
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-local-nav {
     padding-bottom: var(--space-sm);
   }
 
-  body.service-disc-brakes-page .gb-local-nav__pill {
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-local-nav__pill {
     padding: 0.72rem 0.9rem;
   }
 }
