@@ -168,6 +168,10 @@ body.service-brakes-page .gb-hero-stat--text-metric .gb-hero-stat__number {
   letter-spacing: 0;
 }
 
+body.service-drum-brakes-page #types .gb-types-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 body.service-brakes-page .gb-crosslink {
   grid-template-columns: 32px minmax(0, 1fr);
   row-gap: var(--space-xs);
@@ -247,6 +251,10 @@ body.service-brakes-page .gb-lower-section--cta .gb-cta-block__desc {
   body.service-brakes-page .sd-main {
     gap: var(--service-flow-space-tight);
   }
+
+  body.service-drum-brakes-page #types .gb-types-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
@@ -277,4 +285,7 @@ body.service-brakes-page .gb-lower-section--cta .gb-cta-block__desc {
     padding: 0.72rem 0.9rem;
   }
 
+  body.service-drum-brakes-page #types .gb-types-grid {
+    grid-template-columns: 1fr;
+  }
 }
