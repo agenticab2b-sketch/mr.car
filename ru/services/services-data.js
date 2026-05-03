@@ -1331,7 +1331,7 @@ const SERVICES = [
         icon: "mdi:wrench",
         heroTitle: "Общий авторемонт",
         heroLead: "Комплексный ремонт автомобилей любых марок. От мелких неисправностей до капитального ремонта.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        heroImage: "/pics/general-repair-hero.webp",
         introTitle: "Авторемонт в Mr.Car",
         introText: [
             "Mr.Car — это полноценный автосервис, где можно решить любую проблему с автомобилем. От замены лампочки до капитального ремонта — всё под одной крышей.",
