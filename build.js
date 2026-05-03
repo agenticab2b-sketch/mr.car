@@ -58,6 +58,7 @@ const SKIP_FILES = new Set([
   'kaigukastiremont',
   'remont-kpp',
   'tormoznaya-sistema',
+  'diskovye-tormoza',
   'transmission-repair',
   'automaatkasti-remont',
   'remont-akpp',
@@ -1905,6 +1906,7 @@ const STATIC_SERVICE_SITEMAP_PATHS = {
     '/ru/services/remont-mkpp',
     '/ru/services/remont-akpp',
     '/ru/services/tormoznaya-sistema',
+    '/ru/services/diskovye-tormoza',
     '/ru/services/webasto-simptomy'
   ],
   en: [
