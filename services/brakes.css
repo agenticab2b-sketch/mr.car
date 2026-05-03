@@ -1,0 +1,40 @@
+/* brakes.css — scoped additions for the RU brake parent page */
+
+body.service-brakes-page .sd-cta {
+  background:
+    linear-gradient(180deg, rgba(26, 33, 51, 0.96) 0%, rgba(17, 22, 37, 1) 100%);
+}
+
+body.service-brakes-page .sd-cta__overlay {
+  background: linear-gradient(135deg, rgba(255, 176, 0, 0.045) 0%, rgba(255, 176, 0, 0.01) 34%, transparent 72%);
+}
+
+body.service-brakes-page .location-grid > * {
+  background-color: var(--bg-surface);
+}
+
+body.service-brakes-page .location__info {
+  background:
+    linear-gradient(180deg, rgba(26, 33, 51, 0.98) 0%, rgba(17, 22, 37, 0.96) 100%);
+}
+
+body.service-brakes-page .contact__form {
+  background:
+    linear-gradient(180deg, rgba(17, 22, 37, 0.98) 0%, rgba(17, 22, 37, 0.92) 100%) !important;
+  border: 1px solid var(--border-grid) !important;
+  box-shadow: none;
+}
+
+body.service-brakes-page .location__map {
+  background-color: var(--bg-main);
+}
+
+body.service-brakes-page .gb-choice-card--disc .gb-choice-card__photo,
+body.service-brakes-page .gb-choice-card--drum .gb-choice-card__photo {
+  background-position: center;
+}
+
+body.service-brakes-page .gb-choice-card--disc .gb-choice-card__icon,
+body.service-brakes-page .gb-choice-card--drum .gb-choice-card__icon {
+  color: var(--accent-primary);
+}

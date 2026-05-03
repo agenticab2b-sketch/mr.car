@@ -36,6 +36,7 @@ const SERVICE_NAV_ORDER = [
   'autoremont',
   'summutid-keevitus',
   'veermik-pidurid',
+  'pidurisusteemi-hooldus-ja-remont',
   'rehvitood',
   'hooldus-diagnostika',
   'kaigukastiremont',
@@ -56,6 +57,7 @@ const SKIP_FILES = new Set([
   'webasto-symptoms',
   'kaigukastiremont',
   'remont-kpp',
+  'tormoznaya-sistema',
   'transmission-repair',
   'automaatkasti-remont',
   'remont-akpp',
@@ -777,6 +779,16 @@ const TRANSMISSION_MENU = {
   },
 };
 
+const BRAKE_MENU = {
+  ru: {
+    parent: 'tormoznaya-sistema',
+    children: [
+      { slug: 'diskovye-tormoza', label: 'Дисковые тормоза' },
+      { slug: 'barabannye-tormoza', label: 'Барабанные тормоза' },
+    ],
+  },
+};
+
 function getTransmissionMenu(cfg) {
   return TRANSMISSION_MENU[cfg.lang] || null;
 }
@@ -789,6 +801,15 @@ function isTransmissionParent(cfg, slug) {
 function isTransmissionFamily(cfg, slug) {
   const menu = getTransmissionMenu(cfg);
   return !!menu && [menu.parent, ...menu.children.map(child => child.slug)].includes(slug);
+}
+
+function getBrakeMenu(cfg) {
+  return BRAKE_MENU[cfg.lang] || null;
+}
+
+function isBrakeParent(cfg, slug) {
+  const menu = getBrakeMenu(cfg);
+  return !!menu && slug === menu.parent;
 }
 
 function renderTransmissionSubmenuArrow(cfg) {
@@ -855,6 +876,24 @@ function buildSidebar(services, currentSlug, cfg) {
 
 function buildMegaMenu(services, cfg) {
   return services.map(s => {
+    if (isBrakeParent(cfg, s.slug)) {
+      const menu = getBrakeMenu(cfg);
+      const submenuHtml = menu.children.map(child =>
+        `<a href="${cfg.serviceBase}${esc(child.slug)}" class="mega-menu__subitem">${esc(child.label)}</a>`
+      ).join('\n                ');
+
+      return `<div class="mega-menu__group">
+              <a href="${cfg.serviceBase}${esc(s.slug)}" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="${esc(s.icon)}" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>${esc(s.navTitle)}</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                ${submenuHtml}
+              </div>
+            </div>`;
+    }
+
     if (isTransmissionParent(cfg, s.slug)) {
       const menu = getTransmissionMenu(cfg);
       const submenuHtml = menu.children.map(child =>
@@ -882,6 +921,23 @@ function buildMegaMenu(services, cfg) {
 
 function buildMobileMegaMenu(services, cfg) {
   return services.map(s => {
+    if (isBrakeParent(cfg, s.slug)) {
+      const menu = getBrakeMenu(cfg);
+      const mobileSubmenuHtml = menu.children.map(child =>
+        `<a href="${cfg.serviceBase}${esc(child.slug)}" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>${esc(child.label)}</span>
+              </a>`
+      ).join('\n              ');
+
+      return `<div class="mobile-mega-menu__group">
+              <a href="${cfg.serviceBase}${esc(s.slug)}" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="${esc(s.icon)}" aria-hidden="true"></iconify-icon>
+                <span>${esc(s.navTitle)}</span>
+              </a>
+              ${mobileSubmenuHtml}
+            </div>`;
+    }
+
     if (isTransmissionParent(cfg, s.slug)) {
       const menu = getTransmissionMenu(cfg);
       const mobileSubmenuHtml = menu.children.map(child =>
@@ -904,6 +960,38 @@ function buildMobileMegaMenu(services, cfg) {
               <span>${esc(s.navTitle)}</span>
             </a>`;
   }).join('\n            ');
+}
+
+function buildBreadcrumbs(s, cfg) {
+  const home = cfg.lang === 'ru'
+    ? { href: '/ru', label: 'Главная' }
+    : cfg.lang === 'en'
+      ? { href: '/en', label: 'Home' }
+      : { href: '/', label: 'Avaleht' };
+  const services = cfg.lang === 'ru'
+    ? { href: '/ru/uslugi', label: 'Услуги' }
+    : cfg.lang === 'en'
+      ? { href: '/en/services', label: 'Services' }
+      : { href: '/teenused', label: 'Teenused' };
+
+  return `<nav aria-label="Breadcrumb" style="margin-top: var(--space-md); margin-bottom: var(--space-md);">
+          <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+              <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a href="${esc(home.href)}" class="breadcrumbs__link" itemprop="item"><span itemprop="name">${esc(home.label)}</span></a>
+                  <meta itemprop="position" content="1" />
+              </li>
+              <li class="breadcrumbs__item"><span class="breadcrumbs__separator">&rsaquo;</span></li>
+              <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a href="${esc(services.href)}" class="breadcrumbs__link" itemprop="item"><span itemprop="name">${esc(services.label)}</span></a>
+                  <meta itemprop="position" content="2" />
+              </li>
+              <li class="breadcrumbs__item"><span class="breadcrumbs__separator">&rsaquo;</span></li>
+              <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <span itemprop="name">${esc(s.heroTitle)}</span>
+                  <meta itemprop="position" content="3" />
+              </li>
+          </ol>
+      </nav>`;
 }
 
 function buildFooter(cfg) {
@@ -1282,6 +1370,7 @@ function renderPage(s, services, cfg, articleDates = {}) {
   const megaMenuHtml = buildMegaMenu(services, cfg);
   const mobileMegaMenu = buildMobileMegaMenu(services, cfg);
   const navLinksHtml = buildNavLinks(cfg.navLinks);
+  const breadcrumbsHtml = buildBreadcrumbs(s, cfg);
   const hreflangHtml = buildHreflang(s, cfg);
   const jsonLd = buildJsonLd(s, cfg, articleDates);
   const symptomCards = buildSymptomCards(s.symptoms || []);
@@ -1456,6 +1545,7 @@ ${jsonLd}
     <div class="sd-hero__content site-container">
       <span class="sd-hero__meta">${esc(cfg.heroMetaLabel)}</span>
       <h1 class="sd-hero__title">${esc(s.heroTitle)}</h1>
+      ${breadcrumbsHtml}
       <p class="sd-hero__lead">${esc(s.heroLead)}</p>
       <a href="#request" class="btn btn-primary sd-hero__cta">${esc(cfg.formSubmit)} <span class="arrow">↗</span></a>
     </div>
@@ -1814,6 +1904,7 @@ const STATIC_SERVICE_SITEMAP_PATHS = {
     '/ru/services/remont-kpp',
     '/ru/services/remont-mkpp',
     '/ru/services/remont-akpp',
+    '/ru/services/tormoznaya-sistema',
     '/ru/services/webasto-simptomy'
   ],
   en: [

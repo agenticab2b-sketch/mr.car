@@ -218,6 +218,16 @@
         "type": 301
       },
       {
+        "source": "/ru/services/hodovaya-tormoza",
+        "destination": "/ru/services/tormoznaya-sistema",
+        "type": 301
+      },
+      {
+        "source": "/ru/services/hodovaya-tormoza.html",
+        "destination": "/ru/services/tormoznaya-sistema",
+        "type": 301
+      },
+      {
         "source": "/ru/galereya.html",
         "destination": "/ru/galereya",
         "type": 301
