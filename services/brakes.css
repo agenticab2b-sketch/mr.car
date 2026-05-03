@@ -109,6 +109,15 @@ body:is(.service-disc-brakes-page, .service-drum-brakes-page) :is(.gb-rating-sum
   margin: 0;
 }
 
+body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-hero-stat--text-metric .gb-hero-stat__number {
+  display: inline-block;
+  max-width: 100%;
+  font-size: clamp(2.6rem, 3.8vw, 4.6rem);
+  line-height: 0.95;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
 body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-crosslink {
   grid-template-columns: 32px minmax(0, 1fr);
   row-gap: var(--space-xs);
@@ -216,5 +225,9 @@ body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-lower-section-
 
   body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-local-nav__pill {
     padding: 0.72rem 0.9rem;
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-hero-stat--text-metric .gb-hero-stat__number {
+    font-size: clamp(2.25rem, 13vw, 3.35rem);
   }
 }
