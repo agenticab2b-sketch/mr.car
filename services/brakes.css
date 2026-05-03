@@ -66,16 +66,18 @@ body.service-brakes-page {
 
   body.service-brakes-page .sd-hero__content {
     gap: var(--space-md);
-    max-width: 660px;
+    max-width: min(980px, 78vw);
     padding-top: 144px;
   }
 
   body.service-brakes-page .sd-hero__title {
-    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    max-width: 980px;
+    font-size: clamp(2.25rem, 4.1vw, 3.75rem);
+    line-height: 1;
   }
 
   body.service-brakes-page .sd-hero__lead {
-    max-width: 540px;
+    max-width: 680px;
     font-size: 0.95rem;
     line-height: 1.6;
   }

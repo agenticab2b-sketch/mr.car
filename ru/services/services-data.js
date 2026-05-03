@@ -787,7 +787,7 @@ const SERVICES = [
         icon: "mdi:car-lifted-pickup",
         templateVariant: "service-deep-dive-v2",
         bodyClass: "service-brakes-page service-suspension-page",
-        extraStyles: ["/services/transmission.css?v=6", "/services/brakes.css?v=10"],
+        extraStyles: ["/services/transmission.css?v=6", "/services/brakes.css?v=11"],
         heroTitle: "Диагностика и ремонт подвески в Таллине",
         heroLead: "Стук при проезде ям, вибрация руля, неравномерный износ шин — диагностируем и устраняем любые неисправности ходовой части. Замена амортизаторов, рычагов, шаровых опор, сайлентблоков, ступичных подшипников. 3D сход-развал. Гарантия 12 месяцев. Kopli 82a, Таллин.",
         heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
