@@ -17,7 +17,7 @@ const SERVICES = [
         icon: "mdi:wrench",
         heroTitle: "General Car Repair",
         heroLead: "Comprehensive repair for all car makes. From minor issues to major overhauls.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        heroImage: "/pics/general-repair-hero.webp",
         introTitle: "Car Repair at Mr.Car",
         introText: [
             "Mr.Car is a full-service auto repair shop where any car problem can be solved. From bulb replacements to engine overhauls — all under one roof.",

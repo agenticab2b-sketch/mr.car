@@ -17,7 +17,7 @@ const SERVICES = [
         icon: "mdi:wrench",
         heroTitle: "Üldine autoremont",
         heroLead: "Igat marki autode kompleksremont. Väiksematest riketest kapitaalremondini.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        heroImage: "/pics/general-repair-hero.webp",
         introTitle: "Autoremont Mr.Car-is",
         introText: [
             "Mr.Car on täisteenindusega autoteenindus, kus saab lahendada mis tahes autorikke. Pirnide vahetusest kapitaalremondini — kõik ühe katuse all.",
