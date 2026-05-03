@@ -95,3 +95,10 @@ Record only decisions that affect future work.
 - Why: the live project already deploys through Firebase, and allowing Vercel prompts or setup creates unnecessary confusion and the wrong execution path for Antigravity and other agents.
 - Approved by: owner
 - Related task: remove Vercel prompts from project workflow
+
+## 2026-05-03 - Replace mixed chassis/brakes with RU brake-system pages, staged
+
+- Decision: replace the Russian mixed suspension/chassis + brakes page with a Russian brake-system page cluster, staged one page at a time. First create only the Russian parent page `Ремонт и обслуживание тормозных систем в Таллине` at `/ru/services/tormoznaya-sistema`, replacing/redirecting `/ru/services/hodovaya-tormoza`. The parent page must immediately link to the reserved future child URLs `/ru/services/diskovye-tormoza` and `/ru/services/barabannye-tormoza`, but the child page files are created later by separate owner instruction. ET `/services/veermik-pidurid` and EN `/en/services/chassis-brakes` stay unchanged until the translation phase.
+- Why: brakes and suspension should not remain mixed long term, but creating each page separately prevents the implementation model from widening scope and creating unreviewed pages. The owner wants the parent page, top navigation, and homepage path prepared for immediate child-page rollout.
+- Approved by: owner
+- Related task: `project-control/tasks/2026-05-03-openclaw-brake-cluster.md`
