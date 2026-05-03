@@ -185,7 +185,7 @@ const SERVICES = [
         icon: "mdi:tire",
         heroTitle: "Tire Services",
         heroLead: "Seasonal tire change, balancing, puncture repair. Fast and correct — no queues.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        heroImage: "/pics/tire-service-hero.webp",
         introTitle: "Tire Services at Mr.Car",
         introText: [
             "Tire work seems simple but requires precision. Incorrect balancing leads to vibrations, bearing wear, and uncomfortable driving.",
@@ -346,7 +346,7 @@ const SERVICES = [
         icon: "mdi:lightning-bolt",
         heroTitle: "Auto Electrical Repair",
         heroLead: "Current leaks, short circuits, electronic errors — we find and fix without guesswork.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        heroImage: "/pics/electrical-repair-hero.webp",
         introTitle: "Auto Electrical Repair at Mr.Car",
         introText: [
             "Electrical failures are among the trickiest. Current leaks, short circuits, or intermittent errors can disable vehicle systems. We find the root cause, not just change parts blindly.",
@@ -399,7 +399,7 @@ const SERVICES = [
         icon: "mdi:engine",
         heroTitle: "Engine Repair & Overhaul",
         heroLead: "Major engine overhaul from micro-cracks to full rebuild. Precision machining up to 0.01 mm.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        heroImage: "/pics/engine-repair-hero.webp",
         introTitle: "Engine Repair Services at Mr.Car",
         introText: [
             "The engine is the heart of your car. Oil consumption, knocking sounds, or loss of compression are signals that the motor needs professional help. We don't diagnose 'by ear' — we use endoscopy and compression testing.",
@@ -458,7 +458,7 @@ const SERVICES = [
         icon: "mdi:oil",
         heroTitle: "Oil & Filter Change",
         heroLead: "Quick oil change according to manufacturer specs with correct matching. From €45 including filter.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        heroImage: "/pics/oil-change-hero.webp",
         introTitle: "Oil Change at Mr.Car",
         introText: [
             "An oil change is a basic yet critically important procedure. Old oil loses its protective properties and starts to degrade the engine from the inside.",

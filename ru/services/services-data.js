@@ -16,7 +16,7 @@ const SERVICES = [
         templateVariant: "service-deep-dive-v2",
         heroTitle: "Автоэлектрик в Таллинне",
         heroLead: "Диагностика и ремонт автоэлектрики: поиск утечки тока, ремонт проводки, генератора, стартера, CAN/LIN-шин и электронных систем. Ищем причину — не меняем детали наугад.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        heroImage: "/pics/electrical-repair-hero.webp",
         heroStats: [
             { value: "CAN / LIN", label: "Диагностика электронных шин и блоков" },
             { value: "Fluke + осциллограф", label: "Профессиональные измерительные инструменты" },
@@ -331,7 +331,7 @@ const SERVICES = [
         templateVariant: "service-deep-dive-v2",
         heroTitle: "Ремонт двигателя",
         heroLead: "Диагностика и ремонт бензиновых, дизельных и гибридных ДВС в Таллинне: от Check Engine и перегрева до ГРМ, ГБЦ и сложных моторных работ.",
-        heroImage: "/pics/hero-source.jpg",
+        heroImage: "/pics/engine-repair-hero.webp",
         heroStats: [
             { value: "OBD + осмотр", label: "Компьютерная и базовая механическая диагностика" },
             { value: "Бензин / дизель / гибрид", label: "Работаем с разными типами двигателей" },
@@ -1001,7 +1001,7 @@ const SERVICES = [
         icon: "mdi:tire",
         heroTitle: "Шиномонтаж",
         heroLead: "Сезонная замена, балансировка, ремонт проколов. Быстро и аккуратно — без очередей.",
-        heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1400&q=80",
+        heroImage: "/pics/tire-service-hero.webp",
         introTitle: "Шиномонтаж в Mr.Car",
         introText: [
             "Шиномонтаж — услуга, которая кажется простой, но требует точности. Неправильная балансировка — это вибрации, износ подшипников и дискомфорт при вождении.",
@@ -1111,7 +1111,7 @@ const SERVICES = [
         icon: "mdi:oil",
         heroTitle: "Замена масла и фильтров",
         heroLead: "Быстрая замена масла с подбором по допускам производителя. От €45 с фильтром.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        heroImage: "/pics/oil-change-hero.webp",
         introTitle: "Замена масла в Mr.Car",
         introText: [
             "Замена масла — базовая, но критически важная процедура. Старое масло теряет свои защитные свойства и начинает разрушать двигатель изнутри.",

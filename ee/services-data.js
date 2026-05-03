@@ -185,7 +185,7 @@ const SERVICES = [
         icon: "mdi:tire",
         heroTitle: "Rehvitööd",
         heroLead: "Hooajaline rehvivahetus, tasakaalustamine, torkeaukude remont. Kiiresti ja korrektselt — järjekordadeta.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        heroImage: "/pics/tire-service-hero.webp",
         introTitle: "Rehvitööd Mr.Car-is",
         introText: [
             "Rehvitööd tunduvad lihtsad, kuid nõuavad täpsust. Vale tasakaalustamine põhjustab vibratsiooni, laagrite kulumist ja ebamugavat sõitu.",
@@ -346,7 +346,7 @@ const SERVICES = [
         icon: "mdi:lightning-bolt",
         heroTitle: "Autoelekter",
         heroLead: "Voolulekked, lühised, elektroonika tõrked — leiame ja kõrvaldame ilma arvamiseta.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        heroImage: "/pics/electrical-repair-hero.webp",
         introTitle: "Autoelektri remont Mr.Car-is",
         introText: [
             "Elektrilised rikked on ühed kavalamaid. Vooluleke, lühis või ujuv viga võib põhjustada süsteemide täieliku rikke. Leiame probleemi algpõhjuse, mitte ei vaheta osi arvamise alusel.",
@@ -399,7 +399,7 @@ const SERVICES = [
         icon: "mdi:engine",
         heroTitle: "Mootori remont",
         heroLead: "Mootori kapitaalremont mikropragudest täieliku lahtivõtmiseni. Mehhaaniline töötlus 0,01 mm täpsusega.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        heroImage: "/pics/engine-repair-hero.webp",
         introTitle: "Mootori remont Mr.Car-is",
         introText: [
             "Mootor on auto süda. Õlikulu, koputused, kompressiooni langus — kõik need on märgid, et mootor vajab professionaalset abi. Me ei diagnoosi kuulmise järgi — kasutame endoskoopiat ja kompressiomeetriat.",
@@ -458,7 +458,7 @@ const SERVICES = [
         icon: "mdi:oil",
         heroTitle: "Õlivahetus ja filtrid",
         heroLead: "Kiire õlivahetus tootja lubade järgi sobiva õliga. Alates €45 koos filtriga.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        heroImage: "/pics/oil-change-hero.webp",
         introTitle: "Õlivahetus Mr.Car-is",
         introText: [
             "Õlivahetus on põhiline, kuid kriitiliselt oluline protseduur. Vana õli kaotab kaitsevõime ja hakkab mootorit seestpoolt lagundama.",
