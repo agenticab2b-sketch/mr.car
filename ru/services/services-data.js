@@ -784,7 +784,7 @@ const SERVICES = [
         allSlugs: { ru: "hodovaya", ee: "veermik-pidurid", en: "chassis-brakes" },
         category: "Ходовая часть",
         navTitle: "Диагностика и ремонт подвески",
-        icon: "mdi:car-suspension",
+        icon: "mdi:car-lifted-pickup",
         templateVariant: "service-deep-dive-v2",
         bodyClass: "service-brakes-page service-suspension-page",
         extraStyles: ["/services/transmission.css?v=6", "/services/brakes.css?v=10"],
@@ -798,7 +798,7 @@ const SERVICES = [
         ],
         localNav: [
             { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "Симптомы" },
-            { href: "#types", icon: "mdi:car-suspension", label: "Типы подвески" },
+            { href: "#types", icon: "mdi:car-lifted-pickup", label: "Типы подвески" },
             { href: "#services", icon: "mdi:wrench", label: "Услуги" },
             { href: "#pricing", icon: "mdi:currency-eur", label: "Цены" },
             { href: "#reviews", icon: "mdi:star", label: "Отзывы" },
@@ -835,7 +835,7 @@ const SERVICES = [
         diagnosticsText: "Дорожная соль разрушает пыльники шаровых опор и рулевых наконечников. Температурные перепады ускоряют растрескивание сайлентблоков. Трамвайные пути и ямы после зимы создают ударные нагрузки для опорных подшипников и стоек стабилизатора. Рекомендация Mr.Car: диагностика подвески дважды в год — при смене резины в октябре–ноябре и в марте–апреле. Стоимость осмотра — 25 €.",
         engineTypesTitle: "Типы подвесок, которые мы обслуживаем",
         engineTypes: [
-            { icon: "mdi:car-suspension", title: "McPherson", desc: "Самый распространённый тип в Эстонии — передняя ось VW Golf, Skoda Octavia, Ford Focus, Toyota Corolla, Hyundai Elantra. Характерные проблемы: опорный подшипник стойки, сайлентблоки нижнего рычага, течь амортизатора.", brands: ["Lemförder", "TRW", "Sachs", "Bilstein"] },
+            { icon: "mdi:car-lifted-pickup", title: "McPherson", desc: "Самый распространённый тип в Эстонии — передняя ось VW Golf, Skoda Octavia, Ford Focus, Toyota Corolla, Hyundai Elantra. Характерные проблемы: опорный подшипник стойки, сайлентблоки нижнего рычага, течь амортизатора.", brands: ["Lemförder", "TRW", "Sachs", "Bilstein"] },
             { icon: "mdi:axis-arrow", title: "Многорычажная подвеска", desc: "BMW, Audi, Mercedes-Benz и задняя ось большинства современных автомобилей. 4–5 рычагов на каждое колесо, каждый со своими сайлентблоками. После замены рычага нужна 3D-регулировка.", brands: ["Lemförder", "Meyle", "TRW"] },
             { icon: "mdi:car-back", title: "Задняя балка", desc: "Renault Logan/Sandero, VW Polo, Hyundai Solaris, Kia Rio. Простая и надёжная конструкция с минимумом деталей. Основные проблемы: сайлентблоки балки и втулки стабилизатора.", brands: ["TRW", "Lemförder", "Febi"] },
             { icon: "mdi:air-filter", title: "Пневматическая подвеска", desc: "Audi A6/A8/Q7, BMW 5/7-серии, Mercedes E/S-класса, Volvo XC90. Диагностируем пневмобаллоны, компрессор и утечки в пневмолиниях.", brands: ["Arnott", "Dunlop", "Continental OEM"] }
@@ -867,7 +867,7 @@ const SERVICES = [
             { icon: "mdi:axis-arrow", title: "Замена сайлентблока рычага", desc: "Выпрессовка изношенного вкладыша, запрессовка нового с соблюдением моментов затяжки под нагрузкой. На Golf/Octavia — от 50 € под ключ.", price: "от 25 €", time: "1 час" },
             { icon: "mdi:car-lifted-pickup", title: "Замена рычага подвески в сборе", desc: "Быстрее и надёжнее, если рычаг деформирован или несколько сайлентблоков изношены одновременно. Golf/Octavia — от 120 € под ключ.", price: "от 40 €", time: "1–1,5 часа" },
             { icon: "mdi:circle-outline", title: "Замена шаровой опоры", desc: "Замена шарнира или рычага с интегрированной шаровой. После замены — обязательная проверка геометрии.", price: "от 35 €", time: "1–1,5 часа" },
-            { icon: "mdi:car-suspension", title: "Замена амортизатора / стойки", desc: "Меняем парами на оси. После замены — 3D-регулировка обязательна. Golf/Octavia передняя пара — от 180 € под ключ.", price: "от 45 € за штуку", time: "1,5–2 часа" },
+            { icon: "mdi:car-lifted-pickup", title: "Замена амортизатора / стойки", desc: "Меняем парами на оси. После замены — 3D-регулировка обязательна. Golf/Octavia передняя пара — от 180 € под ключ.", price: "от 45 € за штуку", time: "1,5–2 часа" },
             { icon: "mdi:circle-double", title: "Замена ступичного подшипника", desc: "Замена подшипника ступицы с проверкой состояния тормозного диска и датчика ABS. Golf/Octavia — от 120 € под ключ.", price: "от 50 €", time: "1,5–2 часа" },
             { icon: "mdi:wrench", title: "Замена стойки / втулки стабилизатора", desc: "Быстрая операция, которая устраняет характерный стук на малой скорости. Golf/Octavia — от 40 € под ключ за пару стоек.", price: "от 20 €", time: "30–45 мин" },
             { featured: true, icon: "mdi:align-horizontal-distribute", title: "3D сход-развал", desc: "Регулировка углов установки колёс на современном 3D-стенде. Обязательна после любого вмешательства в подвеску.", price: "от 60 €", time: "45–60 мин" }
