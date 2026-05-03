@@ -49,6 +49,56 @@ body:is(.service-disc-brakes-page, .service-drum-brakes-page) {
   --service-panel-pad-wide: var(--space-2xl);
 }
 
+@media (min-width: 1025px) {
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) {
+    --service-flow-space: var(--space-xl);
+    --service-flow-space-tight: var(--space-lg);
+    --service-title-space: var(--space-md);
+    --service-copy-space: var(--space-sm);
+    --service-panel-pad: var(--space-lg);
+    --service-panel-pad-wide: var(--space-xl);
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-hero {
+    min-height: 54vh;
+    padding-bottom: var(--space-3xl);
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-hero__content {
+    gap: var(--space-md);
+    max-width: 660px;
+    padding-top: 144px;
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-hero__title {
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-hero__lead {
+    max-width: 540px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-hero-stat {
+    padding: var(--space-lg);
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-hero-stat__number {
+    font-size: clamp(1.55rem, 3.6vw, 2.25rem);
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-hero-stat__label {
+    font-size: 0.66rem;
+    line-height: 1.45;
+  }
+
+  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-local-nav__pill {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.7rem;
+  }
+}
+
 body:is(.service-disc-brakes-page, .service-drum-brakes-page) .sd-main {
   gap: var(--service-flow-space);
   padding-top: var(--service-flow-space);
@@ -112,8 +162,8 @@ body:is(.service-disc-brakes-page, .service-drum-brakes-page) :is(.gb-rating-sum
 body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-hero-stat--text-metric .gb-hero-stat__number {
   display: inline-block;
   max-width: 100%;
-  font-size: clamp(2.6rem, 3.8vw, 4.6rem);
-  line-height: 0.95;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1;
   white-space: nowrap;
   letter-spacing: 0;
 }
@@ -227,7 +277,4 @@ body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-lower-section-
     padding: 0.72rem 0.9rem;
   }
 
-  body:is(.service-disc-brakes-page, .service-drum-brakes-page) .gb-hero-stat--text-metric .gb-hero-stat__number {
-    font-size: clamp(2.25rem, 13vw, 3.35rem);
-  }
 }
