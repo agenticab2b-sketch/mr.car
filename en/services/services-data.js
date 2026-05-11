@@ -65,19 +65,19 @@ const SERVICES = [
     },
 
     {
-        key: "exhaust_welding",
+        key: "exhaust",
         slug: "exhaust-welding",
         allSlugs: { ru: "glushiteli-svarka", ee: "summutid-keevitus", en: "exhaust-welding" },
         category: "Engine & Drivetrain",
-        navTitle: "Exhaust & Welding",
+        navTitle: "Muffler",
         icon: "mdi:fire",
-        heroTitle: "Exhaust & Welding Works",
-        heroLead: "Exhaust system repair and replacement. Argon and semi-automatic welding of any complexity.",
+        heroTitle: "Muffler Repair",
+        heroLead: "Exhaust system and muffler repair and replacement.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Exhaust Repair & Welding",
+        introTitle: "Muffler and exhaust system repair",
         introText: [
             "Exhaust system repair is usually needed due to wear or corrosion. A burnt-out muffler isn't just an unpleasant sound — exhaust gases can enter the cabin.",
-            "As a separate field, we handle welding: crack repair, bracket repair, chassis welding. Argon welding for aluminum and stainless steel."
+            "We repair mufflers, resonators, catalytic converters, and flex pipes. Welding works now have a separate service page."
         ],
         symptomsTitle: "When do you need exhaust repair?",
         symptoms: [
@@ -94,38 +94,85 @@ const SERVICES = [
             "Muffler / resonator replacement",
             "Catalytic converter repair & replacement",
             "Flex pipe replacement",
-            "Muffler crack welding",
-            "Argon welding (aluminum, stainless steel)",
-            "Bracket welding",
-            "Chassis welding works"
+            "Exhaust leak repair",
+            "Mount and rubber hanger replacement",
+            "Exhaust system diagnostics"
         ],
         afterListText: "Works are done on the day of arrival. We use high-quality materials and provide a warranty on welds.",
         promoBanner: { enabled: false },
         ctaSection: {
-            title: "Need welding or exhaust repair?",
-            text: "Come by or leave a request — we'll inspect and provide a quote within 15 minutes.",
+            title: "Need muffler repair?",
+            text: "Come by or leave a request — we'll inspect the exhaust system and quote before work starts.",
             phoneText: "Call: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Book Welding",
+            title: "Book Muffler Repair",
             subtitle: "Leave a request — we'll call back within 30 minutes"
         },
         seo: {
-            title: "Exhaust repair, welding works — Mr.Car Tallinn",
-            description: "Exhaust and catalytic converter repair. Argon welding. Kopli 82a, Tallinn. +372 5646 1210"
+            title: "Muffler Repair — Mr.Car Tallinn",
+            description: "Muffler, catalytic converter, and exhaust system repair in Tallinn. Kopli 82a. +372 5646 1210"
         }
     },
 
     {
-        key: "chassis_brakes",
+        key: "welding_works",
+        slug: "welding-works",
+        allSlugs: { ru: "svarochnye-raboty", ee: "keevitustood", en: "welding-works" },
+        category: "Engine & Drivetrain",
+        navTitle: "Welding Works",
+        icon: "mdi:hammer-wrench",
+        heroTitle: "Welding Works",
+        heroLead: "This service page is under construction. Welding information and prices will be added soon.",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        introTitle: "Page under construction",
+        introText: [
+            "Welding works are now a separate service so muffler repair and welding are clearly separated in the menu.",
+            "Until the detailed page is ready, you can book welding work through the same request form."
+        ],
+        symptomsTitle: "What will this page include?",
+        symptoms: [
+            { icon: "mdi:fire", text: "Bracket welding" },
+            { icon: "mdi:car-wrench", text: "Chassis welding" },
+            { icon: "mdi:wrench", text: "Exhaust system welding" },
+            { icon: "mdi:shield-check", text: "Work warranty" }
+        ],
+        afterSymptomsText: "The page is in development, but the service can already be requested.",
+        servicesListTitle: "Planned content:",
+        servicesList: [
+            "Types of welding work",
+            "Materials and limitations",
+            "Prices and timing",
+            "Booking recommendations"
+        ],
+        afterListText: "The full description will be added later.",
+        promoBanner: { enabled: false },
+        ctaSection: {
+            title: "Need welding work?",
+            text: "Send a request — we'll inspect the job and quote before starting.",
+            phoneText: "Call: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Book Welding Works",
+            subtitle: "Leave a request — we'll call back within 30 minutes"
+        },
+        seo: {
+            title: "Welding Works — Mr.Car Tallinn",
+            description: "Welding works in Tallinn. Page under construction. Kopli 82a. +372 5646 1210"
+        }
+    },
+
+    {
+        key: "suspension",
         slug: "chassis-brakes",
-        allSlugs: { ru: "hodovaya-tormoza", ee: "veermik-pidurid", en: "chassis-brakes" },
+        allSlugs: { ru: "hodovaya", ee: "veermik-pidurid", en: "chassis-brakes" },
         category: "Suspension & Brakes",
-        navTitle: "Suspension & Brakes",
-        icon: "mdi:car-brake-alert",
-        heroTitle: "Suspension & Brake Repair",
-        heroLead: "Suspension, steering, braking systems — diagnostics and repair with a warranty.",
+        navTitle: "Suspension",
+        icon: "mdi:car-lifted-pickup",
+        heroTitle: "Suspension Repair",
+        heroLead: "Suspension and steering systems — diagnostics and repair with a warranty.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Suspension Repair at Mr.Car",
         introText: [
@@ -138,21 +185,16 @@ const SERVICES = [
             { icon: "mdi:volume-high", text: "Knocks and squeaks while driving" },
             { icon: "mdi:vibrate", text: "Vibration in the steering wheel" },
             { icon: "mdi:tire", text: "Uneven tire wear" },
-            { icon: "mdi:car-brake-low-pressure", text: "Increased braking distance" },
-            { icon: "mdi:disc", text: "Grinding noise when braking" },
             { icon: "mdi:steering", text: "Steering wheel play" },
             { icon: "mdi:car-side", text: "Body roll in turns" }
         ],
-        afterSymptomsText: "Worn suspension and brakes are a direct safety risk. Come for a free inspection.",
-        servicesListTitle: "Our services:",
+        afterSymptomsText: "Worn suspension is a direct safety risk. Come for a free inspection.",
+        servicesListTitle: "Our suspension services:",
         servicesList: [
             "Suspension diagnostics on a lift",
             "Shock absorber & spring replacement",
             "Bushing & ball joint replacement",
             "Tie rod & end replacement",
-            "Brake pad & disc replacement",
-            "Brake hose & caliper replacement",
-            "Brake system bleeding",
             "Wheel alignment"
         ],
         afterListText: "We use parts from trusted brands: Lemförder, TRW, Monroe, Brembo. 12-month warranty on all works.",
@@ -161,7 +203,7 @@ const SERVICES = [
             text: "Free suspension diagnostics when booking via website"
         },
         ctaSection: {
-            title: "Suspension knocks? Grinding when braking?",
+            title: "Suspension knocks?",
             text: "Don't risk safety. We'll inspect the chassis for free and provide an exact quote.",
             phoneText: "Call: +372 5646 1210",
             phoneNumber: "+37256461210"
@@ -171,8 +213,56 @@ const SERVICES = [
             subtitle: "Leave a request — we'll call back within 30 minutes"
         },
         seo: {
-            title: "Suspension & Brake Repair — Mr.Car Tallinn",
-            description: "Suspension and brake system repair in Tallinn. Shock absorbers, brakes, alignment. Free diagnostics. Kopli 82a. +372 5646 1210"
+            title: "Suspension Repair — Mr.Car Tallinn",
+            description: "Suspension repair in Tallinn. Shock absorbers, steering components, and alignment. Free diagnostics. Kopli 82a. +372 5646 1210"
+        }
+    },
+
+    {
+        key: "brake_system",
+        slug: "brake-system-service-and-repair",
+        allSlugs: { ru: "tormoznaya-sistema", ee: "pidurisusteemi-hooldus-ja-remont", en: "brake-system-service-and-repair" },
+        category: "Suspension & Brakes",
+        navTitle: "Brake System",
+        icon: "mdi:car-brake-alert",
+        heroTitle: "Brake System Service and Repair",
+        heroLead: "This service page is under construction. Brake service information and prices will be added soon.",
+        heroImage: "/pics/brake-system-hero.webp",
+        introTitle: "Page under construction",
+        introText: [
+            "The brake system is now a separate service so it is no longer combined with the suspension page.",
+            "Until the detailed page is ready, you can book brake inspection or repair through the request form."
+        ],
+        symptomsTitle: "What will this page include?",
+        symptoms: [
+            { icon: "mdi:volume-high", text: "Squeaking or grinding when braking" },
+            { icon: "mdi:vibrate", text: "Brake pedal vibration" },
+            { icon: "mdi:car-brake-low-pressure", text: "Soft brake pedal" },
+            { icon: "mdi:alert-circle", text: "ABS or ESP warning light" }
+        ],
+        afterSymptomsText: "The page is in development, but brake inspection can already be requested.",
+        servicesListTitle: "Planned content:",
+        servicesList: [
+            "Brake pad and disc replacement",
+            "Caliper inspection",
+            "Brake fluid replacement",
+            "ABS diagnostics"
+        ],
+        afterListText: "The full description will be added later.",
+        promoBanner: { enabled: false },
+        ctaSection: {
+            title: "Need brake inspection?",
+            text: "Send a request — we'll schedule a time and inspect the brake system.",
+            phoneText: "Call: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Book Brake System Inspection",
+            subtitle: "Leave a request — we'll call back within 30 minutes"
+        },
+        seo: {
+            title: "Brake System Repair — Mr.Car Tallinn",
+            description: "Brake system service and repair in Tallinn. Page under construction. Kopli 82a. +372 5646 1210"
         }
     },
 
@@ -233,7 +323,7 @@ const SERVICES = [
         slug: "maintenance-diagnostics",
         allSlugs: { ru: "tehobsluzhivanie-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
         category: "Maintenance",
-        navTitle: "Maintenance & Diagnostics",
+        navTitle: "Maintenance",
         icon: "mdi:car-cog",
         heroTitle: "Technical Maintenance",
         heroLead: "Regular maintenance according to manufacturer standards without losing dealer warranty.",
@@ -286,12 +376,64 @@ const SERVICES = [
     },
 
     {
+        key: "diagnostics",
+        slug: "diagnostics",
+        allSlugs: { ru: "diagnostika", ee: "diagnostika", en: "diagnostics" },
+        category: "Maintenance",
+        navTitle: "Diagnostics",
+        icon: "mdi:car-search",
+        heroTitle: "Car Diagnostics",
+        heroLead: "This service page is under construction. Diagnostics information and prices will be added soon.",
+        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        introTitle: "Page under construction",
+        introText: [
+            "Diagnostics are now a separate service so maintenance and fault finding are clearly separated in the menu.",
+            "Until the detailed page is ready, you can book diagnostics through the same request form."
+        ],
+        symptomsTitle: "What will this page include?",
+        symptoms: [
+            { icon: "mdi:engine-outline", text: "Engine diagnostics" },
+            { icon: "mdi:car-cog", text: "Computer diagnostics" },
+            { icon: "mdi:alert-circle", text: "Fault code reading" },
+            { icon: "mdi:lightning-bolt", text: "Electrical fault checks" }
+        ],
+        afterSymptomsText: "The page is in development, but the service can already be requested.",
+        servicesListTitle: "Planned content:",
+        servicesList: [
+            "Diagnostics workflow",
+            "Prices and timing",
+            "Common symptoms",
+            "Booking recommendations"
+        ],
+        afterListText: "The full description will be added later.",
+        promoBanner: { enabled: false },
+        ctaSection: {
+            title: "Need diagnostics?",
+            text: "Send a request — we'll schedule a time and clarify the issue.",
+            phoneText: "Call: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Book Diagnostics",
+            subtitle: "Leave a request — we'll call back within 30 minutes"
+        },
+        seo: {
+            title: "Car Diagnostics — Mr.Car Tallinn",
+            description: "Car diagnostics in Tallinn. Page under construction. Kopli 82a. +372 5646 1210"
+        }
+    },
+
+    {
         key: "transmission",
         slug: "transmission-repair",
         allSlugs: { ru: "remont-kpp", ee: "kaigukastiremont", en: "transmission-repair" },
         category: "Engine & Drivetrain",
         navTitle: "Gearbox Repair",
         icon: "mdi:car-shift-pattern",
+        menuChildren: [
+            { slug: "automatic-transmission-repair", label: "Automatic transmissions" },
+            { slug: "manual-transmission-repair", label: "Manual transmissions" }
+        ],
         heroTitle: "Transmission Repair",
         heroLead: "Automatic, manual, DSG, CVTs — we diagnose and fix all gearbox types.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
@@ -452,6 +594,7 @@ const SERVICES = [
     {
         key: "oil_change",
         slug: "oil-change",
+        menuParentSlug: "maintenance-diagnostics",
         allSlugs: { ru: "zamena-masla", ee: "olivahetus", en: "oil-change" },
         category: "Maintenance",
         navTitle: "Oil & Filter Change",
@@ -620,6 +763,9 @@ const SERVICES = [
         category: "Climate & Accessories",
         navTitle: "Webasto Repair",
         icon: "mdi:radiator",
+        menuChildren: [
+            { slug: "webasto-symptoms", label: "Webasto symptoms" }
+        ],
         heroTitle: "Webasto Repair & Maintenance",
         heroLead: "Diagnostics, repair, and installation of Webasto and Eberspächer auxiliary heaters.",
         heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",

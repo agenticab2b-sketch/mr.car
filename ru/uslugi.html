@@ -73,28 +73,47 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- ========================================
-       1. NAVBAR
-       ======================================== -->
-    <header class="navbar" id="navbar">
-        <a href="/ru" class="navbar__logo">Mr.Car</a>
-        <nav class="navbar__nav">
-            <div class="navbar__item has-dropdown">
-                <a href="/ru/uslugi" class="navbar__link">[01] Услуги</a>
-                <div class="mega-menu">
-                    <a href="/ru/services/autoremont" class="mega-menu__item">
-                        <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Ремонт автомобилей</span>
-                    </a>
-                    <a href="/ru/services/glushiteli-svarka" class="mega-menu__item">
-                        <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Глушители и сварка</span>
-                    </a>            <a href="/ru/services/hodovaya" class="mega-menu__item">
-              <iconify-icon icon="mdi:car-lifted-pickup" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Подвеска</span>
+    <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="/ru" class="navbar__logo">Mr.Car</a>
+    <nav class="navbar__nav">
+      <div class="navbar__item has-dropdown">
+        <a href="/ru/uslugi" class="navbar__link">[01] Услуги</a>
+        <div class="mega-menu" id="megaMenuDesktop">
+          <a href="/ru/services/autoremont" class="mega-menu__item">
+              <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Общий авторемонт</span>
             </a>
-
-                    <div class="mega-menu__group">
+            <div class="mega-menu__group">
+              <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Техническое обслуживание</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/ru/services/zamena-masla" class="mega-menu__subitem">Замена масла и фильтров</a>
+              </div>
+            </div>
+            <a href="/ru/services/diagnostika" class="mega-menu__item">
+              <iconify-icon icon="mdi:car-search" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Диагностика</span>
+            </a>
+            <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
+              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Двигатель</span>
+            </a>
+            <div class="mega-menu__group">
+              <a href="/ru/services/remont-kpp" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Коробка передач</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/ru/services/remont-akpp" class="mega-menu__subitem">Автоматические коробки передач</a>
+                <a href="/ru/services/remont-mkpp" class="mega-menu__subitem">Механические коробки передач</a>
+              </div>
+            </div>
+            <div class="mega-menu__group">
               <a href="/ru/services/tormoznaya-sistema" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="mdi:car-brake-alert" width="20" height="20" aria-hidden="true"></iconify-icon>
                 <span>Тормозная система</span>
@@ -105,102 +124,108 @@
                 <a href="/ru/services/barabannye-tormoza" class="mega-menu__subitem">Барабанные тормоза</a>
               </div>
             </div>
-                    <a href="/ru/services/shinomontazh" class="mega-menu__item">
-                        <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Шиномонтаж</span>
-                    </a>
-                    <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mega-menu__item">
-                        <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>ТО и диагностика</span>
-                    </a>
-                    <div class="mega-menu__group">
-                        <a href="/ru/services/remont-kpp" class="mega-menu__item mega-menu__item--has-submenu">
-                            <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
-                            <span>Коробка передач</span>
-                            <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
-                        </a>
-                        <div class="mega-menu__submenu">
-                            <a href="/ru/services/remont-akpp" class="mega-menu__subitem">Автоматические коробки передач</a>
-                            <a href="/ru/services/remont-mkpp" class="mega-menu__subitem">Механические коробки передач</a>
-                        </div>
-                    </div>
-                    <a href="/ru/services/elektrika" class="mega-menu__item">
-                        <iconify-icon icon="mdi:lightning-bolt" width="20" height="20"
-                            aria-hidden="true"></iconify-icon>
-                        <span>Автоэлектрика</span>
-                    </a>
-                    <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
-                        <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Двигатель</span>
-                    </a>
-                    <a href="/ru/services/zamena-masla" class="mega-menu__item">
-                        <iconify-icon icon="mdi:oil" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Замена масла и фильтров</span>
-                    </a>
-                    <a href="/ru/services/proverka-pered-pokupkoy" class="mega-menu__item">
-                        <iconify-icon icon="mdi:file-search-outline" width="20" height="20"
-                            aria-hidden="true"></iconify-icon>
-                        <span>Проверка перед покупкой</span>
-                    </a>
-                    <a href="/ru/services/klimat-konditsioner" class="mega-menu__item">
-                        <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Климат и кондиционер</span>
-                    </a>
-                    <a href="/ru/services/webasto" class="mega-menu__item">
-                        <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Webasto</span>
-                    </a>
-                </div>
-            </div>
-
-            <a href="/ru/o-nas" class="navbar__link">[02] О нас</a>
-            <a href="/ru/tseny" class="navbar__link">[03] Цены</a>
-            <a href="/ru/kontakt" class="navbar__link">[04] Контакты</a>
-            <a href="/ru/galereya" class="navbar__link">[05] Галерея</a>
-            <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
-        </nav>
-        <div class="navbar__cta">
-            <a href="/ru/kontakt" class="btn btn-primary">Оставить заявку</a>
-        </div>
-        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
-            <span></span><span></span><span></span>
-        </button>
-        <div class="navbar__lang desktop-only">
-            <a href="/" class="lang-link" title="Eesti keel">
-                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
-            <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Eesti keel</span></a>
-            <a href="/ru" class="lang-link active" title="Русский язык">
-                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
-            <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Русский язык</span></a>
-            <a href="/en" class="lang-link" title="English">
-                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
-            <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">English</span></a>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Навигация">
-        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
-        <nav aria-label="Мобильная навигация">
-            <a href="/ru/uslugi" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
-                Услуги
-                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
-                    height="24"></iconify-icon>
+            <a href="/ru/services/hodovaya" class="mega-menu__item">
+              <iconify-icon icon="mdi:car-lifted-pickup" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Подвеска</span>
             </a>
-            <div class="mobile-mega-menu" id="mobileMegaMenu">
-                <a href="/ru/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-                    <span>Ремонт автомобилей</span>
-                </a>
-                <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
-                    <span>Глушители и сварка</span>
-                </a>                <a href="/ru/services/hodovaya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-lifted-pickup" aria-hidden="true"></iconify-icon>
-                    <span>Подвеска</span>
-                </a>
+            <a href="/ru/services/elektrika" class="mega-menu__item">
+              <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Автоэлектрика</span>
+            </a>
+            <a href="/ru/services/klimat-konditsioner" class="mega-menu__item">
+              <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Климат и кондиционер</span>
+            </a>
+            <div class="mega-menu__group">
+              <a href="/ru/services/webasto" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Webasto</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/ru/services/webasto-simptomy" class="mega-menu__subitem">Симптомы и ошибки Webasto</a>
+              </div>
+            </div>
+            <a href="/ru/services/proverka-pered-pokupkoy" class="mega-menu__item">
+              <iconify-icon icon="mdi:file-search-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Проверка перед покупкой</span>
+            </a>
+            <a href="/ru/services/shinomontazh" class="mega-menu__item">
+              <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Шиномонтаж</span>
+            </a>
+            <a href="/ru/services/glushiteli-svarka" class="mega-menu__item">
+              <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Глушитель</span>
+            </a>
+            <a href="/ru/services/svarochnye-raboty" class="mega-menu__item">
+              <iconify-icon icon="mdi:hammer-wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Сварочные работы</span>
+            </a>
+        </div>
+      </div>
+      <a href="/ru/o-nas" class="navbar__link">[02] О нас</a>
+      <a href="/ru/tseny" class="navbar__link">[03] Цены</a>
+      <a href="/ru/kontakt" class="navbar__link">[04] Контакты</a>
+      <a href="/ru/galereya" class="navbar__link">[05] Галерея</a>
+      <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
+    </nav>
+    <div class="navbar__cta">
+      <a href="/ru/kontakt" class="btn btn-primary">Оставить заявку</a>
+    </div>
+    <button class="navbar__burger" id="burgerBtn" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navbar__lang desktop-only">
+      <a href="/" class="lang-link" title="Eesti keel"><iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Eesti keel</span></a>
+            <a href="/ru/" class="lang-link active" title="Русский"><iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Русский</span></a>
+            <a href="/en/" class="lang-link" title="English"><iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">English</span></a>
+    </div>
+  </header>
 
-                <div class="mobile-mega-menu__group">
+    <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Мобильная навигация">
+    <button class="mobile-menu__close" id="closeMenu" aria-label="Закрыть меню">&times;</button>
+    <nav aria-label="Мобильная навигация">
+      <a href="/ru/uslugi" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+        Услуги
+        <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
+      </a>
+      <div class="mobile-mega-menu" id="mobileMegaMenu">
+        <a href="/ru/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+              <span>Общий авторемонт</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                <span>Техническое обслуживание</span>
+              </a>
+              <a href="/ru/services/zamena-masla" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Замена масла и фильтров</span>
+              </a>
+            </div>
+            <a href="/ru/services/diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-search" aria-hidden="true"></iconify-icon>
+              <span>Диагностика</span>
+            </a>
+            <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+              <span>Двигатель</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                <span>Коробка передач</span>
+              </a>
+              <a href="/ru/services/remont-akpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Автоматические коробки передач</span>
+              </a>
+              <a href="/ru/services/remont-mkpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Механические коробки передач</span>
+              </a>
+            </div>
+            <div class="mobile-mega-menu__group">
               <a href="/ru/services/tormoznaya-sistema" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                 <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
                 <span>Тормозная система</span>
@@ -212,75 +237,56 @@
                 <span>Барабанные тормоза</span>
               </a>
             </div>
-                <a href="/ru/services/shinomontazh" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
-                    <span>Шиномонтаж</span>
-                </a>
-                <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mobile-mega-menu__item"
-                    onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
-                    <span>ТО и диагностика</span>
-                </a>
-                <div class="mobile-mega-menu__group">
-                    <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                        <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
-                        <span>Коробка передач</span>
-                    </a>
-                    <a href="/ru/services/remont-akpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
-                        <span>Автоматические коробки передач</span>
-                    </a>
-                    <a href="/ru/services/remont-mkpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
-                        <span>Механические коробки передач</span>
-                    </a>
-                </div>
-                <a href="/ru/services/elektrika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
-                        <span>Автоэлектрика</span>
-                </a>
-                <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-                    <span>Двигатель</span>
-                </a>
-                <a href="/ru/services/zamena-masla" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
-                    <span>Замена масла и фильтров</span>
-                </a>
-                <a href="/ru/services/proverka-pered-pokupkoy" class="mobile-mega-menu__item"
-                    onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
-                    <span>Проверка перед покупкой</span>
-                </a>
-                <a href="/ru/services/klimat-konditsioner" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
-                    <span>Климат и кондиционер</span>
-                </a>
-                <a href="/ru/services/webasto" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
-                    <span>Webasto</span>
-                </a>
+            <a href="/ru/services/hodovaya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-lifted-pickup" aria-hidden="true"></iconify-icon>
+              <span>Подвеска</span>
+            </a>
+            <a href="/ru/services/elektrika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+              <span>Автоэлектрика</span>
+            </a>
+            <a href="/ru/services/klimat-konditsioner" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+              <span>Климат и кондиционер</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/webasto" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                <span>Webasto</span>
+              </a>
+              <a href="/ru/services/webasto-simptomy" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Симптомы и ошибки Webasto</span>
+              </a>
             </div>
-
-            <a href="/ru/o-nas" class="mobile-menu__link" onclick="closeMobileMenu()">О нас</a>
-            <a href="/ru/tseny" class="mobile-menu__link" onclick="closeMobileMenu()">Цены</a>
-            <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
-            <a href="/ru/galereya" class="mobile-menu__link" onclick="closeMobileMenu()">Галерея</a>
-            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
-        </nav>
-        <div class="mobile-menu__lang">
-            <a href="/" class="mobile-lang-link">
-                <iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon>
-                <span>Eesti</span>
+            <a href="/ru/services/proverka-pered-pokupkoy" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+              <span>Проверка перед покупкой</span>
             </a>
-            <a href="/ru" class="mobile-lang-link active">
-                <iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon>
-                <span>Русский</span>
+            <a href="/ru/services/shinomontazh" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
+              <span>Шиномонтаж</span>
             </a>
-            <a href="/en" class="mobile-lang-link">
-                <iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon>
-                <span>English</span>
+            <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+              <span>Глушитель</span>
             </a>
-        </div>
+            <a href="/ru/services/svarochnye-raboty" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:hammer-wrench" aria-hidden="true"></iconify-icon>
+              <span>Сварочные работы</span>
+            </a>
+      </div>
+      <a href="/ru/o-nas" class="mobile-menu__link" onclick="closeMobileMenu()">О нас</a>
+      <a href="/ru/tseny" class="mobile-menu__link" onclick="closeMobileMenu()">Цены</a>
+      <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
+      <a href="/ru/galereya" class="mobile-menu__link" onclick="closeMobileMenu()">Галерея</a>
+    </nav>
+    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
+    <div class="mobile-menu__lang">
+      <a href="/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
+            <a href="/ru/" class="mobile-lang-link active"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
+            <a href="/en/" class="mobile-lang-link"><iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon><span>English</span></a>
     </div>
+  </div>
 
     <main style="padding-top: 72px;">
         <!-- PAGE HEADER -->
@@ -326,204 +332,72 @@
         <!-- LISTING GRID -->
         <section class="services-listing">
             <div class="listing-grid">
-
-                <!-- Card 1: Ремонт автомобилей -->
-                <div class="listing-card reveal-card" data-group="repair">
+                <div class="listing-card reveal-card" data-group="diag">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
                             <iconify-icon icon="mdi:wrench" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">Ремонт авто</h3>
+                        <h3 class="listing-card__title">Общий авторемонт</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">стук</span>
-                        <span class="listing-tag">утечки</span>
-                        <span class="listing-tag">check engine</span>
+                        <span>Проблемы с двигателем</span>
+                        <span>Стуки в подвеске</span>
                     </div>
-                    <p class="listing-card__desc">Общий ремонт и устранение неисправностей для всех марок автомобиле.
-                        Найдем и устраним проблему.</p>
+                    <p class="listing-card__desc">Комплексный ремонт автомобилей любых марок. От мелких неисправностей до капитального ремонта.</p>
                     <ul class="listing-card__list">
-                        <li>Ремонт ходовой части</li>
-                        <li>Устранение утечек жидкостей</li>
-                        <li>Устранение мелких неисправностей</li>
+                        <li>Ремонт двигателя и КПП</li>
+                        <li>Ходовая и тормозная система</li>
+                        <li>Автоэлектрика и диагностика</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/ru/services/autoremont" class="btn btn-primary">Подробнее</a>
+                        <a href="/ru/services/autoremont" class="listing-card__link">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Card 2: Глушители и сварка -->
-                <div class="listing-card reveal-card" data-group="chassis">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:fire" width="24" height="24" aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Глушители & Сварка</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">громкий выхлоп</span>
-                        <span class="listing-tag">запах газов</span>
-                    </div>
-                    <p class="listing-card__desc">Диагностика глушителей, ремонт и специфические сварочные работы,
-                        включая замену катализаторов.</p>
-                    <ul class="listing-card__list">
-                        <li>Замена гофры глушителя</li>
-                        <li>Замена DPF / катализатора</li>
-                        <li>Профессиональная Mig/Tig сварка</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/ru/services/glushiteli-svarka" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Card 3: Диагностика и ремонт подвески -->
-                <div class="listing-card reveal-card" data-group="chassis">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:car-lifted-pickup" width="24" height="24" aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Подвеска</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">стук на ямах</span>
-                        <span class="listing-tag">3D сход-развал</span>
-                    </div>
-                    <p class="listing-card__desc">Диагностика и ремонт ходовой части: амортизаторы, рычаги, шаровые, сайлентблоки и ступичные подшипники.</p>
-                    <ul class="listing-card__list">
-                        <li>Диагностика подвески</li>
-                        <li>Замена рычагов и амортизаторов</li>
-                        <li>3D-регулировка углов колёс</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/ru/services/hodovaya" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Card 3: Обслуживание и ремонт тормозов -->
-                <div class="listing-card reveal-card" data-group="chassis">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:car-brake-alert" width="24" height="24"
-                                aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Тормозная система</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">вибрация при торможении</span>
-                        <span class="listing-tag">лампа ABS</span>
-                    </div>
-                    <p class="listing-card__desc">Диагностика и обслуживание тормозной системы: колодки, диски, суппорты, жидкость и ABS.</p>
-                    <ul class="listing-card__list">
-                        <li>Замена колодок и дисков</li>
-                        <li>Ремонт суппортов и направляющих</li>
-                        <li>Замена тормозной жидкости</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/ru/services/tormoznaya-sistema" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Card 4: Шиномонтаж -->
-                <div class="listing-card reveal-card" data-group="chassis">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:tire" width="24" height="24" aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Шиномонтаж</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">прокол колеса</span>
-                        <span class="listing-tag">вибрация руля</span>
-                    </div>
-                    <p class="listing-card__desc">Быстрая и качественная установка шин, сезонная смена и высокоточная
-                        балансировка колес.</p>
-                    <ul class="listing-card__list">
-                        <li>Замена летней/зимней резины</li>
-                        <li>Точная балансировка колес</li>
-                        <li>Ремонт шин (установка жгута)</li>
-                    </ul>
-                    <div class="listing-card__price">Цены от <a href="/ru/tseny">€20</a></div>
-                    <div class="listing-card__footer">
-                        <a href="/ru/services/shinomontazh" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Card 5: ТО и Диагностика -->
                 <div class="listing-card reveal-card" data-group="diag">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
                             <iconify-icon icon="mdi:car-cog" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">ТО & Диагностика</h3>
+                        <h3 class="listing-card__title">Техническое обслуживание</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">подходит время ТО</span>
-                        <span class="listing-tag">ошибка на панели</span>
+                        <span>Пробег по регламенту (каждые 10–15 тыс. км)</span>
+                        <span>Прошёл год с прошлого ТО</span>
                     </div>
-                    <p class="listing-card__desc">Компьютерная диагностика и предусмотренное заводом-изготовителем
-                        регулярное обслуживание.</p>
+                    <p class="listing-card__desc">Регламентное ТО по стандартам производителя без потери дилерской гарантии.</p>
                     <ul class="listing-card__list">
-                        <li>Регулярное обслуживание</li>
-                        <li>Чтение и удаление ошибок</li>
-                        <li>Анализ Live-data</li>
+                        <li>Замена масла и масляного фильтра</li>
+                        <li>Замена воздушного и салонного фильтра</li>
+                        <li>Проверка и долив жидкостей</li>
                     </ul>
-                    <div class="listing-card__price">Цены от <a href="/ru/tseny">€40</a></div>
                     <div class="listing-card__footer">
-                        <a href="/ru/services/tehobsluzhivanie-diagnostika" class="btn btn-primary">Подробнее</a>
+                        <a href="/ru/services/tehobsluzhivanie-diagnostika" class="listing-card__link">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Card 6: Коробка передач -->
-                <div class="listing-card reveal-card" data-group="repair">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:car-shift-pattern" width="24" height="24"
-                                aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Коробка передач</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">передачи не включаются</span>
-                        <span class="listing-tag">рывки автомата</span>
-                    </div>
-                    <p class="listing-card__desc">Ремонт, обслуживание механических и автоматических коробок передач,
-                        динамическая замена масла.</p>
-                    <ul class="listing-card__list">
-                        <li>Динамическая замена масла АКПП</li>
-                        <li>Замена комплекта сцепления</li>
-                        <li>Гидравлика и мехатроник</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/ru/services/remont-kpp" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Card 7: Автоэлектрика -->
                 <div class="listing-card reveal-card" data-group="diag">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:lightning-bolt" width="24" height="24"
-                                aria-hidden="true"></iconify-icon>
+                            <iconify-icon icon="mdi:car-search" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">Автоэлектрика</h3>
+                        <h3 class="listing-card__title">Диагностика</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">сел аккумулятор</span>
-                        <span class="listing-tag">не горят фары</span>
+                        <span>Диагностика двигателя</span>
+                        <span>Компьютерная диагностика</span>
                     </div>
-                    <p class="listing-card__desc">Сложная диагностика и ремонт электронных систем автомобилей.
-                        Устранение замыканий.</p>
+                    <p class="listing-card__desc">Страница услуги находится в разработке. Информацию и цены по диагностике добавим позже.</p>
                     <ul class="listing-card__list">
-                        <li>Ремонт генератора и стартера</li>
-                        <li>Ремонт электропроводки</li>
-                        <li>Проверка аккумуляторов</li>
+                        <li>Этапы диагностики</li>
+                        <li>Цены и сроки</li>
+                        <li>Типичные симптомы</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/ru/services/elektrika" class="btn btn-primary">Подробнее</a>
+                        <a href="/ru/services/diagnostika" class="listing-card__link">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Card 8: Двигатель -->
                 <div class="listing-card reveal-card" data-group="repair">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
@@ -532,96 +406,130 @@
                         <h3 class="listing-card__title">Двигатель</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">повышенный расход масла</span>
-                        <span class="listing-tag">синий дым</span>
+                        <span>Повышенный расход масла</span>
+                        <span>Стуки и посторонние звуки</span>
                     </div>
-                    <p class="listing-card__desc">Капитальный ремонт двигателя и сложные механические работы от
-                        квалифицированного мастера.</p>
+                    <p class="listing-card__desc">Диагностика и ремонт бензиновых, дизельных и гибридных ДВС в Таллинне: от Check Engine и перегрева до ГРМ, ГБЦ и сложных моторных работ.</p>
                     <ul class="listing-card__list">
-                        <li>Замена ремня или цепи ГРМ</li>
-                        <li>Замена прокладки ГБЦ</li>
-                        <li>Капитальный ремонт мотора</li>
+                        <li>Компьютерная диагностика двигателя</li>
+                        <li>Замена масла и фильтров</li>
+                        <li>Замена ремня / цепи ГРМ</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/ru/services/remont-dvigatelya" class="btn btn-primary">Подробнее</a>
+                        <a href="/ru/services/remont-dvigatelya" class="listing-card__link">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Card 9: Замена масла -->
+                <div class="listing-card reveal-card" data-group="repair">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-shift-pattern" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Коробка передач</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Толчки при переключении</span>
+                        <span>Гул или вой коробки</span>
+                    </div>
+                    <p class="listing-card__desc">АКПП, МКПП, DSG, вариаторы — диагностируем и ремонтируем коробки передач всех типов.</p>
+                    <ul class="listing-card__list">
+                        <li>Диагностика АКПП / МКПП / DSG</li>
+                        <li>Замена масла и фильтра КПП</li>
+                        <li>Замена сцепления и маховика</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/ru/services/remont-kpp" class="listing-card__link">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-brake-alert" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Тормозная система</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Скрип и писк при торможении</span>
+                        <span>Вибрация или пульсация педали</span>
+                    </div>
+                    <p class="listing-card__desc">Скрип, вибрация педали, увод в сторону — диагностируем и устраняем любые неисправности тормозов. Замена колодок, дисков, суппортов, замена жидкости, диагностика ABS.</p>
+                    <ul class="listing-card__list">
+                        <li>Диагностика тормозной системы</li>
+                        <li>Замена передних и задних тормозных колодок</li>
+                        <li>Замена тормозных дисков</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/ru/services/tormoznaya-sistema" class="listing-card__link">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-lifted-pickup" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Подвеска</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Стук при проезде неровностей</span>
+                        <span>Вибрация или биение руля</span>
+                    </div>
+                    <p class="listing-card__desc">Стук при проезде ям, вибрация руля, неравномерный износ шин — диагностируем и устраняем любые неисправности ходовой части. Замена амортизаторов, рычагов, шаровых опор, сайлентблоков, ступичных подшипников. 3D сход-развал. Гарантия 12 месяцев. Kopli 82a, Таллинн.</p>
+                    <ul class="listing-card__list">
+                        <li>Диагностика ходовой части</li>
+                        <li>Замена сайлентблоков и рычагов</li>
+                        <li>Замена шаровых опор</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/ru/services/hodovaya" class="listing-card__link">Подробнее</a>
+                    </div>
+                </div>
+
                 <div class="listing-card reveal-card" data-group="diag">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:oil" width="24" height="24" aria-hidden="true"></iconify-icon>
+                            <iconify-icon icon="mdi:lightning-bolt" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">Замена масла</h3>
+                        <h3 class="listing-card__title">Автоэлектрика</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">пора менять масло</span>
-                        <span class="listing-tag">грязный воздух</span>
+                        <span>Быстро садится аккумулятор</span>
+                        <span>Не работают фары / поворотники</span>
                     </div>
-                    <p class="listing-card__desc">Качественные автомобильные масла известных брендов и замена всех
-                        жизненно важных фильтров.</p>
+                    <p class="listing-card__desc">Диагностика и ремонт автоэлектрики: поиск утечки тока, ремонт проводки, генератора, стартера, CAN/LIN-шин и электронных систем. Ищем причину — не меняем детали наугад.</p>
                     <ul class="listing-card__list">
-                        <li>Замена моторного масла и фильтра</li>
-                        <li>Воздушный и топливный фильтры</li>
-                        <li>Замена салонного фильтра</li>
+                        <li>Поиск утечек тока</li>
+                        <li>Ремонт проводки и жгутов</li>
+                        <li>Диагностика и ремонт стартера / генератора</li>
                     </ul>
-                    <div class="listing-card__price">Цены от <a href="/ru/tseny">€45</a></div>
                     <div class="listing-card__footer">
-                        <a href="/ru/services/zamena-masla" class="btn btn-primary">Подробнее</a>
+                        <a href="/ru/services/elektrika" class="listing-card__link">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Card 10: Проверка перед покупкой -->
-                <div class="listing-card reveal-card" data-group="diag">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:file-search-outline" width="24" height="24"
-                                aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Проверка авто</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">покупка авто</span>
-                        <span class="listing-tag">скрытые дефекты</span>
-                    </div>
-                    <p class="listing-card__desc">Минимизируйте риски при покупке б/у автомобиля с помощью нашего
-                        независимого обследования.</p>
-                    <ul class="listing-card__list">
-                        <li>Измерение толщины ЛКП</li>
-                        <li>Глубокая компьютерная диагностика</li>
-                        <li>Визуальный осмотр ходовой</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/ru/services/proverka-pered-pokupkoy" class="btn btn-primary">Подробнее</a>
-                    </div>
-                </div>
-
-                <!-- Card 11: Климат-контроль -->
                 <div class="listing-card reveal-card" data-group="climate">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
                             <iconify-icon icon="mdi:snowflake" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">Климат-контроль</h3>
+                        <h3 class="listing-card__title">Климат и кондиционер</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">дует теплым</span>
-                        <span class="listing-tag">неприятный запах</span>
+                        <span>Кондиционер слабо охлаждает</span>
+                        <span>Неприятный запах из воздуховодов</span>
                     </div>
-                    <p class="listing-card__desc">Проверка, заправка и устранение утечек в системе кондиционирования.
-                    </p>
+                    <p class="listing-card__desc">Заправка, диагностика и ремонт климатических систем автомобиля.</p>
                     <ul class="listing-card__list">
+                        <li>Диагностика системы кондиционирования</li>
                         <li>Заправка кондиционера фреоном</li>
-                        <li>Тестирование на герметичность</li>
-                        <li>Замена компрессора/радиатора</li>
+                        <li>Поиск и устранение утечек</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/ru/services/klimat-konditsioner" class="btn btn-primary">Подробнее</a>
+                        <a href="/ru/services/klimat-konditsioner" class="listing-card__link">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- Card 12: Webasto -->
                 <div class="listing-card reveal-card" data-group="climate">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
@@ -630,28 +538,108 @@
                         <h3 class="listing-card__title">Webasto</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">не работает отопитель</span>
-                        <span class="listing-tag">холодно в салоне</span>
+                        <span>Webasto не запускается</span>
+                        <span>Дымит при работе</span>
                     </div>
-                    <p class="listing-card__desc">Ремонт и обслуживание автономных отопителей, необходимых в северном
-                        климате.</p>
+                    <p class="listing-card__desc">Диагностика, ремонт и установка предпусковых подогревателей Webasto и Eberspächer.</p>
                     <ul class="listing-card__list">
-                        <li>Диагностика Eberspächer / Webasto</li>
+                        <li>Диагностика предпускового подогревателя</li>
                         <li>Чистка камеры сгорания</li>
-                        <li>Замена циркуляционных насосов</li>
+                        <li>Замена свечи накала</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/ru/services/webasto" class="btn btn-primary">Подробнее</a>
-                        <a href="/ru/services/webasto-simptomy" class="btn-link">Симптомы <span class="arrow" aria-hidden="true">→</span></a>
+                        <a href="/ru/services/webasto" class="listing-card__link">Подробнее</a>
                     </div>
                 </div>
 
-                <!-- No Results Node -->
-                <div id="noResults" class="listing-no-results">
-                    По вашему запросу ничего не найдено. Попробуйте изменить фильтры или условия поиска.
+                <div class="listing-card reveal-card" data-group="diag">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:file-search-outline" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Проверка перед покупкой</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Состояние двигателя</span>
+                        <span>Работу КПП</span>
+                    </div>
+                    <p class="listing-card__desc">Независимая техническая экспертиза автомобиля — чтобы покупка не стала разочарованием.</p>
+                    <ul class="listing-card__list">
+                        <li>Визуальный осмотр кузова и салона</li>
+                        <li>Замер толщины ЛКП (толщиномер)</li>
+                        <li>Компьютерная диагностика всех систем</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/ru/services/proverka-pered-pokupkoy" class="listing-card__link">Подробнее</a>
+                    </div>
                 </div>
 
-            </div>
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:tire" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Шиномонтаж</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Сезонная замена шин</span>
+                        <span>Вибрация на скорости</span>
+                    </div>
+                    <p class="listing-card__desc">Сезонная замена, балансировка, ремонт проколов. Быстро и аккуратно — без очередей.</p>
+                    <ul class="listing-card__list">
+                        <li>Сезонная замена шин (лето / зима)</li>
+                        <li>Балансировка колёс</li>
+                        <li>Ремонт проколов (жгут / грибок / заплатка)</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/ru/services/shinomontazh" class="listing-card__link">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:fire" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Глушитель</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Громкий звук выхлопа</span>
+                        <span>Запах выхлопа в салоне</span>
+                    </div>
+                    <p class="listing-card__desc">Ремонт и замена глушителя и выхлопной системы.</p>
+                    <ul class="listing-card__list">
+                        <li>Замена глушителя / резонатора</li>
+                        <li>Ремонт и замена катализатора</li>
+                        <li>Замена гофры выхлопной системы</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/ru/services/glushiteli-svarka" class="listing-card__link">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="listing-card reveal-card" data-group="repair">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:hammer-wrench" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Сварочные работы</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Сварка креплений</span>
+                        <span>Подварка днища</span>
+                    </div>
+                    <p class="listing-card__desc">Страница услуги находится в разработке. Информацию и цены по сварочным работам добавим позже.</p>
+                    <ul class="listing-card__list">
+                        <li>Виды сварочных работ</li>
+                        <li>Материалы и ограничения</li>
+                        <li>Цены и сроки</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/ru/services/svarochnye-raboty" class="listing-card__link">Подробнее</a>
+                    </div>
+                </div>
+</div>
         </section>
 
     </main>

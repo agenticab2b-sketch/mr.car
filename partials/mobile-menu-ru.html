@@ -1,24 +1,46 @@
-<!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Навигация">
-        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
-        <nav aria-label="Мобильная навигация">
-            <a href="/ru/uslugi" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
-                Услуги
-                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
-            </a><div class="mobile-mega-menu" id="mobileMegaMenu">
-                <a href="/ru/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-                    <span>Ремонт автомобилей</span>
-                </a>
-                <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
-                    <span>Глушители и сварка</span>
-                </a>
-                <a href="/ru/services/hodovaya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-lifted-pickup" aria-hidden="true"></iconify-icon>
-                    <span>Подвеска</span>
-                </a>
-                <div class="mobile-mega-menu__group">
+<!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Мобильная навигация">
+    <button class="mobile-menu__close" id="closeMenu" aria-label="Закрыть меню">&times;</button>
+    <nav aria-label="Мобильная навигация">
+      <a href="/ru/uslugi" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+        Услуги
+        <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
+      </a>
+      <div class="mobile-mega-menu" id="mobileMegaMenu">
+        <a href="/ru/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+              <span>Общий авторемонт</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                <span>Техническое обслуживание</span>
+              </a>
+              <a href="/ru/services/zamena-masla" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Замена масла и фильтров</span>
+              </a>
+            </div>
+            <a href="/ru/services/diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-search" aria-hidden="true"></iconify-icon>
+              <span>Диагностика</span>
+            </a>
+            <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+              <span>Двигатель</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                <span>Коробка передач</span>
+              </a>
+              <a href="/ru/services/remont-akpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Автоматические коробки передач</span>
+              </a>
+              <a href="/ru/services/remont-mkpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Механические коробки передач</span>
+              </a>
+            </div>
+            <div class="mobile-mega-menu__group">
               <a href="/ru/services/tormoznaya-sistema" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                 <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
                 <span>Тормозная система</span>
@@ -30,62 +52,53 @@
                 <span>Барабанные тормоза</span>
               </a>
             </div>
-                <a href="/ru/services/shinomontazh" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
-                    <span>Шиномонтаж</span>
-                </a>
-                <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
-                    <span>ТО и диагностика</span>
-                </a>
-                <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
-                    <span>Ремонт КПП</span>
-                </a>
-                <a href="/ru/services/elektrika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
-                    <span>Электроработы</span>
-                </a>
-                <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-                    <span>Ремонт двигателя</span>
-                </a>
-                <a href="/ru/services/zamena-masla" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
-                    <span>Замена масла и фильтров</span>
-                </a>
-                <a href="/ru/services/proverka-pered-pokupkoy" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
-                    <span>Проверка перед покупкой</span>
-                </a>
-                <a href="/ru/services/klimat-konditsioner" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
-                    <span>Климат и кондиционер</span>
-                </a>
-                <a href="/ru/services/webasto" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
-                    <span>Ремонт Webasto</span>
-                </a>
+            <a href="/ru/services/hodovaya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-lifted-pickup" aria-hidden="true"></iconify-icon>
+              <span>Подвеска</span>
+            </a>
+            <a href="/ru/services/elektrika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+              <span>Автоэлектрика</span>
+            </a>
+            <a href="/ru/services/klimat-konditsioner" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+              <span>Климат и кондиционер</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/webasto" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                <span>Webasto</span>
+              </a>
+              <a href="/ru/services/webasto-simptomy" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Симптомы и ошибки Webasto</span>
+              </a>
             </div>
-
-            <a href="/meist" class="mobile-menu__link" onclick="closeMobileMenu()">О нас</a>
-            <a href="/ru/tseny" class="mobile-menu__link" onclick="closeMobileMenu()">Цены</a>
-            <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
-            <a href="/ru/galereya" class="mobile-menu__link" onclick="closeMobileMenu()">Галерея</a>
-            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
-        </nav>
-        <div class="mobile-menu__lang">
-            <a href="/" class="mobile-lang-link">
-                <iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon>
-                <span>Eesti</span>
+            <a href="/ru/services/proverka-pered-pokupkoy" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+              <span>Проверка перед покупкой</span>
             </a>
-            <a href="/ru" class="mobile-lang-link active">
-                <iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon>
-                <span>Русский</span>
+            <a href="/ru/services/shinomontazh" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
+              <span>Шиномонтаж</span>
             </a>
-            <a href="/en" class="mobile-lang-link">
-                <iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon>
-                <span>English</span>
+            <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+              <span>Глушитель</span>
             </a>
-        </div>
+            <a href="/ru/services/svarochnye-raboty" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:hammer-wrench" aria-hidden="true"></iconify-icon>
+              <span>Сварочные работы</span>
+            </a>
+      </div>
+      <a href="/ru/o-nas" class="mobile-menu__link" onclick="closeMobileMenu()">О нас</a>
+      <a href="/ru/tseny" class="mobile-menu__link" onclick="closeMobileMenu()">Цены</a>
+      <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
+      <a href="/ru/galereya" class="mobile-menu__link" onclick="closeMobileMenu()">Галерея</a>
+    </nav>
+    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
+    <div class="mobile-menu__lang">
+      <a href="/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
+            <a href="/ru/" class="mobile-lang-link active"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
+            <a href="/en/" class="mobile-lang-link"><iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon><span>English</span></a>
     </div>
+  </div>

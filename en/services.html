@@ -73,178 +73,205 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- ========================================
-       1. NAVBAR
-       ======================================== -->
-    <header class="navbar" id="navbar">
-        <a href="/" class="navbar__logo">Mr.Car</a>
-        <nav class="navbar__nav">
-            <div class="navbar__item has-dropdown">
-                <a href="/en/services" class="navbar__link">[01] Services</a>
-                <div class="mega-menu">
-                    <a href="/en/services/general-car-repair" class="mega-menu__item">
-                        <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Car Repair</span>
-                    </a>
-                    <a href="/en/services/exhaust-welding" class="mega-menu__item">
-                        <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Exhaust & Welding</span>
-                    </a>
-                    <a href="/en/services/chassis-brakes" class="mega-menu__item">
-                        <iconify-icon icon="mdi:car-brake-alert" width="20" height="20"
-                            aria-hidden="true"></iconify-icon>
-                        <span>Suspension & Brakes</span>
-                    </a>
-                    <a href="/en/services/tire-service" class="mega-menu__item">
-                        <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Tire Services</span>
-                    </a>
-                    <a href="/en/services/maintenance-diagnostics" class="mega-menu__item">
-                        <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Maintenance & Diagnostics</span>
-                    </a>
-                    <a href="/en/services/transmission-repair" class="mega-menu__item">
-                        <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20"
-                            aria-hidden="true"></iconify-icon>
-                        <span>Gearbox Repair</span>
-                    </a>
-                    <a href="/en/services/electrical-repair" class="mega-menu__item">
-                        <iconify-icon icon="mdi:lightning-bolt" width="20" height="20"
-                            aria-hidden="true"></iconify-icon>
-                        <span>Electrical Works</span>
-                    </a>
-                    <a href="/en/services/engine-repair" class="mega-menu__item">
-                        <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Engine Repair</span>
-                    </a>
-                    <a href="/en/services/oil-change" class="mega-menu__item">
-                        <iconify-icon icon="mdi:oil" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Oil & Filter Change</span>
-                    </a>
-                    <a href="/en/services/pre-purchase-inspection" class="mega-menu__item">
-                        <iconify-icon icon="mdi:file-search-outline" width="20" height="20"
-                            aria-hidden="true"></iconify-icon>
-                        <span>Pre-purchase Inspection</span>
-                    </a>
-                    <a href="/en/services/ac-service" class="mega-menu__item">
-                        <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>AC & Climate Control</span>
-                    </a>
-                    <a href="/en/services/webasto-repair" class="mega-menu__item">
-                        <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
-                        <span>Webasto Repair</span>
-                    </a>
-                </div>
+    <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="/en" class="navbar__logo">Mr.Car</a>
+    <nav class="navbar__nav">
+      <div class="navbar__item has-dropdown">
+        <a href="/en/services" class="navbar__link">[01] Services</a>
+        <div class="mega-menu" id="megaMenuDesktop">
+          <a href="/en/services/general-car-repair" class="mega-menu__item">
+              <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>General Car Repair</span>
+            </a>
+            <div class="mega-menu__group">
+              <a href="/en/services/maintenance-diagnostics" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Maintenance</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/en/services/oil-change" class="mega-menu__subitem">Oil &amp; Filter Change</a>
+              </div>
             </div>
-
-            <a href="/en/about" class="navbar__link">[02] About</a>
-            <a href="/en/prices" class="navbar__link">[03] Prices</a>
-            <a href="/en/contact" class="navbar__link">[04] Contact</a>
-            <a href="/en/gallery" class="navbar__link">[05] Gallery</a>
-            <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
-        </nav>
-        <div class="navbar__cta">
-            <a href="/en/contact" class="btn btn-primary">Send request</a>
-        </div>
-        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
-            <span></span><span></span><span></span>
-        </button>
-        <div class="navbar__lang desktop-only">
-            <a href="/" class="lang-link" title="Eesti keel">
-                <iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon>
-            <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Eesti keel</span></a>
-            <a href="/ru" class="lang-link" title="Русский язык">
-                <iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon>
-            <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Русский язык</span></a>
-            <a href="/en" class="lang-link active" title="English">
-                <iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon>
-            <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">English</span></a>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatsioon">
-        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
-        <nav aria-label="Mobiilne navigatsioon">
-            <a href="/en/services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
-                Services
-                <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24"
-                    height="24"></iconify-icon>
+            <a href="/en/services/diagnostics" class="mega-menu__item">
+              <iconify-icon icon="mdi:car-search" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Diagnostics</span>
             </a>
-            <div class="mobile-mega-menu" id="mobileMegaMenu">
-                <a href="/en/services/general-car-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
-                    <span>Car Repair</span>
-                </a>
-                <a href="/en/services/exhaust-welding" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
-                    <span>Exhaust & Welding</span>
-                </a>
-                <a href="/en/services/chassis-brakes" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
-                    <span>Suspension & Brakes</span>
-                </a>
-                <a href="/en/services/tire-service" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
-                    <span>Tire Services</span>
-                </a>
-                <a href="/en/services/maintenance-diagnostics" class="mobile-mega-menu__item"
-                    onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
-                    <span>Maintenance & Diagnostics</span>
-                </a>
-                <a href="/en/services/transmission-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
-                    <span>Gearbox Repair</span>
-                </a>
-                <a href="/en/services/electrical-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
-                    <span>Electrical Works</span>
-                </a>
-                <a href="/en/services/engine-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-                    <span>Engine Repair</span>
-                </a>
-                <a href="/en/services/oil-change" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
-                    <span>Oil & Filter Change</span>
-                </a>
-                <a href="/en/services/pre-purchase-inspection" class="mobile-mega-menu__item"
-                    onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
-                    <span>Pre-purchase Inspection</span>
-                </a>
-                <a href="/en/services/ac-service" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
-                    <span>AC & Climate Control</span>
-                </a>
-                <a href="/en/services/webasto-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
-                    <span>Webasto Repair</span>
-                </a>
+            <a href="/en/services/engine-repair" class="mega-menu__item">
+              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Engine Repair</span>
+            </a>
+            <div class="mega-menu__group">
+              <a href="/en/services/transmission-repair" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Gearbox Repair</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/en/services/automatic-transmission-repair" class="mega-menu__subitem">Automatic transmissions</a>
+                <a href="/en/services/manual-transmission-repair" class="mega-menu__subitem">Manual transmissions</a>
+              </div>
             </div>
-
-            <a href="/en/about" class="mobile-menu__link" onclick="closeMobileMenu()">About</a>
-            <a href="/en/prices" class="mobile-menu__link" onclick="closeMobileMenu()">Prices</a>
-            <a href="/en/contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
-            <a href="/en/gallery" class="mobile-menu__link" onclick="closeMobileMenu()">Gallery</a>
-            <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
-        </nav>
-        <div class="mobile-menu__lang">
-            <a href="/" class="mobile-lang-link">
-                <iconify-icon icon="circle-flags:ee" width="24" height="24" aria-hidden="true"></iconify-icon>
-                <span>Eesti</span>
+            <a href="/en/services/brake-system-service-and-repair" class="mega-menu__item">
+              <iconify-icon icon="mdi:car-brake-alert" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Brake System</span>
             </a>
-            <a href="/ru" class="mobile-lang-link">
-                <iconify-icon icon="circle-flags:ru" width="24" height="24" aria-hidden="true"></iconify-icon>
-                <span>Русский</span>
+            <a href="/en/services/chassis-brakes" class="mega-menu__item">
+              <iconify-icon icon="mdi:car-lifted-pickup" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Suspension</span>
             </a>
-            <a href="/en" class="mobile-lang-link active">
-                <iconify-icon icon="circle-flags:en" width="24" height="24" aria-hidden="true"></iconify-icon>
-                <span>English</span>
+            <a href="/en/services/electrical-repair" class="mega-menu__item">
+              <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Electrical Works</span>
+            </a>
+            <a href="/en/services/ac-service" class="mega-menu__item">
+              <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>AC &amp; Climate Control</span>
+            </a>
+            <div class="mega-menu__group">
+              <a href="/en/services/webasto-repair" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Webasto Repair</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/en/services/webasto-symptoms" class="mega-menu__subitem">Webasto symptoms</a>
+              </div>
+            </div>
+            <a href="/en/services/pre-purchase-inspection" class="mega-menu__item">
+              <iconify-icon icon="mdi:file-search-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Pre-purchase Inspection</span>
+            </a>
+            <a href="/en/services/tire-service" class="mega-menu__item">
+              <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Tire Services</span>
+            </a>
+            <a href="/en/services/exhaust-welding" class="mega-menu__item">
+              <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Muffler</span>
+            </a>
+            <a href="/en/services/welding-works" class="mega-menu__item">
+              <iconify-icon icon="mdi:hammer-wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Welding Works</span>
             </a>
         </div>
+      </div>
+      <a href="/en/about" class="navbar__link">[02] About</a>
+      <a href="/en/prices" class="navbar__link">[03] Prices</a>
+      <a href="/en/contact" class="navbar__link">[04] Contact</a>
+      <a href="/en/gallery" class="navbar__link">[05] Gallery</a>
+      <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
+    </nav>
+    <div class="navbar__cta">
+      <a href="/en/contact" class="btn btn-primary">Send request</a>
     </div>
+    <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navbar__lang desktop-only">
+      <a href="/" class="lang-link" title="Eesti keel"><iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Eesti keel</span></a>
+            <a href="/ru/" class="lang-link" title="Русский"><iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Русский</span></a>
+            <a href="/en/" class="lang-link active" title="English"><iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">English</span></a>
+    </div>
+  </header>
+
+    <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
+    <nav aria-label="Mobile navigation">
+      <a href="/en/services" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+        Services
+        <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
+      </a>
+      <div class="mobile-mega-menu" id="mobileMegaMenu">
+        <a href="/en/services/general-car-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
+              <span>General Car Repair</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/en/services/maintenance-diagnostics" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                <span>Maintenance</span>
+              </a>
+              <a href="/en/services/oil-change" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Oil &amp; Filter Change</span>
+              </a>
+            </div>
+            <a href="/en/services/diagnostics" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-search" aria-hidden="true"></iconify-icon>
+              <span>Diagnostics</span>
+            </a>
+            <a href="/en/services/engine-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+              <span>Engine Repair</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/en/services/transmission-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                <span>Gearbox Repair</span>
+              </a>
+              <a href="/en/services/automatic-transmission-repair" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Automatic transmissions</span>
+              </a>
+              <a href="/en/services/manual-transmission-repair" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Manual transmissions</span>
+              </a>
+            </div>
+            <a href="/en/services/brake-system-service-and-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
+              <span>Brake System</span>
+            </a>
+            <a href="/en/services/chassis-brakes" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-lifted-pickup" aria-hidden="true"></iconify-icon>
+              <span>Suspension</span>
+            </a>
+            <a href="/en/services/electrical-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+              <span>Electrical Works</span>
+            </a>
+            <a href="/en/services/ac-service" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+              <span>AC &amp; Climate Control</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/en/services/webasto-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                <span>Webasto Repair</span>
+              </a>
+              <a href="/en/services/webasto-symptoms" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Webasto symptoms</span>
+              </a>
+            </div>
+            <a href="/en/services/pre-purchase-inspection" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+              <span>Pre-purchase Inspection</span>
+            </a>
+            <a href="/en/services/tire-service" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
+              <span>Tire Services</span>
+            </a>
+            <a href="/en/services/exhaust-welding" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+              <span>Muffler</span>
+            </a>
+            <a href="/en/services/welding-works" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:hammer-wrench" aria-hidden="true"></iconify-icon>
+              <span>Welding Works</span>
+            </a>
+      </div>
+      <a href="/en/about" class="mobile-menu__link" onclick="closeMobileMenu()">About</a>
+      <a href="/en/prices" class="mobile-menu__link" onclick="closeMobileMenu()">Prices</a>
+      <a href="/en/contact" class="mobile-menu__link" onclick="closeMobileMenu()">Contact</a>
+      <a href="/en/gallery" class="mobile-menu__link" onclick="closeMobileMenu()">Gallery</a>
+    </nav>
+    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
+    <div class="mobile-menu__lang">
+      <a href="/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
+            <a href="/ru/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
+            <a href="/en/" class="mobile-lang-link active"><iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon><span>English</span></a>
+    </div>
+  </div>
 
     <main style="padding-top: 72px;">
         <!-- PAGE HEADER -->
@@ -290,182 +317,72 @@
         <!-- LISTING GRID -->
         <section class="services-listing">
             <div class="listing-grid">
-
-                <!-- Card 1: Car Repair -->
-                <div class="listing-card reveal-card" data-group="repair">
+                <div class="listing-card reveal-card" data-group="diag">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
                             <iconify-icon icon="mdi:wrench" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">Car Repair</h3>
+                        <h3 class="listing-card__title">General Car Repair</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">knocking noise</span>
-                        <span class="listing-tag">leaks</span>
-                        <span class="listing-tag">check engine</span>
+                        <span>Engine problems</span>
+                        <span>Suspension noises</span>
                     </div>
-                    <p class="listing-card__desc">General repair and troubleshooting for all car brands. We'll find the
-                        fault and fix it.</p>
+                    <p class="listing-card__desc">Comprehensive repair for all car makes. From minor issues to major overhauls.</p>
                     <ul class="listing-card__list">
-                        <li>Suspension inspection and repair</li>
-                        <li>Fixing fluid leaks</li>
-                        <li>Minor fault elimination</li>
+                        <li>Engine &amp; Gearbox repair</li>
+                        <li>Suspension &amp; Braking systems</li>
+                        <li>Auto electrical &amp; Diagnostics</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/en/services/general-car-repair" class="btn btn-primary">Read More</a>
+                        <a href="/en/services/general-car-repair" class="listing-card__link">Read More</a>
                     </div>
                 </div>
 
-                <!-- Card 2: Exhaust & Welding -->
-                <div class="listing-card reveal-card" data-group="chassis">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:fire" width="24" height="24" aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Exhaust & Welding</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">loud exhaust</span>
-                        <span class="listing-tag">exhaust smell</span>
-                    </div>
-                    <p class="listing-card__desc">Exhaust diagnostics, repair, and specific welding works, including
-                        catalytic converter replacement.</p>
-                    <ul class="listing-card__list">
-                        <li>Exhaust flex pipe replacement</li>
-                        <li>DPF / Catalytic converter replacement</li>
-                        <li>Professional Mig/Tig welding</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/en/services/exhaust-welding" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Card 3: Suspension & Brakes -->
-                <div class="listing-card reveal-card" data-group="chassis">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:car-brake-alert" width="24" height="24"
-                                aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Suspension & Brakes</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">vibration when braking</span>
-                        <span class="listing-tag">knocking on bumps</span>
-                    </div>
-                    <p class="listing-card__desc">Complete undercarriage and suspension inspection, replacement of worn
-                        parts and brake systems.</p>
-                    <ul class="listing-card__list">
-                        <li>Brake pads and discs replacement</li>
-                        <li>Control arms and bushings replacement</li>
-                        <li>Shock absorbers and springs replacement</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/en/services/chassis-brakes" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Card 4: Tire Services -->
-                <div class="listing-card reveal-card" data-group="chassis">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:tire" width="24" height="24" aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Tire Services</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">flat tire</span>
-                        <span class="listing-tag">steering vibration</span>
-                    </div>
-                    <p class="listing-card__desc">Fast and high-quality tire installation, seasonal change, and precise
-                        balancing.</p>
-                    <ul class="listing-card__list">
-                        <li>Summer/winter tire change</li>
-                        <li>Precise wheel balancing</li>
-                        <li>Tire puncture repair</li>
-                    </ul>
-                    <div class="listing-card__price">Prices from <a href="/en/prices">€20</a></div>
-                    <div class="listing-card__footer">
-                        <a href="/en/services/tire-service" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Card 5: Maintenance & Diagnostics -->
                 <div class="listing-card reveal-card" data-group="diag">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
                             <iconify-icon icon="mdi:car-cog" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">Maintenance & Diagnostics</h3>
+                        <h3 class="listing-card__title">Maintenance</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">maintenance due</span>
-                        <span class="listing-tag">dashboard error</span>
+                        <span>Mileage interval (every 10-15k km)</span>
+                        <span>Year since last service</span>
                     </div>
-                    <p class="listing-card__desc">Computer diagnostics and scheduled maintenance for all car brands as
-                        prescribed by the manufacturer.</p>
+                    <p class="listing-card__desc">Regular maintenance according to manufacturer standards without losing dealer warranty.</p>
                     <ul class="listing-card__list">
-                        <li>Scheduled factory maintenance</li>
-                        <li>Reading and clearing fault codes</li>
-                        <li>Live-data analysis</li>
+                        <li>Engine oil and oil filter replacement</li>
+                        <li>Air and cabin filter replacement</li>
+                        <li>Fluid check and top-up</li>
                     </ul>
-                    <div class="listing-card__price">Prices from <a href="/en/prices">€40</a></div>
                     <div class="listing-card__footer">
-                        <a href="/en/services/maintenance-diagnostics" class="btn btn-primary">Read More</a>
+                        <a href="/en/services/maintenance-diagnostics" class="listing-card__link">Read More</a>
                     </div>
                 </div>
 
-                <!-- Card 6: Gearbox Repair -->
-                <div class="listing-card reveal-card" data-group="repair">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:car-shift-pattern" width="24" height="24"
-                                aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Gearbox Repair</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">gears not shifting</span>
-                        <span class="listing-tag">automatic jerky shifting</span>
-                    </div>
-                    <p class="listing-card__desc">Repair and maintenance of manual and automatic transmissions, dynamic
-                        oil change.</p>
-                    <ul class="listing-card__list">
-                        <li>Dynamic gearbox oil change</li>
-                        <li>Clutch kit replacement</li>
-                        <li>Hydraulics and mechatronics</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/en/services/transmission-repair" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Card 7: Electrical Works -->
                 <div class="listing-card reveal-card" data-group="diag">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:lightning-bolt" width="24" height="24"
-                                aria-hidden="true"></iconify-icon>
+                            <iconify-icon icon="mdi:car-search" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">Electrical Works</h3>
+                        <h3 class="listing-card__title">Diagnostics</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">dead battery</span>
-                        <span class="listing-tag">lights not working</span>
+                        <span>Engine diagnostics</span>
+                        <span>Computer diagnostics</span>
                     </div>
-                    <p class="listing-card__desc">Complex diagnostics and repair of car electrical systems. Eliminating
-                        short circuits.</p>
+                    <p class="listing-card__desc">This service page is under construction. Diagnostics information and prices will be added soon.</p>
                     <ul class="listing-card__list">
-                        <li>Alternator and starter repair</li>
-                        <li>Wiring harness repair</li>
-                        <li>Battery check and replacement</li>
+                        <li>Diagnostics workflow</li>
+                        <li>Prices and timing</li>
+                        <li>Common symptoms</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/en/services/electrical-repair" class="btn btn-primary">Read More</a>
+                        <a href="/en/services/diagnostics" class="listing-card__link">Read More</a>
                     </div>
                 </div>
 
-                <!-- Card 8: Engine Repair -->
                 <div class="listing-card reveal-card" data-group="repair">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
@@ -474,96 +391,130 @@
                         <h3 class="listing-card__title">Engine Repair</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">high oil consumption</span>
-                        <span class="listing-tag">blue smoke</span>
+                        <span>High oil consumption</span>
+                        <span>Knocking and strange noises</span>
                     </div>
-                    <p class="listing-card__desc">Engine overhaul and complex mechanical works performed by an
-                        experienced mechanic.</p>
+                    <p class="listing-card__desc">Major engine overhaul from micro-cracks to full rebuild. Precision machining up to 0.01 mm.</p>
                     <ul class="listing-card__list">
-                        <li>Timing belt or chain replacement</li>
+                        <li>Engine endoscopy and defect detection</li>
+                        <li>Timing belt / chain replacement</li>
                         <li>Cylinder head gasket replacement</li>
-                        <li>Full engine overhaul</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/en/services/engine-repair" class="btn btn-primary">Read More</a>
+                        <a href="/en/services/engine-repair" class="listing-card__link">Read More</a>
                     </div>
                 </div>
 
-                <!-- Card 9: Oil Change -->
+                <div class="listing-card reveal-card" data-group="repair">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-shift-pattern" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Gearbox Repair</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Thumps when shifting</span>
+                        <span>Hum or grinding from the box</span>
+                    </div>
+                    <p class="listing-card__desc">Automatic, manual, DSG, CVTs — we diagnose and fix all gearbox types.</p>
+                    <ul class="listing-card__list">
+                        <li>Automatic / Manual / DSG diagnostics</li>
+                        <li>Gearbox oil and filter change</li>
+                        <li>Clutch and flywheel replacement</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/en/services/transmission-repair" class="listing-card__link">Read More</a>
+                    </div>
+                </div>
+
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-brake-alert" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Brake System</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Squeaking or grinding when braking</span>
+                        <span>Brake pedal vibration</span>
+                    </div>
+                    <p class="listing-card__desc">This service page is under construction. Brake service information and prices will be added soon.</p>
+                    <ul class="listing-card__list">
+                        <li>Brake pad and disc replacement</li>
+                        <li>Caliper inspection</li>
+                        <li>Brake fluid replacement</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/en/services/brake-system-service-and-repair" class="listing-card__link">Read More</a>
+                    </div>
+                </div>
+
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:car-lifted-pickup" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Suspension</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Car pulls to the side</span>
+                        <span>Knocks and squeaks while driving</span>
+                    </div>
+                    <p class="listing-card__desc">Suspension and steering systems — diagnostics and repair with a warranty.</p>
+                    <ul class="listing-card__list">
+                        <li>Suspension diagnostics on a lift</li>
+                        <li>Shock absorber &amp; spring replacement</li>
+                        <li>Bushing &amp; ball joint replacement</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/en/services/chassis-brakes" class="listing-card__link">Read More</a>
+                    </div>
+                </div>
+
                 <div class="listing-card reveal-card" data-group="diag">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:oil" width="24" height="24" aria-hidden="true"></iconify-icon>
+                            <iconify-icon icon="mdi:lightning-bolt" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">Oil & Filters</h3>
+                        <h3 class="listing-card__title">Electrical Works</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">oil change time</span>
-                        <span class="listing-tag">dirty air</span>
+                        <span>Battery drains quickly</span>
+                        <span>Lights / turn signals not working</span>
                     </div>
-                    <p class="listing-card__desc">High-quality oils from well-known brands and replacement of all vital
-                        filters for your car.</p>
+                    <p class="listing-card__desc">Current leaks, short circuits, electronic errors — we find and fix without guesswork.</p>
                     <ul class="listing-card__list">
-                        <li>Engine oil and filter change</li>
-                        <li>Air and fuel filter replacement</li>
-                        <li>Cabin filter replacement</li>
+                        <li>Current leak search</li>
+                        <li>Wiring and harness repair</li>
+                        <li>Starter / alternator diagnostics and repair</li>
                     </ul>
-                    <div class="listing-card__price">Prices from <a href="/en/prices">€45</a></div>
                     <div class="listing-card__footer">
-                        <a href="/en/contact" class="btn btn-primary">Get a Quote</a>
+                        <a href="/en/services/electrical-repair" class="listing-card__link">Read More</a>
                     </div>
                 </div>
 
-                <!-- Card 10: Pre-purchase Inspection -->
-                <div class="listing-card reveal-card" data-group="diag">
-                    <div class="listing-card__header">
-                        <div class="listing-card__icon">
-                            <iconify-icon icon="mdi:file-search-outline" width="24" height="24"
-                                aria-hidden="true"></iconify-icon>
-                        </div>
-                        <h3 class="listing-card__title">Car Inspection</h3>
-                    </div>
-                    <div class="listing-card__tags">
-                        <span class="listing-tag">buying a car</span>
-                        <span class="listing-tag">hidden defects</span>
-                    </div>
-                    <p class="listing-card__desc">Minimize the risk when buying a used car with our independent and
-                        thorough inspection report.</p>
-                    <ul class="listing-card__list">
-                        <li>Paint thickness measurement</li>
-                        <li>Deep computer diagnostics</li>
-                        <li>Visual suspension audit</li>
-                    </ul>
-                    <div class="listing-card__footer">
-                        <a href="/en/services/pre-purchase-inspection" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-
-                <!-- Card 11: Climate Control -->
                 <div class="listing-card reveal-card" data-group="climate">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
                             <iconify-icon icon="mdi:snowflake" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">AC & Climate</h3>
+                        <h3 class="listing-card__title">AC &amp; Climate Control</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">blowing warm air</span>
-                        <span class="listing-tag">bad smell</span>
+                        <span>AC cools poorly</span>
+                        <span>Unpleasant smell from vents</span>
                     </div>
-                    <p class="listing-card__desc">Checking, refilling, and leak repair of air conditioning systems to
-                        ensure optimal temperature.</p>
+                    <p class="listing-card__desc">AC recharging, diagnostics, and repair of air conditioning systems.</p>
                     <ul class="listing-card__list">
-                        <li>AC system freon refill</li>
-                        <li>Pressure leak testing</li>
-                        <li>Compressor/radiator replacement</li>
+                        <li>AC system diagnostics</li>
+                        <li>AC recharging with Freon</li>
+                        <li>Leak detection and repair</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/en/services/ac-service" class="btn btn-primary">Read More</a>
+                        <a href="/en/services/ac-service" class="listing-card__link">Read More</a>
                     </div>
                 </div>
 
-                <!-- Card 12: Webasto Repair -->
                 <div class="listing-card reveal-card" data-group="climate">
                     <div class="listing-card__header">
                         <div class="listing-card__icon">
@@ -572,28 +523,108 @@
                         <h3 class="listing-card__title">Webasto Repair</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span class="listing-tag">heater not working</span>
-                        <span class="listing-tag">cold cabin</span>
+                        <span>Webasto doesn't start</span>
+                        <span>Smokes during operation</span>
                     </div>
-                    <p class="listing-card__desc">Repair and maintenance of autonomous heaters, essential in northern
-                        climates.</p>
+                    <p class="listing-card__desc">Diagnostics, repair, and installation of Webasto and Eberspächer auxiliary heaters.</p>
                     <ul class="listing-card__list">
-                        <li>Eberspächer / Webasto diagnostics</li>
+                        <li>Heater diagnostics</li>
                         <li>Combustion chamber cleaning</li>
-                        <li>Circulation pump replacement</li>
+                        <li>Glow plug replacement</li>
                     </ul>
                     <div class="listing-card__footer">
-                        <a href="/en/services/webasto-repair" class="btn btn-primary">Read More</a>
-                        <a href="/en/services/webasto-symptoms" class="btn-link">Symptoms <span class="arrow" aria-hidden="true">→</span></a>
+                        <a href="/en/services/webasto-repair" class="listing-card__link">Read More</a>
                     </div>
                 </div>
 
-                <!-- No Results Node -->
-                <div id="noResults" class="listing-no-results">
-                    No services found for your query. Try different keywords or clear the filters.
+                <div class="listing-card reveal-card" data-group="diag">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:file-search-outline" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Pre-purchase Inspection</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Engine condition</span>
+                        <span>Gearbox performance</span>
+                    </div>
+                    <p class="listing-card__desc">Independent technical expertise — so your purchase doesn't turn into a disappointment.</p>
+                    <ul class="listing-card__list">
+                        <li>Visual inspection of body and interior</li>
+                        <li>Paint thickness measurement</li>
+                        <li>Computer diagnostics of all systems</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/en/services/pre-purchase-inspection" class="listing-card__link">Read More</a>
+                    </div>
                 </div>
 
-            </div>
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:tire" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Tire Services</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Seasonal change (summer/winter)</span>
+                        <span>Vibration at speed</span>
+                    </div>
+                    <p class="listing-card__desc">Seasonal tire change, balancing, puncture repair. Fast and correct — no queues.</p>
+                    <ul class="listing-card__list">
+                        <li>Seasonal tire change (summer / winter)</li>
+                        <li>Wheel balancing</li>
+                        <li>Puncture repair (plug / patch)</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/en/services/tire-service" class="listing-card__link">Read More</a>
+                    </div>
+                </div>
+
+                <div class="listing-card reveal-card" data-group="chassis">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:fire" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Muffler</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Loud exhaust noise</span>
+                        <span>Exhaust smell in cabin</span>
+                    </div>
+                    <p class="listing-card__desc">Exhaust system and muffler repair and replacement.</p>
+                    <ul class="listing-card__list">
+                        <li>Muffler / resonator replacement</li>
+                        <li>Catalytic converter repair &amp; replacement</li>
+                        <li>Flex pipe replacement</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/en/services/exhaust-welding" class="listing-card__link">Read More</a>
+                    </div>
+                </div>
+
+                <div class="listing-card reveal-card" data-group="repair">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="mdi:hammer-wrench" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">Welding Works</h3>
+                    </div>
+                    <div class="listing-card__tags">
+                        <span>Bracket welding</span>
+                        <span>Chassis welding</span>
+                    </div>
+                    <p class="listing-card__desc">This service page is under construction. Welding information and prices will be added soon.</p>
+                    <ul class="listing-card__list">
+                        <li>Types of welding work</li>
+                        <li>Materials and limitations</li>
+                        <li>Prices and timing</li>
+                    </ul>
+                    <div class="listing-card__footer">
+                        <a href="/en/services/welding-works" class="listing-card__link">Read More</a>
+                    </div>
+                </div>
+</div>
         </section>
 
     </main>

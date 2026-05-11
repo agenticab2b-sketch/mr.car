@@ -165,7 +165,7 @@
       "name": "Как часто менять тормозную жидкость?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Раз в 2 года или каждые 40 000 км. Содержание влаги 2–3% снижает температуру кипения DOT4 со 230°C до 130°C — риск паровой пробки при экстренном торможении."
+        "text": "Раз в 2 года или каждые 40 000 км. Содержание влаги 2–3% снижает температуру кипения тормозной жидкости со 230°C до 130°C — риск паровой пробки при экстренном торможении."
       }
     },
     {
@@ -189,7 +189,7 @@
       "name": "Можно ли ездить, если скрипят тормоза?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Писк — сигнал датчика износа, до сервиса доехать можно. Металлический скрежет означает износ до металла — ехать нельзя, диск повреждается при каждом торможении."
+        "text": "Скрип или писк не всегда означает критический износ: новые колодки тоже могут шуметь во время притирки. У многих современных автомобилей есть датчик износа колодок, но при постоянном звуке стоит попросить мастерскую проверить толщину колодок и состояние тормозных дисков."
       }
     }
   ]
@@ -252,20 +252,41 @@
     <a href="/ru" class="navbar__logo">Mr.Car</a>
     <nav class="navbar__nav">
       <div class="navbar__item has-dropdown">
-        <a href="/ru/uslugi" class="navbar__link" style="color:var(--accent-primary)">[01] Услуги</a>
+        <a href="/ru/uslugi" class="navbar__link">[01] Услуги</a>
         <div class="mega-menu" id="megaMenuDesktop">
           <a href="/ru/services/autoremont" class="mega-menu__item">
               <iconify-icon icon="mdi:wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Общий авторемонт</span>
             </a>
-            <a href="/ru/services/glushiteli-svarka" class="mega-menu__item">
-              <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Ремонт глушителей и сварка</span>
-            </a>            <a href="/ru/services/hodovaya" class="mega-menu__item">
-              <iconify-icon icon="mdi:car-lifted-pickup" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Подвеска</span>
+            <div class="mega-menu__group">
+              <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Техническое обслуживание</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/ru/services/zamena-masla" class="mega-menu__subitem">Замена масла и фильтров</a>
+              </div>
+            </div>
+            <a href="/ru/services/diagnostika" class="mega-menu__item">
+              <iconify-icon icon="mdi:car-search" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Диагностика</span>
             </a>
-
+            <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
+              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Двигатель</span>
+            </a>
+            <div class="mega-menu__group">
+              <a href="/ru/services/remont-kpp" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Коробка передач</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/ru/services/remont-akpp" class="mega-menu__subitem">Автоматические коробки передач</a>
+                <a href="/ru/services/remont-mkpp" class="mega-menu__subitem">Механические коробки передач</a>
+              </div>
+            </div>
             <div class="mega-menu__group">
               <a href="/ru/services/tormoznaya-sistema" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="mdi:car-brake-alert" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -277,55 +298,50 @@
                 <a href="/ru/services/barabannye-tormoza" class="mega-menu__subitem">Барабанные тормоза</a>
               </div>
             </div>
+            <a href="/ru/services/hodovaya" class="mega-menu__item">
+              <iconify-icon icon="mdi:car-lifted-pickup" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Подвеска</span>
+            </a>
+            <a href="/ru/services/elektrika" class="mega-menu__item">
+              <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Автоэлектрика</span>
+            </a>
+            <a href="/ru/services/klimat-konditsioner" class="mega-menu__item">
+              <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Климат и кондиционер</span>
+            </a>
+            <div class="mega-menu__group">
+              <a href="/ru/services/webasto" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Webasto</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/ru/services/webasto-simptomy" class="mega-menu__subitem">Симптомы и ошибки Webasto</a>
+              </div>
+            </div>
+            <a href="/ru/services/proverka-pered-pokupkoy" class="mega-menu__item">
+              <iconify-icon icon="mdi:file-search-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Проверка перед покупкой</span>
+            </a>
             <a href="/ru/services/shinomontazh" class="mega-menu__item">
               <iconify-icon icon="mdi:tire" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Шиномонтаж</span>
             </a>
-            <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mega-menu__item">
-              <iconify-icon icon="mdi:car-cog" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Обслуживание и диагностика</span>
+            <a href="/ru/services/glushiteli-svarka" class="mega-menu__item">
+              <iconify-icon icon="mdi:fire" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Глушитель</span>
             </a>
-            <div class="mega-menu__group">
-              <a href="/ru/services/remont-kpp" class="mega-menu__item mega-menu__item--has-submenu">
-                <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
-                <span>Ремонт КПП</span>
-                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
-              </a>
-              <div class="mega-menu__submenu">
-                <a href="/ru/services/remont-akpp" class="mega-menu__subitem">Автоматические коробки передач</a>
-                <a href="/ru/services/remont-mkpp" class="mega-menu__subitem">Механические коробки передач</a>
-              </div>
-            </div>
-            <a href="/ru/services/elektrika" class="mega-menu__item">
-              <iconify-icon icon="mdi:lightning-bolt" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Услуги автоэлектрика</span>
-            </a>
-            <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
-              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Ремонт двигателя</span>
-            </a>
-            <a href="/ru/services/zamena-masla" class="mega-menu__item">
-              <iconify-icon icon="mdi:oil" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Замена масла и фильтров</span>
-            </a>
-            <a href="/ru/services/proverka-pered-pokupkoy" class="mega-menu__item">
-              <iconify-icon icon="mdi:file-search-outline" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Предпокупочный осмотр</span>
-            </a>
-            <a href="/ru/services/klimat-konditsioner" class="mega-menu__item">
-              <iconify-icon icon="mdi:snowflake" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Заправка кондиционера</span>
-            </a>
-            <a href="/ru/services/webasto" class="mega-menu__item">
-              <iconify-icon icon="mdi:radiator" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Ремонт Webasto</span>
+            <a href="/ru/services/svarochnye-raboty" class="mega-menu__item">
+              <iconify-icon icon="mdi:hammer-wrench" width="20" height="20" aria-hidden="true"></iconify-icon>
+              <span>Сварочные работы</span>
             </a>
         </div>
       </div>
-                  <a href="/ru/o-nas" class="navbar__link">[02] О нас</a>
-                  <a href="/ru/tseny" class="navbar__link">[03] Цены</a>
-                  <a href="/ru/kontakt" class="navbar__link">[04] Контакты</a>
-                  <a href="/ru/galereya" class="navbar__link">[05] Галерея</a>
+      <a href="/ru/o-nas" class="navbar__link">[02] О нас</a>
+      <a href="/ru/tseny" class="navbar__link">[03] Цены</a>
+      <a href="/ru/kontakt" class="navbar__link">[04] Контакты</a>
+      <a href="/ru/galereya" class="navbar__link">[05] Галерея</a>
       <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
     </nav>
     <div class="navbar__cta">
@@ -335,33 +351,54 @@
       <span></span><span></span><span></span>
     </button>
     <div class="navbar__lang desktop-only">
-      <a href="/" class="lang-link" title="Эстонский"><iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Эстонский</span></a>
+      <a href="/" class="lang-link" title="Eesti keel"><iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Eesti keel</span></a>
             <a href="/ru/" class="lang-link active" title="Русский"><iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Русский</span></a>
-            <a href="/en/" class="lang-link" title="Английский"><iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Английский</span></a>
+            <a href="/en/" class="lang-link" title="English"><iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">English</span></a>
     </div>
   </header>
 
   <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Мобильная навигация">
     <button class="mobile-menu__close" id="closeMenu" aria-label="Закрыть меню">&times;</button>
     <nav aria-label="Мобильная навигация">
       <a href="/ru/uslugi" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
-        [01] Услуги
+        Услуги
         <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
       </a>
       <div class="mobile-mega-menu" id="mobileMegaMenu">
-        <a href="/ru/services/autoremont" class="mobile-mega-menu__item">
+        <a href="/ru/services/autoremont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
               <iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon>
               <span>Общий авторемонт</span>
             </a>
-            <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
-              <span>Ремонт глушителей и сварка</span>
-            </a>                <a href="/ru/services/hodovaya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                    <iconify-icon icon="mdi:car-lifted-pickup" aria-hidden="true"></iconify-icon>
-                    <span>Подвеска</span>
-                </a>
-
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
+                <span>Техническое обслуживание</span>
+              </a>
+              <a href="/ru/services/zamena-masla" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Замена масла и фильтров</span>
+              </a>
+            </div>
+            <a href="/ru/services/diagnostika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-search" aria-hidden="true"></iconify-icon>
+              <span>Диагностика</span>
+            </a>
+            <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+              <span>Двигатель</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
+                <span>Коробка передач</span>
+              </a>
+              <a href="/ru/services/remont-akpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Автоматические коробки передач</span>
+              </a>
+              <a href="/ru/services/remont-mkpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Механические коробки передач</span>
+              </a>
+            </div>
             <div class="mobile-mega-menu__group">
               <a href="/ru/services/tormoznaya-sistema" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                 <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
@@ -374,61 +411,54 @@
                 <span>Барабанные тормоза</span>
               </a>
             </div>
-            <a href="/ru/services/shinomontazh" class="mobile-mega-menu__item">
+            <a href="/ru/services/hodovaya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:car-lifted-pickup" aria-hidden="true"></iconify-icon>
+              <span>Подвеска</span>
+            </a>
+            <a href="/ru/services/elektrika" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
+              <span>Автоэлектрика</span>
+            </a>
+            <a href="/ru/services/klimat-konditsioner" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
+              <span>Климат и кондиционер</span>
+            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/webasto" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
+                <span>Webasto</span>
+              </a>
+              <a href="/ru/services/webasto-simptomy" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Симптомы и ошибки Webasto</span>
+              </a>
+            </div>
+            <a href="/ru/services/proverka-pered-pokupkoy" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
+              <span>Проверка перед покупкой</span>
+            </a>
+            <a href="/ru/services/shinomontazh" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
               <iconify-icon icon="mdi:tire" aria-hidden="true"></iconify-icon>
               <span>Шиномонтаж</span>
             </a>
-            <a href="/ru/services/tehobsluzhivanie-diagnostika" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:car-cog" aria-hidden="true"></iconify-icon>
-              <span>Обслуживание и диагностика</span>
+            <a href="/ru/services/glushiteli-svarka" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:fire" aria-hidden="true"></iconify-icon>
+              <span>Глушитель</span>
             </a>
-            <div class="mobile-mega-menu__group">
-              <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
-                <span>Ремонт КПП</span>
-              </a>
-              <a href="/ru/services/remont-akpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
-                <span>Автоматические коробки передач</span>
-              </a>
-              <a href="/ru/services/remont-mkpp" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
-                <span>Механические коробки передач</span>
-              </a>
-            </div>
-            <a href="/ru/services/elektrika" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:lightning-bolt" aria-hidden="true"></iconify-icon>
-              <span>Услуги автоэлектрика</span>
-            </a>
-            <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-              <span>Ремонт двигателя</span>
-            </a>
-            <a href="/ru/services/zamena-masla" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:oil" aria-hidden="true"></iconify-icon>
-              <span>Замена масла и фильтров</span>
-            </a>
-            <a href="/ru/services/proverka-pered-pokupkoy" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:file-search-outline" aria-hidden="true"></iconify-icon>
-              <span>Предпокупочный осмотр</span>
-            </a>
-            <a href="/ru/services/klimat-konditsioner" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:snowflake" aria-hidden="true"></iconify-icon>
-              <span>Заправка кондиционера</span>
-            </a>
-            <a href="/ru/services/webasto" class="mobile-mega-menu__item">
-              <iconify-icon icon="mdi:radiator" aria-hidden="true"></iconify-icon>
-              <span>Ремонт Webasto</span>
+            <a href="/ru/services/svarochnye-raboty" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <iconify-icon icon="mdi:hammer-wrench" aria-hidden="true"></iconify-icon>
+              <span>Сварочные работы</span>
             </a>
       </div>
-      <a href="/ru/o-nas" class="mobile-menu__link" onclick="closeMobileMenu()">[02] О нас</a>
-      <a href="/ru/tseny" class="mobile-menu__link" onclick="closeMobileMenu()">[03] Цены</a>
-      <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">[04] Контакты</a>
-      <a href="/ru/galereya" class="mobile-menu__link" onclick="closeMobileMenu()">[05] Галерея</a>
+      <a href="/ru/o-nas" class="mobile-menu__link" onclick="closeMobileMenu()">О нас</a>
+      <a href="/ru/tseny" class="mobile-menu__link" onclick="closeMobileMenu()">Цены</a>
+      <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
+      <a href="/ru/galereya" class="mobile-menu__link" onclick="closeMobileMenu()">Галерея</a>
     </nav>
-    <a href="tel:+37256461210" class="mobile-menu__link" style="color:var(--accent-primary)">5646 1210</a>
+    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
     <div class="mobile-menu__lang">
-      <a href="/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Эстонский</span></a>
+      <a href="/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
             <a href="/ru/" class="mobile-lang-link active"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
-            <a href="/en/" class="mobile-lang-link"><iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon><span>Английский</span></a>
+            <a href="/en/" class="mobile-lang-link"><iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon><span>English</span></a>
     </div>
   </div>
 
@@ -569,7 +599,7 @@
         <div class="gb-risk-stages">
           <div class="gb-risk-stage"><div class="gb-risk-stage__marker">01</div><div class="gb-risk-stage__content"><strong>Естественный износ колодок</strong><p>Самая частая причина. В городском трафике Таллинна ресурс передних колодок составляет 25 000–40 000 км. При толщине менее 3 мм — замена обязательна.</p></div></div>
           <div class="gb-risk-stage"><div class="gb-risk-stage__marker">02</div><div class="gb-risk-stage__content"><strong>Коррозия из-за дорожных реагентов</strong><p>Противогололёдные смеси на таллиннских дорогах ускоряют коррозию суппортов и рабочих цилиндров. Автомобиль, простоявший несколько дней на морозе, может «прихватить» — колодки примерзают к диску или барабану.</p></div></div>
-          <div class="gb-risk-stage"><div class="gb-risk-stage__marker">03</div><div class="gb-risk-stage__content"><strong>Старение тормозной жидкости</strong><p>Жидкость DOT4 поглощает влагу из воздуха. Уже через 2 года содержание воды достигает 2–3%, что снижает температуру кипения со штатных 230°C до 130°C. При экстренном торможении жидкость закипает — педаль проваливается в пол.</p></div></div>
+          <div class="gb-risk-stage"><div class="gb-risk-stage__marker">03</div><div class="gb-risk-stage__content"><strong>Старение тормозной жидкости</strong><p>Тормозная жидкость поглощает влагу из воздуха. Уже через 2 года содержание воды достигает 2–3%, что снижает температуру кипения со штатных 230°C до 130°C. При экстренном торможении жидкость закипает — педаль проваливается в пол.</p></div></div>
           <div class="gb-risk-stage"><div class="gb-risk-stage__marker">04</div><div class="gb-risk-stage__content"><strong>Заклинивание суппортов</strong><p>Повреждённые пыльники, дорожная соль и редкое обслуживание ведут к коррозии поршней и постоянному контакту колодки с диском.</p></div></div>
           <div class="gb-risk-stage"><div class="gb-risk-stage__marker">05</div><div class="gb-risk-stage__content"><strong>Неравномерный износ</strong><p>Дешёвые колодки или замена без соблюдения попарного принципа ведут к деформации диска и биению педали.</p></div></div>
         </div>
@@ -577,13 +607,13 @@
 
       <div class="gb-urgency-block">
         <div class="gb-urgency-block__title"><iconify-icon icon="mdi:cash-clock" width="24"></iconify-icon> Не ждите, пока колодки дойдут до металла</div>
-        <div class="gb-urgency-block__text">Замена колодок стоит от 45 €. Если колодки «дошли до металла» и повредили диск — добавляется замена дисков от 120 € за ось. Каждая неделя промедления увеличивает стоимость ремонта. Запишитесь при первом симптоме.</div>
+        <div class="gb-urgency-block__text">Замена колодок стоит от 45 €. Если колодки «дошли до металла» и повредили диск — добавляется замена дисков от 120 € за ось. Запишитесь при первом симптоме.</div>
       </div>
 
       <div class="gb-page-section" id="symptoms">
         <h3 class="gb-section-title">Основные симптомы неисправности тормозной системы</h3>
         <div class="gb-symptoms">
-          <div class="gb-symptom-card"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:volume-high" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Скрип и писк при торможении</div><div class="gb-symptom-card__desc">Высокочастотный звук — сигнал датчика износа: осталось менее 3 мм фрикционного материала. Можно доехать до сервиса, но не откладывайте дольше 1–2 недель. Металлический скрежет означает, что колодка уже «до металла» — диск повреждается при каждом нажатии на педаль.</div></div>
+          <div class="gb-symptom-card"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:volume-high" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Скрип и писк при торможении</div><div class="gb-symptom-card__desc">Скрип или писк не всегда означает критический износ: новые колодки могут шуметь во время притирки, а звук также появляется из-за пыли, влаги, перегрева или состава фрикционного материала. У многих современных автомобилей есть датчик износа колодок, но при постоянном шуме лучше попросить мастерскую проверить толщину колодок и состояние тормозных дисков.</div></div>
           <div class="gb-symptom-card"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:vibrate" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Вибрация или пульсация педали</div><div class="gb-symptom-card__desc">Педаль ритмично пульсирует при торможении — признак деформации тормозного диска (биение run-out более 0,05 мм). Часто возникает после перегрева или резкого охлаждения горячего диска водой. Диск требует замены.</div></div>
           <div class="gb-symptom-card gb-symptom-card--critical"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:car-brake-low-pressure" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Мягкая или проваливающаяся педаль</div><div class="gb-symptom-card__desc">Педаль уходит глубоко или почти до пола, прежде чем появляется торможение. Причина — воздух в гидравлической системе или критически старая тормозная жидкость с высоким содержанием влаги. Требует немедленной диагностики.</div></div>
           <div class="gb-symptom-card"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:car-traction-control" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Увод при торможении</div><div class="gb-symptom-card__desc">Автомобиль тянет влево или вправо при нажатии на тормоз. Признак заклинивания суппорта или неравномерного износа колодок на оси. Особенно опасно на мокрой дороге и в повороте.</div></div>
@@ -603,7 +633,7 @@
           <div class="gb-step"><span class="gb-step__num">01</span><div><strong>Диагностика</strong><p>Снимаем колёса, замеряем толщину колодок и дисков, проверяем биение дисков индикатором (допустимый run-out — до 0,05 мм). Осматриваем суппорты и пыльники, проверяем ход поршней. Считываем коды ошибок ABS и ESP. Тестируем тормозную жидкость на содержание влаги.</p></div></div>
           <div class="gb-step"><span class="gb-step__num">02</span><div><strong>Честная смета</strong><p>Сообщаем, что именно требует замены или обслуживания — детали и работа отдельно. Если диски ещё в допуске — не навязываем замену. Если достаточно замены жидкости и регулировки — делаем только это. До начала любых работ.</p></div></div>
           <div class="gb-step"><span class="gb-step__num">03</span><div><strong>Обслуживание и ремонт по стандартам</strong><p>Меняем только изношенные компоненты. Используем качественные колодки и диски проверенных брендов: Brembo, TRW, ATE, Bosch. Смазываем направляющие суппортов высокотемпературной смазкой. На авто с электромеханическим стояночным тормозом (EPB) — активируем сервисный режим через сканер.</p></div></div>
-          <div class="gb-step"><span class="gb-step__num">04</span><div><strong>Прокачка и финальная проверка</strong><p>После замены колодок, дисков или цилиндров прокачиваем тормозную систему свежей жидкостью нужного класса (DOT4 или DOT5.1). Проверяем свободный ход педали, симметричность торможения на оси, отсутствие утечек.</p></div></div>
+          <div class="gb-step"><span class="gb-step__num">04</span><div><strong>Прокачка и финальная проверка</strong><p>После замены колодок, дисков или цилиндров прокачиваем тормозную систему свежей тормозной жидкостью нужного класса по требованиям производителя. Проверяем свободный ход педали, симметричность торможения на оси, отсутствие утечек.</p></div></div>
           <div class="gb-step"><span class="gb-step__num">05</span><div><strong>Гарантия 12 месяцев</strong><p>Письменная гарантия на детали и выполненные работы. После замены колодок и дисков объясняем правила притирки: первые 200 км — плавные торможения без экстренных остановок. Это обеспечивает правильный перенос фрикционного материала на диск и максимальный ресурс.</p></div></div>
         </div>
       </div>
@@ -659,7 +689,7 @@
       <section id="faq">
         <h2 class="gb-section-title">Частые вопросы</h2>
         <div class="gb-faq">
-          <details class="gb-faq-item" open><summary>Как часто нужно менять тормозные колодки?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Передние колодки в городских условиях Таллинна служат 25 000–40 000 км, задние — 40 000–60 000 км. Точный срок зависит от стиля езды, марки колодок и типа автомобиля. При каждом ТО рекомендуем проверять толщину: менее 3 мм — замена обязательна, 3–5 мм — планируйте замену в ближайшие 5 000–10 000 км.</div></details><details class="gb-faq-item"><summary>Нужно ли менять диски при замене колодок?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Не всегда. Если толщина диска выше минимально допустимого значения производителя и нет биения — диски можно оставить. Минимальная толщина обычно указана на торце диска (20–22 мм для передних дисков среднего авто). Если ниже допуска или есть биение более 0,05 мм — замена обязательна. Диски меняем парами на оси.</div></details><details class="gb-faq-item"><summary>Можно ли ездить, если скрипят тормоза?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Высокочастотный писк — сигнал датчика износа. До сервиса доехать можно, но не откладывайте дольше 1–2 недель. Если скрежет металлический — колодка уже «до металла», диск повреждается при каждом торможении. В этом случае ехать нельзя: риск для безопасности.</div></details><details class="gb-faq-item"><summary>Как часто менять тормозную жидкость?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Раз в 2 года или каждые 40 000 км — независимо от того, как выглядит жидкость. Тормозная жидкость поглощает влагу: уже через 2 года содержание воды достигает 2–3%, что снижает температуру кипения DOT4 со штатных 230°C до 130°C. При экстренном торможении перегретая жидкость закипает, образуется паровая пробка — педаль проваливается. Проверяем жидкость тестером при каждом визите.</div></details><details class="gb-faq-item"><summary>Горит лампа ABS — насколько это опасно?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">При горящей лампе ABS система антиблокировки деактивирована. На сухой дороге разница незначительна. На мокрой или скользкой — колёса могут заблокироваться при экстренном торможении, и вы потеряете управление. Диагностика ABS в Mr.Car — от 80 €.</div></details><details class="gb-faq-item"><summary>Сколько стоит полная замена колодок и дисков?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Замена передних колодок и дисков на среднем европейском автомобиле (Golf, Octavia, Focus) — от 180–220 € с запчастями. На премиальных марках (BMW, Mercedes, Audi) — от 300–400 € в зависимости от модели. Точную стоимость называем после диагностики и выбора запчастей.</div></details>
+          <details class="gb-faq-item" open><summary>Как часто нужно менять тормозные колодки?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Передние колодки в городских условиях Таллинна служат 25 000–40 000 км, задние — 40 000–60 000 км. Точный срок зависит от стиля езды, марки колодок и типа автомобиля. При каждом ТО рекомендуем проверять толщину: менее 3 мм — замена обязательна, 3–5 мм — планируйте замену в ближайшие 5 000–10 000 км.</div></details><details class="gb-faq-item"><summary>Нужно ли менять диски при замене колодок?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Не всегда. Если толщина диска выше минимально допустимого значения производителя и нет биения — диски можно оставить. Минимальная толщина обычно указана на торце диска (20–22 мм для передних дисков среднего авто). Если ниже допуска или есть биение более 0,05 мм — замена обязательна. Диски меняем парами на оси.</div></details><details class="gb-faq-item"><summary>Можно ли ездить, если скрипят тормоза?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Скрип или писк не всегда означает критический износ: новые колодки тоже могут шуметь во время притирки. У многих современных автомобилей есть датчик износа колодок, но при постоянном звуке стоит попросить мастерскую проверить толщину колодок и состояние тормозных дисков.</div></details><details class="gb-faq-item"><summary>Как часто менять тормозную жидкость?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Раз в 2 года или каждые 40 000 км — независимо от того, как выглядит жидкость. Тормозная жидкость поглощает влагу: уже через 2 года содержание воды достигает 2–3%, что снижает температуру кипения со штатных 230°C до 130°C. При экстренном торможении перегретая жидкость закипает, образуется паровая пробка — педаль проваливается. Проверяем жидкость тестером при каждом визите.</div></details><details class="gb-faq-item"><summary>Горит лампа ABS — насколько это опасно?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">При горящей лампе ABS система антиблокировки деактивирована. На сухой дороге разница незначительна. На мокрой или скользкой — колёса могут заблокироваться при экстренном торможении, и вы потеряете управление. Диагностика ABS в Mr.Car — от 80 €.</div></details><details class="gb-faq-item"><summary>Сколько стоит полная замена колодок и дисков?<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary><div class="gb-faq-item__content">Замена передних колодок и дисков на среднем европейском автомобиле (Golf, Octavia, Focus) — от 180–220 € с запчастями. На премиальных марках (BMW, Mercedes, Audi) — от 300–400 € в зависимости от модели. Точную стоимость называем после диагностики и выбора запчастей.</div></details>
         </div>
       </section>
 

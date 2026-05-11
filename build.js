@@ -34,18 +34,19 @@ const PROD_ORIGIN = 'https://www.mrcar.ee';
 const TODAY = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 const SERVICE_NAV_ORDER = [
   'autoremont',
-  'summutid-keevitus',
-  'veermik-pidurid',
-  'pidurisusteemi-hooldus-ja-remont',
-  'rehvitood',
   'hooldus-diagnostika',
-  'kaigukastiremont',
-  'elektritood',
+  'diagnostika',
   'mootoriremont',
-  'olivahetus',
-  'ostueelne-kontroll',
+  'kaigukastiremont',
+  'pidurisusteemi-hooldus-ja-remont',
+  'veermik-pidurid',
+  'elektritood',
   'kliimahooldus',
-  'webasto-diagnostika'
+  'webasto-diagnostika',
+  'ostueelne-kontroll',
+  'rehvitood',
+  'summutid-keevitus',
+  'keevitustood'
 ];
 const SERVICE_NAV_RANK = new Map(SERVICE_NAV_ORDER.map((slug, index) => [slug, index]));
 
@@ -761,79 +762,84 @@ function renderDeepDiveContent(s, cfg) {
 }
 
 function buildNavLinks(navLinks) {
-  return navLinks.map(n =>
-    `<a href="${esc(n.href)}" class="navbar__link"${n.style ? ` style="${esc(n.style)}"` : ''}>${esc(n.label)}</a>`
-  ).join('\n            ');
+  return navLinks.map(buildNavLink).join('\n            ');
 }
 
-const TRANSMISSION_MENU = {
-  ru: {
-    parent: 'remont-kpp',
-    children: [
-      { slug: 'remont-akpp', label: 'Автоматические коробки передач' },
-      { slug: 'remont-mkpp', label: 'Механические коробки передач' },
-    ],
-  },
-  et: {
-    parent: 'kaigukastiremont',
-    children: [
-      { slug: 'automaatkasti-remont', label: 'Automaatkäigukastid' },
-      { slug: 'kasikasti-remont', label: 'Manuaalkäigukastid' },
-    ],
-  },
-};
-
-const BRAKE_MENU = {
-  ru: {
-    parent: 'tormoznaya-sistema',
-    children: [
-      { slug: 'diskovye-tormoza', label: 'Дисковые тормоза' },
-      { slug: 'barabannye-tormoza', label: 'Барабанные тормоза' },
-    ],
-  },
-};
-
-function getTransmissionMenu(cfg) {
-  return TRANSMISSION_MENU[cfg.lang] || null;
+function buildNavLink(n) {
+  return `<a href="${esc(n.href)}" class="navbar__link"${n.style ? ` style="${esc(n.style)}"` : ''}>${esc(n.label)}</a>`;
 }
 
-function isTransmissionParent(cfg, slug) {
-  const menu = getTransmissionMenu(cfg);
-  return !!menu && slug === menu.parent;
+function getServiceParentSlug(service) {
+  return service.menuParentSlug || service.parentSlug || '';
 }
 
-function isTransmissionFamily(cfg, slug) {
-  const menu = getTransmissionMenu(cfg);
-  return !!menu && [menu.parent, ...menu.children.map(child => child.slug)].includes(slug);
+function isTopLevelMenuService(service) {
+  return !service.hideFromMenu && !getServiceParentSlug(service);
 }
 
-function getBrakeMenu(cfg) {
-  return BRAKE_MENU[cfg.lang] || null;
+function getTopLevelMenuServices(services) {
+  return services.filter(isTopLevelMenuService);
 }
 
-function isBrakeParent(cfg, slug) {
-  const menu = getBrakeMenu(cfg);
-  return !!menu && slug === menu.parent;
+function normalizeMenuChild(child, serviceLookup) {
+  const raw = typeof child === 'string' ? { slug: child } : (child || {});
+  const slug = raw.slug || '';
+  const linkedService = serviceLookup.get(slug);
+  const label = raw.label || raw.navTitle || linkedService?.navTitle || linkedService?.heroTitle || slug;
+
+  return {
+    slug,
+    href: raw.href || '',
+    label,
+    icon: raw.icon || linkedService?.icon || ''
+  };
 }
 
-function renderTransmissionSubmenuArrow(cfg) {
-  if (cfg.lang === 'et') {
-    return '<span class="mega-menu__submenu-arrow" aria-hidden="true">&rsaquo;</span>';
-  }
+function getMenuChildren(services, parentService) {
+  const serviceLookup = new Map(services.map(service => [service.slug, service]));
+  const explicitChildren = Array.isArray(parentService.menuChildren)
+    ? parentService.menuChildren
+    : [];
+  const dataChildren = services
+    .filter(service => getServiceParentSlug(service) === parentService.slug)
+    .map(service => ({
+      slug: service.slug,
+      label: service.navTitle || service.heroTitle || service.slug,
+      icon: service.icon || ''
+    }));
+
+  const seen = new Set();
+  return [...explicitChildren, ...dataChildren]
+    .map(child => normalizeMenuChild(child, serviceLookup))
+    .filter(child => {
+      const key = child.href || child.slug;
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+function isServiceFamily(services, currentSlug, parentService) {
+  if (currentSlug === parentService.slug) return true;
+  return getMenuChildren(services, parentService).some(child => child.slug === currentSlug);
+}
+
+function menuChildHref(child, cfg) {
+  return child.href ? esc(child.href) : `${cfg.serviceBase}${esc(child.slug)}`;
+}
+
+function renderMenuSubmenuArrow() {
   return '<iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>';
 }
 
-function renderTransmissionSidebarCaret(cfg) {
-  if (cfg.lang === 'et') {
-    return '<span class="sd-sidebar__caret" aria-hidden="true">&#9662;</span>';
-  }
+function renderSidebarCaret() {
   return '<iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>';
 }
 
 function buildSidebar(services, currentSlug, cfg) {
   // Group by category
   const cats = {};
-  for (const s of services) {
+  for (const s of getTopLevelMenuServices(services)) {
     if (!cats[s.category]) cats[s.category] = [];
     cats[s.category].push(s);
   }
@@ -843,21 +849,21 @@ function buildSidebar(services, currentSlug, cfg) {
             <div class="sd-sidebar__cat-title">${esc(toSentenceCaseLabel(cat, cfg.lang))}</div>
             <ul class="sd-sidebar__list">`;
     for (const s of items) {
-      if (isTransmissionParent(cfg, s.slug)) {
-        const menu = getTransmissionMenu(cfg);
-        const isFamilyPage = isTransmissionFamily(cfg, currentSlug);
-        const transmissionParentActive = isFamilyPage ? ' active' : '';
-        const transmissionItemOpen = isFamilyPage ? ' sd-sidebar__item--open' : '';
-        const childrenHtml = menu.children.map(child => {
+      const children = getMenuChildren(services, s);
+      if (children.length) {
+        const isFamilyPage = isServiceFamily(services, currentSlug, s);
+        const parentActive = isFamilyPage ? ' active' : '';
+        const itemOpen = isFamilyPage ? ' sd-sidebar__item--open' : '';
+        const childrenHtml = children.map(child => {
           const childActive = currentSlug === child.slug ? ' active' : '';
-          return `<li><a href="${cfg.serviceBase}${esc(child.slug)}" class="sd-sidebar__sublink${childActive}">${esc(child.label)}</a></li>`;
+          return `<li><a href="${menuChildHref(child, cfg)}" class="sd-sidebar__sublink${childActive}">${esc(child.label)}</a></li>`;
         }).join('\n                  ');
 
-        html += `\n              <li class="sd-sidebar__item sd-sidebar__item--has-children${transmissionItemOpen}">
-                <a href="${cfg.serviceBase}${esc(s.slug)}" class="sd-sidebar__link${transmissionParentActive}">
+        html += `\n              <li class="sd-sidebar__item sd-sidebar__item--has-children${itemOpen}">
+                <a href="${cfg.serviceBase}${esc(s.slug)}" class="sd-sidebar__link${parentActive}">
                   <iconify-icon icon="${esc(s.icon)}" width="18" height="18" aria-hidden="true"></iconify-icon>
                   <span>${esc(s.navTitle)}</span>
-                  ${renderTransmissionSidebarCaret(cfg)}
+                  ${renderSidebarCaret()}
                 </a>
                 <ul class="sd-sidebar__sublist">
                   ${childrenHtml}
@@ -879,36 +885,18 @@ function buildSidebar(services, currentSlug, cfg) {
 }
 
 function buildMegaMenu(services, cfg) {
-  return services.map(s => {
-    if (isBrakeParent(cfg, s.slug)) {
-      const menu = getBrakeMenu(cfg);
-      const submenuHtml = menu.children.map(child =>
-        `<a href="${cfg.serviceBase}${esc(child.slug)}" class="mega-menu__subitem">${esc(child.label)}</a>`
+  return getTopLevelMenuServices(services).map(s => {
+    const children = getMenuChildren(services, s);
+    if (children.length) {
+      const submenuHtml = children.map(child =>
+        `<a href="${menuChildHref(child, cfg)}" class="mega-menu__subitem">${esc(child.label)}</a>`
       ).join('\n                ');
 
       return `<div class="mega-menu__group">
               <a href="${cfg.serviceBase}${esc(s.slug)}" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="${esc(s.icon)}" width="20" height="20" aria-hidden="true"></iconify-icon>
                 <span>${esc(s.navTitle)}</span>
-                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
-              </a>
-              <div class="mega-menu__submenu">
-                ${submenuHtml}
-              </div>
-            </div>`;
-    }
-
-    if (isTransmissionParent(cfg, s.slug)) {
-      const menu = getTransmissionMenu(cfg);
-      const submenuHtml = menu.children.map(child =>
-        `<a href="${cfg.serviceBase}${esc(child.slug)}" class="mega-menu__subitem">${esc(child.label)}</a>`
-      ).join('\n                ');
-
-      return `<div class="mega-menu__group">
-              <a href="${cfg.serviceBase}${esc(s.slug)}" class="mega-menu__item mega-menu__item--has-submenu">
-                <iconify-icon icon="${esc(s.icon)}" width="20" height="20" aria-hidden="true"></iconify-icon>
-                <span>${esc(s.navTitle)}</span>
-                ${renderTransmissionSubmenuArrow(cfg)}
+                ${renderMenuSubmenuArrow()}
               </a>
               <div class="mega-menu__submenu">
                 ${submenuHtml}
@@ -924,11 +912,11 @@ function buildMegaMenu(services, cfg) {
 }
 
 function buildMobileMegaMenu(services, cfg) {
-  return services.map(s => {
-    if (isBrakeParent(cfg, s.slug)) {
-      const menu = getBrakeMenu(cfg);
-      const mobileSubmenuHtml = menu.children.map(child =>
-        `<a href="${cfg.serviceBase}${esc(child.slug)}" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+  return getTopLevelMenuServices(services).map(s => {
+    const children = getMenuChildren(services, s);
+    if (children.length) {
+      const mobileSubmenuHtml = children.map(child =>
+        `<a href="${menuChildHref(child, cfg)}" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
                 <span>${esc(child.label)}</span>
               </a>`
       ).join('\n              ');
@@ -942,28 +930,84 @@ function buildMobileMegaMenu(services, cfg) {
             </div>`;
     }
 
-    if (isTransmissionParent(cfg, s.slug)) {
-      const menu = getTransmissionMenu(cfg);
-      const mobileSubmenuHtml = menu.children.map(child =>
-        `<a href="${cfg.serviceBase}${esc(child.slug)}" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
-                <span>${esc(child.label)}</span>
-              </a>`
-      ).join('\n              ');
-
-      return `<div class="mobile-mega-menu__group">
-              <a href="${cfg.serviceBase}${esc(s.slug)}" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-                <iconify-icon icon="${esc(s.icon)}" aria-hidden="true"></iconify-icon>
-                <span>${esc(s.navTitle)}</span>
-              </a>
-              ${mobileSubmenuHtml}
-            </div>`;
-    }
-
-    return `<a href="${cfg.serviceBase}${esc(s.slug)}" class="mobile-mega-menu__item">
+    return `<a href="${cfg.serviceBase}${esc(s.slug)}" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
               <iconify-icon icon="${esc(s.icon)}" aria-hidden="true"></iconify-icon>
               <span>${esc(s.navTitle)}</span>
             </a>`;
   }).join('\n            ');
+}
+
+function getLanguageLinks() {
+  return [
+    { href: '/', code: 'et', flag: 'circle-flags:ee', title: 'Eesti keel' },
+    { href: '/ru/', code: 'ru', flag: 'circle-flags:ru', title: 'Русский' },
+    { href: '/en/', code: 'en', flag: 'circle-flags:en', title: 'English' }
+  ];
+}
+
+function buildDesktopLangs(cfg) {
+  return getLanguageLinks().map(l => {
+    const isActive = l.code === cfg.lang ? ' active' : '';
+    return `<a href="${l.href}" class="lang-link${isActive}" title="${esc(l.title)}"><iconify-icon icon="${l.flag}" width="24" height="24"></iconify-icon>${srOnlySpan(l.title)}</a>`;
+  }).join('\n            ');
+}
+
+function buildMobileLangs(cfg) {
+  return getLanguageLinks().map(l => {
+    const isActive = l.code === cfg.lang ? ' active' : '';
+    return `<a href="${l.href}" class="mobile-lang-link${isActive}"><iconify-icon icon="${l.flag}" width="32" height="32"></iconify-icon><span>${esc(l.title)}</span></a>`;
+  }).join('\n            ');
+}
+
+function buildHeaderAndMobileMenu(services, cfg) {
+  const servicesNavLink = buildNavLink(cfg.navLinks[0]);
+  const otherNavLinks = cfg.navLinks.slice(1).map(buildNavLink).join('\n      ');
+  const mobileOtherNavLinks = cfg.navLinks.slice(1)
+    .map(n => `<a href="${esc(n.href)}" class="mobile-menu__link" onclick="closeMobileMenu()">${esc(stripNavOrdinal(n.label))}</a>`)
+    .join('\n      ');
+
+  return `<!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="${cfg.prefix || '/'}" class="navbar__logo">Mr.Car</a>
+    <nav class="navbar__nav">
+      <div class="navbar__item has-dropdown">
+        ${servicesNavLink}
+        <div class="mega-menu" id="megaMenuDesktop">
+          ${buildMegaMenu(services, cfg)}
+        </div>
+      </div>
+      ${otherNavLinks}
+      <a href="tel:${cfg.phoneHref}" class="navbar__phone">${cfg.phone}</a>
+    </nav>
+    <div class="navbar__cta">
+      <a href="${esc(cfg.headerCtaHref)}" class="btn btn-primary">${esc(cfg.headerCtaLabel)}</a>
+    </div>
+    <button class="navbar__burger" id="burgerBtn" aria-label="${esc(cfg.menuOpenLabel)}">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navbar__lang desktop-only">
+      ${buildDesktopLangs(cfg)}
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="${esc(cfg.mobileNavLabel)}">
+    <button class="mobile-menu__close" id="closeMenu" aria-label="${esc(cfg.menuCloseLabel)}">&times;</button>
+    <nav aria-label="${esc(cfg.mobileNavLabel)}">
+      <a href="${esc(cfg.navLinks[0].href)}" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
+        ${esc(stripNavOrdinal(cfg.navLinks[0].label))}
+        <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
+      </a>
+      <div class="mobile-mega-menu" id="mobileMegaMenu">
+        ${buildMobileMegaMenu(services, cfg)}
+      </div>
+      ${mobileOtherNavLinks}
+    </nav>
+    <a href="tel:${cfg.phoneHref}" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">${cfg.phone}</a>
+    <div class="mobile-menu__lang">
+      ${buildMobileLangs(cfg)}
+    </div>
+  </div>`;
 }
 
 function buildBreadcrumbs(s, cfg) {
@@ -1209,16 +1253,315 @@ function collectFooterTargetFiles() {
   return [...files];
 }
 
+function findHeaderBlock(html) {
+  const match = html.match(/(<!--\s*(?:=+\s*)?(?:\d+\.\s*)?NAVBAR(?:\s*=+)?\s*-->\s*)?<header\s+class="navbar"[^>]*>[\s\S]*?<\/header>/i);
+  if (!match) return null;
+
+  return {
+    startIdx: match.index,
+    endIdx: match.index + match[0].length
+  };
+}
+
+function findMobileMenuBlock(html) {
+  const startMatch = html.match(/<div\b(?=[^>]*\bclass=["'][^"']*\bmobile-menu\b[^"']*["'])(?=[^>]*\bid=["']mobileMenu["'])[^>]*>/i);
+  if (!startMatch) return null;
+
+  const divStartIdx = startMatch.index;
+  let index = divStartIdx + startMatch[0].length;
+  let depth = 1;
+
+  while (index < html.length && depth > 0) {
+    const nextOpen = html.slice(index).search(/<div\b/i);
+    const nextClose = html.indexOf('</div>', index);
+
+    if (nextClose === -1) return null;
+
+    const nextOpenIdx = nextOpen === -1 ? -1 : index + nextOpen;
+    if (nextOpenIdx !== -1 && nextOpenIdx < nextClose) {
+      depth++;
+      index = nextOpenIdx + 4;
+    } else {
+      depth--;
+      index = nextClose + 6;
+    }
+  }
+
+  let startIdx = divStartIdx;
+  const before = html.slice(0, divStartIdx);
+  const precedingComment = before.match(/(<!--\s*(?:Mobile Menu|MOBILE MENU)\s*-->\s*)$/i);
+  if (precedingComment) {
+    startIdx -= precedingComment[0].length;
+  }
+
+  return { startIdx, endIdx: index };
+}
+
+function replaceBlock(html, block, replacement) {
+  return `${html.slice(0, block.startIdx)}${replacement}${html.slice(block.endIdx)}`;
+}
+
+function buildMobileMenuScript() {
+  return `  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    (function () {
+      const burger = document.getElementById('burgerBtn');
+      const mobMenu = document.getElementById('mobileMenu');
+      const closeBtn = document.getElementById('closeMenu');
+      if (!burger || !mobMenu || !closeBtn) return;
+
+      window.closeMobileMenu = function closeMobileMenu() {
+        mobMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        const mm = document.getElementById('mobileMegaMenu');
+        const tl = document.querySelector('.mobile-menu__link[onclick="toggleMobileMegaMenu(event)"]');
+        if (mm) mm.classList.remove('is-open');
+        if (tl) tl.classList.remove('is-open');
+      };
+
+      window.toggleMobileMegaMenu = function toggleMobileMegaMenu(e) {
+        e.preventDefault();
+        const mm = document.getElementById('mobileMegaMenu');
+        if (mm) mm.classList.toggle('is-open');
+        e.currentTarget.classList.toggle('is-open');
+      };
+
+      burger.addEventListener('click', () => {
+        mobMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      closeBtn.addEventListener('click', window.closeMobileMenu);
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && mobMenu.classList.contains('active')) window.closeMobileMenu();
+      });
+    })();
+  </script>`;
+}
+
+function ensureMobileMenuScript(html) {
+  if (!html.includes('id="mobileMenu"')) return html;
+  if (/function\s+closeMobileMenu\s*\(/.test(html)) return html;
+  if (!/<\/body>/i.test(html)) return html;
+
+  return html.replace(/<\/body>/i, `${buildMobileMenuScript()}\n</body>`);
+}
+
+function syncGlobalNavigation() {
+  const cfgByLang = new Map(LANGS.map(cfg => [cfg.lang, cfg]));
+  const navByLang = new Map(LANGS.map(cfg => [
+    cfg.lang,
+    buildHeaderAndMobileMenu(loadServices(cfg.dataFile), cfg)
+  ]));
+  let updated = 0;
+
+  for (const filePath of collectFooterTargetFiles()) {
+    const relPath = path.relative(ROOT, filePath);
+    if (path.basename(relPath).toLowerCase().startsWith('temp_')) continue;
+
+    const lang = detectLangFromPath(relPath);
+    const cfg = cfgByLang.get(lang);
+    const navHtml = navByLang.get(lang);
+    if (!cfg || !navHtml) continue;
+
+    const [headerHtml, mobileMenuHtml] = navHtml.split(/\n\n  <!-- MOBILE MENU -->\n/);
+    if (!headerHtml || !mobileMenuHtml) continue;
+
+    const source = fs.readFileSync(filePath, 'utf8');
+    let next = source;
+
+    const mobileMenuBlock = findMobileMenuBlock(next);
+    if (mobileMenuBlock) {
+      next = replaceBlock(next, mobileMenuBlock, `<!-- MOBILE MENU -->\n${mobileMenuHtml}`);
+    }
+
+    const headerBlock = findHeaderBlock(next);
+    if (headerBlock) {
+      const hasMobileMenu = Boolean(findMobileMenuBlock(next));
+      const afterHeader = next.slice(headerBlock.endIdx);
+      const spacer = hasMobileMenu && afterHeader.startsWith('<!-- MOBILE MENU -->') ? '\n\n  ' : '';
+      const insertedMobileMenu = hasMobileMenu ? '' : `\n\n  <!-- MOBILE MENU -->\n${mobileMenuHtml}`;
+      next = replaceBlock(next, headerBlock, `${headerHtml}${spacer}${insertedMobileMenu}`);
+    }
+
+    next = ensureMobileMenuScript(next);
+
+    if (next !== source) {
+      fs.writeFileSync(filePath, next, 'utf8');
+      updated++;
+    }
+  }
+
+  for (const cfg of LANGS) {
+    const navHtml = navByLang.get(cfg.lang);
+    if (!navHtml) continue;
+
+    const [headerHtml, mobileMenuHtml] = navHtml.split(/\n\n  <!-- MOBILE MENU -->\n/);
+    fs.writeFileSync(path.join(ROOT, 'partials', `header-${cfg.lang}.html`), headerHtml, 'utf8');
+    fs.writeFileSync(path.join(ROOT, 'partials', `mobile-menu-${cfg.lang}.html`), `<!-- MOBILE MENU -->\n${mobileMenuHtml}`, 'utf8');
+  }
+
+  return updated;
+}
+
+const SERVICES_INDEX_FILES = {
+  et: 'teenused.html',
+  ru: 'ru/uslugi.html',
+  en: 'en/services.html'
+};
+
+function compactText(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function serviceIndexCtaLabel(lang) {
+  if (lang === 'ru') return 'Подробнее';
+  if (lang === 'en') return 'Read More';
+  return 'Loe edasi';
+}
+
+function serviceListingTagText(item) {
+  if (!item) return '';
+  if (typeof item === 'string') return compactText(item);
+  return compactText(item.text || item.title || '');
+}
+
+function serviceListingGroup(service) {
+  const haystack = compactText([
+    service.slug,
+    service.key,
+    service.category,
+    service.navTitle,
+    service.heroTitle
+  ].join(' ')).toLowerCase();
+
+  if (/webasto|kliim|climate|кондиц|климат|ac-service/.test(haystack)) return 'climate';
+  if (/rehv|tire|шин|summut|exhaust|глуш|vedrust|suspension|chassis|ходов|подвес|pidur|brake|тормоз/.test(haystack)) return 'chassis';
+  if (/hooldus|maintenance|обслуж|diagnost|диагност|õli|oil|масл|filter|фильтр|elektr|electrical|электр/.test(haystack)) return 'diag';
+  return 'repair';
+}
+
+function renderServiceListingCards(services, cfg) {
+  const ctaLabel = serviceIndexCtaLabel(cfg.lang);
+
+  return getTopLevelMenuServices(services).map(service => {
+    const tags = (Array.isArray(service.symptoms) ? service.symptoms : [])
+      .map(serviceListingTagText)
+      .filter(Boolean)
+      .slice(0, 2);
+    const tagHtml = tags.length
+      ? `<div class="listing-card__tags">
+                        ${tags.map(tag => `<span>${esc(tag)}</span>`).join('\n                        ')}
+                    </div>`
+      : '';
+
+    const listItems = (Array.isArray(service.servicesList) ? service.servicesList : [])
+      .map(compactText)
+      .filter(Boolean)
+      .slice(0, 3);
+    const listHtml = listItems.length
+      ? `<ul class="listing-card__list">
+                        ${listItems.map(item => `<li>${esc(item)}</li>`).join('\n                        ')}
+                    </ul>`
+      : '';
+
+    return `                <div class="listing-card reveal-card" data-group="${serviceListingGroup(service)}">
+                    <div class="listing-card__header">
+                        <div class="listing-card__icon">
+                            <iconify-icon icon="${esc(service.icon || 'mdi:car-cog')}" width="24" height="24" aria-hidden="true"></iconify-icon>
+                        </div>
+                        <h3 class="listing-card__title">${esc(service.navTitle || service.heroTitle || service.slug)}</h3>
+                    </div>
+                    ${tagHtml}
+                    <p class="listing-card__desc">${esc(service.heroLead || service.introTitle || service.navTitle || '')}</p>
+                    ${listHtml}
+                    <div class="listing-card__footer">
+                        <a href="${cfg.serviceBase}${esc(service.slug)}" class="listing-card__link">${esc(ctaLabel)}</a>
+                    </div>
+                </div>`;
+  }).join('\n\n');
+}
+
+function renderServicesAllGrid(services, cfg) {
+  return getTopLevelMenuServices(services).map(service => `                        <a href="${cfg.serviceBase}${esc(service.slug)}" class="services-all__item">
+                            <span class="services-all__number"><iconify-icon icon="${esc(service.icon || 'mdi:car-cog')}" width="24" height="24" aria-hidden="true"></iconify-icon></span>
+                            <span class="services-all__name">${esc(service.navTitle || service.heroTitle || service.slug)}</span>
+                            <span class="services-all__arrow" aria-hidden="true">→</span>
+                        </a>`).join('\n');
+}
+
+function syncServicesIndexPages() {
+  let updated = 0;
+
+  for (const cfg of LANGS) {
+    const relFile = SERVICES_INDEX_FILES[cfg.lang];
+    if (!relFile) continue;
+
+    const filePath = path.join(ROOT, relFile);
+    const source = readTextIfExists(filePath);
+    if (!source) continue;
+
+    const services = loadServices(cfg.dataFile);
+    const cardsHtml = renderServiceListingCards(services, cfg);
+    const next = source.replace(
+      /(<div class="listing-grid">\s*)[\s\S]*?(\s*<\/div>\s*<\/section>)/,
+      (_, opening, closing) => `${opening.trimEnd()}\n${cardsHtml}\n${closing.trimStart()}`
+    );
+
+    if (next !== source) {
+      fs.writeFileSync(filePath, next, 'utf8');
+      updated++;
+    }
+  }
+
+  return updated;
+}
+
+function syncServicesAllGrids() {
+  const cfgByLang = new Map(LANGS.map(cfg => [cfg.lang, cfg]));
+  const gridByLang = new Map(LANGS.map(cfg => [
+    cfg.lang,
+    renderServicesAllGrid(loadServices(cfg.dataFile), cfg)
+  ]));
+  let updated = 0;
+
+  for (const filePath of collectFooterTargetFiles()) {
+    const relPath = path.relative(ROOT, filePath);
+    if (path.basename(relPath).toLowerCase().startsWith('temp_')) continue;
+
+    const source = fs.readFileSync(filePath, 'utf8');
+    if (!source.includes('services-all__grid')) continue;
+
+    const lang = detectLangFromPath(relPath);
+    const cfg = cfgByLang.get(lang);
+    const gridHtml = gridByLang.get(lang);
+    if (!cfg || !gridHtml) continue;
+
+    const next = source.replace(
+      /(<div class="services-all__grid">)\s*[\s\S]*?\s*(<\/div>)/g,
+      (_, opening, closing) => `${opening}\n${gridHtml}\n                    ${closing}`
+    );
+
+    if (next !== source) {
+      fs.writeFileSync(filePath, next, 'utf8');
+      updated++;
+    }
+  }
+
+  return updated;
+}
+
 function syncGlobalFooters() {
   const cfgByLang = new Map(LANGS.map(cfg => [cfg.lang, cfg]));
   let updated = 0;
 
   for (const filePath of collectFooterTargetFiles()) {
+    const relPath = path.relative(ROOT, filePath);
+    if (path.basename(relPath).toLowerCase().startsWith('temp_')) continue;
+
     const source = fs.readFileSync(filePath, 'utf8');
     const match = source.match(/<footer class="footer">[\s\S]*?<\/footer>/);
     if (!match) continue;
 
-    const relPath = path.relative(ROOT, filePath);
     const lang = detectLangFromPath(relPath);
     const cfg = cfgByLang.get(lang);
     const footerHtml = buildFooter(cfg);
@@ -1371,9 +1714,7 @@ function renderPage(s, services, cfg, articleDates = {}) {
   const ogImage = toAbsoluteSiteUrl(s.heroImage) || `${PROD_ORIGIN}/android-chrome-512x512.png`;
 
   const sidebarHtml = buildSidebar(services, s.slug, cfg);
-  const megaMenuHtml = buildMegaMenu(services, cfg);
-  const mobileMegaMenu = buildMobileMegaMenu(services, cfg);
-  const navLinksHtml = buildNavLinks(cfg.navLinks);
+  const headerAndMobileMenuHtml = buildHeaderAndMobileMenu(services, cfg);
   const breadcrumbsHtml = buildBreadcrumbs(s, cfg);
   const hreflangHtml = buildHreflang(s, cfg);
   const jsonLd = buildJsonLd(s, cfg, articleDates);
@@ -1427,22 +1768,6 @@ function renderPage(s, services, cfg, articleDates = {}) {
     .replace(/{{map_open_btn}}/g, esc(cfg.mapTranslations.openBtn))
     .replace(/{{map_iframe_title}}/g, esc(cfg.mapTranslations.iframeTitle))
     .replace(/{{map_iframe_label}}/g, esc(cfg.mapTranslations.iframeLabel));
-
-  const allLangs = [
-    { href: '/', code: 'et', flag: 'circle-flags:ee', title: 'Eesti keel' },
-    { href: '/ru/', code: 'ru', flag: 'circle-flags:ru', title: 'Русский' },
-    { href: '/en/', code: 'en', flag: 'circle-flags:en', title: 'English' }
-  ];
-
-  const desktopLangsHtml = allLangs.map(l => {
-    const isActive = l.code === cfg.lang ? ' active' : '';
-    return `<a href="${l.href}" class="lang-link${isActive}" title="${esc(l.title)}"><iconify-icon icon="${l.flag}" width="24" height="24"></iconify-icon>${srOnlySpan(l.title)}</a>`;
-  }).join('\n            ');
-
-  const mobileLangsHtml = allLangs.map(l => {
-    const isActive = l.code === cfg.lang ? ' active' : '';
-    return `<a href="${l.href}" class="mobile-lang-link${isActive}"><iconify-icon icon="${l.flag}" width="32" height="32"></iconify-icon><span>${esc(l.title)}</span></a>`;
-  }).join('\n            ');
 
   return `<!DOCTYPE html>
 <html lang="${esc(cfg.lang)}">
@@ -1503,48 +1828,7 @@ ${jsonLd}
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- NAVBAR -->
-  <header class="navbar" id="navbar">
-    <a href="${cfg.prefix || '/'}" class="navbar__logo">Mr.Car</a>
-    <nav class="navbar__nav">
-      <div class="navbar__item has-dropdown">
-        ${navLinksHtml.split('\n').find(l => l.includes('services') || l.includes('Teenused') || l.includes('Услуги') || l.includes('Services')) || ''}
-        <div class="mega-menu" id="megaMenuDesktop">
-          ${megaMenuHtml}
-        </div>
-      </div>
-      ${navLinksHtml.split('\n').filter(l => !l.includes('services') && !l.includes('Teenused') && !l.includes('Услуги') && !l.includes('Services')).join('\n      ')}
-      <a href="tel:${cfg.phoneHref}" class="navbar__phone">${cfg.phone}</a>
-    </nav>
-    <div class="navbar__cta">
-      <a href="${esc(cfg.headerCtaHref)}" class="btn btn-primary">${esc(cfg.headerCtaLabel)}</a>
-    </div>
-    <button class="navbar__burger" id="burgerBtn" aria-label="${esc(cfg.menuOpenLabel)}">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="navbar__lang desktop-only">
-      ${desktopLangsHtml}
-    </div>
-  </header>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-menu__close" id="closeMenu" aria-label="${esc(cfg.menuCloseLabel)}">&times;</button>
-    <nav aria-label="${esc(cfg.mobileNavLabel)}">
-      <a href="${cfg.navLinks[0].href}" class="mobile-menu__link" onclick="toggleMobileMegaMenu(event)">
-        ${cfg.navLinks[0].label}
-        <iconify-icon icon="mdi:chevron-down" class="mobile-menu__toggle-icon" width="24" height="24"></iconify-icon>
-      </a>
-      <div class="mobile-mega-menu" id="mobileMegaMenu">
-        ${mobileMegaMenu}
-      </div>
-      ${cfg.navLinks.slice(1).map(n => `<a href="${n.href}" class="mobile-menu__link" onclick="closeMobileMenu()">${esc(stripNavOrdinal(n.label))}</a>`).join('\n      ')}
-    </nav>
-    <a href="tel:${cfg.phoneHref}" class="mobile-menu__link" style="color:var(--accent-primary)">${cfg.phone}</a>
-    <div class="mobile-menu__lang">
-      ${mobileLangsHtml}
-    </div>
-  </div>
+  ${headerAndMobileMenuHtml}
 
   <!-- HERO -->
   <section class="sd-hero" style="background-image:url('${esc(heroImageUrl)}')">
@@ -1843,6 +2127,18 @@ for (const cfg of LANGS) {
 
 process.stdout.write(`\n✅ Done: ${totalGenerated} pages generated, ${totalSkipped} skipped.\n`);
 
+process.stdout.write('\n🧭 Syncing global navigation…\n');
+const totalNavigationSynced = syncGlobalNavigation();
+process.stdout.write(`✅ Global navigation synced in ${totalNavigationSynced} files.\n`);
+
+process.stdout.write('\n📋 Syncing services index pages…\n');
+const totalServicesIndexSynced = syncServicesIndexPages();
+process.stdout.write(`✅ Services index pages synced in ${totalServicesIndexSynced} files.\n`);
+
+process.stdout.write('\n🧾 Syncing services-all grids…\n');
+const totalServicesAllGridsSynced = syncServicesAllGrids();
+process.stdout.write(`✅ Services-all grids synced in ${totalServicesAllGridsSynced} files.\n`);
+
 process.stdout.write('\n🦶 Syncing global footers…\n');
 const totalFootersSynced = syncGlobalFooters();
 process.stdout.write(`✅ Global footers synced in ${totalFootersSynced} files.\n`);
@@ -1927,7 +2223,7 @@ const STATIC_SERVICE_SITEMAP_PATHS = {
 function buildServiceSitemapPaths(services, basePath, standalonePaths) {
   return [
     ...services
-      .filter(s => !SKIP_FILES.has(s.slug))
+      .filter(s => !SKIP_FILES.has(s.slug) && !s.hideFromMenu)
       .map(s => `${basePath}${s.slug}`),
     ...standalonePaths
   ];

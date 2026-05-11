@@ -65,19 +65,19 @@ const SERVICES = [
     },
 
     {
-        key: "exhaust_welding",
+        key: "exhaust",
         slug: "summutid-keevitus",
         allSlugs: { ru: "glushiteli-svarka", ee: "summutid-keevitus", en: "exhaust-welding" },
         category: "Mootor ja seadmed",
-        navTitle: "Summuti ja Keevitustööd",
+        navTitle: "Summuti",
         icon: "mdi:fire",
-        heroTitle: "Summutid ja keevitustööd",
-        heroLead: "Heitgaasisüsteemi remont ja vahetus. Argooni- ja poolautomaatkeevitus igasuguse keerukusega.",
+        heroTitle: "Summuti remont",
+        heroLead: "Heitgaasisüsteemi ja summuti remont ning vahetus.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Summutite remont и keevitustööd",
+        introTitle: "Summuti ja heitgaasisüsteemi remont",
         introText: [
             "Heitgaasisüsteemi remondi vajadus tekib tavaliselt kulumisest või korrosioonist. Läbipõlenud summuti ei ole ainult ebameeldiv heli — heitgaasid võivad tungida salongi.",
-            "Eraldi valdkonnana tegeleme keevitustöödega: pragude kinnijootmine, kinnituste remont, põhja keevitamine. Alumiiniumi ja roostevaba terase argoonikeevitus."
+            "Tegeleme summuti, resonaatori, katalüsaatori ja paindtoru remondiga. Keevitustöödel on eraldi teenuse leht."
         ],
         symptomsTitle: "Millal on vaja summuti remonti?",
         symptoms: [
@@ -94,16 +94,63 @@ const SERVICES = [
             "Summuti / resonaatori vahetus",
             "Katalüsaatori remont ja vahetus",
             "Heitgaasisüsteemi painduva toru vahetus",
-            "Summuti pragude keevitamine",
-            "Argoonikeevitus (alumiinium, roostevaba teras)",
-            "Kinnituselementide keevitamine",
-            "Põhja keevitamine"
+            "Heitgaasilekete kõrvaldamine",
+            "Kinnituste ja kummipukside vahetus",
+            "Väljalaskesüsteemi diagnostika"
         ],
         afterListText: "Tööd tehakse vastuvõtupäeval. Kasutame kvaliteetseid materjale ja anname garantii keevitustöödele.",
         promoBanner: { enabled: false },
         ctaSection: {
-            title: "Vaja keevitust või summuti remonti?",
-            text: "Tule ilma broneerimiseta või jäta päring — vaatame üle ja anname hinna 15 minutiga.",
+            title: "Vaja summuti remonti?",
+            text: "Tule ilma broneerimiseta või jäta päring — vaatame väljalaskesüsteemi üle ja anname hinna 15 minutiga.",
+            phoneText: "Helista: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Summuti remondi broneerimine",
+            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+        },
+        seo: {
+            title: "Summuti remont — Mr.Car Tallinn",
+            description: "Summuti, katalüsaatori ja väljalaskesüsteemi remont Tallinnas. Kopli 82a, Tallinn. +372 5646 1210"
+        }
+    },
+
+    {
+        key: "welding_works",
+        slug: "keevitustood",
+        allSlugs: { ru: "svarochnye-raboty", ee: "keevitustood", en: "welding-works" },
+        category: "Mootor ja seadmed",
+        navTitle: "Keevitustööd",
+        icon: "mdi:hammer-wrench",
+        heroTitle: "Keevitustööd",
+        heroLead: "See teenuse leht on koostamisel. Keevitustööde info ja hinnad lisame peagi.",
+        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        introTitle: "Leht on koostamisel",
+        introText: [
+            "Keevitustööd on nüüd eraldi teenus, et summuti remont ja keevitus oleksid menüüs selgelt lahus.",
+            "Kuni detailne leht valmib, saad keevitustööde aja broneerida sama päringuvormi kaudu."
+        ],
+        symptomsTitle: "Mida leht hakkab sisaldama?",
+        symptoms: [
+            { icon: "mdi:fire", text: "Kinnituste keevitamine" },
+            { icon: "mdi:car-wrench", text: "Põhja keevitustööd" },
+            { icon: "mdi:wrench", text: "Väljalaskesüsteemi keevitus" },
+            { icon: "mdi:shield-check", text: "Tööde garantii" }
+        ],
+        afterSymptomsText: "Leht on arenduses, kuid teenust saab juba tellida.",
+        servicesListTitle: "Planeeritav sisu:",
+        servicesList: [
+            "Keevitustööde tüübid",
+            "Materjalid ja piirangud",
+            "Hinnad ja ajakulu",
+            "Broneerimissoovitused"
+        ],
+        afterListText: "Täielik kirjeldus lisatakse hiljem.",
+        promoBanner: { enabled: false },
+        ctaSection: {
+            title: "Vajad keevitustöid?",
+            text: "Jäta päring — vaatame töö üle ja ütleme hinna enne alustamist.",
             phoneText: "Helista: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
@@ -112,20 +159,20 @@ const SERVICES = [
             subtitle: "Jäta päring — helistame tagasi 30 minutiga"
         },
         seo: {
-            title: "Summuti remont, keevitustööd — Mr.Car Tallinn",
-            description: "Summuti ja katalüsaatori remont ning vahetus. Argoonikeevitus. Kopli 82a, Tallinn. +372 5646 1210"
+            title: "Keevitustööd — Mr.Car Tallinn",
+            description: "Keevitustööd Tallinnas. Leht on koostamisel. Kopli 82a. +372 5646 1210"
         }
     },
 
     {
-        key: "chassis_brakes",
+        key: "suspension",
         slug: "veermik-pidurid",
-        allSlugs: { ru: "hodovaya-tormoza", ee: "veermik-pidurid", en: "chassis-brakes" },
+        allSlugs: { ru: "hodovaya", ee: "veermik-pidurid", en: "chassis-brakes" },
         category: "Vedrustus ja pidurid",
-        navTitle: "Veermiku ja Pidurite remont",
-        icon: "mdi:car-brake-alert",
-        heroTitle: "Vedrustuse ja pidurite remont",
-        heroLead: "Vedrustus, roolisüsteem, pidurdussüsteem — diagnostika ja remont garantiiga.",
+        navTitle: "Vedrustus",
+        icon: "mdi:car-lifted-pickup",
+        heroTitle: "Vedrustuse remont",
+        heroLead: "Vedrustus ja roolisüsteem — diagnostika ja remont garantiiga.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Vedrustuse remont Mr.Car-is",
         introText: [
@@ -138,21 +185,16 @@ const SERVICES = [
             { icon: "mdi:volume-high", text: "Põrutused ja kriuksumised" },
             { icon: "mdi:vibrate", text: "Rooli vibratsioon" },
             { icon: "mdi:tire", text: "Ebaühtlane rehvide kulumine" },
-            { icon: "mdi:car-brake-low-pressure", text: "Pikem pidurdusteekond" },
-            { icon: "mdi:disc", text: "Krigimine pidurdamisel" },
             { icon: "mdi:steering", text: "Roolimänk" },
             { icon: "mdi:car-side", text: "Kerekalle kurvides" }
         ],
-        afterSymptomsText: "Kulunud vedrustus ja pidurid on otsene ohutusoht. Tule tasuta kontrollile.",
-        servicesListTitle: "Meie vedrustuse ja pidurite teenused:",
+        afterSymptomsText: "Kulunud vedrustus on otsene ohutusoht. Tule tasuta kontrollile.",
+        servicesListTitle: "Meie vedrustuse teenused:",
         servicesList: [
             "Vedrustuse diagnostika tõstukil",
             "Amortisaatorite ja vedude vahetus",
             "Silentklokkide ja palllihtede vahetus",
             "Rooliotsikute ja tõukevarraste vahetus",
-            "Piduripatjade ja -ketaste vahetus",
-            "Pidurivoolikute ja suistide vahetus",
-            "Pidurisüsteemi õhutamine",
             "Rataste geomeetria reguleerimine"
         ],
         afterListText: "Kasutame tunnustatud tootjate varuosi: Lemförder, TRW, Monroe, Brembo. Garantii 12 kuud kõigile töödele.",
@@ -161,7 +203,7 @@ const SERVICES = [
             text: "Tasuta vedrustuse diagnostika veebibroneeringuga"
         },
         ctaSection: {
-            title: "Põrutused vedrutusel? Krigimine pidurdamisel?",
+            title: "Põrutused vedrustuses?",
             text: "Ära riski ohutusega. Vaatame vedrustuse üle tasuta ja anname täpse hinnapakkumise.",
             phoneText: "Helista: +372 5646 1210",
             phoneNumber: "+37256461210"
@@ -171,8 +213,56 @@ const SERVICES = [
             subtitle: "Jäta päring — helistame tagasi 30 minutiga"
         },
         seo: {
-            title: "Vedrustuse ja pidurite remont — Mr.Car Tallinn",
-            description: "Vedrustuse ja pidurdussüsteemi remont Tallinnas. Amortisaatorid, pidurid, rataste geomeetria. Tasuta diagnostika. Kopli 82a. +372 5646 1210"
+            title: "Vedrustuse remont — Mr.Car Tallinn",
+            description: "Vedrustuse remont Tallinnas. Amortisaatorid, rooliotsikud, sillastend ja rataste geomeetria. Tasuta diagnostika. Kopli 82a. +372 5646 1210"
+        }
+    },
+
+    {
+        key: "brake_system",
+        slug: "pidurisusteemi-hooldus-ja-remont",
+        allSlugs: { ru: "tormoznaya-sistema", ee: "pidurisusteemi-hooldus-ja-remont", en: "brake-system-service-and-repair" },
+        category: "Vedrustus ja pidurid",
+        navTitle: "Pidurisüsteem",
+        icon: "mdi:car-brake-alert",
+        heroTitle: "Pidurisüsteemi hooldus ja remont",
+        heroLead: "See teenuse leht on koostamisel. Pidurite remondi info ja hinnad lisame peagi.",
+        heroImage: "/pics/brake-system-hero.webp",
+        introTitle: "Leht on koostamisel",
+        introText: [
+            "Pidurisüsteem on nüüd eraldi teenus, et see ei oleks enam vedrustuse lehega kokku pandud.",
+            "Kuni detailne leht valmib, saad pidurite kontrolli või remondi aja broneerida päringuvormi kaudu."
+        ],
+        symptomsTitle: "Mida leht hakkab sisaldama?",
+        symptoms: [
+            { icon: "mdi:volume-high", text: "Krigisemine pidurdamisel" },
+            { icon: "mdi:vibrate", text: "Piduripedaali vibratsioon" },
+            { icon: "mdi:car-brake-low-pressure", text: "Pehme piduripedaal" },
+            { icon: "mdi:alert-circle", text: "ABS või ESP hoiatustuli" }
+        ],
+        afterSymptomsText: "Leht on arenduses, kuid pidurite kontrolli saab juba tellida.",
+        servicesListTitle: "Planeeritav sisu:",
+        servicesList: [
+            "Piduriklotside ja -ketaste vahetus",
+            "Pidurisadulate kontroll",
+            "Pidurivedeliku vahetus",
+            "ABS diagnostika"
+        ],
+        afterListText: "Täielik kirjeldus lisatakse hiljem.",
+        promoBanner: { enabled: false },
+        ctaSection: {
+            title: "Vajad pidurite kontrolli?",
+            text: "Jäta päring — lepime aja kokku ja kontrollime pidurisüsteemi.",
+            phoneText: "Helista: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Pidurisüsteemi kontrolli broneerimine",
+            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+        },
+        seo: {
+            title: "Pidurisüsteemi remont — Mr.Car Tallinn",
+            description: "Pidurisüsteemi hooldus ja remont Tallinnas. Leht on koostamisel. Kopli 82a. +372 5646 1210"
         }
     },
 
@@ -189,7 +279,7 @@ const SERVICES = [
         introTitle: "Rehvitööd Mr.Car-is",
         introText: [
             "Rehvitööd tunduvad lihtsad, kuid nõuavad täpsust. Vale tasakaalustamine põhjustab vibratsiooni, laagrite kulumist ja ebamugavat sõitu.",
-            "Mr.Car-is kasutame kaasaegset montaažiseadmestikku ja tasakaalustajat. Töötame rehvidega R13-st R22-ni, sealhulgas madalproфиiliga rehvide ja RunFlat-rehvidega."
+            "Mr.Car-is kasutame kaasaegset montaažiseadmestikku ja tasakaalustajat. Töötame rehvidega R13-st R22-ni, sealhulgas madalprofiiliga rehvide ja RunFlat-rehvidega."
         ],
         symptomsTitle: "Millal on vaja rehvitöid?",
         symptoms: [
@@ -233,7 +323,7 @@ const SERVICES = [
         slug: "hooldus-diagnostika",
         allSlugs: { ru: "tehobsluzhivanie-diagnostika", ee: "hooldus-diagnostika", en: "maintenance-diagnostics" },
         category: "Hooldus",
-        navTitle: "Hooldus ja Diagnostika",
+        navTitle: "Tehniline hooldus",
         icon: "mdi:car-cog",
         heroTitle: "Tehniline hooldus",
         heroLead: "Regulaarne hooldus tootja standardite järgi ilma edasimüüja garantii kaotamiseta.",
@@ -241,7 +331,7 @@ const SERVICES = [
         introTitle: "Tehniline hooldus Mr.Car-is",
         introText: [
             "Regulaarne hooldus on parim investeering auto pikka elueasse. Teostame kõiki regulatsioonitöid tootja standardite järgi, mis säilitab su edasimüüja garantii.",
-            "Iga hooldus sisaldab kõigi autosüsteemide mitmepunktilist kontrolli. Saad täieliku ülevaate auto seisukorrast ja soovitused edasist."
+            "Iga hooldus sisaldab kõigi autosüsteemide mitmepunktilist kontrolli. Saad täieliku ülevaate auto seisukorrast ja soovitused edaspidiseks."
         ],
         symptomsTitle: "Millal teha hooldus?",
         symptoms: [
@@ -255,7 +345,7 @@ const SERVICES = [
         afterSymptomsText: "Vahelejäänud hooldus tähendab varjatud kulumist ja kallist remonti tulevikus. Parem kulutada tund praegu kui nädal hiljem.",
         servicesListTitle: "Mida hooldus sisaldab:",
         servicesList: [
-            "Mootoroõli ja õlifilteri vahetus",
+            "Mootoriõli ja õlifiltri vahetus",
             "Õhu- ja salongifiltri vahetus",
             "Vedelike kontroll ja lisamine",
             "Pidurdussüsteemi kontroll",
@@ -281,7 +371,55 @@ const SERVICES = [
         },
         seo: {
             title: "Tehniline hooldus — Mr.Car Tallinn | Autoteenindus",
-            description: "Tehniline hooldus Tallinnas. Õlivahetus, filtrid, kõigi süстееmide kontroll. Edasimüüja garantii säilib. Kopli 82a. +372 5646 1210"
+            description: "Tehniline hooldus Tallinnas. Õlivahetus, filtrid, kõigi süsteemide kontroll. Edasimüüja garantii säilib. Kopli 82a. +372 5646 1210"
+        }
+    },
+
+    {
+        key: "diagnostics",
+        slug: "diagnostika",
+        allSlugs: { ru: "diagnostika", ee: "diagnostika", en: "diagnostics" },
+        category: "Hooldus",
+        navTitle: "Diagnostika",
+        icon: "mdi:car-search",
+        heroTitle: "Autodiagnostika",
+        heroLead: "See teenuse leht on koostamisel. Diagnostika info ja hinnad lisame peagi.",
+        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
+        introTitle: "Leht on koostamisel",
+        introText: [
+            "Autodiagnostika saab eraldi teenuse lehe, et hooldus ja rikete otsing oleksid menüüs selgelt eraldi.",
+            "Kuni detailne leht valmib, saad diagnostika aja broneerida sama päringuvormi kaudu."
+        ],
+        symptomsTitle: "Mida leht hakkab sisaldama?",
+        symptoms: [
+            { icon: "mdi:engine-outline", text: "Mootori diagnostika" },
+            { icon: "mdi:car-cog", text: "Arvutidiagnostika" },
+            { icon: "mdi:alert-circle", text: "Veakoodide lugemine" },
+            { icon: "mdi:lightning-bolt", text: "Elektririkete kontroll" }
+        ],
+        afterSymptomsText: "Leht on arenduses, kuid teenust saab juba tellida.",
+        servicesListTitle: "Planeeritav sisu:",
+        servicesList: [
+            "Diagnostika tööetapid",
+            "Hinnad ja ajakulu",
+            "Tüüpilised sümptomid",
+            "Broneerimissoovitused"
+        ],
+        afterListText: "Täielik kirjeldus lisatakse hiljem.",
+        promoBanner: { enabled: false },
+        ctaSection: {
+            title: "Vajad diagnostikat?",
+            text: "Jäta päring — lepime aja kokku ja täpsustame probleemi.",
+            phoneText: "Helista: +372 5646 1210",
+            phoneNumber: "+37256461210"
+        },
+        form: {
+            title: "Diagnostika broneerimine",
+            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+        },
+        seo: {
+            title: "Autodiagnostika — Mr.Car Tallinn",
+            description: "Autodiagnostika Tallinnas. Leht on koostamisel. Kopli 82a. +372 5646 1210"
         }
     },
 
@@ -292,6 +430,10 @@ const SERVICES = [
         category: "Mootor ja seadmed",
         navTitle: "Käigukasti tööd",
         icon: "mdi:car-shift-pattern",
+        menuChildren: [
+            { slug: "automaatkasti-remont", label: "Automaatkäigukastid" },
+            { slug: "kasikasti-remont", label: "Manuaalkäigukastid" }
+        ],
         heroTitle: "Käigukasti remont",
         heroLead: "Automaatkast, käsikäigukast, DSG, variator — diagnoosime ja remondime kõiki käigukastide tüüpe.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
@@ -452,9 +594,10 @@ const SERVICES = [
     {
         key: "oil_change",
         slug: "olivahetus",
+        menuParentSlug: "hooldus-diagnostika",
         allSlugs: { ru: "zamena-masla", ee: "olivahetus", en: "oil-change" },
         category: "Hooldus",
-        navTitle: "Õli ja Filtrite vahetus",
+        navTitle: "Õli ja filtrite vahetus",
         icon: "mdi:oil",
         heroTitle: "Õlivahetus ja filtrid",
         heroLead: "Kiire õlivahetus tootja lubade järgi sobiva õliga. Alates €45 koos filtriga.",
@@ -477,11 +620,11 @@ const SERVICES = [
         servicesListTitle: "Mida teeme:",
         servicesList: [
             "Õli valik tootja lubade järgi",
-            "Mootoroõli vahetus",
-            "Õlifilteri vahetus",
-            "Õhufilteri vahetus",
+            "Mootoriõli vahetus",
+            "Õlifiltri vahetus",
+            "Õhufiltri vahetus",
             "Salongifiltri vahetus",
-            "Kütusefilteri vahetus",
+            "Kütusefiltri vahetus",
             "Kõigi vedelike taseme kontroll"
         ],
         afterListText: "Hind alates €45 (õli + filter). Täpne hind sõltub mootori mahust ja õli margist.",
@@ -620,6 +763,9 @@ const SERVICES = [
         category: "Kliimaseade ja lisavarustus",
         navTitle: "Webasto remont",
         icon: "mdi:radiator",
+        menuChildren: [
+            { slug: "webasto-sumptomid", label: "Webasto sümptomid" }
+        ],
         heroTitle: "Webasto remont ja hooldus",
         heroLead: "Webasto ja Eberspächeri eelsoojendite diagnostika, remont ja paigaldus.",
         heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
