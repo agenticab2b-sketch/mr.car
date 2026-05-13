@@ -34,6 +34,10 @@ body.service-brakes-page .gb-choice-card--drum .gb-choice-card__photo {
   background-position: center;
 }
 
+body.service-brakes-page .gb-choice-card--drum .gb-choice-card__photo {
+  background-position: 34% center;
+}
+
 body.service-brakes-page .gb-choice-card--disc .gb-choice-card__icon,
 body.service-brakes-page .gb-choice-card--drum .gb-choice-card__icon {
   color: var(--accent-primary);
