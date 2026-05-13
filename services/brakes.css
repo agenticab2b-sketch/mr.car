@@ -35,12 +35,12 @@ body.service-brakes-page .gb-choice-card--drum .gb-choice-card__photo {
 }
 
 body.service-brakes-page .gb-choice-card--drum .gb-choice-card__photo {
-  background-position: 34% center;
+  background-position: 90% center;
 }
 
 body.service-brakes-page .gb-choice-card--disc .gb-choice-card__icon,
 body.service-brakes-page .gb-choice-card--drum .gb-choice-card__icon {
-  color: var(--accent-primary);
+  display: none;
 }
 
 /* Brake pages follow the АКПП/MКПП service rhythm. */
