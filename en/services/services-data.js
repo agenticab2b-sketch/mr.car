@@ -435,7 +435,7 @@ const SERVICES = [
             { slug: "manual-transmission-repair", label: "Manual transmissions" }
         ],
         heroTitle: "Transmission Repair",
-        heroLead: "Automatic, manual, DSG, CVTs — we diagnose and fix all gearbox types.",
+        heroLead: "Automatic transmissions, DSG, S tronic, CVTs and manual gearboxes — we diagnose, service and repair transmissions of any complexity. Clutch and mechatronics replacement, valve body repair, fixing jerks, slipping, vibrations and limp mode. We work to factory procedures with a 12-month warranty.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Gearbox Repair at Mr.Car",
         introText: [

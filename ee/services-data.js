@@ -435,7 +435,7 @@ const SERVICES = [
             { slug: "kasikasti-remont", label: "Manuaalkäigukastid" }
         ],
         heroTitle: "Käigukasti remont",
-        heroLead: "Automaatkast, käsikäigukast, DSG, variator — diagnoosime ja remondime kõiki käigukastide tüüpe.",
+        heroLead: "Automaatkäigukastid, DSG, S tronic, variaatorid ja manuaalkäigukastid — teeme igasuguse keerukusega käigukastide diagnostikat, hooldust ja remonti. Siduri ja mehhatroonika vahetus, hüdroplokkide remont, jõnksude, libisemise, vibratsiooni ja avariirežiimi kõrvaldamine. Töötame tehase tehnoloogiate järgi ja anname 12-kuulise garantii.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Käigukasti remont Mr.Car-is",
         introText: [
