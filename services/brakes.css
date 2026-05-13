@@ -38,6 +38,10 @@ body.service-brakes-page .gb-choice-card--drum .gb-choice-card__photo {
   background-position: 90% center;
 }
 
+body.service-brakes-page .gb-choice-card--disc .gb-choice-card__photo {
+  background-position: 55% center;
+}
+
 body.service-brakes-page .gb-choice-card--disc .gb-choice-card__icon,
 body.service-brakes-page .gb-choice-card--drum .gb-choice-card__icon {
   display: none;
