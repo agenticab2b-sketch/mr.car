@@ -679,6 +679,9 @@ function renderDeepDiveContent(s, cfg) {
   const riskStagesHtml = buildRiskStages(s.riskStages || []);
   const typeCardsHtml = buildTypeCards(s.engineTypes || []);
   const diagnosticsChecklistHtml = buildChecklist(s.diagnosticsChecklist || []);
+  const diagnosticsTextHtml = Array.isArray(s.diagnosticsText)
+    ? s.diagnosticsText.map(text => `<p class="gb-section-text">${esc(text)}</p>`).join('\n          ')
+    : (s.diagnosticsText ? `<p class="gb-section-text">${esc(s.diagnosticsText)}</p>` : '');
   const serviceCardsHtml = buildServiceCards(s.serviceCards || []);
   const processStepsHtml = buildProcessSteps(s.processSteps || []);
   const hasSecondPrice = Array.isArray(s.pricingRows) && s.pricingRows.some(row => row.price2);
@@ -721,7 +724,7 @@ function renderDeepDiveContent(s, cfg) {
       ${(s.diagnosticsTitle || diagnosticsChecklistHtml) ? `<section id="diagnostika">
         <div class="gb-diagnostics-card">
           <h3 class="gb-section-title">${esc(s.diagnosticsTitle || '')}</h3>
-          ${s.diagnosticsText ? `<p class="gb-section-text">${esc(s.diagnosticsText)}</p>` : ''}
+          ${diagnosticsTextHtml}
           ${diagnosticsChecklistHtml}
         </div>
       </section>` : ''}
