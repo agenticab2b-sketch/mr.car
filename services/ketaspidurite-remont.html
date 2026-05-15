@@ -413,40 +413,36 @@
   </div>
 
   <!-- HERO -->
-  <section class="gb-hero gb-hero--brakes gb-hero--disc-brakes" aria-labelledby="service-title">
-    <div class="gb-hero__bg" aria-hidden="true">
-      <img src="/pics/disc-brakes-hero.webp" alt="Ketaspidurite remont Tallinnas" width="1920" height="1080" fetchpriority="high">
-    </div>
-    <div class="gb-hero__overlay" aria-hidden="true"></div>
-    <div class="container gb-hero__inner">
-      <p class="gb-eyebrow">/// Mr.Car autoteenindus</p>
-      <h1 id="service-title">Ketaspidurite remont ja hooldus Tallinnas</h1>
-      <nav class="gb-breadcrumbs" aria-label="Leivapuru">
-        <a href="/">Avaleht</a>
-        <span aria-hidden="true">›</span>
-        <a href="/services">Teenused</a>
-        <span aria-hidden="true">›</span>
-        <a href="/services/pidurisusteemi-hooldus-ja-remont">Pidurisüsteem</a>
-        <span aria-hidden="true">›</span>
-        <span>Ketaspidurite remont Tallinnas</span>
+  <section class="sd-hero" style="background-image:url('/pics/disc-brakes-hero.webp')">
+    <div class="sd-hero__overlay"></div>
+    <div class="sd-hero__content site-container">
+      <span class="sd-hero__meta">/// Mr.Car Autoteenindus — Tallinn</span>
+      <h1 class="sd-hero__title">Ketaspidurite remont ja hooldus Tallinnas</h1>
+      <nav aria-label="Breadcrumb" style="margin-top: var(--space-md); margin-bottom: var(--space-md);">
+        <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Avaleht</span></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">&rsaquo;</span></li>
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/services" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Teenused</span></a>
+            <meta itemprop="position" content="2" />
+          </li>
+          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">&rsaquo;</span></li>
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/services/pidurisusteemi-hooldus-ja-remont" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Pidurisüsteem</span></a>
+            <meta itemprop="position" content="3" />
+          </li>
+          <li class="breadcrumbs__item"><span class="breadcrumbs__separator">&rsaquo;</span></li>
+          <li class="breadcrumbs__item breadcrumbs__item--current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">Ketaspidurid</span>
+            <meta itemprop="position" content="4" />
+          </li>
+        </ol>
       </nav>
-      <p class="gb-hero__lead">Vilin, kriuksumine, piduripedaali vibratsioon, piduriketaste ülekuumenemine või põlev ABS-tuli - teeme ketaspidurite diagnostikat ja hooldust, vahetame klotse ja kettaid, remondime pidurisadulaid ning hooldame EPB ja ABS-süsteeme.</p>
-      <a href="#request" class="btn btn-primary">Saada päring <span aria-hidden="true">↗</span></a>
-
-      <div class="gb-hero-stats" aria-label="Ketaspidurite teenuse põhinäitajad">
-        <div class="gb-stat">
-          <strong>800+</strong>
-          <span>vahetatud piduriklotsi</span>
-        </div>
-        <div class="gb-stat">
-          <strong>400+</strong>
-          <span>vahetatud piduriketast</span>
-        </div>
-        <div class="gb-stat">
-          <strong>15+</strong>
-          <span>aastat kogemust ketaspiduritega</span>
-        </div>
-      </div>
+      <p class="sd-hero__lead">Vilin, kriuksumine, piduripedaali vibratsioon, piduriketaste ülekuumenemine või põlev ABS-tuli — teeme ketaspidurite diagnostikat ja hooldust, vahetame klotse ja kettaid, remondime pidurisadulaid ning hooldame EPB ja ABS-süsteeme.</p>
+      <a href="#request" class="btn btn-primary sd-hero__cta">Saada päring <span class="arrow">↗</span></a>
     </div>
   </section>
 
@@ -570,424 +566,156 @@
 
   <!-- MAIN CONTENT (2 columns) -->
   <section class="sd-main site-container">
-    <!-- LEFT: Content -->
     <article class="sd-content">
-      <nav class="gb-local-nav" aria-label="Lehe jaotised">
-        <a href="/services/pidurisusteemi-hooldus-ja-remont" class="gb-local-nav__pill"><iconify-icon icon="mdi:arrow-left" aria-hidden="true"></iconify-icon> Pidurisüsteem</a>
-        <a href="#symptoms" class="gb-local-nav__pill"><iconify-icon icon="mdi:alert-circle-outline" aria-hidden="true"></iconify-icon> Sümptomid</a>
-        <a href="#services" class="gb-local-nav__pill"><iconify-icon icon="mdi:wrench" aria-hidden="true"></iconify-icon> Teenused</a>
-        <a href="#pricing" class="gb-local-nav__pill"><iconify-icon icon="mdi:currency-eur" aria-hidden="true"></iconify-icon> Hinnad</a>
-        <a href="#reviews" class="gb-local-nav__pill"><iconify-icon icon="mdi:star" aria-hidden="true"></iconify-icon> Arvustused</a>
-        <a href="#faq" class="gb-local-nav__pill"><iconify-icon icon="mdi:frequently-asked-questions" aria-hidden="true"></iconify-icon> KKK</a>
-        <a href="/services/trummelpidurite-remont" class="gb-local-nav__pill"><iconify-icon icon="mdi:arrow-right" aria-hidden="true"></iconify-icon> Trummelpidurid</a>
+      <div class="gb-hero-stats gb-reveal">
+        <div class="gb-hero-stat"><div class="gb-hero-stat__number">800+</div><div class="gb-hero-stat__label">vahetatud piduriklotsi</div></div>
+        <div class="gb-hero-stat"><div class="gb-hero-stat__number">400+</div><div class="gb-hero-stat__label">vahetatud piduriketast</div></div>
+        <div class="gb-hero-stat"><div class="gb-hero-stat__number">15+</div><div class="gb-hero-stat__label">aastat kogemust ketaspiduritega</div></div>
+      </div>
+
+      <nav class="gb-local-nav" aria-label="Ketaspidurite lehe jaotised">
+        <a href="/services/pidurisusteemi-hooldus-ja-remont" class="gb-local-nav__pill"><iconify-icon icon="mdi:arrow-left" width="18"></iconify-icon> Pidurisüsteem</a>
+        <a href="#symptoms" class="gb-local-nav__pill"><iconify-icon icon="mdi:alert-circle-outline" width="18"></iconify-icon> Sümptomid</a>
+        <a href="#services" class="gb-local-nav__pill"><iconify-icon icon="mdi:wrench" width="18"></iconify-icon> Teenused</a>
+        <a href="#pricing" class="gb-local-nav__pill"><iconify-icon icon="mdi:currency-eur" width="18"></iconify-icon> Hinnad</a>
+        <a href="#reviews" class="gb-local-nav__pill"><iconify-icon icon="mdi:star" width="18"></iconify-icon> Arvustused</a>
+        <a href="#faq" class="gb-local-nav__pill"><iconify-icon icon="mdi:frequently-asked-questions" width="18"></iconify-icon> KKK</a>
+        <a href="/services/trummelpidurite-remont" class="gb-local-nav__pill"><iconify-icon icon="mdi:arrow-right" width="18"></iconify-icon> Trummelpidurid</a>
       </nav>
 
-      <section class="gb-section gb-intro" id="overview">
-        <p class="gb-section__kicker">Ketaspidurid</p>
+      <section class="sd-intro gb-page-section gb-reveal">
         <h2>Ketaspidurite professionaalne hooldus ja remont Tallinnas</h2>
-        <p>Ketaspidureid kasutatakse enamiku tänapäevaste autode esisillal ning paljudel sõidu- ja tarbesõidukitel ka mõlemal teljel. Pidurite töökindlus sõltub piduriketaste, piduriklotside, pidurisadulate ja pidurivedeliku seisukorrast.</p>
-        <p>Teeme BMW, Audi, Mercedes-Benzi, Volkswageni, Volvo, Fordi, Toyota, Kia, Hyundai ja teiste automarkide ketaspidurite diagnostikat, hooldust ja remonti. Vahetame pidurikettaid ja -klotse, hooldame pidurisadulaid, teeme ABS-süsteemi diagnostikat ning hooldame EPB-d ehk elektroonilist seisupidurit.</p>
-        <p>Diagnostika käigus kontrollime piduriketaste jääkpaksust, kulumise ühtlust ning liugurite, tolmukatete ja tööpindade seisukorda. Kõik tööd tehakse vastavalt autotootja tehnilistele nõuetele.</p>
-        <p>Enne osade vahetamist hindame pidurisüsteemi tegelikku seisukorda ja soovitame ainult neid töid, mis on päriselt vajalikud.</p>
-      </section>
-
-      <section class="gb-brand-strip" aria-label="Automargid, mille ketaspidurisüsteeme hooldame">
-        <div class="gb-brand-strip__track">
-          <span>BMW</span>
-          <span>Audi</span>
-          <span>Mercedes-Benz</span>
-          <span>Volkswagen</span>
-          <span>Volvo</span>
-          <span>Ford</span>
-          <span>Toyota</span>
-          <span>Kia</span>
-          <span>Hyundai</span>
-          <span>Škoda</span>
+        <div class="gb-section-text">
+          <p>Ketaspidureid kasutatakse enamiku tänapäevaste autode esisillal ning paljudel sõidu- ja tarbesõidukitel ka mõlemal teljel. Pidurite töökindlus sõltub piduriketaste, piduriklotside, pidurisadulate ja pidurivedeliku seisukorrast.</p>
+          <p>Teeme BMW, Audi, Mercedes-Benzi, Volkswageni, Volvo, Fordi, Toyota, Kia, Hyundai ja teiste automarkide ketaspidurite diagnostikat, hooldust ja remonti. Vahetame pidurikettaid ja -klotse, hooldame pidurisadulaid, teeme ABS-süsteemi diagnostikat ning hooldame EPB-d ehk elektroonilist seisupidurit.</p>
+          <p>Diagnostika käigus kontrollime piduriketaste jääkpaksust, kulumise ühtlust ning liugurite, tolmukatete ja tööpindade seisukorda. Kõik tööd tehakse vastavalt autotootja tehnilistele nõuetele.</p>
+          <p>Enne osade vahetamist hindame pidurisüsteemi tegelikku seisukorda ja soovitame ainult neid töid, mis on päriselt vajalikud.</p>
         </div>
       </section>
 
-      <section class="gb-section gb-urgency" aria-labelledby="urgency-title">
-        <div class="gb-urgency__content">
-          <p class="gb-section__kicker">Õigeaegne hooldus</p>
-          <h2 id="urgency-title">Õigeaegne hooldus aitab vältida lisakulusid</h2>
+      <div class="brands-marquee" aria-label="Automargid, mille ketaspidurisüsteeme hooldame">
+        <div class="brands-marquee__inner">
+          <div class="brands-marquee__track">
+            <div class="brands-marquee__item" aria-label="BMW"><iconify-icon icon="simple-icons:bmw"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Audi"><iconify-icon icon="simple-icons:audi"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Volkswagen"><iconify-icon icon="simple-icons:volkswagen"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Mercedes-Benz"><iconify-icon icon="simple-icons:mercedes"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Volvo"><iconify-icon icon="simple-icons:volvo"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Toyota"><iconify-icon icon="simple-icons:toyota"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Skoda"><iconify-icon icon="simple-icons:skoda"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Ford"><iconify-icon icon="simple-icons:ford"></iconify-icon></div>
+          </div>
+          <div class="brands-marquee__track" aria-hidden="true">
+            <div class="brands-marquee__item" aria-label="BMW"><iconify-icon icon="simple-icons:bmw"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Audi"><iconify-icon icon="simple-icons:audi"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Volkswagen"><iconify-icon icon="simple-icons:volkswagen"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Mercedes-Benz"><iconify-icon icon="simple-icons:mercedes"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Volvo"><iconify-icon icon="simple-icons:volvo"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Toyota"><iconify-icon icon="simple-icons:toyota"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Skoda"><iconify-icon icon="simple-icons:skoda"></iconify-icon></div>
+            <div class="brands-marquee__item" aria-label="Ford"><iconify-icon icon="simple-icons:ford"></iconify-icon></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gb-urgency-block gb-reveal">
+        <div class="gb-urgency-block__title"><iconify-icon icon="mdi:cash-clock" width="24"></iconify-icon> Õigeaegne hooldus aitab vältida lisakulusid</div>
+        <div class="gb-urgency-block__text">
           <p>Kulunud piduriklotsidega sõitmine võib kiirendada piduriketaste ja teiste pidurisüsteemi osade kulumist.</p>
           <p>Regulaarne diagnostika aitab õigel ajal hinnata piduriklotside kulumisastet, piduriketaste seisukorda ja hooldusvajadust enne tõsisemate kahjustuste tekkimist.</p>
+          <p>Piduriklotside vahetus maksab alates 48 € telje kohta. Hind sisaldab abimaterjale.</p>
+          <p>Piduriketaste ja -klotside vahetus maksab alates 70 € telje kohta. Hind sisaldab abimaterjale.</p>
         </div>
-        <div class="gb-urgency__pricebox" aria-label="Ketaspidurite hoolduse hinnad">
-          <div>
-            <strong>48 €</strong>
-            <span>Piduriklotside vahetus alates telje kohta. Hind sisaldab abimaterjale.</span>
-          </div>
-          <div>
-            <strong>70 €</strong>
-            <span>Piduriketaste ja -klotside vahetus alates telje kohta. Hind sisaldab abimaterjale.</span>
-          </div>
-        </div>
-      </section>
+      </div>
 
-      <section class="gb-section" id="symptoms">
-        <p class="gb-section__kicker">Sümptomid</p>
-        <h2>Ketaspidurite rikete peamised sümptomid</h2>
-        <div class="gb-symptom-grid">
-          <article class="gb-symptom-card">
-            <h3>Vilin või kriuksumine pidurdamisel</h3>
-            <p>Vilin või kriuksumine ei tähenda alati kriitilist kulumist. Uued piduriklotsid võivad sissetöötamise ajal samuti häält teha. Heli võivad põhjustada ka piduritolm, niiskus, ülekuumenemine või hõõrdematerjali koostis. Paljudel tänapäevastel autodel on piduriklotside kulumisandur, kuid püsiva müra korral tasub klotsid ja kettad üle kontrollida.</p>
-          </article>
-          <article class="gb-symptom-card">
-            <h3>Metalliline krigin</h3>
-            <p>Metalliline krigin viitab sageli sellele, et piduriklotsid on kriitiliselt kulunud ja klotsi metallist alusplaat võib juba pidurikettaga kokku puutuda. Edasi sõitmine võib pidurikettaid ja teisi pidurikomponente kiiresti kahjustada.</p>
-          </article>
-          <article class="gb-symptom-card">
-            <h3>Piduripedaali vibratsioon pidurdamisel</h3>
-            <p>Piduripedaali vibratsioon või pulseerimine võib olla seotud piduriketta ülekuumenemise, viskumise või pidurisüsteemi ebaühtlase tööga. Täpse põhjuse väljaselgitamiseks on vajalik diagnostika.</p>
-          </article>
-          <article class="gb-symptom-card">
-            <h3>Auto kisub pidurdamisel küljele</h3>
-            <p>Kui auto kisub pidurdamisel küljele, võib põhjus olla pidurite ebaühtlases töös, pidurisadula kinnijäämises, pidurikomponentide kulumises või veermiku seisukorras. Märjal teel on selline sümptom eriti ohtlik, mistõttu tasub pidurisüsteem kiiresti üle kontrollida.</p>
-          </article>
-          <article class="gb-symptom-card">
-            <h3>Auto pidurdab justkui ise</h3>
-            <p>Suurenenud veeretakistus, piduriketaste ülekuumenemine või ebameeldiv lõhn pärast sõitu võivad viidata sellele, et pidurisadul või mõni muu pidurisüsteemi osa on kinni jäänud. Pikaajaline sõitmine sellises seisus võib põhjustada ülekuumenemist ja detailide kiiret kulumist.</p>
-          </article>
-          <article class="gb-symptom-card">
-            <h3>ABS-tuli põleb</h3>
-            <p>ABS-tule süttimine viitab blokeerumisvastase pidurisüsteemi või sellega seotud elektroonikakomponentide rikkele. Põhjuseks võivad olla vigane rattakiiruse andur, kahjustatud juhtmestik, ABS-plokk või muu elektroonikarike.</p>
-          </article>
+      <div class="gb-page-section" id="symptoms">
+        <h3 class="gb-section-title gb-reveal">Ketaspidurite rikete peamised sümptomid</h3>
+        <div class="gb-symptoms gb-reveal-stagger">
+          <div class="gb-symptom-card gb-reveal"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:volume-high" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Vilin või kriuksumine pidurdamisel</div><div class="gb-symptom-card__desc">Vilin või kriuksumine ei tähenda alati kriitilist kulumist. Uued piduriklotsid võivad sissetöötamise ajal samuti häält teha. Heli võivad põhjustada ka piduritolm, niiskus, ülekuumenemine või hõõrdematerjali koostis. Paljudel tänapäevastel autodel on piduriklotside kulumisandur, kuid püsiva müra korral tasub klotsid ja kettad üle kontrollida.</div></div>
+          <div class="gb-symptom-card gb-symptom-card--critical gb-reveal"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:alert-octagon" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Metalliline krigin</div><div class="gb-symptom-card__desc">Metalliline krigin viitab sageli sellele, et piduriklotsid on kriitiliselt kulunud ja klotsi metallist alusplaat võib juba pidurikettaga kokku puutuda. Edasi sõitmine võib pidurikettaid ja teisi pidurikomponente kiiresti kahjustada.</div></div>
+          <div class="gb-symptom-card gb-reveal"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:vibrate" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Piduripedaali vibratsioon pidurdamisel</div><div class="gb-symptom-card__desc">Piduripedaali vibratsioon või pulseerimine võib olla seotud piduriketta ülekuumenemise, viskumise või pidurisüsteemi ebaühtlase tööga. Täpse põhjuse väljaselgitamiseks on vajalik diagnostika.</div></div>
+          <div class="gb-symptom-card gb-reveal"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:car-traction-control" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Auto kisub pidurdamisel küljele</div><div class="gb-symptom-card__desc">Kui auto kisub pidurdamisel küljele, võib põhjus olla pidurite ebaühtlases töös, pidurisadula kinnijäämises, pidurikomponentide kulumises või veermiku seisukorras. Märjal teel on selline sümptom eriti ohtlik, mistõttu tasub pidurisüsteem kiiresti üle kontrollida.</div></div>
+          <div class="gb-symptom-card gb-symptom-card--critical gb-reveal"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:thermometer-alert" width="24"></iconify-icon></div><div class="gb-symptom-card__title">Auto pidurdab justkui ise</div><div class="gb-symptom-card__desc">Suurenenud veeretakistus, piduriketaste ülekuumenemine või ebameeldiv lõhn pärast sõitu võivad viidata sellele, et pidurisadul või mõni muu pidurisüsteemi osa on kinni jäänud. Pikaajaline sõitmine sellises seisus võib põhjustada ülekuumenemist ja detailide kiiret kulumist.</div></div>
+          <div class="gb-symptom-card gb-reveal"><div class="gb-symptom-card__icon"><iconify-icon icon="mdi:alert-circle" width="24"></iconify-icon></div><div class="gb-symptom-card__title">ABS-tuli põleb</div><div class="gb-symptom-card__desc">ABS-tule süttimine viitab blokeerumisvastase pidurisüsteemi või sellega seotud elektroonikakomponentide rikkele. Põhjuseks võivad olla vigane rattakiiruse andur, kahjustatud juhtmestik, ABS-plokk või muu elektroonikarike.</div></div>
         </div>
-      </section>
+      </div>
 
-      <section class="gb-section gb-risk" aria-labelledby="risk-title">
-        <p class="gb-section__kicker">Miks viivitamine maksab rohkem</p>
-        <h2 id="risk-title">Mis võib juhtuda, kui pidurite hooldust edasi lükata?</h2>
-        <div class="gb-risk__timeline">
-          <article>
-            <span>1</span>
-            <h3>Esmane kulumine</h3>
-            <p>Pidurdamisel tekib kõrvaline heli või piduriklotsid hakkavad kiiremini kuluma. Selles etapis piisab sageli õigeaegsest klotside vahetusest ja pidurisüsteemi põhihooldusest.</p>
-            <p class="gb-price-note">Piduriklotside vahetus maksab alates 48 € telje kohta. Hind sisaldab abimaterjale.</p>
-          </article>
-          <article>
-            <span>2</span>
-            <h3>Komponentide suurem kulumine</h3>
-            <p>Edasi sõitmine võib põhjustada piduriketaste kiiremat kulumist, pidurikomponentide ülekuumenemist ja vajadust keerukama remondi järele.</p>
-            <p class="gb-price-note">Piduriketaste ja -klotside vahetus maksab alates 70 € telje kohta. Hind sisaldab abimaterjale.</p>
-          </article>
-          <article>
-            <span>3</span>
-            <h3>Tõsised rikked</h3>
-            <p>Rikkis pidurisüsteemiga pikalt sõites võivad pidurikomponendid üle kuumeneda, pidurdustõhusus langeda ja teised pidurisüsteemi osad kahjustuda.</p>
-            <p>Keerukamatel juhtudel võib pärast diagnostikat olla vaja remontida ka pidurisadulaid, rummu- ja laagrisõlme komponente või muid pidurisüsteemi osi.</p>
-          </article>
-        </div>
-      </section>
+      <section class="gb-page-section gb-reveal"><h3 class="gb-section-title">Mis võib juhtuda, kui pidurite hooldust edasi lükata?</h3><div class="gb-risk-stages">
+        <div class="gb-risk-stage"><div class="gb-risk-stage__marker">1</div><div class="gb-risk-stage__content"><strong>Esmane kulumine</strong><p>Pidurdamisel tekib kõrvaline heli või piduriklotsid hakkavad kiiremini kuluma. Selles etapis piisab sageli õigeaegsest klotside vahetusest ja pidurisüsteemi põhihooldusest.</p><p>Piduriklotside vahetus maksab alates 48 € telje kohta. Hind sisaldab abimaterjale.</p></div></div>
+        <div class="gb-risk-stage"><div class="gb-risk-stage__marker">2</div><div class="gb-risk-stage__content"><strong>Komponentide suurem kulumine</strong><p>Edasi sõitmine võib põhjustada piduriketaste kiiremat kulumist, pidurikomponentide ülekuumenemist ja vajadust keerukama remondi järele.</p><p>Piduriketaste ja -klotside vahetus maksab alates 70 € telje kohta. Hind sisaldab abimaterjale.</p></div></div>
+        <div class="gb-risk-stage"><div class="gb-risk-stage__marker">3</div><div class="gb-risk-stage__content"><strong>Tõsised rikked</strong><p>Rikkis pidurisüsteemiga pikalt sõites võivad pidurikomponendid üle kuumeneda, pidurdustõhusus langeda ja teised pidurisüsteemi osad kahjustuda.</p><p>Keerukamatel juhtudel võib pärast diagnostikat olla vaja remontida ka pidurisadulaid, rummu- ja laagrisõlme komponente või muid pidurisüsteemi osi.</p></div></div>
+      </div></section>
 
-      <section class="gb-section gb-weather" aria-labelledby="weather-title">
-        <div class="gb-weather__text">
-          <p class="gb-section__kicker">Tallinna tingimused</p>
-          <h2 id="weather-title">Miks vajavad ketaspidurid Tallinnas erilist tähelepanu?</h2>
-          <p>Eesti talvised sõiduolud kiirendavad pidurisüsteemi komponentide kulumist. Niiskus, libedusetõrjevahendid ja temperatuurikõikumised mõjutavad piduriketaste, pidurisadulate ja kaitseelementide seisukorda.</p>
-          <p>Kahjustatud tolmukatted ja määrdunud liugurid võivad põhjustada pidurisadula kinnijäämist ning piduriklotside ebaühtlast kulumist. Sellised probleemid ilmnevad sageli just pärast talvehooaega.</p>
-          <p>Lisakoormust tekitab ka linnasõit, kus pidurikettad kuumenevad ja jahtuvad pidevalt. Kui pidurikettad on kulunud või üle kuumenenud, võib see mõjutada nii pidurdamise stabiilsust kui ka sõidumugavust.</p>
-        </div>
-        <div class="gb-weather__list">
-          <p>Soovitame kontrollida pidurisadulate, liugurite ja tolmukatete seisukorda enne talvehooaega.</p>
-          <p>Õigeaegne hooldus aitab vältida pidurikomponentide kiirendatud kulumist.</p>
-          <p>Pidurisadulate hoolduse maksumus sõltub kulumisastmest ja komponentide seisukorrast pärast diagnostikat.</p>
-        </div>
-      </section>
+      <div class="gb-diagnostics-card gb-reveal" id="geo"><h3 class="gb-section-title">Miks vajavad ketaspidurid Tallinnas erilist tähelepanu?</h3>
+        <p class="gb-section-text">Eesti talvised sõiduolud kiirendavad pidurisüsteemi komponentide kulumist. Niiskus, libedusetõrjevahendid ja temperatuurikõikumised mõjutavad piduriketaste, pidurisadulate ja kaitseelementide seisukorda.</p>
+        <p class="gb-section-text">Kahjustatud tolmukatted ja määrdunud liugurid võivad põhjustada pidurisadula kinnijäämist ning piduriklotside ebaühtlast kulumist. Sellised probleemid ilmnevad sageli just pärast talvehooaega.</p>
+        <p class="gb-section-text">Lisakoormust tekitab ka linnasõit, kus pidurikettad kuumenevad ja jahtuvad pidevalt. Kui pidurikettad on kulunud või üle kuumenenud, võib see mõjutada nii pidurdamise stabiilsust kui ka sõidumugavust.</p>
+        <ul class="gb-checklist"><li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Soovitame kontrollida pidurisadulate, liugurite ja tolmukatete seisukorda enne talvehooaega.</li><li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Õigeaegne hooldus aitab vältida pidurikomponentide kiirendatud kulumist.</li><li class="gb-checklist__item"><iconify-icon icon="mdi:check-circle"></iconify-icon> Pidurisadulate hoolduse maksumus sõltub kulumisastmest ja komponentide seisukorrast pärast diagnostikat.</li></ul>
+      </div>
 
-      <section class="gb-section" id="types">
-        <p class="gb-section__kicker">Ketaspidurisüsteemide tüübid</p>
-        <h2>Ketaspidurisüsteemide tüübid, mida hooldame</h2>
-        <div class="gb-type-grid">
-          <article class="gb-type-card">
-            <h3>Ühekolvilised ujuvsadulad</h3>
-            <p>See on kõige levinum pidurisadulate tüüp tänapäevastel sõiduautodel. Neid kasutatakse paljudel Volkswageni, Škoda, Fordi, Toyota, Hyundai ja teiste tootjate mudelitel.</p>
-            <p>Hoolduse käigus kontrollime liugurite, tolmukatete ja kolbide seisukorda ning piduriklotside kulumise ühtlust.</p>
-            <span>Brembo · TRW · ATE · Bosch</span>
-          </article>
-          <article class="gb-type-card">
-            <h3>Mitmekolvilised fikseeritud pidurisadulad</h3>
-            <p>Mitmekolvilisi fikseeritud pidurisadulaid kasutatakse suurema pidurdusvõimega autodel, sealhulgas sportlikel ja premium-klassi BMW, Audi, Mercedes-Benzi ja Porsche mudelitel.</p>
-            <p>Sellised pidurisüsteemid nõuavad täpset töövõtet, õigete komponentide kasutamist ning piduriketaste ja -klotside seisukorra hoolikat kontrolli.</p>
-            <span>Brembo · AP Racing · ATE</span>
-          </article>
-          <article class="gb-type-card">
-            <h3>Elektroonilise seisupiduriga pidurisadulad ehk EPB</h3>
-            <p>Elektroonilise seisupiduriga pidurisadulate puhul tuleb tagumiste pidurimehhanismidega töötades aktiveerida hooldusrežiim.</p>
-            <p>Hooldus tehakse diagnostikaseadme abil ja vastavalt autotootja nõuetele.</p>
-            <span>VW Passat B7/B8 · Audi A4/A5/Q5 · Škoda Superb · BMW F30/F10</span>
-          </article>
-          <article class="gb-type-card">
-            <h3>Ventileeritavad ja perforeeritud pidurikettad</h3>
-            <p>Ventileeritavaid ja perforeeritud pidurikettaid kasutatakse parema soojuse ärajuhtimise ja pidurisüsteemi stabiilse töö tagamiseks suurema koormuse korral.</p>
-            <p>Hoolduse käigus kontrollime piduriketaste jääkpaksust, tööpindade seisukorda ja vastavust tootja tehnilistele tolerantsidele.</p>
-          </article>
-        </div>
-      </section>
+      <section class="gb-page-section gb-reveal" id="types"><h3 class="gb-section-title">Ketaspidurisüsteemide tüübid, mida hooldame</h3><div class="gb-types-grid gb-reveal-stagger">
+        <div class="gb-type-card gb-reveal"><iconify-icon icon="mdi:car-brake-alert" width="28" class="gb-type-card__icon"></iconify-icon><div class="gb-type-card__title">Ühekolvilised ujuvsadulad</div><div class="gb-type-card__desc">See on kõige levinum pidurisadulate tüüp tänapäevastel sõiduautodel. Neid kasutatakse paljudel Volkswageni, Škoda, Fordi, Toyota, Hyundai ja teiste tootjate mudelitel.<br><br>Hoolduse käigus kontrollime liugurite, tolmukatete ja kolbide seisukorda ning piduriklotside kulumise ühtlust.</div><div class="gb-type-card__brands"><span class="gb-type-card__brand-chip">Brembo</span><span class="gb-type-card__brand-chip">TRW</span><span class="gb-type-card__brand-chip">ATE</span><span class="gb-type-card__brand-chip">Bosch</span></div></div>
+        <div class="gb-type-card gb-reveal"><iconify-icon icon="mdi:car-sports" width="28" class="gb-type-card__icon"></iconify-icon><div class="gb-type-card__title">Mitmekolvilised fikseeritud pidurisadulad</div><div class="gb-type-card__desc">Mitmekolvilisi fikseeritud pidurisadulaid kasutatakse suurema pidurdusvõimega autodel, sealhulgas sportlikel ja premium-klassi BMW, Audi, Mercedes-Benzi ja Porsche mudelitel.<br><br>Sellised pidurisüsteemid nõuavad täpset töövõtet, õigete komponentide kasutamist ning piduriketaste ja -klotside seisukorra hoolikat kontrolli.</div><div class="gb-type-card__brands"><span class="gb-type-card__brand-chip">Brembo</span><span class="gb-type-card__brand-chip">AP Racing</span><span class="gb-type-card__brand-chip">ATE</span></div></div>
+        <div class="gb-type-card gb-reveal"><iconify-icon icon="mdi:car-brake-parking" width="28" class="gb-type-card__icon"></iconify-icon><div class="gb-type-card__title">Elektroonilise seisupiduriga pidurisadulad ehk EPB</div><div class="gb-type-card__desc">Elektroonilise seisupiduriga pidurisadulate puhul tuleb tagumiste pidurimehhanismidega töötades aktiveerida hooldusrežiim.<br><br>Hooldus tehakse diagnostikaseadme abil ja vastavalt autotootja nõuetele.</div><div class="gb-type-card__brands"><span class="gb-type-card__brand-chip">VW Passat B7/B8</span><span class="gb-type-card__brand-chip">Audi A4/A5/Q5</span><span class="gb-type-card__brand-chip">Škoda Superb</span><span class="gb-type-card__brand-chip">BMW F30/F10</span></div></div>
+        <div class="gb-type-card gb-reveal"><iconify-icon icon="mdi:disc" width="28" class="gb-type-card__icon"></iconify-icon><div class="gb-type-card__title">Ventileeritavad ja perforeeritud pidurikettad</div><div class="gb-type-card__desc">Ventileeritavaid ja perforeeritud pidurikettaid kasutatakse parema soojuse ärajuhtimise ja pidurisüsteemi stabiilse töö tagamiseks suurema koormuse korral.<br><br>Hoolduse käigus kontrollime piduriketaste jääkpaksust, tööpindade seisukorda ja vastavust tootja tehnilistele tolerantsidele.</div></div>
+      </div></section>
 
-      <section class="gb-section" id="services">
-        <p class="gb-section__kicker">Teenused</p>
-        <h2>Meie ketaspidurite remondi- ja hooldusteenused</h2>
-        <div class="gb-service-grid">
-          <article class="gb-service-card">
-            <h3>Ketaspidurite diagnostika</h3>
-            <p>Kontrollime piduriklotside, piduriketaste, pidurisadulate ja pidurivedeliku seisukorda. Vajaduse korral teeme ABS-süsteemi diagnostika ja pidurisüsteemi elektroonikakomponentide kontrolli.</p>
-          </article>
-          <article class="gb-service-card">
-            <h3>Esipiduriklotside vahetus</h3>
-            <p>Vahetame esipiduriklotsid, hooldame pidurisadula liugureid ja kontrollime pidurikomponentide seisukorda.</p>
-          </article>
-          <article class="gb-service-card">
-            <h3>Tagumiste piduriklotside vahetus</h3>
-            <p>Vahetame tagumised piduriklotsid. Vajaduse korral teeme ka EPB ehk elektroonilise seisupiduri hooldusprotseduurid.</p>
-          </article>
-          <article class="gb-service-card">
-            <h3>Piduriketaste vahetus</h3>
-            <p>Vahetame pidurikettad ja kontrollime pidurisüsteemi seisukorda pärast uute komponentide paigaldamist. Soovitame teha seda koos piduriklotside vahetusega.</p>
-          </article>
-          <article class="gb-service-card">
-            <h3>Pidurisadula remont</h3>
-            <p>Puhastame pidurisadula komponendid, vahetame tolmukatted ja tihendid ning kontrollime kolvi ja liugurite seisukorda.</p>
-          </article>
-          <article class="gb-service-card">
-            <h3>Pidurisadula vahetus</h3>
-            <p>Vahetame pidurisadula uue või taastatud komponendi vastu ning kontrollime seejärel pidurisüsteemi tööd.</p>
-          </article>
-          <article class="gb-service-card">
-            <h3>Pidurivedeliku vahetus</h3>
-            <p>Vahetame pidurivedeliku täielikult ja õhutame süsteemi. Kasutame DOT 4 või DOT 5.1 pidurivedelikke vastavalt autotootja nõuetele.</p>
-          </article>
-          <article class="gb-service-card">
-            <h3>ABS-diagnostika</h3>
-            <p>Teeme ABS-süsteemi elektroonikakomponentide diagnostika, loeme veakoode ja kontrollime blokeerumisvastase pidurisüsteemi tööd.</p>
-          </article>
-          <article class="gb-service-card">
-            <h3>Piduritorude valmistamine ja vahetus</h3>
-            <p>Valmistame ja vahetame kahjustatud või korrodeerunud piduritorusid, valime sobiva paigaldustrassi ning kontrollime süsteemi lekkekindlust.</p>
-          </article>
-        </div>
-      </section>
+      <section class="gb-page-section gb-reveal" id="services"><h3 class="gb-section-title">Meie ketaspidurite remondi- ja hooldusteenused</h3><div class="gb-services-grid gb-reveal-stagger">
+        <div class="gb-service-card gb-service-card--featured gb-reveal"><iconify-icon icon="mdi:magnify" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">Ketaspidurite diagnostika</div><div class="gb-service-card__desc">Kontrollime piduriklotside, piduriketaste, pidurisadulate ja pidurivedeliku seisukorda. Vajaduse korral teeme ABS-süsteemi diagnostika ja pidurisüsteemi elektroonikakomponentide kontrolli.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">alates 25 €</span><span class="gb-service-card__time">30 min</span></div></div>
+        <div class="gb-service-card gb-reveal"><iconify-icon icon="mdi:car-brake-alert" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">Esipiduriklotside vahetus</div><div class="gb-service-card__desc">Vahetame esipiduriklotsid, hooldame pidurisadula liugureid ja kontrollime pidurikomponentide seisukorda.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">48 €</span><span class="gb-service-card__time">1 h</span></div></div>
+        <div class="gb-service-card gb-reveal"><iconify-icon icon="mdi:car-brake-parking" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">Tagumiste piduriklotside vahetus</div><div class="gb-service-card__desc">Vahetame tagumised piduriklotsid. Vajaduse korral teeme ka EPB ehk elektroonilise seisupiduri hooldusprotseduurid.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">48 €</span><span class="gb-service-card__time">1-1,5 h</span></div></div>
+        <div class="gb-service-card gb-service-card--featured gb-reveal"><iconify-icon icon="mdi:disc" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">Piduriketaste vahetus</div><div class="gb-service-card__desc">Vahetame pidurikettad ja kontrollime pidurisüsteemi seisukorda pärast uute komponentide paigaldamist. Soovitame teha seda koos piduriklotside vahetusega.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">alates 70 €</span><span class="gb-service-card__time">1,5-2 h</span></div></div>
+        <div class="gb-service-card gb-reveal"><iconify-icon icon="mdi:wrench-cog" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">Pidurisadula remont</div><div class="gb-service-card__desc">Puhastame pidurisadula komponendid, vahetame tolmukatted ja tihendid ning kontrollime kolvi ja liugurite seisukorda.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">alates 60 €</span><span class="gb-service-card__time">2-3 h</span></div></div>
+        <div class="gb-service-card gb-reveal"><iconify-icon icon="mdi:swap-horizontal" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">Pidurisadula vahetus</div><div class="gb-service-card__desc">Vahetame pidurisadula uue või taastatud komponendi vastu ning kontrollime seejärel pidurisüsteemi tööd.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">alates 65 €</span><span class="gb-service-card__time">1,5-2 h</span></div></div>
+        <div class="gb-service-card gb-reveal"><iconify-icon icon="mdi:water-sync" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">Pidurivedeliku vahetus</div><div class="gb-service-card__desc">Vahetame pidurivedeliku täielikult ja õhutame süsteemi. Kasutame DOT 4 või DOT 5.1 pidurivedelikke vastavalt autotootja nõuetele.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">alates 43 €</span><span class="gb-service-card__time">1 h</span></div></div>
+        <div class="gb-service-card gb-reveal"><iconify-icon icon="mdi:chip" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">ABS-diagnostika</div><div class="gb-service-card__desc">Teeme ABS-süsteemi elektroonikakomponentide diagnostika, loeme veakoode ja kontrollime blokeerumisvastase pidurisüsteemi tööd.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">alates 35 €</span><span class="gb-service-card__time">1 h</span></div></div>
+        <div class="gb-service-card gb-reveal"><iconify-icon icon="mdi:pipe-wrench" width="24" class="gb-service-card__icon"></iconify-icon><div class="gb-service-card__title">Piduritorude valmistamine ja vahetus</div><div class="gb-service-card__desc">Valmistame ja vahetame kahjustatud või korrodeerunud piduritorusid, valime sobiva paigaldustrassi ning kontrollime süsteemi lekkekindlust.</div><div class="gb-service-card__footer"><span class="gb-service-card__price">alates 43 €</span><span class="gb-service-card__time">alates 1 h</span></div></div>
+      </div></section>
 
-      <section class="gb-section gb-process" id="process">
-        <p class="gb-section__kicker">Töö käik</p>
-        <h2>Kuidas ketaspidurite hooldus meie juures käib?</h2>
-        <div class="gb-process__grid">
-          <article>
-            <span>01</span>
-            <h3>Diagnostika ja seisukorra kontroll</h3>
-            <p>Kontrollime piduriklotside, piduriketaste, pidurisadulate ja pidurivedeliku seisukorda. Mõõdame komponentide jääkpaksust, kontrollime liugureid, tolmukatteid ja ABS-süsteemi elektroonikat.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Tööde ja hinnapakkumise kooskõlastamine</h3>
-            <p>Pärast diagnostikat anname ülevaate pidurisüsteemi seisukorrast ning kooskõlastame vajalikud tööd, varuosade hinna ja hoolduse maksumuse enne remondi alustamist.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Hooldus tootja tehniliste nõuete järgi</h3>
-            <p>Vahetame kulunud komponendid, hooldame pidurisadulate liugureid ja paigaldame tunnustatud tootjate pidurikomponente: Brembo, TRW, ATE, Bosch.</p>
-            <p>EPB-ga ehk elektroonilise seisupiduriga autodel tehakse hooldusprotseduurid diagnostikaseadme abil.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Pidurisüsteemi kontroll pärast hooldust</h3>
-            <p>Pärast tööde lõpetamist kontrollime pidurisüsteemi tööd, pidurivedeliku seisukorda, piduripedaali vaba käiku ja lekete puudumist.</p>
-          </article>
-          <article>
-            <span>05</span>
-            <h3>Garantii ja kasutussoovitused</h3>
-            <p>Anname tehtud töödele ja paigaldatud komponentidele garantii. Pärast piduriketaste ja -klotside vahetust selgitame, kuidas uusi komponente esimestel sõidukilomeetritel õigesti sisse töötada.</p>
-          </article>
-        </div>
-      </section>
+      <section class="gb-page-section gb-reveal" id="process"><h2 class="gb-section-title">Kuidas ketaspidurite hooldus meie juures käib?</h2><div class="gb-steps">
+        <div class="gb-step"><div class="gb-step__num">01</div><div><strong>Diagnostika ja seisukorra kontroll</strong><p>Kontrollime piduriklotside, piduriketaste, pidurisadulate ja pidurivedeliku seisukorda. Mõõdame komponentide jääkpaksust, kontrollime liugureid, tolmukatteid ja ABS-süsteemi elektroonikat.</p></div></div>
+        <div class="gb-step"><div class="gb-step__num">02</div><div><strong>Tööde ja hinnapakkumise kooskõlastamine</strong><p>Pärast diagnostikat anname ülevaate pidurisüsteemi seisukorrast ning kooskõlastame vajalikud tööd, varuosade hinna ja hoolduse maksumuse enne remondi alustamist.</p></div></div>
+        <div class="gb-step"><div class="gb-step__num">03</div><div><strong>Hooldus tootja tehniliste nõuete järgi</strong><p>Vahetame kulunud komponendid, hooldame pidurisadulate liugureid ja paigaldame tunnustatud tootjate pidurikomponente: Brembo, TRW, ATE, Bosch.</p><p>EPB-ga ehk elektroonilise seisupiduriga autodel tehakse hooldusprotseduurid diagnostikaseadme abil.</p></div></div>
+        <div class="gb-step"><div class="gb-step__num">04</div><div><strong>Pidurisüsteemi kontroll pärast hooldust</strong><p>Pärast tööde lõpetamist kontrollime pidurisüsteemi tööd, pidurivedeliku seisukorda, piduripedaali vaba käiku ja lekete puudumist.</p></div></div>
+        <div class="gb-step"><div class="gb-step__num">05</div><div><strong>Garantii ja kasutussoovitused</strong><p>Anname tehtud töödele ja paigaldatud komponentidele garantii. Pärast piduriketaste ja -klotside vahetust selgitame, kuidas uusi komponente esimestel sõidukilomeetritel õigesti sisse töötada.</p></div></div>
+      </div></section>
 
-      <section class="gb-section" id="pricing">
-        <p class="gb-section__kicker">Hinnad</p>
-        <h2>Ketaspidurite hoolduse hinnad</h2>
-        <div class="gb-table-wrap">
-          <table class="gb-price-table">
-            <thead>
-              <tr>
-                <th>Teenus</th>
-                <th>Töö hind alates</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Pidurisüsteemi esmane diagnostika</td>
-                <td>25 €</td>
-              </tr>
-              <tr>
-                <td>Esipiduriklotside vahetus</td>
-                <td>48 €</td>
-              </tr>
-              <tr>
-                <td>Tagumiste piduriklotside vahetus</td>
-                <td>48 €</td>
-              </tr>
-              <tr>
-                <td>Piduriketaste vahetus</td>
-                <td>70 €</td>
-              </tr>
-              <tr>
-                <td>Pidurisadula remont</td>
-                <td>60 €</td>
-              </tr>
-              <tr>
-                <td>Pidurisadula vahetus</td>
-                <td>65 €</td>
-              </tr>
-              <tr>
-                <td>Pidurivedeliku vahetus</td>
-                <td>43 €</td>
-              </tr>
-              <tr>
-                <td>ABS-diagnostika</td>
-                <td>35 €</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="gb-pricing-note">Varuosade, lisamaterjalide ja pärast diagnostikat vajaliku remondi maksumus kooskõlastatakse enne tööde alustamist.</p>
-      </section>
+      <section class="gb-page-section gb-reveal" id="pricing"><h3 class="gb-section-title">Ketaspidurite hoolduse hinnad</h3><table class="gb-pricing-table"><thead><tr><th>Teenus</th><th>Töö hind alates</th></tr></thead><tbody>
+        <tr><td data-label="Teenus">Pidurisüsteemi esmane diagnostika</td><td data-label="Töö hind alates" class="gb-price">25 €</td></tr>
+        <tr><td data-label="Teenus">Esipiduriklotside vahetus</td><td data-label="Töö hind alates" class="gb-price">48 €</td></tr>
+        <tr><td data-label="Teenus">Tagumiste piduriklotside vahetus</td><td data-label="Töö hind alates" class="gb-price">48 €</td></tr>
+        <tr><td data-label="Teenus">Piduriketaste vahetus</td><td data-label="Töö hind alates" class="gb-price">70 €</td></tr>
+        <tr><td data-label="Teenus">Pidurisadula remont</td><td data-label="Töö hind alates" class="gb-price">60 €</td></tr>
+        <tr><td data-label="Teenus">Pidurisadula vahetus</td><td data-label="Töö hind alates" class="gb-price">65 €</td></tr>
+        <tr><td data-label="Teenus">Pidurivedeliku vahetus</td><td data-label="Töö hind alates" class="gb-price">43 €</td></tr>
+        <tr><td data-label="Teenus">ABS-diagnostika</td><td data-label="Töö hind alates" class="gb-price">35 €</td></tr>
+      </tbody></table><p class="gb-pricing-note">Varuosade, lisamaterjalide ja pärast diagnostikat vajaliku remondi maksumus kooskõlastatakse enne tööde alustamist.</p></section>
 
-      <section class="gb-section gb-reviews" id="reviews">
-        <div class="gb-section__split">
-          <div>
-            <p class="gb-section__kicker">Klientide arvustused</p>
-            <h2>Klientide arvustused</h2>
-          </div>
-          <div class="gb-rating" aria-label="Google'i hinne 4,9">
-            <strong>4.9</strong>
-            <span>Google Reviews · põhineb 120+ arvustusel</span>
-          </div>
-        </div>
-        <div class="gb-review-grid">
-          <article class="gb-review-card">
-            <div class="gb-stars" aria-hidden="true">★★★★★</div>
-            <p>„VW Golfi pidurid hakkasid kriuksuma – igal pidurdamisel kostis metalliline heli. Tulin Mustamäelt Mr.Carisse. Diagnostika tehti poole tunniga: klotsid olid metallini kulunud ja esiketastel olid sooned sees. Kõik vahetati ühe päevaga. Hinnapakkumine klappis lõpparvega.”</p>
-          </article>
-          <article class="gb-review-card">
-            <div class="gb-stars" aria-hidden="true">★★★★★</div>
-            <p>„BMW F30 kiskus pidurdamisel vasakule. Selgus, et pidurisadul oli kinni – kolb ei liikunud kahjustatud tolmukatte tõttu tagasi, tüüpiline probleem pärast Tallinna talve. Paigaldati remondikomplekt ja samal ajal kontrolliti mõõteseadmega ka pidurivedelikku. Niiskusesisaldus oli kõrge, seega vahetati ka see. Nüüd pidurdab auto ühtlaselt.”</p>
-            <footer>Sergei N.<span>BMW 320i F30</span></footer>
-          </article>
-          <article class="gb-review-card">
-            <div class="gb-stars" aria-hidden="true">★★★★★</div>
-            <p>„Audi A4-l põles ABS-tuli. Teises kohas pakuti kohe ABS-ploki vahetust 600 € eest. Siin tehti diagnostika ja probleemiks osutus tagumise ratta kiiruseandur – 85 € koos tööga. Vahetati paari tunniga ära. Sõidan juba pool aastat, kõik töötab.”</p>
-            <footer>Marina K.<span>Audi A4 B8</span></footer>
-          </article>
-        </div>
-      </section>
+      <section class="gb-page-section gb-reveal" id="reviews"><h3 class="gb-section-title">Klientide arvustused</h3><div class="gb-rating-summary"><div class="gb-rating-summary__score">4.9</div><div class="gb-rating-summary__meta"><strong>Google Reviews</strong> · põhineb 120+ arvustusel</div></div><div class="gb-reviews-grid gb-reveal-stagger">
+        <div class="gb-review-card gb-reveal"><div class="gb-review-card__stars">★★★★★</div><div class="gb-review-card__text">„VW Golfi pidurid hakkasid kriuksuma - igal pidurdamisel kostis metalliline heli. Tulin Mustamäelt Mr.Carisse. Diagnostika tehti poole tunniga: klotsid olid metallini kulunud ja esiketastel olid sooned sees. Kõik vahetati ühe päevaga. Hinnapakkumine klappis lõpparvega.”</div><div class="gb-review-card__author"><span class="gb-review-card__name">Pavel T.</span><span class="gb-review-card__car">VW Golf VII</span></div></div>
+        <div class="gb-review-card gb-reveal"><div class="gb-review-card__stars">★★★★★</div><div class="gb-review-card__text">„BMW F30 kiskus pidurdamisel vasakule. Selgus, et pidurisadul oli kinni - kolb ei liikunud kahjustatud tolmukatte tõttu tagasi, tüüpiline probleem pärast Tallinna talve. Paigaldati remondikomplekt ja samal ajal kontrolliti mõõteseadmega ka pidurivedelikku. Niiskusesisaldus oli kõrge, seega vahetati ka see. Nüüd pidurdab auto ühtlaselt.”</div><div class="gb-review-card__author"><span class="gb-review-card__name">Sergei N.</span><span class="gb-review-card__car">BMW 320i F30</span></div></div>
+        <div class="gb-review-card gb-reveal"><div class="gb-review-card__stars">★★★★★</div><div class="gb-review-card__text">„Audi A4-l põles ABS-tuli. Teises kohas pakuti kohe ABS-ploki vahetust 600 € eest. Siin tehti diagnostika ja probleemiks osutus tagumise ratta kiiruseandur - 85 € koos tööga. Vahetati paari tunniga ära. Sõidan juba pool aastat, kõik töötab.”</div><div class="gb-review-card__author"><span class="gb-review-card__name">Marina K.</span><span class="gb-review-card__car">Audi A4 B8</span></div></div>
+      </div></section>
 
-      <section class="gb-trust-strip" aria-label="Ketaspidurite teenuse eelised">
-        <article>
-          <h3>12-kuuline garantii</h3>
-          <p>Kirjalik garantii tehtud töödele ja paigaldatud komponentidele.</p>
-        </article>
-        <article>
-          <h3>Brembo, TRW, ATE, Bosch</h3>
-          <p>Kasutame tunnustatud tootjate pidurikomponente.</p>
-        </article>
-        <article>
-          <h3>EPB hooldus</h3>
-          <p>Elektroonilise seisupiduri hooldusprotseduurid tehakse diagnostikaseadme abil.</p>
-        </article>
-      </section>
+      <div class="gb-trust gb-reveal gb-lower-section gb-lower-section--trust"><div class="gb-trust-item"><iconify-icon icon="mdi:shield-check"></iconify-icon><div class="gb-trust-item__title">12-kuuline garantii</div><div class="gb-trust-item__desc">Kirjalik garantii tehtud töödele ja paigaldatud komponentidele.</div></div><div class="gb-trust-item"><iconify-icon icon="mdi:factory"></iconify-icon><div class="gb-trust-item__title">Brembo, TRW, ATE, Bosch</div><div class="gb-trust-item__desc">Kasutame tunnustatud tootjate pidurikomponente.</div></div><div class="gb-trust-item"><iconify-icon icon="mdi:car-brake-parking"></iconify-icon><div class="gb-trust-item__title">EPB hooldus</div><div class="gb-trust-item__desc">Elektroonilise seisupiduri hooldusprotseduurid tehakse diagnostikaseadme abil.</div></div></div>
 
-      <section class="gb-section gb-faq" id="faq">
-        <p class="gb-section__kicker">KKK</p>
-        <h2>Korduma kippuvad küsimused ketaspidurite remondi kohta</h2>
-        <div class="gb-faq__list">
-          <details>
-            <summary>Kas pidurikettad ja -klotsid tuleb vahetada koos?</summary>
-            <div>
-              <p>Mitte alati, kuid piduriketaste ja -klotside seisukorda tuleb hinnata tervikuna.</p>
-              <p>Hoolduse käigus kontrollime piduriketaste jääkpaksust, tööpindade seisukorda, kulumise ühtlust, ülekuumenemise jälgi ja viskumist. Kui ketaste näitajad jäävad tootja lubatud piiridesse, võib nende edasine kasutamine olla lubatud.</p>
-              <p>Märkimisväärse kulumise, ülekuumenemise või lubatud piirväärtuste ületamise korral soovitame pidurikettad vahetada paarikaupa samal teljel, et pidurisüsteem töötaks stabiilselt.</p>
-              <p>Piduriketaste vahetamisel on enamasti soovitatav paigaldada ka uued piduriklotsid. See tagab komponentide korrektse sissetöötamise, ühtlase pidurdamise ning aitab vältida vibratsiooni, müra ja uute ketaste kiirendatud kulumist.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Kas tagumiste piduriklotside vahetusel on vaja hooldusrežiim aktiveerida?</summary>
-            <div>
-              <p>Jah, kui autol on elektrooniline seisupidur ehk EPB. Selline süsteem on paigaldatud enamikule VW Groupi autodele alates 2008. aastast, sealhulgas Passat B7/B8, Audi A4/A5/Q5 ja Škoda Superb mudelitele, samuti paljudele BMW F-seeria autodele.</p>
-              <p>Enne tagumiste piduriklotside vahetust viiakse EPB-süsteem diagnostikaseadme abil hooldusrežiimi. Ilma selleta ei ole korrektne vahetus võimalik ja EPB-mehhanism võib kahjustuda. Mr.Caris sisaldub hooldusrežiimi aktiveerimine töö hinnas.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Miks ei tasu osta kõige odavamaid piduriklotse?</summary>
-            <div>
-              <p>Odavates piduriklotsides kasutatakse sageli suurema abrasiivsuse ja ebastabiilse hõõrdeteguriga hõõrdematerjali. Sellised klotsid kulutavad piduriketta pinda kiiremini, töötavad ülekuumenemisel halvemini ning põhjustavad sageli pidurdamisel kriuksumist ja vibratsiooni.</p>
-              <p>Praktikas viib klotside pealt kokkuhoid tihti piduriketaste enneaegse vahetuseni. Mr.Caris kasutame Euroopas sertifitseeritud Brembo, TRW, ATE ja Boschi komponente.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Kui kaua pidurikettad kestavad?</summary>
-            <div>
-              <p>Keskmiselt on piduriketaste tööiga 80 000–120 000 km. Rasketel linnamaasturitel ja võimsatel autodel, näiteks Audi Q7, BMW X5, Volvo XC90 ja Mercedes GLE, on esipiduriketaste tööiga suure auto massi ja pidurdamisel tekkiva suurema soojuskoormuse tõttu tavaliselt lühem – umbes 60 000–80 000 km.</p>
-              <p>Täpne tööiga sõltub sõidustiilist, piduriklotside kvaliteedist, pidurisadulate seisukorrast ja kasutustingimustest. Sügavate soonte, pragude, ülekuumenemisjälgede või minimaalsest lubatud paksusest väiksema paksusega kettad tuleb välja vahetada sõltumata läbisõidust.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Mis on piduriketta viskumine ja miks see on probleem?</summary>
-            <div>
-              <p>Piduriketta viskumine tähendab ketta tööpinna kõrvalekallet pöörlemisel. Tavaliselt jääb lubatud väärtus kuni 0,05 mm. Kui tolerants on ületatud, tekivad pidurdamisel piduripedaali pulseerimine ja vibratsioon.</p>
-              <p>Deformatsiooni põhjustab kõige sagedamini piduriketta lokaalne ülekuumenemine, järsk jahtumine pärast pidurdamist või pidurisadula ebaühtlane töö. Tallinna talvistes oludes on tüüpiline olukord, kus külm vesi või lörts satub ülekuumenenud kettale pärast intensiivset pidurdamist.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Miks pidurisadul kinni jääb ja miks see ohtlik on?</summary>
-            <div>
-              <p>Pidurisadula kinnijäämise peamised põhjused on kolvi korrosioon kahjustatud tolmukatte tõttu, liugurite kinnikiilumine, tihendite paisumine vana pidurivedeliku mõjul ja teesoola mõju.</p>
-              <p>Kinni jäänud pidurisadul hoiab piduriklotsi pidevalt vastu ketast. Selle tulemusel kuumeneb ketas üle, klots kulub mõne nädalaga läbi, tekib ülekuumenemise lõhn ja auto võib pidurdamisel küljele kiskuda.</p>
-              <p>Pikaajalisel sõitmisel võivad üle kuumeneda ka rummu- ja laagrisõlm, kahjustuda rattalaager ning deformeeruda piduriketas.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Kuidas aru saada, et pidurivedelik vajab vahetust?</summary>
-            <div>
-              <p>Välimuse järgi ei ole pidurivedeliku seisukorda võimalik usaldusväärselt hinnata. Vedelik võib aja jooksul tumeneda, kuid peamine näitaja on niiskusesisaldus. Iga hoolduse käigus kontrollime pidurivedelikku elektroonilise mõõteseadmega.</p>
-              <p>DOT 4 pidurivedelik on hügroskoopne ehk imab järk-järgult õhust niiskust. Kui veesisaldus on umbes 2–3%, võib keemistemperatuur langeda tavapäraselt 230 °C-lt ligikaudu 130 °C-ni.</p>
-              <p>Intensiivsel pidurdamisel võib ülekuumenenud vedelik keema minna, süsteemi tekivad aurumullid ning piduripedaal muutub pehmeks või vajub põhja.</p>
-              <p>Soovitame pidurivedelikku vahetada iga 2 aasta järel, sõltumata läbisõidust.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Kas piduriketast võib vahetuse asemel treida?</summary>
-            <div>
-              <p>Tehniliselt on piduriketta treimine võimalik, kui ketta paksus jääb pärast töötlemist üle tootja minimaalselt lubatud väärtuse. Enne treimist tuleb mõõta jääkpaksust ning kontrollida ketast ülekuumenemise, pragude ja deformatsiooni suhtes.</p>
-              <p>Mr.Car ei paku piduriketaste treimise teenust, sest pärast mehaanilist töötlemist ei ole võimalik kindlalt garanteerida ketta järelejäänud tööiga, vastupidavust ülekuumenemisele ega seda, et viskumine kasutamisel uuesti ei teki.</p>
-              <p>Enamikul juhtudel on töökindlam ja ohutum lahendus vahetada pidurikettad ja -klotsid komplektina.</p>
-            </div>
-          </details>
-        </div>
-      </section>
+      <section class="gb-page-section gb-lower-section gb-lower-section--faq" id="faq"><h2 class="gb-section-title">Korduma kippuvad küsimused ketaspidurite remondi kohta</h2><div class="gb-faq gb-reveal">
+        <details class="gb-faq-item" open><summary>Kas pidurikettad ja -klotsid tuleb vahetada koos? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content"><p>Mitte alati, kuid piduriketaste ja -klotside seisukorda tuleb hinnata tervikuna.</p><p>Hoolduse käigus kontrollime piduriketaste jääkpaksust, tööpindade seisukorda, kulumise ühtlust, ülekuumenemise jälgi ja viskumist. Kui ketaste näitajad jäävad tootja lubatud piiridesse, võib nende edasine kasutamine olla lubatud.</p><p>Märkimisväärse kulumise, ülekuumenemise või lubatud piirväärtuste ületamise korral soovitame pidurikettad vahetada paarikaupa samal teljel, et pidurisüsteem töötaks stabiilselt.</p><p>Piduriketaste vahetamisel on enamasti soovitatav paigaldada ka uued piduriklotsid. See tagab komponentide korrektse sissetöötamise, ühtlase pidurdamise ning aitab vältida vibratsiooni, müra ja uute ketaste kiirendatud kulumist.</p></div></details>
+        <details class="gb-faq-item"><summary>Kas tagumiste piduriklotside vahetusel on vaja hooldusrežiim aktiveerida? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content"><p>Jah, kui autol on elektrooniline seisupidur ehk EPB. Selline süsteem on paigaldatud enamikule VW Groupi autodele alates 2008. aastast, sealhulgas Passat B7/B8, Audi A4/A5/Q5 ja Škoda Superb mudelitele, samuti paljudele BMW F-seeria autodele.</p><p>Enne tagumiste piduriklotside vahetust viiakse EPB-süsteem diagnostikaseadme abil hooldusrežiimi. Ilma selleta ei ole korrektne vahetus võimalik ja EPB-mehhanism võib kahjustuda. Mr.Caris sisaldub hooldusrežiimi aktiveerimine töö hinnas.</p></div></details>
+        <details class="gb-faq-item"><summary>Miks ei tasu osta kõige odavamaid piduriklotse? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content"><p>Odavates piduriklotsides kasutatakse sageli suurema abrasiivsuse ja ebastabiilse hõõrdeteguriga hõõrdematerjali. Sellised klotsid kulutavad piduriketta pinda kiiremini, töötavad ülekuumenemisel halvemini ning põhjustavad sageli pidurdamisel kriuksumist ja vibratsiooni.</p><p>Praktikas viib klotside pealt kokkuhoid tihti piduriketaste enneaegse vahetuseni. Mr.Caris kasutame Euroopas sertifitseeritud Brembo, TRW, ATE ja Boschi komponente.</p></div></details>
+        <details class="gb-faq-item"><summary>Kui kaua pidurikettad kestavad? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content"><p>Keskmiselt on piduriketaste tööiga 80 000-120 000 km. Rasketel linnamaasturitel ja võimsatel autodel, näiteks Audi Q7, BMW X5, Volvo XC90 ja Mercedes GLE, on esipiduriketaste tööiga suure auto massi ja pidurdamisel tekkiva suurema soojuskoormuse tõttu tavaliselt lühem - umbes 60 000-80 000 km.</p><p>Täpne tööiga sõltub sõidustiilist, piduriklotside kvaliteedist, pidurisadulate seisukorrast ja kasutustingimustest. Sügavate soonte, pragude, ülekuumenemisjälgede või minimaalsest lubatud paksusest väiksema paksusega kettad tuleb välja vahetada sõltumata läbisõidust.</p></div></details>
+        <details class="gb-faq-item"><summary>Mis on piduriketta viskumine ja miks see on probleem? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content"><p>Piduriketta viskumine tähendab ketta tööpinna kõrvalekallet pöörlemisel. Tavaliselt jääb lubatud väärtus kuni 0,05 mm. Kui tolerants on ületatud, tekivad pidurdamisel piduripedaali pulseerimine ja vibratsioon.</p><p>Deformatsiooni põhjustab kõige sagedamini piduriketta lokaalne ülekuumenemine, järsk jahtumine pärast pidurdamist või pidurisadula ebaühtlane töö. Tallinna talvistes oludes on tüüpiline olukord, kus külm vesi või lörts satub ülekuumenenud kettale pärast intensiivset pidurdamist.</p></div></details>
+        <details class="gb-faq-item"><summary>Miks pidurisadul kinni jääb ja miks see ohtlik on? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content"><p>Pidurisadula kinnijäämise peamised põhjused on kolvi korrosioon kahjustatud tolmukatte tõttu, liugurite kinnikiilumine, tihendite paisumine vana pidurivedeliku mõjul ja teesoola mõju.</p><p>Kinni jäänud pidurisadul hoiab piduriklotsi pidevalt vastu ketast. Selle tulemusel kuumeneb ketas üle, klots kulub mõne nädalaga läbi, tekib ülekuumenemise lõhn ja auto võib pidurdamisel küljele kiskuda.</p><p>Pikaajalisel sõitmisel võivad üle kuumeneda ka rummu- ja laagrisõlm, kahjustuda rattalaager ning deformeeruda piduriketas.</p></div></details>
+        <details class="gb-faq-item"><summary>Kuidas aru saada, et pidurivedelik vajab vahetust? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content"><p>Välimuse järgi ei ole pidurivedeliku seisukorda võimalik usaldusväärselt hinnata. Vedelik võib aja jooksul tumeneda, kuid peamine näitaja on niiskusesisaldus. Iga hoolduse käigus kontrollime pidurivedelikku elektroonilise mõõteseadmega.</p><p>DOT 4 pidurivedelik on hügroskoopne ehk imab järk-järgult õhust niiskust. Kui veesisaldus on umbes 2-3%, võib keemistemperatuur langeda tavapäraselt 230 °C-lt ligikaudu 130 °C-ni.</p><p>Intensiivsel pidurdamisel võib ülekuumenenud vedelik keema minna, süsteemi tekivad aurumullid ning piduripedaal muutub pehmeks või vajub põhja.</p><p>Soovitame pidurivedelikku vahetada iga 2 aasta järel, sõltumata läbisõidust.</p></div></details>
+        <details class="gb-faq-item"><summary>Kas piduriketast võib vahetuse asemel treida? <iconify-icon icon="mdi:chevron-down"></iconify-icon></summary><div class="gb-faq-item__content"><p>Tehniliselt on piduriketta treimine võimalik, kui ketta paksus jääb pärast töötlemist üle tootja minimaalselt lubatud väärtuse. Enne treimist tuleb mõõta jääkpaksust ning kontrollida ketast ülekuumenemise, pragude ja deformatsiooni suhtes.</p><p>Mr.Car ei paku piduriketaste treimise teenust, sest pärast mehaanilist töötlemist ei ole võimalik kindlalt garanteerida ketta järelejäänud tööiga, vastupidavust ülekuumenemisele ega seda, et viskumine kasutamisel uuesti ei teki.</p><p>Enamikul juhtudel on töökindlam ja ohutum lahendus vahetada pidurikettad ja -klotsid komplektina.</p></div></details>
+      </div></section>
 
-      <section class="gb-section gb-related" id="related">
-        <p class="gb-section__kicker">Seotud teenused</p>
-        <h2>Seotud pidurisüsteemi teenused</h2>
-        <div class="gb-related__grid">
-          <a href="/services/trummelpidurite-remont" class="gb-related-card">
-            <strong>Trummelpidurite remont Tallinnas</strong>
-            <span>Tagumised trummelpidurid, seisupidur, rattapidurisilindrid, vedrud, reguleerimine ja seisupiduri mehhanismide hooldus.</span>
-          </a>
-          <a href="/services/pidurisusteemi-hooldus-ja-remont" class="gb-related-card">
-            <strong>Pidurisüsteemi remont ja hooldus</strong>
-            <span>Piduriklotside, piduriketaste, pidurisadulate, pidurivedeliku, ABS-i ja seisupiduri terviklik hooldus.</span>
-          </a>
-        </div>
-      </section>
+      <section class="gb-page-section gb-lower-section gb-lower-section--crosslink" id="related"><h3 class="gb-section-title">Seotud teenused</h3><div class="gb-crosslinks">
+        <a href="/services/trummelpidurite-remont" class="gb-crosslink"><iconify-icon icon="mdi:car-brake-parking" width="26"></iconify-icon><div><div class="gb-crosslink__label">Järgmine leht</div><div class="gb-crosslink__title">Trummelpidurite remont ja hooldus Tallinnas</div><div>Tagumised trummelpidurid, seisupidur, rattapidurisilindrid, vedrud, reguleerimine ja seisupiduri mehhanismide hooldus.</div></div></a>
+        <a href="/services/pidurisusteemi-hooldus-ja-remont" class="gb-crosslink"><iconify-icon icon="mdi:car-brake-alert" width="26"></iconify-icon><div><div class="gb-crosslink__label">Põhileht</div><div class="gb-crosslink__title">Pidurisüsteemi remont ja hooldus</div><div>Pidurivedeliku vahetus, ABS, EPB ning ketas- ja trummelpidurisüsteemide diagnostika ja hooldus.</div></div></a>
+      </div></section>
 
-      <section class="gb-cta" id="contact-cta">
-        <div>
-          <p class="gb-section__kicker">Diagnostika</p>
-          <h2>Vajate ketaspidurite diagnostikat?</h2>
-          <p>Kriuksumine, rooli vibratsioon, piduripedaali pulseerimine, piduriketaste ülekuumenemine või põlev ABS-tuli — broneerige aeg, kontrollime pidurisüsteemi üle ja kooskõlastame remondi enne tööde alustamist.</p>
-        </div>
-        <a href="#request" class="btn btn-primary">Broneeri aeg diagnostikaks <span aria-hidden="true">↗</span></a>
-      </section>
+      <div class="gb-cta-block gb-reveal gb-lower-section gb-lower-section--cta"><div class="gb-cta-block__title">Vajate ketaspidurite diagnostikat?</div><div class="gb-cta-block__desc">Kriuksumine, rooli vibratsioon, piduripedaali pulseerimine, piduriketaste ülekuumenemine või põlev ABS-tuli - broneerige aeg, kontrollime pidurisüsteemi üle ja kooskõlastame remondi enne tööde alustamist.</div><a href="#request" class="btn btn-primary gb-pulse-cta">Broneeri aeg diagnostikaks <span class="arrow">↗</span></a></div>
     </article>
 
     <!-- RIGHT: Sidebar -->
