@@ -59,6 +59,8 @@ const SKIP_FILES = new Set([
   'kaigukastiremont',
   'remont-kpp',
   'pidurisusteemi-hooldus-ja-remont',
+  'ketaspidurite-remont',
+  'trummelpidurite-remont',
   'tormoznaya-sistema',
   'diskovye-tormoza',
   'barabannye-tormoza',
@@ -2205,6 +2207,8 @@ const STATIC_SERVICE_SITEMAP_PATHS = {
     '/services/kasikasti-remont',
     '/services/automaatkasti-remont',
     '/services/pidurisusteemi-hooldus-ja-remont',
+    '/services/ketaspidurite-remont',
+    '/services/trummelpidurite-remont',
     '/services/webasto-diagnostika',
     '/services/webasto-sumptomid'
   ],
