@@ -172,12 +172,14 @@ const SERVICES = [
         navTitle: "Vedrustus",
         icon: "mdi:car-lifted-pickup",
         heroTitle: "Vedrustuse remont",
-        heroLead: "Vedrustus ja roolisüsteem — diagnostika ja remont garantiiga.",
+        heroLead: "Kolin ebatasasustel sõites, rooli vibratsioon, auto kiskumine küljele või rehvide ebaühtlane kulumine — teeme igasuguse keerukusega veermiku diagnostikat ja remonti. Vahetame amortisaatoreid, õõtshoobasid, šarniire, silentplokke, rattalaagreid ja vedrustuse komponente. 3D sillastend, lõtkude ja vedrustuse geomeetria kontroll.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Vedrustuse remont Mr.Car-is",
+        introTitle: "Spetsialiseeritud vedrustuse diagnostika ja remont Tallinnas",
         introText: [
-            "Vedrustus on sinu ohutus teel. Põrutamine, rooli kõrvalekalle, vibratsioon — kõik need on kulumise märgid, mida ei saa eirata.",
-            "Teeme täieliku vedrustuse diagnostika tõstukil, tuvastame kulunud osad ja koostame remondiplaani täpse maksumusega. Üllatusi ei ole."
+            "Vedrustuse remont Mr.Caris tähendab täpset diagnostikat ja igasuguse keerukusega veermiku professionaalset remonti: kõigi sõlmede kontrolli, kulunud komponentide vahetust ja lõplikku 3D-rataste geomeetria reguleerimist. Remondime BMW, Audi, Mercedes-Benzi, Volkswageni, Škoda, Toyota, Volvo, Porsche, Fordi, Hyundai, Kia ja teiste markide vedrustust. Kasutame nii OEM-varuosi kui ka kvaliteetseid aftermarket-komponente usaldusväärsetelt tootjatelt, sealhulgas Lemförder, Sachs, Bilstein, Febi, Meyle, TRW ja teised kaubamärgid. Diagnostika alates 25 €.",
+            "Auto vedrustus vastutab stabiilsuse, juhitavuse ja rataste pideva kontakti eest teekattega. Süsteemi kuuluvad amortisaatorid, vedrud, õõtshoovad, silentplokid, šarniirid, rattalaagrid, stabilisaatorid ja vedrustuse tugielemendid.",
+            "Eesti oludes saab vedrustus suuremat koormust. Temperatuurikõikumised, teesool, trammiteed, teeliited ja talvejärgsed löökaugud kiirendavad märgatavalt amortisaatorite, silentplokkide, šarniiride ja rattalaagrite kulumist.",
+            "Proovisõit, lõtkude kontroll ja ülevaatus tõstukil võimaldavad täpselt määrata vea allika ja vahetada ainult tõesti kulunud komponendid — ilma korras detailide põhjendamatu vahetuseta."
         ],
         symptomsTitle: "Vedrustuse probleemide tunnused",
         symptoms: [
@@ -225,44 +227,48 @@ const SERVICES = [
         category: "Vedrustus ja pidurid",
         navTitle: "Pidurisüsteem",
         icon: "mdi:car-brake-alert",
-        heroTitle: "Pidurisüsteemi hooldus ja remont",
-        heroLead: "See teenuse leht on koostamisel. Pidurite remondi info ja hinnad lisame peagi.",
+        heroTitle: "Pidurisüsteemi remont ja hooldus Tallinnas",
+        heroLead: "Pidurite kriuksumine, piduripedaali vibratsioon, auto kiskumine pidurdamisel või piduriketaste ülekuumenemine - diagnoosime ja kõrvaldame pidurisüsteemi rikked.",
         heroImage: "/pics/brake-system-hero.webp",
-        introTitle: "Leht on koostamisel",
+        introTitle: "Pidurite hooldusega ei tasu viivitada",
         introText: [
-            "Pidurisüsteem on nüüd eraldi teenus, et see ei oleks enam vedrustuse lehega kokku pandud.",
-            "Kuni detailne leht valmib, saad pidurite kontrolli või remondi aja broneerida päringuvormi kaudu."
+            "Mr.Car pakub pidurisüsteemi terviklikku hooldust: alates plaanilisest piduriklotside ja pidurivedeliku vahetusest kuni ABS-diagnostika ja pidurisadulate remondini.",
+            "Hooldame kõigi automarkide ketas- ja trummelpidurisüsteeme."
         ],
-        symptomsTitle: "Mida leht hakkab sisaldama?",
+        symptomsTitle: "Pidurisüsteemi rikete peamised sümptomid",
         symptoms: [
-            { icon: "mdi:volume-high", text: "Krigisemine pidurdamisel" },
+            { icon: "mdi:volume-high", text: "Pidurite kriuksumine ja vilin" },
             { icon: "mdi:vibrate", text: "Piduripedaali vibratsioon" },
             { icon: "mdi:car-brake-low-pressure", text: "Pehme piduripedaal" },
-            { icon: "mdi:alert-circle", text: "ABS või ESP hoiatustuli" }
+            { icon: "mdi:car-traction-control", text: "Auto kisub pidurdamisel küljele" },
+            { icon: "mdi:alert-circle", text: "ABS- või ESP-tuli põleb" },
+            { icon: "mdi:thermometer-alert", text: "Kõrbelõhn pärast sõitu" }
         ],
-        afterSymptomsText: "Leht on arenduses, kuid pidurite kontrolli saab juba tellida.",
-        servicesListTitle: "Planeeritav sisu:",
+        afterSymptomsText: "Pidurisüsteemi kõrvalised helid, vibratsioon või ABS-tuli vajavad kontrolli enne, kui rike kahjustab rohkem komponente.",
+        servicesListTitle: "Teenused ja orienteeruvad hinnad:",
         servicesList: [
-            "Piduriklotside ja -ketaste vahetus",
-            "Pidurisadulate kontroll",
+            "Pidurisüsteemi esmane diagnostika",
+            "Piduriklotside vahetus",
+            "Piduriketaste ja -klotside vahetus",
+            "Pidurisadula vahetus ja remont",
             "Pidurivedeliku vahetus",
-            "ABS diagnostika"
+            "Piduritorude valmistamine ja vahetus"
         ],
-        afterListText: "Täielik kirjeldus lisatakse hiljem.",
+        afterListText: "Lõplik maksumus kooskõlastatakse enne remondi alustamist.",
         promoBanner: { enabled: false },
         ctaSection: {
-            title: "Vajad pidurite kontrolli?",
-            text: "Jäta päring — lepime aja kokku ja kontrollime pidurisüsteemi.",
+            title: "Vajate pidurite diagnostikat?",
+            text: "Kriuksumine, vibratsioon, pehme pedaal või põlev ABS-tuli ei ole sümptomid, mida tasub ignoreerida.",
             phoneText: "Helista: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Pidurisüsteemi kontrolli broneerimine",
+            title: "Pidurite diagnostika broneerimine",
             subtitle: "Jäta päring — helistame tagasi 30 minutiga"
         },
         seo: {
-            title: "Pidurisüsteemi remont — Mr.Car Tallinn",
-            description: "Pidurisüsteemi hooldus ja remont Tallinnas. Leht on koostamisel. Kopli 82a. +372 5646 1210"
+            title: "Pidurisüsteemi remont ja hooldus Tallinnas | Mr.Car",
+            description: "Pidurisüsteemi remont ja hooldus Tallinnas: klotsid, kettad, sadulad, pidurivedelik ja ABS-diagnostika. 12-kuuline garantii. Kopli 82a."
         }
     },
 

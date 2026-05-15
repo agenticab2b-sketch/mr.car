@@ -172,12 +172,14 @@ const SERVICES = [
         navTitle: "Suspension",
         icon: "mdi:car-lifted-pickup",
         heroTitle: "Suspension Repair",
-        heroLead: "Suspension and steering systems — diagnostics and repair with a warranty.",
+        heroLead: "Knocks when driving over uneven roads, steering wheel vibration, the car pulling to one side, or uneven tire wear — we diagnose and repair chassis faults of any complexity. Replacement of shock absorbers, control arms, ball joints, silent blocks, wheel bearings and suspension components. 3D wheel alignment, play checks and suspension geometry inspection.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Suspension Repair at Mr.Car",
+        introTitle: "Specialized Suspension Diagnostics and Repair in Tallinn",
         introText: [
-            "Suspension is your safety on the road. Thumping, steering pull, vibrations — these are all signs of wear that cannot be ignored.",
-            "We perform full suspension diagnostics on a lift, identify worn parts, and create a repair plan with exact costs. No surprises."
+            "Suspension repair at Mr.Car means accurate diagnostics and professional chassis repair of any complexity: checking every assembly, replacing worn components, and final 3D wheel alignment. We repair suspension systems on BMW, Audi, Mercedes-Benz, Volkswagen, Škoda, Toyota, Volvo, Porsche, Ford, Hyundai, Kia and other makes. We use both OEM parts and high-quality aftermarket components from trusted manufacturers, including Lemförder, Sachs, Bilstein, Febi, Meyle, TRW and other brands. Diagnostics from €25.",
+            "The vehicle suspension is responsible for stability, handling and constant wheel contact with the road surface. The system includes shock absorbers, springs, control arms, silent blocks, ball joints, wheel bearings, anti-roll bars and suspension mounts.",
+            "In Estonian conditions, suspension components are exposed to higher loads. Temperature changes, road salt, tram tracks, road joints and potholes after winter significantly accelerate wear of shock absorbers, silent blocks, ball joints and wheel bearings.",
+            "A test drive, play check and lift inspection allow us to identify the exact source of the fault and replace only components that are truly worn — without unnecessary replacement of good parts."
         ],
         symptomsTitle: "Signs of suspension problems",
         symptoms: [

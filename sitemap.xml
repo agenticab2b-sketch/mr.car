@@ -163,14 +163,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mrcar.ee/services/pidurisusteemi-hooldus-ja-remont</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.mrcar.ee/services/veermik-pidurid</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -235,6 +229,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.mrcar.ee/services/pidurisusteemi-hooldus-ja-remont</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.mrcar.ee/services/webasto-diagnostika</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -272,7 +272,7 @@
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/hodovaya</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -398,7 +398,7 @@
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/chassis-brakes</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
