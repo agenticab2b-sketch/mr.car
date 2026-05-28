@@ -1055,6 +1055,27 @@
       document.getElementById('fabContact').classList.remove('is-open');
       document.getElementById('fabTrigger').classList.remove('icon-swap');
     }
+
+    // Scroll reveal for content blocks.
+    (function() {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var reveals = document.querySelectorAll('.gb-reveal');
+      if (!('IntersectionObserver' in window) || prefersReduced) {
+        reveals.forEach(function(el) { el.classList.add('gb-visible'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('gb-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -60px 0px' });
+
+      reveals.forEach(function(el) { io.observe(el); });
+    })();
   </script>
 
 </body>
