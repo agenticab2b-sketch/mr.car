@@ -65,6 +65,7 @@ const SKIP_FILES = new Set([
   'diskovye-tormoza',
   'barabannye-tormoza',
   'brake-system-service-and-repair',
+  'disc-brake-repair',
   'transmission-repair',
   'automaatkasti-remont',
   'remont-akpp',
@@ -2226,6 +2227,7 @@ const STATIC_SERVICE_SITEMAP_PATHS = {
     '/en/services/transmission-repair',
     '/en/services/manual-transmission-repair',
     '/en/services/automatic-transmission-repair',
+    '/en/services/disc-brake-repair',
     '/en/services/webasto-symptoms'
   ]
 };
