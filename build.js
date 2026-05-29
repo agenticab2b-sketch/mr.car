@@ -66,6 +66,7 @@ const SKIP_FILES = new Set([
   'barabannye-tormoza',
   'brake-system-service-and-repair',
   'disc-brake-repair',
+  'drum-brake-repair',
   'transmission-repair',
   'automaatkasti-remont',
   'remont-akpp',
@@ -119,8 +120,8 @@ const LANGS = [
     formSuccess: 'Aitäh! Päring on saadetud.',
     sidebarTitle: 'Vali teenus',
     otherLangs: [
-      { href: '/ru/', code: 'RU', flag: 'circle-flags:ru', title: 'Русский' },
-      { href: '/en/', code: 'EN', flag: 'circle-flags:en', title: 'English' },
+      { href: '/ru', code: 'RU', flag: 'circle-flags:ru', title: 'Русский' },
+      { href: '/en', code: 'EN', flag: 'circle-flags:en', title: 'English' },
     ],
     selfLang: { href: '/', flag: 'circle-flags:ee', title: 'Eesti keel' },
     mapLabel: 'Kopli 82a, Tallinn',
@@ -200,9 +201,9 @@ const LANGS = [
     sidebarTitle: 'Выбрать услугу',
     otherLangs: [
       { href: '/', code: 'ET', flag: 'circle-flags:ee', title: 'Eesti keel' },
-      { href: '/en/', code: 'EN', flag: 'circle-flags:en', title: 'English' },
+      { href: '/en', code: 'EN', flag: 'circle-flags:en', title: 'English' },
     ],
-    selfLang: { href: '/ru/', flag: 'circle-flags:ru', title: 'Русский' },
+    selfLang: { href: '/ru', flag: 'circle-flags:ru', title: 'Русский' },
     mapLabel: 'Kopli 82a, Таллинн',
     mapTranslations: {
       meta: 'Как нас найти',
@@ -280,9 +281,9 @@ const LANGS = [
     sidebarTitle: 'Select service',
     otherLangs: [
       { href: '/', code: 'ET', flag: 'circle-flags:ee', title: 'Eesti keel' },
-      { href: '/ru/', code: 'RU', flag: 'circle-flags:ru', title: 'Русский' },
+      { href: '/ru', code: 'RU', flag: 'circle-flags:ru', title: 'Русский' },
     ],
-    selfLang: { href: '/en/', flag: 'circle-flags:en', title: 'English' },
+    selfLang: { href: '/en', flag: 'circle-flags:en', title: 'English' },
     mapLabel: 'Kopli 82a, Tallinn',
     mapTranslations: {
       meta: 'How to find us',
@@ -948,8 +949,8 @@ function buildMobileMegaMenu(services, cfg) {
 function getLanguageLinks() {
   return [
     { href: '/', code: 'et', flag: 'circle-flags:ee', title: 'Eesti keel' },
-    { href: '/ru/', code: 'ru', flag: 'circle-flags:ru', title: 'Русский' },
-    { href: '/en/', code: 'en', flag: 'circle-flags:en', title: 'English' }
+    { href: '/ru', code: 'ru', flag: 'circle-flags:ru', title: 'Русский' },
+    { href: '/en', code: 'en', flag: 'circle-flags:en', title: 'English' }
   ];
 }
 
@@ -2228,6 +2229,7 @@ const STATIC_SERVICE_SITEMAP_PATHS = {
     '/en/services/manual-transmission-repair',
     '/en/services/automatic-transmission-repair',
     '/en/services/disc-brake-repair',
+    '/en/services/drum-brake-repair',
     '/en/services/webasto-symptoms'
   ]
 };

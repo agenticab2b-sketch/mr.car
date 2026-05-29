@@ -228,7 +228,8 @@ const SERVICES = [
         navTitle: "Brake System",
         icon: "mdi:car-brake-alert",
         menuChildren: [
-            { slug: "disc-brake-repair", label: "Disc brakes" }
+            { slug: "disc-brake-repair", label: "Disc brakes" },
+            { slug: "drum-brake-repair", label: "Drum brakes" }
         ],
         heroTitle: "Brake System Service and Repair",
         heroLead: "This service page is under construction. Brake service information and prices will be added soon.",
