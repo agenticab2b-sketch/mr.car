@@ -152,10 +152,17 @@
                 <a href="/en/services/manual-transmission-repair" class="mega-menu__subitem">Manual transmissions</a>
               </div>
             </div>
-            <a href="/en/services/brake-system-service-and-repair" class="mega-menu__item">
-              <iconify-icon icon="mdi:car-brake-alert" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Brake System</span>
-            </a>
+            <div class="mega-menu__group">
+              <a href="/en/services/brake-system-service-and-repair" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:car-brake-alert" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Brake System</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/en/services/disc-brake-repair" class="mega-menu__subitem">Disc brakes</a>
+                <a href="/en/services/drum-brake-repair" class="mega-menu__subitem">Drum brakes</a>
+              </div>
+            </div>
             <a href="/en/services/chassis-brakes" class="mega-menu__item">
               <iconify-icon icon="mdi:car-lifted-pickup" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Suspension</span>
@@ -210,8 +217,8 @@
     </button>
     <div class="navbar__lang desktop-only">
       <a href="/" class="lang-link" title="Eesti keel"><iconify-icon icon="circle-flags:ee" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Eesti keel</span></a>
-            <a href="/ru/" class="lang-link" title="Русский"><iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Русский</span></a>
-            <a href="/en/" class="lang-link active" title="English"><iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">English</span></a>
+            <a href="/ru" class="lang-link" title="Русский"><iconify-icon icon="circle-flags:ru" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Русский</span></a>
+            <a href="/en" class="lang-link active" title="English"><iconify-icon icon="circle-flags:en" width="24" height="24"></iconify-icon><span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">English</span></a>
     </div>
   </header>
 
@@ -257,10 +264,18 @@
                 <span>Manual transmissions</span>
               </a>
             </div>
-            <a href="/en/services/brake-system-service-and-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-              <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
-              <span>Brake System</span>
-            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/en/services/brake-system-service-and-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
+                <span>Brake System</span>
+              </a>
+              <a href="/en/services/disc-brake-repair" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Disc brakes</span>
+              </a>
+              <a href="/en/services/drum-brake-repair" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Drum brakes</span>
+              </a>
+            </div>
             <a href="/en/services/chassis-brakes" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
               <iconify-icon icon="mdi:car-lifted-pickup" aria-hidden="true"></iconify-icon>
               <span>Suspension</span>
@@ -307,8 +322,8 @@
     <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
     <div class="mobile-menu__lang">
       <a href="/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
-            <a href="/ru/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
-            <a href="/en/" class="mobile-lang-link active"><iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon><span>English</span></a>
+            <a href="/ru" class="mobile-lang-link"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
+            <a href="/en" class="mobile-lang-link active"><iconify-icon icon="circle-flags:en" width="32" height="32"></iconify-icon><span>English</span></a>
     </div>
   </div>
 
@@ -407,10 +422,17 @@
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Suspension &amp; brakes</div>
             <ul class="sd-sidebar__list">
-              <li><a href="/en/services/brake-system-service-and-repair" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Brake System</span>
-              </a></li>
+              <li class="sd-sidebar__item sd-sidebar__item--has-children">
+                <a href="/en/services/brake-system-service-and-repair" class="sd-sidebar__link">
+                  <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
+                  <span>Brake System</span>
+                  <iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>
+                </a>
+                <ul class="sd-sidebar__sublist">
+                  <li><a href="/en/services/disc-brake-repair" class="sd-sidebar__sublink">Disc brakes</a></li>
+                  <li><a href="/en/services/drum-brake-repair" class="sd-sidebar__sublink">Drum brakes</a></li>
+                </ul>
+              </li>
               <li><a href="/en/services/chassis-brakes" class="sd-sidebar__link">
                 <iconify-icon icon="mdi:car-lifted-pickup" width="18" height="18" aria-hidden="true"></iconify-icon>
                 <span>Suspension</span>
@@ -586,10 +608,17 @@
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Suspension &amp; brakes</div>
             <ul class="sd-sidebar__list">
-              <li><a href="/en/services/brake-system-service-and-repair" class="sd-sidebar__link">
-                <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
-                <span>Brake System</span>
-              </a></li>
+              <li class="sd-sidebar__item sd-sidebar__item--has-children">
+                <a href="/en/services/brake-system-service-and-repair" class="sd-sidebar__link">
+                  <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
+                  <span>Brake System</span>
+                  <iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>
+                </a>
+                <ul class="sd-sidebar__sublist">
+                  <li><a href="/en/services/disc-brake-repair" class="sd-sidebar__sublink">Disc brakes</a></li>
+                  <li><a href="/en/services/drum-brake-repair" class="sd-sidebar__sublink">Drum brakes</a></li>
+                </ul>
+              </li>
               <li><a href="/en/services/chassis-brakes" class="sd-sidebar__link">
                 <iconify-icon icon="mdi:car-lifted-pickup" width="18" height="18" aria-hidden="true"></iconify-icon>
                 <span>Suspension</span>
