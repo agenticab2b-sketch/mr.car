@@ -148,6 +148,11 @@
     ],
     "redirects": [
       {
+        "source": "/homepage",
+        "destination": "/ru/",
+        "type": 301
+      },
+      {
         "source": "/homepage.html",
         "destination": "/ru/",
         "type": 301
@@ -200,6 +205,26 @@
       {
         "source": "/privaatsuspoliitika",
         "destination": "/privaatsus",
+        "type": 301
+      },
+      {
+        "source": "/privaatsus/index",
+        "destination": "/privaatsus",
+        "type": 301
+      },
+      {
+        "source": "/privaatsus/index.html",
+        "destination": "/privaatsus",
+        "type": 301
+      },
+      {
+        "source": "/ru/privaatsus/index",
+        "destination": "/ru/privaatsus",
+        "type": 301
+      },
+      {
+        "source": "/ru/privaatsus/index.html",
+        "destination": "/ru/privaatsus",
         "type": 301
       },
       {

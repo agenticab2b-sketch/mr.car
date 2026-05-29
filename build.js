@@ -1604,6 +1604,11 @@ function getDocumentTitle(html) {
   return html.match(/<title>([^<]*)<\/title>/i)?.[1]?.trim() || '';
 }
 
+function getCanonicalHref(html) {
+  const tag = html.match(/<link[^>]+rel=["']canonical["'][^>]*>/i)?.[0] || '';
+  return tag.match(/href=["']([^"']+)["']/i)?.[1] || '';
+}
+
 function ensureLangLinkAnchorText(html) {
   return html.replace(/<a([^>]*)>([\s\S]*?)<\/a>/g, (match, attrs, inner) => {
     const classValue = attrs.match(/\bclass="([^"]+)"/i)?.[1] || '';
@@ -1643,6 +1648,43 @@ function ensurePartnerLogoAlt(html) {
   );
 }
 
+function ensureOpenGraphTags(html) {
+  const missing = [];
+
+  if (!/property=["']og:type["']/i.test(html)) {
+    missing.push('<meta property="og:type" content="website">');
+  }
+
+  if (!/property=["']og:title["']/i.test(html)) {
+    const title = getDocumentTitle(html);
+    if (title) missing.push(`<meta property="og:title" content="${esc(title)}">`);
+  }
+
+  if (!/property=["']og:description["']/i.test(html)) {
+    const description = getMetaContent(html, 'name', 'description');
+    if (description) missing.push(`<meta property="og:description" content="${esc(description)}">`);
+  }
+
+  if (!/property=["']og:url["']/i.test(html)) {
+    const canonical = getCanonicalHref(html);
+    if (canonical) missing.push(`<meta property="og:url" content="${esc(canonical)}">`);
+  }
+
+  if (!/property=["']og:image["']/i.test(html)) {
+    missing.push(`<meta property="og:image" content="${PROD_ORIGIN}/og-image.jpg">`);
+  }
+
+  if (missing.length === 0) return html;
+
+  const ogBlock = `\n  <!-- Open Graph -->\n  ${missing.join('\n  ')}\n`;
+
+  if (/<link[^>]+rel=["']stylesheet["'][^>]*>/i.test(html)) {
+    return html.replace(/<link[^>]+rel=["']stylesheet["'][^>]*>/i, `${ogBlock}$&`);
+  }
+
+  return html.replace(/<\/head>/i, `${ogBlock}</head>`);
+}
+
 function ensureTwitterCards(html) {
   const missing = [];
 
@@ -1652,17 +1694,17 @@ function ensureTwitterCards(html) {
 
   if (!/name=["']twitter:title["']/i.test(html)) {
     const title = getMetaContent(html, 'property', 'og:title') || getDocumentTitle(html);
-    if (title) missing.push(`<meta name="twitter:title" content="${title}">`);
+    if (title) missing.push(`<meta name="twitter:title" content="${esc(title)}">`);
   }
 
   if (!/name=["']twitter:description["']/i.test(html)) {
     const description = getMetaContent(html, 'property', 'og:description') || getMetaContent(html, 'name', 'description');
-    if (description) missing.push(`<meta name="twitter:description" content="${description}">`);
+    if (description) missing.push(`<meta name="twitter:description" content="${esc(description)}">`);
   }
 
   if (!/name=["']twitter:image["']/i.test(html)) {
     const image = getMetaContent(html, 'property', 'og:image') || `${PROD_ORIGIN}/og-image.jpg`;
-    if (image) missing.push(`<meta name="twitter:image" content="${image}">`);
+    if (image) missing.push(`<meta name="twitter:image" content="${esc(image)}">`);
   }
 
   if (missing.length === 0) return html;
@@ -1702,6 +1744,7 @@ function syncSharedHtmlPatterns() {
     next = ensureLangLinkAnchorText(next);
     next = ensureSocialLinkAnchorText(next);
     next = ensurePartnerLogoAlt(next);
+    next = ensureOpenGraphTags(next);
     next = ensureTwitterCards(next);
 
     if (next !== source) {

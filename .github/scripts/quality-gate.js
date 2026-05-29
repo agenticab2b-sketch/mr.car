@@ -72,6 +72,8 @@ for (const filePath of PUBLIC_HTML) {
   checkInternalNofollow(relPath, content);
   checkRequiredInternalLinks(relPath, content);
   checkCanonicalAndHreflang(relPath, content);
+  checkSocialMeta(relPath, content);
+  checkBrokenEncoding(relPath, content);
   checkPrioritySeoMeta(relPath, content);
 }
 
@@ -256,14 +258,42 @@ function isSeoTechnicalPage(relPath) {
   return relPath === '404.html' || /^google.*\.html$/i.test(relPath);
 }
 
+function isRedirectedLegacyPage(relPath) {
+  return relPath === 'homepage.html';
+}
+
 function extractTitle(content) {
   const match = content.match(/<title>([\s\S]*?)<\/title>/i);
   return match ? match[1].replace(/\s+/g, ' ').trim() : '';
 }
 
-function extractMetaDescription(content) {
-  const match = content.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i);
+function extractAttr(tag, attrName) {
+  const match = tag.match(new RegExp(`\\s${attrName}=["']([^"']*)["']`, 'i'));
   return match ? match[1].replace(/\s+/g, ' ').trim() : '';
+}
+
+function extractMetaContent(content, attrName, attrValue) {
+  const escapedValue = escapeForRegex(attrValue);
+  const patterns = [
+    new RegExp(`<meta[^>]*${attrName}=["']${escapedValue}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'i'),
+    new RegExp(`<meta[^>]*content=["']([^"']*)["'][^>]*${attrName}=["']${escapedValue}["'][^>]*>`, 'i'),
+  ];
+
+  for (const pattern of patterns) {
+    const match = content.match(pattern);
+    if (match) return match[1].replace(/\s+/g, ' ').trim();
+  }
+
+  return '';
+}
+
+function extractMetaDescription(content) {
+  return extractMetaContent(content, 'name', 'description');
+}
+
+function extractCanonicalHref(content) {
+  const canonicalTagMatch = content.match(/<link[^>]+rel=["']canonical["'][^>]*>/i);
+  return canonicalTagMatch ? extractAttr(canonicalTagMatch[0], 'href') : '';
 }
 
 function checkPrioritySeoMeta(relPath, content) {
@@ -351,6 +381,89 @@ function checkCanonicalAndHreflang(relPath, content) {
         });
       }
     }
+  }
+}
+
+function checkBrokenEncoding(relPath, content) {
+  if (content.includes('\uFFFD')) {
+    failures.push({
+      type: 'encoding',
+      file: relPath,
+      message: 'contains Unicode replacement character (U+FFFD)',
+    });
+  }
+}
+
+function checkSocialMeta(relPath, content) {
+  if (isSeoTechnicalPage(relPath) || isRedirectedLegacyPage(relPath)) return;
+
+  const canonicalHref = extractCanonicalHref(content);
+  const fields = [
+    ['property', 'og:type'],
+    ['property', 'og:title'],
+    ['property', 'og:description'],
+    ['property', 'og:url'],
+    ['property', 'og:image'],
+    ['name', 'twitter:card'],
+    ['name', 'twitter:title'],
+    ['name', 'twitter:description'],
+    ['name', 'twitter:image'],
+  ];
+
+  for (const [attrName, attrValue] of fields) {
+    if (!extractMetaContent(content, attrName, attrValue)) {
+      failures.push({
+        type: 'social-meta-missing',
+        file: relPath,
+        message: `missing ${attrValue}`,
+      });
+    }
+  }
+
+  const ogUrl = extractMetaContent(content, 'property', 'og:url');
+  if (ogUrl) {
+    if (ogUrl.endsWith('.html')) {
+      failures.push({
+        type: 'og-url-format',
+        file: relPath,
+        message: `og:url ends with .html: ${ogUrl}`,
+      });
+    }
+
+    if (canonicalHref && ogUrl !== canonicalHref) {
+      failures.push({
+        type: 'og-url-canonical',
+        file: relPath,
+        message: `og:url differs from canonical: ${ogUrl} !== ${canonicalHref}`,
+      });
+    }
+  }
+
+  checkLocalAssetExists(relPath, 'og:image', extractMetaContent(content, 'property', 'og:image'));
+  checkLocalAssetExists(relPath, 'twitter:image', extractMetaContent(content, 'name', 'twitter:image'));
+}
+
+function checkLocalAssetExists(relPath, fieldName, value) {
+  if (!value) return;
+
+  let parsed;
+  try {
+    parsed = new URL(value);
+  } catch (error) {
+    return;
+  }
+
+  if (parsed.hostname !== 'www.mrcar.ee') return;
+
+  const localPath = decodeURIComponent(parsed.pathname.replace(/^\/+/, ''));
+  if (!localPath) return;
+
+  if (!fs.existsSync(path.join(ROOT, localPath))) {
+    failures.push({
+      type: 'social-image-missing',
+      file: relPath,
+      message: `${fieldName} points to missing local asset: ${value}`,
+    });
   }
 }
 
