@@ -158,6 +158,21 @@
         "type": 301
       },
       {
+        "source": "/services",
+        "destination": "/teenused",
+        "type": 301
+      },
+      {
+        "source": "/services/",
+        "destination": "/teenused",
+        "type": 301
+      },
+      {
+        "source": "/services.html",
+        "destination": "/teenused",
+        "type": 301
+      },
+      {
         "source": "/prices",
         "destination": "/hinnad",
         "type": 301
