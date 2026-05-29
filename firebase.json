@@ -228,6 +228,16 @@
         "type": 301
       },
       {
+        "source": "/teenused/pidurite-remont",
+        "destination": "/services/pidurisusteemi-hooldus-ja-remont",
+        "type": 301
+      },
+      {
+        "source": "/teenused/pidurite-remont.html",
+        "destination": "/services/pidurisusteemi-hooldus-ja-remont",
+        "type": 301
+      },
+      {
         "source": "/ru/galereya.html",
         "destination": "/ru/galereya",
         "type": 301

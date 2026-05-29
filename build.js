@@ -64,6 +64,7 @@ const SKIP_FILES = new Set([
   'tormoznaya-sistema',
   'diskovye-tormoza',
   'barabannye-tormoza',
+  'brake-system-service-and-repair',
   'transmission-repair',
   'automaatkasti-remont',
   'remont-akpp',
