@@ -227,6 +227,10 @@ const SERVICES = [
         category: "Vedrustus ja pidurid",
         navTitle: "Pidurisüsteem",
         icon: "mdi:car-brake-alert",
+        menuChildren: [
+            { slug: "ketaspidurite-remont", label: "Ketaspidurid" },
+            { slug: "trummelpidurite-remont", label: "Trummelpidurid" }
+        ],
         heroTitle: "Pidurisüsteemi remont ja hooldus Tallinnas",
         heroLead: "Pidurite kriuksumine, piduripedaali vibratsioon, auto kiskumine pidurdamisel või piduriketaste ülekuumenemine - diagnoosime ja kõrvaldame pidurisüsteemi rikked.",
         heroImage: "/pics/brake-system-hero.webp",
