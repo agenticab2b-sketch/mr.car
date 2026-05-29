@@ -232,29 +232,29 @@ const SERVICES = [
             { slug: "drum-brake-repair", label: "Drum brakes" }
         ],
         heroTitle: "Brake System Service and Repair",
-        heroLead: "This service page is under construction. Brake service information and prices will be added soon.",
+        heroLead: "Brake squeal, pedal vibration, pulling under braking, overheating discs or ABS warning lights — we inspect and repair the full brake system in Tallinn.",
         heroImage: "/pics/brake-system-hero.webp",
-        introTitle: "Page under construction",
+        introTitle: "Brake faults should be handled early",
         introText: [
-            "The brake system is now a separate service so it is no longer combined with the suspension page.",
-            "Until the detailed page is ready, you can book brake inspection or repair through the request form."
+            "Mr.Car services disc and drum brake systems: brake pads, discs, drums, calipers, hydraulic parts, brake fluid and electronic parking brake components.",
+            "We start with diagnostics, check wear limits and leaks, then agree the repair scope before replacing parts."
         ],
-        symptomsTitle: "What will this page include?",
+        symptomsTitle: "When to book brake diagnostics",
         symptoms: [
             { icon: "mdi:volume-high", text: "Squeaking or grinding when braking" },
             { icon: "mdi:vibrate", text: "Brake pedal vibration" },
             { icon: "mdi:car-brake-low-pressure", text: "Soft brake pedal" },
             { icon: "mdi:alert-circle", text: "ABS or ESP warning light" }
         ],
-        afterSymptomsText: "The page is in development, but brake inspection can already be requested.",
-        servicesListTitle: "Planned content:",
+        afterSymptomsText: "If braking distance changes or the pedal feels different, book inspection before the fault damages other components.",
+        servicesListTitle: "Brake services we provide:",
         servicesList: [
             "Brake pad and disc replacement",
             "Caliper inspection",
             "Brake fluid replacement",
             "ABS diagnostics"
         ],
-        afterListText: "The full description will be added later.",
+        afterListText: "For specific systems, see disc brake repair and drum brake repair pages.",
         promoBanner: { enabled: false },
         ctaSection: {
             title: "Need brake inspection?",
@@ -268,7 +268,7 @@ const SERVICES = [
         },
         seo: {
             title: "Brake System Repair — Mr.Car Tallinn",
-            description: "Brake system service and repair in Tallinn. Page under construction. Kopli 82a. +372 5646 1210"
+            description: "Brake system repair in Tallinn: brake pads, discs, drums, calipers, brake fluid, EPB and ABS diagnostics. Kopli 82a. +372 5646 1210"
         }
     },
 

@@ -2228,6 +2228,7 @@ const STATIC_SERVICE_SITEMAP_PATHS = {
     '/en/services/transmission-repair',
     '/en/services/manual-transmission-repair',
     '/en/services/automatic-transmission-repair',
+    '/en/services/brake-system-service-and-repair',
     '/en/services/disc-brake-repair',
     '/en/services/drum-brake-repair',
     '/en/services/webasto-symptoms'
