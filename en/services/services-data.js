@@ -232,33 +232,39 @@ const SERVICES = [
             { slug: "drum-brake-repair", label: "Drum brakes" }
         ],
         heroTitle: "Brake System Service and Repair",
-        heroLead: "Brake squeal, pedal vibration, pulling under braking, overheating discs or ABS warning lights — we inspect and repair the full brake system in Tallinn.",
+        heroLead: "Brake system repair and service in Tallinn: pads, discs, drums, calipers, brake fluid, brake pipes, EPB and ABS diagnostics for disc and drum brakes.",
         heroImage: "/pics/brake-system-hero.webp",
-        introTitle: "Brake faults should be handled early",
+        introTitle: "Brake service should not be delayed",
         introText: [
-            "Mr.Car services disc and drum brake systems: brake pads, discs, drums, calipers, hydraulic parts, brake fluid and electronic parking brake components.",
-            "We start with diagnostics, check wear limits and leaks, then agree the repair scope before replacing parts."
+            "The brake system is one of the car's most important safety systems. Worn brake pads can increase braking distance by 30-40%, and gradual wear is often hard to notice in time.",
+            "Mr.Car provides complete brake system service: scheduled brake pad and brake fluid replacement, ABS diagnostics, brake caliper repair, brake pipe work and service for both disc and drum brake systems."
         ],
         symptomsTitle: "When to book brake diagnostics",
         symptoms: [
             { icon: "mdi:volume-high", text: "Squeaking or grinding when braking" },
             { icon: "mdi:vibrate", text: "Brake pedal vibration" },
             { icon: "mdi:car-brake-low-pressure", text: "Soft brake pedal" },
-            { icon: "mdi:alert-circle", text: "ABS or ESP warning light" }
+            { icon: "mdi:car-traction-control", text: "The car pulls to one side when braking" },
+            { icon: "mdi:alert-circle", text: "ABS or ESP warning light" },
+            { icon: "mdi:thermometer-alert", text: "Burning smell after driving" }
         ],
         afterSymptomsText: "If braking distance changes or the pedal feels different, book inspection before the fault damages other components.",
-        servicesListTitle: "Brake services we provide:",
+        servicesListTitle: "Brake services and prices:",
         servicesList: [
-            "Brake pad and disc replacement",
-            "Caliper inspection",
-            "Brake fluid replacement",
-            "ABS diagnostics"
+            "Initial brake system diagnostics from 25 €",
+            "Brake pad replacement from 48 €",
+            "Brake disc and pad replacement from 70 €",
+            "Brake caliper replacement from 65 €",
+            "Brake caliper repair from 60 €",
+            "Brake fluid replacement from 43 €",
+            "Brake pipe fabrication and replacement from 43 €",
+            "ABS and ESP diagnostics"
         ],
-        afterListText: "For specific systems, see disc brake repair and drum brake repair pages.",
+        afterListText: "For specific systems, see the disc brake repair and drum brake repair pages. The final price is agreed after diagnostics before repair starts.",
         promoBanner: { enabled: false },
         ctaSection: {
-            title: "Need brake inspection?",
-            text: "Send a request — we'll schedule a time and inspect the brake system.",
+            title: "Need brake diagnostics?",
+            text: "Squeaking, vibration, a soft pedal or an ABS warning light are not symptoms to ignore. Book a visit and we will inspect the system before repair.",
             phoneText: "Call: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
@@ -267,8 +273,8 @@ const SERVICES = [
             subtitle: "Leave a request — we'll call back within 30 minutes"
         },
         seo: {
-            title: "Brake System Repair — Mr.Car Tallinn",
-            description: "Brake system repair in Tallinn: brake pads, discs, drums, calipers, brake fluid, EPB and ABS diagnostics. Kopli 82a. +372 5646 1210"
+            title: "Brake System Repair and Service in Tallinn — Mr.Car",
+            description: "Brake system repair and service in Tallinn: brake pads, discs, drums, calipers, brake fluid, EPB and ABS diagnostics. Kopli 82a. +372 5646 1210"
         }
     },
 
