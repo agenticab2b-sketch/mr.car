@@ -26,7 +26,7 @@ const SERVICES = [
         symptomsTitle: "Millega meie poole pöördutakse?",
         symptoms: [
             { icon: "mdi:engine-outline", text: "Mootoriprobleemid" },
-            { icon: "mdi:car-brake-alert", text: "Põrutused vedrustuses" },
+            { icon: "mdi:car-brake-alert", text: "Kolin veermikus" },
             { icon: "mdi:lightning-bolt", text: "Elektroonilised rikked" },
             { icon: "mdi:car-shift-pattern", text: "Käigukastiprobleemid" },
             { icon: "mdi:oil-level", text: "Vedelike lekked" },
@@ -38,7 +38,7 @@ const SERVICES = [
         servicesListTitle: "Meie valdkonnad:",
         servicesList: [
             "Mootori ja käigukasti remont",
-            "Vedrustus ja pidurdussüsteem",
+            "Veermik ja pidurisüsteem",
             "Autoelekter ja diagnostika",
             "Õlivahetus ja hooldus",
             "Rehvitööd ja tasakaalustamine",
@@ -60,7 +60,7 @@ const SERVICES = [
         },
         seo: {
             title: "Autoremont Tallinnas — Mr.Car | Kõik tööliigid",
-            description: "Autoteenindus Mr.Car Tallinnas. Mootori, käigukasti, vedrustuse, elektroonika remont. Kõik margid. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
+            description: "Autoteenindus Mr.Car Tallinnas. Mootori, käigukasti, veermiku ja elektroonika remont. Kõik margid. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
         }
     },
 
@@ -172,31 +172,31 @@ const SERVICES = [
         navTitle: "Veermik",
         icon: "mdi:car-lifted-pickup",
         heroTitle: "Veermiku remont",
-        heroLead: "Kolin ebatasasustel sõites, rooli vibratsioon, auto kiskumine küljele või rehvide ebaühtlane kulumine — teeme igasuguse keerukusega veermiku diagnostikat ja remonti. Vahetame amortisaatoreid, õõtshoobasid, šarniire, silentplokke, rattalaagreid ja vedrustuse komponente. 3D sillastend, lõtkude ja vedrustuse geomeetria kontroll.",
+        heroLead: "Kolin ebatasasustel sõites, rooli vibratsioon, auto kiskumine küljele või rehvide ebaühtlane kulumine — teeme igasuguse keerukusega veermiku diagnostikat ja remonti. Vahetame amortisaatoreid, õõtshoobasid, šarniire, silentplokke, rattalaagreid ja muid veermiku komponente. 3D sillastend, lõtkude ja rataste geomeetria kontroll.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
         introTitle: "Veermiku remont ja diagnostika Tallinnas",
         introText: [
-            "Veermiku remont Mr.Caris tähendab täpset diagnostikat ja igasuguse keerukusega veermiku professionaalset remonti: kõigi sõlmede kontrolli, kulunud komponentide vahetust ja lõplikku 3D-rataste geomeetria reguleerimist. Teeme ka vedrustuse remonti BMW, Audi, Mercedes-Benzi, Volkswageni, Škoda, Toyota, Volvo, Porsche, Fordi, Hyundai, Kia ja teiste markide autodel. Kasutame nii OEM-varuosi kui ka kvaliteetseid aftermarket-komponente usaldusväärsetelt tootjatelt, sealhulgas Lemförder, Sachs, Bilstein, Febi, Meyle, TRW ja teised kaubamärgid. Diagnostika alates 25 €.",
-            "Auto vedrustus vastutab stabiilsuse, juhitavuse ja rataste pideva kontakti eest teekattega. Süsteemi kuuluvad amortisaatorid, vedrud, õõtshoovad, silentplokid, šarniirid, rattalaagrid, stabilisaatorid ja vedrustuse tugielemendid.",
-            "Eesti oludes saab vedrustus suuremat koormust. Temperatuurikõikumised, teesool, trammiteed, teeliited ja talvejärgsed löökaugud kiirendavad märgatavalt amortisaatorite, silentplokkide, šarniiride ja rattalaagrite kulumist.",
+            "Veermiku remont Mr.Caris tähendab täpset diagnostikat ja igasuguse keerukusega veermiku professionaalset remonti: kõigi sõlmede kontrolli, kulunud komponentide vahetust ja lõplikku 3D-rataste geomeetria reguleerimist. Remondime BMW, Audi, Mercedes-Benzi, Volkswageni, Škoda, Toyota, Volvo, Porsche, Fordi, Hyundai, Kia ja teiste markide autode veermikku. Kasutame nii OEM-varuosi kui ka kvaliteetseid aftermarket-komponente usaldusväärsetelt tootjatelt, sealhulgas Lemförder, Sachs, Bilstein, Febi, Meyle, TRW ja teised kaubamärgid. Diagnostika alates 25 €.",
+            "Auto veermik mõjutab stabiilsust, juhitavust ja rataste pidevat kontakti teekattega. Veermiku olulised osad on amortisaatorid, vedrud, õõtshoovad, silentplokid, šarniirid, rattalaagrid, stabilisaatorid ja tugilaagrid.",
+            "Eesti oludes saab veermik suuremat koormust. Temperatuurikõikumised, teesool, trammiteed, teeliited ja talvejärgsed löökaugud kiirendavad märgatavalt amortisaatorite, silentplokkide, šarniiride ja rattalaagrite kulumist.",
             "Proovisõit, lõtkude kontroll ja ülevaatus tõstukil võimaldavad täpselt määrata vea allika ja vahetada ainult tõesti kulunud komponendid — ilma korras detailide põhjendamatu vahetuseta."
         ],
-        symptomsTitle: "Vedrustuse probleemide tunnused",
+        symptomsTitle: "Veermiku probleemide tunnused",
         symptoms: [
-            { icon: "mdi:car-traction-control", text: "Auto kaldub kõrvale" },
-            { icon: "mdi:volume-high", text: "Põrutused ja kriuksumised" },
+            { icon: "mdi:car-traction-control", text: "Auto kisub kõrvale" },
+            { icon: "mdi:volume-high", text: "Kolin ja kriuksumine" },
             { icon: "mdi:vibrate", text: "Rooli vibratsioon" },
             { icon: "mdi:tire", text: "Ebaühtlane rehvide kulumine" },
-            { icon: "mdi:steering", text: "Roolimänk" },
+            { icon: "mdi:steering", text: "Roolilõtk" },
             { icon: "mdi:car-side", text: "Kerekalle kurvides" }
         ],
-        afterSymptomsText: "Kulunud vedrustus on otsene ohutusoht. Tule tasuta kontrollile.",
+        afterSymptomsText: "Kulunud veermik on otsene ohutusoht. Tule tasuta kontrollile.",
         servicesListTitle: "Meie veermiku teenused:",
         servicesList: [
-            "Vedrustuse diagnostika tõstukil",
-            "Amortisaatorite ja vedude vahetus",
-            "Silentklokkide ja palllihtede vahetus",
-            "Rooliotsikute ja tõukevarraste vahetus",
+            "Veermiku diagnostika tõstukil",
+            "Amortisaatorite ja vedrude vahetus",
+            "Silentplokkide ja šarniiride vahetus",
+            "Rooliotsikute ja roolivarraste vahetus",
             "Rataste geomeetria reguleerimine"
         ],
         afterListText: "Kasutame tunnustatud tootjate varuosi: Lemförder, TRW, Monroe, Brembo. Garantii 12 kuud kõigile töödele.",
@@ -216,7 +216,7 @@ const SERVICES = [
         },
         seo: {
             title: "Veermiku remont ja diagnostika — Mr.Car Tallinn",
-            description: "Veermiku remont Tallinnas. Vedrustuse remont, amortisaatorid, rooliotsikud, sillastend ja rataste geomeetria. Tasuta diagnostika. Kopli 82a. +372 5646 1210"
+            description: "Veermiku remont Tallinnas. Amortisaatorid, rooliotsikud, šarniirid, sillastend ja rataste geomeetria. Tasuta diagnostika. Kopli 82a. +372 5646 1210"
         }
     },
 
@@ -224,7 +224,7 @@ const SERVICES = [
         key: "brake_system",
         slug: "pidurisusteemi-hooldus-ja-remont",
         allSlugs: { ru: "tormoznaya-sistema", ee: "pidurisusteemi-hooldus-ja-remont", en: "brake-system-service-and-repair" },
-        category: "Vedrustus ja pidurid",
+        category: "Veermik ja pidurid",
         navTitle: "Pidurisüsteem",
         icon: "mdi:car-brake-alert",
         menuChildren: [
@@ -280,7 +280,7 @@ const SERVICES = [
         key: "tire_service",
         slug: "rehvitood",
         allSlugs: { ru: "shinomontazh", ee: "rehvitood", en: "tire-service" },
-        category: "Vedrustus ja pidurid",
+        category: "Veermik ja pidurid",
         navTitle: "Rehvitööd",
         icon: "mdi:tire",
         heroTitle: "Rehvitööd",
@@ -359,7 +359,7 @@ const SERVICES = [
             "Õhu- ja salongifiltri vahetus",
             "Vedelike kontroll ja lisamine",
             "Pidurdussüsteemi kontroll",
-            "Vedrustuse kontroll tõstukil",
+            "Veermiku kontroll tõstukil",
             "Aku kontroll",
             "Arvutidiagnostika",
             "Hooldusnäidiku nullimine"
@@ -674,7 +674,7 @@ const SERVICES = [
         symptoms: [
             { icon: "mdi:engine", text: "Mootori seisukord" },
             { icon: "mdi:car-shift-pattern", text: "Käigukasti töö" },
-            { icon: "mdi:car-brake-alert", text: "Vedrustus ja pidurid" },
+            { icon: "mdi:car-brake-alert", text: "Veermik ja pidurid" },
             { icon: "mdi:car-cog", text: "Arvutidiagnostika" },
             { icon: "mdi:car-side", text: "Kere (paksusemõõtur)" },
             { icon: "mdi:history", text: "Tegelik läbisõit" },
@@ -688,7 +688,7 @@ const SERVICES = [
             "Lakikihi paksuse mõõtmine (paksusemõõtur)",
             "Kõigi süsteemide arvutidiagnostika",
             "Mootori ja käigukasti kontroll",
-            "Vedrustuse vaatlus tõstukil",
+            "Veermiku vaatlus tõstukil",
             "Proovisõit mehaanikuga",
             "Kirjalik järeldus koos fotodega"
         ],
