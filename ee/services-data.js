@@ -190,7 +190,7 @@ const SERVICES = [
             { href: "#reviews", icon: "mdi:star", label: "Arvustused" },
             { href: "#faq", icon: "mdi:frequently-asked-questions", label: "KKK" }
         ],
-        introTitle: "Veermiku diagnostika ja remont Tallinnas",
+        introTitle: "Spetsialiseeritud veermiku diagnostika ja remont Tallinnas",
         introText: [
             "Mr.Car pakub täpset veermiku diagnostikat ja professionaalset remonti erineva keerukusega töödele. Kontrollime kõik veermiku sõlmed üle, vahetame kulunud detailid ning vajaduse korral teeme pärast remonti 3D-sildade reguleerimise.",
             "Remondime BMW, Audi, Mercedes-Benzi, Volkswageni, Škoda, Toyota, Volvo, Porsche, Fordi, Hyundai, Kia ja teiste automarkide veermikku. Kasutame nii OEM-varuosi kui ka kvaliteetseid järelturu osi usaldusväärsetelt tootjatelt, sealhulgas Lemförder, Sachs, Bilstein, Febi, Meyle, TRW ja teised. Veermiku diagnostika alates 25 €.",
