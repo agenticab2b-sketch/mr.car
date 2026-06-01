@@ -166,17 +166,17 @@ const SERVICES = [
 
     {
         key: "suspension",
-        slug: "veermik-pidurid",
-        allSlugs: { ru: "hodovaya", ee: "veermik-pidurid", en: "chassis-brakes" },
-        category: "Vedrustus ja pidurid",
-        navTitle: "Vedrustus",
+        slug: "veermiku-remont",
+        allSlugs: { ru: "hodovaya", ee: "veermiku-remont", en: "chassis-brakes" },
+        category: "Veermik ja pidurid",
+        navTitle: "Veermik",
         icon: "mdi:car-lifted-pickup",
-        heroTitle: "Vedrustuse remont",
+        heroTitle: "Veermiku remont",
         heroLead: "Kolin ebatasasustel sõites, rooli vibratsioon, auto kiskumine küljele või rehvide ebaühtlane kulumine — teeme igasuguse keerukusega veermiku diagnostikat ja remonti. Vahetame amortisaatoreid, õõtshoobasid, šarniire, silentplokke, rattalaagreid ja vedrustuse komponente. 3D sillastend, lõtkude ja vedrustuse geomeetria kontroll.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Spetsialiseeritud vedrustuse diagnostika ja remont Tallinnas",
+        introTitle: "Veermiku remont ja diagnostika Tallinnas",
         introText: [
-            "Vedrustuse remont Mr.Caris tähendab täpset diagnostikat ja igasuguse keerukusega veermiku professionaalset remonti: kõigi sõlmede kontrolli, kulunud komponentide vahetust ja lõplikku 3D-rataste geomeetria reguleerimist. Remondime BMW, Audi, Mercedes-Benzi, Volkswageni, Škoda, Toyota, Volvo, Porsche, Fordi, Hyundai, Kia ja teiste markide vedrustust. Kasutame nii OEM-varuosi kui ka kvaliteetseid aftermarket-komponente usaldusväärsetelt tootjatelt, sealhulgas Lemförder, Sachs, Bilstein, Febi, Meyle, TRW ja teised kaubamärgid. Diagnostika alates 25 €.",
+            "Veermiku remont Mr.Caris tähendab täpset diagnostikat ja igasuguse keerukusega veermiku professionaalset remonti: kõigi sõlmede kontrolli, kulunud komponentide vahetust ja lõplikku 3D-rataste geomeetria reguleerimist. Teeme ka vedrustuse remonti BMW, Audi, Mercedes-Benzi, Volkswageni, Škoda, Toyota, Volvo, Porsche, Fordi, Hyundai, Kia ja teiste markide autodel. Kasutame nii OEM-varuosi kui ka kvaliteetseid aftermarket-komponente usaldusväärsetelt tootjatelt, sealhulgas Lemförder, Sachs, Bilstein, Febi, Meyle, TRW ja teised kaubamärgid. Diagnostika alates 25 €.",
             "Auto vedrustus vastutab stabiilsuse, juhitavuse ja rataste pideva kontakti eest teekattega. Süsteemi kuuluvad amortisaatorid, vedrud, õõtshoovad, silentplokid, šarniirid, rattalaagrid, stabilisaatorid ja vedrustuse tugielemendid.",
             "Eesti oludes saab vedrustus suuremat koormust. Temperatuurikõikumised, teesool, trammiteed, teeliited ja talvejärgsed löökaugud kiirendavad märgatavalt amortisaatorite, silentplokkide, šarniiride ja rattalaagrite kulumist.",
             "Proovisõit, lõtkude kontroll ja ülevaatus tõstukil võimaldavad täpselt määrata vea allika ja vahetada ainult tõesti kulunud komponendid — ilma korras detailide põhjendamatu vahetuseta."
@@ -191,7 +191,7 @@ const SERVICES = [
             { icon: "mdi:car-side", text: "Kerekalle kurvides" }
         ],
         afterSymptomsText: "Kulunud vedrustus on otsene ohutusoht. Tule tasuta kontrollile.",
-        servicesListTitle: "Meie vedrustuse teenused:",
+        servicesListTitle: "Meie veermiku teenused:",
         servicesList: [
             "Vedrustuse diagnostika tõstukil",
             "Amortisaatorite ja vedude vahetus",
@@ -202,21 +202,21 @@ const SERVICES = [
         afterListText: "Kasutame tunnustatud tootjate varuosi: Lemförder, TRW, Monroe, Brembo. Garantii 12 kuud kõigile töödele.",
         promoBanner: {
             enabled: true,
-            text: "Tasuta vedrustuse diagnostika veebibroneeringuga"
+            text: "Tasuta veermiku diagnostika veebibroneeringuga"
         },
         ctaSection: {
-            title: "Põrutused vedrustuses?",
-            text: "Ära riski ohutusega. Vaatame vedrustuse üle tasuta ja anname täpse hinnapakkumise.",
+            title: "Kolin või lõtk veermikus?",
+            text: "Ära riski ohutusega. Vaatame veermiku üle tasuta ja anname täpse hinnapakkumise.",
             phoneText: "Helista: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Vedrustuse remondi broneerimine",
+            title: "Veermiku remondi broneerimine",
             subtitle: "Jäta päring — helistame tagasi 30 minutiga"
         },
         seo: {
-            title: "Vedrustuse remont — Mr.Car Tallinn",
-            description: "Vedrustuse remont Tallinnas. Amortisaatorid, rooliotsikud, sillastend ja rataste geomeetria. Tasuta diagnostika. Kopli 82a. +372 5646 1210"
+            title: "Veermiku remont ja diagnostika — Mr.Car Tallinn",
+            description: "Veermiku remont Tallinnas. Vedrustuse remont, amortisaatorid, rooliotsikud, sillastend ja rataste geomeetria. Tasuta diagnostika. Kopli 82a. +372 5646 1210"
         }
     },
 

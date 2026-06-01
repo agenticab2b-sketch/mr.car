@@ -39,7 +39,7 @@ const SERVICE_NAV_ORDER = [
   'mootoriremont',
   'kaigukastiremont',
   'pidurisusteemi-hooldus-ja-remont',
-  'veermik-pidurid',
+  'veermiku-remont',
   'elektritood',
   'kliimahooldus',
   'webasto-diagnostika',

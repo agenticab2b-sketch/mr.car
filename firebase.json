@@ -178,6 +178,21 @@
         "type": 301
       },
       {
+        "source": "/services/veermik-pidurid",
+        "destination": "/services/veermiku-remont",
+        "type": 301
+      },
+      {
+        "source": "/services/veermik-pidurid.html",
+        "destination": "/services/veermiku-remont",
+        "type": 301
+      },
+      {
+        "source": "/teenused/veermiku-remont",
+        "destination": "/services/veermiku-remont",
+        "type": 301
+      },
+      {
         "source": "/prices",
         "destination": "/hinnad",
         "type": 301

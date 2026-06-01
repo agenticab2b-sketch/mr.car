@@ -167,7 +167,7 @@ const SERVICES = [
     {
         key: "suspension",
         slug: "chassis-brakes",
-        allSlugs: { ru: "hodovaya", ee: "veermik-pidurid", en: "chassis-brakes" },
+        allSlugs: { ru: "hodovaya", ee: "veermiku-remont", en: "chassis-brakes" },
         category: "Suspension & Brakes",
         navTitle: "Suspension",
         icon: "mdi:car-lifted-pickup",
