@@ -191,7 +191,7 @@ const LANGS = [
     formPlaceholder: {
       name: 'Ваше имя',
       carNumber: '123 ABC',
-      email: 'vash@email.ru',
+      email: 'vash@email.ee',
       phone: '+372 ...',
       message: 'Опишите проблему...',
     },
