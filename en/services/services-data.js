@@ -166,22 +166,44 @@ const SERVICES = [
 
     {
         key: "suspension",
-        slug: "chassis-brakes",
-        allSlugs: { ru: "hodovaya", ee: "veermiku-remont", en: "chassis-brakes" },
+        slug: "suspension-repair",
+        allSlugs: { ru: "hodovaya", ee: "veermiku-remont", en: "suspension-repair" },
         category: "Suspension & Brakes",
         navTitle: "Suspension",
         icon: "mdi:car-lifted-pickup",
-        heroTitle: "Suspension Repair",
-        heroLead: "Knocks when driving over uneven roads, steering wheel vibration, the car pulling to one side, or uneven tire wear — we diagnose and repair chassis faults of any complexity. Replacement of shock absorbers, control arms, ball joints, silent blocks, wheel bearings and suspension components. 3D wheel alignment, play checks and suspension geometry inspection.",
-        heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
+        templateVariant: "service-deep-dive-v2",
+        bodyClass: "service-brakes-page service-suspension-page",
+        extraStyles: ["/services/transmission.css?v=6", "/services/brakes.css?v=11"],
+        heroTitle: "Suspension Diagnostics and Repair in Tallinn",
+        heroLead: "Knocking over bumps, steering wheel vibration, the car pulling to one side, or uneven tire wear — we diagnose and repair suspension faults of any complexity. We replace shock absorbers, control arms, ball joints, silent blocks, wheel bearings, and other suspension components. 3D wheel alignment, play checks, and suspension geometry inspection.",
+        heroImage: "/pics/suspension-hero.webp",
+        heroStats: [
+            { value: "3,000+", label: "suspension components replaced" },
+            { value: "15+", label: "years of specialist experience" },
+            { value: "Every 2nd", label: "car needs 3D wheel alignment after suspension repair" }
+        ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "Symptoms" },
+            { href: "#types", icon: "mdi:car-lifted-pickup", label: "Suspension Types" },
+            { href: "#services", icon: "mdi:wrench", label: "Services" },
+            { href: "#pricing", icon: "mdi:currency-eur", label: "Prices" },
+            { href: "#reviews", icon: "mdi:star", label: "Reviews" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "FAQ" }
+        ],
         introTitle: "Specialized Suspension Diagnostics and Repair in Tallinn",
         introText: [
-            "Suspension repair at Mr.Car means accurate diagnostics and professional chassis repair of any complexity: checking every assembly, replacing worn components, and final 3D wheel alignment. We repair suspension systems on BMW, Audi, Mercedes-Benz, Volkswagen, Škoda, Toyota, Volvo, Porsche, Ford, Hyundai, Kia and other makes. We use both OEM parts and high-quality aftermarket components from trusted manufacturers, including Lemförder, Sachs, Bilstein, Febi, Meyle, TRW and other brands. Diagnostics from €25.",
-            "The vehicle suspension is responsible for stability, handling and constant wheel contact with the road surface. The system includes shock absorbers, springs, control arms, silent blocks, ball joints, wheel bearings, anti-roll bars and suspension mounts.",
-            "In Estonian conditions, suspension components are exposed to higher loads. Temperature changes, road salt, tram tracks, road joints and potholes after winter significantly accelerate wear of shock absorbers, silent blocks, ball joints and wheel bearings.",
-            "A test drive, play check and lift inspection allow us to identify the exact source of the fault and replace only components that are truly worn — without unnecessary replacement of good parts."
+            "At Mr.Car, suspension repair starts with accurate diagnostics and ends with professional, manufacturer-standard repair of the chassis system. We inspect all key components, replace worn parts, and perform final 3D wheel alignment when required.",
+            "We repair suspension systems on BMW, Audi, Mercedes-Benz, Volkswagen, Škoda, Toyota, Volvo, Porsche, Ford, Hyundai, Kia, and many other car brands. We use OEM parts as well as high-quality aftermarket components from trusted brands, including Lemförder, Sachs, Bilstein, Febi, Meyle, TRW, and others. Suspension diagnostics start from €25.",
+            "Your car's suspension is responsible for stability, handling, ride comfort, and keeping the wheels in constant contact with the road. The system includes shock absorbers, springs, control arms, silent blocks, ball joints, wheel bearings, anti-roll bars, and suspension mounts.",
+            "In Estonia, suspension components work under increased stress. Temperature changes, road salt, tram tracks, road joints, and potholes after winter all accelerate wear on shock absorbers, silent blocks, ball joints, and wheel bearings.",
+            "A test drive, lift inspection, and detailed play check allow us to identify the exact source of the problem and replace only the parts that are genuinely worn — without unnecessary replacement of components that are still in good condition."
         ],
-        symptomsTitle: "Signs of suspension problems",
+        urgencyBlock: {
+            icon: "mdi:alert-decagram",
+            title: "Suspension problems usually show warning signs before a serious failure occurs",
+            text: "Knocking over bumps, steering wheel vibration, and unusual noises often appear before suspension components become critically worn. Timely diagnostics help identify the problem early and prevent additional wear to related chassis components."
+        },
+        symptomsTitle: "Main signs of suspension problems",
         symptoms: [
             { icon: "mdi:car-traction-control", text: "Car pulls to the side" },
             { icon: "mdi:volume-high", text: "Knocks and squeaks while driving" },
@@ -190,33 +212,121 @@ const SERVICES = [
             { icon: "mdi:steering", text: "Steering wheel play" },
             { icon: "mdi:car-side", text: "Body roll in turns" }
         ],
-        afterSymptomsText: "Worn suspension is a direct safety risk. Come for a free inspection.",
-        servicesListTitle: "Our suspension services:",
-        servicesList: [
-            "Suspension diagnostics on a lift",
-            "Shock absorber & spring replacement",
-            "Bushing & ball joint replacement",
-            "Tie rod & end replacement",
-            "Wheel alignment"
+        afterSymptomsText: "Worn suspension directly affects handling, braking distance, and tire life. If you notice these symptoms, book diagnostics before the fault develops further.",
+        detailedSymptomsTitle: "Main signs of suspension problems",
+        detailedSymptoms: [
+            { tone: "critical", icon: "mdi:volume-high", title: "Knocking when driving over bumps", desc: "A knocking sound when driving over potholes, speed bumps, or tram tracks usually indicates wear in the suspension. A dull single knock is often caused by worn control arm silent blocks or shock absorber mounts. A metallic knock that can be felt through the steering wheel may point to worn ball joints, tie rod ends, or other steering components." },
+            { icon: "mdi:vibrate", title: "Steering wheel vibration or wobble", desc: "If the steering wheel vibrates at a certain speed, usually between 80 and 120 km/h, or vibrates constantly, the cause may be wheel imbalance, warped brake discs, a worn wheel bearing, or play in the steering or suspension system." },
+            { icon: "mdi:tire", title: "Uneven tire wear", desc: "If the inner or outer edge of the tire tread wears much faster than the rest, this is usually a sign of incorrect wheel alignment or worn suspension components. Common causes include worn silent blocks, control arms, ball joints, or play in the chassis. After suspension repair, we recommend 3D wheel alignment to restore the correct wheel position and ensure even tire wear." },
+            { icon: "mdi:car-brake-alert", title: "Body roll and instability when braking", desc: "If the car leans noticeably in corners or dives forward heavily under braking, the shock absorbers may be worn. This reduces vehicle stability, increases braking distance, and weakens tire contact with the road surface." },
+            { icon: "mdi:car-traction-control", title: "Vehicle pulling to one side", desc: "If the car constantly pulls left or right without steering input, the cause may be incorrect wheel alignment, worn suspension parts, or deformation after an impact. In this case, the suspension geometry should be checked and 3D wheel alignment performed." },
+            { tone: "critical", icon: "mdi:oil", title: "Oil on the shock absorber body", desc: "Oil marks on the strut or shock absorber body indicate a loss of sealing. The shock absorber loses its working fluid and can no longer damp suspension movement effectively. To keep the suspension working evenly and safely, shock absorbers should be replaced in pairs on the same axle." }
         ],
-        afterListText: "We use parts from trusted brands: Lemförder, TRW, Monroe, Brembo. 12-month warranty on all works.",
-        promoBanner: {
-            enabled: true,
-            text: "Free suspension diagnostics when booking via website"
-        },
+        riskStagesTitle: "What happens if suspension repair is delayed?",
+        riskStages: [
+            { marker: "1", title: "Early signs of wear", text: "A light knocking sound when driving over uneven surfaces is often caused by worn silent blocks, stabilizer links, or suspension mounts. At this stage, replacing individual worn components is usually enough, without major chassis repair." },
+            { marker: "2", title: "Increased play and faster wear", text: "As the car continues to be driven, play in the suspension increases, wheel alignment angles shift, and tire wear accelerates. Ball joints, control arms, and wheel bearings begin to carry extra load. After repair, 3D wheel alignment is recommended." },
+            { marker: "3", title: "Reduced stability and poorer handling", text: "When suspension wear becomes severe, the car becomes less stable, braking distance increases, and vibration may appear at higher speeds. In some cases, several chassis components are damaged at the same time, making the repair more complex and more expensive." }
+        ],
+        engineTypesTitle: "Suspension types we service",
+        engineTypes: [
+            { icon: "mdi:car-cog", title: "MacPherson suspension", desc: "MacPherson is a common type of front suspension used in many vehicle classes, including Volkswagen Golf, Škoda Octavia, Ford Focus, Toyota Corolla, Hyundai Elantra, and other models. The system includes a suspension strut, spring, strut mount bearing, and lower control arm. The most common problems are worn strut mount bearings, worn control arm silent blocks, worn ball joints, and leaking shock absorbers.", brands: ["Lemförder", "TRW", "Sachs", "Bilstein"] },
+            { icon: "mdi:axis-arrow", title: "Multi-link suspension", desc: "Multi-link suspension is used on BMW, Audi, Mercedes-Benz, and many mid-range and premium vehicles. It provides precise handling and a comfortable ride thanks to several independent control arms at each wheel. During diagnostics, we check for play, inspect the condition of the silent blocks, and assess the suspension geometry. After repair, we perform 3D wheel alignment.", brands: ["Lemförder", "Meyle", "TRW"] },
+            { icon: "mdi:car-back", title: "Semi-independent suspension with torsion beam", desc: "This type of rear suspension is used on Volkswagen Polo, Škoda Rapid, Kia Rio, Hyundai Solaris, Renault Logan, and other B- and C-segment vehicles. It is a simple and reliable rear suspension design with a minimal number of moving parts. The most common issues are worn beam silent blocks, stabilizer bushings, and stabilizer links.", brands: ["TRW", "Lemförder", "Febi"] },
+            { icon: "mdi:air-filter", title: "Air suspension", desc: "We service air suspension on Audi A6/A8/Q7, BMW 5/7 Series, Mercedes-Benz E/S-Class, Porsche Cayenne, Volkswagen Touareg, Volvo XC90, and other vehicles equipped with air suspension. We diagnose air springs, compressors, valve blocks, ride height sensors, and leaks in the air suspension system. We check how the system performs by body height, lifting speed, and residual pressure in the circuits.", brands: ["Arnott", "Dunlop", "Continental", "OEM"] }
+        ],
+        diagnosticsTitle: "Why suspension wears out faster in Tallinn than manufacturers expect",
+        diagnosticsText: [
+            "Road salt, temperature changes, tram tracks, and uneven roads after winter put extra stress on suspension components. Silent blocks, stabilizer links, ball joints, tie rod ends, and shock absorbers wear out faster as a result.",
+            "After a hard impact with a pothole or curb, the suspension geometry and wheel alignment angles may change. This can cause the car to pull to one side and lead to uneven tire wear. Regular suspension diagnostics and 3D wheel alignment help detect these issues before they turn into serious faults.",
+            "We recommend checking the suspension during seasonal tire changes or every 10,000 km."
+        ],
+        servicesListTitle: "Our suspension diagnostics and repair services",
+        servicesList: [
+            "Suspension diagnostics",
+            "Control arm silent block replacement",
+            "Control arm replacement",
+            "Ball joint replacement",
+            "Shock absorber replacement",
+            "Wheel bearing replacement",
+            "Stabilizer link and bushing replacement",
+            "3D wheel alignment"
+        ],
+        afterListText: "The exact cost is agreed before repair begins.",
+        serviceCardsTitle: "Our suspension diagnostics and repair services",
+        serviceCards: [
+            { featured: true, icon: "mdi:stethoscope", title: "Suspension diagnostics", desc: "A test drive, lift inspection, play check, and inspection for unusual noises. We check the condition of ball joints, tie rod ends, wheel bearings, shock absorbers, silent blocks, and suspension dust boots.", price: "€25", time: "30–45 min" },
+            { icon: "mdi:axis-arrow", title: "Control arm silent block replacement", desc: "We press out the worn silent block and install a new one, tightening suspension bolts under load and according to the required torque specifications. After repair, we recommend checking the wheel alignment. This service is often performed on Volkswagen Passat, Audi A6, and Škoda Superb.", price: "from €25", time: "from 1 h" },
+            { icon: "mdi:car-lifted-pickup", title: "Control arm replacement", desc: "Control arm replacement is recommended when the arm is deformed, mounting points are damaged, or several silent blocks and the ball joint are worn at the same time. After replacement, we perform 3D wheel alignment.", price: "from €40", time: "1–1.5 h" },
+            { icon: "mdi:circle-outline", title: "Ball joint replacement", desc: "We replace the ball joint or the complete control arm with an integrated ball joint. After repair, we check for play and inspect the wheel alignment angles. This is a common repair on Ford Focus, BMW X5, and Volkswagen Transporter.", price: "from €35", time: "1–2 h" },
+            { icon: "mdi:car-lifted-pickup", title: "Shock absorber replacement", desc: "We replace shock absorbers, strut mount bearings, dust boots, and bump stops. Shock absorbers are replaced in pairs on the same axle. After repair, we check and adjust the wheel alignment using a 3D alignment system. We frequently service suspension on Volkswagen Passat, BMW 5 Series, and Mercedes-Benz E-Class.", price: "from €90 pair", time: "1.5–2 h" },
+            { icon: "mdi:circle-double", title: "Wheel bearing replacement", desc: "We replace the wheel bearing and check the condition of the mounting surfaces, brake disc, and ABS sensor. After installation, we make sure there is no play or unusual noise.", price: "from €50", time: "1.5–2 h" },
+            { icon: "mdi:wrench", title: "Stabilizer link and bushing replacement", desc: "This repair eliminates knocking and play in the suspension when driving over uneven roads. The issue is especially common on Volkswagen Golf, Škoda Octavia, Ford Focus, and other cars used regularly on city roads.", price: "from €20", time: "0.5–1 h" },
+            { featured: true, icon: "mdi:align-horizontal-distribute", title: "3D wheel alignment", desc: "We check and adjust wheel alignment angles using a modern 3D alignment stand. This helps restore correct suspension geometry, reduce tire wear, and improve vehicle stability. 3D wheel alignment is recommended after suspension repair and after replacing steering components.", price: "from €60", time: "1 h" }
+        ],
+        processTitle: "How suspension diagnostics and repair work at Mr.Car",
+        processSteps: [
+            { num: "01", title: "Test drive and initial diagnostics", text: "A technician performs a test drive to accurately locate knocking, vibration, and any irregularities in suspension operation. After the test drive, the chassis is inspected on a lift." },
+            { num: "02", title: "Fault inspection and repair approval", text: "We check the condition of all suspension components and identify which parts need replacement. Before starting work, we agree on the cost of parts, labor, and whether 3D wheel alignment is required." },
+            { num: "03", title: "Repair according to manufacturer standards", text: "We use original OEM components and high-quality aftermarket alternatives from Lemförder, Sachs, Bilstein, TRW, and other trusted brands. Threaded suspension connections are tightened in the working position of the suspension and according to the manufacturer's torque specifications." },
+            { num: "04", title: "3D wheel alignment", text: "After replacing control arms, ball joints, steering components, or shock absorbers, we adjust the suspension geometry on a modern 3D alignment stand. If necessary, we adjust toe, camber, and caster, with before-and-after parameter checks." },
+            { num: "05", title: "Warranty on completed work", text: "The warranty covers the work performed and the parts installed in accordance with Mr.Car service terms." }
+        ],
+        pricingTitle: "Suspension diagnostics and repair prices",
+        pricingRows: [
+            { service: "Chassis diagnostics", price: "€25", price2: "—" },
+            { service: "Control arm silent block replacement", price: "€25", price2: "€50" },
+            { service: "Complete control arm replacement", price: "€40", price2: "€120" },
+            { service: "Ball joint replacement", price: "€35", price2: "€80" },
+            { service: "Stabilizer link / bushing replacement", price: "€20", price2: "€40" },
+            { service: "Shock absorber / strut replacement, pair", price: "€90", price2: "€180" },
+            { service: "Wheel bearing replacement", price: "€50", price2: "€120" },
+            { service: "3D wheel alignment", price: "€60", price2: "—" }
+        ],
+        pricingNote: "Turnkey prices apply to VW Golf / Škoda Octavia vehicles with mid-range spare parts. For BMW, Audi, and Mercedes-Benz, please check the price when booking. Air suspension is priced separately. The exact cost is agreed before repair begins.",
+        reviewsTitle: "Customer reviews",
+        ratingSummary: { score: "4.9", metaStrong: "Google Reviews", metaText: "based on 120+ reviews" },
+        reviews: [
+            { text: "“After winter, I started hearing a knocking sound from the front suspension on every pothole. I live in Kalamaja — there are tram tracks everywhere. At Mr.Car, they found the problem in half an hour: the front strut mount bearing and stabilizer link. Everything was replaced in one day. The final price matched the estimate.”", author: "Alex V.", car: "VW Golf VII, Kalamaja" },
+            { text: "“My BMW F30 had steering wheel vibration at 100 km/h. I went to two other garages, and both said it was wheel balancing. Mr.Car ran diagnostics and found a worn front wheel bearing. They replaced it in one day, and the vibration disappeared completely. They also did 3D wheel alignment.”", author: "Dmitry K.", car: "BMW 320i F30, Tallinn" },
+            { text: "“The tires on my Audi A4 were wearing unevenly — the inner edge was going bald much faster. It turned out that the rear control arm had been bent after hitting a pothole in Kopli. They replaced the arm and performed 3D alignment. Now the tires wear evenly.”", author: "Natalia S.", car: "Audi A4 B8, Põhja-Tallinn" }
+        ],
+        trustItems: [
+            { icon: "mdi:shield-check", title: "12-month warranty", desc: "Written warranty on parts and completed work." },
+            { icon: "mdi:car-cog", title: "Lemförder, Sachs, Bilstein, TRW", desc: "We use only trusted spare parts manufacturers." },
+            { icon: "mdi:car-lifted-pickup", title: "Tightening under load", desc: "We tighten bolted suspension connections only when the car is standing on its wheels. This helps extend the service life of silent blocks." }
+        ],
+        faqTitle: "Frequently asked questions about suspension diagnostics and repair",
+        faqItems: [
+            { q: "How often should suspension be checked in Estonia?", a: "We recommend checking the suspension twice a year — during seasonal tire changes in October-November and March-April. A spring inspection is especially important: after winter, road salt and temperature changes cause silent blocks and dust boots to wear faster. Chassis diagnostics at Mr.Car cost €25." },
+            { q: "Is wheel alignment necessary after replacing shock absorbers or control arms?", a: "Yes, absolutely. Any work on suspension components can change the wheel alignment geometry. A camber deviation of just 0.5° from the correct value can cause uneven tire wear within 10,000-15,000 km. 3D wheel alignment at Mr.Car starts from €60." },
+            { q: "How much does ball joint replacement cost in Tallinn?", a: "Ball joint replacement on a VW Golf or Škoda Octavia starts from €80 turnkey, including parts. On a BMW 3 Series, the price starts from €120-150 turnkey. The cost depends on the suspension design: on some vehicles, the ball joint can be replaced separately; on others, it is replaced only together with the control arm." },
+            { q: "How long do shock absorbers last in Estonian conditions?", a: "According to manufacturer standards, shock absorbers usually last 80,000-100,000 km. In real Tallinn driving conditions, they typically last 60,000-80,000 km because of potholes, tram tracks, and temperature changes. We replace shock absorbers in pairs on the same axle." },
+            { q: "Can I drive with a worn ball joint?", a: "No. If the ball joint is critically worn, it can come out of its socket while driving. In this situation, the wheel can fold under the car and the vehicle may lose control. If play in the ball joint is found during diagnostics, the repair should not be delayed." },
+            { q: "Why do tires wear unevenly?", a: "Uneven tire wear is usually caused by incorrect wheel alignment. Common causes include worn control arms or silent blocks, a bent control arm after hitting a pothole, or worn tie rod ends. The cause must be repaired first. After that, 3D wheel alignment should be performed." },
+            { q: "How much does a full suspension inspection cost?", a: "Chassis diagnostics at Mr.Car cost €25. The service includes a test drive, lift inspection, play check for all joints, and assessment of shock absorbers, silent blocks, and dust boots. If repair is carried out afterward, the diagnostics cost is credited toward the work." },
+            { q: "Do you service air suspension?", a: "Yes. We work with air suspension on Audi A6/A8/Q7, BMW 5/7 Series, Mercedes-Benz E/S-Class, and Volvo XC90. We diagnose leaks in air lines, check air springs and compressors, and use Arnott and Continental OEM components." }
+        ],
+        crossLinks: [
+            { href: "/en/services/brake-system-service-and-repair", icon: "mdi:car-brake-alert", label: "Related service", title: "Brake system service and repair" },
+            { href: "/en/services/tire-service", icon: "mdi:tire", label: "Related service", title: "Tire service" },
+            { href: "/en/services/maintenance-diagnostics", icon: "mdi:car-cog", label: "Related service", title: "Maintenance and diagnostics" }
+        ],
+        promoBanner: { enabled: false },
         ctaSection: {
-            title: "Suspension knocks?",
-            text: "Don't risk safety. We'll inspect the chassis for free and provide an exact quote.",
+            title: "Need suspension diagnostics?",
+            text: "Book online — we will inspect the chassis, show you the critical components, and agree on the repair before work begins.",
             phoneText: "Call: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Book Suspension Work",
+            title: "Book suspension diagnostics",
             subtitle: "Leave a request — we'll call back within 30 minutes"
         },
+        jsonLdServiceDescription: "Suspension diagnostics and repair in Tallinn: shock absorbers, control arms, ball joints, silent blocks, wheel bearings, and 3D wheel alignment.",
         seo: {
-            title: "Suspension Repair — Mr.Car Tallinn",
-            description: "Suspension repair in Tallinn. Shock absorbers, steering components, and alignment. Free diagnostics. Kopli 82a. +372 5646 1210"
+            title: "Suspension Diagnostics and Repair in Tallinn | Mr.Car",
+            description: "Suspension repair in Tallinn: shock absorbers, control arms, ball joints, silent blocks, wheel bearings and 3D wheel alignment. 12-month warranty."
         }
     },
 

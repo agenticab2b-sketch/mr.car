@@ -193,6 +193,16 @@
         "type": 301
       },
       {
+        "source": "/en/services/chassis-brakes",
+        "destination": "/en/services/suspension-repair",
+        "type": 301
+      },
+      {
+        "source": "/en/services/chassis-brakes.html",
+        "destination": "/en/services/suspension-repair",
+        "type": 301
+      },
+      {
         "source": "/prices",
         "destination": "/hinnad",
         "type": 301

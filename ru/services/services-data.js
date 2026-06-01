@@ -831,7 +831,7 @@ const SERVICES = [
     // ═══════════════════════════════════
     {
         slug: "hodovaya",
-        allSlugs: { ru: "hodovaya", ee: "veermiku-remont", en: "chassis-brakes" },
+        allSlugs: { ru: "hodovaya", ee: "veermiku-remont", en: "suspension-repair" },
         category: "Ходовая часть",
         navTitle: "Подвеска",
         icon: "mdi:car-lifted-pickup",

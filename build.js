@@ -432,7 +432,7 @@ function getInPageNavLabel(lang) {
 function getPricingLabels(lang) {
   if (lang === 'ru') return { service: 'Услуга', price: 'Стоимость', price2: 'Под ключ от' };
   if (lang === 'et') return { service: 'Teenus', price: 'Hind', price2: 'Koos varuosadega alates' };
-  return { service: 'Service', price: 'Price', price2: 'All-in from' };
+  return { service: 'Service', price: 'Price', price2: 'Turnkey from' };
 }
 
 function buildHeroStats(stats) {
