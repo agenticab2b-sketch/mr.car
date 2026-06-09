@@ -118,6 +118,25 @@ const LANGS = [
     formValidation: 'Palun täitke kõik kohustuslikud väljad',
     formError: 'Päringut ei õnnestunud saata. Proovige uuesti.',
     formSuccess: 'Aitäh! Päring on saadetud.',
+    contactPeopleLabel: 'Kontaktisikud',
+    contactPeople: [
+      {
+        name: 'Anton',
+        phone: '+372 5850 3960',
+        phoneHref: '+37258503960',
+        languages: 'Keeled: eesti, vene, inglise',
+        scope: 'Üldine autoremont ja käigukastide remont',
+        mapNote: 'Autoremont ja käigukastid · ET/RU/EN'
+      },
+      {
+        name: 'Raino',
+        phone: '+372 5646 1210',
+        phoneHref: '+37256461210',
+        languages: 'Keeled: eesti, vene, soome',
+        scope: 'Üldine autoremont ja Webasto remont',
+        mapNote: 'Autoremont ja Webasto · ET/RU/FI'
+      }
+    ],
     sidebarTitle: 'Vali teenus',
     otherLangs: [
       { href: '/ru', code: 'RU', flag: 'circle-flags:ru', title: 'Русский' },
@@ -198,6 +217,25 @@ const LANGS = [
     formValidation: 'Необходимо заполнить выделенные поля',
     formError: 'Не удалось отправить заявку. Попробуйте ещё раз.',
     formSuccess: 'Спасибо! Заявка отправлена.',
+    contactPeopleLabel: 'Контактные лица',
+    contactPeople: [
+      {
+        name: 'Anton',
+        phone: '+372 5850 3960',
+        phoneHref: '+37258503960',
+        languages: 'Языки: эстонский, русский, английский',
+        scope: 'Общий авторемонт и ремонт коробок передач',
+        mapNote: 'Авторемонт и коробки передач · ET/RU/EN'
+      },
+      {
+        name: 'Raino',
+        phone: '+372 5646 1210',
+        phoneHref: '+37256461210',
+        languages: 'Языки: эстонский, русский, финский',
+        scope: 'Общий авторемонт и ремонт Webasto',
+        mapNote: 'Авторемонт и Webasto · ET/RU/FI'
+      }
+    ],
     sidebarTitle: 'Выбрать услугу',
     otherLangs: [
       { href: '/', code: 'ET', flag: 'circle-flags:ee', title: 'Eesti keel' },
@@ -278,6 +316,25 @@ const LANGS = [
     formValidation: 'Please fill in all required fields',
     formError: 'Failed to send request. Please try again.',
     formSuccess: 'Thank you! Your request has been sent.',
+    contactPeopleLabel: 'Contact people',
+    contactPeople: [
+      {
+        name: 'Anton',
+        phone: '+372 5850 3960',
+        phoneHref: '+37258503960',
+        languages: 'Languages: Estonian, Russian, English',
+        scope: 'General car repairs and transmission repair',
+        mapNote: 'Car repairs and transmissions · ET/RU/EN'
+      },
+      {
+        name: 'Raino',
+        phone: '+372 5646 1210',
+        phoneHref: '+37256461210',
+        languages: 'Languages: Estonian, Russian, Finnish',
+        scope: 'General car repairs and Webasto repair',
+        mapNote: 'Car repairs and Webasto · ET/RU/FI'
+      }
+    ],
     sidebarTitle: 'Select service',
     otherLangs: [
       { href: '/', code: 'ET', flag: 'circle-flags:ee', title: 'Eesti keel' },
@@ -1051,13 +1108,38 @@ function buildBreadcrumbs(s, cfg) {
       </nav>`;
 }
 
+function renderContactPeople(cfg) {
+  return `<div class="contact__people" aria-label="${esc(cfg.contactPeopleLabel)}">
+${cfg.contactPeople.map(person => `        <a href="tel:${esc(person.phoneHref)}" class="contact-person">
+            <span class="contact-person__head">
+                <span class="contact-person__name">${esc(person.name)}</span>
+                <span class="contact-person__phone">${esc(person.phone)}</span>
+            </span>
+            <span class="contact-person__languages">${esc(person.languages)}</span>
+            <span class="contact-person__scope">${esc(person.scope)}</span>
+        </a>`).join('\n')}
+        </div>`;
+}
+
+function renderMapPhoneContacts(cfg) {
+  return `<div class="location__contacts">
+${cfg.contactPeople.map(person => `                <a href="tel:${esc(person.phoneHref)}" class="location-contact">
+                    <span class="location-contact__line">
+                        <span class="location-contact__name">${esc(person.name)}</span>
+                        <span class="location-contact__phone">${esc(person.phone)}</span>
+                    </span>
+                    <span class="location-contact__note">${esc(person.mapNote)}</span>
+                </a>`).join('\n')}
+            </div>`;
+}
+
 function buildFooter(cfg) {
   return `<footer class="footer">
     <div class="footer-grid site-container">
       <div>
         <div class="footer__col-title">${esc(cfg.footer.contacts)}</div>
         <div class="footer__text">
-          <a href="tel:${cfg.phoneHref}">${esc(cfg.phone)}</a><br>
+          ${cfg.contactPeople.map(person => `${esc(person.name)}: <a href="tel:${esc(person.phoneHref)}">${esc(person.phone.replace('+372 ', ''))}</a><br>`).join('\n          ')}
           <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
           Kopli 82a, 10412 Tallinn
         </div>
@@ -1804,7 +1886,8 @@ function renderPage(s, services, cfg, articleDates = {}) {
     .replace(/{{formPlaceholder_phone}}/g, esc(cfg.formPlaceholder.phone))
     .replace(/{{formLabels_message}}/g, esc(cfg.formLabels.message))
     .replace(/{{formPlaceholder_message}}/g, esc(cfg.formPlaceholder.message))
-    .replace(/{{formSubmit}}/g, esc(cfg.formSubmit));
+    .replace(/{{formSubmit}}/g, esc(cfg.formSubmit))
+    .replace(/{{contact_people_html}}/g, renderContactPeople(cfg));
 
   // Prepare Map Partial
   let renderedMap = MAP_PARTIAL
@@ -1816,6 +1899,7 @@ function renderPage(s, services, cfg, articleDates = {}) {
     .replace(/{{map_weekend}}/g, esc(cfg.footer.weekend))
     .replace(/{{map_closed}}/g, esc(cfg.footer.closed))
     .replace(/{{map_phone_label}}/g, esc(cfg.mapTranslations.phoneLabel))
+    .replace(/{{map_phone_contacts_html}}/g, renderMapPhoneContacts(cfg))
     .replace(/{{map_email_label}}/g, esc(cfg.mapTranslations.emailLabel))
     .replace(/{{map_open_btn}}/g, esc(cfg.mapTranslations.openBtn))
     .replace(/{{map_iframe_title}}/g, esc(cfg.mapTranslations.iframeTitle))

@@ -330,10 +330,24 @@
                     </div>
                     <p class="contact__promise">Оставьте заявку — перезвоним в течение 30 минут в рабочее время.</p>
                     <div class="accent-underline"></div>
-                    <a href="tel:+37256461210" class="contact__phone">
-                        <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
-                        +372 5646 1210
-                    </a>
+                    <div class="contact__people" aria-label="Контактные лица">
+                        <a href="tel:+37258503960" class="contact-person">
+                            <span class="contact-person__head">
+                                <span class="contact-person__name">Anton</span>
+                                <span class="contact-person__phone">+372 5850 3960</span>
+                            </span>
+                            <span class="contact-person__languages">Языки: эстонский, русский, английский</span>
+                            <span class="contact-person__scope">Общий авторемонт и ремонт коробок передач</span>
+                        </a>
+                        <a href="tel:+37256461210" class="contact-person">
+                            <span class="contact-person__head">
+                                <span class="contact-person__name">Raino</span>
+                                <span class="contact-person__phone">+372 5646 1210</span>
+                            </span>
+                            <span class="contact-person__languages">Языки: эстонский, русский, финский</span>
+                            <span class="contact-person__scope">Общий авторемонт и ремонт Webasto</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="contact__form">
                     <form id="contactForm">
@@ -392,9 +406,22 @@
                     </div>
                     <div class="location__detail">
                         <span class="location__label">Телефон</span>
-                        <a href="tel:+37256461210" class="location__value" style="color: var(--accent-primary);">+372
-                            5646
-                            1210</a>
+                        <div class="location__contacts">
+                            <a href="tel:+37258503960" class="location-contact">
+                                <span class="location-contact__line">
+                                    <span class="location-contact__name">Anton</span>
+                                    <span class="location-contact__phone">+372 5850 3960</span>
+                                </span>
+                                <span class="location-contact__note">Авторемонт и коробки передач · ET/RU/EN</span>
+                            </a>
+                            <a href="tel:+37256461210" class="location-contact">
+                                <span class="location-contact__line">
+                                    <span class="location-contact__name">Raino</span>
+                                    <span class="location-contact__phone">+372 5646 1210</span>
+                                </span>
+                                <span class="location-contact__note">Авторемонт и Webasto · ET/RU/FI</span>
+                            </a>
+                        </div>
                     </div>
                     <div class="location__detail">
                         <span class="location__label">Email</span>
@@ -424,7 +451,8 @@
       <div>
         <div class="footer__col-title">Контакты</div>
         <div class="footer__text">
-          <a href="tel:+37256461210">5646 1210</a><br>
+          Anton: <a href="tel:+37258503960">5850 3960</a><br>
+          Raino: <a href="tel:+37256461210">5646 1210</a><br>
           <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
           Kopli 82a, 10412 Tallinn
         </div>
