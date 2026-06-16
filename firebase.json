@@ -328,6 +328,16 @@
         "type": 301
       },
       {
+        "source": "/ru/services/zamena-tormoznyh-kolodok.html",
+        "destination": "/ru/services/zamena-tormoznyh-kolodok",
+        "type": 301
+      },
+      {
+        "source": "/services/piduriklotside-vahetus.html",
+        "destination": "/services/piduriklotside-vahetus",
+        "type": 301
+      },
+      {
         "source": "/en/services/brake-system-service-and-repair",
         "destination": "/en/services/brake-pads-replacement",
         "type": 301

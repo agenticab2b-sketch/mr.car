@@ -996,7 +996,7 @@ const SERVICES = [
     // ═══════════════════════════════════
     {
         slug: "zamena-tormoznyh-kolodok",
-        allSlugs: { ru: "zamena-tormoznyh-kolodok", ee: "piduriklotside-vahetus", en: "brake-pad-replacement" },
+        allSlugs: { ru: "zamena-tormoznyh-kolodok", ee: "piduriklotside-vahetus", en: "brake-pads-replacement" },
         category: "Тормоза",
         navTitle: "Тормоза",
         icon: "mdi:car-brake-alert",

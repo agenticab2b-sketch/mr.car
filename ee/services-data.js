@@ -333,7 +333,7 @@ const SERVICES = [
     {
         key: "brake_system",
         slug: "piduriklotside-vahetus",
-        allSlugs: { ru: "zamena-tormoznyh-kolodok", ee: "piduriklotside-vahetus", en: "brake-pad-replacement" },
+        allSlugs: { ru: "zamena-tormoznyh-kolodok", ee: "piduriklotside-vahetus", en: "brake-pads-replacement" },
         category: "Veermik ja pidurid",
         navTitle: "Pidurid",
         icon: "mdi:car-brake-alert",
