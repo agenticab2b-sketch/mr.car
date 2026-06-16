@@ -5,6 +5,11 @@
     "trailingSlash": false,
     "ignore": [
       "firebase.json",
+      ".git/**",
+      ".github/**",
+      ".firebase/**",
+      ".claude/**",
+      ".gemini/**",
       "**/.*",
       "**/node_modules/**",
       ".agent/**",

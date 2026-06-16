@@ -2,6 +2,9 @@ publish.cmd
 desktop.ini
 .env
 .vercel/
+.firebase/
+.claude/
+.gemini/
 node_modules/
 tmp/
 Test html/
