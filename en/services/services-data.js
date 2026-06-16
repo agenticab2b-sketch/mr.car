@@ -308,7 +308,7 @@ const SERVICES = [
             { q: "Do you service air suspension?", a: "Yes. We work with air suspension on Audi A6/A8/Q7, BMW 5/7 Series, Mercedes-Benz E/S-Class, and Volvo XC90. We diagnose leaks in air lines, check air springs and compressors, and use Arnott and Continental OEM components." }
         ],
         crossLinks: [
-            { href: "/en/services/brake-pad-replacement", icon: "mdi:car-brake-alert", label: "Related service", title: "Brake repair and brake pads replacement" },
+            { href: "/en/services/brake-pads-replacement", icon: "mdi:car-brake-alert", label: "Related service", title: "Brake repair and brake pads replacement" },
             { href: "/en/services/tire-service", icon: "mdi:tire", label: "Related service", title: "Tire service" },
             { href: "/en/services/maintenance-diagnostics", icon: "mdi:car-cog", label: "Related service", title: "Maintenance and diagnostics" }
         ],
@@ -332,8 +332,8 @@ const SERVICES = [
 
     {
         key: "brake_system",
-        slug: "brake-pad-replacement",
-        allSlugs: { ru: "zamena-tormoznyh-kolodok", ee: "piduriklotside-vahetus", en: "brake-pad-replacement" },
+        slug: "brake-pads-replacement",
+        allSlugs: { ru: "zamena-tormoznyh-kolodok", ee: "piduriklotside-vahetus", en: "brake-pads-replacement" },
         category: "Suspension & Brakes",
         navTitle: "Brakes",
         icon: "mdi:car-brake-alert",

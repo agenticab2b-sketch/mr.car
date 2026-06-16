@@ -64,7 +64,7 @@ const SKIP_FILES = new Set([
   'zamena-tormoznyh-kolodok',
   'diskovye-tormoza',
   'barabannye-tormoza',
-  'brake-pad-replacement',
+  'brake-pads-replacement',
   'disc-brake-repair',
   'drum-brake-repair',
   'transmission-repair',
@@ -2359,7 +2359,7 @@ const STATIC_SERVICE_SITEMAP_PATHS = {
     '/en/services/transmission-repair',
     '/en/services/manual-transmission-repair',
     '/en/services/automatic-transmission-repair',
-    '/en/services/brake-pad-replacement',
+    '/en/services/brake-pads-replacement',
     '/en/services/disc-brake-repair',
     '/en/services/drum-brake-repair',
     '/en/services/webasto-symptoms'

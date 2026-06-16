@@ -329,12 +329,27 @@
       },
       {
         "source": "/en/services/brake-system-service-and-repair",
-        "destination": "/en/services/brake-pad-replacement",
+        "destination": "/en/services/brake-pads-replacement",
         "type": 301
       },
       {
         "source": "/en/services/brake-system-service-and-repair.html",
-        "destination": "/en/services/brake-pad-replacement",
+        "destination": "/en/services/brake-pads-replacement",
+        "type": 301
+      },
+      {
+        "source": "/en/services/brake-pad-replacement",
+        "destination": "/en/services/brake-pads-replacement",
+        "type": 301
+      },
+      {
+        "source": "/en/services/brake-pad-replacement.html",
+        "destination": "/en/services/brake-pads-replacement",
+        "type": 301
+      },
+      {
+        "source": "/en/services/brake-pads-replacement.html",
+        "destination": "/en/services/brake-pads-replacement",
         "type": 301
       },
       {
