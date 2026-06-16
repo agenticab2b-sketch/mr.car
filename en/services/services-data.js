@@ -308,7 +308,7 @@ const SERVICES = [
             { q: "Do you service air suspension?", a: "Yes. We work with air suspension on Audi A6/A8/Q7, BMW 5/7 Series, Mercedes-Benz E/S-Class, and Volvo XC90. We diagnose leaks in air lines, check air springs and compressors, and use Arnott and Continental OEM components." }
         ],
         crossLinks: [
-            { href: "/en/services/brake-pad-replacement", icon: "mdi:car-brake-alert", label: "Related service", title: "Brake repair and brake pad replacement" },
+            { href: "/en/services/brake-pad-replacement", icon: "mdi:car-brake-alert", label: "Related service", title: "Brake repair and brake pads replacement" },
             { href: "/en/services/tire-service", icon: "mdi:tire", label: "Related service", title: "Tire service" },
             { href: "/en/services/maintenance-diagnostics", icon: "mdi:car-cog", label: "Related service", title: "Maintenance and diagnostics" }
         ],
@@ -341,13 +341,13 @@ const SERVICES = [
             { slug: "disc-brake-repair", label: "Disc brakes" },
             { slug: "drum-brake-repair", label: "Drum brakes" }
         ],
-        heroTitle: "Brake repair and brake pad replacement in Tallinn",
-        heroLead: "Brake repair and brake pad replacement in Tallinn: front and rear pads, discs, calipers, brake fluid, brake pipes, EPB and ABS diagnostics for disc and drum brakes.",
+        heroTitle: "Brake repair and brake pads replacement in Tallinn",
+        heroLead: "Brake repair and brake pads replacement in Tallinn: front and rear pads, discs, calipers, brake fluid, brake pipes, EPB and ABS diagnostics for disc and drum brakes.",
         heroImage: "/pics/brake-system-hero.webp",
         introTitle: "Brake service should not be delayed",
         introText: [
             "The brake system is one of the car's most important safety systems. Worn brake pads can increase braking distance by 30-40%, and gradual wear is often hard to notice in time.",
-            "Mr.Car provides brake pad replacement and complete brake service: scheduled brake fluid replacement, ABS diagnostics, brake caliper repair, brake pipe work and service for both disc and drum brakes."
+            "Mr.Car provides brake pads replacement and complete brake service: scheduled brake fluid replacement, ABS diagnostics, brake caliper repair, brake pipe work and service for both disc and drum brakes."
         ],
         symptomsTitle: "When to book brake diagnostics",
         symptoms: [
@@ -362,7 +362,7 @@ const SERVICES = [
         servicesListTitle: "Brake services and prices:",
         servicesList: [
             "Initial brake diagnostics from 25 €",
-            "Brake pad replacement from 48 €",
+            "Brake pads replacement from 48 €",
             "Brake disc and pad replacement from 70 €",
             "Brake caliper replacement from 65 €",
             "Brake caliper repair from 60 €",
@@ -379,12 +379,12 @@ const SERVICES = [
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Book brake pad replacement",
+            title: "Book brake pads replacement",
             subtitle: "Leave a request — we'll call back within 30 minutes"
         },
         seo: {
-            title: "Brake repair and brake pad replacement in Tallinn — Mr.Car",
-            description: "Brake repair and brake pad replacement in Tallinn: front and rear pads, brake discs, calipers, brake fluid, EPB and ABS diagnostics. Kopli 82a. +372 5646 1210"
+            title: "Brake repair and brake pads replacement in Tallinn — Mr.Car",
+            description: "Brake repair and brake pads replacement in Tallinn: front and rear pads, brake discs, calipers, brake fluid, EPB and ABS diagnostics. Kopli 82a. +372 5646 1210"
         }
     },
 
