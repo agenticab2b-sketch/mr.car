@@ -363,7 +363,7 @@
       <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
     </button>
     <div class="sd-sidebar-mobile__content" id="sidebarMobileContent">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Hooldus</div>
             <ul class="sd-sidebar__list">
@@ -478,7 +478,7 @@
   <section class="sd-main site-container">
     <!-- LEFT: Content -->
     <article class="sd-content">
-      
+
       <!-- Intro -->
       <div class="sd-intro">
         <h2 class="sd-intro__title">Õlivahetus Mr.Car-is</h2>
@@ -492,7 +492,7 @@
       <div class="sd-symptoms">
         <h3 class="sd-symptoms__title">Millal vahetada õli?</h3>
         <div class="sd-symptoms__grid">
-          
+
       <div class="sd-symptom">
         <iconify-icon icon="mdi:counter" width="28" height="28" aria-hidden="true"></iconify-icon>
         <span>Iga 10 000–15 000 km</span>
@@ -525,7 +525,7 @@
       <div class="sd-services-list">
         <h3 class="sd-services-list__title">Mida teeme:</h3>
         <ul class="sd-services-list__items">
-          
+
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Õli valik tootja lubade järgi</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Mootoriõli vahetus</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Õlifiltri vahetus</li>
@@ -537,12 +537,12 @@
         <p class="sd-services-list__after">Hind alates €45 (õli + filter). Täpne hind sõltub mootori mahust ja õli margist.</p>
       </div>
 
-      
+
     </article>
 
     <!-- RIGHT: Sidebar -->
     <aside class="sd-sidebar" id="sidebarDesktop">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Hooldus</div>
             <ul class="sd-sidebar__list">
@@ -687,7 +687,7 @@
             <input type="hidden" name="lang" value="et">
             <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
             <input type="hidden" name="tsStart" id="tsStart">
-            
+
             <div id="formError" class="form-error-banner" style="display:none">Palun täitke kõik kohustuslikud väljad</div>
 
             <div class="form-group">
@@ -918,7 +918,7 @@
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         let hasError = false;
         requiredFields.forEach(field => {
           if (!field.value.trim()) {
@@ -976,9 +976,9 @@
       x.className = "snackbar show";
       if (isError) x.style.backgroundColor = "var(--error)";
       else x.style.backgroundColor = "";
-      
-      setTimeout(function () { 
-        x.className = x.className.replace("show", ""); 
+
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
       }, 4000);
     }
 

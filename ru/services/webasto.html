@@ -363,7 +363,7 @@
       <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
     </button>
     <div class="sd-sidebar-mobile__content" id="sidebarMobileContent">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Обслуживание</div>
             <ul class="sd-sidebar__list">
@@ -488,7 +488,7 @@
   <section class="sd-main site-container">
     <!-- LEFT: Content -->
     <article class="sd-content">
-      
+
       <!-- Intro -->
       <div class="sd-intro">
         <h2 class="sd-intro__title">Ремонт Webasto в Mr.Car</h2>
@@ -502,7 +502,7 @@
       <div class="sd-symptoms">
         <h3 class="sd-symptoms__title">Когда обращаться?</h3>
         <div class="sd-symptoms__grid">
-          
+
       <div class="sd-symptom">
         <iconify-icon icon="mdi:power-off" width="28" height="28" aria-hidden="true"></iconify-icon>
         <span>Webasto не запускается</span>
@@ -535,7 +535,7 @@
       <div class="sd-services-list">
         <h3 class="sd-services-list__title">Наши услуги по Webasto:</h3>
         <ul class="sd-services-list__items">
-          
+
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Диагностика предпускового подогревателя</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Чистка камеры сгорания</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Замена свечи накала</li>
@@ -547,7 +547,7 @@
         <p class="sd-services-list__after">Работаем со всеми моделями Webasto (Thermo Top, Air Top) и Eberspächer (Hydronic, Airtronic). Гарантия на работы — 12 месяцев.</p>
       </div>
 
-      
+
         <div class="sd-promo">
           <div class="sd-promo__content">
             <iconify-icon icon="mdi:tag-outline" width="28" height="28" aria-hidden="true"></iconify-icon>
@@ -558,7 +558,7 @@
 
     <!-- RIGHT: Sidebar -->
     <aside class="sd-sidebar" id="sidebarDesktop">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Обслуживание</div>
             <ul class="sd-sidebar__list">
@@ -713,7 +713,7 @@
             <input type="hidden" name="lang" value="ru">
             <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
             <input type="hidden" name="tsStart" id="tsStart">
-            
+
             <div id="formError" class="form-error-banner" style="display:none">Необходимо заполнить выделенные поля</div>
 
             <div class="form-group">
@@ -944,7 +944,7 @@
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         let hasError = false;
         requiredFields.forEach(field => {
           if (!field.value.trim()) {
@@ -1002,9 +1002,9 @@
       x.className = "snackbar show";
       if (isError) x.style.backgroundColor = "var(--error)";
       else x.style.backgroundColor = "";
-      
-      setTimeout(function () { 
-        x.className = x.className.replace("show", ""); 
+
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
       }, 4000);
     }
 

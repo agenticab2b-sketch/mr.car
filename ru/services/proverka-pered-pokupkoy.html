@@ -363,7 +363,7 @@
       <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
     </button>
     <div class="sd-sidebar-mobile__content" id="sidebarMobileContent">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Обслуживание</div>
             <ul class="sd-sidebar__list">
@@ -488,7 +488,7 @@
   <section class="sd-main site-container">
     <!-- LEFT: Content -->
     <article class="sd-content">
-      
+
       <!-- Intro -->
       <div class="sd-intro">
         <h2 class="sd-intro__title">Проверка перед покупкой в Mr.Car</h2>
@@ -502,7 +502,7 @@
       <div class="sd-symptoms">
         <h3 class="sd-symptoms__title">Что мы проверяем?</h3>
         <div class="sd-symptoms__grid">
-          
+
       <div class="sd-symptom">
         <iconify-icon icon="mdi:engine" width="28" height="28" aria-hidden="true"></iconify-icon>
         <span>Состояние двигателя</span>
@@ -543,7 +543,7 @@
       <div class="sd-services-list">
         <h3 class="sd-services-list__title">Что входит в проверку:</h3>
         <ul class="sd-services-list__items">
-          
+
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Визуальный осмотр кузова и салона</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Замер толщины ЛКП (толщиномер)</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Компьютерная диагностика всех систем</li>
@@ -555,7 +555,7 @@
         <p class="sd-services-list__after">Заключение включает фото каждого дефекта и оценку стоимости устранения. Вы принимаете решение на основе фактов, не эмоций.</p>
       </div>
 
-      
+
         <div class="sd-promo">
           <div class="sd-promo__content">
             <iconify-icon icon="mdi:tag-outline" width="28" height="28" aria-hidden="true"></iconify-icon>
@@ -566,7 +566,7 @@
 
     <!-- RIGHT: Sidebar -->
     <aside class="sd-sidebar" id="sidebarDesktop">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Обслуживание</div>
             <ul class="sd-sidebar__list">
@@ -721,7 +721,7 @@
             <input type="hidden" name="lang" value="ru">
             <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
             <input type="hidden" name="tsStart" id="tsStart">
-            
+
             <div id="formError" class="form-error-banner" style="display:none">Необходимо заполнить выделенные поля</div>
 
             <div class="form-group">
@@ -952,7 +952,7 @@
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         let hasError = false;
         requiredFields.forEach(field => {
           if (!field.value.trim()) {
@@ -1010,9 +1010,9 @@
       x.className = "snackbar show";
       if (isError) x.style.backgroundColor = "var(--error)";
       else x.style.backgroundColor = "";
-      
-      setTimeout(function () { 
-        x.className = x.className.replace("show", ""); 
+
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
       }, 4000);
     }
 

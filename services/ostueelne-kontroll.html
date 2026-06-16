@@ -363,7 +363,7 @@
       <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
     </button>
     <div class="sd-sidebar-mobile__content" id="sidebarMobileContent">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Hooldus</div>
             <ul class="sd-sidebar__list">
@@ -478,7 +478,7 @@
   <section class="sd-main site-container">
     <!-- LEFT: Content -->
     <article class="sd-content">
-      
+
       <!-- Intro -->
       <div class="sd-intro">
         <h2 class="sd-intro__title">Ostueelne kontroll Mr.Car-is</h2>
@@ -492,7 +492,7 @@
       <div class="sd-symptoms">
         <h3 class="sd-symptoms__title">Mida me kontrollime?</h3>
         <div class="sd-symptoms__grid">
-          
+
       <div class="sd-symptom">
         <iconify-icon icon="mdi:engine" width="28" height="28" aria-hidden="true"></iconify-icon>
         <span>Mootori seisukord</span>
@@ -533,7 +533,7 @@
       <div class="sd-services-list">
         <h3 class="sd-services-list__title">Mida kontroll sisaldab:</h3>
         <ul class="sd-services-list__items">
-          
+
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Kere ja salongi visuaalne ülevaatus</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Lakikihi paksuse mõõtmine (paksusemõõtur)</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Kõigi süsteemide arvutidiagnostika</li>
@@ -545,7 +545,7 @@
         <p class="sd-services-list__after">Järeldus sisaldab iga defekti fotosid ja kõrvaldamise maksumuse hinnangut. Teed otsuse faktide, mitte emootsiooni põhjal.</p>
       </div>
 
-      
+
         <div class="sd-promo">
           <div class="sd-promo__content">
             <iconify-icon icon="mdi:tag-outline" width="28" height="28" aria-hidden="true"></iconify-icon>
@@ -556,7 +556,7 @@
 
     <!-- RIGHT: Sidebar -->
     <aside class="sd-sidebar" id="sidebarDesktop">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Hooldus</div>
             <ul class="sd-sidebar__list">
@@ -701,7 +701,7 @@
             <input type="hidden" name="lang" value="et">
             <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
             <input type="hidden" name="tsStart" id="tsStart">
-            
+
             <div id="formError" class="form-error-banner" style="display:none">Palun täitke kõik kohustuslikud väljad</div>
 
             <div class="form-group">
@@ -932,7 +932,7 @@
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         let hasError = false;
         requiredFields.forEach(field => {
           if (!field.value.trim()) {
@@ -990,9 +990,9 @@
       x.className = "snackbar show";
       if (isError) x.style.backgroundColor = "var(--error)";
       else x.style.backgroundColor = "";
-      
-      setTimeout(function () { 
-        x.className = x.className.replace("show", ""); 
+
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
       }, 4000);
     }
 

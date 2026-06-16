@@ -363,7 +363,7 @@
       <iconify-icon icon="mdi:chevron-down" width="24" height="24"></iconify-icon>
     </button>
     <div class="sd-sidebar-mobile__content" id="sidebarMobileContent">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Обслуживание</div>
             <ul class="sd-sidebar__list">
@@ -488,7 +488,7 @@
   <section class="sd-main site-container">
     <!-- LEFT: Content -->
     <article class="sd-content">
-      
+
       <!-- Intro -->
       <div class="sd-intro">
         <h2 class="sd-intro__title">Шиномонтаж в Mr.Car</h2>
@@ -502,7 +502,7 @@
       <div class="sd-symptoms">
         <h3 class="sd-symptoms__title">Когда нужен шиномонтаж?</h3>
         <div class="sd-symptoms__grid">
-          
+
       <div class="sd-symptom">
         <iconify-icon icon="mdi:calendar-clock" width="28" height="28" aria-hidden="true"></iconify-icon>
         <span>Сезонная замена шин</span>
@@ -535,7 +535,7 @@
       <div class="sd-services-list">
         <h3 class="sd-services-list__title">Наши услуги по шиномонтажу:</h3>
         <ul class="sd-services-list__items">
-          
+
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Сезонная замена шин (лето / зима)</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Балансировка колёс</li>
         <li><iconify-icon icon="mdi:check-circle-outline" width="18" height="18" aria-hidden="true"></iconify-icon>Ремонт проколов (жгут / грибок / заплатка)</li>
@@ -546,12 +546,12 @@
         <p class="sd-services-list__after">Работаем без очередей по записи. Стоимость — от €20 за колесо. Сезонное хранение шин — по запросу.</p>
       </div>
 
-      
+
     </article>
 
     <!-- RIGHT: Sidebar -->
     <aside class="sd-sidebar" id="sidebarDesktop">
-      
+
           <div class="sd-sidebar__category">
             <div class="sd-sidebar__cat-title">Обслуживание</div>
             <ul class="sd-sidebar__list">
@@ -706,7 +706,7 @@
             <input type="hidden" name="lang" value="ru">
             <input type="text" name="hp" style="display:none" tabindex="-1" autocomplete="off">
             <input type="hidden" name="tsStart" id="tsStart">
-            
+
             <div id="formError" class="form-error-banner" style="display:none">Необходимо заполнить выделенные поля</div>
 
             <div class="form-group">
@@ -937,7 +937,7 @@
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         let hasError = false;
         requiredFields.forEach(field => {
           if (!field.value.trim()) {
@@ -995,9 +995,9 @@
       x.className = "snackbar show";
       if (isError) x.style.backgroundColor = "var(--error)";
       else x.style.backgroundColor = "";
-      
-      setTimeout(function () { 
-        x.className = x.className.replace("show", ""); 
+
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
       }, 4000);
     }
 

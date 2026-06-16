@@ -1203,6 +1203,10 @@ function normalizeLineEndings(text) {
   return String(text || '').replace(/\r\n?/g, '\n');
 }
 
+function normalizeGeneratedHtml(text) {
+  return normalizeLineEndings(text).replace(/[ \t]+$/gm, '');
+}
+
 function extractArticleDatesFromHtml(html) {
   if (!html) return { datePublished: null, dateModified: null };
 
@@ -2167,9 +2171,9 @@ ${jsonLd}
       x.className = "snackbar show";
       if (isError) x.style.backgroundColor = "var(--error)";
       else x.style.backgroundColor = "";
-      
-      setTimeout(function () { 
-        x.className = x.className.replace("show", ""); 
+
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
       }, 4000);
     }
 
@@ -2240,19 +2244,19 @@ for (const cfg of LANGS) {
       dateModified: (s.articleSchema && s.articleSchema.dateModified) || existingArticleDates.dateModified || existingArticleDates.datePublished || TODAY
     };
 
-    let html = renderPage(s, services, cfg, articleDates);
+    let html = normalizeGeneratedHtml(renderPage(s, services, cfg, articleDates));
     const contentChanged = !existingHtml || normalizeArticleDatesInHtml(existingHtml) !== normalizeArticleDatesInHtml(html);
 
     if (contentChanged && !(s.articleSchema && s.articleSchema.dateModified)) {
       articleDates.dateModified = TODAY;
-      html = renderPage(s, services, cfg, articleDates);
+      html = normalizeGeneratedHtml(renderPage(s, services, cfg, articleDates));
     }
 
     if (contentChanged) {
       changedGeneratedUrls.add(`${PROD_ORIGIN}${cfg.serviceBase}${s.slug}`);
     }
 
-    if (normalizeLineEndings(html) !== normalizeLineEndings(existingHtml)) {
+    if (html !== normalizeLineEndings(existingHtml)) {
       fs.writeFileSync(outFile, html, 'utf8');
     }
     process.stdout.write(` ✓  (${html.length} bytes)\n`);
