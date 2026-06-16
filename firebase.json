@@ -284,22 +284,52 @@
       },
       {
         "source": "/ru/services/hodovaya-tormoza",
-        "destination": "/ru/services/tormoznaya-sistema",
+        "destination": "/ru/services/zamena-tormoznyh-kolodok",
         "type": 301
       },
       {
         "source": "/ru/services/hodovaya-tormoza.html",
-        "destination": "/ru/services/tormoznaya-sistema",
+        "destination": "/ru/services/zamena-tormoznyh-kolodok",
         "type": 301
       },
       {
         "source": "/teenused/pidurite-remont",
-        "destination": "/services/pidurisusteemi-hooldus-ja-remont",
+        "destination": "/services/piduriklotside-vahetus",
         "type": 301
       },
       {
         "source": "/teenused/pidurite-remont.html",
-        "destination": "/services/pidurisusteemi-hooldus-ja-remont",
+        "destination": "/services/piduriklotside-vahetus",
+        "type": 301
+      },
+      {
+        "source": "/services/pidurisusteemi-hooldus-ja-remont",
+        "destination": "/services/piduriklotside-vahetus",
+        "type": 301
+      },
+      {
+        "source": "/services/pidurisusteemi-hooldus-ja-remont.html",
+        "destination": "/services/piduriklotside-vahetus",
+        "type": 301
+      },
+      {
+        "source": "/ru/services/tormoznaya-sistema",
+        "destination": "/ru/services/zamena-tormoznyh-kolodok",
+        "type": 301
+      },
+      {
+        "source": "/ru/services/tormoznaya-sistema.html",
+        "destination": "/ru/services/zamena-tormoznyh-kolodok",
+        "type": 301
+      },
+      {
+        "source": "/en/services/brake-system-service-and-repair",
+        "destination": "/en/services/brake-pad-replacement",
+        "type": 301
+      },
+      {
+        "source": "/en/services/brake-system-service-and-repair.html",
+        "destination": "/en/services/brake-pad-replacement",
         "type": 301
       },
       {

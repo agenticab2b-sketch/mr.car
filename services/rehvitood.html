@@ -153,9 +153,9 @@
               </div>
             </div>
             <div class="mega-menu__group">
-              <a href="/services/pidurisusteemi-hooldus-ja-remont" class="mega-menu__item mega-menu__item--has-submenu">
+              <a href="/services/piduriklotside-vahetus" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="mdi:car-brake-alert" width="20" height="20" aria-hidden="true"></iconify-icon>
-                <span>Pidurisüsteem</span>
+                <span>Pidurid</span>
                 <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
               </a>
               <div class="mega-menu__submenu">
@@ -265,9 +265,9 @@
               </a>
             </div>
             <div class="mobile-mega-menu__group">
-              <a href="/services/pidurisusteemi-hooldus-ja-remont" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+              <a href="/services/piduriklotside-vahetus" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                 <iconify-icon icon="mdi:car-brake-alert" aria-hidden="true"></iconify-icon>
-                <span>Pidurisüsteem</span>
+                <span>Pidurid</span>
               </a>
               <a href="/services/ketaspidurite-remont" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
                 <span>Ketaspidurid</span>
@@ -423,9 +423,9 @@
             <div class="sd-sidebar__cat-title">Veermik ja pidurid</div>
             <ul class="sd-sidebar__list">
               <li class="sd-sidebar__item sd-sidebar__item--has-children">
-                <a href="/services/pidurisusteemi-hooldus-ja-remont" class="sd-sidebar__link">
+                <a href="/services/piduriklotside-vahetus" class="sd-sidebar__link">
                   <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
-                  <span>Pidurisüsteem</span>
+                  <span>Pidurid</span>
                   <iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>
                 </a>
                 <ul class="sd-sidebar__sublist">
@@ -601,9 +601,9 @@
             <div class="sd-sidebar__cat-title">Veermik ja pidurid</div>
             <ul class="sd-sidebar__list">
               <li class="sd-sidebar__item sd-sidebar__item--has-children">
-                <a href="/services/pidurisusteemi-hooldus-ja-remont" class="sd-sidebar__link">
+                <a href="/services/piduriklotside-vahetus" class="sd-sidebar__link">
                   <iconify-icon icon="mdi:car-brake-alert" width="18" height="18" aria-hidden="true"></iconify-icon>
-                  <span>Pidurisüsteem</span>
+                  <span>Pidurid</span>
                   <iconify-icon icon="mdi:chevron-down" width="16" height="16" class="sd-sidebar__caret" aria-hidden="true"></iconify-icon>
                 </a>
                 <ul class="sd-sidebar__sublist">
@@ -662,11 +662,24 @@
         </div>
         <p class="contact__promise">Jäta päring — helistame tagasi 30 minutiga</p>
         <div class="accent-underline"></div>
-        <a href="tel:+37256461210"
-            style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: -0.01em; margin-top: 16px; width: fit-content; text-decoration: none; transition: all var(--transition-fast);">
-            <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
-            +372 5646 1210
+        <div class="contact__people" aria-label="Kontaktisikud">
+        <a href="tel:+37258503960" class="contact-person">
+            <span class="contact-person__head">
+                <span class="contact-person__name">Anton</span>
+                <span class="contact-person__phone">+372 5850 3960</span>
+            </span>
+            <span class="contact-person__languages">Keeled: eesti, vene, inglise</span>
+            <span class="contact-person__scope">Üldine autoremont ja käigukastide remont</span>
         </a>
+        <a href="tel:+37256461210" class="contact-person">
+            <span class="contact-person__head">
+                <span class="contact-person__name">Raino</span>
+                <span class="contact-person__phone">+372 5646 1210</span>
+            </span>
+            <span class="contact-person__languages">Keeled: eesti, vene, soome</span>
+            <span class="contact-person__scope">Üldine autoremont ja Webasto remont</span>
+        </a>
+        </div>
     </div>
     <div class="contact__form">
         <form id="contactForm">
@@ -726,7 +739,22 @@
         </div>
         <div class="location__detail">
             <span class="location__label">Telefon</span>
-            <a href="tel:+37256461210" class="location__value" style="color: var(--accent-primary);">+372 5646 1210</a>
+            <div class="location__contacts">
+                <a href="tel:+37258503960" class="location-contact">
+                    <span class="location-contact__line">
+                        <span class="location-contact__name">Anton</span>
+                        <span class="location-contact__phone">+372 5850 3960</span>
+                    </span>
+                    <span class="location-contact__note">Autoremont ja käigukastid · ET/RU/EN</span>
+                </a>
+                <a href="tel:+37256461210" class="location-contact">
+                    <span class="location-contact__line">
+                        <span class="location-contact__name">Raino</span>
+                        <span class="location-contact__phone">+372 5646 1210</span>
+                    </span>
+                    <span class="location-contact__note">Autoremont ja Webasto · ET/RU/FI</span>
+                </a>
+            </div>
         </div>
         <div class="location__detail">
             <span class="location__label">Email</span>
@@ -781,7 +809,8 @@
       <div>
         <div class="footer__col-title">Kontaktid</div>
         <div class="footer__text">
-          <a href="tel:+37256461210">5646 1210</a><br>
+          Anton: <a href="tel:+37258503960">5850 3960</a><br>
+          Raino: <a href="tel:+37256461210">5646 1210</a><br>
           <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
           Kopli 82a, 10412 Tallinn
         </div>

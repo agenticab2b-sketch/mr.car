@@ -308,7 +308,7 @@ const SERVICES = [
             { q: "Kas hooldate ka õhkvedrustust?", a: "Jah. Töötame Audi A6/A8/Q7, BMW 5/7-seeria, Mercedes-Benzi E/S-klassi ja Volvo XC90 õhkvedrustusega. Diagnoosime lekkeid õhutorudes, kontrollime õhkpatju ja kompressorit. Kasutame Arnotti ja Continental OEM-i komponente." }
         ],
         crossLinks: [
-            { href: "/services/pidurisusteemi-hooldus-ja-remont", icon: "mdi:car-brake-alert", label: "Seotud teenus", title: "Pidurisüsteemi remont ja hooldus" },
+            { href: "/services/piduriklotside-vahetus", icon: "mdi:car-brake-alert", label: "Seotud teenus", title: "Pidurite remont ja piduriklotside vahetus" },
             { href: "/services/rehvitood", icon: "mdi:tire", label: "Seotud teenus", title: "Rehvitööd" },
             { href: "/services/hooldus-diagnostika", icon: "mdi:car-cog", label: "Seotud teenus", title: "Tehniline hooldus ja diagnostika" }
         ],
@@ -332,24 +332,24 @@ const SERVICES = [
 
     {
         key: "brake_system",
-        slug: "pidurisusteemi-hooldus-ja-remont",
-        allSlugs: { ru: "tormoznaya-sistema", ee: "pidurisusteemi-hooldus-ja-remont", en: "brake-system-service-and-repair" },
+        slug: "piduriklotside-vahetus",
+        allSlugs: { ru: "zamena-tormoznyh-kolodok", ee: "piduriklotside-vahetus", en: "brake-pad-replacement" },
         category: "Veermik ja pidurid",
-        navTitle: "Pidurisüsteem",
+        navTitle: "Pidurid",
         icon: "mdi:car-brake-alert",
         menuChildren: [
             { slug: "ketaspidurite-remont", label: "Ketaspidurid" },
             { slug: "trummelpidurite-remont", label: "Trummelpidurid" }
         ],
-        heroTitle: "Pidurisüsteemi remont ja hooldus Tallinnas",
-        heroLead: "Pidurite kriuksumine, piduripedaali vibratsioon, auto kiskumine pidurdamisel või piduriketaste ülekuumenemine - diagnoosime ja kõrvaldame pidurisüsteemi rikked.",
+        heroTitle: "Pidurite remont ja piduriklotside vahetus Tallinnas",
+        heroLead: "Pidurite remont ja piduriklotside vahetus Tallinnas: kontrollime pidurikettad, sadulad, pidurivedeliku ja ABS-i ning vahetame kulunud detailid õigeaegselt.",
         heroImage: "/pics/brake-system-hero.webp",
         introTitle: "Pidurite hooldusega ei tasu viivitada",
         introText: [
-            "Mr.Car pakub pidurisüsteemi terviklikku hooldust: alates plaanilisest piduriklotside ja pidurivedeliku vahetusest kuni ABS-diagnostika ja pidurisadulate remondini.",
+            "Mr.Car pakub piduriklotside vahetust ja pidurite terviklikku hooldust: alates plaanilisest pidurivedeliku vahetusest kuni ABS-diagnostika ja pidurisadulate remondini.",
             "Hooldame kõigi automarkide ketas- ja trummelpidurisüsteeme."
         ],
-        symptomsTitle: "Pidurisüsteemi rikete peamised sümptomid",
+        symptomsTitle: "Pidurite rikete peamised sümptomid",
         symptoms: [
             { icon: "mdi:volume-high", text: "Pidurite kriuksumine ja vilin" },
             { icon: "mdi:vibrate", text: "Piduripedaali vibratsioon" },
@@ -358,10 +358,10 @@ const SERVICES = [
             { icon: "mdi:alert-circle", text: "ABS- või ESP-tuli põleb" },
             { icon: "mdi:thermometer-alert", text: "Kõrbelõhn pärast sõitu" }
         ],
-        afterSymptomsText: "Pidurisüsteemi kõrvalised helid, vibratsioon või ABS-tuli vajavad kontrolli enne, kui rike kahjustab rohkem komponente.",
+        afterSymptomsText: "Pidurite kõrvalised helid, vibratsioon või ABS-tuli vajavad kontrolli enne, kui rike kahjustab rohkem komponente.",
         servicesListTitle: "Teenused ja orienteeruvad hinnad:",
         servicesList: [
-            "Pidurisüsteemi esmane diagnostika",
+            "Pidurite esmane diagnostika",
             "Piduriklotside vahetus",
             "Piduriketaste ja -klotside vahetus",
             "Pidurisadula vahetus ja remont",
@@ -381,8 +381,8 @@ const SERVICES = [
             subtitle: "Jäta päring — helistame tagasi 30 minutiga"
         },
         seo: {
-            title: "Pidurisüsteemi remont ja hooldus Tallinnas | Mr.Car",
-            description: "Pidurisüsteemi remont ja hooldus Tallinnas: klotsid, kettad, sadulad, pidurivedelik ja ABS-diagnostika. 12-kuuline garantii. Kopli 82a."
+            title: "Pidurite remont ja piduriklotside vahetus Tallinnas | Mr.Car",
+            description: "Pidurite remont ja piduriklotside vahetus Tallinnas: kontrollime pidurikettad, sadulad, pidurivedeliku ja ABS-i. Vajadusel vahetame kettad ja hooldame pidureid. Kopli 82a."
         }
     },
 
