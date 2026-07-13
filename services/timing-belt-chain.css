@@ -1,0 +1,31 @@
+/* Timing service hero cards contain labels rather than short numeric metrics. */
+.gb-hero-stat {
+  min-width: 0;
+  padding: clamp(1.25rem, 2vw, 2rem) clamp(0.875rem, 1.5vw, 1.5rem);
+}
+
+.gb-hero-stat__value {
+  font-size: clamp(0.95rem, 1vw, 1.1rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  overflow-wrap: normal;
+  hyphens: auto;
+  text-wrap: balance;
+}
+
+.gb-hero-stat__label {
+  font-size: clamp(0.76rem, 0.7vw, 0.85rem);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+@media (max-width: 900px) {
+  .gb-hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .gb-hero-stat {
+    padding: 1.25rem 1rem;
+  }
+}
