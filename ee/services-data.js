@@ -712,6 +712,378 @@ const SERVICES = [
     },
 
     {
+        key: "timing_belt_chain",
+        slug: "hammasrihma-ja-keti-vahetus",
+        menuParentSlug: "mootoriremont",
+        allSlugs: { ru: "zamena-remnya-cepi-grm", ee: "hammasrihma-ja-keti-vahetus", en: "timing-belt-chain-replacement" },
+        category: "Mootor ja seadmed",
+        navTitle: "Hammasrihm ja kett",
+        icon: "mdi:sync",
+        templateVariant: "service-deep-dive-v2",
+        heroTitle: "Hammasrihma ja keti vahetus Tallinnas",
+        heroLead: "Hammasrihma ja ajamiketi vahetus Tallinnas: diagnostika, komplekti valik, rullikud, pingutid ja veepump vajaduse korral. Mr.Car, Kopli 82a.",
+        heroImage: "/pics/timing-belt-chain-crankshaft-hero.webp",
+        heroStats: [
+            { value: "1. Hammasrihma-/ketiajam", label: "Teeme kindlaks süsteemi tüübi — rihm või kett — ja valime konkreetsele mootorile sobiva komplekti" },
+            { value: "2. Rullikud ja pingutid", label: "Kontrollime ajami osi, mis mõjutavad kasutusiga, pinget ja gaasijaotusmehhanismi stabiilset tööd" },
+            { value: "3. Valik VIN-i / reg. numbri järgi", label: "Täpsustame mootori, varustuse ja vajalikud detailid enne tööde algust" }
+        ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "Sümptomid" },
+            { href: "#types", icon: "mdi:engine", label: "Rihm või kett" },
+            { href: "#diagnostika", icon: "mdi:stethoscope", label: "Diagnostika" },
+            { href: "#services", icon: "mdi:wrench", label: "Mis töös sisaldub" },
+            { href: "#process", icon: "mdi:format-list-numbered", label: "Kuidas töötame" },
+            { href: "#pricing", icon: "mdi:clipboard-text-clock", label: "Maksumus" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "KKK" }
+        ],
+        introTitle: "Hammasrihma ja keti vahetus Mr.Car-is",
+        introText: [
+            "Gaasijaotusmehhanism tagab väntvõlli ja nukkvõllide täpse sünkroonse töö. Mootori stabiilne töö sõltub otseselt hammasrihma või -keti, pingutite, rullikute ja juhikute seisukorrast.",
+            "Kulunud rihm, veninud kett või rikkis pinguti võib põhjustada gaasijaotusfaaside paigast nihkumise. Selle tulemusel võib mootor halvasti käivituda, ebaühtlaselt töötada, võimsust kaotada või saada tõsiseid mehaanilisi kahjustusi.",
+            "Mr.Car-is algab töö auto kontrollist ja mootoriandmete täpsustamisest. Valime hammasrihmakomplekti sõiduki registreerimisnumbri järgi, arvestame hooldusajalugu ja lepime tööde ulatuse kliendiga eelnevalt kokku. Vajaduse korral vahetatakse koos rihma või ketiga ka rullikud, pingutid, juhikud, simmerlingid ja veepump.",
+            "Korrapärane hammasrihma või -keti vahetus on kontrollitud hooldus. Peaaegu alati on see mõistlikum kui mootori remont pärast rihma purunemist, keti ülehüpet või klapimehhanismi kahjustust."
+        ],
+        brands: [
+            "Volkswagen / Audi / Škoda / SEAT",
+            "BMW / MINI",
+            "Mercedes-Benz",
+            "Toyota / Lexus",
+            "Ford",
+            "Volvo",
+            "Renault / Dacia / Nissan",
+            "Hyundai / Kia"
+        ],
+        urgencyBlock: {
+            icon: "mdi:alert-decagram",
+            title: "Ärge lükake ajami kontrolli edasi",
+            text: "Kui külmkäivitusel on tekkinud metalliline müra, armatuurlaual põleb Check Engine, esinevad gaasijaotusfaaside vead, hooldusajalugu on teadmata või läbisõit läheneb ajami hooldusvälbale, tasub ajam aegsasti üle kontrollida. Rihma purunemine või keti ülehüpe võib kahjustada klappe, kolbe ja silindripead."
+        },
+        symptomsTitle: "Millal ajamit kontrollida?",
+        symptoms: [
+            { icon: "mdi:counter", text: "Reglementne läbisõit läheneb" },
+            { icon: "mdi:calendar-clock", text: "Rihm on mitu aastat vana" },
+            { icon: "mdi:volume-vibrate", text: "Müra või ragin käivitamisel" },
+            { icon: "mdi:engine-outline", text: "Faasidega seotud veakoodid" },
+            { icon: "mdi:vibrate", text: "Mootor töötab ebaühtlaselt" },
+            { icon: "mdi:oil", text: "Õlijäljed rihma piirkonnas" },
+            { icon: "mdi:file-search-outline", text: "Hooldusajalugu puudub" }
+        ],
+        afterSymptomsText: "Osa sümptomeid võib tulla ka abiseadmetest, süütesüsteemist, kütusesüsteemist või anduritest. Seetõttu kinnitame põhjuse enne, kui hakkame osi vahetama.",
+        detailedSymptomsTitle: "Hammasrihma või keti kulumise märgid",
+        detailedSymptoms: [
+            {
+                tone: "critical",
+                icon: "mdi:volume-vibrate",
+                title: "Metalliline müra külmkäivitusel",
+                desc: "Lühiajaline kõrin pärast käivitamist võib viidata veninud ketile või kulunud pingutile või juhikutele. Seda sümptomit tasub kontrollida enne, kui müra muutub püsivaks."
+            },
+            {
+                tone: "critical",
+                icon: "mdi:engine-outline",
+                title: "Check Engine ja gaasijaotusfaaside vead",
+                desc: "Võllide sünkroonimise vead võivad olla seotud veninud keti, ajami ülehüppe, pinguti ebakorrektse töö või võlliasendi anduritega."
+            },
+            {
+                tone: "warning",
+                icon: "mdi:counter",
+                title: "Läbisõit või vanus läheneb hooldusvälbale",
+                desc: "Hammasrihma ei vahetata ainult läbisõidu, vaid ka kasutusaja järgi. Isegi väikese läbisõidu korral kaotab materjal aja jooksul elastsust."
+            },
+            {
+                tone: "warning",
+                icon: "mdi:file-search-outline",
+                title: "Hooldusajalugu on teadmata",
+                desc: "Kui pärast auto ostmist puudub kinnitus hammasrihma või -keti vahetuse kohta, on soovitatav ajamit eraldi kontrollida, eriti enne pikemat sõitu või intensiivset kasutamist."
+            },
+            {
+                icon: "mdi:vibrate",
+                title: "Ebaühtlane töö ja halb käivitus",
+                desc: "Gaasijaotusfaaside probleemid võivad avalduda vibratsiooni, pika käivituse, mootori ebastabiilse töö ja kiirendamisel tekkivate jõnksudena."
+            },
+            {
+                icon: "mdi:speedometer-slow",
+                title: "Jõu kadu ja suurenenud kütusekulu",
+                desc: "Ajami sünkroonsuse häire võib vähendada mootori efektiivsust. Auto kiirendab halvemini, kaotab võimsust ja kulutab rohkem kütust."
+            },
+            {
+                icon: "mdi:sync-alert",
+                title: "Hammasrihma nähtav kulumine",
+                desc: "Praod, kihistumine, kulumisjäljed või kahjustatud hambad on põhjus vahetust mitte edasi lükata. Selline kulumine tähendab sageli, et detaili ressurss on lõppemas."
+            },
+            {
+                icon: "mdi:oil-level",
+                title: "Õli- või jahutusvedeliku jäljed",
+                desc: "Õli või jahutusvedelik ajami piirkonnas lühendab rihma, rullikute ja pingutite kasutusiga. Enne uue komplekti paigaldamist tuleb lekke põhjus kõrvaldada."
+            },
+            {
+                icon: "mdi:volume-high",
+                title: "Kõrvaline heli ajami piirkonnas",
+                desc: "Vilin, undamine või krigin ajami piirkonnast võib viidata kulunud rullikule, pingutile, laagrile või rihma valele pingele. Sellisel juhul vajab sõlm diagnostikat."
+            }
+        ],
+        riskStagesTitle: "Mis juhtub, kui hammasrihma või -keti vahetust edasi lükata",
+        riskStages: [
+            {
+                marker: "1",
+                title: "Seotud osade kulumine kiireneb",
+                text: "Rullikud, pingutid, juhikud ja veepump võivad töötada oma võimekuse piiril isegi siis, kui rihm või kett on veel töökorras. Mida kauem hooldust edasi lükata, seda suurem on koormus kogu ajamile."
+            },
+            {
+                marker: "2",
+                title: "Gaasijaotusfaaside sünkroonsus häirub",
+                text: "Veninud kett, kulunud rihm või vale pinge võib põhjustada faasivigu, mootori ebastabiilset tööd, halba käivitust, vibratsiooni ja jõu kadu."
+            },
+            {
+                marker: "3",
+                title: "Kalli mootoriremondi risk suureneb",
+                text: "Rihma purunemine või keti ülehüpe võib kahjustada klappe, kolbe ja silindripead. Ajamikomplekti plaaniline vahetus on tavaliselt oluliselt odavam kui mootori remont pärast ajami riket."
+            }
+        ],
+        engineTypesTitle: "Hammasrihm, ajamikett ja abirihm — mis vahe neil on",
+        engineTypes: [
+            {
+                icon: "mdi:sync",
+                title: "Hammasrihm",
+                desc: "Hammasrihm sünkroniseerib väntvõlli ja nukkvõllide tööd. Seda vahetatakse tootja hooldusvälba järgi, kusjuures oluline ei ole ainult läbisõit, vaid ka kasutusaeg. Koos rihmaga kontrollitakse rullikuid, pingutit, simmerlingide seisukorda ja veepumpa, kui see on seotud hammasrihmaajamiga.",
+                brands: ["Tootja hooldusvälba järgi", "Hammasrihmakomplekt", "Rullikud ja pinguti", "Veepump vajaduse korral"]
+            },
+            {
+                icon: "mdi:link-variant",
+                title: "Ajamikett",
+                desc: "Ajamikett on mõeldud pikaajaliseks tööks, kuid kulub samuti. Keti venimine ning pinguti või juhikute kulumine võib põhjustada käivitusmüra, gaasijaotusfaaside vigu ja mootori ebastabiilset tööd. Selliste sümptomite korral vajab ketiajam eraldi diagnostikat.",
+                brands: ["Pinguti", "Ketijuhikud", "Müra käivitamisel", "Faasivead"]
+            },
+            {
+                icon: "mdi:cog-outline",
+                title: "Abirihm",
+                desc: "Abirihm paneb tööle generaatori, kliimakompressori ja teised abiseadmed. See ei sünkroniseeri mootori tööd ning seda hooldatakse hammasrihmast või ajamiketist eraldi. Seisukorda hinnatakse kulumise, pragude, müra, pinge ja seotud agregaatide töö järgi.",
+                brands: ["Generaator", "Konditsioneer", "Abiseadmed", "Eraldi kontroll"]
+            }
+        ],
+        diagnosticsTitle: "Hammasrihma- või ketiajami diagnostika enne vahetust",
+        diagnosticsText: [
+            "Enne vahetust tuleb kindlaks teha, millised osad tegelikult hooldust vajavad. Sama sümptom võib olla seotud rihma, keti, rulliku, pinguti, anduri, õlilekke või abiseadmetega.",
+            "Täpsustame sõiduki andmed, mootori, läbisõidu, sümptomid ja hooldusajaloo. Pärast kontrolli lepime enne remondi algust kokku varuosade komplekti, tööde mahu ja tähtajad."
+        ],
+        diagnosticsChecklist: [
+            "VIN-kood või registreerimisnumber, mootor ja läbisõit",
+            "Hooldusajalugu ja viimane hammasrihma või -keti vahetus",
+            "Rihma, rullikute, pinguti ja võimalike lekete piirkonna seisukord",
+            "Keti ja juhikute müra ning faasivead",
+            "Veepumba, simmerlingide ja seotud osade vahetamise vajadus",
+            "Varuosade, tähtaegade ja tööde mahu kokkuleppimine"
+        ],
+        servicesListTitle: "Mida töö sisaldab:",
+        servicesList: [
+            "Ajamikomplekti valik auto ja mootori järgi",
+            "Hammasrihma vahetus",
+            "Ajamiketi vahetus",
+            "Rullikute, pinguti, juhikute ja taldade vahetus seisukorra järgi",
+            "Veepumba kontroll või vahetus, kui see on ajamiga seotud",
+            "Märkide, pinge ja käsitsi pööramise kontroll ning mootori kontrollkäivitus"
+        ],
+        afterListText: "Töömaht sõltub konkreetsest mootorist. Ühte hinda kõigile autodele ei luba: enne täpsustame autonumbri, mootori ja vajaliku komplekti.",
+        serviceCardsTitle: "Milliseid töid teeme",
+        serviceCards: [
+            {
+                icon: "mdi:sync",
+                title: "Hammasrihmakomplekti vahetus",
+                desc: "Valime konkreetsele mootorile sobiva komplekti ning vahetame rihma, rullikud ja pinguti. Kontrollime ajastusmärke, simmerlingide seisukorda ja veepumpa, kui see on seotud hammasrihmaajamiga.",
+                time: "tootja hooldusvälba järgi"
+            },
+            {
+                icon: "mdi:link-variant",
+                title: "Ketiajami hooldus",
+                desc: "Diagnoosime käivitusmüra ja faasivigu ning kontrollime ketti, pingutit, juhikuid ja seotud osi. Tööde mahu lepime kokku pärast kontrolli ja varuosade valikut.",
+                time: "diagnostika tulemuste järgi"
+            },
+            {
+                icon: "mdi:stethoscope",
+                title: "Hammasrihma- või ketiajami diagnostika",
+                desc: "Kontrollime enne vahetust käivitusmüra, mootori ebaühtlast tööd, Check Engine'i vigu, läbisõitu, VIN-koodi või registreerimisnumbrit ja hooldusajalugu.",
+                time: "enne tööde alustamist"
+            },
+            {
+                icon: "mdi:water",
+                title: "Veepump ja seotud osad",
+                desc: "Kui juurdepääs on avatud, hindame veepumba, simmerlingide, rullikute, pingutite ja võimalike lekete seisukorda. Vajaduse korral lepime seotud osade vahetuse eelnevalt kokku.",
+                time: "detailide seisukorra järgi"
+            }
+        ],
+        processTitle: "Kuidas töö toimub",
+        processSteps: [
+            {
+                num: "01",
+                title: "Sõiduki andmed",
+                text: "Täpsustame VIN-koodi või registreerimisnumbri, mootori, läbisõidu, sümptomid ja viimase ajamihoolduse kuupäeva."
+            },
+            {
+                num: "02",
+                title: "Diagnostika ja varuosade valik",
+                text: "Kontrollime ajami tüüpi, ligipääsetavate osade seisukorda, võimalikke helisid, lekkeid ja faasivigu. Valime konkreetsele mootorile sobiva komplekti."
+            },
+            {
+                num: "03",
+                title: "Tööde mahu kokkuleppimine",
+                text: "Selgitame, millised osad tuleb kohe vahetada, mis sõltub lahtivõtmisel selguvast seisukorrast, kui kaua töö kestab ja milliseid varuosi on vaja."
+            },
+            {
+                num: "04",
+                title: "Vahetus ja kontroll",
+                text: "Teeme vahetuse, kontrollime ajastusmärke ja pinget ning pöörame mootorit käsitsi, et faasid üle kontrollida. Pärast kokkupanekut käivitame mootori ja kontrollime selle tööd."
+            }
+        ],
+        pricingTitle: "Kuidas kujuneb hind",
+        pricingRows: [
+            { service: "Diagnostika ja komplekti täpsustamine", price: "Arvutatakse sõiduki järgi" },
+            { service: "Hammasrihma vahetus", price: "Pärast mootori ja varuosakomplekti täpsustamist" },
+            { service: "Ajamiketi vahetus", price: "Pärast diagnostikat ja tööde mahu hindamist" },
+            { service: "Veepump, rullikud, pingutid ja simmerlingid", price: "Vastavalt osade seisukorrale ja mootori konstruktsioonile" }
+        ],
+        pricingNote: "Täpsema hinna arvutamiseks saatke sõiduki VIN-kood või registreerimisnumber, läbisõit ja teave viimase ajamihoolduse kohta. Täpsustame mootori, valime sobiva varuosakomplekti ja kooskõlastame tööde mahu enne remondi alustamist.",
+        trustItems: [
+            {
+                icon: "mdi:car-search",
+                title: "Kõigepealt kontroll",
+                desc: "Ei vaheta detaile pimesi, kui sümptom võib olla seotud mõne teise sõlmega. Esmalt selgitame välja põhjuse ja seejärel pakume lahenduse."
+            },
+            {
+                icon: "mdi:clipboard-text-clock",
+                title: "Tööde kokkuleppimine enne alustamist",
+                desc: "Varuosakomplekti, seotud osad, tähtajad ja tööde mahu arutame kliendiga eelnevalt läbi."
+            },
+            {
+                icon: "mdi:shield-check",
+                title: "Kontrollime kogu ajamit",
+                desc: "Kontrollime lisaks rihmale või ketile ka rullikuid, pinguteid, juhikuid, simmerlinge ning võimalikke lekkejälgi."
+            },
+            {
+                icon: "mdi:target",
+                title: "Ajastusmärkide ja faaside täpsus",
+                desc: "Ajami hooldusel on olulised korrektne fikseerimine, faaside täpne kokkulangevus ja kontroll pärast kokkupanekut. Umbkaudne paigaldus ei ole siin vastuvõetav."
+            },
+            {
+                icon: "mdi:card-account-details-outline",
+                title: "Valik VIN-koodi / registreerimisnumbri järgi",
+                desc: "Täpsustame mootori, varustuse ja sobiva varuosakomplekti enne tööde alustamist, et vältida valikuvigu."
+            },
+            {
+                icon: "mdi:check-decagram",
+                title: "Kontroll pärast kokkupanekut",
+                desc: "Pärast vahetust kontrollime käivitumist, mootori tööd, kõrvaliste helide puudumist ja tehtud tööde korrektsust."
+            }
+        ],
+        faqTitle: "Korduma kippuvad küsimused",
+        faqItems: [
+            {
+                q: "Millal hammasrihma vahetada?",
+                a: "Hammasrihma kontrolli ja plaanilist vahetust tasub kaaluda juba alates umbes 60 000 km läbisõidust. Mõnel mootoril võib tootja ettenähtud välp olla pikem, kuid täpne intervall sõltub alati tootjast, mootori tüübist, rihma vanusest, kasutustingimustest ja sõiduki hooldusajaloost. Kui viimase vahetuse kohta kinnitust pole, rihm on umbes viis aastat vana, esineb õlijälgi, pragusid või müra või auto on hiljuti ostetud, tuleks ajam aegsasti üle kontrollida."
+            },
+            {
+                q: "Kas ajamiketti on vaja vahetada?",
+                a: "Ajamikett kestab tavaliselt kauem kui hammasrihm ja sellel ei ole alati kindlat vahetusvälpa. Kuid ka kett kulub: keti venimine ning pinguti või juhikute kulumine võivad põhjustada metallist heli käivitamisel, faasivigu ja mootori ebaühtlast tööd. Kettajami kontroll on eriti asjakohane alates 150 000 km läbisõidust, kuid ka varem, kui tekib müra, süttib Check Engine või mootor töötab ebaühtlaselt."
+            },
+            {
+                q: "Kas võib edasi sõita, kui kett käivitamisel müriseb?",
+                a: "Diagnostikat ei tasu edasi lükata. Lühiajaline metallist heli käivitamisel võib olla seotud keti venimise, pinguti või juhikute kulumise või ebapiisava õlirõhuga käivitamise hetkel. Sellise sümptomiga edasi sõites suureneb keti ülehüppe, gaasijaotusfaaside häire ja tõsise mootorikahjustuse oht."
+            },
+            {
+                q: "Kas veepump tuleks koos hammasrihmaga vahetada?",
+                a: "Kui veepumpa käitab hammasrihm või sellele pääseb lahtivõtmise ajal ligi, on sageli mõistlik vahetada see koos ajamikomplektiga. Nii saab vältida korduvat lahtivõtmist ja vähendada lekkeohtu pärast uue rihma paigaldamist. Lõplik otsus sõltub mootori konstruktsioonist, läbisõidust, pumba ja simmerlingide seisukorrast ning võimalikest lekkejälgedest."
+            },
+            {
+                q: "Kas saab vahetada ainult rihma ilma rullikute ja pingutita?",
+                a: "Tehniliselt on mõnikord võimalik vahetada ainult rihm, kuid enamasti on õigem vahetada kogu ajamikomplekt. Rullikud, pinguti ja muud osad töötavad koos rihmaga ning kuluvad samuti. Vanade rullikute või pinguti jätmisel võib uue rihma eluiga lüheneda ja kordusremondi oht suureneda."
+            },
+            {
+                q: "Kas maksumust saab ette teada?",
+                a: "Esialgse maksumuse saab arvutada pärast VIN-koodi või registreerimisnumbri, mootori, läbisõidu ja hooldusajaloo täpsustamist. Lõplik maksumus sõltub varuosakomplektist, mootori konstruktsioonist, ligipääsust ajamile ja seotud osade vahetamise vajadusest. Enne tööde alustamist kooskõlastame kliendiga varuosakomplekti, tööde mahu, tähtajad ja remondi edasise käigu."
+            },
+            {
+                q: "Mis vahe on hammasrihmal ja abiseadmete rihmal?",
+                a: "Hammasrihm sünkroniseerib väntvõlli ja nukkvõllide tööd mootori sees. Abiseadmete rihm käitab generaatorit, kliimakompressorit ja teisi väliseid sõlmi. Need on erinevad süsteemid, erinevad rihmad ja erinevad hooldustööd."
+            },
+            {
+                q: "Mida teha, kui ma ei tea, millal ajamit viimati vahetati?",
+                a: "Kõigepealt tasub kontrollida sõidukit ja hooldusajalugu. Kui vahetuse kohta puudub kinnitus, auto on hiljuti ostetud, läbisõit tekitab kahtlust või rihm võib olla mitu aastat vana, on ohutum ajam aegsasti üle kontrollida ja vajaduse korral vahetus planeerida."
+            },
+            {
+                q: "Kui kaua võtab hammasrihma või ajamiketi vahetus aega?",
+                a: "Aeg sõltub mootorist, sõiduki konstruktsioonist ja ligipääsust ajamile. Rihma vahetus kestab tavaliselt mõnest tunnist ühe tööpäevani. Kettajamiga seotud tööd on sageli keerukamad ja võivad rohkem aega võtta. Täpne aeg tasub kinnitada pärast sõiduki tuvastamist ja varuosade valimist."
+            },
+            {
+                q: "Miks on ajamit parem vahetada teeninduses?",
+                a: "Ajami juures on olulised võllide täpne fikseerimine, ajastusmärkide korrektne kokkulangevus, õige pinge ja kontroll pärast kokkupanekut. Paigaldusviga võib põhjustada mootori ebaühtlast tööd, faasivigu, klapikahjustusi või kordusremonti."
+            }
+        ],
+        article: {
+            title: "Oluline teada enne ajami vahetust",
+            sections: [
+                {
+                    heading: "Kui hooldusajalugu on teadmata",
+                    paragraphs: [
+                        "Pärast kasutatud auto ostmist ei tasu tugineda üksnes eelmise omaniku suulisele kinnitusele. Kui hammasrihma või ajamiketi vahetuse kohta puuduvad dokumendid, tuleks ajamit eraldi kontrollida.",
+                        "See on eriti oluline mootorite puhul, kus rihma purunemine või keti ülehüpe võib kahjustada klappe, kolbe ja silindripead."
+                    ]
+                },
+                {
+                    heading: "Miks vahetatakse komplekti, mitte ühte detaili",
+                    paragraphs: [
+                        "Hammasrihma või ajamiketi eluiga ei sõltu ainult rihmast või ketist. Ajami tööd mõjutavad rullikud, pinguti, juhikud, simmerlingid ja veepump, kui see on ajamiga seotud.",
+                        "Kui kulunud seotud osa jääb vahetamata, võib uus komplekt kesta oodatust vähem või vajada korduvat lahtivõtmist."
+                    ],
+                    columns: [
+                        {
+                            title: "Kontrolli aegsasti",
+                            items: [
+                                "VIN-kood või sõiduki registreerimisnumber",
+                                "Läbisõit ja hooldusajalugu",
+                                "Ajami viimase vahetuse kuupäev",
+                                "Käivitusmüra ja faasivead"
+                            ]
+                        },
+                        {
+                            title: "Ära lükka edasi",
+                            items: [
+                                "Metalliline heli või ragin käivitamisel",
+                                "Õli- või jahutusvedeliku jäljed ajami piirkonnas",
+                                "Teadmata viimase vahetuse kuupäev",
+                                "Gaasijaotusfaasidega seotud Check Engine'i vead"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    heading: "Miks on ajastusmärgid ja käsitsi kontrollimine olulised",
+                    paragraphs: [
+                        "Ajami vahetamisel ei piisa ainult uue rihma või keti paigaldamisest. Enne esimest käivitamist on oluline võllid õigesti fikseerida, ajastusmärgid paika seada, pinget kontrollida ja mootorit käsitsi pöörata.",
+                        "See kontroll aitab veenduda, et gaasijaotusfaasid on õigesti seadistatud, ajam pöörleb liigse takistuseta ja osad on õigesti paigaldatud. See vähendab kokkupanekujärgsete vigade ja kordusremondi ohtu."
+                    ]
+                }
+            ]
+        },
+        articleSchema: {
+            headline: "Hammasrihma ja ajamiketi vahetus Tallinnas: millal kontrollida ja mida töö sisaldab",
+            description: "Kuidas aru saada, et hammasrihm või ajamikett vajab kontrolli, miks on seotud detailid olulised ja kuidas vahetus Mr.Car-is käib."
+        },
+        crossLinks: [
+            { href: "/services/mootoriremont", icon: "mdi:engine", label: "Seotud teenus", title: "Mootori remont" },
+            { href: "/services/diagnostika", icon: "mdi:car-search", label: "Seotud teenus", title: "Auto diagnostika" },
+            { href: "/services/ostueelne-kontroll", icon: "mdi:file-search-outline", label: "Seotud teenus", title: "Ostueelne kontroll" }
+        ],
+        form: {
+            title: "Hammasrihma või keti vahetuse broneerimine",
+            subtitle: "Jäta päring — täpsustame auto, mootori ja vajaliku komplekti"
+        },
+        jsonLdServiceDescription: "Hammasrihma ja ajamiketi diagnostika ning vahetus Tallinnas: komplekti valik, rullikud, pingutid, juhikud ja veepump vajaduse korral.",
+        seo: {
+            title: "Hammasrihma ja keti vahetus Tallinnas — Mr.Car",
+            description: "Hammasrihma ja ajamiketi vahetus Tallinnas: diagnostika, rullikud, pingutid ja veepump vajaduse korral. Mr.Car, Kopli 82a."
+        }
+    },
+
+    {
         key: "oil_change",
         slug: "olivahetus",
         menuParentSlug: "hooldus-diagnostika",

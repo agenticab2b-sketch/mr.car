@@ -150,10 +150,16 @@
               <iconify-icon icon="mdi:car-search" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Диагностика</span>
             </a>
-            <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
-              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Двигатель</span>
-            </a>
+            <div class="mega-menu__group">
+              <a href="/ru/services/remont-dvigatelya" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Двигатель</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/ru/services/zamena-remnya-cepi-grm" class="mega-menu__subitem">Ремень и цепь ГРМ</a>
+              </div>
+            </div>
             <div class="mega-menu__group">
               <a href="/ru/services/remont-kpp" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -261,10 +267,15 @@
               <iconify-icon icon="mdi:car-search" aria-hidden="true"></iconify-icon>
               <span>Диагностика</span>
             </a>
-            <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-              <span>Двигатель</span>
-            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+                <span>Двигатель</span>
+              </a>
+              <a href="/ru/services/zamena-remnya-cepi-grm" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Ремень и цепь ГРМ</span>
+              </a>
+            </div>
             <div class="mobile-mega-menu__group">
               <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                 <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>

@@ -140,73 +140,79 @@
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/autoremont</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/hooldus-diagnostika</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/diagnostika</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/mootoriremont</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/veermiku-remont</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/elektritood</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/kliimahooldus</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/ostueelne-kontroll</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/rehvitood</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/summutid-keevitus</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/keevitustood</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mrcar.ee/services/hammasrihma-ja-keti-vahetus</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/services/olivahetus</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -260,79 +266,85 @@
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/autoremont</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/tehobsluzhivanie-diagnostika</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/diagnostika</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/remont-dvigatelya</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/hodovaya</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/elektrika</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/klimat-konditsioner</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/webasto</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/proverka-pered-pokupkoy</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/shinomontazh</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/glushiteli-svarka</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/svarochnye-raboty</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mrcar.ee/ru/services/zamena-remnya-cepi-grm</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/ru/services/zamena-masla</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -380,79 +392,85 @@
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/general-car-repair</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/maintenance-diagnostics</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/diagnostics</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/engine-repair</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/suspension-repair</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/electrical-repair</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/ac-service</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/webasto-repair</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/pre-purchase-inspection</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/tire-service</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/exhaust-welding</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/welding-works</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mrcar.ee/en/services/timing-belt-chain-replacement</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mrcar.ee/en/services/oil-change</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

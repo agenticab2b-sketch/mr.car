@@ -176,6 +176,15 @@
             flex: 0 0 auto;
         }
 
+        .price-item__note {
+            display: block;
+            margin-top: 0.45rem;
+            color: var(--text-dimmed);
+            font-size: 0.78rem;
+            font-weight: 500;
+            line-height: 1.35;
+        }
+
         .price-item__value {
             font-family: var(--font-mono);
             color: var(--accent-primary);
@@ -422,10 +431,16 @@
               <iconify-icon icon="mdi:car-search" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Диагностика</span>
             </a>
-            <a href="/ru/services/remont-dvigatelya" class="mega-menu__item">
-              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Двигатель</span>
-            </a>
+            <div class="mega-menu__group">
+              <a href="/ru/services/remont-dvigatelya" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Двигатель</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/ru/services/zamena-remnya-cepi-grm" class="mega-menu__subitem">Ремень и цепь ГРМ</a>
+              </div>
+            </div>
             <div class="mega-menu__group">
               <a href="/ru/services/remont-kpp" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -533,10 +548,15 @@
               <iconify-icon icon="mdi:car-search" aria-hidden="true"></iconify-icon>
               <span>Диагностика</span>
             </a>
-            <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-              <span>Двигатель</span>
-            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/ru/services/remont-dvigatelya" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+                <span>Двигатель</span>
+              </a>
+              <a href="/ru/services/zamena-remnya-cepi-grm" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Ремень и цепь ГРМ</span>
+              </a>
+            </div>
             <div class="mobile-mega-menu__group">
               <a href="/ru/services/remont-kpp" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                 <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
@@ -664,52 +684,50 @@
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Ремонтные работы легкового автомобиля</span>
-                    <span class="price-item__value">43€ / час</span>
+                    <span class="price-item__value">45€ / час</span>
                 </div>
                 <!-- Shared General Items -->
                 <div class="price-item"><span class="price-item__name">Замена тормозных колодок<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1 час</span></span><span
-                        class="price-item__value">48€ (включая расходные материалы)</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1 час</span><span class="price-item__note">При электрическом стояночном тормозе дополнительно требуется компьютерная диагностика.</span></span><span
+                        class="price-item__value">48€</span></div>
                 <div class="price-item"><span class="price-item__name">Замена тормозных колодок и дисков<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span></span><span
-                        class="price-item__value">70€ (включая расходные материалы)</span></div>
-                <div class="price-item"><span class="price-item__name">Замена моторного масла и всех
-                        фильтров<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span></span><span
-                        class="price-item__value">65€ / 1 раз</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span><span class="price-item__note">При электрическом стояночном тормозе дополнительно требуется компьютерная диагностика.</span></span><span
+                        class="price-item__value">70€</span></div>
                 <div class="price-item"><span class="price-item__name">Замена моторного масла и масляного
                         фильтра<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1 час</span></span><span
-                        class="price-item__value">45€ / 1 раз</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1 час</span><span class="price-item__note">Включает сброс сервисного интервала.</span></span><span
+                        class="price-item__value">50€ (включая расходные материалы)</span></div>
+                <div class="price-item"><span class="price-item__name">Замена моторного масла и фильтров<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span><span class="price-item__note">Включает сброс сервисного интервала.</span></span><span
+                        class="price-item__value">70€ (включая расходные материалы)</span></div>
                 <div class="price-item"><span class="price-item__name">При использовании запчастей клиента к цене
                         добавляется</span><span class="price-item__value">5€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Сварочные работы</span><span
-                        class="price-item__value">48€ / час</span></div>
+                        class="price-item__value">50€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Технический осмотр автомобиля с чтением кодов
-                        ошибок (предпокупочный осмотр)</span><span class="price-item__value">55€ / 1 раз</span></div>
-                <div class="price-item"><span class="price-item__name">Технический осмотр автомобиля (предпродажный
-                        осмотр)</span><span class="price-item__value">45€ / 1 раз</span></div>
+                        ошибок (предпокупочный осмотр)</span><span class="price-item__value">80€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Осмотр ходовой части</span><span
                         class="price-item__value">25€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Компьютерная диагностика и электротехнические
-                        работы</span><span class="price-item__value">48€ / час</span></div>
+                        работы</span><span class="price-item__value">50€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Чтение / удаление кодов ошибок</span><span
-                        class="price-item__value">35€ / 1 раз</span></div>
+                        class="price-item__value">25€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Минимальная стоимость работ</span><span
-                        class="price-item__value">22€ / 1 раз</span></div>
+                        class="price-item__value">23€ / 1 раз</span></div>
 
                 <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> Расход-схождение 3D
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Регулировка передней оси</span>
-                    <span class="price-item__value">45€ / 1 раз</span>
+                    <span class="price-item__value">50€ / 1 раз</span>
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Регулировка передней и задней осей</span>
-                    <span class="price-item__value">55€ / 1 раз</span>
+                    <span class="price-item__value">60€ / 1 раз</span>
                 </div>
             </div>
 
@@ -720,52 +738,50 @@
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Ремонтные работы джипа</span>
-                    <span class="price-item__value">48€ / час</span>
+                    <span class="price-item__value">50€ / час</span>
                 </div>
                 <!-- Shared General Items -->
                 <div class="price-item"><span class="price-item__name">Замена тормозных колодок<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1 час</span></span><span
-                        class="price-item__value">53€ (включая расходные материалы)</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1 час</span><span class="price-item__note">При электрическом стояночном тормозе дополнительно требуется компьютерная диагностика.</span></span><span
+                        class="price-item__value">53€</span></div>
                 <div class="price-item"><span class="price-item__name">Замена тормозных колодок и дисков<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span></span><span
-                        class="price-item__value">77€ (включая расходные материалы)</span></div>
-                <div class="price-item"><span class="price-item__name">Замена моторного масла и всех
-                        фильтров<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span></span><span
-                        class="price-item__value">65€ / 1 раз</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span><span class="price-item__note">При электрическом стояночном тормозе дополнительно требуется компьютерная диагностика.</span></span><span
+                        class="price-item__value">75€</span></div>
                 <div class="price-item"><span class="price-item__name">Замена моторного масла и масляного
                         фильтра<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1 час</span></span><span
-                        class="price-item__value">45€ / 1 раз</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1 час</span><span class="price-item__note">Включает сброс сервисного интервала.</span></span><span
+                        class="price-item__value">50€ (включая расходные материалы)</span></div>
+                <div class="price-item"><span class="price-item__name">Замена моторного масла и фильтров<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span><span class="price-item__note">Включает сброс сервисного интервала.</span></span><span
+                        class="price-item__value">70€ (включая расходные материалы)</span></div>
                 <div class="price-item"><span class="price-item__name">При использовании запчастей клиента к цене
                         добавляется</span><span class="price-item__value">5€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Сварочные работы</span><span
-                        class="price-item__value">48€ / час</span></div>
+                        class="price-item__value">50€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Технический осмотр автомобиля с чтением кодов
-                        ошибок (предпокупочный осмотр)</span><span class="price-item__value">55€ / 1 раз</span></div>
-                <div class="price-item"><span class="price-item__name">Технический осмотр автомобиля (предпродажный
-                        осмотр)</span><span class="price-item__value">45€ / 1 раз</span></div>
+                        ошибок (предпокупочный осмотр)</span><span class="price-item__value">80€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Осмотр ходовой части</span><span
-                        class="price-item__value">25€ / 1 раз</span></div>
+                        class="price-item__value">30€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Компьютерная диагностика и электротехнические
-                        работы</span><span class="price-item__value">48€ / час</span></div>
+                        работы</span><span class="price-item__value">50€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Чтение / удаление кодов ошибок</span><span
-                        class="price-item__value">35€ / 1 раз</span></div>
+                        class="price-item__value">25€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Минимальная стоимость работ</span><span
-                        class="price-item__value">22€ / 1 раз</span></div>
+                        class="price-item__value">25€ / 1 раз</span></div>
 
                 <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> Расход-схождение 3D
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Регулировка передней оси</span>
-                    <span class="price-item__value">55€ / 1 раз</span>
+                    <span class="price-item__value">60€ / 1 раз</span>
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Регулировка передней и задней осей</span>
-                    <span class="price-item__value">65€ / 1 раз</span>
+                    <span class="price-item__value">70€ / 1 раз</span>
                 </div>
             </div>
 
@@ -776,52 +792,50 @@
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Ремонтные работы микроавтобуса</span>
-                    <span class="price-item__value">48€ / час</span>
+                    <span class="price-item__value">50€ / час</span>
                 </div>
                 <!-- Shared General Items -->
                 <div class="price-item"><span class="price-item__name">Замена тормозных колодок<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1 час</span></span><span
-                        class="price-item__value">53€ (включая расходные материалы)</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1 час</span><span class="price-item__note">При электрическом стояночном тормозе дополнительно требуется компьютерная диагностика.</span></span><span
+                        class="price-item__value">53€</span></div>
                 <div class="price-item"><span class="price-item__name">Замена тормозных колодок и дисков<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span></span><span
-                        class="price-item__value">77€ (включая расходные материалы)</span></div>
-                <div class="price-item"><span class="price-item__name">Замена моторного масла и всех
-                        фильтров<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span></span><span
-                        class="price-item__value">65€ / 1 раз</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span><span class="price-item__note">При электрическом стояночном тормозе дополнительно требуется компьютерная диагностика.</span></span><span
+                        class="price-item__value">75€</span></div>
                 <div class="price-item"><span class="price-item__name">Замена моторного масла и масляного
                         фильтра<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>Примерно 1 час</span></span><span
-                        class="price-item__value">45€ / 1 раз</span></div>
+                                aria-hidden="true"></iconify-icon>Примерно 1 час</span><span class="price-item__note">Включает сброс сервисного интервала.</span></span><span
+                        class="price-item__value">50€ (включая расходные материалы)</span></div>
+                <div class="price-item"><span class="price-item__name">Замена моторного масла и фильтров<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>Примерно 1,5 часа</span><span class="price-item__note">Включает сброс сервисного интервала.</span></span><span
+                        class="price-item__value">70€ (включая расходные материалы)</span></div>
                 <div class="price-item"><span class="price-item__name">При использовании запчастей клиента к цене
                         добавляется</span><span class="price-item__value">5€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Сварочные работы</span><span
-                        class="price-item__value">48€ / час</span></div>
+                        class="price-item__value">50€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Технический осмотр автомобиля с чтением кодов
-                        ошибок (предпокупочный осмотр)</span><span class="price-item__value">55€ / 1 раз</span></div>
-                <div class="price-item"><span class="price-item__name">Технический осмотр автомобиля (предпродажный
-                        осмотр)</span><span class="price-item__value">45€ / 1 раз</span></div>
+                        ошибок (предпокупочный осмотр)</span><span class="price-item__value">80€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Осмотр ходовой части</span><span
-                        class="price-item__value">25€ / 1 раз</span></div>
+                        class="price-item__value">30€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Компьютерная диагностика и электротехнические
-                        работы</span><span class="price-item__value">48€ / час</span></div>
+                        работы</span><span class="price-item__value">50€ / час</span></div>
                 <div class="price-item"><span class="price-item__name">Чтение / удаление кодов ошибок</span><span
-                        class="price-item__value">35€ / 1 раз</span></div>
+                        class="price-item__value">25€ / 1 раз</span></div>
                 <div class="price-item"><span class="price-item__name">Минимальная стоимость работ</span><span
-                        class="price-item__value">22€ / 1 раз</span></div>
+                        class="price-item__value">25€ / 1 раз</span></div>
 
                 <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> Расход-схождение 3D
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Регулировка передней оси</span>
-                    <span class="price-item__value">55€ / 1 раз</span>
+                    <span class="price-item__value">60€ / 1 раз</span>
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Регулировка передней и задней осей</span>
-                    <span class="price-item__value">65€ / 1 раз</span>
+                    <span class="price-item__value">70€ / 1 раз</span>
                 </div>
             </div>
 

@@ -176,6 +176,15 @@
             flex: 0 0 auto;
         }
 
+        .price-item__note {
+            display: block;
+            margin-top: 0.45rem;
+            color: var(--text-dimmed);
+            font-size: 0.78rem;
+            font-weight: 500;
+            line-height: 1.35;
+        }
+
         .price-item__value {
             font-family: var(--font-mono);
             color: var(--accent-primary);
@@ -422,10 +431,16 @@
               <iconify-icon icon="mdi:car-search" width="20" height="20" aria-hidden="true"></iconify-icon>
               <span>Diagnostics</span>
             </a>
-            <a href="/en/services/engine-repair" class="mega-menu__item">
-              <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
-              <span>Engine Repair</span>
-            </a>
+            <div class="mega-menu__group">
+              <a href="/en/services/engine-repair" class="mega-menu__item mega-menu__item--has-submenu">
+                <iconify-icon icon="mdi:engine" width="20" height="20" aria-hidden="true"></iconify-icon>
+                <span>Engine Repair</span>
+                <iconify-icon icon="mdi:chevron-right" width="18" height="18" class="mega-menu__submenu-arrow" aria-hidden="true"></iconify-icon>
+              </a>
+              <div class="mega-menu__submenu">
+                <a href="/en/services/timing-belt-chain-replacement" class="mega-menu__subitem">Timing Belt &amp; Chain</a>
+              </div>
+            </div>
             <div class="mega-menu__group">
               <a href="/en/services/transmission-repair" class="mega-menu__item mega-menu__item--has-submenu">
                 <iconify-icon icon="mdi:car-shift-pattern" width="20" height="20" aria-hidden="true"></iconify-icon>
@@ -533,10 +548,15 @@
               <iconify-icon icon="mdi:car-search" aria-hidden="true"></iconify-icon>
               <span>Diagnostics</span>
             </a>
-            <a href="/en/services/engine-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
-              <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
-              <span>Engine Repair</span>
-            </a>
+            <div class="mobile-mega-menu__group">
+              <a href="/en/services/engine-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
+                <iconify-icon icon="mdi:engine" aria-hidden="true"></iconify-icon>
+                <span>Engine Repair</span>
+              </a>
+              <a href="/en/services/timing-belt-chain-replacement" class="mobile-mega-menu__subitem" onclick="closeMobileMenu()">
+                <span>Timing Belt &amp; Chain</span>
+              </a>
+            </div>
             <div class="mobile-mega-menu__group">
               <a href="/en/services/transmission-repair" class="mobile-mega-menu__item" onclick="closeMobileMenu()">
                 <iconify-icon icon="mdi:car-shift-pattern" aria-hidden="true"></iconify-icon>
@@ -664,53 +684,51 @@
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Passenger car repair work</span>
-                    <span class="price-item__value">43€ / hour</span>
+                    <span class="price-item__value">45€ / hour</span>
                 </div>
                 <!-- Shared General Items -->
                 <div class="price-item"><span class="price-item__name">Brake pads replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
-                        class="price-item__value">48€ (includes consumables)</span></div>
+                                aria-hidden="true"></iconify-icon>About 1 hour</span><span class="price-item__note">Computer diagnostics is added for vehicles with an electric parking brake.</span></span><span
+                        class="price-item__value">48€</span></div>
                 <div class="price-item"><span class="price-item__name">Brake pads and discs replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
-                        class="price-item__value">70€ (includes consumables)</span></div>
-                <div class="price-item"><span class="price-item__name">Engine oil and all filters
-                        replacement<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
-                        class="price-item__value">65€ / once</span></div>
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span><span class="price-item__note">Computer diagnostics is added for vehicles with an electric parking brake.</span></span><span
+                        class="price-item__value">70€</span></div>
                 <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
-                        class="price-item__value">45€ / once</span></div>
+                                aria-hidden="true"></iconify-icon>About 1 hour</span><span class="price-item__note">Includes resetting the service interval.</span></span><span
+                        class="price-item__value">50€ (includes consumables)</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and filter replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span><span class="price-item__note">Includes resetting the service interval.</span></span><span
+                        class="price-item__value">70€ (includes consumables)</span></div>
                 <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
                         increases by</span><span class="price-item__value">5€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Welding works</span><span
-                        class="price-item__value">48€ / hour</span></div>
+                        class="price-item__value">50€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Technical inspection of the car with reading
-                        fault codes (pre-purchase inspection)</span><span class="price-item__value">55€ / once</span>
+                        fault codes (pre-purchase inspection)</span><span class="price-item__value">80€ / once</span>
                 </div>
-                <div class="price-item"><span class="price-item__name">Technical inspection of the car (pre-purchase
-                        inspection)</span><span class="price-item__value">45€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Chassis inspection</span><span
                         class="price-item__value">25€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Computer diagnostics and electrical
-                        work</span><span class="price-item__value">48€ / hour</span></div>
+                        work</span><span class="price-item__value">50€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Reading / clearing fault codes</span><span
-                        class="price-item__value">35€ / once</span></div>
+                        class="price-item__value">25€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Minimum work price</span><span
-                        class="price-item__value">22€ / once</span></div>
+                        class="price-item__value">23€ / once</span></div>
 
                 <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Front axle adjustment</span>
-                    <span class="price-item__value">45€ / once</span>
+                    <span class="price-item__value">50€ / once</span>
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Front and rear axle adjustment</span>
-                    <span class="price-item__value">55€ / once</span>
+                    <span class="price-item__value">60€ / once</span>
                 </div>
             </div>
 
@@ -721,53 +739,51 @@
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">SUV repair work</span>
-                    <span class="price-item__value">48€ / hour</span>
+                    <span class="price-item__value">50€ / hour</span>
                 </div>
                 <!-- Shared General Items -->
                 <div class="price-item"><span class="price-item__name">Brake pads replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
-                        class="price-item__value">53€ (includes consumables)</span></div>
+                                aria-hidden="true"></iconify-icon>About 1 hour</span><span class="price-item__note">Computer diagnostics is added for vehicles with an electric parking brake.</span></span><span
+                        class="price-item__value">53€</span></div>
                 <div class="price-item"><span class="price-item__name">Brake pads and discs replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
-                        class="price-item__value">77€ (includes consumables)</span></div>
-                <div class="price-item"><span class="price-item__name">Engine oil and all filters
-                        replacement<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
-                        class="price-item__value">65€ / once</span></div>
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span><span class="price-item__note">Computer diagnostics is added for vehicles with an electric parking brake.</span></span><span
+                        class="price-item__value">75€</span></div>
                 <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
-                        class="price-item__value">45€ / once</span></div>
+                                aria-hidden="true"></iconify-icon>About 1 hour</span><span class="price-item__note">Includes resetting the service interval.</span></span><span
+                        class="price-item__value">50€ (includes consumables)</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and filter replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span><span class="price-item__note">Includes resetting the service interval.</span></span><span
+                        class="price-item__value">70€ (includes consumables)</span></div>
                 <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
                         increases by</span><span class="price-item__value">5€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Welding works</span><span
-                        class="price-item__value">48€ / hour</span></div>
+                        class="price-item__value">50€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Technical inspection of the car with reading
-                        fault codes (pre-purchase inspection)</span><span class="price-item__value">55€ / once</span>
+                        fault codes (pre-purchase inspection)</span><span class="price-item__value">80€ / once</span>
                 </div>
-                <div class="price-item"><span class="price-item__name">Technical inspection of the car (pre-purchase
-                        inspection)</span><span class="price-item__value">45€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Chassis inspection</span><span
-                        class="price-item__value">25€ / once</span></div>
+                        class="price-item__value">30€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Computer diagnostics and electrical
-                        work</span><span class="price-item__value">48€ / hour</span></div>
+                        work</span><span class="price-item__value">50€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Reading / clearing fault codes</span><span
-                        class="price-item__value">35€ / once</span></div>
+                        class="price-item__value">25€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Minimum work price</span><span
-                        class="price-item__value">22€ / once</span></div>
+                        class="price-item__value">25€ / once</span></div>
 
                 <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Front axle adjustment</span>
-                    <span class="price-item__value">55€ / once</span>
+                    <span class="price-item__value">60€ / once</span>
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Front and rear axle adjustment</span>
-                    <span class="price-item__value">65€ / once</span>
+                    <span class="price-item__value">70€ / once</span>
                 </div>
             </div>
 
@@ -778,53 +794,51 @@
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Van repair work</span>
-                    <span class="price-item__value">48€ / hour</span>
+                    <span class="price-item__value">50€ / hour</span>
                 </div>
                 <!-- Shared General Items -->
                 <div class="price-item"><span class="price-item__name">Brake pads replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
-                        class="price-item__value">53€ (includes consumables)</span></div>
+                                aria-hidden="true"></iconify-icon>About 1 hour</span><span class="price-item__note">Computer diagnostics is added for vehicles with an electric parking brake.</span></span><span
+                        class="price-item__value">53€</span></div>
                 <div class="price-item"><span class="price-item__name">Brake pads and discs replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
-                        class="price-item__value">77€ (includes consumables)</span></div>
-                <div class="price-item"><span class="price-item__name">Engine oil and all filters
-                        replacement<span class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1.5 hours</span></span><span
-                        class="price-item__value">65€ / once</span></div>
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span><span class="price-item__note">Computer diagnostics is added for vehicles with an electric parking brake.</span></span><span
+                        class="price-item__value">75€</span></div>
                 <div class="price-item"><span class="price-item__name">Engine oil and oil filter replacement<span
                             class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
-                                aria-hidden="true"></iconify-icon>About 1 hour</span></span><span
-                        class="price-item__value">45€ / once</span></div>
+                                aria-hidden="true"></iconify-icon>About 1 hour</span><span class="price-item__note">Includes resetting the service interval.</span></span><span
+                        class="price-item__value">50€ (includes consumables)</span></div>
+                <div class="price-item"><span class="price-item__name">Engine oil and filter replacement<span
+                            class="price-item__meta"><iconify-icon icon="mdi:clock-outline"
+                                aria-hidden="true"></iconify-icon>About 1.5 hours</span><span class="price-item__note">Includes resetting the service interval.</span></span><span
+                        class="price-item__value">70€ (includes consumables)</span></div>
                 <div class="price-item"><span class="price-item__name">When using client's spare parts, the price
                         increases by</span><span class="price-item__value">5€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Welding works</span><span
-                        class="price-item__value">48€ / hour</span></div>
+                        class="price-item__value">50€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Technical inspection of the car with reading
-                        fault codes (pre-purchase inspection)</span><span class="price-item__value">55€ / once</span>
+                        fault codes (pre-purchase inspection)</span><span class="price-item__value">80€ / once</span>
                 </div>
-                <div class="price-item"><span class="price-item__name">Technical inspection of the car (pre-purchase
-                        inspection)</span><span class="price-item__value">45€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Chassis inspection</span><span
-                        class="price-item__value">25€ / once</span></div>
+                        class="price-item__value">30€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Computer diagnostics and electrical
-                        work</span><span class="price-item__value">48€ / hour</span></div>
+                        work</span><span class="price-item__value">50€ / hour</span></div>
                 <div class="price-item"><span class="price-item__name">Reading / clearing fault codes</span><span
-                        class="price-item__value">35€ / once</span></div>
+                        class="price-item__value">25€ / once</span></div>
                 <div class="price-item"><span class="price-item__name">Minimum work price</span><span
-                        class="price-item__value">22€ / once</span></div>
+                        class="price-item__value">25€ / once</span></div>
 
                 <div class="price-list__header price-list__header--spaced">
                     <iconify-icon icon="mdi:car-traction-control"></iconify-icon> 3D Wheel Alignment
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Front axle adjustment</span>
-                    <span class="price-item__value">55€ / once</span>
+                    <span class="price-item__value">60€ / once</span>
                 </div>
                 <div class="price-item">
                     <span class="price-item__name">Front and rear axle adjustment</span>
-                    <span class="price-item__value">65€ / once</span>
+                    <span class="price-item__value">70€ / once</span>
                 </div>
             </div>
 

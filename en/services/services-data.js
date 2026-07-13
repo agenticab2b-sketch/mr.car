@@ -714,6 +714,378 @@ const SERVICES = [
     },
 
     {
+        key: "timing_belt_chain",
+        slug: "timing-belt-chain-replacement",
+        menuParentSlug: "engine-repair",
+        allSlugs: { ru: "zamena-remnya-cepi-grm", ee: "hammasrihma-ja-keti-vahetus", en: "timing-belt-chain-replacement" },
+        category: "Engine & Drivetrain",
+        navTitle: "Timing Belt & Chain",
+        icon: "mdi:sync",
+        templateVariant: "service-deep-dive-v2",
+        heroTitle: "Timing Belt & Chain Replacement in Tallinn",
+        heroLead: "Timing belt and timing chain replacement in Tallinn: diagnostics, timing kit selection, rollers, tensioners, guides and water pump when needed. Mr.Car, Kopli 82a.",
+        heroImage: "/pics/timing-belt-chain-crankshaft-hero.webp",
+        heroStats: [
+            { value: "1. Timing drive", label: "We identify the system type — belt or chain — and select the correct kit for the specific engine" },
+            { value: "2. Rollers and tensioners", label: "We inspect drive components that affect service life, tension and stable timing system operation" },
+            { value: "3. VIN / registration lookup", label: "We confirm the engine, specification and required parts before work begins" }
+        ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "Symptoms" },
+            { href: "#types", icon: "mdi:engine", label: "Belt or chain" },
+            { href: "#diagnostika", icon: "mdi:stethoscope", label: "Diagnostics" },
+            { href: "#services", icon: "mdi:wrench", label: "What's included" },
+            { href: "#process", icon: "mdi:format-list-numbered", label: "How we work" },
+            { href: "#pricing", icon: "mdi:clipboard-text-clock", label: "Cost" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "FAQ" }
+        ],
+        introTitle: "Timing belt and chain replacement at Mr.Car",
+        introText: [
+            "The timing system ensures precise synchronization between the crankshaft and camshafts. Stable engine operation directly depends on the condition of the timing belt or chain, tensioners, rollers and guides.",
+            "A worn belt, stretched chain or faulty tensioner can disrupt valve timing. As a result, the engine may become difficult to start, run unevenly, lose power or suffer serious mechanical damage.",
+            "At Mr.Car, the work begins with a vehicle inspection and confirmation of the engine details. We select the timing kit using the vehicle's registration number, take the service history into account and agree the work scope with the customer in advance. When necessary, the rollers, tensioners, guides, oil seals and water pump are replaced together with the belt or chain.",
+            "Scheduled timing belt or chain replacement is controlled maintenance. It is almost always more sensible than repairing an engine after a broken belt, a jumped chain or damage to the valve train."
+        ],
+        brands: [
+            "Volkswagen / Audi / Škoda / SEAT",
+            "BMW / MINI",
+            "Mercedes-Benz",
+            "Toyota / Lexus",
+            "Ford",
+            "Volvo",
+            "Renault / Dacia / Nissan",
+            "Hyundai / Kia"
+        ],
+        urgencyBlock: {
+            icon: "mdi:alert-decagram",
+            title: "Do not postpone a timing drive inspection",
+            text: "If metallic noise appears during a cold start, the Check Engine light is on, there are valve timing faults, the service history is unknown or the mileage is approaching the timing service interval, the timing drive should be checked in advance. A broken belt or jumped chain can damage the valves, pistons and cylinder head."
+        },
+        symptomsTitle: "When should the timing drive be checked?",
+        symptoms: [
+            { icon: "mdi:counter", text: "Service mileage is approaching" },
+            { icon: "mdi:calendar-clock", text: "Belt is several years old" },
+            { icon: "mdi:volume-vibrate", text: "Noise or rattle on startup" },
+            { icon: "mdi:engine-outline", text: "Cam timing Check Engine faults" },
+            { icon: "mdi:vibrate", text: "Uneven engine operation" },
+            { icon: "mdi:oil", text: "Oil traces near the belt" },
+            { icon: "mdi:file-search-outline", text: "Unknown service history" }
+        ],
+        afterSymptomsText: "Some symptoms can also come from accessory drive components, ignition, fuel system or sensors. That is why we confirm the cause before replacing parts.",
+        detailedSymptomsTitle: "Signs of timing belt or chain wear",
+        detailedSymptoms: [
+            {
+                tone: "critical",
+                icon: "mdi:volume-vibrate",
+                title: "Metallic noise on cold start",
+                desc: "A brief rattle after startup may indicate a stretched chain or worn tensioner or guides. This symptom should be checked before the noise becomes constant."
+            },
+            {
+                tone: "critical",
+                icon: "mdi:engine-outline",
+                title: "Check Engine and timing faults",
+                desc: "Camshaft and crankshaft synchronization faults may be related to a stretched chain, a jumped timing drive, incorrect tensioner operation or shaft position sensors."
+            },
+            {
+                tone: "warning",
+                icon: "mdi:counter",
+                title: "Mileage or age is close to the service interval",
+                desc: "A timing belt is replaced according to both mileage and service life. Even with low mileage, the material loses elasticity over time."
+            },
+            {
+                tone: "warning",
+                icon: "mdi:file-search-outline",
+                title: "Unknown service history",
+                desc: "If there is no proof of timing service after purchasing the vehicle, the timing drive should be inspected separately, especially before a long journey or intensive use."
+            },
+            {
+                icon: "mdi:vibrate",
+                title: "Uneven running and hard starting",
+                desc: "Valve timing problems may appear as vibration, long starting times, unstable engine operation and hesitation during acceleration."
+            },
+            {
+                icon: "mdi:speedometer-slow",
+                title: "Loss of power and increased fuel consumption",
+                desc: "Incorrect timing drive synchronization can reduce engine efficiency. The vehicle accelerates more slowly, loses power and consumes more fuel."
+            },
+            {
+                icon: "mdi:sync-alert",
+                title: "Visible timing belt wear",
+                desc: "Cracks, delamination, wear marks or damaged belt teeth are reasons not to postpone replacement. This kind of wear often means the part is near the end of its service life."
+            },
+            {
+                icon: "mdi:oil-level",
+                title: "Traces of oil or coolant",
+                desc: "Oil or coolant in the timing area shortens the life of the belt, rollers and tensioners. The cause of the leak must be repaired before installing a new kit."
+            },
+            {
+                icon: "mdi:volume-high",
+                title: "Unusual sound from the timing drive area",
+                desc: "Whistling, humming or grinding from the drive area may indicate a worn roller, tensioner, bearing or incorrect belt tension. The assembly should be diagnosed in this case."
+            }
+        ],
+        riskStagesTitle: "What happens if timing belt or chain replacement is delayed",
+        riskStages: [
+            {
+                marker: "1",
+                title: "Related components wear faster",
+                text: "Rollers, tensioners, guides and the water pump may be operating at their limit even while the belt or chain is still functional. The longer service is postponed, the greater the load on the entire timing drive."
+            },
+            {
+                marker: "2",
+                title: "Valve timing synchronization is disrupted",
+                text: "A stretched chain, worn belt or incorrect tension can cause timing faults, unstable engine operation, hard starting, vibration and loss of power."
+            },
+            {
+                marker: "3",
+                title: "The risk of expensive engine repairs increases",
+                text: "A broken belt or jumped chain can damage the valves, pistons and cylinder head. Scheduled timing kit replacement is usually considerably less expensive than repairing the engine after a timing drive failure."
+            }
+        ],
+        engineTypesTitle: "Timing belt, timing chain and accessory belt — what is the difference",
+        engineTypes: [
+            {
+                icon: "mdi:sync",
+                title: "Timing belt",
+                desc: "The timing belt synchronizes the crankshaft and camshafts. It is replaced according to the manufacturer's service schedule, with both mileage and service life taken into account. The rollers, tensioner, oil seals and water pump are checked together with the belt if the pump is driven by the timing system.",
+                brands: ["Manufacturer's service schedule", "Timing kit", "Rollers and tensioner", "Water pump if necessary"]
+            },
+            {
+                icon: "mdi:link-variant",
+                title: "Timing chain",
+                desc: "The timing chain is designed for long service, but it also wears. Chain stretch and wear of the tensioner or guides can cause startup noise, valve timing faults and unstable engine operation. When these symptoms appear, the chain drive requires separate diagnostics.",
+                brands: ["Tensioner", "Chain guides", "Startup noise", "Timing faults"]
+            },
+            {
+                icon: "mdi:cog-outline",
+                title: "Accessory belt",
+                desc: "The accessory belt drives the alternator, air-conditioning compressor and other auxiliary components. It does not synchronize engine operation and is serviced separately from the timing belt or chain. Its condition is checked for wear, cracks, noise, tension and correct operation of the related components.",
+                brands: ["Alternator", "Air conditioning", "Accessory equipment", "Separate inspection"]
+            }
+        ],
+        diagnosticsTitle: "Timing drive diagnostics before replacement",
+        diagnosticsText: [
+            "Before replacement, it is important to determine which components actually require service. The same symptom may be related to the belt, chain, roller, tensioner, sensor, an oil leak or accessory equipment.",
+            "We confirm the vehicle details, engine, mileage, symptoms and service history. After the inspection, we agree the parts kit, work scope and schedule before repairs begin."
+        ],
+        diagnosticsChecklist: [
+            "VIN or registration number, engine and mileage",
+            "Service history and last timing belt or chain replacement",
+            "Condition of the belt, rollers, tensioner and potential leak areas",
+            "Chain and guide noise and timing faults",
+            "Need to replace the water pump, oil seals and related components",
+            "Agreement on parts, schedule and work scope"
+        ],
+        servicesListTitle: "What the work includes:",
+        servicesList: [
+            "Timing kit selection for the vehicle and engine",
+            "Timing belt replacement",
+            "Timing chain replacement",
+            "Roller, tensioner, guide and shoe replacement by condition",
+            "Water pump inspection or replacement if it is linked to the timing drive",
+            "Timing mark, tension and manual engine rotation check before test run"
+        ],
+        afterListText: "The scope depends on the specific engine. We do not promise one price for every car: first we confirm the registration number, engine and the required kit.",
+        serviceCardsTitle: "What we do",
+        serviceCards: [
+            {
+                icon: "mdi:sync",
+                title: "Timing belt kit replacement",
+                desc: "We select the correct kit for the specific engine and replace the belt, rollers and tensioner. We check the timing marks, oil seal condition and water pump if it is driven by the timing system.",
+                time: "according to the manufacturer's schedule"
+            },
+            {
+                icon: "mdi:link-variant",
+                title: "Timing chain drive service",
+                desc: "We diagnose startup noise and timing faults and inspect the chain, tensioner, guides and related components. The work scope is agreed after inspection and parts selection.",
+                time: "according to diagnostic results"
+            },
+            {
+                icon: "mdi:stethoscope",
+                title: "Timing drive diagnostics",
+                desc: "Before replacement, we check startup noise, uneven engine operation, Check Engine faults, mileage, VIN or registration number and service history.",
+                time: "before work begins"
+            },
+            {
+                icon: "mdi:water",
+                title: "Water pump and related components",
+                desc: "When access is open, we assess the water pump, oil seals, rollers, tensioners and signs of possible leaks. If necessary, replacement of related components is agreed in advance.",
+                time: "according to component condition"
+            }
+        ],
+        processTitle: "How the work is carried out",
+        processSteps: [
+            {
+                num: "01",
+                title: "Vehicle data",
+                text: "We confirm the VIN or registration number, engine, mileage, symptoms and date of the last timing service."
+            },
+            {
+                num: "02",
+                title: "Diagnostics and parts selection",
+                text: "We check the drive type, condition of accessible components, possible noises, leaks and timing faults. We select the correct kit for the specific engine."
+            },
+            {
+                num: "03",
+                title: "Work scope approval",
+                text: "We explain which parts must be replaced immediately, what depends on the condition found after disassembly, how long the work will take and which parts will be required."
+            },
+            {
+                num: "04",
+                title: "Replacement and inspection",
+                text: "We perform the replacement, check the timing marks and tension, and rotate the engine by hand to verify the timing. After assembly, we start the engine and check its operation."
+            }
+        ],
+        pricingTitle: "How the cost is calculated",
+        pricingRows: [
+            { service: "Diagnostics and kit confirmation", price: "Calculated for the specific vehicle" },
+            { service: "Timing belt replacement", price: "After confirming the engine and parts kit" },
+            { service: "Timing chain replacement", price: "After diagnostics and assessment of the work scope" },
+            { service: "Water pump, rollers, tensioners and oil seals", price: "Based on component condition and engine design" }
+        ],
+        pricingNote: "For a more accurate estimate, send the vehicle's VIN or registration number, mileage and information about the last timing service. We will confirm the engine, select the correct parts kit and agree the work scope before repairs begin.",
+        trustItems: [
+            {
+                icon: "mdi:car-search",
+                title: "Inspection first",
+                desc: "We do not replace parts blindly when a symptom may be related to another component. We first identify the cause and then propose a solution."
+            },
+            {
+                icon: "mdi:clipboard-text-clock",
+                title: "Agreement before work begins",
+                desc: "We discuss the parts kit, related components, schedule and work scope with the customer in advance."
+            },
+            {
+                icon: "mdi:shield-check",
+                title: "We inspect the entire timing drive",
+                desc: "We inspect not only the belt or chain, but also rollers, tensioners, guides, oil seals and any signs of leaks."
+            },
+            {
+                icon: "mdi:target",
+                title: "Timing mark and phase accuracy",
+                desc: "Correct locking, precise phase alignment and post-assembly checks are essential when working on the timing system. Approximate installation is unacceptable."
+            },
+            {
+                icon: "mdi:card-account-details-outline",
+                title: "Selection by VIN / registration number",
+                desc: "Before work begins, we confirm the engine, specification and correct parts kit to avoid selection errors."
+            },
+            {
+                icon: "mdi:check-decagram",
+                title: "Post-assembly inspection",
+                desc: "After replacement, we check startup, engine operation, absence of unusual noises and that the work has been completed correctly."
+            }
+        ],
+        faqTitle: "Frequently Asked Questions",
+        faqItems: [
+            {
+                q: "When should a timing belt be replaced?",
+                a: "Timing belt inspection and scheduled replacement should be considered from around 60,000 km. Some engines have a longer manufacturer interval, but the exact schedule always depends on the manufacturer, engine type, belt age, operating conditions and vehicle service history. If there is no proof of the last replacement, the belt is around five years old, there are oil traces, cracks or noises, or the car was recently purchased, the timing drive should be checked in advance."
+            },
+            {
+                q: "Does a timing chain need to be replaced?",
+                a: "A timing chain usually lasts longer than a belt and does not always have a fixed replacement interval. However, it still wears: chain stretch and worn tensioners or guides can cause metallic noise on startup, timing faults and uneven engine operation. Timing chain inspection is especially relevant from 150,000 km, or earlier if there are unusual noises, Check Engine faults or uneven engine operation."
+            },
+            {
+                q: "Can I keep driving if the chain rattles on startup?",
+                a: "Diagnostics should not be delayed. A brief metallic noise on startup may be caused by chain stretch, worn tensioners or guides, or insufficient oil pressure at the moment of startup. Continuing to drive with this symptom increases the risk of the chain jumping, incorrect valve timing and serious engine damage."
+            },
+            {
+                q: "Should the water pump be replaced with the timing belt?",
+                a: "If the water pump is driven by the timing belt or becomes accessible during disassembly, it is often sensible to replace it together with the timing kit. This avoids repeated disassembly and reduces the risk of leaks after a new belt is installed. The final decision depends on the engine design, mileage, condition of the pump and oil seals, and any signs of leakage."
+            },
+            {
+                q: "Can only the belt be replaced without rollers and the tensioner?",
+                a: "Technically, it is sometimes possible to replace only the belt, but in most cases it is better to replace the complete timing kit. Rollers, the tensioner and other components work together with the belt and also wear out. Keeping old rollers or the tensioner can shorten the life of the new belt and increase the risk of repeat repairs."
+            },
+            {
+                q: "Can the cost be confirmed in advance?",
+                a: "A preliminary estimate can be calculated after confirming the VIN or registration number, engine, mileage and service history. The final cost depends on the parts kit, engine design, access to the timing drive and whether related components also need replacement. Before work begins, we agree the parts kit, work scope, schedule and next steps of the repair with the customer."
+            },
+            {
+                q: "How does a timing belt differ from an accessory belt?",
+                a: "The timing belt synchronizes the crankshaft and camshafts inside the engine. The accessory belt drives the alternator, air-conditioning compressor and other external components. These are different systems, different belts and different types of service."
+            },
+            {
+                q: "What should I do if I do not know when the timing drive was last replaced?",
+                a: "It is best to start with a vehicle inspection and service history check. If there is no proof of replacement, the vehicle was recently purchased, the mileage is uncertain or the belt may be several years old, it is safer to inspect the timing drive in advance and schedule replacement if necessary."
+            },
+            {
+                q: "How long does timing belt or chain replacement take?",
+                a: "The time required depends on the engine, vehicle design and access to the timing drive. Timing belt replacement usually takes from several hours to one working day. Timing chain work is often more complex and may take longer. The exact time is best confirmed after identifying the vehicle and selecting the parts."
+            },
+            {
+                q: "Why is it better to have timing drive replacement performed at a workshop?",
+                a: "Timing work requires precise shaft locking, correct alignment of the timing marks, proper tension and post-assembly checks. An installation error can cause uneven engine operation, timing faults, valve damage or repeat repairs."
+            }
+        ],
+        article: {
+            title: "Important to know before timing drive replacement",
+            sections: [
+                {
+                    heading: "If service history is unknown",
+                    paragraphs: [
+                        "After buying a used car, you should not rely solely on the previous owner's verbal confirmation. If there are no documents proving timing belt or chain replacement, the timing drive should be inspected separately.",
+                        "This is especially important on engines where a broken belt or jumped chain can damage the valves, pistons and cylinder head."
+                    ]
+                },
+                {
+                    heading: "Why the complete kit is replaced instead of one part",
+                    paragraphs: [
+                        "The service life of a timing belt or chain does not depend only on the belt or chain itself. Rollers, the tensioner, guides, oil seals and the water pump, when linked to the timing drive, all affect its operation.",
+                        "Leaving a worn related component in place can shorten the life of the new kit or require the assembly to be dismantled again."
+                    ],
+                    columns: [
+                        {
+                            title: "Check in advance",
+                            items: [
+                                "Vehicle VIN or registration number",
+                                "Mileage and service history",
+                                "Date of the last timing service",
+                                "Startup noise and cam timing faults"
+                            ]
+                        },
+                        {
+                            title: "Do not delay",
+                            items: [
+                                "Metallic noise or rattle on startup",
+                                "Oil or coolant traces in the timing area",
+                                "Unknown date of the last replacement",
+                                "Check Engine faults related to valve timing"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    heading: "Why timing marks and a manual rotation check matter",
+                    paragraphs: [
+                        "Timing drive replacement involves more than simply fitting a new belt or chain. The shafts must be locked correctly, the timing marks aligned, the tension checked and the engine rotated by hand before the first startup.",
+                        "This check confirms that the valve timing is set correctly, the drive rotates without unnecessary resistance and all components are installed properly. It reduces the risk of post-assembly errors and repeat repairs."
+                    ]
+                }
+            ]
+        },
+        articleSchema: {
+            headline: "Timing belt and chain replacement in Tallinn: when diagnostics are needed and what the work includes",
+            description: "How to tell if a timing belt or timing chain needs inspection, why related parts matter and how replacement works at Mr.Car."
+        },
+        crossLinks: [
+            { href: "/en/services/engine-repair", icon: "mdi:engine", label: "Related service", title: "Engine Repair" },
+            { href: "/en/services/diagnostics", icon: "mdi:car-search", label: "Related service", title: "Vehicle Diagnostics" },
+            { href: "/en/services/pre-purchase-inspection", icon: "mdi:file-search-outline", label: "Related service", title: "Pre-purchase Inspection" }
+        ],
+        form: {
+            title: "Book Timing Belt or Chain Replacement",
+            subtitle: "Leave a request — we will confirm the vehicle, engine and required parts kit"
+        },
+        jsonLdServiceDescription: "Timing belt and timing chain diagnostics and replacement in Tallinn: kit selection, rollers, tensioners, guides and water pump when needed.",
+        seo: {
+            title: "Timing Belt & Chain Replacement in Tallinn — Mr.Car",
+            description: "Timing belt and timing chain replacement in Tallinn: diagnostics, rollers, tensioners and water pump when needed. Mr.Car, Kopli 82a."
+        }
+    },
+
+    {
         key: "oil_change",
         slug: "oil-change",
         menuParentSlug: "maintenance-diagnostics",
