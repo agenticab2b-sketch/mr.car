@@ -721,13 +721,13 @@ const SERVICES = [
         icon: "mdi:sync",
         templateVariant: "service-deep-dive-v2",
         heroTitle: "Hammasrihma ja keti vahetus Tallinnas",
-        heroLead: "Hammasrihma ja ajamiketi vahetus Tallinnas: diagnostika, komplekti valik, rullikud, pingutid ja veepump vajaduse korral. Mr.Car, Kopli 82a.",
+        heroLead: "Diagnoosime ja hooldame hammasrihm- ja kettajameid. Valime komplekti VIN-koodi või registreerimisnumbri järgi, lepime tööde mahu eelnevalt kokku ning teostame vahetuse vastavalt tootja nõuetele.",
         heroImage: "/pics/timing-belt-chain-crankshaft-hero.webp",
         extraStyles: ["/services/timing-belt-chain.css?v=1"],
         heroStats: [
-            { value: "Hammasrihma-/ketiajam", label: "Teeme kindlaks süsteemi tüübi — rihm või kett — ja valime konkreetsele mootorile sobiva komplekti" },
+            { value: "Hammasrihm või kett", label: "Teeme kindlaks süsteemi tüübi — rihm või kett — ja valime konkreetsele mootorile sobiva komplekti" },
             { value: "Rullikud ja pingutid", label: "Kontrollime ajami osi, mis mõjutavad kasutusiga, pinget ja gaasijaotusmehhanismi stabiilset tööd" },
-            { value: "Valik VIN-i / reg. numbri järgi", label: "Täpsustame mootori, varustuse ja vajalikud detailid enne tööde algust" }
+            { value: "Valik VIN-koodi või reg. numbri järgi", label: "Täpsustame mootori, varustuse ja vajalikud detailid enne tööde algust" }
         ],
         localNav: [
             { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "Sümptomid" },

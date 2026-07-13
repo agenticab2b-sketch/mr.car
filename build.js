@@ -22,7 +22,7 @@ const path = require('path');
 
 const ROOT = __dirname;
 const SR_ONLY_INLINE_STYLE = 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
-const GLOBAL_STYLE_VERSION = '7';
+const GLOBAL_STYLE_VERSION = '8';
 
 // Load partials
 const FORM_PARTIAL = fs.readFileSync(path.join(ROOT, 'partials/form.html'), 'utf8');

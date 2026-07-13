@@ -689,7 +689,7 @@ const SERVICES = [
         icon: "mdi:sync",
         templateVariant: "service-deep-dive-v2",
         heroTitle: "Замена ремня и цепи ГРМ в Таллинне",
-        heroLead: "Замена ремня и цепи ГРМ в Таллинне: диагностика, комплект ГРМ, ролики, натяжители, помпа. Mr.Car на Kopli 82a.",
+        heroLead: "Диагностируем и обслуживаем ременные и цепные приводы ГРМ. Подбираем комплект по VIN или регистрационному номеру, согласовываем объём работ заранее и выполняем замену согласно требованиям производителя.",
         heroImage: "/pics/timing-belt-chain-crankshaft-hero.webp",
         extraStyles: ["/services/timing-belt-chain.css?v=1"],
         heroStats: [

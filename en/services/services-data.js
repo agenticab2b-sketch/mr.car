@@ -723,7 +723,7 @@ const SERVICES = [
         icon: "mdi:sync",
         templateVariant: "service-deep-dive-v2",
         heroTitle: "Timing Belt & Chain Replacement in Tallinn",
-        heroLead: "Timing belt and timing chain replacement in Tallinn: diagnostics, timing kit selection, rollers, tensioners, guides and water pump when needed. Mr.Car, Kopli 82a.",
+        heroLead: "We diagnose and service timing belt and timing chain drives. We select the correct kit by VIN or registration number, agree the scope of work in advance, and perform the replacement according to the manufacturer’s requirements.",
         heroImage: "/pics/timing-belt-chain-crankshaft-hero.webp",
         extraStyles: ["/services/timing-belt-chain.css?v=1"],
         heroStats: [
