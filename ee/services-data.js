@@ -1092,49 +1092,401 @@ const SERVICES = [
         category: "Hooldus",
         navTitle: "Õli ja filtrite vahetus",
         icon: "mdi:oil",
-        heroTitle: "Õlivahetus ja filtrid",
-        heroLead: "Kiire õlivahetus tootja lubade järgi sobiva õliga. Alates €45 koos filtriga.",
+        templateVariant: "service-deep-dive-v2",
+        heroTitle: "Mootoriõli ja filtrite vahetus Tallinnas",
+        heroLead: "Valime mootoriõli tootja nõuete järgi, vahetame õli- ja muud filtrid ning kontrollime taset ja lekkeid. Töö hind on sõltuvalt hoolduse mahust 45 € või 65 €.",
         heroImage: "/pics/oil-change-hero.webp",
-        introTitle: "Õlivahetus Mr.Car-is",
+        heroStats: [
+            { value: "45 €", label: "Töö: mootoriõli + õlifilter · umbes 1 tund" },
+            { value: "65 €", label: "Töö: mootoriõli + kõik filtrid · umbes 1,5 tundi" },
+            { value: "Auto järgi", label: "Viskoossus, spetsifikatsioon, kogus ja filtrid" }
+        ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:calendar-alert", label: "Millal vahetada" },
+            { href: "#types", icon: "mdi:air-filter", label: "Filtrid" },
+            { href: "#diagnostika", icon: "mdi:oil-temperature", label: "Õli valik" },
+            { href: "#services", icon: "mdi:format-list-checks", label: "Teenuse valikud" },
+            { href: "#process", icon: "mdi:timeline-check-outline", label: "Töö käik" },
+            { href: "#pricing", icon: "mdi:cash-multiple", label: "Hinnad" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "Küsimused" }
+        ],
+        introTitle: "Õige õlivahetus algab sobiva õli valimisest",
         introText: [
-            "Õlivahetus on põhiline, kuid kriitiliselt oluline protseduur. Vana õli kaotab kaitsevõime ja hakkab mootorit seestpoolt lagundama.",
-            "Valime õli rangelt vastavalt su auto tootja lubadele. Kasutame Motul, Castrol, Mobil 1 ja teisi kvaliteetseid brände."
+            "Mootoriõli määrib koormatud detaile, juhib soojust ära, seob mustust ja aitab kaitsta mootorit korrosiooni eest. Aja jooksul lisandid ammenduvad, õli oksüdeerub ja selle kaitsevõime väheneb — eriti lühikeste sõitude, sagedaste külmkäivituste ja linnaliikluse korral.",
+            "Kõigile autodele sobivat ühtset vahetusvälpa ei ole. Lähtume konkreetse mudeli hooldusjuhendist, viimasest vahetusest möödunud ajast, läbisõidust ja tegelikest kasutustingimustest. Raskete tingimuste korral võib olla mõistlik tootja maksimaalset välpa lühendada.",
+            "Mr.Car-is ei valita õli ainult SAE viskoossuse järgi. Kontrollime autotootja nõutud heakskiitu, ACEA/API spetsifikatsiooni, mootori tüüpi ja koodi, turbo ning heitgaaside järeltöötluse olemasolu ja õiget täitekogust."
         ],
-        symptomsTitle: "Millal vahetada õli?",
-        symptoms: [
-            { icon: "mdi:counter", text: "Iga 10 000–15 000 km" },
-            { icon: "mdi:oil-level", text: "Tume õli mõõdupulga peal" },
-            { icon: "mdi:engine-outline", text: "Põleb õlinäidik" },
-            { icon: "mdi:volume-high", text: "Mootor töötab valjemalt" },
-            { icon: "mdi:calendar-check", text: "Aasta möödas vahetusest" },
-            { icon: "mdi:gas-station", text: "Suurenenud kütusekulu" }
+        brands: ["Audi", "BMW", "Ford", "Honda", "Hyundai", "Kia", "Mercedes-Benz", "Škoda", "Toyota", "Volkswagen", "Volvo"],
+        urgencyBlock: {
+            icon: "mdi:oil-level",
+            title: "Kas punane õlirõhu tuli süttis? Seiska mootor",
+            text: "See ei ole tavaline hooldusmeeldetuletus. Peatu ohutult, seiska mootor ja kontrolli õlitaset auto juhendi järgi. Kui tase on madal, tuli ei kustu või mootorist kostab ebatavalist heli, ära sõitu jätka: mootor vajab diagnostikat, mitte lihtsalt korralist õlivahetust."
+        },
+        detailedSymptomsTitle: "Millal on aeg õli vahetada või kontrolli tulla",
+        detailedSymptoms: [
+            {
+                icon: "mdi:counter",
+                title: "Tähtaeg või läbisõit on täis",
+                desc: "Lähtuda tuleb tootja hooldusvälbast ja auto hooldusteatest, mitte ühest universaalsest kilomeetrinumbrist.",
+                tone: "warning"
+            },
+            {
+                icon: "mdi:calendar-clock",
+                title: "Läbisõit on väike, kuid aeg täis",
+                desc: "Õli vananeb ka seistes. Olulised on kalender, niiskus, kondensaat ja külmkäivituste arv."
+            },
+            {
+                icon: "mdi:city-variant-outline",
+                title: "Lühikesed linnasõidud",
+                desc: "Ummikud, sagedased käivitused ja sõidud ilma täieliku soojenemiseta on rasked kasutustingimused ning kiirendavad õli saastumist."
+            },
+            {
+                icon: "mdi:history",
+                title: "Hooldusajalugu pole teada",
+                desc: "Pärast kasutatud auto ostu tasub luua selge lähtepunkt: kontrollida taset ja lekkeid ning teha vajalik baashooldus."
+            },
+            {
+                icon: "mdi:oil-level",
+                title: "Õlitase langeb",
+                desc: "Kontrollida tuleb lekkeid ja õlikulu. Juurdevalamine taastab taseme, kuid ei asenda põhjuse diagnostikat ega korralist hooldust."
+            },
+            {
+                icon: "mdi:alert-outline",
+                title: "Kõrbelõhn, lekked või müra",
+                desc: "Need märgid vajavad ülevaatust. Ainuüksi õlivahetus ei kõrvalda leket, mehaanilist kulumist ega määrdesüsteemi riket."
+            }
         ],
-        afterSymptomsText: "Õlivahetus võtab 20–30 minutit. Ära säästa õlilt — see on odavam kui mootori remont.",
-        servicesListTitle: "Mida teeme:",
-        servicesList: [
-            "Õli valik tootja lubade järgi",
-            "Mootoriõli vahetus",
-            "Õlifiltri vahetus",
-            "Õhufiltri vahetus",
-            "Salongifiltri vahetus",
-            "Kütusefiltri vahetus",
-            "Kõigi vedelike taseme kontroll"
+        riskStagesTitle: "Mis juhtub, kui hooldust liiga kaua edasi lükata",
+        riskStages: [
+            {
+                marker: "1",
+                title: "Õli vananeb",
+                text: "Oksüdatsioon, kütus, niiskus ja põlemisjäägid muudavad õli omadusi ning lisandid kuluvad järk-järgult."
+            },
+            {
+                marker: "2",
+                title: "Filter kogub mustust",
+                text: "Õlifilter püüab osakesi, kuid selle maht ja kasutusiga pole lõputud. Seepärast vahetatakse filter koos õliga."
+            },
+            {
+                marker: "3",
+                title: "Mootori kaitse väheneb",
+                text: "Määrimine ja soojuse ärajuhtimine halvenevad ning setete ja koormatud detailide kiirenenud kulumise oht kasvab."
+            },
+            {
+                marker: "4",
+                title: "Tagajärjed muutuvad kallimaks",
+                text: "Turbo, ketiajam, laagrid ja teised täpsed sõlmed on õli kvaliteedi ja õlirõhu suhtes tundlikud."
+            }
         ],
-        afterListText: "Hind alates €45 (õli + filter). Täpne hind sõltub mootori mahust ja õli margist.",
-        promoBanner: { enabled: false },
+        engineTypesTitle: "Millised filtrid kuuluvad plaanilise hoolduse juurde",
+        engineTypes: [
+            {
+                icon: "mdi:filter-cog-outline",
+                title: "Õlifilter",
+                desc: "Püüab määrdesüsteemis olevaid osakesi. Vahetatakse iga mootoriõli vahetusega; vajaduse korral paigaldame ka uue tihendi või tühjenduskorgi seibi.",
+                brands: ["Alati koos õliga"]
+            },
+            {
+                icon: "mdi:air-filter",
+                title: "Mootori õhufilter",
+                desc: "Kaitseb mootorit tolmu ja abrasiivsete osakeste eest. Vahetus sõltub hooldusvälbast ja kasutustingimustest; seisukorda hinnatakse eraldi.",
+                brands: ["Välba ja seisukorra järgi"]
+            },
+            {
+                icon: "mdi:car-seat-heater",
+                title: "Salongifilter",
+                desc: "Puhastab salongi sisenevat õhku. Ummistunud filter võib vähendada õhuvoolu, koormata ventilaatorit ja soodustada klaaside uduseks muutumist.",
+                brands: ["Tava- või aktiivsöefilter"]
+            },
+            {
+                icon: "mdi:gas-station-outline",
+                title: "Kütusefilter",
+                desc: "Kaitseb kütusesüsteemi. Välp ja tööviis sõltuvad tugevalt mootorist; mõnel autol on filter moodulisse integreeritud ega kuulu tavapärasesse hoolduskomplekti.",
+                brands: ["Eriti tähtis diislil"]
+            },
+            {
+                icon: "mdi:blur",
+                title: "DPF ei ole hooldusfilter",
+                desc: "Tahmafilter kuulub väljalaskesüsteemi. Seda ei vahetata tavalise õlihoolduse käigus; diisel vajab DPF-iga sobiva heakskiiduga mootoriõli.",
+                brands: ["Vajadusel eraldi diagnostika"]
+            },
+            {
+                icon: "mdi:car-shift-pattern",
+                title: "Käigukasti filter",
+                desc: "Automaat- või variaatorkäigukasti filter ei kuulu mootoriõli vahetusse. Käigukastiõli, filter, õlivann ja töömeetod valitakse käigukasti tüübi järgi eraldi.",
+                brands: ["Eraldi käigukastihooldus"]
+            }
+        ],
+        diagnosticsTitle: "Kuidas valime õli ja kulumaterjalid",
+        diagnosticsText: [
+            "Sama viskoossus kanistril ei tähenda veel, et õli sobib konkreetsele mootorile. Valiku aluseks on autotootja nõue just sellele autole ja mootorile.",
+            "Täpse komplekti ja hinnapakkumise jaoks saada registreerimisnumber või VIN, mudel, aasta, mootor ning võimaluse korral praegune õli ja läbisõit pärast viimast vahetust."
+        ],
+        diagnosticsChecklist: [
+            "Autotootja heakskiit ja ACEA/API spetsifikatsioon",
+            "Konkreetse mootori SAE viskoossusklass",
+            "Mootori tüüp, kood ja täitekogus",
+            "Turbo, DPF/GPF ja tuhasisalduse nõuded",
+            "Õige õlifilter, tihend ja tühjenduskorgi seib",
+            "Õhu-, salongi- ja kütusefiltri hooldusvälp ning saadavus",
+            "Kliendi toodud materjalide sobivuse kontroll enne tööd"
+        ],
+        serviceCardsTitle: "Hoolduse valikud",
+        serviceCards: [
+            {
+                icon: "mdi:oil",
+                title: "Mootoriõli ja õlifilter",
+                desc: "Vana õli eemaldamine, õlifiltri ja ettenähtud tihendi vahetus, täitmine, käivitus ning taseme ja lekete kontroll.",
+                price: "Töö 45 €",
+                time: "umbes 1 tund"
+            },
+            {
+                icon: "mdi:filter-multiple-outline",
+                title: "Mootoriõli ja kõik filtrid",
+                desc: "Baashooldus koos autole ettenähtud ja eelnevalt kokku lepitud õhu-, salongi- ning kütusefiltrite vahetusega.",
+                price: "Töö 65 €",
+                time: "umbes 1,5 tundi"
+            },
+            {
+                icon: "mdi:car-search-outline",
+                title: "Hooldus pärast auto ostu",
+                desc: "Kontrollime ajalugu ja seisukorda ning koostame mõistliku lähtehoolduse nimekirja ilma korras detaile automaatselt vahetamata.",
+                price: "Kokkulepitud mahu järgi",
+                time: "pärast auto andmete kontrolli"
+            },
+            {
+                icon: "mdi:package-variant-closed-check",
+                title: "Kliendi materjalidega",
+                desc: "Võid tuua oma õli ja filtrid. Kontrollime enne tööd heakskiitu, kogust ja sobivust; töö hinnale lisandub 5 € iga töötunni kohta.",
+                price: "+5 €/tund tööle",
+                time: "materjalid kontrollime ette"
+            }
+        ],
+        processTitle: "Kuidas õli- ja filtrivahetus toimub",
+        processSteps: [
+            {
+                num: "01",
+                title: "Täpsustame auto ja hooldusajaloo",
+                text: "Kontrollime mootoriversiooni, läbisõitu, eelmise vahetuse aega, kasutustingimusi ja hooldusteateid."
+            },
+            {
+                num: "02",
+                title: "Valime sobiva komplekti",
+                text: "Määrame just sellele versioonile sobiva heakskiidu, viskoossuse, õlikoguse, filtrid ja vajalikud tihendid."
+            },
+            {
+                num: "03",
+                title: "Lepime hinna kokku",
+                text: "Näitame enne töö algust eraldi töö ja materjalide maksumust, selgitame paketi sisu ning kooskõlastame lisatööd."
+            },
+            {
+                num: "04",
+                title: "Eemaldame õli ja vahetame filtrid",
+                text: "Eemaldame vana õli konstruktsioonile sobival viisil ning paigaldame uue filtri ja ettenähtud tihendi."
+            },
+            {
+                num: "05",
+                title: "Täidame ja kontrollime",
+                text: "Lisame arvutatud koguse, käivitame mootori, kontrollime õlirõhu näitu, lekkeid ja korrigeerime taset tootja juhendi järgi."
+            },
+            {
+                num: "06",
+                title: "Salvestame hoolduse",
+                text: "Vajadusel nullime hooldusnäidu, anname järgmise hoolduse orientiiri ning suuname vana õli ja filtrid nõuetekohasesse käitlusse."
+            }
+        ],
+        pricingTitle: "Töö hinnad",
+        pricingRows: [
+            { service: "Mootoriõli ja õlifiltri vahetus", price: "45 €" },
+            { service: "Mootoriõli ja kõigi filtrite vahetus", price: "65 €" },
+            { service: "Töö kliendi varuosade ja materjalidega", price: "+5 €/tund" }
+        ],
+        pricingNote: "45 € tähendab ligikaudu 1 tunni tööd ning 65 € ligikaudu 1,5 tunni tööd. Õli, filtrid, tihendid ja muud materjalid lisanduvad eraldi. Materjalidega lõpphind sõltub heakskiidust, mootori õlikogusest ja filtrikomplektist. Hinnad sisaldavad käibemaksu 24%; lisatööd teeme ainult pärast kooskõlastust.",
+        trustItems: [
+            {
+                icon: "mdi:book-check-outline",
+                title: "Auto nõuete järgi",
+                desc: "Valime õli heakskiidu ja konkreetse mootoriversiooni, mitte ainult viskoossuse järgi."
+            },
+            {
+                icon: "mdi:receipt-text-check-outline",
+                title: "Selge hinnapakkumine",
+                desc: "Enne tööd näitame eraldi töö, materjalid ja kokkulepitud hoolduse sisu."
+            },
+            {
+                icon: "mdi:car-clock",
+                title: "Hooldusmärge",
+                desc: "Vajadusel nullime hooldusnäidu ja anname järgmise hoolduse orientiiri."
+            },
+            {
+                icon: "mdi:check-decagram-outline",
+                title: "Kontroll pärast käivitust",
+                desc: "Kontrollime õlitaset ning filtri, korgi ja nähtavate ühenduste lekkekindlust."
+            },
+            {
+                icon: "mdi:package-variant-closed-check",
+                title: "Sinu materjalide kontroll",
+                desc: "Enne paigaldust kontrollime õli, filtrite ja tihendite heakskiitu, kogust ja sobivust."
+            },
+            {
+                icon: "mdi:recycle-variant",
+                title: "Nõuetekohane käitlus",
+                desc: "Vana õli ja saastunud filtrid ei lähe olmejäätmete hulka."
+            }
+        ],
+        faqTitle: "Korduma kippuvad küsimused õli- ja filtrivahetuse kohta",
+        faqItems: [
+            {
+                q: "Kui sageli tuleb mootoriõli vahetada?",
+                a: "Järgi konkreetse mudeli tootja läbisõidu- ja ajavälpa, sõltuvalt sellest, kumb saabub varem. Lühikeste sõitude, külmkäivituste, ummikute, suure koormuse või rohke tühikäigu korral võib olla mõistlik välpa lühendada."
+            },
+            {
+                q: "Kas väikese aastase läbisõidu korral tuleb õli ikkagi vahetada?",
+                a: "Jah, kui tootja kalendripõhine tähtaeg on täis. Harvadel lühikestel sõitudel ei pruugi mootor täielikult soojeneda ning õlisse võib koguneda niiskust ja kütust."
+            },
+            {
+                q: "Kas õlifilter tuleb alati koos õliga vahetada?",
+                a: "Jah. Vanas filtris on juba mustus ja kasutatud õli ning selle ressurss on arvestatud kindla hooldusvälba jaoks. Uus filter aitab värskel õlil töötada puhtamas süsteemis."
+            },
+            {
+                q: "Mida sisaldab 45 € töö?",
+                a: "Mootoriõli ja õlifiltri vahetust, ettenähtud tihendi paigaldust, täitmist, käivitust ning taseme ja lekete kontrolli. Orienteeruv aeg on 1 tund. Õli, filter ja muud materjalid lisanduvad eraldi."
+            },
+            {
+                q: "Mida sisaldab 65 € töö?",
+                a: "Mootoriõli ja autole ettenähtud, eelnevalt kokku lepitud filtrikomplekti vahetust. Orienteeruv aeg on 1,5 tundi. Filtrite loend ja materjalide hind sõltuvad mudelist ning hooldusjuhendist."
+            },
+            {
+                q: "Kas õli ja filtrid sisalduvad hinnas?",
+                a: "Ei. 45 € ja 65 € on töö hinnad. Õli, filtrid, tühjenduskorgi seib ja muud tihendid arvutatakse pärast auto järgi valimist eraldi. Kõik hinnad sisaldavad käibemaksu 24%."
+            },
+            {
+                q: "Kas võin tuua oma õli ja filtrid?",
+                a: "Jah. Kontrollime enne heakskiitu, kogust ja varuosakoode. Kehtiva hinnakirja järgi lisandub kliendi materjalide kasutamisel töö hinnale 5 € iga töötunni kohta."
+            },
+            {
+                q: "Kuidas teada, milline õli minu autole sobib?",
+                a: "Kõige olulisem on autotootja heakskiit konkreetsele mootorile. Seejärel arvestatakse SAE, ACEA/API, kliimat, DPF/GPF-i ja muid omadusi. Täpseks valikuks saada registreerimisnumber või VIN."
+            },
+            {
+                q: "Kas tume õli tähendab, et see tuleb kohe vahetada?",
+                a: "Mitte tingimata. Õli võib eriti diiselmootoris kiiresti tumeneda, sest seob põlemisjääke. Otsus tehakse aja, läbisõidu, taseme, seisukorra ja tootja nõuete, mitte ainult mõõtepulgal nähtava värvi järgi."
+            },
+            {
+                q: "Kas punase õlitulega võib edasi sõita?",
+                a: "Edasisõit võib olla ohtlik, sest tuli viitab tavaliselt õlirõhu probleemile. Peatu ohutult ja seiska mootor. Kui tuli pärast taseme kontrolli ei kustu, vajad puksiiri või töökoja juhiseid."
+            },
+            {
+                q: "Kas turbo- või diiselmootoril on erinõuded?",
+                a: "Jah. Turbo sõltub stabiilsest sobiva õli juurdevoolust ning DPF-iga diisel nõuab sageli kindla tuhasisalduse ja heakskiiduga õli. Vale toode võib lühendada nii mootori kui heitgaasisüsteemi eluiga."
+            },
+            {
+                q: "Kas mootorit tuleb iga õlivahetuse ajal pesta?",
+                a: "Ei. Mootori loputus ei ole iga vahetuse kohustuslik osa. Otsus sõltub ajaloost, mootori seisukorrast, saastumisest ja valitud meetodist; tugev loputus ilma vajaduseta võib olla ebasoovitav."
+            },
+            {
+                q: "Mida teha, kui hooldusajalugu ei ole teada?",
+                a: "Alusta õlitaseme, lekete ja auto seisukorra kontrollist ning vali õli ja filtrid tehase nõuete järgi. Edasist välpa on kindlam arvestada dokumenteeritud vahetusest, mitte proovida vana graafikut ära arvata."
+            },
+            {
+                q: "Kui kaua hooldus kestab?",
+                a: "Hinnakirja orientiir on umbes 1 tund õli ja õlifiltri ning umbes 1,5 tundi õli ja kõigi filtrite vahetuseks. Tegelik aeg sõltub konstruktsioonist, põhjakaitsest, ligipääsust ja kokkulepitud lisatöödest."
+            }
+        ],
+        article: {
+            title: "Kuidas õli ja filtrid autot kaitsevad",
+            sections: [
+                {
+                    heading: "Miks mootoriõli vananeb",
+                    paragraphs: [
+                        "Töötavas mootoris läbib õli korduvalt kuumi ja koormatud piirkondi. See puutub kokku põlemisjääkide, niiskuse ja mikroosakestega ning ei pruugi lühikestel sõitudel täielikult soojeneda. Seetõttu sõltub õli eluiga lisaks kilomeetritele ka ajast ja kasutusviisist.",
+                        "Värske õli ei paranda mehaanilist leket, madalat õlirõhku ega liigset õlikulu. Kui tase kiiresti langeb või tekivad suits, kõrbelõhn või metalliline heli, tuleb kõigepealt põhjus diagnoosida."
+                    ]
+                },
+                {
+                    heading: "Millised on rasked kasutustingimused",
+                    columns: [
+                        {
+                            title: "Linnaliiklus",
+                            items: [
+                                "Lühikesed sõidud ilma täieliku soojenemiseta",
+                                "Ummikud ja rohke tühikäik",
+                                "Sagedased külmkäivitused"
+                            ]
+                        },
+                        {
+                            title: "Suur koormus",
+                            items: [
+                                "Haagise vedu ja raske koorem",
+                                "Tolmused teed ja kõrge temperatuur",
+                                "Intensiivne või sportlik sõit"
+                            ]
+                        },
+                        {
+                            title: "Aastaaeg ja seismine",
+                            items: [
+                                "Pakane ja suured temperatuurimuutused",
+                                "Harvad sõidud ja pikad seisuperioodid",
+                                "Palju töötunde väikese läbisõidu juures"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    heading: "Miks on oluline tootja heakskiit",
+                    paragraphs: [
+                        "SAE kirjeldab viskoossusklassi, kuid ei asenda autotootja nõudeid. Kahel 5W-30 õlil võivad olla erinevad lisandid, tuhasisaldus ja sobivus mootoriga. Seetõttu kontrollitakse esmalt heakskiitu ning alles siis valitakse lubatud spetsifikatsiooni seest sobiv toode.",
+                        "Õlisid ei ole mõistlik põhjuseta segada. Hädaolukorras on ohutu taseme taastamine sobiva tootega esmatähtis, kuid plaanilise hoolduse ajal tasub kasutada kokkulepitud õli ja märkida see hooldusajalukku."
+                    ]
+                },
+                {
+                    heading: "Mida vahetatakse koos õliga",
+                    paragraphs: [
+                        "Õlifilter vahetatakse alati. Õhu-, salongi- ja kütusefiltril on oma välp ning see sõltub auto konstruktsioonist. Kontrollime hooldusjuhendit ja lepime komplekti ette kokku, et pakett „kõik filtrid” tähendaks kindlat nimekirja.",
+                        "Tahmafilter DPF ei kuulu tavapäraste vahetatavate hooldusfiltrite hulka. Selle puhul on tähtsad korras regenereerimissüsteem, rikete diagnostika ja tootja nõutud low-SAPS õli."
+                    ]
+                }
+            ]
+        },
+        articleSchema: {
+            headline: "Õli- ja filtrivahetus Tallinnas: välp, õli valik ja hoolduse käik",
+            description: "Kuidas määrata mootoriõli vahetusvälpa, valida õige heakskiit, milliseid filtreid vahetada ja mida Mr.Car-i hooldus sisaldab."
+        },
+        crossLinks: [
+            {
+                href: "/services/hooldus-diagnostika",
+                icon: "mdi:car-cog",
+                label: "Plaaniline hooldus",
+                title: "Tehnohooldus ja diagnostika"
+            },
+            {
+                href: "/services/mootoriremont",
+                icon: "mdi:engine-outline",
+                label: "Kui mootor kulutab õli või teeb müra",
+                title: "Mootori diagnostika ja remont"
+            },
+            {
+                href: "/services/diagnostika",
+                icon: "mdi:car-connected",
+                label: "Kui hoiatustuli põleb",
+                title: "Auto arvutidiagnostika"
+            }
+        ],
         ctaSection: {
-            title: "Aeg õlivahetuseks?",
-            text: "Tule ilma broneerimiseta või reserveeri aeg — vahetus 20 minutiga.",
+            title: "Valime õli ja filtrid enne sinu saabumist",
+            text: "Saada registreerimisnumber või VIN, mudel ja mootor — kontrollime nõudeid, arvutame töö ning materjalide hinna ja pakume aega.",
             phoneText: "Helista: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Õlivahetuse broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            title: "Broneeri õli- ja filtrivahetus",
+            subtitle: "Lisa auto number ja läbisõit — nii saame materjalid täpsemalt valida"
         },
+        jsonLdServiceDescription: "Mootoriõli, õli-, õhu-, salongi- ja kütusefiltrite vahetus Tallinnas autotootja nõuete järgi.",
         seo: {
-            title: "Õlivahetus Tallinnas — Mr.Car | alates €45",
-            description: "Õlivahetus ja filtrid Tallinnas. Valik tootja lubade järgi. Motul, Castrol, Mobil 1. Alates €45. Kopli 82a. +372 5646 1210"
+            title: "Õli ja filtrite vahetus Tallinnas — Mr.Car",
+            description: "Õli- ja filtrivahetus Tallinnas tootja nõuete järgi. Töö: õli + õlifilter 45 €, õli + kõik filtrid 65 €. Hinnad sisaldavad KM 24%."
         }
     },
 

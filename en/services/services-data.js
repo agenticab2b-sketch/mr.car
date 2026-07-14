@@ -1094,49 +1094,401 @@ const SERVICES = [
         category: "Maintenance",
         navTitle: "Oil & Filter Change",
         icon: "mdi:oil",
-        heroTitle: "Oil & Filter Change",
-        heroLead: "Quick oil change according to manufacturer specs with correct matching. From €45 including filter.",
+        templateVariant: "service-deep-dive-v2",
+        heroTitle: "Engine Oil & Filter Change in Tallinn",
+        heroLead: "We select engine oil to the manufacturer's requirements, replace the oil and other filters, then check the level and for leaks. Labour is €45 or €65 depending on the service package.",
         heroImage: "/pics/oil-change-hero.webp",
-        introTitle: "Oil Change at Mr.Car",
+        heroStats: [
+            { value: "€45", label: "Labour: engine oil + oil filter · about 1 hour" },
+            { value: "€65", label: "Labour: engine oil + all filters · about 1.5 hours" },
+            { value: "Vehicle-specific", label: "Viscosity, specification, volume and filters" }
+        ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:calendar-alert", label: "When to change" },
+            { href: "#types", icon: "mdi:air-filter", label: "Filter guide" },
+            { href: "#diagnostika", icon: "mdi:oil-temperature", label: "Oil selection" },
+            { href: "#services", icon: "mdi:format-list-checks", label: "Service options" },
+            { href: "#process", icon: "mdi:timeline-check-outline", label: "Process" },
+            { href: "#pricing", icon: "mdi:cash-multiple", label: "Prices" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "FAQ" }
+        ],
+        introTitle: "A proper oil change starts with the correct specification",
         introText: [
-            "An oil change is a basic yet critically important procedure. Old oil loses its protective properties and starts to degrade the engine from the inside.",
-            "We select oil strictly according to your car manufacturer's approvals. We use Motul, Castrol, Mobil 1, and other high-quality brands."
+            "Engine oil lubricates loaded components, carries away heat, holds contaminants in suspension and helps protect the engine from corrosion. Additives are consumed over time and the oil oxidises, reducing its ability to protect — especially during short trips, frequent cold starts and urban driving.",
+            "There is no single replacement interval for every car. We use the service schedule for the specific model, time and mileage since the last change, and real operating conditions. Under severe conditions, the maximum interval stated by the manufacturer may need to be shortened.",
+            "At Mr.Car, oil is not selected by SAE viscosity alone. We check the vehicle manufacturer's required approval, ACEA/API specification, engine type and code, turbocharging and exhaust after-treatment systems, and the correct fill volume."
         ],
-        symptomsTitle: "When to change oil?",
-        symptoms: [
-            { icon: "mdi:counter", text: "Every 10,000 – 15,000 km" },
-            { icon: "mdi:oil-level", text: "Dark oil on dipstick" },
-            { icon: "mdi:engine-outline", text: "Oil pressure light is on" },
-            { icon: "mdi:volume-high", text: "Engine runs louder" },
-            { icon: "mdi:calendar-check", text: "Year since last change" },
-            { icon: "mdi:gas-station", text: "Increased fuel consumption" }
+        brands: ["Audi", "BMW", "Ford", "Honda", "Hyundai", "Kia", "Mercedes-Benz", "Škoda", "Toyota", "Volkswagen", "Volvo"],
+        urgencyBlock: {
+            icon: "mdi:oil-level",
+            title: "Red oil-pressure light on? Stop the engine",
+            text: "This is not a routine service reminder. Pull over safely, switch off the engine and check the level as described in the owner's manual. If the level is low, the light stays on or the engine makes an unusual noise, do not keep driving: the engine needs diagnosis, not just a scheduled oil change."
+        },
+        detailedSymptomsTitle: "When to change the oil or have the car checked",
+        detailedSymptoms: [
+            {
+                icon: "mdi:counter",
+                title: "The time or mileage is due",
+                desc: "Use the manufacturer's schedule and the vehicle's service reminder, not one universal mileage figure for every engine.",
+                tone: "warning"
+            },
+            {
+                icon: "mdi:calendar-clock",
+                title: "Low mileage, but the time limit is due",
+                desc: "Oil also ages with time. The calendar interval, moisture, condensation and number of cold starts all matter."
+            },
+            {
+                icon: "mdi:city-variant-outline",
+                title: "Frequent short urban trips",
+                desc: "Traffic, repeated starts and journeys without full warm-up are severe conditions and accelerate contamination."
+            },
+            {
+                icon: "mdi:history",
+                title: "The service history is unknown",
+                desc: "After buying a used car, establish a clear baseline: check the level and leaks, then carry out the required basic maintenance."
+            },
+            {
+                icon: "mdi:oil-level",
+                title: "The oil level keeps falling",
+                desc: "Leaks and oil consumption need to be investigated. Topping up restores the level but does not replace diagnosis or scheduled servicing."
+            },
+            {
+                icon: "mdi:alert-outline",
+                title: "Burning smell, leaks or noise",
+                desc: "These signs require inspection. An oil change alone will not repair a leak, mechanical wear or a lubrication-system fault."
+            }
         ],
-        afterSymptomsText: "Oil change takes 20-30 minutes. Don't save on oil — it's cheaper than an engine repair.",
-        servicesListTitle: "What we do:",
-        servicesList: [
-            "Oil selection by manufacturer approvals",
-            "Engine oil drain and refill",
-            "Oil filter replacement",
-            "Air filter replacement",
-            "Cabin filter replacement",
-            "Fuel filter replacement",
-            "All fluid level checks"
+        riskStagesTitle: "What happens when servicing is delayed too long",
+        riskStages: [
+            {
+                marker: "1",
+                title: "The oil ages",
+                text: "Oxidation, fuel, moisture and combustion by-products alter the oil, while its additive package is gradually depleted."
+            },
+            {
+                marker: "2",
+                title: "The filter accumulates contaminants",
+                text: "The oil filter traps particles, but its capacity and service life are finite. This is why it is replaced with the engine oil."
+            },
+            {
+                marker: "3",
+                title: "Engine protection declines",
+                text: "Lubrication and heat transfer become less effective, increasing the risk of deposits and accelerated wear under load."
+            },
+            {
+                marker: "4",
+                title: "The consequences become costly",
+                text: "Turbochargers, timing-chain systems, bearings and other precision components depend on correct oil quality and pressure."
+            }
         ],
-        afterListText: "Price from €45 (oil + filter). Exact cost depends on engine size and oil brand.",
-        promoBanner: { enabled: false },
+        engineTypesTitle: "Filters associated with scheduled maintenance",
+        engineTypes: [
+            {
+                icon: "mdi:filter-cog-outline",
+                title: "Oil filter",
+                desc: "Captures particles in the lubrication system. It is replaced at every engine-oil change; where specified, we also fit a new seal or drain-plug washer.",
+                brands: ["Always with the oil"]
+            },
+            {
+                icon: "mdi:air-filter",
+                title: "Engine air filter",
+                desc: "Protects the engine from dust and abrasive particles. Replacement depends on the schedule and operating conditions; its condition is assessed separately.",
+                brands: ["By schedule and condition"]
+            },
+            {
+                icon: "mdi:car-seat-heater",
+                title: "Cabin filter",
+                desc: "Cleans air entering the cabin. A blocked filter can reduce airflow, increase blower load and contribute to window misting.",
+                brands: ["Standard or activated carbon"]
+            },
+            {
+                icon: "mdi:gas-station-outline",
+                title: "Fuel filter",
+                desc: "Protects the fuel system. Its interval and procedure vary significantly by engine; on some cars it is integrated into a module and is not part of a routine service kit.",
+                brands: ["Especially important on diesels"]
+            },
+            {
+                icon: "mdi:blur",
+                title: "The DPF is not a service filter",
+                desc: "The diesel particulate filter is part of the exhaust system. It is not replaced during a normal oil service; a diesel with a DPF needs oil carrying the correct approval.",
+                brands: ["Diagnosed separately if needed"]
+            },
+            {
+                icon: "mdi:car-shift-pattern",
+                title: "Transmission filter",
+                desc: "An automatic or CVT filter is not part of an engine-oil change. Transmission fluid, pan, filter and procedure are selected separately for the gearbox type.",
+                brands: ["Separate transmission service"]
+            }
+        ],
+        diagnosticsTitle: "How we select the oil and service parts",
+        diagnosticsText: [
+            "Matching viscosity on the container does not, by itself, make an oil suitable for a particular engine. The manufacturer's requirement for that exact vehicle and engine takes priority.",
+            "For an accurate parts list and estimate, send the registration number or VIN, model, year and engine, plus the current oil and mileage since the last change if known."
+        ],
+        diagnosticsChecklist: [
+            "Vehicle-manufacturer approval and ACEA/API specification",
+            "Correct SAE viscosity grade for the engine variant",
+            "Engine type, code and oil-fill capacity",
+            "Turbo, DPF/GPF and ash-content requirements",
+            "Correct oil filter, seal and drain-plug washer",
+            "Schedule and availability of the air, cabin and fuel filters",
+            "Compatibility check for customer-supplied materials before work"
+        ],
+        serviceCardsTitle: "Service options",
+        serviceCards: [
+            {
+                icon: "mdi:oil",
+                title: "Engine oil and oil filter",
+                desc: "Drain used oil, replace the oil filter and specified seal, refill, start the engine, then check the level and for leaks.",
+                price: "€45 labour",
+                time: "about 1 hour"
+            },
+            {
+                icon: "mdi:filter-multiple-outline",
+                title: "Engine oil and all filters",
+                desc: "The basic oil service plus the agreed set of air, cabin and fuel filters specified for the vehicle.",
+                price: "€65 labour",
+                time: "about 1.5 hours"
+            },
+            {
+                icon: "mdi:car-search-outline",
+                title: "Service after buying a car",
+                desc: "We review the history and condition, then define a sensible maintenance baseline without automatically replacing serviceable parts.",
+                price: "By agreed scope",
+                time: "after checking the vehicle data"
+            },
+            {
+                icon: "mdi:package-variant-closed-check",
+                title: "Customer-supplied materials",
+                desc: "You may bring your own oil and filters. We check approval, volume and fitment first; €5 is added to the labour rate for each hour worked.",
+                price: "+€5/hour labour",
+                time: "materials checked in advance"
+            }
+        ],
+        processTitle: "How the oil and filter change is carried out",
+        processSteps: [
+            {
+                num: "01",
+                title: "Confirm the vehicle and history",
+                text: "We check the engine variant, mileage, date of the last change, operating conditions and any service messages."
+            },
+            {
+                num: "02",
+                title: "Select the correct service kit",
+                text: "We identify the approval, viscosity, oil volume, filters and seals required for that exact version."
+            },
+            {
+                num: "03",
+                title: "Agree the estimate",
+                text: "Before work starts, labour and materials are itemised, the package is explained and any additional work is approved."
+            },
+            {
+                num: "04",
+                title: "Drain the oil and replace filters",
+                text: "The used oil is removed in a manner appropriate for the design, then the new filter and specified seal are installed."
+            },
+            {
+                num: "05",
+                title: "Refill and verify",
+                text: "We add the calculated volume, start the engine, check the oil-pressure indication and leaks, and set the level using the manufacturer's procedure."
+            },
+            {
+                num: "06",
+                title: "Record the service",
+                text: "Where applicable, we reset the service indicator, provide the next-service reference and send used oil and filters for proper disposal."
+            }
+        ],
+        pricingTitle: "Labour prices",
+        pricingRows: [
+            { service: "Engine oil and oil-filter replacement", price: "€45" },
+            { service: "Engine oil and all-filter replacement", price: "€65" },
+            { service: "Work using customer-supplied parts and materials", price: "+€5/hour" }
+        ],
+        pricingNote: "€45 represents approximately 1 hour of labour and €65 approximately 1.5 hours. Oil, filters, seals and other materials are charged separately. The total including materials depends on the approval, engine capacity and filter set. Prices include 24% VAT; additional work is carried out only after approval.",
+        trustItems: [
+            {
+                icon: "mdi:book-check-outline",
+                title: "Matched to the vehicle",
+                desc: "We select by approval and exact engine variant, not viscosity alone."
+            },
+            {
+                icon: "mdi:receipt-text-check-outline",
+                title: "Clear estimate",
+                desc: "Labour, materials and the agreed service scope are itemised before work begins."
+            },
+            {
+                icon: "mdi:car-clock",
+                title: "Service record",
+                desc: "Where applicable, we reset the service indicator and provide the next-service reference."
+            },
+            {
+                icon: "mdi:check-decagram-outline",
+                title: "Checks after start-up",
+                desc: "We verify the oil level and inspect the filter, drain plug and visible connections for leaks."
+            },
+            {
+                icon: "mdi:package-variant-closed-check",
+                title: "Your materials checked",
+                desc: "Before installation, we verify the approval, quantity and fitment of the oil, filters and seals."
+            },
+            {
+                icon: "mdi:recycle-variant",
+                title: "Responsible disposal",
+                desc: "Used oil and contaminated filters are kept out of general household waste."
+            }
+        ],
+        faqTitle: "Frequently asked questions about oil and filter changes",
+        faqItems: [
+            {
+                q: "How often should engine oil be changed?",
+                a: "Follow the time and mileage interval specified for the exact model, whichever comes first. Short trips, frequent cold starts, congestion, heavy loads or high engine hours may justify a shorter interval."
+            },
+            {
+                q: "Should oil be changed if the car covers little mileage in a year?",
+                a: "Yes, when the manufacturer's calendar interval has expired. On infrequent short journeys the engine may not warm fully, allowing moisture and fuel to accumulate in the oil."
+            },
+            {
+                q: "Must the oil filter be changed with the oil?",
+                a: "Yes. The old filter already contains contaminants and used oil, and its capacity is designed for a defined service interval. A new filter lets the fresh oil operate in a cleaner system."
+            },
+            {
+                q: "What is included in the €45 labour charge?",
+                a: "Engine-oil and oil-filter replacement, installation of the specified seal, refill, start-up, and oil-level and leak checks. The guide time is 1 hour. Oil, the filter and other materials are charged separately."
+            },
+            {
+                q: "What is included in the €65 labour charge?",
+                a: "Engine-oil replacement and the agreed set of service filters specified for the vehicle. The guide time is 1.5 hours. The filter list and material price depend on the model and service schedule."
+            },
+            {
+                q: "Are the oil and filters included in these prices?",
+                a: "No. €45 and €65 are labour prices. Oil, filters, a drain-plug washer and other seals are calculated separately after selection for the vehicle. All prices include 24% VAT."
+            },
+            {
+                q: "Can I bring my own oil and filters?",
+                a: "Yes. We first check the approval, quantity and part numbers. Under the current price list, customer-supplied materials add €5 to the labour rate for each hour worked."
+            },
+            {
+                q: "How do I know which oil my car needs?",
+                a: "The vehicle manufacturer's approval for the exact engine is the primary requirement. SAE, ACEA/API, climate, DPF/GPF and other features are then considered. Send the registration number or VIN for accurate selection."
+            },
+            {
+                q: "Does dark oil mean it needs immediate replacement?",
+                a: "Not on its own. Oil can darken quickly as it holds combustion by-products, particularly in a diesel. Decisions should use time, mileage, level, condition and vehicle requirements, not dipstick colour alone."
+            },
+            {
+                q: "Can I drive with the red oil warning light on?",
+                a: "Continuing to drive may be dangerous because the light usually indicates an oil-pressure problem. Stop safely and switch off the engine. If the light remains on after the level is checked, arrange recovery or ask the workshop for guidance."
+            },
+            {
+                q: "Do turbocharged or diesel engines need special oil?",
+                a: "Yes. A turbo depends on a stable supply of suitable oil, while a diesel with a DPF often requires a particular approval and ash level. The wrong product can shorten the life of both the engine and the exhaust-treatment system."
+            },
+            {
+                q: "Should the engine be flushed at every oil change?",
+                a: "No. Flushing is not an automatic part of every oil change. The decision depends on service history, engine condition, contamination and the method proposed; an aggressive flush without a clear need may be undesirable."
+            },
+            {
+                q: "What should I do if the service history is unknown?",
+                a: "Start by checking the oil level, leaks and vehicle condition, then select oil and filters to the factory requirements. Future intervals are best counted from a documented service rather than guessing the old schedule."
+            },
+            {
+                q: "How long does the service take?",
+                a: "The price-list guide is about 1 hour for oil and the oil filter, and about 1.5 hours for oil and all filters. Actual time depends on design, undertrays, access and any additional agreed work."
+            }
+        ],
+        article: {
+            title: "How oil and filters protect your vehicle",
+            sections: [
+                {
+                    heading: "Why engine oil ages",
+                    paragraphs: [
+                        "In a running engine, oil repeatedly passes through hot, heavily loaded areas. It comes into contact with combustion by-products, moisture and microscopic particles, and may not warm fully on short journeys. Oil life therefore depends on time and operating pattern as well as kilometres.",
+                        "Fresh oil will not repair a mechanical leak, low oil pressure or excessive consumption. If the level falls quickly, or smoke, a burning smell or metallic noise appears, the cause should be diagnosed first."
+                    ]
+                },
+                {
+                    heading: "What counts as severe operating conditions",
+                    columns: [
+                        {
+                            title: "Urban use",
+                            items: [
+                                "Short trips without full warm-up",
+                                "Congestion and extended idling",
+                                "Frequent cold starts"
+                            ]
+                        },
+                        {
+                            title: "High load",
+                            items: [
+                                "Towing and heavy loads",
+                                "Dusty roads and high temperatures",
+                                "Intensive or performance driving"
+                            ]
+                        },
+                        {
+                            title: "Season and storage",
+                            items: [
+                                "Freezing weather and large temperature swings",
+                                "Infrequent use and long periods parked",
+                                "High engine hours with low mileage"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    heading: "Why the manufacturer approval matters",
+                    paragraphs: [
+                        "SAE describes a viscosity grade, but it does not replace the vehicle manufacturer's requirements. Two 5W-30 oils can have different additive packages, ash content and engine compatibility. We therefore verify the approval first and then choose a suitable product within the permitted specification.",
+                        "Mixing oils without a reason is best avoided. In an emergency, restoring a safe level with a compatible product takes priority, but during scheduled maintenance it is better to use an agreed oil and record it in the vehicle's history."
+                    ]
+                },
+                {
+                    heading: "What is changed with the oil",
+                    paragraphs: [
+                        "The oil filter is always replaced. Air, cabin and fuel filters have their own schedules and depend on vehicle design. We check the schedule and agree the set in advance so that an ‘all filters’ package refers to a defined list, not an open-ended service.",
+                        "A diesel particulate filter is not a routine replaceable service filter. It depends on a functioning regeneration system, fault diagnosis when required and low-SAPS oil wherever the manufacturer specifies it."
+                    ]
+                }
+            ]
+        },
+        articleSchema: {
+            headline: "Oil and filter change in Tallinn: intervals, oil selection and service process",
+            description: "How to determine the engine-oil interval, select the correct approval, decide which filters to replace and understand the Mr.Car service."
+        },
+        crossLinks: [
+            {
+                href: "/en/services/maintenance-diagnostics",
+                icon: "mdi:car-cog",
+                label: "Scheduled servicing",
+                title: "Vehicle maintenance and diagnostics"
+            },
+            {
+                href: "/en/services/engine-repair",
+                icon: "mdi:engine-outline",
+                label: "If the engine uses oil or makes noise",
+                title: "Engine diagnosis and repair"
+            },
+            {
+                href: "/en/services/diagnostics",
+                icon: "mdi:car-connected",
+                label: "If a warning light is on",
+                title: "Vehicle computer diagnostics"
+            }
+        ],
         ctaSection: {
-            title: "Time for an oil change?",
-            text: "Come by without an appointment or book a time — 20-minute change.",
+            title: "Let us select the oil and filters before you arrive",
+            text: "Send the registration number or VIN, model and engine — we will check the requirements, prepare a labour and materials estimate and offer an appointment.",
             phoneText: "Call: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Book Oil Change",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            title: "Book an oil and filter change",
+            subtitle: "Add the vehicle number and mileage so we can select the materials accurately"
         },
+        jsonLdServiceDescription: "Engine oil, oil-filter, air-filter, cabin-filter and fuel-filter replacement in Tallinn to vehicle-manufacturer requirements.",
         seo: {
-            title: "Oil Change in Tallinn — Mr.Car | from €45",
-            description: "Oil and filter change in Tallinn. Selection by manufacturer specs. Motul, Castrol, Mobil 1. From €45. Kopli 82a. +372 5646 1210"
+            title: "Oil & Filter Change in Tallinn — Mr.Car",
+            description: "Oil and filter change in Tallinn to manufacturer requirements. Labour: oil + oil filter €45; oil + all filters €65. Prices include 24% VAT."
         }
     },
 
