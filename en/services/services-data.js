@@ -661,55 +661,354 @@ const SERVICES = [
         category: "Engine & Drivetrain",
         navTitle: "Engine Repair",
         icon: "mdi:engine",
-        heroTitle: "Engine Repair & Overhaul",
-        heroLead: "Major engine overhaul from micro-cracks to full rebuild. Precision machining up to 0.01 mm.",
+        templateVariant: "service-deep-dive-v2",
+        heroTitle: "Engine Repair in Tallinn",
+        heroLead: "Diagnostics and repair for petrol and diesel engines, including internal-combustion engines in hybrid vehicles — from warning lights, overheating and oil consumption to timing drives, cylinder-head work and major mechanical repairs.",
         heroImage: "/pics/engine-repair-hero.webp",
-        introTitle: "Engine Repair Services at Mr.Car",
+        heroStats: [
+            { value: "OBD scan + inspection", label: "Electronic fault finding supported by visual and basic mechanical checks" },
+            { value: "Petrol / diesel / hybrid", label: "Engine diagnostics and repair across a broad range of powertrains" },
+            { value: "Agreed repair plan", label: "We explain the findings and approve the scope before work starts" }
+        ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "Symptoms" },
+            { href: "#types", icon: "mdi:engine", label: "Engine types" },
+            { href: "#diagnostika", icon: "mdi:stethoscope", label: "Diagnostics" },
+            { href: "#services", icon: "mdi:wrench", label: "Repairs" },
+            { href: "#process", icon: "mdi:format-list-numbered", label: "Our process" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "FAQ" },
+            { href: "#article", icon: "mdi:book-open-variant", label: "Advice" }
+        ],
+        introTitle: "Engine diagnostics and repair at Mr.Car",
         introText: [
-            "The engine is the heart of your car. Oil consumption, knocking sounds, or loss of compression are signals that the motor needs professional help. We don't diagnose 'by ear' — we use endoscopy and compression testing.",
-            "Mr.Car performs a full cycle of engine repairs: from gasket and timing belt replacements to piston group overhauls. We use original parts and high-quality alternatives with a guarantee."
+            "Engine faults rarely remain isolated. Excessive oil consumption can lead to accelerated wear, overheating can damage the head gasket and cylinder head, and an unresolved misfire may also harm the exhaust system and catalytic converter.",
+            "At Mr.Car, engine repair starts with diagnosis. We identify the likely cause, explain the available repair options and agree the scope before work begins — whether the vehicle needs a targeted repair or more extensive mechanical work."
         ],
-        symptomsTitle: "How to tell if your engine needs repair?",
+        brands: [
+            "VW / Audi",
+            "BMW",
+            "Mercedes-Benz",
+            "Toyota",
+            "Honda",
+            "Ford",
+            "Volvo",
+            "Renault / Nissan",
+            "Hyundai / Kia",
+            "Škoda / SEAT"
+        ],
+        urgencyBlock: {
+            icon: "mdi:alert-decagram",
+            title: "Some engine symptoms need immediate attention",
+            text: "A flashing engine warning light, overheating, low oil pressure or a pronounced metallic knock can indicate a serious fault. Stop the engine when it is safe to do so and seek advice rather than risking further damage by continuing to drive."
+        },
+        symptomsTitle: "Signs that your engine needs attention",
         symptoms: [
-            { icon: "mdi:oil", text: "High oil consumption" },
-            { icon: "mdi:volume-high", text: "Knocking and strange noises" },
+            { icon: "mdi:oil", text: "Excessive oil consumption" },
+            { icon: "mdi:volume-high", text: "Knocking, rattling or other unusual noises" },
             { icon: "mdi:speedometer-slow", text: "Loss of power" },
-            { icon: "mdi:smoke-detector-variant", text: "Smoke from the exhaust" },
+            { icon: "mdi:smoke-detector-variant", text: "Unusual exhaust smoke" },
             { icon: "mdi:thermometer-alert", text: "Engine overheating" },
-            { icon: "mdi:engine-off-outline", text: "Unstable idle" },
+            { icon: "mdi:engine-off-outline", text: "Rough or unstable idle" },
             { icon: "mdi:water-alert", text: "Oil or coolant leaks" },
-            { icon: "mdi:vibrate", text: "Engine vibrations" }
+            { icon: "mdi:vibrate", text: "Misfiring or excessive vibration" }
         ],
-        afterSymptomsText: "If you notice any of these signs — book a diagnostic. Timely repair saves the engine from replacement.",
+        afterSymptomsText: "If any of these symptoms appear, arrange an inspection before the fault develops further. Early diagnosis usually keeps the repair scope clearer and more manageable.",
+        detailedSymptomsTitle: "When to book an engine diagnostic",
+        detailedSymptoms: [
+            {
+                tone: "critical",
+                icon: "mdi:engine-outline",
+                title: "The engine warning light is on",
+                desc: "If the light is flashing or the engine is running roughly, have the vehicle checked promptly. The cause may lie in the ignition or fuel system, a sensor fault or the engine’s mechanical condition."
+            },
+            {
+                tone: "critical",
+                icon: "mdi:thermometer-alert",
+                title: "The engine is overheating",
+                desc: "A rising temperature gauge, coolant loss or a cooling fan that runs unusually often calls for checks of the cooling system, head gasket and cylinder head."
+            },
+            {
+                tone: "warning",
+                icon: "mdi:oil",
+                title: "Oil consumption or low oil pressure",
+                desc: "Frequent top-ups, visible leaks or an oil-pressure warning may point to failed seals or gaskets, lubrication problems or internal engine wear."
+            },
+            {
+                icon: "mdi:vibrate",
+                title: "Misfire, vibration or rough running",
+                desc: "Hesitation under acceleration and an uneven idle can be caused by ignition, fuelling or air-supply faults, but low compression can produce similar symptoms."
+            },
+            {
+                icon: "mdi:volume-vibrate",
+                title: "Knocking, rattling or timing-drive noise",
+                desc: "A new noise on start-up or at idle should not be dismissed as a characteristic of the engine. It is safer to inspect the timing drive, valve train and ancillary components before damage occurs."
+            },
+            {
+                icon: "mdi:weather-fog",
+                title: "Smoke or an unusual exhaust smell",
+                desc: "Blue, white or black smoke can help narrow the search to oil burning, coolant ingress, incorrect fuelling, injector trouble or a turbocharger fault."
+            }
+        ],
+        riskStagesTitle: "What can happen when an engine fault is left unresolved",
+        riskStages: [
+            {
+                marker: "1",
+                title: "An intermittent symptom becomes persistent",
+                text: "A fault that first appears only on a cold start or under load begins to affect the car more often and in normal driving."
+            },
+            {
+                marker: "2",
+                title: "Related systems are affected",
+                text: "A relatively small engine fault can place extra strain on the catalytic converter, turbocharger, cooling system, exhaust or ancillary equipment."
+            },
+            {
+                marker: "3",
+                title: "The repair becomes more involved",
+                text: "Once the fault reaches the cylinder head, cylinders or timing drive, both the repair time and the likely cost increase. Diagnosing the cause early is usually the better option."
+            }
+        ],
+        engineTypesTitle: "Engine types we work with",
+        engineTypes: [
+            {
+                icon: "mdi:fuel",
+                title: "Petrol engines",
+                desc: "Naturally aspirated and turbocharged engines: ignition, oil consumption, timing drives, cooling, intake systems and engine-management sensors.",
+                brands: ["TSI / TFSI", "BMW N20 / B48", "M270 / M274", "EcoBoost", "Toyota 2ZR"]
+            },
+            {
+                icon: "mdi:gas-station",
+                title: "Diesel engines",
+                desc: "Common-rail injection, EGR, DPF, turbocharging, timing belt and chain drives, injectors and compression-related faults.",
+                brands: ["2.0 / 3.0 TDI", "BMW N47 / B47", "OM651 / OM654", "dCi", "TDCi"]
+            },
+            {
+                icon: "mdi:battery-charging",
+                title: "Hybrid powertrains",
+                desc: "Work on the combustion engine within a hybrid powertrain, including mechanical repairs, cooling, ignition and servicing. High-voltage system repairs are outside this service scope.",
+                brands: ["Toyota Hybrid", "Lexus Hybrid", "BMW iPerformance", "Kia / Hyundai HEV"]
+            }
+        ],
+        diagnosticsTitle: "Accurate diagnosis comes before parts replacement",
+        diagnosticsText: "A warning light or drivability symptom does not identify the failed component by itself. We combine electronic fault finding, relevant measurements and a visual inspection to establish the underlying cause rather than treating only the symptom.",
+        diagnosticsChecklist: [
+            "Read diagnostic trouble codes and assess live engine data",
+            "Check ignition, fuel delivery and relevant engine-management sensors",
+            "Measure compression and assess the engine’s basic mechanical condition where required",
+            "Inspect for oil, coolant and vacuum leaks and check the cooling system",
+            "Inspect the timing drive, ancillary components and the source of unusual noises",
+            "Explain the findings clearly and agree the appropriate next step"
+        ],
         servicesListTitle: "Our engine repair services:",
         servicesList: [
-            "Engine endoscopy and defect detection",
-            "Timing belt / chain replacement",
-            "Cylinder head gasket replacement",
-            "Piston group overhaul",
-            "Valve grinding and replacement",
-            "Stem seal replacement",
-            "Turbocharger repair",
-            "Engine mount replacement"
+            "Engine diagnostics and fault finding",
+            "Engine oil and filter replacement",
+            "Timing belt and timing chain replacement",
+            "Head-gasket replacement and cylinder-head work",
+            "Piston, cylinder and internal engine repairs",
+            "Valve-train repairs",
+            "Related turbocharger, boost and intake-system work",
+            "Engine mounts and ancillary components"
         ],
-        afterListText: "We provide a 12-month warranty on all work. Cost is calculated after inspection — you know the final price in advance.",
+        afterListText: "The work required depends on the cause of the fault. If inspection or strip-down reveals more than one viable repair route, we set out the options separately and explain the difference before proceeding.",
+        serviceCardsTitle: "Engine work we carry out",
+        serviceCards: [
+            {
+                featured: true,
+                icon: "mdi:stethoscope",
+                title: "Engine diagnostics",
+                desc: "Initial assessment of fault codes, live data and reported symptoms, followed by a clear recommendation for the next step.",
+                time: "typically 1–2 hours"
+            },
+            {
+                icon: "mdi:oil",
+                title: "Engine oil and filters",
+                desc: "Routine engine servicing with vehicle-specific oil and filter selection, followed by checks of fluid levels and leaks.",
+                time: "often completed the same day"
+            },
+            {
+                featured: true,
+                icon: "mdi:sync",
+                title: "Timing belt and timing chain",
+                desc: "Inspection and replacement of timing-drive components, with the parts package and any related work agreed in advance.",
+                time: "depends on engine and scope"
+            },
+            {
+                icon: "mdi:layers-outline",
+                title: "Head gasket and cylinder-head work",
+                desc: "Overheating diagnosis, cylinder-head removal and refitting, checks for distortion and the associated repair work.",
+                time: "confirmed after inspection"
+            },
+            {
+                icon: "mdi:piston",
+                title: "Internal engine repairs",
+                desc: "Mechanical repairs for excessive oil consumption, low compression, knocking or wear affecting the pistons, rings and cylinder bores.",
+                time: "assessed individually"
+            },
+            {
+                icon: "mdi:turbocharger",
+                title: "Boost and intake-system work",
+                desc: "Fault finding and related repairs for smoke, loss of power and air- or oil-supply issues on turbocharged engines.",
+                time: "following diagnosis"
+            }
+        ],
+        processTitle: "How the repair process works",
+        processSteps: [
+            {
+                num: "01",
+                title: "Vehicle check-in and symptom review",
+                text: "We record the concern, ask when and under what conditions it occurs, and review the available service history."
+            },
+            {
+                num: "02",
+                title: "Diagnosis and fault confirmation",
+                text: "We use inspection and relevant measurements to confirm the fault instead of relying on assumptions."
+            },
+            {
+                num: "03",
+                title: "Repair plan and approval",
+                text: "We explain what needs attention now, what may be deferred and which repair options are available before agreeing the scope."
+            },
+            {
+                num: "04",
+                title: "Repair and final checks",
+                text: "After the work, we check start-up and running, stored fault codes, fluid levels and leaks, and engine behaviour under the relevant conditions."
+            }
+        ],
         promoBanner: {
-            enabled: true,
-            text: "Free engine endoscopy when booking a repair"
+            enabled: false
         },
+        trustItems: [
+            {
+                icon: "mdi:shield-check",
+                title: "Diagnosis first",
+                desc: "We do not recommend extensive engine work without evidence of the underlying fault."
+            },
+            {
+                icon: "mdi:clipboard-text-clock",
+                title: "Scope agreed in advance",
+                desc: "Before work begins, we discuss the planned repair, the risks and what further strip-down may reveal."
+            },
+            {
+                icon: "mdi:car-wrench",
+                title: "One workshop",
+                desc: "Diagnostics, routine servicing and most engine repairs can be handled in one place."
+            }
+        ],
+        faqTitle: "Frequently asked questions",
+        faqItems: [
+            {
+                q: "What should I do if the engine warning light comes on?",
+                a: "If the light is flashing, the engine is misfiring or the car has lost power, arrange a diagnostic promptly and avoid unnecessary driving. The cause may be a sensor, but it may also involve the ignition, fuel system or an internal mechanical fault."
+            },
+            {
+                q: "Can I keep driving if the engine is overheating?",
+                a: "If the temperature continues to rise, especially when a red warning appears, stop safely and switch the engine off. Continuing to drive can quickly damage the head gasket, cylinder head and cooling system."
+            },
+            {
+                q: "Why is my engine using oil?",
+                a: "Possible causes include an external leak, worn seals, a crankcase-ventilation fault, the turbocharger or internal engine wear. Diagnosis is needed before deciding which components require attention."
+            },
+            {
+                q: "When should the timing belt or timing chain be replaced?",
+                a: "The interval is specific to the engine and the manufacturer’s schedule. If the maintenance history is incomplete or the timing drive has become noisy, have the system inspected rather than relying on a generic mileage figure."
+            },
+            {
+                q: "How long does engine repair take?",
+                a: "An initial diagnostic assessment will often take one to two hours. The repair time then depends on the work required, parts availability and whether the engine or cylinder head needs to be dismantled."
+            },
+            {
+                q: "Is it better to repair the engine or replace it?",
+                a: "That decision should follow diagnosis and, where necessary, strip-down. A targeted repair may be sensible when damage is localised; with extensive internal wear, it is worth comparing the cost and risks of repair with a replacement unit."
+            }
+        ],
+        article: {
+            title: "How to protect your engine in urban driving",
+            sections: [
+                {
+                    heading: "Why city use can be hard on an engine",
+                    paragraphs: [
+                        "Short journeys, repeated cold starts, traffic and limited motorway running can be more demanding than the mileage suggests. The engine oil spends less time at full operating temperature, while the intake and exhaust systems often work in less favourable conditions.",
+                        "If most journeys are made around town, service intervals should reflect the way the car is actually used rather than only the longest interval shown in the maintenance schedule."
+                    ]
+                },
+                {
+                    heading: "What to monitor between services",
+                    paragraphs: [
+                        "Check the engine-oil and coolant levels regularly, and pay attention to new smells, smoke, vibration or mechanical noise. A small leak or a change in starting behaviour can be an early indication of a fault that is easier to address before it develops."
+                    ]
+                },
+                {
+                    heading: "When to arrange an unscheduled check",
+                    paragraphs: [
+                        "Book an inspection if the engine warning light comes on, the engine begins to misfire or overheat, oil consumption increases or performance changes noticeably. Finding the cause early may allow a more targeted repair."
+                    ]
+                },
+                {
+                    columns: [
+                        {
+                            title: "Good habits",
+                            items: [
+                                "Check fluid levels every few weeks",
+                                "Replace service items at the appropriate interval",
+                                "Note when and under what conditions a symptom occurs"
+                            ]
+                        },
+                        {
+                            title: "Book an inspection promptly",
+                            items: [
+                                "A new metallic knock or rattle",
+                                "Persistent white or blue exhaust smoke",
+                                "Repeated overheating or a noticeable loss of power"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        articleSchema: {
+            headline: "Engine repair in Tallinn: diagnostics, warning signs and maintenance",
+            description: "When to arrange engine diagnostics, the repairs Mr.Car carries out and why warning signs should not be ignored."
+        },
+        crossLinks: [
+            {
+                href: "/en/services/timing-belt-chain-replacement",
+                icon: "mdi:sync",
+                label: "Related service",
+                title: "Timing belt and timing chain replacement"
+            },
+            {
+                href: "/en/services/transmission-repair",
+                icon: "mdi:car-shift-pattern",
+                label: "Related service",
+                title: "Transmission repair"
+            },
+            {
+                href: "/en/services/maintenance-diagnostics",
+                icon: "mdi:car-cog",
+                label: "Related service",
+                title: "Vehicle maintenance and diagnostics"
+            },
+            {
+                href: "/en/services/oil-change",
+                icon: "mdi:oil",
+                label: "Related service",
+                title: "Engine oil and filter change"
+            }
+        ],
         ctaSection: {
-            title: "Engine needs attention?",
-            text: "Don't wait until a small problem turns into an overhaul. Come for a free diagnostic.",
+            title: "Is your engine showing signs of trouble?",
+            text: "Book an engine diagnostic. We will assess the symptoms, explain the likely cause and set out a clear repair plan.",
             phoneText: "Call: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Book Engine Repair",
+            title: "Book engine diagnostics or repair",
             subtitle: "Leave a request — we'll call back within 30 minutes"
         },
+        jsonLdServiceDescription: "Engine diagnostics and repair in Tallinn for warning lights, overheating, oil consumption, timing-drive faults, cylinder-head work and other mechanical engine problems.",
         seo: {
-            title: "Engine Repair in Tallinn — Mr.Car Auto Service",
-            description: "Major engine repair in Tallinn. Endoscopy, timing belt replacement, piston group. 12-month warranty. Kopli 82a. +372 5646 1210"
+            title: "Engine Diagnostics & Repair in Tallinn — Mr.Car",
+            description: "Engine diagnostics and repair in Tallinn for warning lights, overheating, oil consumption, timing drives and cylinder-head faults. Kopli 82a."
         }
     },
 

@@ -659,55 +659,354 @@ const SERVICES = [
         category: "Mootor ja seadmed",
         navTitle: "Mootori tööd",
         icon: "mdi:engine",
-        heroTitle: "Mootori remont",
-        heroLead: "Mootori kapitaalremont mikropragudest täieliku lahtivõtmiseni. Mehhaaniline töötlus 0,01 mm täpsusega.",
+        templateVariant: "service-deep-dive-v2",
+        heroTitle: "Mootoriremont Tallinnas",
+        heroLead: "Bensiini- ja diiselmootorite ning hübriidautode sisepõlemismootorite diagnostika ja remont Tallinnas: Check Engine'i märgutule süttimisest ja ülekuumenemisest kuni gaasijaotusajami, plokikaane ning keerukamate mootoritöödeni.",
         heroImage: "/pics/engine-repair-hero.webp",
-        introTitle: "Mootori remont Mr.Car-is",
-        introText: [
-            "Mootor on auto süda. Õlikulu, koputused, kompressiooni langus — kõik need on märgid, et mootor vajab professionaalset abi. Me ei diagnoosi kuulmise järgi — kasutame endoskoopiat ja kompressiomeetriat.",
-            "Mr.Car teostab täielikku mootori remonditsüklit: tihendite ja hammasrihmade vahetusest kuni kolvirühma kapitaalremondini. Kasutame originaalvaruosi ja kvaliteetseid analooge garantiiga."
+        heroStats: [
+            { value: "OBD + kontroll", label: "Arvutidiagnostika ja mootori esmane mehaaniline kontroll" },
+            { value: "Bensiin / diisel / hübriid", label: "Töötame eri tüüpi sisepõlemismootoritega" },
+            { value: "Selge tööplaan", label: "Lepime remondi mahu kokku enne töö alustamist" }
         ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "Sümptomid" },
+            { href: "#types", icon: "mdi:engine", label: "Mootoritüübid" },
+            { href: "#diagnostika", icon: "mdi:stethoscope", label: "Diagnostika" },
+            { href: "#services", icon: "mdi:wrench", label: "Teenused" },
+            { href: "#process", icon: "mdi:format-list-numbered", label: "Töö käik" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "KKK" },
+            { href: "#article", icon: "mdi:book-open-variant", label: "Kasulik teada" }
+        ],
+        introTitle: "Mootori diagnostika ja remont Mr.Car-is",
+        introText: [
+            "Mootoririkke tagajärjed ei piirdu tavaliselt ühe detailiga. Püsiv õlikulu kiirendab kulumist, ülekuumenemine võib kahjustada plokikaane tihendit ja plokikaant ning süütekatkestus koormab katalüsaatorit ja heitgaasisüsteemi.",
+            "Mr.Car-is alustame diagnostikast ja koostame tööplaani alles siis, kui sümptomi põhjus on kontrollitud. Selgitame, mida mõõtmised näitasid, millised tööd on vajalikud ning kas mõistlik on remontida konkreetset sõlme või mootor põhjalikumalt avada."
+        ],
+        brands: [
+            "VW / Audi",
+            "BMW",
+            "Mercedes-Benz",
+            "Toyota",
+            "Honda",
+            "Ford",
+            "Volvo",
+            "Renault / Nissan",
+            "Hyundai / Kia",
+            "Škoda / SEAT"
+        ],
+        urgencyBlock: {
+            icon: "mdi:alert-decagram",
+            title: "Ära lükka mootori diagnostikat edasi",
+            text: "Vilkuv Check Engine'i märgutuli, ülekuumenemine, punane õlirõhu hoiatustuli või tugev metalliline kolin võivad viidata rikkele, millega ei ole ohutu sõitu jätkata. Varakult leitud põhjus aitab sageli vältida ulatuslikumat mootorikahjustust."
+        },
         symptomsTitle: "Kuidas aru saada, et mootor vajab remonti?",
         symptoms: [
-            { icon: "mdi:oil", text: "Suurenenud õlikulu" },
-            { icon: "mdi:volume-high", text: "Koputused ja võõrad helid" },
-            { icon: "mdi:speedometer-slow", text: "Võimsuse langus" },
-            { icon: "mdi:smoke-detector-variant", text: "Suits heitgaasidest" },
+            { icon: "mdi:oil", text: "Tavapärasest suurem õlikulu" },
+            { icon: "mdi:volume-high", text: "Kolin, kõrin või muu ebatavaline heli" },
+            { icon: "mdi:speedometer-slow", text: "Jõu kadu" },
+            { icon: "mdi:smoke-detector-variant", text: "Sinine, valge või must suits väljalaskest" },
             { icon: "mdi:thermometer-alert", text: "Mootori ülekuumenemine" },
-            { icon: "mdi:engine-off-outline", text: "Ebastabiilne töö tühikäigul" },
-            { icon: "mdi:water-alert", text: "Õli- või jahutusvedeliku leke" },
-            { icon: "mdi:vibrate", text: "Vibratsioon mootori töötamisel" }
+            { icon: "mdi:engine-off-outline", text: "Ebaühtlane tühikäik" },
+            { icon: "mdi:water-alert", text: "Õli- või jahutusvedeliku lekked" },
+            { icon: "mdi:vibrate", text: "Tavapärasest tugevam vibratsioon" }
         ],
-        afterSymptomsText: "Kui märkad kas või ühte neist sümptomitest — broneeri diagnostika. Õigeaegne remont päästab mootori vahetamisest.",
+        afterSymptomsText: "Kui mõni neist sümptomitest kordub, tasub põhjus välja selgitada enne, kui rike kahjustab teisi sõlmi. Varajases etapis on remont enamasti paremini prognoositav.",
+        detailedSymptomsTitle: "Millal vajab mootor diagnostikat?",
+        detailedSymptoms: [
+            {
+                tone: "critical",
+                icon: "mdi:engine-outline",
+                title: "Check Engine'i märgutuli põleb",
+                desc: "Kui märgutuli vilgub, mootor töötab ebaühtlaselt või tekib süütekatkestus, ei tasu sõitu pikalt jätkata. Põhjus võib olla süüte- või kütusesüsteemis, andurites või mootori mehaanikas."
+            },
+            {
+                tone: "critical",
+                icon: "mdi:thermometer-alert",
+                title: "Mootor kuumeneb üle",
+                desc: "Tõusev temperatuurinäit, jahutusvedeliku kadu või tavapärasest sagedamini töötav ventilaator nõuavad jahutussüsteemi, plokikaane tihendi ja plokikaane kontrolli."
+            },
+            {
+                tone: "warning",
+                icon: "mdi:oil",
+                title: "Õlikulu kasvab või õlirõhu tuli süttib",
+                desc: "Püsiv õlikulu ja lekked võivad viidata tihendite, karterituulutuse, turbo või mootori sisemisele kulumisele. Punase õlirõhu hoiatustule korral tuleb mootor võimalikult kiiresti seiskada."
+            },
+            {
+                icon: "mdi:vibrate",
+                title: "Mootor väriseb või töötab ebaühtlaselt",
+                desc: "Jõnksud kiirendamisel, ebaühtlane tühikäik ja vahelejätmine võivad olla seotud süütesüsteemi, kütuse etteande või pihustite rikkega, samuti madala kompressioonirõhuga."
+            },
+            {
+                icon: "mdi:volume-vibrate",
+                title: "Käivitamisel kostab kõrin või kolin",
+                desc: "Uus heli külmkäivitusel või tühikäigul võib pärineda gaasijaotusajamist, abiseadmetest või mootori sisemusest. Põhjus tuleb kontrollida enne, kui kulumine süveneb."
+            },
+            {
+                icon: "mdi:weather-fog",
+                title: "Heitgaasi värv või lõhn muutub",
+                desc: "Sinine, valge või must suits aitab veaotsingut suunata. Põhjuseks võib olla õli, jahutusvedelik, vale kütusesegu, pihusti või turbo."
+            }
+        ],
+        riskStagesTitle: "Mis juhtub, kui remont edasi lükata?",
+        riskStages: [
+            {
+                marker: "1",
+                title: "Ajutisest sümptomist saab püsiv rike",
+                text: "Algul ainult külmkäivitusel või suure koormuse all ilmnenud probleem hakkab korduma ka tavalisel sõidul."
+            },
+            {
+                marker: "2",
+                title: "Kahjustus levib kõrvalasuvatesse sõlmedesse",
+                text: "Mootoririke võib hakata koormama katalüsaatorit, turbot, jahutus- ja heitgaasisüsteeme või abiseadmeid."
+            },
+            {
+                marker: "3",
+                title: "Töömaht ja remondikulu kasvavad",
+                text: "Kui kahjustus jõuab plokikaane, silindrite või gaasijaotusajamini, vajab mootor põhjalikumat lahtivõtmist. Varajane diagnostika on üldjuhul soodsam kui tagajärgede remont."
+            }
+        ],
+        engineTypesTitle: "Milliste mootoritega töötame?",
+        engineTypes: [
+            {
+                icon: "mdi:fuel",
+                title: "Bensiinimootorid",
+                desc: "Vabalthingavad ja turbomootorid: süütesüsteem, õlikulu, gaasijaotusajam, jahutus, sisselase ja andurid.",
+                brands: ["TSI / TFSI", "BMW N20 / B48", "M270 / M274", "EcoBoost", "Toyota 2ZR"]
+            },
+            {
+                icon: "mdi:gas-station",
+                title: "Diiselmootorid",
+                desc: "Common Raili sissepritse, EGR, DPF, turbo, hammasrihm või ajamikett, pihustid ja kompressioonirõhk.",
+                brands: ["2.0 / 3.0 TDI", "BMW N47 / B47", "OM651 / OM654", "dCi", "TDCi"]
+            },
+            {
+                icon: "mdi:battery-charging",
+                title: "Hübriidajami sisepõlemismootor",
+                desc: "Mootori mehaanika, jahutus- ja süütesüsteem ning tavahooldus ilma kõrgepingesüsteemi töösse sekkumata.",
+                brands: ["Toyota Hybrid", "Lexus Hybrid", "BMW iPerformance", "Kia / Hyundai HEV"]
+            }
+        ],
+        diagnosticsTitle: "Mootori diagnostika on esimene samm",
+        diagnosticsText: "Enne osade vahetamist tuleb leida rikke algpõhjus. Ühendame arvutidiagnostika, vajalikud mõõtmised ja visuaalse kontrolli, et mitte piirduda üksnes tagajärje kõrvaldamisega.",
+        diagnosticsChecklist: [
+            "Veakoodide lugemine ja mootori tööparameetrite analüüs reaalajas",
+            "Süütesüsteemi, kütuse etteande ja andurite töö kontroll",
+            "Kompressioonirõhu mõõtmine ning mootori mehaanilise seisukorra esmane hindamine",
+            "Õlilekete, jahutusvedeliku lekete, vaakumlekete ja jahutussüsteemi kontroll",
+            "Gaasijaotusajami, abiseadmete ja mootori ebatavaliste helide kontroll",
+            "Tulemuste arusaadav selgitus ja järgmise sammu kooskõlastamine"
+        ],
         servicesListTitle: "Meie mootori remonditeenused:",
         servicesList: [
-            "Endoskoopia ja defekteerumine",
-            "Hammasrihma / ahela vahetus",
-            "Silindripea tihendi vahetus",
+            "Mootori arvutidiagnostika",
+            "Mootoriõli ja filtrite vahetus",
+            "Hammasrihma või ajamiketi vahetus",
+            "Plokikaane tihendi vahetus",
             "Kolvirühma remont",
-            "Klappide lihvimine ja vahetus",
-            "Õlirõngaste vahetus",
-            "Turbokompressori remont",
-            "Mootori kinnituste vahetus"
+            "Klapimehhanismi remont",
+            "Turboga ja sisselaskega seotud tööd",
+            "Mootoripatjade ja abiseadmete vahetus"
         ],
-        afterListText: "Kõigile töödele anname 12-kuulise garantii. Hind arvutatakse pärast defekteerimist — tead lõplikku hinda ette.",
+        afterListText: "Tööde maht sõltub rikke põhjusest. Kui pärast lahtivõtmist ja defekteerimist on võimalik valida mitme remondivariandi vahel, toome need eraldi välja ning selgitame nende erinevusi.",
+        serviceCardsTitle: "Mootoriga seotud tööd",
+        serviceCards: [
+            {
+                featured: true,
+                icon: "mdi:stethoscope",
+                title: "Mootori arvutidiagnostika",
+                desc: "Veakoodide, tööparameetrite ja sümptomite esmane kontroll koos soovitusega, kuidas veaotsinguga edasi minna.",
+                time: "1–2 tundi"
+            },
+            {
+                icon: "mdi:oil",
+                title: "Mootoriõli ja filtrite vahetus",
+                desc: "Korrapärane mootori hooldus sobivate materjalide valiku ning vedelikutasemete järelkontrolliga.",
+                time: "enamasti samal päeval"
+            },
+            {
+                featured: true,
+                icon: "mdi:sync",
+                title: "Hammasrihm ja ajamikett",
+                desc: "Gaasijaotusajami seisukorra kontroll ja komplekti vahetus koos vajalike kaasnevate tööde kooskõlastamisega.",
+                time: "sõltub töömahust"
+            },
+            {
+                icon: "mdi:layers-outline",
+                title: "Plokikaane tihend ja plokikaane remont",
+                desc: "Ülekuumenemise põhjuse tuvastamine, plokikaane eemaldamine ja paigaldamine, tasapinna kontroll ning vajalikud kaasnevad tööd.",
+                time: "pärast defekteerimist"
+            },
+            {
+                icon: "mdi:piston",
+                title: "Kolvirühm ja mootori mehaanika",
+                desc: "Mootori mehaanilised tööd õlikulu, madala kompressioonirõhu, kolina või silindri-kolvirühma kulumise korral.",
+                time: "individuaalse hinnangu alusel"
+            },
+            {
+                icon: "mdi:turbocharger",
+                title: "Turbo ja sisselaskesüsteem",
+                desc: "Suitsu, jõukao, ülelaaderõhu või turbo õlitusega seotud rikete põhjuste otsimine ja vajalikud kaasnevad tööd.",
+                time: "diagnostika tulemuste põhjal"
+            }
+        ],
+        processTitle: "Kuidas töö toimub?",
+        processSteps: [
+            {
+                num: "01",
+                title: "Auto vastuvõtt ja sümptomi kirjeldamine",
+                text: "Paneme kirja kaebuse, uurime, millal probleem avaldub, ning vaatame üle hooldusajaloo."
+            },
+            {
+                num: "02",
+                title: "Diagnostika ja veapõhjuse kontroll",
+                text: "Kontrollime võimalikku rikke põhjust mõõtmiste ja ülevaatusega, mitte ei vaheta osi proovimise teel."
+            },
+            {
+                num: "03",
+                title: "Tööplaani ja eelarve kooskõlastamine",
+                text: "Selgitame, millised tööd on kohe vajalikud, mida saab jälgida ning millised remondivariandid on võimalikud."
+            },
+            {
+                num: "04",
+                title: "Remont ja järelkontroll",
+                text: "Pärast remonti kontrollime käivitumist, veakoode, lekkeid ja mootori tööd tavapärastes töörežiimides."
+            }
+        ],
         promoBanner: {
-            enabled: true,
-            text: "Tasuta mootori endoskoopia remondibroneerimisel"
+            enabled: false
         },
+        trustItems: [
+            {
+                icon: "mdi:shield-check",
+                title: "Esmalt diagnostika",
+                desc: "Mahuka remondi lepime kokku alles siis, kui rikke põhjus on kontrollitud."
+            },
+            {
+                icon: "mdi:clipboard-text-clock",
+                title: "Tööplaan enne remonti",
+                desc: "Enne töö alustamist räägime läbi mahu, riskid ja selle, mis võib lahtivõtmisel selguda."
+            },
+            {
+                icon: "mdi:car-wrench",
+                title: "Mootoritööd ühes teeninduses",
+                desc: "Diagnostika, hoolduse ja suurema osa mootoriremondist saab teha samas töökojas."
+            }
+        ],
+        faqTitle: "Korduma kippuvad küsimused",
+        faqItems: [
+            {
+                q: "Mida teha, kui Check Engine'i märgutuli süttib?",
+                a: "Kui märgutuli vilgub, mootor väriseb või autol kaob jõud, tuleks diagnostikasse pöörduda esimesel võimalusel. Rike võib olla anduris, süüte- või kütusesüsteemis või mootori mehaanilises osas."
+            },
+            {
+                q: "Kas ülekuumeneva mootoriga võib edasi sõita?",
+                a: "Püsivalt tõusva temperatuurinäidu ja eriti punase hoiatustule korral tuleb auto peatada ning mootor välja lülitada. Edasisõit võib kahjustada plokikaane tihendit, plokikaant ja jahutussüsteemi."
+            },
+            {
+                q: "Miks mootor õli kulutab?",
+                a: "Võimalikud põhjused on välised lekked, kulunud tihendid, karterituulutuse rike, turbo või mootori sisemine kulumine. Ainuüksi õlikulu järgi ei saa sobivat remondimeetodit valida, seega tuleb mootor esmalt üle kontrollida."
+            },
+            {
+                q: "Millal tuleb vahetada hammasrihma või ajamiketti?",
+                a: "Vahetusvälp sõltub mootorist ja tootja hooldusjuhendist. Kui hooldusajalugu ei ole teada või käivitamisel kostab kõrinat, tasub gaasijaotusajamit eraldi kontrollida."
+            },
+            {
+                q: "Kui kaua mootoriremont aega võtab?",
+                a: "Esmane diagnostika kestab tavaliselt üks kuni kaks tundi. Remondi kestus sõltub tööde mahust, varuosade saadavusest ning sellest, kas mootor või plokikaas tuleb lahti võtta."
+            },
+            {
+                q: "Kas mootor tasub remontida või välja vahetada?",
+                a: "Seda saab hinnata pärast defekteerimist. Kohaliku kahjustuse korral on remont sageli mõistlikum. Ulatusliku sisemise kulumise korral tasub võrrelda olemasoleva mootori remondi ja asendusmootori kogukulu."
+            }
+        ],
+        article: {
+            title: "Kasulik teada: kuidas linnasõidul mootori eluiga pikendada",
+            sections: [
+                {
+                    heading: "Miks linnasõit mootorit rohkem koormab?",
+                    paragraphs: [
+                        "Lühikesed sõidud, sagedased külmkäivitused, ummikud ja harvad pikemad maanteesõidud koormavad mootorit rohkem, kui esmapilgul tundub. Õli saavutab töötemperatuuri aeglasemalt ning sisselaske- ja heitgaasisüsteemid töötavad sagedamini ebasoodsates tingimustes.",
+                        "Kui autot kasutatakse peamiselt linnas, tasub hooldusvälba valikul lähtuda tegelikust kasutusest, mitte ainult tootja lubatud pikimast intervallist."
+                    ]
+                },
+                {
+                    heading: "Mida hoolduste vahel jälgida?",
+                    paragraphs: [
+                        "Kontrolli regulaarselt mootoriõli ja jahutusvedeliku tasemeid. Võõrast lõhna, suitsu, vibratsiooni, käivitusraskust või ebatavalist heli ei tasu pidada mootori eripäraks — sageli on need varajased märgid rikkest, mida on lihtsam kohe kõrvaldada."
+                    ]
+                },
+                {
+                    heading: "Millal tulla plaanivälisesse kontrolli?",
+                    paragraphs: [
+                        "Diagnostikat ei tasu hoolduseni edasi lükata, kui Check Engine'i märgutuli süttib, esineb süütekatkestusi, mootor kuumeneb üle, hakkab rohkem õli kulutama või kaotab jõudu. Mida varem põhjus leitakse, seda suurem on võimalus piirduda konkreetse sõlme remondiga."
+                    ]
+                },
+                {
+                    columns: [
+                        {
+                            title: "Hea harjumus",
+                            items: [
+                                "Kontrolli vedelikutasemeid iga paari nädala järel",
+                                "Vaheta õli ja kulumaterjalid õigel ajal",
+                                "Pane kirja, millal ja mis tingimustes sümptom ilmneb"
+                            ]
+                        },
+                        {
+                            title: "Tule kiiresti kontrolli",
+                            items: [
+                                "Mootorist kostab metallilist kolinat",
+                                "Väljalaskest tuleb valget või sinist suitsu",
+                                "Ülekuumenemine või jõukadu kordub"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        articleSchema: {
+            headline: "Mootoriremont Tallinnas: diagnostika, rikkesümptomid ja hooldus",
+            description: "Millal vajab mootor diagnostikat, milliseid mootoritöid Mr.Car teeb ja miks ei tasu rikke kontrolli edasi lükata."
+        },
+        crossLinks: [
+            {
+                href: "/services/hammasrihma-ja-keti-vahetus",
+                icon: "mdi:sync",
+                label: "Seotud teenus",
+                title: "Hammasrihma ja keti vahetus"
+            },
+            {
+                href: "/services/kaigukastiremont",
+                icon: "mdi:car-shift-pattern",
+                label: "Seotud teenus",
+                title: "Käigukasti remont"
+            },
+            {
+                href: "/services/hooldus-diagnostika",
+                icon: "mdi:car-cog",
+                label: "Seotud teenus",
+                title: "Auto hooldus ja diagnostika"
+            },
+            {
+                href: "/services/olivahetus",
+                icon: "mdi:oil",
+                label: "Seotud teenus",
+                title: "Mootoriõli ja filtrite vahetus"
+            }
+        ],
         ctaSection: {
             title: "Mootor vajab tähelepanu?",
-            text: "Ära oota, kuni väike probleem muutub kapitaalremondiks. Tule tasuta diagnostikale.",
+            text: "Broneeri mootori diagnostika. Kontrollime sümptomi põhjust, selgitame tulemusi ja koostame arusaadava tööplaani.",
             phoneText: "Helista: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Mootori remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            title: "Mootoriremondi broneerimine",
+            subtitle: "Jäta päring — helistame tagasi 30 minuti jooksul"
         },
+        jsonLdServiceDescription: "Mootorite diagnostika ja remont Tallinnas: Check Engine'i märgutuli, ülekuumenemine, õlikulu, gaasijaotusajam, plokikaas ja muud mootoritööd.",
         seo: {
-            title: "Mootori remont Tallinnas — Mr.Car Autoteenindus",
-            description: "Mootori kapitaalremont Tallinnas. Endoskoopia, hammasrihma vahetus, kolvirühm. Garantii 12 kuud. Kopli 82a. +372 5646 1210"
+            title: "Mootoriremont Tallinnas — Mr.Car autoteenindus",
+            description: "Mootori diagnostika ja remont Tallinnas: Check Engine, ülekuumenemine, õlikulu, hammasrihm, ajamikett ja plokikaane remont. Kopli 82a."
         }
     },
 
