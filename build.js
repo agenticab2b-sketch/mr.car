@@ -520,13 +520,25 @@ function buildBrandPills(brands) {
 }
 
 function buildUrgencyBlock(block) {
-  if (!block || !block.title || !block.text) return '';
+  const paragraphs = Array.isArray(block?.paragraphs)
+    ? block.paragraphs.filter(Boolean)
+    : block?.text
+      ? [block.text]
+      : [];
+  if (!block || !block.title || paragraphs.length === 0) return '';
+  const paragraphsHtml = paragraphs
+    .map(paragraph => `<p class="gb-urgency-block__text">${esc(paragraph)}</p>`)
+    .join('\n        ');
+  const linkHtml = block.link?.href && block.link?.label
+    ? `
+        <a class="gb-urgency-block__link" href="${esc(block.link.href)}" style="display:inline-block;margin-top:var(--space-md);color:var(--accent-primary);font-weight:700;text-decoration:underline;text-underline-offset:0.2em">${esc(block.link.label)}</a>`
+    : '';
   return `<div class="gb-urgency-block">
         <div class="gb-urgency-block__title">
           <iconify-icon icon="${esc(block.icon || 'mdi:alert-decagram')}" width="24" height="24" aria-hidden="true"></iconify-icon>
           <span>${esc(block.title)}</span>
         </div>
-        <p class="gb-urgency-block__text">${esc(block.text)}</p>
+        ${paragraphsHtml}${linkHtml}
       </div>`;
 }
 
