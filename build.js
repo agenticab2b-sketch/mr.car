@@ -713,7 +713,7 @@ function buildArticle(article) {
     return `${headingHtml}${paragraphsHtml}${columnsHtml}`;
   }).join('');
 
-  return `<div class="gb-article" id="article">
+  return `<div class="gb-article${article.centerColumns ? ' gb-article--centered-cols' : ''}" id="article">
         <div class="gb-article__header">
           <div class="gb-article__title">${esc(article.title)}</div>
         </div>

@@ -1751,6 +1751,7 @@ const SERVICES = [
         ],
         article: {
             title: "Miks on oluline õli ja filtreid õigel ajal vahetada",
+            centerColumns: true,
             sections: [
                 {
                     heading: "Miks mootoriõli omadused aja jooksul halvenevad",

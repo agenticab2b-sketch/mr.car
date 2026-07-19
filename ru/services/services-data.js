@@ -2403,6 +2403,7 @@ const SERVICES = [
         ],
         article: {
             title: "Почему важно своевременно менять масло и фильтры",
+            centerColumns: true,
             sections: [
                 {
                     heading: "Почему моторное масло теряет свои свойства",

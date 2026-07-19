@@ -5858,6 +5858,26 @@ body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-section-a
     line-height: 1.7;
 }
 
+.gb-article--centered-cols .gb-article__cols > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.gb-article--centered-cols .gb-article__list {
+    width: fit-content;
+    max-width: 100%;
+    padding-left: 1.25rem;
+    text-align: left;
+    list-style: disc;
+}
+
+.gb-article--centered-cols .gb-article__list li::marker {
+    color: var(--accent-primary);
+}
+
 .gb-crosslinks {
     display: flex;
     flex-direction: column;
