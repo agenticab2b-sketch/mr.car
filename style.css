@@ -5641,6 +5641,10 @@ body:is(.service-kpp-page, .service-akpp-page, .service-mkpp-page) .gb-section-a
     border: var(--border);
 }
 
+.gb-pricing-lead {
+    margin: 0 0 var(--space-lg);
+}
+
 .gb-pricing-table thead {
     background: var(--bg-surface);
 }
