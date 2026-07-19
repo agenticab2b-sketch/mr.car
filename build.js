@@ -547,12 +547,16 @@ function buildDetailedSymptoms(cards) {
   return `<div class="gb-symptoms-grid">
         ${cards.map(card => {
           const toneClass = card.tone ? ` gb-symptom-card--${esc(card.tone)}` : '';
+          const linkHtml = card.link?.href && card.link?.label
+            ? `
+            <a class="gb-symptom-card__link" href="${esc(card.link.href)}" style="display:inline-block;margin-top:var(--space-sm);color:var(--accent-primary);font-weight:700;text-decoration:underline;text-underline-offset:0.2em">${esc(card.link.label)}</a>`
+            : '';
           return `<div class="gb-symptom-card${toneClass}">
             <div class="gb-symptom-card__icon">
               <iconify-icon icon="${esc(card.icon || 'mdi:alert-circle-outline')}" width="22" height="22" aria-hidden="true"></iconify-icon>
             </div>
             <div class="gb-symptom-card__title">${esc(card.title || '')}</div>
-            <p class="gb-symptom-card__desc">${esc(card.desc || '')}</p>
+            <p class="gb-symptom-card__desc">${esc(card.desc || '')}</p>${linkHtml}
           </div>`;
         }).join('')}
       </div>`;
@@ -580,7 +584,8 @@ function buildTypeCards(types) {
           <p class="gb-type-card__desc">${esc(type.desc || '')}</p>
           ${Array.isArray(type.brands) && type.brands.length > 0 ? `<div class="gb-type-card__brands">
             ${type.brands.map(brand => `<span class="gb-type-card__brand-chip">${esc(brand)}</span>`).join('')}
-          </div>` : ''}
+          </div>` : ''}${type.link?.href && type.link?.label ? `
+          <a class="gb-type-card__link" href="${esc(type.link.href)}" style="display:inline-block;margin-top:var(--space-sm);color:var(--accent-primary);font-weight:700;text-decoration:underline;text-underline-offset:0.2em">${esc(type.link.label)}</a>` : ''}
         </div>`).join('')}
       </div>`;
 }
@@ -597,11 +602,21 @@ function buildChecklist(items) {
 
 function buildServiceCards(cards) {
   if (!Array.isArray(cards) || cards.length === 0) return '';
+  const renderDescription = desc => {
+    const paragraphs = Array.isArray(desc) ? desc : [desc];
+    return paragraphs.map(paragraph => {
+      if (typeof paragraph === 'string') return `<p class="gb-service-card__desc">${esc(paragraph)}</p>`;
+      if (paragraph && typeof paragraph === 'object') {
+        return `<p class="gb-service-card__desc">${esc(paragraph.before || '')}${paragraph.strong ? `<strong>${esc(paragraph.strong)}</strong>` : ''}${esc(paragraph.after || '')}</p>`;
+      }
+      return '';
+    }).join('');
+  };
   return `<div class="gb-services-grid">
         ${cards.map(card => `<div class="gb-service-card${card.featured ? ' gb-service-card--featured' : ''}">
           <iconify-icon icon="${esc(card.icon || 'mdi:wrench')}" width="24" height="24" class="gb-service-card__icon" aria-hidden="true"></iconify-icon>
           <div class="gb-service-card__title">${esc(card.title || '')}</div>
-          <p class="gb-service-card__desc">${esc(card.desc || '')}</p>
+          ${renderDescription(card.desc || '')}
           ${(card.price || card.time) ? `<div class="gb-service-card__footer">
             ${card.price ? `<span class="gb-service-card__price">${esc(card.price)}</span>` : ''}
             ${card.time ? `<span class="gb-service-card__time">${esc(card.time)}</span>` : ''}
@@ -659,12 +674,23 @@ function buildTrustItems(items) {
 
 function buildFaqItems(items, title) {
   if (!Array.isArray(items) || items.length === 0) return '';
+  const renderAnswer = answer => {
+    if (typeof answer === 'string') return esc(answer);
+    if (Array.isArray(answer)) {
+      return answer.map(part => {
+        if (typeof part === 'string') return esc(part);
+        if (part && typeof part === 'object' && part.strong) return `<strong>${esc(part.strong)}</strong>`;
+        return '';
+      }).join('');
+    }
+    return '';
+  };
   return `<section id="faq">
         <h3 class="gb-section-title">${esc(title || '')}</h3>
         <div class="gb-faq">
           ${items.map((item, index) => `<details class="gb-faq-item"${index === 0 ? ' open' : ''}>
             <summary>${esc(item.q || '')}<iconify-icon icon="mdi:chevron-down" width="20" height="20" aria-hidden="true"></iconify-icon></summary>
-            <div class="gb-faq-item__content">${esc(item.a || '')}</div>
+            <div class="gb-faq-item__content">${renderAnswer(item.a)}</div>
           </details>`).join('')}
         </div>
       </section>`;
@@ -753,13 +779,31 @@ function renderDeepDiveContent(s, cfg) {
   const riskStagesHtml = buildRiskStages(s.riskStages || []);
   const typeCardsHtml = buildTypeCards(s.engineTypes || []);
   const diagnosticsChecklistHtml = buildChecklist(s.diagnosticsChecklist || []);
+  const renderDiagnosticsText = text => {
+    if (typeof text === 'string') return `<p class="gb-section-text">${esc(text)}</p>`;
+    if (text && typeof text === 'object') {
+      return `<p class="gb-section-text">${esc(text.before || '')}${text.strong ? `<strong>${esc(text.strong)}</strong>` : ''}${esc(text.after || '')}</p>`;
+    }
+    return '';
+  };
   const diagnosticsTextHtml = Array.isArray(s.diagnosticsText)
-    ? s.diagnosticsText.map(text => `<p class="gb-section-text">${esc(text)}</p>`).join('\n          ')
-    : (s.diagnosticsText ? `<p class="gb-section-text">${esc(s.diagnosticsText)}</p>` : '');
+    ? s.diagnosticsText.map(renderDiagnosticsText).join('\n          ')
+    : renderDiagnosticsText(s.diagnosticsText);
   const serviceCardsHtml = buildServiceCards(s.serviceCards || []);
   const processStepsHtml = buildProcessSteps(s.processSteps || []);
   const hasSecondPrice = Array.isArray(s.pricingRows) && s.pricingRows.some(row => row.price2);
   const pricingRowsHtml = buildPricingRows(s.pricingRows || [], pricingLabels, hasSecondPrice);
+  const renderPricingText = (item, className) => {
+    if (typeof item === 'string') return `<p class="${className}">${esc(item)}</p>`;
+    if (item && typeof item === 'object') {
+      const content = esc(item.text || '');
+      return `<p class="${className}">${item.strong ? `<strong>${content}</strong>` : content}</p>`;
+    }
+    return '';
+  };
+  const pricingLeadHtml = s.pricingLead ? renderPricingText(s.pricingLead, 'gb-pricing-lead') : '';
+  const pricingNotes = Array.isArray(s.pricingNote) ? s.pricingNote : (s.pricingNote ? [s.pricingNote] : []);
+  const pricingNotesHtml = pricingNotes.map(note => renderPricingText(note, 'gb-pricing-note')).join('\n        ');
   const reviewCardsHtml = buildReviewCards(s.reviews || []);
   const trustItemsHtml = buildTrustItems(s.trustItems || []);
   const faqHtml = buildFaqItems(s.faqItems || [], s.faqTitle || '');
@@ -798,7 +842,8 @@ function renderDeepDiveContent(s, cfg) {
       ${(s.diagnosticsTitle || diagnosticsChecklistHtml) ? `<section id="diagnostika">
         <div class="gb-diagnostics-card">
           <h3 class="gb-section-title">${esc(s.diagnosticsTitle || '')}</h3>
-          ${diagnosticsTextHtml}
+          ${diagnosticsTextHtml}${s.diagnosticsChecklistTitle ? `
+          <h4 class="gb-diagnostics-card__subtitle" style="margin-top:var(--space-lg);margin-bottom:var(--space-sm);font-weight:700">${esc(s.diagnosticsChecklistTitle)}</h4>` : ''}
           ${diagnosticsChecklistHtml}
         </div>
       </section>` : ''}
@@ -814,14 +859,15 @@ function renderDeepDiveContent(s, cfg) {
       </section>` : ''}
 
       ${pricingRowsHtml ? `<section id="pricing">
-        <h3 class="gb-section-title">${esc(s.pricingTitle || '')}</h3>
+        <h3 class="gb-section-title">${esc(s.pricingTitle || '')}</h3>${pricingLeadHtml ? `
+        ${pricingLeadHtml}` : ''}
         <table class="gb-pricing-table">
           <thead><tr><th>${esc(pricingLabels.service)}</th><th>${esc(pricingLabels.price)}</th>${hasSecondPrice ? `<th>${esc(pricingLabels.price2 || '')}</th>` : ''}</tr></thead>
           <tbody>
             ${pricingRowsHtml}
           </tbody>
         </table>
-        ${s.pricingNote ? `<p class="gb-pricing-note">${esc(s.pricingNote)}</p>` : ''}
+        ${pricingNotesHtml}
       </section>` : ''}
 
       ${reviewCardsHtml ? `<section id="reviews">
