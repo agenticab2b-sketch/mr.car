@@ -1622,7 +1622,7 @@ function renderServiceListingCards(services, cfg) {
                         <div class="listing-card__icon">
                             <iconify-icon icon="${esc(service.icon || 'mdi:car-cog')}" width="24" height="24" aria-hidden="true"></iconify-icon>
                         </div>
-                        <h3 class="listing-card__title">${esc(service.navTitle || service.heroTitle || service.slug)}</h3>
+                        <h3 class="listing-card__title">${esc(service.listingTitle || service.navTitle || service.heroTitle || service.slug)}</h3>
                     </div>
                     ${tagHtml}
                     <p class="listing-card__desc">${esc(service.heroLead || service.introTitle || service.navTitle || '')}</p>

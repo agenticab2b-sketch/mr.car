@@ -122,6 +122,7 @@ const SERVICES = [
         allSlugs: { ru: "svarochnye-raboty", ee: "keevitustood", en: "welding-works" },
         category: "Mootor ja seadmed",
         navTitle: "Keevitustööd",
+        listingTitle: "Autolukksepa- ja keevitustööd",
         icon: "mdi:hammer-wrench",
         heroTitle: "Keevitustööd",
         heroLead: "See teenuse leht on koostamisel. Keevitustööde info ja hinnad lisame peagi.",

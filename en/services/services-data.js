@@ -122,6 +122,7 @@ const SERVICES = [
         allSlugs: { ru: "svarochnye-raboty", ee: "keevitustood", en: "welding-works" },
         category: "Engine & Drivetrain",
         navTitle: "Welding Works",
+        listingTitle: "Mechanical Repairs and Welding",
         icon: "mdi:hammer-wrench",
         heroTitle: "Welding Works",
         heroLead: "This service page is under construction. Welding information and prices will be added soon.",

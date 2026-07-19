@@ -1163,6 +1163,7 @@ const SERVICES = [
         allSlugs: { ru: "svarochnye-raboty", ee: "keevitustood", en: "welding-works" },
         category: "Двигатель и агрегаты",
         navTitle: "Сварочные работы",
+        listingTitle: "Слесарные и сварочные работы",
         icon: "mdi:hammer-wrench",
         heroTitle: "Сварочные работы",
         heroLead: "Страница услуги находится в разработке. Информацию и цены по сварочным работам добавим позже.",
