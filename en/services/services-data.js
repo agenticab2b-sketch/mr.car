@@ -167,7 +167,7 @@ const SERVICES = [
     {
         key: "suspension",
         slug: "suspension-repair",
-        allSlugs: { ru: "hodovaya", ee: "veermiku-remont", en: "suspension-repair" },
+        allSlugs: { ru: "remont-podveski", ee: "veermiku-remont", en: "suspension-repair" },
         category: "Suspension & Brakes",
         navTitle: "Suspension",
         icon: "mdi:car-lifted-pickup",

@@ -208,6 +208,16 @@
         "type": 301
       },
       {
+        "source": "/ru/services/hodovaya",
+        "destination": "/ru/services/remont-podveski",
+        "type": 301
+      },
+      {
+        "source": "/ru/services/hodovaya.html",
+        "destination": "/ru/services/remont-podveski",
+        "type": 301
+      },
+      {
         "source": "/prices",
         "destination": "/hinnad",
         "type": 301

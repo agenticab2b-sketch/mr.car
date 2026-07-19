@@ -1209,8 +1209,8 @@ const SERVICES = [
     // CATEGORY: Ходовая часть
     // ═══════════════════════════════════
     {
-        slug: "hodovaya",
-        allSlugs: { ru: "hodovaya", ee: "veermiku-remont", en: "suspension-repair" },
+        slug: "remont-podveski",
+        allSlugs: { ru: "remont-podveski", ee: "veermiku-remont", en: "suspension-repair" },
         category: "Ходовая часть",
         navTitle: "Подвеска",
         icon: "mdi:car-lifted-pickup",
@@ -1946,7 +1946,7 @@ const SERVICES = [
                 title: "Ремонт тормозов"
             },
             {
-                href: "/ru/services/hodovaya",
+                href: "/ru/services/remont-podveski",
                 icon: "mdi:car-cog",
                 label: "Смежная услуга",
                 title: "Ремонт подвески"
