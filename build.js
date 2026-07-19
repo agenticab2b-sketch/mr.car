@@ -1624,10 +1624,10 @@ function renderServiceListingCards(services, cfg) {
                         </div>
                         <h3 class="listing-card__title">${esc(service.listingTitle || service.navTitle || service.heroTitle || service.slug)}</h3>
                     </div>
-                    ${tagHtml}
-                    <p class="listing-card__desc">${esc(service.heroLead || service.introTitle || service.navTitle || '')}</p>
-                    ${listHtml}
-                    <div class="listing-card__footer">
+${tagHtml ? `                    ${tagHtml}
+` : ''}                    <p class="listing-card__desc">${esc(service.heroLead || service.introTitle || service.navTitle || '')}</p>
+${listHtml ? `                    ${listHtml}
+` : ''}                    <div class="listing-card__footer">
                         <a href="${cfg.serviceBase}${esc(service.slug)}" class="listing-card__link">${esc(ctaLabel)}</a>
                     </div>
                 </div>`;

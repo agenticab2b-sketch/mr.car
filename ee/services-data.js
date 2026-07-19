@@ -121,47 +121,135 @@ const SERVICES = [
         slug: "keevitustood",
         allSlugs: { ru: "svarochnye-raboty", ee: "keevitustood", en: "welding-works" },
         category: "Mootor ja seadmed",
-        navTitle: "Keevitustööd",
-        listingTitle: "Autolukksepa- ja keevitustööd",
+        navTitle: "Metalli- ja keevitustööd",
+        listingTitle: "Metalli- ja keevitustööd",
         icon: "mdi:hammer-wrench",
-        heroTitle: "Keevitustööd",
-        heroLead: "See teenuse leht on koostamisel. Keevitustööde info ja hinnad lisame peagi.",
+        templateVariant: "service-deep-dive-v2",
+        bodyClass: "service-metalwork-page",
+        heroTitle: "Metalli- ja keevitustööd Tallinnas",
+        heroLead: "Lõikame, töötleme, sobitame, remondime ja valmistame autode metallosi ning teeme keevitustöid. Hindame töö mahtu, lepime kokku remondimeetodi ja arvutame hinna enne tööde alustamist.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Leht on koostamisel",
+        heroStats: [
+            { value: "50 €/tund", label: "töö hind" },
+            { value: "enne töö alustamist", label: "lepime kokku tööde mahu ja hinna" },
+            { value: "vastavalt ülesandele", label: "valime materjali ja remondimeetodi" }
+        ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "Millal vajalik" },
+            { href: "#types", icon: "mdi:hammer-wrench", label: "Tööde liigid" },
+            { href: "#diagnostika", icon: "mdi:clipboard-search-outline", label: "Töö hindamine" },
+            { href: "#process", icon: "mdi:format-list-numbered", label: "Etapid" },
+            { href: "#pricing", icon: "mdi:currency-eur", label: "Hinnad" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "Küsimused" }
+        ],
+        introTitle: "Metalli- ja keevitustööd autoremondis",
         introText: [
-            "Keevitustööd on nüüd eraldi teenus, et summuti remont ja keevitus oleksid menüüs selgelt lahus.",
-            "Kuni detailne leht valmib, saad keevitustööde aja broneerida sama päringuvormi kaudu."
+            "Mr.Caris teeme metalli- ja keevitustöid, mis on seotud auto metallosade remondi, taastamise ja valmistamisega. Lõikame ja töötleme metalli, eemaldame kahjustatud osad, sobitame detailid paigalduskohale, taastame kinnitusi ning keevitame pärast eelnevat ülevaatust.",
+            "Tööde maht sõltub materjalist, metalli paksusest, detaili asukohast, korrosiooni ulatusest ja kahjustatud kohale ligipääsust. Seetõttu hindab meister enne remondi alustamist detaili seisukorda ning otsustab, kas seda saab ohutult taastada või tuleb detail välja vahetada.",
+            "Kere kandvate osade, veermiku kinnituspunktide ja muude ohutuse seisukohalt oluliste osadega seotud töid teeme alles pärast metalli seisukorra ja töökindla remondi võimalikkuse hindamist."
         ],
-        symptomsTitle: "Mida leht hakkab sisaldama?",
-        symptoms: [
-            { icon: "mdi:fire", text: "Kinnituste keevitamine" },
-            { icon: "mdi:car-wrench", text: "Põhja keevitustööd" },
-            { icon: "mdi:wrench", text: "Väljalaskesüsteemi keevitus" },
-            { icon: "mdi:shield-check", text: "Tööde garantii" }
+        urgencyBlock: {
+            icon: "mdi:shield-search",
+            title: "Metalli seisukord on nähtava kahjustuse suurusest olulisem",
+            text: "Korrosioon ja praod võivad ulatuda nähtavast kahjustusest kaugemale. Enne lõikamist või keevitamist tuleb kontrollida ümbritsevat metalli, kinnituspunkte ja ligipääsu detailile, et valida ohutu ja vastupidav remondimeetod."
+        },
+        detailedSymptomsTitle: "Millal on vaja metalli- ja keevitustöid",
+        detailedSymptoms: [
+            { icon: "mdi:link-variant-off", title: "Kinnitus või kronstein on kahjustatud", desc: "Kinnituses olev pragu, deformatsioon või korrosioon võib põhjustada lõtku, vibratsiooni ja kõrvalist müra. Pärast ülevaatust otsustame, kas detaili saab taastada või tuleb valmistada või paigaldada uus detail." },
+            { icon: "mdi:content-cut", title: "Kahjustatud osa tuleb välja lõigata", desc: "Roostetanud, deformeerunud või varem halvasti remonditud metalli eemaldame kuni terve ja tugeva metallini ning valmistame koha ette remondiks või uue detaili paigaldamiseks." },
+            { icon: "mdi:tools", title: "Detail vajab paigalduskohale sobitamist", desc: "Kui uut või eritellimusel valmistatud detaili ei saa muutmata paigaldada, märgistame, lõikame, puurime, töötleme ja sobitame selle täpselt, arvestades kõrvalasuvaid elemente." },
+            { icon: "mdi:bolt", title: "Liide on roostetanud või kahjustatud", desc: "Kinni roostetanud kinnitused, murdunud poldid ja kahjustatud keermesliited võivad vajada metallitöid, lokaalset kuumutamist, väljapuurimist või uue kinnituse valmistamist." },
+            { icon: "mdi:fire", title: "Metalldetailis on pragu", desc: "Enne keevitamist kontrollime kahjustuse põhjust ja pragu ümbritseva metalli seisukorda. Keevitame ainult juhul, kui see võimaldab detaili töökindlalt taastada." },
+            { icon: "mdi:ruler-square", title: "Vaja on eritellimusel metalldetaili", desc: "Näidise või mõõtude järgi saame valmistada või kohandada lihtsaid kinnitusi, plaate, kronsteine ja muid metallosi, kui konstruktsioon ja materjal on eelnevalt kokku lepitud." }
         ],
-        afterSymptomsText: "Leht on arenduses, kuid teenust saab juba tellida.",
-        servicesListTitle: "Planeeritav sisu:",
-        servicesList: [
-            "Keevitustööde tüübid",
-            "Materjalid ja piirangud",
-            "Hinnad ja ajakulu",
-            "Broneerimissoovitused"
+        riskStagesTitle: "Miks algab keevitamine metalli ettevalmistamisest",
+        riskStages: [
+            { marker: "1", title: "Määrame kahjustuse ulatuse", text: "Puhastame ja vaatame kahjustatud koha üle, et tuvastada korrosiooni, prao või deformatsiooni tegelik ulatus." },
+            { marker: "2", title: "Valmistame ette tugeva aluspinna", text: "Eemaldame nõrgenenud metalli, töötleme servad ja sobitame remondidetaili. Liite kvaliteet sõltub otseselt ettevalmistusest." },
+            { marker: "3", title: "Kontrollime remonditulemust", text: "Kontrollime liidet, detaili asendit ja kinnituse töökindlust. Vajaduse korral teeme kokkulepitud viisil järeltöötluse ja kaitseme remonditud kohta." }
         ],
-        afterListText: "Täielik kirjeldus lisatakse hiljem.",
+        engineTypesTitle: "Milliseid metalli- ja keevitustöid teeme",
+        engineTypes: [
+            { icon: "mdi:content-cut", title: "Metallitööd", desc: "Metallosade lõikamine, puurimine, puhastamine, kahjustatud detailide eemaldamine, servade töötlemine ja detailide sobitamine.", brands: ["Lõikamine", "Puurimine", "Sobitamine"] },
+            { icon: "mdi:fire", title: "Keevitustööd", desc: "Metallosade, õmbluste, kinnituste ja kronsteinide taastamine pärast metalli seisukorra ja remondikõlblikkuse kontrollimist.", brands: ["Kinnitused", "Kronsteinid", "Metallosad"] },
+            { icon: "mdi:ruler-square-compass", title: "Valmistamine ja kohandamine", desc: "Lihtsate plaatide ja kinnituste valmistamine ning olemasolevate elementide tugevdamine või muutmine näidise, mõõtude või paigalduskoha järgi.", brands: ["Plaadid", "Kinnitused", "Kohandamine"] }
+        ],
+        diagnosticsTitle: "Töö ülevaatus ja hindamine enne tööde alustamist",
+        diagnosticsText: [
+            "Töö iseloomu saab foto põhjal esialgu hinnata, kuid lõplik remondimeetod ja hind selguvad pärast auto või detaili ülevaatust.",
+            "Enne tööde alustamist lepime kokku, mida eemaldatakse, välja lõigatakse, taastatakse või valmistatakse, milliseid materjale on vaja ja kui kaua töö hinnanguliselt kestab."
+        ],
+        diagnosticsChecklistTitle: "Hindamisel arvestame:",
+        diagnosticsChecklist: [
+            "Metalli liiki, paksust ja tegelikku seisukorda",
+            "Korrosiooni, deformatsiooni või kahjustuse ulatust",
+            "Detaili asukohta ja ligipääsu töö tegemiseks",
+            "Elemendile mõjuvaid koormusi ja liite tugevusnõudeid",
+            "Kõrvalasuvate detailide eemaldamise ja auto kaitsmise vajadust",
+            "Vajaliku metalli, kinnitusvahendite ja muude materjalide kogust"
+        ],
+        processTitle: "Kuidas metalli- ja keevitustöid tehakse",
+        processSteps: [
+            { num: "01", title: "Auto või detaili ülevaatus", text: "Täpsustame töö sisu ning kontrollime kahjustust, metalli seisukorda, kinnituspunkte ja ligipääsu remondikohale." },
+            { num: "02", title: "Remondimeetodi valik", text: "Selgitame välja, kas detaili saab taastada, kas osa metallist tuleb asendada, kas on vaja valmistada uus element või vahetada kogu sõlm." },
+            { num: "03", title: "Maksumuse kooskõlastamine", text: "Enne tööde alustamist lepime kokku hinnangulise ajakulu, töö hinna ja vajalikud materjalid. Lisatöid teeme ainult pärast kooskõlastamist." },
+            { num: "04", title: "Metalli ettevalmistamine", text: "Vajaduse korral demonteerime kõrvalasuvad elemendid, eemaldame kahjustatud metalli, puhastame tööala ning sobitame remondidetaili." },
+            { num: "05", title: "Remont või valmistamine", text: "Teeme kokkulepitud metalli- ja keevitustööd, kontrollides detaili asendit ja liite kvaliteeti." },
+            { num: "06", title: "Lõppkontroll", text: "Kontrollime kinnituse töökindlust, geomeetriat ja töö tulemust. Vajaduse korral teeme kokkulepitud viimistluse." }
+        ],
+        pricingTitle: "Metalli- ja keevitustööde hinnad",
+        pricingLead: {
+            text: "Täpne hind sõltub metalli seisukorrast, detailile ligipääsust, ettevalmistustööde mahust ja vajalikest materjalidest. Foto põhjal saame anda esialgse hinnangu, lõpliku hinna kinnitame pärast ülevaatust.",
+            strong: true
+        },
+        pricingLabels: { service: "Teenus", price: "Hind" },
+        pricingRows: [
+            { service: "Metalli- ja keevitustööd", price: "50 €/tund" },
+            { service: "Metall, kinnitusvahendid ja muud materjalid", price: "tasutakse eraldi" }
+        ],
+        pricingNote: [
+            "Töö minimaalne maht ja lõplik ajakulu täpsustatakse pärast töö ülevaatust.",
+            "Tugevalt kahjustatud või ohutuse seisukohalt oluliste kandeelementide remonti teeme ainult pärast ohutu remondi võimalikkuse hindamist."
+        ],
+        trustItems: [
+            { icon: "mdi:clipboard-check-outline", title: "Ülevaatus enne tööde alustamist", desc: "Kõigepealt hindame metalli seisukorda ja töökindla remondi võimalikkust." },
+            { icon: "mdi:calculator-variant-outline", title: "Maksumuse kooskõlastamine", desc: "Selgitame tööde sisu, hinnangulist ajakulu ja materjalide maksumust." },
+            { icon: "mdi:shield-check-outline", title: "Tulemuse kontroll", desc: "Pärast remonti kontrollime liidet, kinnitust ja detaili asendit." },
+            { icon: "mdi:car-wrench", title: "Sõidukipõhine töö", desc: "Arvestame kõrvalasuvate sõlmede, juhtmete, torude ja muude elementide paiknemist." },
+            { icon: "mdi:account-check-outline", title: "Ilma tarbetute toiminguteta", desc: "Täiendavat demonteerimist ja lisatöid teeme ainult pärast kooskõlastamist." },
+            { icon: "mdi:recycle", title: "Metallijäätmete kogumine", desc: "Eemaldatud metallosad ja töö käigus tekkinud jäätmed kogume eraldi." }
+        ],
+        faqTitle: "Korduma kippuvad küsimused metalli- ja keevitustööde kohta",
+        faqItems: [
+            { q: "Mida hõlmavad metallitööd?", a: "Metalli lõikamist ja töötlemist, puurimist, puhastamist, kahjustatud detailide eemaldamist, detailide sobitamist, kinnituste taastamist ja muid seotud töid. Tööde täpne maht sõltub ülesandest." },
+            { q: "Kui palju maksavad metalli- ja keevitustööd?", a: "Töö hind on 50 € tunnis. Metall, kinnitusvahendid ja muud materjalid tasutakse eraldi. Lõplik hind selgub pärast ülevaatust ja tööde mahu kooskõlastamist." },
+            { q: "Kas foto põhjal saab maksumust hinnata?", a: "Foto põhjal saame anda esialgse hinnangu. Täpne hind ja remondimeetod selguvad pärast ülevaatust, sest varjatud korrosioon ja piiratud ligipääs võivad ettevalmistustööde mahtu suurendada." },
+            { q: "Kas tugevalt roostetanud detaili saab keevitada?", a: "See sõltub allesjäänud metalli paksusest ja tugevusest. Kui aluspind on liiga nõrk, tuleb kahjustatud osa välja lõigata ja asendada või paigaldada uus detail." },
+            { q: "Kas valmistate metallosi?", a: "Saame näidise, mõõtude või paigalduskoha järgi valmistada või kohandada lihtsaid plaate, kronsteine ja kinnitusi. Töö teostatavust hindame enne tööde alustamist." },
+            { q: "Kas remondite auto põhja ja keredetaile?", a: "Kohalikke remonditöid teeme pärast metalli seisukorra ülevaatust. Kandeelementide ja tugevalt kahjustatud osade puhul hindame esmalt ohutu remondi võimalikkust ning soovitame vajaduse korral detaili välja vahetada." },
+            { q: "Kas remondite summuteid ja väljalaskesüsteeme?", a: "Jah. Summuti ja väljalaskesüsteemi remont on eraldi teenus. Nii saame eraldi hinnata paindtoru, resonaatori, katalüsaatori, kinnituste ja muude väljalaskesüsteemi osade seisukorda." },
+            { q: "Kui kaua töö kestab?", a: "Töö kestus sõltub ligipääsust, metalli seisukorrast ning detailide eemaldamise ja valmistamise vajadusest. Hinnangulise ajakulu teatame pärast ülevaatust ja töö sisu täpsustamist." }
+        ],
         promoBanner: { enabled: false },
+        crossLinks: [
+            { href: "/services/summutid-keevitus", icon: "mdi:car-turbocharger", label: "Eraldi teenus", title: "Summuti ja väljalaskesüsteemi remont" },
+            { href: "/services/autoremont", icon: "mdi:car-wrench", label: "Üldremont", title: "Autoremont Tallinnas" },
+            { href: "/services/veermiku-remont", icon: "mdi:car-lifted-pickup", label: "Kui kinnitused on kahjustatud", title: "Veermiku diagnostika ja remont" }
+        ],
         ctaSection: {
-            title: "Vajad keevitustöid?",
-            text: "Jäta päring — vaatame töö üle ja ütleme hinna enne alustamist.",
+            title: "Kas vajate metalli- ja keevitustöid?",
+            text: "Saatke foto ja kirjeldage lühidalt ülesannet – hindame tööd esialgselt ning pakume ülevaatuseks sobiva aja.",
             phoneText: "Helista: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Keevitustööde broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            title: "Metalli- ja keevitustööde broneerimine",
+            subtitle: "Kirjeldage ülesannet ja lisage sõiduki andmed – täpsustame üksikasjad enne aja broneerimist"
         },
+        jsonLdServiceDescription: "Metalli- ja keevitustööd Tallinnas: metalli lõikamine, töötlemine ja sobitamine ning auto kinnituste ja metallosade remont ja valmistamine.",
         seo: {
-            title: "Keevitustööd — Mr.Car Tallinn",
-            description: "Keevitustööd Tallinnas. Leht on koostamisel. Kopli 82a. +372 5646 1210"
+            title: "Metalli- ja keevitustööd Tallinnas – Mr.Car",
+            description: "Metalli- ja keevitustööd Tallinnas: auto metallosade lõikamine, töötlemine, sobitamine ja remont. Töö hind on 50 €/tund."
         }
     },
 

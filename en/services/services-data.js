@@ -121,47 +121,135 @@ const SERVICES = [
         slug: "welding-works",
         allSlugs: { ru: "svarochnye-raboty", ee: "keevitustood", en: "welding-works" },
         category: "Engine & Drivetrain",
-        navTitle: "Welding Works",
-        listingTitle: "Mechanical Repairs and Welding",
+        navTitle: "Metalwork and Welding",
+        listingTitle: "Metalwork and Welding",
         icon: "mdi:hammer-wrench",
-        heroTitle: "Welding Works",
-        heroLead: "This service page is under construction. Welding information and prices will be added soon.",
+        templateVariant: "service-deep-dive-v2",
+        bodyClass: "service-metalwork-page",
+        heroTitle: "Metalwork and Welding in Tallinn",
+        heroLead: "Cutting, machining, fitting, repairing and fabricating metal parts, together with welding work on vehicles. We assess the job, agree the repair method and provide an estimate before work begins.",
         heroImage: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80",
-        introTitle: "Page under construction",
+        heroStats: [
+            { value: "€50/hour", label: "labour rate" },
+            { value: "agreed upfront", label: "scope and cost confirmed before work begins" },
+            { value: "job-specific", label: "material and repair method selected for the job" }
+        ],
+        localNav: [
+            { href: "#symptoms", icon: "mdi:alert-circle-outline", label: "When needed" },
+            { href: "#types", icon: "mdi:hammer-wrench", label: "Types of work" },
+            { href: "#diagnostika", icon: "mdi:clipboard-search-outline", label: "Assessment" },
+            { href: "#process", icon: "mdi:format-list-numbered", label: "Process" },
+            { href: "#pricing", icon: "mdi:currency-eur", label: "Prices" },
+            { href: "#faq", icon: "mdi:frequently-asked-questions", label: "FAQ" }
+        ],
+        introTitle: "Metalwork and Welding for Vehicle Repair",
         introText: [
-            "Welding works are now a separate service so muffler repair and welding are clearly separated in the menu.",
-            "Until the detailed page is ready, you can book welding work through the same request form."
+            "At Mr.Car, we carry out metalwork and welding to repair, restore and fabricate metal vehicle parts. We cut and machine metal, remove damaged sections, fit parts in place, repair mountings and weld components after an initial inspection.",
+            "The scope of work depends on the material, metal thickness, location of the part, extent of corrosion and access to the damaged area. Before work begins, a technician assesses the condition of the part and determines whether it can be repaired safely or needs to be replaced.",
+            "Work involving load-bearing body components, suspension mountings and other safety-critical parts is carried out only after the condition of the metal and the feasibility of a reliable repair have been assessed."
         ],
-        symptomsTitle: "What will this page include?",
-        symptoms: [
-            { icon: "mdi:fire", text: "Bracket welding" },
-            { icon: "mdi:car-wrench", text: "Chassis welding" },
-            { icon: "mdi:wrench", text: "Exhaust system welding" },
-            { icon: "mdi:shield-check", text: "Work warranty" }
+        urgencyBlock: {
+            icon: "mdi:shield-search",
+            title: "The condition of the metal matters more than the size of the visible damage",
+            text: "Corrosion and cracks may extend beyond the visible area. Before cutting or welding, the surrounding metal, mounting points and access to the part must be checked so that a safe, durable repair method can be chosen."
+        },
+        detailedSymptomsTitle: "When Metalwork and Welding Are Needed",
+        detailedSymptoms: [
+            { icon: "mdi:link-variant-off", title: "A mounting or bracket is damaged", desc: "A cracked, distorted or corroded mounting can cause play, vibration and unusual noises. After inspection, we determine whether the part can be repaired or whether a new part must be fabricated or fitted." },
+            { icon: "mdi:content-cut", title: "A damaged section needs to be cut out", desc: "We remove rusted, distorted or poorly repaired metal back to sound material, then prepare the area for repair or for fitting a replacement section." },
+            { icon: "mdi:tools", title: "A part needs to be adapted to fit", desc: "If a new or fabricated part cannot be fitted without modification, we mark, cut, drill, dress and accurately adapt it while taking adjacent components into account." },
+            { icon: "mdi:bolt", title: "A joint is corroded or damaged", desc: "Seized fasteners, sheared bolts and damaged threaded joints may require metalwork, localised heating, drilling out or fabrication of a new mounting." },
+            { icon: "mdi:fire", title: "A metal component has cracked", desc: "Before welding, we check the cause of the damage and the condition of the metal around the crack. Welding is carried out only when it can provide a reliable repair." },
+            { icon: "mdi:ruler-square", title: "A custom metal part is required", desc: "Using a sample or dimensions, we can fabricate or modify simple mountings, plates, brackets and other metal parts once the design and material have been agreed." }
         ],
-        afterSymptomsText: "The page is in development, but the service can already be requested.",
-        servicesListTitle: "Planned content:",
-        servicesList: [
-            "Types of welding work",
-            "Materials and limitations",
-            "Prices and timing",
-            "Booking recommendations"
+        riskStagesTitle: "Why welding begins with metal preparation",
+        riskStages: [
+            { marker: "1", title: "Identify the full extent of the damage", text: "We clean and inspect the area to establish the true extent of corrosion, cracking or distortion." },
+            { marker: "2", title: "Prepare a sound base", text: "We remove weakened metal, dress the edges and fit the repair section. The quality of the joint depends directly on the preparation." },
+            { marker: "3", title: "Check the completed repair", text: "We check the joint, the position of the part and the security of the mounting. Where required, we carry out additional finishing and protection using the agreed method." }
         ],
-        afterListText: "The full description will be added later.",
+        engineTypesTitle: "Metalwork and Welding We Carry Out",
+        engineTypes: [
+            { icon: "mdi:content-cut", title: "Metalwork", desc: "Cutting, drilling, cleaning, removing damaged components, dressing edges and fitting metal parts.", brands: ["Cutting", "Drilling", "Fitting"] },
+            { icon: "mdi:fire", title: "Welding repairs", desc: "Repairing metal components, seams, mountings and brackets after checking the metal’s condition and suitability for repair.", brands: ["Mountings", "Brackets", "Metal components"] },
+            { icon: "mdi:ruler-square-compass", title: "Fabrication and modification", desc: "Fabricating simple plates and mountings, or reinforcing or modifying existing parts using a sample, dimensions or the installation position.", brands: ["Plates", "Mountings", "Modification"] }
+        ],
+        diagnosticsTitle: "Inspection and assessment before work begins",
+        diagnosticsText: [
+            "A photograph can provide an initial indication of the job, but the final repair method and cost are determined only after the vehicle or part has been inspected.",
+            "Before work begins, we agree exactly what will be removed, cut out, repaired or fabricated, which materials will be required and approximately how long the job will take."
+        ],
+        diagnosticsChecklistTitle: "Our assessment considers:",
+        diagnosticsChecklist: [
+            "The material, thickness and actual condition of the metal",
+            "The extent of corrosion, distortion or damage",
+            "The location of the part and access for the work",
+            "The loads placed on the component and the required strength of the joint",
+            "Whether adjacent parts must be removed and the vehicle protected",
+            "The amount of metal, fasteners and other materials required"
+        ],
+        processTitle: "How Metalwork and Welding Are Carried Out",
+        processSteps: [
+            { num: "01", title: "Inspect the vehicle or part", text: "We confirm the job and inspect the damage, the condition of the metal, the mounting points and access to the repair area." },
+            { num: "02", title: "Choose the repair method", text: "We determine whether the part can be repaired, whether a section of metal must be replaced, whether a new component must be fabricated or whether the complete assembly needs replacing." },
+            { num: "03", title: "Agree the cost", text: "Before work begins, we agree the estimated time, labour cost and required materials. Any additional work is carried out only after customer approval." },
+            { num: "04", title: "Prepare the metal", text: "Where necessary, we remove adjacent components, cut out damaged metal, clean the work area and fit the repair section." },
+            { num: "05", title: "Repair or fabricate", text: "We carry out the agreed metalwork and welding while checking the position of the part and the quality of the joint." },
+            { num: "06", title: "Final inspection", text: "We check the security of the mounting, the geometry and the completed work. Where required, we carry out the agreed finishing treatment." }
+        ],
+        pricingTitle: "Metalwork and Welding Prices",
+        pricingLead: {
+            text: "The exact cost depends on the condition of the metal, access to the part, the preparation required and the materials needed. We can provide an initial estimate from a photograph; the final estimate is confirmed after inspection.",
+            strong: true
+        },
+        pricingLabels: { service: "Service", price: "Price" },
+        pricingRows: [
+            { service: "Metalwork and Welding", price: "€50/hour" },
+            { service: "Metal, fasteners and other materials", price: "charged separately" }
+        ],
+        pricingNote: [
+            "The minimum scope of work and final labour time are confirmed after the job has been inspected.",
+            "We undertake work on severely damaged or safety-critical structural components only after assessing whether a safe repair is possible."
+        ],
+        trustItems: [
+            { icon: "mdi:clipboard-check-outline", title: "Inspection before work begins", desc: "We first assess the condition of the metal and whether a reliable repair is possible." },
+            { icon: "mdi:calculator-variant-outline", title: "Costs agreed in advance", desc: "We explain the work involved, the estimated time and the cost of materials." },
+            { icon: "mdi:shield-check-outline", title: "Completed repair checked", desc: "After the repair, we check the joint, mounting and position of the part." },
+            { icon: "mdi:car-wrench", title: "Work tailored to the vehicle", desc: "We take account of adjacent assemblies, wiring, pipes and other components." },
+            { icon: "mdi:account-check-outline", title: "No unnecessary work", desc: "Additional dismantling and work are carried out only after approval." },
+            { icon: "mdi:recycle", title: "Metal waste collected", desc: "Removed metal parts and waste from the work are collected separately." }
+        ],
+        faqTitle: "Frequently Asked Questions About Metalwork and Welding",
+        faqItems: [
+            { q: "What does metalwork include?", a: "Cutting and machining metal, drilling, cleaning, removing damaged components, fitting parts, repairing mountings and other related operations. The exact scope depends on the job." },
+            { q: "How much does Metalwork and Welding cost?", a: "Labour costs €50 per hour. Metal, fasteners and other materials are charged separately. The final cost is determined after inspection and agreement of the work required." },
+            { q: "Can you estimate the cost from a photograph?", a: "A photograph allows us to provide an initial estimate. The exact cost and repair method are determined after inspection because hidden corrosion and restricted access may increase the preparation required." },
+            { q: "Can a heavily rusted part be welded?", a: "It depends on the thickness and strength of the remaining metal. If the base material is too weak, the damaged section must be cut out and replaced, or a new part fitted." },
+            { q: "Do you fabricate metal parts?", a: "We can fabricate or modify simple plates, brackets and mountings from a sample, dimensions or the installation position. Feasibility is assessed before work begins." },
+            { q: "Do you repair underbodies and body components?", a: "Localised repairs are carried out after the condition of the metal has been inspected. For structural or severely damaged components, we first assess whether a safe repair is possible and recommend replacement where necessary." },
+            { q: "Do you repair silencers and exhaust systems?", a: "Yes. Silencer and exhaust system repair is listed as a separate service, allowing the flex pipe, resonator, catalytic converter, mountings and other exhaust components to be assessed separately." },
+            { q: "How long does the work take?", a: "The time required depends on access, the condition of the metal, whether dismantling or fabrication is needed, and the scope of the job. We provide an estimated time after inspection and clarification of the work required." }
+        ],
         promoBanner: { enabled: false },
+        crossLinks: [
+            { href: "/en/services/exhaust-welding", icon: "mdi:car-turbocharger", label: "Separate service", title: "Silencer and Exhaust System Repair" },
+            { href: "/en/services/general-car-repair", icon: "mdi:car-wrench", label: "General repairs", title: "Car Repair in Tallinn" },
+            { href: "/en/services/suspension-repair", icon: "mdi:car-lifted-pickup", label: "If mountings are damaged", title: "Suspension Diagnostics and Repair" }
+        ],
         ctaSection: {
-            title: "Need welding work?",
-            text: "Send a request — we'll inspect the job and quote before starting.",
+            title: "Need Metalwork and Welding?",
+            text: "Send us a photograph and a brief description of the job. We will provide an initial assessment and arrange a time for inspection.",
             phoneText: "Call: +372 5646 1210",
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Book Welding Works",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            title: "Book Metalwork and Welding",
+            subtitle: "Describe the job and tell us which vehicle it is for so we can confirm the details before booking"
         },
+        jsonLdServiceDescription: "Metalwork and Welding in Tallinn: cutting, machining and fitting metal, and repairing and fabricating vehicle mountings and metal components.",
         seo: {
-            title: "Welding Works — Mr.Car Tallinn",
-            description: "Welding works in Tallinn. Page under construction. Kopli 82a. +372 5646 1210"
+            title: "Metalwork and Welding in Tallinn — Mr.Car",
+            description: "Metalwork and Welding in Tallinn: cutting, machining, fitting and repairing vehicle metal components. Labour €50/hour."
         }
     },
 
