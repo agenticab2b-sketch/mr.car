@@ -24,6 +24,10 @@ Public site: ET / RU / EN.
 
 The backend's existing FI auto-reply support remains intact; there is currently no public FI site section.
 
+## Preview verification
+
+The PR preview must exercise a separate `leadPreview` Firebase Function so file delivery can be tested end-to-end without replacing the production `lead` function. The preview client should post to `/api/lead-preview`, while production continues to use `/api/lead`.
+
 ## Review
 
 This changes forms and lead flow, so review is required before merge and production deploy.
