@@ -22,10 +22,10 @@ jobs:
           node-version: 22
 
       - name: Validate migration
-        run: node --check scripts/apply-preview-lead-test.js
+        run: node --check scripts/apply-preview-lead-test-fixed.js
 
       - name: Apply preview test support
-        run: node scripts/apply-preview-lead-test.js
+        run: node scripts/apply-preview-lead-test-fixed.js
 
       - name: Regenerate maintained pages
         run: node build.js
@@ -39,6 +39,7 @@ jobs:
       - name: Remove one-off migration files
         run: |
           rm scripts/apply-preview-lead-test.js
+          rm scripts/apply-preview-lead-test-fixed.js
           rm .github/workflows/codex-preview-lead-test.yml
 
       - name: Commit implementation
