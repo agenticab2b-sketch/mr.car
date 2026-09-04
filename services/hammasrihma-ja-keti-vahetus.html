@@ -175,7 +175,7 @@
       "headline": "Hammasrihma ja ajamiketi vahetus Tallinnas: millal kontrollida ja mida töö sisaldab",
       "description": "Kuidas aru saada, et hammasrihm või ajamikett vajab kontrolli, miks on seotud detailid olulised ja kuidas vahetus Mr.Car-is käib.",
       "datePublished": "2026-07-13",
-      "dateModified": "2026-07-19",
+      "dateModified": "2026-09-04",
       "author": {
         "@type": "Organization",
         "name": "Mr.Car Autoremont"
@@ -200,7 +200,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/style.css?v=8">
+  <link rel="stylesheet" href="/style.css?v=9">
   <link rel="stylesheet" href="/services/timing-belt-chain.css?v=1">
 
   <!-- Favicons -->
@@ -1165,8 +1165,8 @@
             <div id="formError" class="form-error-banner" style="display:none">Palun täitke kõik kohustuslikud väljad</div>
 
             <div class="form-group">
-                <label for="name">Nimi</label>
-                <input type="text" id="name" name="name" placeholder="Teie nimi">
+                <label for="name">Nimi*</label>
+                <input type="text" id="name" name="name" placeholder="Teie nimi" required>
             </div>
             <div class="form-group">
                 <label for="carNumber">Autonumber*</label>
@@ -1190,6 +1190,7 @@
         </form>
     </div>
 </div>
+  <script src="/scripts/lead-form-upload.js?v=1" defer></script>
 
   </section>
 
