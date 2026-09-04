@@ -39,5 +39,8 @@ jobs:
           printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-service-account.json"
           echo "GOOGLE_APPLICATION_CREDENTIALS=$RUNNER_TEMP/firebase-service-account.json" >> "$GITHUB_ENV"
           node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP + '/firebase-service-account.json','utf8'));console.log('Firebase CI service account: ' + p.client_email)"
+      - name: Install function dependencies
+        working-directory: functions
+        run: npm ci
       - name: Deploy preview lead function
         run: npx --yes firebase-tools deploy --only functions:leadPreview --project mrcar-473416 --non-interactive
