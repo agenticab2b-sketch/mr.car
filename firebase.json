@@ -545,6 +545,10 @@
     ],
     "rewrites": [
       {
+        "source": "/api/lead-preview",
+        "function": "leadPreview"
+      },
+      {
         "source": "/api/lead",
         "function": "lead"
       },

@@ -5,6 +5,7 @@
   const MAX_FILE_BYTES = 5 * 1024 * 1024;
   const MAX_TOTAL_BYTES = 10 * 1024 * 1024;
   const ACCEPT = '.jpg,.jpeg,.png,.heic,.heif,.pdf,image/jpeg,image/png,image/heic,image/heif,application/pdf';
+  const FIREBASE_PREVIEW_HOST_RE = /^mrcar-473416--[a-z0-9-]+\.(web\.app|firebaseapp\.com)$/i;
 
   const MIME_BY_EXTENSION = {
     jpg: 'image/jpeg',
@@ -18,6 +19,8 @@
   const COPY = {
     et: {
       uploadLabel: 'Lisa foto või dokument',
+      chooseFiles: 'Vali failid',
+      noneSelected: 'Faile pole valitud',
       help: 'JPG, PNG, HEIC või PDF · kuni 3 faili · kuni 5 MB faili kohta',
       foreignNote: 'Kui sõiduk on registreeritud välisriigis, palume lisada foto sõiduki registreerimistunnistusest. See aitab meil tellida Teie autole õiged varuosad.',
       tooMany: 'Lisada saab kuni 3 faili.',
@@ -32,6 +35,8 @@
     },
     ru: {
       uploadLabel: 'Добавить фото или документ',
+      chooseFiles: 'Выбрать файлы',
+      noneSelected: 'Файлы не выбраны',
       help: 'JPG, PNG, HEIC или PDF · до 3 файлов · до 5 МБ каждый',
       foreignNote: 'Если автомобиль зарегистрирован за границей, просим приложить фотографию свидетельства о регистрации автомобиля. Это поможет нам подобрать и заказать правильные запчасти для вашего автомобиля.',
       tooMany: 'Можно добавить не более 3 файлов.',
@@ -46,6 +51,8 @@
     },
     en: {
       uploadLabel: 'Add photo or document',
+      chooseFiles: 'Choose files',
+      noneSelected: 'No files selected',
       help: 'JPG, PNG, HEIC or PDF · up to 3 files · up to 5 MB each',
       foreignNote: 'If the vehicle is registered in another country, please attach a photo of the vehicle registration certificate. This will help us identify and order the correct parts for your vehicle.',
       tooMany: 'You can attach up to 3 files.',
@@ -60,6 +67,8 @@
     },
     fi: {
       uploadLabel: 'Lisää kuva tai asiakirja',
+      chooseFiles: 'Valitse tiedostot',
+      noneSelected: 'Tiedostoja ei ole valittu',
       help: 'JPG, PNG, HEIC tai PDF · enintään 3 tiedostoa · enintään 5 Mt / tiedosto',
       foreignNote: 'Jos ajoneuvo on rekisteröity toisessa maassa, pyydämme liittämään kuvan ajoneuvon rekisteröintitodistuksesta. Tämä auttaa meitä tunnistamaan ja tilaamaan oikeat varaosat autoosi.',
       tooMany: 'Voit liittää enintään 3 tiedostoa.',
@@ -161,7 +170,11 @@
     group.className = 'form-group form-attachments';
     group.innerHTML = [
       '<label for="' + id + '">' + copy.uploadLabel + '</label>',
-      '<input id="' + id + '" type="file" data-lead-attachments multiple accept="' + ACCEPT + '">',
+      '<input id="' + id + '" class="form-attachments__input" type="file" data-lead-attachments multiple accept="' + ACCEPT + '">',
+      '<div class="form-attachments__picker">',
+      '<button type="button" class="form-attachments__button" data-lead-attachment-button>' + copy.chooseFiles + '</button>',
+      '<span class="form-attachments__status" data-lead-attachment-status aria-live="polite">' + copy.noneSelected + '</span>',
+      '</div>',
       '<p class="form-attachments__help">' + copy.help + '</p>',
       '<p class="form-attachments__note">' + copy.foreignNote + '</p>',
       '<div class="form-attachments__list" data-lead-attachment-list aria-live="polite"></div>'
@@ -170,20 +183,27 @@
     submitButton.parentNode.insertBefore(group, submitButton);
 
     const input = group.querySelector('input[data-lead-attachments]');
+    const button = group.querySelector('[data-lead-attachment-button]');
+    const status = group.querySelector('[data-lead-attachment-status]');
     const list = group.querySelector('[data-lead-attachment-list]');
+
+    button.addEventListener('click', function () { input.click(); });
+
     input.addEventListener('change', function () {
       const files = Array.from(input.files || []);
       const error = validateFiles(files, copy);
       if (error) {
         input.value = '';
+        status.textContent = copy.noneSelected;
         updateFileList(list, []);
         showMessage(error, true);
         return;
       }
+      status.textContent = files.length ? files.map(function (file) { return file.name; }).join(', ') : copy.noneSelected;
       updateFileList(list, files);
     });
 
-    return { input, list };
+    return { input, list, status };
   }
 
   function fileToBase64(file) {
@@ -299,7 +319,9 @@
           else button.value = copy.sending;
         }
 
-        const response = await fetch('/api/lead', {
+        const isPreview = FIREBASE_PREVIEW_HOST_RE.test(window.location.hostname);
+        const endpoint = isPreview ? '/api/lead-preview' : '/api/lead';
+        const response = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -310,6 +332,10 @@
           result = await response.json();
         } catch (error) {
           result = null;
+        }
+
+        if (isPreview && result && result.success && result.attachmentsAccepted !== data.attachments.length) {
+          throw new Error(copy.error);
         }
 
         if (!response.ok || !result || !result.success) {
@@ -325,6 +351,7 @@
         showMessage(copy.success, false);
         form.reset();
         updateFileList(attachmentField.list, []);
+        if (attachmentField.status) attachmentField.status.textContent = copy.noneSelected;
         const tsStartInput = form.querySelector('[name="tsStart"]');
         if (tsStartInput) tsStartInput.value = Date.now();
       } catch (error) {

@@ -83,6 +83,7 @@ function escHtml(str) {
 
 const ALLOWED_EXACT_HOSTS = new Set(["mrcar.ee", "www.mrcar.ee", "localhost", "127.0.0.1"]);
 const FIREBASE_HOST_RE = /^mrcar-473416(?:--[a-z0-9-]+)?\.(web\.app|firebaseapp\.com)$/i;
+const FIREBASE_PREVIEW_HOST_RE = /^mrcar-473416--[a-z0-9-]+\.(web\.app|firebaseapp\.com)$/i;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[0-9+()\-\s]{5,40}$/;
 const MAX_ATTACHMENTS = 3;
@@ -651,7 +652,8 @@ exports.lead = onRequest({
 
     return res.status(200).json({
       success: true,
-      message: "Спасибо! Заявка отправлена."
+      message: "Спасибо! Заявка отправлена.",
+      attachmentsAccepted: cleanAttachments.length
     });
 
   } catch (error) {
@@ -662,4 +664,21 @@ exports.lead = onRequest({
       message: "Не удалось отправить заявку. Попробуйте ещё раз."
     });
   }
+});
+
+// ─── Preview lead function ────────────────────────────────────────────────────
+// Used only by Firebase Hosting preview channels so attachment delivery can be
+// tested end-to-end without changing the production lead function.
+exports.leadPreview = onRequest({
+  cors: false,
+  region: "europe-west4",
+  maxInstances: 2,
+  secrets: ["SMTP_PASS"]
+}, async (req, res) => {
+  const host = String(req.headers.host || "").toLowerCase().replace(/:\d+$/, "");
+  if (!FIREBASE_PREVIEW_HOST_RE.test(host)) {
+    return res.status(403).json({ success: false, type: "validation", message: "Preview only." });
+  }
+
+  return exports.lead(req, res);
 });
