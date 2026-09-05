@@ -17,8 +17,8 @@
             <div id="formError" class="form-error-banner" style="display:none">{{formValidation}}</div>
 
             <div class="form-group">
-                <label for="name">{{formLabels_name}}</label>
-                <input type="text" id="name" name="name" placeholder="{{formPlaceholder_name}}">
+                <label for="name">{{formLabels_name}}*</label>
+                <input type="text" id="name" name="name" placeholder="{{formPlaceholder_name}}" required>
             </div>
             <div class="form-group">
                 <label for="carNumber">{{formLabels_carNumber}}</label>
@@ -42,3 +42,4 @@
         </form>
     </div>
 </div>
+  <script src="/scripts/lead-form-upload.js?v=1" defer></script>

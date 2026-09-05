@@ -83,8 +83,20 @@ function escHtml(str) {
 
 const ALLOWED_EXACT_HOSTS = new Set(["mrcar.ee", "www.mrcar.ee", "localhost", "127.0.0.1"]);
 const FIREBASE_HOST_RE = /^mrcar-473416(?:--[a-z0-9-]+)?\.(web\.app|firebaseapp\.com)$/i;
+const FIREBASE_PREVIEW_HOST_RE = /^mrcar-473416--[a-z0-9-]+\.(web\.app|firebaseapp\.com)$/i;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[0-9+()\-\s]{5,40}$/;
+const MAX_ATTACHMENTS = 3;
+const MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024;
+const MAX_ATTACHMENTS_TOTAL_BYTES = 10 * 1024 * 1024;
+const ATTACHMENT_TYPES = {
+  '.jpg': { type: 'image/jpeg', claimed: new Set(['', 'image/jpeg', 'image/jpg', 'application/octet-stream']) },
+  '.jpeg': { type: 'image/jpeg', claimed: new Set(['', 'image/jpeg', 'image/jpg', 'application/octet-stream']) },
+  '.png': { type: 'image/png', claimed: new Set(['', 'image/png', 'application/octet-stream']) },
+  '.heic': { type: 'image/heic', claimed: new Set(['', 'image/heic', 'image/heif', 'application/octet-stream']) },
+  '.heif': { type: 'image/heif', claimed: new Set(['', 'image/heic', 'image/heif', 'application/octet-stream']) },
+  '.pdf': { type: 'application/pdf', claimed: new Set(['', 'application/pdf', 'application/octet-stream']) }
+};
 
 function getHostnameFromUrl(value) {
   if (!value || typeof value !== "string") {
@@ -96,6 +108,23 @@ function getHostnameFromUrl(value) {
   } catch (error) {
     return "";
   }
+}
+
+function normaliseHostname(value) {
+  const firstValue = Array.isArray(value) ? value[0] : value;
+  return String(firstValue || "")
+    .split(",", 1)[0]
+    .trim()
+    .toLowerCase()
+    .replace(/:\d+$/, "");
+}
+
+function getRequestHostname(req) {
+  // Firebase Hosting rewrites preserve the public hostname in
+  // X-Forwarded-Host while the function-facing Host can be the Cloud Run
+  // service hostname. Prefer the public hostname so the same origin checks
+  // work on live Hosting and PR preview channels.
+  return normaliseHostname(req.headers["x-forwarded-host"] || req.headers.host);
 }
 
 function isAllowedHostname(hostname) {
@@ -155,6 +184,98 @@ function isValidEmail(email) {
 
 function isValidPhone(phone) {
   return PHONE_RE.test(phone);
+}
+
+function getAttachmentExtension(fileName) {
+  const match = String(fileName || '').toLowerCase().match(/\.([a-z0-9]+)$/);
+  return match ? '.' + match[1] : '';
+}
+
+function hasValidAttachmentSignature(content, extension) {
+  if (!Buffer.isBuffer(content) || content.length < 5) return false;
+
+  if (extension === '.jpg' || extension === '.jpeg') {
+    return content.length >= 3 && content[0] === 0xff && content[1] === 0xd8 && content[2] === 0xff;
+  }
+
+  if (extension === '.png') {
+    const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+    return content.length >= 8 && content.subarray(0, 8).equals(pngSignature);
+  }
+
+  if (extension === '.pdf') {
+    return content.subarray(0, 5).toString('ascii') === '%PDF-';
+  }
+
+  if (extension === '.heic' || extension === '.heif') {
+    if (content.length < 12 || content.subarray(4, 8).toString('ascii') !== 'ftyp') return false;
+    const brand = content.subarray(8, 12).toString('ascii').toLowerCase();
+    return new Set(['heic', 'heix', 'hevc', 'hevx', 'heim', 'heis', 'mif1', 'msf1']).has(brand);
+  }
+
+  return false;
+}
+
+function normaliseAttachments(value) {
+  if (value === undefined || value === null || value === '') {
+    return { valid: true, files: [] };
+  }
+
+  let rawFiles = value;
+  if (typeof rawFiles === 'string') {
+    try {
+      rawFiles = JSON.parse(rawFiles);
+    } catch (error) {
+      return { valid: false, files: [] };
+    }
+  }
+
+  if (!Array.isArray(rawFiles) || rawFiles.length > MAX_ATTACHMENTS) {
+    return { valid: false, files: [] };
+  }
+
+  const files = [];
+  let totalBytes = 0;
+
+  for (const rawFile of rawFiles) {
+    if (!rawFile || typeof rawFile !== 'object' || Array.isArray(rawFile)) {
+      return { valid: false, files: [] };
+    }
+
+    const rawName = normaliseSingleLine(rawFile.name, 120);
+    const name = rawName.replace(/[\\/:*?"<>|\u0000-\u001f]/g, '_');
+    const extension = getAttachmentExtension(name);
+    const allowed = ATTACHMENT_TYPES[extension];
+    const claimedType = normaliseSingleLine(rawFile.type, 80).toLowerCase();
+    const data = typeof rawFile.data === 'string' ? rawFile.data.replace(/\s/g, '') : '';
+
+    if (!name || !allowed || !allowed.claimed.has(claimedType)) {
+      return { valid: false, files: [] };
+    }
+
+    const maxBase64Length = Math.ceil(MAX_ATTACHMENT_BYTES / 3) * 4 + 4;
+    if (!data || data.length > maxBase64Length || !/^[A-Za-z0-9+/]*={0,2}$/.test(data)) {
+      return { valid: false, files: [] };
+    }
+
+    const fileContent = Buffer.from(data, 'base64');
+    if (!fileContent.length || fileContent.length > MAX_ATTACHMENT_BYTES || !hasValidAttachmentSignature(fileContent, extension)) {
+      return { valid: false, files: [] };
+    }
+
+    totalBytes += fileContent.length;
+    if (totalBytes > MAX_ATTACHMENTS_TOTAL_BYTES) {
+      return { valid: false, files: [] };
+    }
+
+    files.push({
+      name,
+      type: allowed.type,
+      content: fileContent
+    });
+  }
+
+  return { valid: true, files };
 }
 
 // ─── Customer auto-reply email builder ───────────────────────────────────────
@@ -373,7 +494,9 @@ function buildCustomerEmail(lang, name, carNumber, email, phone, message) {
 
 exports.lead = onRequest({
   cors: false,
-  region: "europe-west4",
+  // Keep the existing production function in place. Region migration is a
+  // separate rollout from the attachment feature.
+  region: "us-central1",
   maxInstances: 10,
   secrets: ["SMTP_PASS"]
 }, async (req, res) => {
@@ -390,7 +513,7 @@ exports.lead = onRequest({
     });
   }
 
-  const host = String(req.headers.host || "").toLowerCase().replace(/:\d+$/, "");
+  const host = getRequestHostname(req);
   const originHost = getHostnameFromUrl(req.headers.origin);
   const refererHost = getHostnameFromUrl(req.headers.referer);
 
@@ -414,6 +537,8 @@ exports.lead = onRequest({
   const hp = normaliseSingleLine(body.hp, 200);
   const tsStart = Number.parseInt(body.tsStart, 10);
   const cleanPageUrl = normalisePageUrl(body.pageUrl);
+  const attachmentResult = normaliseAttachments(body.attachments);
+  const cleanAttachments = attachmentResult.files;
 
   // ── Anti-spam ─────────────────────────────────────────────────────────────
 
@@ -431,6 +556,9 @@ exports.lead = onRequest({
   // ── Validation ────────────────────────────────────────────────────────────
 
   const invalidFields = [];
+  if (!cleanName) {
+    invalidFields.push("name");
+  }
   if (cleanCarNumber.length < 2) {
     invalidFields.push("carNumber");
   }
@@ -442,6 +570,9 @@ exports.lead = onRequest({
   }
   if (cleanPhone && !isValidPhone(cleanPhone)) {
     invalidFields.push("phone");
+  }
+  if (!attachmentResult.valid) {
+    invalidFields.push("attachments");
   }
 
   if (invalidFields.length > 0) {
@@ -501,8 +632,14 @@ exports.lead = onRequest({
       `Sõnum:         ${cleanMessage}`,
       `Kliendi keel:  ${lang}`,
       `Lehe URL:      ${cleanPageUrl || "—"}`,
+      `Manused:       ${cleanAttachments.length ? cleanAttachments.map(file => file.name).join(", ") : "—"}`,
       `Aeg:           ${timestamp}`
-    ].join("\n")
+    ].join("\n"),
+    attachments: cleanAttachments.map(file => ({
+      filename: file.name,
+      content: file.content,
+      contentType: file.type
+    }))
   };
 
   // ── Customer auto-reply ───────────────────────────────────────────────────
@@ -534,7 +671,8 @@ exports.lead = onRequest({
 
     return res.status(200).json({
       success: true,
-      message: "Спасибо! Заявка отправлена."
+      message: "Спасибо! Заявка отправлена.",
+      attachmentsAccepted: cleanAttachments.length
     });
 
   } catch (error) {
@@ -545,4 +683,23 @@ exports.lead = onRequest({
       message: "Не удалось отправить заявку. Попробуйте ещё раз."
     });
   }
+});
+
+// ─── Preview lead function ────────────────────────────────────────────────────
+// Used only by Firebase Hosting preview channels so attachment delivery can be
+// tested end-to-end without changing the production lead function.
+exports.leadPreview = onRequest({
+  cors: false,
+  region: "europe-west4",
+  maxInstances: 2,
+  secrets: ["SMTP_PASS"]
+}, async (req, res) => {
+  const host = getRequestHostname(req);
+  const originHost = getHostnameFromUrl(req.headers.origin);
+  if (!FIREBASE_PREVIEW_HOST_RE.test(host) ||
+      (req.method === "POST" && originHost !== host)) {
+    return res.status(403).json({ success: false, type: "validation", message: "Preview only." });
+  }
+
+  return exports.lead(req, res);
 });

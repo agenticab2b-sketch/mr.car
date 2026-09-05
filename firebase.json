@@ -545,8 +545,18 @@
     ],
     "rewrites": [
       {
+        "source": "/api/lead-preview",
+        "function": {
+          "functionId": "leadPreview",
+          "region": "europe-west4"
+        }
+      },
+      {
         "source": "/api/lead",
-        "function": "lead"
+        "function": {
+          "functionId": "lead",
+          "region": "us-central1"
+        }
       },
       {
         "source": "/api/google-rating",
