@@ -494,7 +494,9 @@ function buildCustomerEmail(lang, name, carNumber, email, phone, message) {
 
 exports.lead = onRequest({
   cors: false,
-  region: "europe-west4",
+  // Keep the existing production function in place. Region migration is a
+  // separate rollout from the attachment feature.
+  region: "us-central1",
   maxInstances: 10,
   secrets: ["SMTP_PASS"]
 }, async (req, res) => {
