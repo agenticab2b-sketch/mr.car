@@ -26,11 +26,6 @@ jobs:
             git status --porcelain
             exit 1
           fi
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MRCAR_473416 }}
-          projectId: mrcar-473416
       - name: Prepare Firebase credentials for preview function
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MRCAR_473416 }}
@@ -44,3 +39,8 @@ jobs:
         run: npm ci
       - name: Deploy preview lead function
         run: npx --yes firebase-tools deploy --only functions:leadPreview --project mrcar-473416 --non-interactive
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MRCAR_473416 }}
+          projectId: mrcar-473416

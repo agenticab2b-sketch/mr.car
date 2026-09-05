@@ -110,6 +110,23 @@ function getHostnameFromUrl(value) {
   }
 }
 
+function normaliseHostname(value) {
+  const firstValue = Array.isArray(value) ? value[0] : value;
+  return String(firstValue || "")
+    .split(",", 1)[0]
+    .trim()
+    .toLowerCase()
+    .replace(/:\d+$/, "");
+}
+
+function getRequestHostname(req) {
+  // Firebase Hosting rewrites preserve the public hostname in
+  // X-Forwarded-Host while the function-facing Host can be the Cloud Run
+  // service hostname. Prefer the public hostname so the same origin checks
+  // work on live Hosting and PR preview channels.
+  return normaliseHostname(req.headers["x-forwarded-host"] || req.headers.host);
+}
+
 function isAllowedHostname(hostname) {
   const normalized = String(hostname || "").toLowerCase().replace(/:\d+$/, "");
   if (!normalized) {
@@ -494,7 +511,7 @@ exports.lead = onRequest({
     });
   }
 
-  const host = String(req.headers.host || "").toLowerCase().replace(/:\d+$/, "");
+  const host = getRequestHostname(req);
   const originHost = getHostnameFromUrl(req.headers.origin);
   const refererHost = getHostnameFromUrl(req.headers.referer);
 
@@ -675,8 +692,10 @@ exports.leadPreview = onRequest({
   maxInstances: 2,
   secrets: ["SMTP_PASS"]
 }, async (req, res) => {
-  const host = String(req.headers.host || "").toLowerCase().replace(/:\d+$/, "");
-  if (!FIREBASE_PREVIEW_HOST_RE.test(host)) {
+  const host = getRequestHostname(req);
+  const originHost = getHostnameFromUrl(req.headers.origin);
+  if (!FIREBASE_PREVIEW_HOST_RE.test(host) ||
+      (req.method === "POST" && originHost !== host)) {
     return res.status(403).json({ success: false, type: "validation", message: "Preview only." });
   }
 

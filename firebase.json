@@ -546,7 +546,10 @@
     "rewrites": [
       {
         "source": "/api/lead-preview",
-        "function": "leadPreview"
+        "function": {
+          "functionId": "leadPreview",
+          "region": "europe-west4"
+        }
       },
       {
         "source": "/api/lead",
