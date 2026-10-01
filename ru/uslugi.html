@@ -403,14 +403,14 @@
                         <h3 class="listing-card__title">Диагностика</h3>
                     </div>
                     <div class="listing-card__tags">
-                        <span>Диагностика двигателя</span>
-                        <span>Компьютерная диагностика</span>
+                        <span>Check Engine</span>
+                        <span>Ошибки электронных систем</span>
                     </div>
-                    <p class="listing-card__desc">Страница услуги находится в разработке. Информацию и цены по диагностике добавим позже.</p>
+                    <p class="listing-card__desc">Чтение и удаление кодов ошибок — 25 €. Поиск причины конкретной неисправности: текущие параметры автомобиля, измерения и дополнительные проверки — от 50 €.</p>
                     <ul class="listing-card__list">
-                        <li>Этапы диагностики</li>
-                        <li>Цены и сроки</li>
-                        <li>Типичные симптомы</li>
+                        <li>Чтение и удаление кодов ошибок</li>
+                        <li>Компьютерная диагностика</li>
+                        <li>Эндоскопия двигателя</li>
                     </ul>
                     <div class="listing-card__footer">
                         <a href="/ru/services/diagnostika" class="listing-card__link">Подробнее</a>
@@ -715,6 +715,7 @@
         burger.addEventListener('click', () => {
             mobileMenu.classList.add('active');
             document.body.style.overflow = 'hidden';
+            closeBtn.focus();
         });
 
         closeBtn.addEventListener('click', closeMobileMenu);
@@ -722,21 +723,23 @@
         function closeMobileMenu() {
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
+            document.getElementById('mobileMegaMenu').classList.remove('is-open');
+            document.querySelector('.mobile-menu__link[onclick="toggleMobileMegaMenu(event)"]').classList.remove('is-open');
         }
 
         function toggleMobileMegaMenu(e) {
             e.preventDefault();
-            const icon = e.currentTarget.querySelector('.mobile-menu__toggle-icon');
             const menu = document.getElementById('mobileMegaMenu');
-
-            if (menu.classList.contains('active')) {
-                menu.classList.remove('active');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                menu.classList.add('active');
-                icon.style.transform = 'rotate(180deg)';
-            }
+            menu.classList.toggle('is-open');
+            e.currentTarget.classList.toggle('is-open');
         }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+                burger.focus();
+            }
+        });
     </script>
 </body>
 

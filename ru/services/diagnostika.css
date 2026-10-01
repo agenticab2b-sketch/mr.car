@@ -1,0 +1,172 @@
+/* Diagnostics: page-local composition using the shared Mr.Car service components. */
+.service-diagnostics-page .sd-content {
+    gap: var(--space-2xl);
+}
+
+.service-diagnostics-page .dg-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.service-diagnostics-page .dg-hero-address {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.service-diagnostics-page .dg-hero-actions .btn {
+    min-height: 54px;
+    margin: 0;
+    white-space: normal;
+}
+
+.service-diagnostics-page .gb-section-title {
+    margin-bottom: var(--space-lg);
+}
+
+.service-diagnostics-page .gb-section-text + *,
+.service-diagnostics-page :is(.gb-services-grid, .gb-checklist, .dg-symptoms, .dg-pricing) + .gb-section-text {
+    margin-top: var(--space-lg);
+}
+
+.service-diagnostics-page .gb-checklist {
+    margin-top: 0;
+}
+
+.service-diagnostics-page .dg-text-link,
+.service-diagnostics-page .dg-pricing a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--border-grid);
+    transition: color var(--transition-fast);
+}
+
+.service-diagnostics-page .dg-text-link {
+    color: var(--accent-primary);
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.service-diagnostics-page .dg-text-link:hover,
+.service-diagnostics-page .dg-pricing a:hover {
+    color: var(--accent-primary-hover);
+    text-decoration-color: currentColor;
+}
+
+.service-diagnostics-page .dg-related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md) var(--space-xl);
+}
+
+.service-diagnostics-page .dg-symptoms {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    border: var(--border);
+    background: var(--border-grid);
+}
+
+.service-diagnostics-page .dg-symptoms li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--bg-main);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+.service-diagnostics-page .dg-symptoms li:last-child {
+    grid-column: 1 / -1;
+}
+
+.service-diagnostics-page .dg-symptoms iconify-icon {
+    flex-shrink: 0;
+    color: var(--accent-primary);
+    margin-top: 2px;
+}
+
+.service-diagnostics-page .dg-step-title {
+    margin-bottom: var(--space-sm);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.service-diagnostics-page .dg-pricing th:first-child {
+    width: 35%;
+}
+
+.service-diagnostics-page .dg-pricing th:last-child {
+    width: 19%;
+}
+
+.service-diagnostics-page .dg-pricing :is(td, th) {
+    vertical-align: top;
+}
+
+.service-diagnostics-page .dg-pricing .gb-price span {
+    display: inline-block;
+    min-width: 4.5em;
+}
+
+.service-diagnostics-page .gb-faq-item__content {
+    padding-top: var(--space-md);
+}
+
+.service-diagnostics-page .gb-urgency-block .gb-section-text {
+    margin-top: var(--space-md);
+}
+
+.service-diagnostics-page #request {
+    scroll-margin-top: 80px;
+}
+
+.service-diagnostics-page .contact-grid > * {
+    min-width: 0;
+}
+
+.service-diagnostics-page #contactForm button[type="submit"] {
+    white-space: normal;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .service-diagnostics-page .sd-content {
+        gap: var(--space-xl);
+    }
+
+    .service-diagnostics-page .dg-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .service-diagnostics-page .dg-hero-actions .btn {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .service-diagnostics-page .dg-symptoms {
+        grid-template-columns: 1fr;
+    }
+
+    .service-diagnostics-page .dg-pricing td {
+        display: block;
+    }
+
+    .service-diagnostics-page .dg-pricing td::before {
+        display: block;
+        margin-bottom: var(--space-xs);
+    }
+
+    .service-diagnostics-page .gb-diagnostics-card,
+    .service-diagnostics-page .gb-urgency-block {
+        padding: var(--space-lg);
+    }
+}

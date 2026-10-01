@@ -10,7 +10,8 @@
  *   ru/services/{slug}.html  — 11 files
  *   en/services/{slug}.html  — 11 files
  *
- * Standalone service pages are NOT touched — they are excluded via SKIP_FILES constant.
+ * Standalone service content is preserved via SKIP_FILES or a locale-specific
+ * `standalone: true` service-data entry. Shared navigation can still be synced.
  *
  * Run: node build.js
  */
@@ -1625,7 +1626,7 @@ function renderServiceListingCards(services, cfg) {
                         <h3 class="listing-card__title">${esc(service.listingTitle || service.navTitle || service.heroTitle || service.slug)}</h3>
                     </div>
 ${tagHtml ? `                    ${tagHtml}
-` : ''}                    <p class="listing-card__desc">${esc(service.heroLead || service.introTitle || service.navTitle || '')}</p>
+` : ''}                    <p class="listing-card__desc">${esc(service.listingDescription || service.heroLead || service.introTitle || service.navTitle || '')}</p>
 ${listHtml ? `                    ${listHtml}
 ` : ''}                    <div class="listing-card__footer">
                         <a href="${cfg.serviceBase}${esc(service.slug)}" class="listing-card__link">${esc(ctaLabel)}</a>
@@ -2288,7 +2289,7 @@ for (const cfg of LANGS) {
     const outFile = path.join(outDir, `${s.slug}.html`);
 
     // Skip standalone landing pages
-    if (SKIP_FILES.has(s.slug)) {
+    if (SKIP_FILES.has(s.slug) || s.standalone) {
       process.stdout.write(`  ⏭ SKIP  ${s.slug}.html  (standalone page)\n`);
       totalSkipped++;
       continue;
@@ -2320,7 +2321,7 @@ for (const cfg of LANGS) {
     process.stdout.write(` ✓  (${html.length} bytes)\n`);
     totalGenerated++;
   }
-  process.stdout.write(`  ✅ [${cfg.lang.toUpperCase()}] done — ${services.filter(s => !SKIP_FILES.has(s.slug)).length} pages\n`);
+  process.stdout.write(`  ✅ [${cfg.lang.toUpperCase()}] done — ${services.filter(s => !SKIP_FILES.has(s.slug) && !s.standalone).length} pages\n`);
 }
 
 process.stdout.write(`\n✅ Done: ${totalGenerated} pages generated, ${totalSkipped} skipped.\n`);
