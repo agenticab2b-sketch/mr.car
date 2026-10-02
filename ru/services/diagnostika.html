@@ -90,6 +90,7 @@
         "@graph": [
           {
             "@type": "AutoRepair",
+            "@id": "https://www.mrcar.ee/#business",
             "name": "Mr.Car Autoremont",
             "url": "https://www.mrcar.ee/",
             "telephone": "+372 5646 1210",
@@ -115,8 +116,8 @@
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": 59.4428,
-              "longitude": 24.7367
+              "latitude": 59.450346,
+              "longitude": 24.7115448
             }
           },
           {
@@ -124,9 +125,7 @@
             "name": "Диагностика автомобиля в Таллинне",
             "description": "Компьютерная диагностика автомобиля в Таллинне: Check Engine, двигатель, электрика, ZF/DSG, Webasto. Чтение и удаление ошибок — 25 €, диагностика — от 50 €.",
             "provider": {
-              "@type": "AutoRepair",
-              "name": "Mr.Car",
-              "url": "https://www.mrcar.ee/"
+              "@id": "https://www.mrcar.ee/#business"
             },
             "url": "https://www.mrcar.ee/ru/services/diagnostika",
             "areaServed": {
@@ -210,7 +209,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/style.css?v=9" />
     <link rel="stylesheet" href="/ru/services/diagnostika.css?v=1" />
-    <link rel="preload" as="image" href="/pics/electrical-repair-hero.webp" />
+    <link rel="preload" as="image" href="/pics/electrical-repair-hero.webp" fetchpriority="high" />
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -219,7 +218,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
   </head>
   <body class="service-diagnostics-page">
     <a class="skip-link" href="#main-content">Перейти к содержанию</a>
@@ -2509,7 +2508,7 @@
           </div>
           <div class="location__map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.9!2d24.7367!3d59.4428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469294a73d8b6a69%3A0x4e7e0e6e7e6e7e6e!2sKopli+82a%2C+Tallinn!5e0!3m2!1set!2see!4v1600000000000!5m2!1set!2see"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2027.9643354555903!2d24.7115448!3d59.450345999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46929344f387f475%3A0x89a239510a11e7aa!2sMr.Car%20Autoremont%20Tallinn!5e0!3m2!1sru!2see!4v1790940747026!5m2!1sru!2see"
               allowfullscreen
               loading="lazy"
               title="Mr.Car на карте"

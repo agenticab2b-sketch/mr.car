@@ -41,3 +41,15 @@ Checked against GitHub `origin/main` at `7e81b5a`. The existing clean URL `/ru/s
 - Incoming links, their destination anchors, all three price tabs, the shared menus, catalog filter and clean URL/sitemap registration verified. Downloadable HTML matches the final page body and embeds its styles, fonts, hero and icons.
 
 The owner explicitly requested integration into the site after approving the page copy. This clone's `pre-commit` and `pre-push` hooks permit only commits on `main` and `main -> origin/main`; the feature-branch commit/push was rejected before any remote change. After local content, build and browser review, the verified changes are published through that enforced path and the existing Firebase workflow. The hooks are unchanged.
+
+## Pre-index technical SEO audit — 2026-10-02
+
+The published RU page returns HTTP 200 without a redirect. HTTP, non-www, `.html` and trailing-slash variants permanently redirect to its self-canonical HTTPS/www URL. Live robots.txt permits crawling, no `noindex` meta or X-Robots-Tag blocks the page, and sitemap.xml contains one canonical entry. Title, description, Russian language, one H1, static HTML content, breadcrumb microdata, social metadata and 31 live internal destination URLs were checked.
+
+Google Rich Results Test successfully fetched the smartphone version and initially reported five valid items (breadcrumbs, two LocalBusiness and two Organization interpretations), with optional-property warnings. The Service provider now references the complete AutoRepair node through one stable `@id`, removing the duplicate incomplete business description. No business price range was invented to silence an optional warning.
+
+Verified the actual Mr.Car Google Maps listing at Kopli 82a: latitude `59.450346`, longitude `24.7115448`. Replaced this page's old coordinates and old embed with the official Google Maps embed for that business. The page's text, prices, form and layout are preserved.
+
+Deferred the parser-blocking Iconify loader and gave the preloaded hero image high fetch priority. Initial mobile Lighthouse lab scores were SEO 100/100 and performance 44/100 (FCP 3.8 s, LCP 7.8 s, TBT 820 ms, CLS 0); these are lab observations, not field Core Web Vitals or a guarantee of indexing. Broader mobile performance optimization remains a follow-up.
+
+The ET and EN diagnostics URLs respond successfully and have reciprocal hreflang, but their body content remains a development placeholder, not a translation of the completed RU page. Translation work is outside the current RU scope. FAQ Schema.org markup still matches the eight visible answers; Google retired FAQ rich results from May 7, 2026, so their absence from Rich Results Test is expected. Indexing requests are left to the owner as requested.
