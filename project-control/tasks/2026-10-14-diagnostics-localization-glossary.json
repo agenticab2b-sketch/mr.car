@@ -1,0 +1,28 @@
+{
+  "project": "Mr.Car diagnostics",
+  "date": "2026-10-14",
+  "source": "Published RU diagnostics page, fetched and matched local HTML before editing",
+  "review_mode": "self-review; no independent reviewer or native human approval",
+  "english": "International customer-facing automotive copy, British spelling in editorial text; shared site navigation preserved",
+  "estonian": "Natural public-facing service copy; concise site-standard imperative CTAs, polite plural instructions",
+  "status": "Reviewed translation choices; not owner-approved glossary",
+  "terms": [
+    {"ru":"чтение и удаление кодов ошибок","en":"fault code reading and clearing","et":"veakoodide lugemine ja kustutamine","context":"25 € service; does not include finding the cause","status":"contextually checked","evidence":"https://ap.boschcarservice.com/in/en/car-services/car-diagnostics/"},
+    {"ru":"компьютерная диагностика","en":"computer diagnostics","et":"arvutidiagnostika","context":"Finding the cause of a specific fault, from 50 €; separate from code reading","status":"reviewed project choice"},
+    {"ru":"текущие параметры автомобиля","en":"live vehicle data / live data","et":"auto reaalajas parameetrid","context":"Current measured vehicle parameters; inflected forms allowed","status":"EN contextually checked; ET reviewed choice","evidence":"https://ap.boschcarservice.com/in/en/car-services/car-diagnostics/"},
+    {"ru":"сохранённые данные на момент возникновения ошибки","en":"data stored at the moment the fault occurred (freeze frame)","et":"rikke tekkimise hetkel salvestatud andmed (freeze frame)","context":"Keep explanation and technical English term","status":"contextually checked","evidence":"https://ap.boschcarservice.com/in/en/car-services/car-diagnostics/"},
+    {"ru":"электронные блоки","en":"control units","et":"juhtplokid","status":"reviewed project choice"},
+    {"ru":"исполнительные механизмы","en":"actuators","et":"täiturid","context":"Technical actuator meaning; grammatical forms täiturite etc. allowed","status":"EKI contextually verified","evidence":"https://sonaveeb.ee/search/unif/dlall/dsall/actuator/1/eng?uilang=en"},
+    {"ru":"аварийный режим","en":"limp mode","et":"avariirežiim","status":"reviewed automotive choice"},
+    {"ru":"проверяем гипотезы","en":"we test possible causes","et":"kontrollime võimalikke põhjuseid","context":"Plain-language diagnostic hypothesis testing, without promising the cause is already known","status":"reviewed translation choice"},
+    {"ru":"эндоскопия двигателя","en":"engine borescope inspection","et":"mootori endoskoopia","context":"Visual inspection of accessible internal surfaces; does not replace compression testing","status":"EN engine-manufacturer usage verified; ET reviewed choice","evidence":"https://www.lycoming.com/sites/default/files/attachments/MM-YO-233-B2A.pdf"},
+    {"ru":"задиры на стенках цилиндров","en":"scoring on cylinder walls","et":"sügavad kriimustused silindriseintel","context":"Visible surface damage, accessible zones only; descriptive ET phrase rather than a claim of full condition assessment","status":"reviewed descriptive choice; not native-approved"},
+    {"ru":"отложения","en":"deposits","et":"ladestused","status":"reviewed descriptive choice"},
+    {"ru":"проверка ЛКП толщиномером","en":"paint thickness check with a gauge","et":"värvikihi paksuse mõõtmine paksusemõõturiga","context":"Paint coating, not clear lacquer only; rejected ET lakikihi as narrower than RU","status":"ET service-provider usage verified","evidence":"https://www.mvauto.ee/auto-ostueelne-kontroll"},
+    {"ru":"диагностика подвески","en":"suspension diagnostics","et":"veermiku diagnostika","status":"reviewed site terminology"},
+    {"ru":"осмотр перед покупкой","en":"pre-purchase inspection","et":"ostueelne kontroll","context":"80 €, with inspection, fault codes and paint thickness check","status":"reviewed site terminology"},
+    {"ru":"администратор","en":"service adviser","et":"administraator","context":"Person explaining the results and next steps, not a diagnostic engineer","status":"reviewed functional choice; no certified job-title equivalence claimed"},
+    {"ru":"базовые установки","en":"basic settings","et":"põhiseadistused (basic settings)","context":"Diagnostic equipment-supported operations; programming and factory updates assessed individually","status":"reviewed automotive choice"},
+    {"ru":"необходимая для доступа разборка оплачивается отдельно","en":"disassembly needed for access is charged separately","et":"juurdepääsuks vajaliku lahtivõtmise eest arvestatakse eraldi tasu","context":"Preserve separate charge; never imply inclusion in starting diagnostic price","status":"reviewed commercial condition"}
+  ]
+}

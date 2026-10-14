@@ -1500,6 +1500,24 @@ function ensureMobileMenuScript(html) {
   return html.replace(/<\/body>/i, `${buildMobileMenuScript()}\n</body>`);
 }
 
+function localizeDiagnosticsLanguageLinks(navHtml, source) {
+  const canonical = getCanonicalHref(source);
+  const paths = {
+    '/': '/services/diagnostika',
+    '/ru': '/ru/services/diagnostika',
+    '/en': '/en/services/diagnostics'
+  };
+  // Keep the diagnostics language switch on the same service in all three locales.
+  // Other pages and the shared navigation partials retain their existing links.
+  if (!Object.values(paths).some(p => canonical === `${PROD_ORIGIN}${p}`)) return navHtml;
+  return navHtml.replace(/<a\b([^>]*)>/g, (tag, attrs) => {
+    const classes = attrs.match(/\bclass="([^"]+)"/)?.[1]?.split(/\s+/) || [];
+    if (!classes.includes('lang-link') && !classes.includes('mobile-lang-link')) return tag;
+    const href = attrs.match(/\bhref="([^"]+)"/)?.[1];
+    return paths[href] ? tag.replace(/\bhref="[^"]+"/, `href="${paths[href]}"`) : tag;
+  });
+}
+
 function syncGlobalNavigation() {
   const cfgByLang = new Map(LANGS.map(cfg => [cfg.lang, cfg]));
   const navByLang = new Map(LANGS.map(cfg => [
@@ -1514,13 +1532,15 @@ function syncGlobalNavigation() {
 
     const lang = detectLangFromPath(relPath);
     const cfg = cfgByLang.get(lang);
-    const navHtml = navByLang.get(lang);
-    if (!cfg || !navHtml) continue;
+    const sharedNavHtml = navByLang.get(lang);
+    if (!cfg || !sharedNavHtml) continue;
+
+    const source = fs.readFileSync(filePath, 'utf8');
+    const navHtml = localizeDiagnosticsLanguageLinks(sharedNavHtml, source);
 
     const [headerHtml, mobileMenuHtml] = navHtml.split(/\n\n  <!-- MOBILE MENU -->\n/);
     if (!headerHtml || !mobileMenuHtml) continue;
 
-    const source = fs.readFileSync(filePath, 'utf8');
     let next = source;
 
     const mobileMenuBlock = findMobileMenuBlock(next);

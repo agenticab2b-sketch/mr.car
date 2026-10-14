@@ -591,44 +591,32 @@ const SERVICES = [
         category: "Hooldus",
         navTitle: "Diagnostika",
         icon: "mdi:car-search",
-        heroTitle: "Autodiagnostika",
-        heroLead: "See teenuse leht on koostamisel. Diagnostika info ja hinnad lisame peagi.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
-        introTitle: "Leht on koostamisel",
-        introText: [
-            "Autodiagnostika saab eraldi teenuse lehe, et hooldus ja rikete otsing oleksid menüüs selgelt eraldi.",
-            "Kuni detailne leht valmib, saad diagnostika aja broneerida sama päringuvormi kaudu."
-        ],
-        symptomsTitle: "Mida leht hakkab sisaldama?",
+        // Editorial landing page: maintained directly in services/diagnostika.html.
+        standalone: true,
+        heroTitle: "Autodiagnostika Tallinnas",
+        heroLead: "Kas Check Engine'i märgutuli süttis? Kas auto käivitub raskelt, on kaotanud võimsust, töötab ebaühtlaselt või kuvab mõni elektroonikasüsteem veateate? Diagnostika aitab leida rikke põhjuse ja selgitada, millised kontrollid või remonditööd on tegelikult vajalikud.",
+        listingDescription: "Veakoodide lugemine ja kustutamine — 25 €. Konkreetse rikke põhjuse otsimine: auto reaalajas parameetrid, mõõtmised ja lisakontrollid — alates 50 €.",
         symptoms: [
-            { icon: "mdi:engine-outline", text: "Mootori diagnostika" },
-            { icon: "mdi:car-cog", text: "Arvutidiagnostika" },
-            { icon: "mdi:alert-circle", text: "Veakoodide lugemine" },
-            { icon: "mdi:lightning-bolt", text: "Elektririkete kontroll" }
+            { icon: "mdi:engine-outline", text: "Check Engine" },
+            { icon: "mdi:alert-circle-outline", text: "Elektroonikasüsteemide veateated" }
         ],
-        afterSymptomsText: "Leht on arenduses, kuid teenust saab juba tellida.",
-        servicesListTitle: "Planeeritav sisu:",
         servicesList: [
-            "Diagnostika tööetapid",
-            "Hinnad ja ajakulu",
-            "Tüüpilised sümptomid",
-            "Broneerimissoovitused"
+            "Veakoodide lugemine ja kustutamine",
+            "Arvutidiagnostika",
+            "Mootori endoskoopia"
         ],
-        afterListText: "Täielik kirjeldus lisatakse hiljem.",
-        promoBanner: { enabled: false },
-        ctaSection: {
-            title: "Vajad diagnostikat?",
-            text: "Jäta päring — lepime aja kokku ja täpsustame probleemi.",
-            phoneText: "Helista: +372 5646 1210",
-            phoneNumber: "+37256461210"
-        },
+        heroImage: "/pics/electrical-repair-hero.webp",
+        introTitle: "Veakoodide lugemine ja arvutidiagnostika — milles on erinevus?",
+        introText: [
+            "Mr.Caris saab broneerida aja veakoodide lugemiseks ja kustutamiseks või konkreetse rikke põhjalikuks arvutidiagnostikaks. Keerukate diagnostikaülesannetega tegeleb selle valdkonna spetsialist, kellel on üle 20 aasta kogemust."
+        ],
         form: {
-            title: "Diagnostika broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            title: "Broneeri diagnostika Tallinnas",
+            subtitle: "Broneerides kirjeldage autot, sümptomit ja tingimusi, milles see ilmneb. Kui soovite ainult veakoodide lugemist ja kustutamist, märkige see eraldi. Kui on vaja leida rikke põhjus, lepime kokku esialgse ülesande ning kontrolli tulemuste põhjal edasised sammud."
         },
         seo: {
-            title: "Autodiagnostika — Mr.Car Tallinn",
-            description: "Autodiagnostika Tallinnas. Leht on koostamisel. Kopli 82a. +372 5646 1210"
+            title: "Autodiagnostika Tallinnas | Arvutidiagnostika — Mr.Car",
+            description: "Auto arvutidiagnostika Tallinnas: Check Engine, mootor, elektrisüsteemid, ZF/DSG, Webasto. Veakoodide lugemine ja kustutamine 25 €, diagnostika alates 50 €."
         }
     },
 

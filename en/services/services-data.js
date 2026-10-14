@@ -593,44 +593,32 @@ const SERVICES = [
         category: "Maintenance",
         navTitle: "Diagnostics",
         icon: "mdi:car-search",
-        heroTitle: "Car Diagnostics",
-        heroLead: "This service page is under construction. Diagnostics information and prices will be added soon.",
-        heroImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1400&q=80",
-        introTitle: "Page under construction",
-        introText: [
-            "Diagnostics are now a separate service so maintenance and fault finding are clearly separated in the menu.",
-            "Until the detailed page is ready, you can book diagnostics through the same request form."
-        ],
-        symptomsTitle: "What will this page include?",
+        // Editorial landing page: maintained directly in en/services/diagnostics.html.
+        standalone: true,
+        heroTitle: "Car Diagnostics in Tallinn",
+        heroLead: "Has the Check Engine light come on? Is the car hard to start, down on power or running unevenly, or is an electronic system reporting a fault? Diagnostics help identify the cause and determine which checks or repairs are actually needed.",
+        listingDescription: "Reading and clearing fault codes — €25. Finding the cause of a specific fault: live data, measurements and additional checks — from €50.",
         symptoms: [
-            { icon: "mdi:engine-outline", text: "Engine diagnostics" },
-            { icon: "mdi:car-cog", text: "Computer diagnostics" },
-            { icon: "mdi:alert-circle", text: "Fault code reading" },
-            { icon: "mdi:lightning-bolt", text: "Electrical fault checks" }
+            { icon: "mdi:engine-outline", text: "Check Engine" },
+            { icon: "mdi:alert-circle-outline", text: "Electronic system faults" }
         ],
-        afterSymptomsText: "The page is in development, but the service can already be requested.",
-        servicesListTitle: "Planned content:",
         servicesList: [
-            "Diagnostics workflow",
-            "Prices and timing",
-            "Common symptoms",
-            "Booking recommendations"
+            "Reading and clearing fault codes",
+            "Computer diagnostics",
+            "Engine borescope inspection"
         ],
-        afterListText: "The full description will be added later.",
-        promoBanner: { enabled: false },
-        ctaSection: {
-            title: "Need diagnostics?",
-            text: "Send a request — we'll schedule a time and clarify the issue.",
-            phoneText: "Call: +372 5646 1210",
-            phoneNumber: "+37256461210"
-        },
+        heroImage: "/pics/electrical-repair-hero.webp",
+        introTitle: "Fault code reading and computer diagnostics — what is the difference?",
+        introText: [
+            "At Mr.Car, you can book fault code reading and clearing or in-depth computer diagnostics of a specific fault. Complex diagnostic tasks are handled by a dedicated specialist with more than 20 years of experience."
+        ],
         form: {
-            title: "Book Diagnostics",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            title: "Book car diagnostics in Tallinn",
+            subtitle: "When booking, describe the car, the symptom and the conditions in which it appears. If you only need the fault codes read and cleared, please say so. If the cause of a fault needs to be found, we will agree on the initial task and, based on the results of the check, the next steps."
         },
         seo: {
-            title: "Car Diagnostics — Mr.Car Tallinn",
-            description: "Car diagnostics in Tallinn. Page under construction. Kopli 82a. +372 5646 1210"
+            title: "Car Diagnostics in Tallinn | Computer Diagnostics — Mr.Car",
+            description: "Computer diagnostics in Tallinn: Check Engine, engine and electrical faults, ZF/DSG, Webasto. Fault code reading and clearing €25; diagnostics from €50."
         }
     },
 
