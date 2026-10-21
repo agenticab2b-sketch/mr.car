@@ -737,7 +737,7 @@ const SERVICES = [
         navTitle: "Mootori tööd",
         icon: "mdi:engine",
         templateVariant: "service-deep-dive-v2",
-        heroTitle: "Mootoriremont Tallinnas",
+        heroTitle: "Mootori remont Tallinnas",
         heroLead: "Bensiini- ja diiselmootorite ning hübriidautode sisepõlemismootorite diagnostika ja remont Tallinnas: Check Engine'i märgutule süttimisest ja ülekuumenemisest kuni gaasijaotusajami, plokikaane ning keerukamate mootoritöödeni.",
         heroImage: "/pics/engine-repair-hero.webp",
         heroStats: [
@@ -966,7 +966,7 @@ const SERVICES = [
             {
                 icon: "mdi:car-wrench",
                 title: "Mootoritööd ühes teeninduses",
-                desc: "Diagnostika, hoolduse ja suurema osa mootoriremondist saab teha samas töökojas."
+                desc: "Diagnostika, hoolduse ja suurema osa mootori remondist saab teha samas töökojas."
             }
         ],
         faqTitle: "Korduma kippuvad küsimused",
@@ -988,7 +988,7 @@ const SERVICES = [
                 a: "Vahetusvälp sõltub mootorist ja tootja hooldusjuhendist. Kui hooldusajalugu ei ole teada või käivitamisel kostab kõrinat, tasub gaasijaotusajamit eraldi kontrollida."
             },
             {
-                q: "Kui kaua mootoriremont aega võtab?",
+                q: "Kui kaua mootori remont aega võtab?",
                 a: "Esmane diagnostika kestab tavaliselt üks kuni kaks tundi. Remondi kestus sõltub tööde mahust, varuosade saadavusest ning sellest, kas mootor või plokikaas tuleb lahti võtta."
             },
             {
@@ -1041,7 +1041,7 @@ const SERVICES = [
             ]
         },
         articleSchema: {
-            headline: "Mootoriremont Tallinnas: diagnostika, rikkesümptomid ja hooldus",
+            headline: "Mootori remont Tallinnas: diagnostika, rikkesümptomid ja hooldus",
             description: "Millal vajab mootor diagnostikat, milliseid mootoritöid Mr.Car teeb ja miks ei tasu rikke kontrolli edasi lükata."
         },
         crossLinks: [
@@ -1077,12 +1077,12 @@ const SERVICES = [
             phoneNumber: "+37256461210"
         },
         form: {
-            title: "Mootoriremondi broneerimine",
+            title: "Mootori remondi broneerimine",
             subtitle: "Jäta päring — helistame tagasi 30 minuti jooksul"
         },
         jsonLdServiceDescription: "Mootorite diagnostika ja remont Tallinnas: Check Engine'i märgutuli, ülekuumenemine, õlikulu, gaasijaotusajam, plokikaas ja muud mootoritööd.",
         seo: {
-            title: "Mootoriremont Tallinnas — Mr.Car autoteenindus",
+            title: "Mootori remont Tallinnas — Mr.Car autoteenindus",
             description: "Mootori diagnostika ja remont Tallinnas: Check Engine, ülekuumenemine, õlikulu, hammasrihm, ajamikett ja plokikaane remont. Kopli 82a."
         }
     },
