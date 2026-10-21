@@ -731,8 +731,8 @@ const SERVICES = [
 
     {
         key: "engine",
-        slug: "mootoriremont",
-        allSlugs: { ru: "remont-dvigatelya", ee: "mootoriremont", en: "engine-repair" },
+        slug: "mootori-remont",
+        allSlugs: { ru: "remont-dvigatelya", ee: "mootori-remont", en: "engine-repair" },
         category: "Mootor ja seadmed",
         navTitle: "Mootori tööd",
         icon: "mdi:engine",
@@ -1090,7 +1090,7 @@ const SERVICES = [
     {
         key: "timing_belt_chain",
         slug: "hammasrihma-ja-keti-vahetus",
-        menuParentSlug: "mootoriremont",
+        menuParentSlug: "mootori-remont",
         allSlugs: { ru: "zamena-remnya-cepi-grm", ee: "hammasrihma-ja-keti-vahetus", en: "timing-belt-chain-replacement" },
         category: "Mootor ja seadmed",
         navTitle: "Hammasrihm ja kett",
@@ -1445,7 +1445,7 @@ const SERVICES = [
             description: "Kuidas aru saada, et hammasrihm või ajamikett vajab kontrolli, miks on seotud detailid olulised ja kuidas vahetus Mr.Car-is käib."
         },
         crossLinks: [
-            { href: "/services/mootoriremont", icon: "mdi:engine", label: "Seotud teenus", title: "Mootori remont" },
+            { href: "/services/mootori-remont", icon: "mdi:engine", label: "Seotud teenus", title: "Mootori remont" },
             { href: "/services/diagnostika", icon: "mdi:car-search", label: "Seotud teenus", title: "Auto diagnostika" },
             { href: "/services/ostueelne-kontroll", icon: "mdi:file-search-outline", label: "Seotud teenus", title: "Ostueelne kontroll" }
         ],
@@ -1502,7 +1502,7 @@ const SERVICES = [
                 "Kui õlitase on korras, kuid märgutuli põleb endiselt või mootorist kostab ebatavalisi helisid, ära jätka sõitu. Liiga madala õlirõhuga sõitmine võib mootorit tõsiselt kahjustada. Sellisel juhul tuleb rikke põhjus diagnoosida, mitte teha lihtsalt plaanilist õlivahetust."
             ],
             link: {
-                href: "/services/mootoriremont",
+                href: "/services/mootori-remont",
                 label: "Loe mootori diagnostika ja remondi kohta lähemalt →"
             }
         },
@@ -1539,7 +1539,7 @@ const SERVICES = [
                 title: "Kärsahais, õlilekked või ebatavaline müra",
                 desc: "Kärsahais, õlilekked või ebatavaline müra võivad viidata mootori või määrimissüsteemi rikkele. Sellisel juhul on soovitatav teha diagnostika, mitte piirduda üksnes õlivahetusega.",
                 link: {
-                    href: "/services/mootoriremont",
+                    href: "/services/mootori-remont",
                     label: "Loe lähemalt mootori diagnostika ja remondi kohta →"
                 }
             }
@@ -1902,7 +1902,7 @@ const SERVICES = [
                 title: "Tehnohooldus ja diagnostika"
             },
             {
-                href: "/services/mootoriremont",
+                href: "/services/mootori-remont",
                 icon: "mdi:engine-outline",
                 label: "Kui mootor kulutab õli või teeb müra",
                 title: "Mootori diagnostika ja remont"

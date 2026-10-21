@@ -37,7 +37,7 @@ const SERVICE_NAV_ORDER = [
   'autoremont',
   'hooldus-diagnostika',
   'diagnostika',
-  'mootoriremont',
+  'mootori-remont',
   'kaigukastiremont',
   'piduriklotside-vahetus',
   'veermiku-remont',

@@ -734,7 +734,7 @@ const SERVICES = [
     {
         key: "engine",
         slug: "engine-repair",
-        allSlugs: { ru: "remont-dvigatelya", ee: "mootoriremont", en: "engine-repair" },
+        allSlugs: { ru: "remont-dvigatelya", ee: "mootori-remont", en: "engine-repair" },
         category: "Engine & Drivetrain",
         navTitle: "Engine Repair",
         icon: "mdi:engine",

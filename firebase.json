@@ -153,6 +153,21 @@
     ],
     "redirects": [
       {
+        "source": "/services/mootoriremont",
+        "destination": "/services/mootori-remont",
+        "type": 301
+      },
+      {
+        "source": "/services/mootoriremont.html",
+        "destination": "/services/mootori-remont",
+        "type": 301
+      },
+      {
+        "source": "/services/mootoriremont/",
+        "destination": "/services/mootori-remont",
+        "type": 301
+      },
+      {
         "source": "/homepage",
         "destination": "/ru/",
         "type": 301
@@ -499,7 +514,7 @@
       },
       {
         "source": "/silindripea-remont",
-        "destination": "/services/mootoriremont",
+        "destination": "/services/mootori-remont",
         "type": 301
       },
       {
@@ -519,12 +534,12 @@
       },
       {
         "source": "/teenused/mootori-remont-ja-vahetus",
-        "destination": "/services/mootoriremont",
+        "destination": "/services/mootori-remont",
         "type": 301
       },
       {
         "source": "/teenused/mootori-ja-kaigukasti-remont",
-        "destination": "/services/mootoriremont",
+        "destination": "/services/mootori-remont",
         "type": 301
       },
       {
