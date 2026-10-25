@@ -509,7 +509,7 @@
       <a href="/hinnad" class="navbar__link">[03] Hinnad</a>
       <a href="/kontakt" class="navbar__link">[04] Kontakt</a>
       <a href="/galerii" class="navbar__link">[05] Galerii</a>
-      <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
+      <a href="tel:+37256461210" class="navbar__phone" aria-label="Klienditeenindus: +372 5646 1210">+372 5646 1210</a>
     </nav>
     <div class="navbar__cta">
       <a href="/kontakt" class="btn btn-primary">Jäta päring</a>
@@ -626,7 +626,7 @@
       <a href="/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
       <a href="/galerii" class="mobile-menu__link" onclick="closeMobileMenu()">Galerii</a>
     </nav>
-    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
+    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()" aria-label="Klienditeenindus: +372 5646 1210">+372 5646 1210</a>
     <div class="mobile-menu__lang">
       <a href="/" class="mobile-lang-link active"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
             <a href="/ru" class="mobile-lang-link"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
@@ -959,6 +959,50 @@
                 </div>
             </div>
 
+            <section class="gb-page-section" id="gearbox-automatic">
+        <h2 class="price-list__header price-list__header--spaced">Automaatkäigukastide diagnostika ja remondi hinnakiri</h2>
+        <table class="gb-pricing-table">
+          <thead><tr><th scope="col">Teenus</th><th scope="col">Hind</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Teenus">Automaatkäigukasti diagnostika</td><td data-label="Hind" class="gb-price">alates 50 €</td></tr>
+            <tr><td data-label="Teenus">Automaatkäigukasti eemaldamine ja paigaldamine (esi- või tagavedu)</td><td data-label="Hind" class="gb-price">alates 300 €</td></tr>
+            <tr><td data-label="Teenus">Automaatkäigukasti eemaldamine ja paigaldamine (nelikvedu)</td><td data-label="Hind" class="gb-price">alates 350 €</td></tr>
+            <tr><td data-label="Teenus">Automaatkäigukasti defekteerimine (kokkupanek ei sisaldu hinnas)</td><td data-label="Hind" class="gb-price">alates 100 €</td></tr>
+            <tr><td data-label="Teenus">Automaatkäigukasti kokkupanek (ilma remondita)</td><td data-label="Hind" class="gb-price">alates 200 €</td></tr>
+            <tr><td data-label="Teenus">Automaatkäigukasti remont</td><td data-label="Hind" class="gb-price">alates 350 €</td></tr>
+            <tr><td data-label="Teenus">Automaatkäigukasti õlitihendite vahetus</td><td data-label="Hind" class="gb-price">alates 50 €</td></tr>
+            <tr><td data-label="Teenus">Automaatkäigukasti õlivahetus</td><td data-label="Hind" class="gb-price">alates 90 €</td></tr>
+            <tr><td data-label="Teenus">Mehhatroonikaploki eemaldamine ja paigaldamine</td><td data-label="Hind" class="gb-price">alates 200 €</td></tr>
+            <tr><td data-label="Teenus">Mehhatroonikaploki defekteerimine</td><td data-label="Hind" class="gb-price">alates 150 €</td></tr>
+            <tr><td data-label="Teenus">Mehhatroonikaploki remont</td><td data-label="Hind" class="gb-price">alates 250 €</td></tr>
+            <tr><td data-label="Teenus">Pöördemomendimuunduri remont</td><td data-label="Hind" class="gb-price">alates 300 €</td></tr>
+            <tr><td data-label="Teenus">DSG DQ200 siduri vahetus</td><td data-label="Hind" class="gb-price">alates 140 €</td></tr>
+            <tr><td data-label="Teenus">DSG DQ200 käigukasti adapteerimine</td><td data-label="Hind" class="gb-price">alates 70 €</td></tr>
+          </tbody>
+        </table>
+        <p class="gb-pricing-note">Märkus: Kõik hinnad sisaldavad käibemaksu 24%. Lõplik hind sõltub sõiduki mudelist, rikke iseloomust ja vajalike tööde mahust. Varuosad ja kulumaterjalid tasutakse eraldi. Lisatööd kooskõlastatakse kliendiga enne nende tegemist.</p>
+      </section>
+
+            <section class="gb-page-section" id="gearbox-manual">
+        <h2 class="price-list__header price-list__header--spaced">Manuaalkäigukastide diagnostika ja remondi hinnakiri</h2>
+        <table class="gb-pricing-table">
+          <thead><tr><th scope="col">Teenus</th><th scope="col">Hind</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Teenus">Manuaalkäigukasti diagnostika</td><td data-label="Hind" class="gb-price">alates 50 €</td></tr>
+            <tr><td data-label="Teenus">Manuaalkäigukasti eemaldamine ja paigaldamine (esi- või tagavedu)</td><td data-label="Hind" class="gb-price">alates 300 €</td></tr>
+            <tr><td data-label="Teenus">Manuaalkäigukasti eemaldamine ja paigaldamine (nelikvedu)</td><td data-label="Hind" class="gb-price">alates 350 €</td></tr>
+            <tr><td data-label="Teenus">Manuaalkäigukasti defekteerimine (kokkupanek ei sisaldu hinnas)</td><td data-label="Hind" class="gb-price">alates 100 €</td></tr>
+            <tr><td data-label="Teenus">Käigukasti võllide defekteerimine</td><td data-label="Hind" class="gb-price">45 €/tund</td></tr>
+            <tr><td data-label="Teenus">Manuaalkäigukasti kokkupanek (ilma remondita)</td><td data-label="Hind" class="gb-price">alates 200 €</td></tr>
+            <tr><td data-label="Teenus">Manuaalkäigukasti kapitaalremont</td><td data-label="Hind" class="gb-price">alates 600 €</td></tr>
+            <tr><td data-label="Teenus">Manuaalkäigukasti õlitihendite vahetus</td><td data-label="Hind" class="gb-price">alates 50 €</td></tr>
+            <tr><td data-label="Teenus">Manuaalkäigukasti õlivahetus</td><td data-label="Hind" class="gb-price">alates 45 €</td></tr>
+            <tr><td data-label="Teenus">Siduri vahetus</td><td data-label="Hind" class="gb-price">alates 300 €</td></tr>
+          </tbody>
+        </table>
+        <p class="gb-pricing-note">Märkus: Kõik hinnad sisaldavad käibemaksu 24%. Lõplik hind sõltub sõiduki mudelist, rikke iseloomust ja vajalike tööde mahust. Varuosad ja kulumaterjalid tasutakse eraldi. Lisatööd kooskõlastatakse kliendiga enne nende tegemist.</p>
+      </section>
+
             <p class="price-footer-note">HINNAD SISALDAVAD 24% KÄIBEMAKSU</p>
 
         </section>
@@ -973,10 +1017,14 @@
                     <p class="contact__promise">Kirjelda soovitud tööd või lisa hinnakirjast valitud teenus. Saame
                         päringu otse sellelt lehelt kätte.</p>
                     <div class="accent-underline"></div>
-                    <a href="tel:+37256461210" class="contact__phone">
-                        <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
-                        +372 5646 1210
-                    </a>
+                    <div class="contact__people" aria-label="Klienditeenindus">
+        <a href="tel:+37256461210" class="contact-person" aria-label="Klienditeenindus: +372 5646 1210">
+            <span class="contact-person__head">
+                <span class="contact-person__name">Klienditeenindus</span>
+                <span class="contact-person__phone">+372 5646 1210</span>
+            </span>
+        </a>
+        </div>
                     <p class="contact__alt">Või helista kohe, kui soovid enne aega kinnitada töö mahu või hinna.</p>
                 </div>
                 <div class="contact__form">
@@ -1029,8 +1077,7 @@
       <div>
         <div class="footer__col-title">Kontaktid</div>
         <div class="footer__text">
-          Anton: <a href="tel:+37258503960">5850 3960</a><br>
-          Raino: <a href="tel:+37256461210">5646 1210</a><br>
+          Klienditeenindus: <a href="tel:+37256461210" aria-label="Klienditeenindus: +372 5646 1210">+372 5646 1210</a><br>
           <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
           Kopli 82a, 10412 Tallinn
         </div>

@@ -279,7 +279,7 @@
       <a href="/hinnad" class="navbar__link">[03] Hinnad</a>
       <a href="/kontakt" class="navbar__link">[04] Kontakt</a>
       <a href="/galerii" class="navbar__link">[05] Galerii</a>
-      <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
+      <a href="tel:+37256461210" class="navbar__phone" aria-label="Klienditeenindus: +372 5646 1210">+372 5646 1210</a>
     </nav>
     <div class="navbar__cta">
       <a href="/kontakt" class="btn btn-primary">Jäta päring</a>
@@ -396,7 +396,7 @@
       <a href="/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Kontakt</a>
       <a href="/galerii" class="mobile-menu__link" onclick="closeMobileMenu()">Galerii</a>
     </nav>
-    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
+    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()" aria-label="Klienditeenindus: +372 5646 1210">+372 5646 1210</a>
     <div class="mobile-menu__lang">
       <a href="/" class="mobile-lang-link active"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
             <a href="/ru" class="mobile-lang-link"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
@@ -466,11 +466,14 @@
                 </div>
                 <p class="contact__promise">Täida vorm ja me võtame ühendust</p>
                 <div class="accent-underline"></div>
-                <a href="tel:+37256461210"
-                    style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--accent-primary); letter-spacing: -0.01em; margin-top: 16px; width: fit-content; text-decoration: none; transition: all var(--transition-fast);">
-                    <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
-                    +372 5646 1210
-                </a>
+                <div class="contact__people" aria-label="Klienditeenindus">
+        <a href="tel:+37256461210" class="contact-person" aria-label="Klienditeenindus: +372 5646 1210">
+            <span class="contact-person__head">
+                <span class="contact-person__name">Klienditeenindus</span>
+                <span class="contact-person__phone">+372 5646 1210</span>
+            </span>
+        </a>
+        </div>
             </div>
             <div class="contact__form">
                 <form id="contactForm">
@@ -530,8 +533,14 @@
                 </div>
                 <div class="location__detail">
                     <span class="location__label">Telefon</span>
-                    <a href="tel:+37256461210" class="location__value" style="color: var(--accent-primary);">+372 5646
-                        1210</a>
+                    <div class="location__contacts">
+                <a href="tel:+37256461210" class="location-contact" aria-label="Klienditeenindus: +372 5646 1210">
+                    <span class="location-contact__line">
+                        <span class="location-contact__name">Klienditeenindus</span>
+                        <span class="location-contact__phone">+372 5646 1210</span>
+                    </span>
+                </a>
+            </div>
                 </div>
                 <div class="location__detail">
                     <span class="location__label">Email</span>
@@ -875,7 +884,7 @@
                 <a href="/kontakt" class="btn btn-primary">
                     Broneeri aeg <span class="arrow">&#8599;</span>
                 </a>
-                <a href="tel:+37256461210" class="sd-cta__phone">
+                <a href="tel:+37256461210" class="sd-cta__phone" aria-label="Klienditeenindus: +372 5646 1210">
                     <iconify-icon icon="mdi:phone" width="24" height="24"></iconify-icon>
                     <span>+372 5646 1210</span>
                 </a>
@@ -902,8 +911,7 @@
       <div>
         <div class="footer__col-title">Kontaktid</div>
         <div class="footer__text">
-          Anton: <a href="tel:+37258503960">5850 3960</a><br>
-          Raino: <a href="tel:+37256461210">5646 1210</a><br>
+          Klienditeenindus: <a href="tel:+37256461210" aria-label="Klienditeenindus: +372 5646 1210">+372 5646 1210</a><br>
           <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
           Kopli 82a, 10412 Tallinn
         </div>
@@ -1134,7 +1142,7 @@
     <!-- FLOATING CONTACT FAB -->
     <div class="fab-contact" id="fabContact">
         <div class="fab-contact__menu">
-            <a href="tel:+37256461210" class="fab-contact__action" id="fabCall">
+            <a href="tel:+37256461210" class="fab-contact__action" id="fabCall" aria-label="Klienditeenindus: +372 5646 1210">
                 <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
                 <span>Helista</span>
             </a>

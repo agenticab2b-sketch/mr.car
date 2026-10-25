@@ -87,7 +87,7 @@ const LANGS = [
       { href: '/kontakt', label: '[04] Kontakt' },
       { href: '/galerii', label: '[05] Galerii' },
     ],
-    phone: '5646 1210',
+    phone: '+372 5646 1210',
     phoneHref: '+37256461210',
     menuOpenLabel: 'Ava menüü',
     menuCloseLabel: 'Sulge menüü',
@@ -119,23 +119,12 @@ const LANGS = [
     formValidation: 'Palun täitke kõik kohustuslikud väljad',
     formError: 'Päringut ei õnnestunud saata. Proovige uuesti.',
     formSuccess: 'Aitäh! Päring on saadetud.',
-    contactPeopleLabel: 'Kontaktisikud',
+    contactPeopleLabel: 'Klienditeenindus',
     contactPeople: [
       {
-        name: 'Anton',
-        phone: '+372 5850 3960',
-        phoneHref: '+37258503960',
-        languages: 'Keeled: eesti, vene, inglise',
-        scope: 'Üldine autoremont ja käigukastide remont',
-        mapNote: 'Autoremont ja käigukastid · ET/RU/EN'
-      },
-      {
-        name: 'Raino',
+        name: 'Klienditeenindus',
         phone: '+372 5646 1210',
-        phoneHref: '+37256461210',
-        languages: 'Keeled: eesti, vene, soome',
-        scope: 'Üldine autoremont ja Webasto remont',
-        mapNote: 'Autoremont ja Webasto · ET/RU/FI'
+        phoneHref: '+37256461210'
       }
     ],
     sidebarTitle: 'Vali teenus',
@@ -186,7 +175,7 @@ const LANGS = [
       { href: '/ru/kontakt', label: '[04] Контакты' },
       { href: '/ru/galereya', label: '[05] Галерея' },
     ],
-    phone: '5646 1210',
+    phone: '+372 5646 1210',
     phoneHref: '+37256461210',
     menuOpenLabel: 'Открыть меню',
     menuCloseLabel: 'Закрыть меню',
@@ -218,23 +207,12 @@ const LANGS = [
     formValidation: 'Необходимо заполнить выделенные поля',
     formError: 'Не удалось отправить заявку. Попробуйте ещё раз.',
     formSuccess: 'Спасибо! Заявка отправлена.',
-    contactPeopleLabel: 'Контактные лица',
+    contactPeopleLabel: 'Обслуживание клиентов',
     contactPeople: [
       {
-        name: 'Anton',
-        phone: '+372 5850 3960',
-        phoneHref: '+37258503960',
-        languages: 'Языки: эстонский, русский, английский',
-        scope: 'Общий авторемонт и ремонт коробок передач',
-        mapNote: 'Авторемонт и коробки передач · ET/RU/EN'
-      },
-      {
-        name: 'Raino',
+        name: 'Обслуживание клиентов',
         phone: '+372 5646 1210',
-        phoneHref: '+37256461210',
-        languages: 'Языки: эстонский, русский, финский',
-        scope: 'Общий авторемонт и ремонт Webasto',
-        mapNote: 'Авторемонт и Webasto · ET/RU/FI'
+        phoneHref: '+37256461210'
       }
     ],
     sidebarTitle: 'Выбрать услугу',
@@ -285,7 +263,7 @@ const LANGS = [
       { href: '/en/contact', label: '[04] Contact' },
       { href: '/en/gallery', label: '[05] Gallery' },
     ],
-    phone: '5646 1210',
+    phone: '+372 5646 1210',
     phoneHref: '+37256461210',
     menuOpenLabel: 'Open menu',
     menuCloseLabel: 'Close menu',
@@ -317,23 +295,12 @@ const LANGS = [
     formValidation: 'Please fill in all required fields',
     formError: 'Failed to send request. Please try again.',
     formSuccess: 'Thank you! Your request has been sent.',
-    contactPeopleLabel: 'Contact people',
+    contactPeopleLabel: 'Customer service',
     contactPeople: [
       {
-        name: 'Anton',
-        phone: '+372 5850 3960',
-        phoneHref: '+37258503960',
-        languages: 'Languages: Estonian, Russian, English',
-        scope: 'General car repairs and transmission repair',
-        mapNote: 'Car repairs and transmissions · ET/RU/EN'
-      },
-      {
-        name: 'Raino',
+        name: 'Customer service',
         phone: '+372 5646 1210',
-        phoneHref: '+37256461210',
-        languages: 'Languages: Estonian, Russian, Finnish',
-        scope: 'General car repairs and Webasto repair',
-        mapNote: 'Car repairs and Webasto · ET/RU/FI'
+        phoneHref: '+37256461210'
       }
     ],
     sidebarTitle: 'Select service',
@@ -1102,7 +1069,7 @@ function buildHeaderAndMobileMenu(services, cfg) {
         </div>
       </div>
       ${otherNavLinks}
-      <a href="tel:${cfg.phoneHref}" class="navbar__phone">${cfg.phone}</a>
+      <a href="tel:${cfg.phoneHref}" class="navbar__phone" aria-label="${esc(cfg.contactPeopleLabel)}: ${esc(cfg.phone)}">${cfg.phone}</a>
     </nav>
     <div class="navbar__cta">
       <a href="${esc(cfg.headerCtaHref)}" class="btn btn-primary">${esc(cfg.headerCtaLabel)}</a>
@@ -1128,7 +1095,7 @@ function buildHeaderAndMobileMenu(services, cfg) {
       </div>
       ${mobileOtherNavLinks}
     </nav>
-    <a href="tel:${cfg.phoneHref}" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">${cfg.phone}</a>
+    <a href="tel:${cfg.phoneHref}" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()" aria-label="${esc(cfg.contactPeopleLabel)}: ${esc(cfg.phone)}">${cfg.phone}</a>
     <div class="mobile-menu__lang">
       ${buildMobileLangs(cfg)}
     </div>
@@ -1174,8 +1141,6 @@ ${cfg.contactPeople.map(person => `        <a href="tel:${esc(person.phoneHref)}
                 <span class="contact-person__name">${esc(person.name)}</span>
                 <span class="contact-person__phone">${esc(person.phone)}</span>
             </span>
-            <span class="contact-person__languages">${esc(person.languages)}</span>
-            <span class="contact-person__scope">${esc(person.scope)}</span>
         </a>`).join('\n')}
         </div>`;
 }
@@ -1187,9 +1152,48 @@ ${cfg.contactPeople.map(person => `                <a href="tel:${esc(person.pho
                         <span class="location-contact__name">${esc(person.name)}</span>
                         <span class="location-contact__phone">${esc(person.phone)}</span>
                     </span>
-                    <span class="location-contact__note">${esc(person.mapNote)}</span>
                 </a>`).join('\n')}
             </div>`;
+}
+
+// Keep standalone pages and generated pages on the same public contact details.
+function normalizeContactDetails(html, cfg) {
+  let next = html.replace(/<div class="contact__people"[^>]*>[\s\S]*?<\/div>/g, renderContactPeople(cfg));
+  next = next.replace(/<div class="location__contacts"[^>]*>[\s\S]*?<\/div>/g, renderMapPhoneContacts(cfg));
+
+  next = next.replace(/(<div class="contact__info">)([\s\S]*?)(?=<div class="contact__form">)/g, (block, opening, content) => {
+    if (content.includes('class="contact__people"')) return block;
+    return opening + content.replace(/<a\b[^>]*href="tel:[^"]+"[^>]*>[\s\S]*?<\/a>/g, renderContactPeople(cfg));
+  });
+  next = next.replace(/(<div class="location__detail">)([\s\S]*?)(<\/div>)/g, (block, opening, content, closing) => {
+    if (content.includes('class="location__contacts"')) return block;
+    return opening + content.replace(/<a\b[^>]*href="tel:[^"]+"[^>]*>[\s\S]*?<\/a>/g, renderMapPhoneContacts(cfg)) + closing;
+  });
+
+  // Buttons keep their call-to-action text, with a consistent accessible label.
+  return next.replace(/<a\b([^>]*\bhref="tel:[^"]+"[^>]*)>/g, (_, attributes) => {
+    const normalized = attributes
+      .replace(/href="tel:[^"]+"/, `href="tel:${cfg.phoneHref}"`)
+      .replace(/\s+aria-label="[^"]*"/g, '');
+    return `<a${normalized} aria-label="${esc(cfg.contactPeopleLabel)}: ${esc(cfg.phone)}">`;
+  });
+}
+
+function syncGlobalContactDetails() {
+  const cfgByLang = new Map(LANGS.map(cfg => [cfg.lang, cfg]));
+  let updated = 0;
+  for (const filePath of collectFooterTargetFiles()) {
+    const relPath = path.relative(ROOT, filePath);
+    if (path.basename(relPath).toLowerCase().startsWith('temp_')) continue;
+    const cfg = cfgByLang.get(detectLangFromPath(relPath));
+    const source = fs.readFileSync(filePath, 'utf8');
+    const next = normalizeContactDetails(source, cfg);
+    if (source !== next) {
+      fs.writeFileSync(filePath, next, 'utf8');
+      updated++;
+    }
+  }
+  return updated;
 }
 
 function buildFooter(cfg) {
@@ -1198,7 +1202,7 @@ function buildFooter(cfg) {
       <div>
         <div class="footer__col-title">${esc(cfg.footer.contacts)}</div>
         <div class="footer__text">
-          ${cfg.contactPeople.map(person => `${esc(person.name)}: <a href="tel:${esc(person.phoneHref)}">${esc(person.phone.replace('+372 ', ''))}</a><br>`).join('\n          ')}
+          ${cfg.contactPeople.map(person => `${esc(person.name)}: <a href="tel:${esc(person.phoneHref)}">${esc(person.phone)}</a><br>`).join('\n          ')}
           <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
           Kopli 82a, 10412 Tallinn
         </div>
@@ -1738,7 +1742,7 @@ function syncGlobalFooters() {
 
     const lang = detectLangFromPath(relPath);
     const cfg = cfgByLang.get(lang);
-    const footerHtml = buildFooter(cfg);
+    const footerHtml = normalizeContactDetails(buildFooter(cfg), cfg);
     const next = source.replace(/<footer class="footer">[\s\S]*?<\/footer>/, footerHtml);
 
     if (next !== source) {
@@ -2323,12 +2327,12 @@ for (const cfg of LANGS) {
       dateModified: (s.articleSchema && s.articleSchema.dateModified) || existingArticleDates.dateModified || existingArticleDates.datePublished || TODAY
     };
 
-    let html = normalizeGeneratedHtml(renderPage(s, services, cfg, articleDates));
+    let html = normalizeGeneratedHtml(normalizeContactDetails(renderPage(s, services, cfg, articleDates), cfg));
     const contentChanged = !existingHtml || normalizeArticleDatesInHtml(existingHtml) !== normalizeArticleDatesInHtml(html);
 
     if (contentChanged && !(s.articleSchema && s.articleSchema.dateModified)) {
       articleDates.dateModified = TODAY;
-      html = normalizeGeneratedHtml(renderPage(s, services, cfg, articleDates));
+      html = normalizeGeneratedHtml(normalizeContactDetails(renderPage(s, services, cfg, articleDates), cfg));
     }
 
     if (contentChanged) {
@@ -2361,6 +2365,9 @@ process.stdout.write(`✅ Services-all grids synced in ${totalServicesAllGridsSy
 process.stdout.write('\n🦶 Syncing global footers…\n');
 const totalFootersSynced = syncGlobalFooters();
 process.stdout.write(`✅ Global footers synced in ${totalFootersSynced} files.\n`);
+
+const totalContactsSynced = syncGlobalContactDetails();
+process.stdout.write(`✅ Customer service contacts synced in ${totalContactsSynced} files.\n`);
 
 process.stdout.write('\n🧩 Syncing shared SEO and accessibility HTML patterns…\n');
 const totalSharedHtmlSynced = syncSharedHtmlPatterns();

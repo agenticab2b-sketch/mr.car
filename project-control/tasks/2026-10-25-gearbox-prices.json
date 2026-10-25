@@ -1,0 +1,337 @@
+{
+  "source": "Approved price lists supplied on 2026-10-19; shaft inspection added on 2026-10-25.",
+  "automatic": {
+    "ru": {
+      "file": "ru/services/remont-akpp.html",
+      "heading": "Диагностика и ремонт автоматических коробок передач",
+      "rows": [
+        [
+          "Диагностика АКПП",
+          "от 50 €"
+        ],
+        [
+          "Снятие и установка АКПП (передний / задний привод)",
+          "от 300 €"
+        ],
+        [
+          "Снятие и установка АКПП (полный привод)",
+          "от 350 €"
+        ],
+        [
+          "Дефектовка АКПП (сборка не входит в стоимость)",
+          "от 100 €"
+        ],
+        [
+          "Сборка АКПП (без ремонта)",
+          "от 200 €"
+        ],
+        [
+          "Ремонт АКПП",
+          "от 350 €"
+        ],
+        [
+          "Замена сальников АКПП",
+          "от 50 €"
+        ],
+        [
+          "Замена масла в АКПП",
+          "от 90 €"
+        ],
+        [
+          "Снятие и установка мехатроника",
+          "от 200 €"
+        ],
+        [
+          "Дефектовка мехатроника",
+          "от 150 €"
+        ],
+        [
+          "Ремонт мехатроника",
+          "от 250 €"
+        ],
+        [
+          "Ремонт гидротрансформатора",
+          "от 300 €"
+        ],
+        [
+          "Замена сцепления DSG DQ200",
+          "от 140 €"
+        ],
+        [
+          "Адаптация DSG DQ200",
+          "от 70 €"
+        ]
+      ],
+      "note": "Примечание: Все цены включают НДС 24%. Окончательная стоимость зависит от модели автомобиля, характера неисправности и объёма необходимых работ. Запасные части и расходные материалы оплачиваются отдельно. Дополнительные работы предварительно согласовываются с клиентом."
+    },
+    "et": {
+      "file": "services/automaatkasti-remont.html",
+      "heading": "Automaatkäigukastide diagnostika ja remondi hinnakiri",
+      "rows": [
+        [
+          "Automaatkäigukasti diagnostika",
+          "alates 50 €"
+        ],
+        [
+          "Automaatkäigukasti eemaldamine ja paigaldamine (esi- või tagavedu)",
+          "alates 300 €"
+        ],
+        [
+          "Automaatkäigukasti eemaldamine ja paigaldamine (nelikvedu)",
+          "alates 350 €"
+        ],
+        [
+          "Automaatkäigukasti defekteerimine (kokkupanek ei sisaldu hinnas)",
+          "alates 100 €"
+        ],
+        [
+          "Automaatkäigukasti kokkupanek (ilma remondita)",
+          "alates 200 €"
+        ],
+        [
+          "Automaatkäigukasti remont",
+          "alates 350 €"
+        ],
+        [
+          "Automaatkäigukasti õlitihendite vahetus",
+          "alates 50 €"
+        ],
+        [
+          "Automaatkäigukasti õlivahetus",
+          "alates 90 €"
+        ],
+        [
+          "Mehhatroonikaploki eemaldamine ja paigaldamine",
+          "alates 200 €"
+        ],
+        [
+          "Mehhatroonikaploki defekteerimine",
+          "alates 150 €"
+        ],
+        [
+          "Mehhatroonikaploki remont",
+          "alates 250 €"
+        ],
+        [
+          "Pöördemomendimuunduri remont",
+          "alates 300 €"
+        ],
+        [
+          "DSG DQ200 siduri vahetus",
+          "alates 140 €"
+        ],
+        [
+          "DSG DQ200 käigukasti adapteerimine",
+          "alates 70 €"
+        ]
+      ],
+      "note": "Märkus: Kõik hinnad sisaldavad käibemaksu 24%. Lõplik hind sõltub sõiduki mudelist, rikke iseloomust ja vajalike tööde mahust. Varuosad ja kulumaterjalid tasutakse eraldi. Lisatööd kooskõlastatakse kliendiga enne nende tegemist."
+    },
+    "en": {
+      "file": "en/services/automatic-transmission-repair.html",
+      "heading": "Automatic Transmission Diagnostics and Repair — Price List",
+      "rows": [
+        [
+          "Automatic transmission diagnostics",
+          "from €50"
+        ],
+        [
+          "Automatic transmission removal and installation (front-wheel or rear-wheel drive)",
+          "from €300"
+        ],
+        [
+          "Automatic transmission removal and installation (all-wheel drive)",
+          "from €350"
+        ],
+        [
+          "Automatic transmission fault assessment (reassembly not included in the price)",
+          "from €100"
+        ],
+        [
+          "Automatic transmission reassembly (without repairs)",
+          "from €200"
+        ],
+        [
+          "Automatic transmission repair",
+          "from €350"
+        ],
+        [
+          "Automatic transmission oil seal replacement",
+          "from €50"
+        ],
+        [
+          "Automatic transmission oil change",
+          "from €90"
+        ],
+        [
+          "Mechatronic unit removal and installation",
+          "from €200"
+        ],
+        [
+          "Mechatronic unit fault assessment",
+          "from €150"
+        ],
+        [
+          "Mechatronic unit repair",
+          "from €250"
+        ],
+        [
+          "Torque converter repair",
+          "from €300"
+        ],
+        [
+          "DSG DQ200 clutch replacement",
+          "from €140"
+        ],
+        [
+          "DSG DQ200 transmission adaptation",
+          "from €70"
+        ]
+      ],
+      "note": "Note: All prices include 24% VAT. The final price depends on the vehicle model, the nature of the fault and the scope of work required. Spare parts and consumables are charged separately. Any additional work is agreed with the customer in advance."
+    }
+  },
+  "manual": {
+    "ru": {
+      "file": "ru/services/remont-mkpp.html",
+      "heading": "Диагностика и ремонт МКПП",
+      "rows": [
+        [
+          "Диагностика МКПП",
+          "от 50 €"
+        ],
+        [
+          "Снятие и установка МКПП (передний / задний привод)",
+          "от 300 €"
+        ],
+        [
+          "Снятие и установка МКПП (полный привод)",
+          "от 350 €"
+        ],
+        [
+          "Дефектовка МКПП (сборка не входит в стоимость)",
+          "от 100 €"
+        ],
+        [
+          "Дефектовка валов КПП",
+          "45 €/час"
+        ],
+        [
+          "Сборка МКПП (без ремонта)",
+          "от 200 €"
+        ],
+        [
+          "Капитальный ремонт МКПП",
+          "от 600 €"
+        ],
+        [
+          "Замена сальников МКПП",
+          "от 50 €"
+        ],
+        [
+          "Замена масла в МКПП",
+          "от 45 €"
+        ],
+        [
+          "Замена сцепления",
+          "от 300 €"
+        ]
+      ],
+      "note": "Примечание: Все цены включают НДС 24%. Окончательная стоимость зависит от модели автомобиля, характера неисправности и объёма необходимых работ. Запасные части и расходные материалы оплачиваются отдельно. Дополнительные работы предварительно согласовываются с клиентом."
+    },
+    "et": {
+      "file": "services/kasikasti-remont.html",
+      "heading": "Manuaalkäigukastide diagnostika ja remondi hinnakiri",
+      "rows": [
+        [
+          "Manuaalkäigukasti diagnostika",
+          "alates 50 €"
+        ],
+        [
+          "Manuaalkäigukasti eemaldamine ja paigaldamine (esi- või tagavedu)",
+          "alates 300 €"
+        ],
+        [
+          "Manuaalkäigukasti eemaldamine ja paigaldamine (nelikvedu)",
+          "alates 350 €"
+        ],
+        [
+          "Manuaalkäigukasti defekteerimine (kokkupanek ei sisaldu hinnas)",
+          "alates 100 €"
+        ],
+        [
+          "Käigukasti võllide defekteerimine",
+          "45 €/tund"
+        ],
+        [
+          "Manuaalkäigukasti kokkupanek (ilma remondita)",
+          "alates 200 €"
+        ],
+        [
+          "Manuaalkäigukasti kapitaalremont",
+          "alates 600 €"
+        ],
+        [
+          "Manuaalkäigukasti õlitihendite vahetus",
+          "alates 50 €"
+        ],
+        [
+          "Manuaalkäigukasti õlivahetus",
+          "alates 45 €"
+        ],
+        [
+          "Siduri vahetus",
+          "alates 300 €"
+        ]
+      ],
+      "note": "Märkus: Kõik hinnad sisaldavad käibemaksu 24%. Lõplik hind sõltub sõiduki mudelist, rikke iseloomust ja vajalike tööde mahust. Varuosad ja kulumaterjalid tasutakse eraldi. Lisatööd kooskõlastatakse kliendiga enne nende tegemist."
+    },
+    "en": {
+      "file": "en/services/manual-transmission-repair.html",
+      "heading": "Manual Transmission Diagnostics and Repair — Price List",
+      "rows": [
+        [
+          "Manual transmission diagnostics",
+          "from €50"
+        ],
+        [
+          "Manual transmission removal and installation (front-wheel or rear-wheel drive)",
+          "from €300"
+        ],
+        [
+          "Manual transmission removal and installation (all-wheel drive)",
+          "from €350"
+        ],
+        [
+          "Manual transmission fault assessment (reassembly not included in the price)",
+          "from €100"
+        ],
+        [
+          "Gearbox Shaft Inspection",
+          "€45/hour"
+        ],
+        [
+          "Manual transmission reassembly (without repairs)",
+          "from €200"
+        ],
+        [
+          "Complete manual transmission overhaul",
+          "from €600"
+        ],
+        [
+          "Manual transmission oil seal replacement",
+          "from €50"
+        ],
+        [
+          "Manual transmission oil change",
+          "from €45"
+        ],
+        [
+          "Clutch replacement",
+          "from €300"
+        ]
+      ],
+      "note": "Note: All prices include 24% VAT. The final price depends on the vehicle model, the nature of the fault and the scope of work required. Spare parts and consumables are charged separately. Any additional work is agreed with the customer in advance."
+    }
+  }
+}

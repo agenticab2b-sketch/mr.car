@@ -284,7 +284,7 @@
       <a href="/ru/tseny" class="navbar__link">[03] Цены</a>
       <a href="/ru/kontakt" class="navbar__link">[04] Контакты</a>
       <a href="/ru/galereya" class="navbar__link">[05] Галерея</a>
-      <a href="tel:+37256461210" class="navbar__phone">5646 1210</a>
+      <a href="tel:+37256461210" class="navbar__phone" aria-label="Обслуживание клиентов: +372 5646 1210">+372 5646 1210</a>
     </nav>
     <div class="navbar__cta">
       <a href="/ru/kontakt" class="btn btn-primary">Оставить заявку</a>
@@ -401,7 +401,7 @@
       <a href="/ru/kontakt" class="mobile-menu__link" onclick="closeMobileMenu()">Контакты</a>
       <a href="/ru/galereya" class="mobile-menu__link" onclick="closeMobileMenu()">Галерея</a>
     </nav>
-    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()">5646 1210</a>
+    <a href="tel:+37256461210" class="mobile-menu__link mobile-menu__phone" onclick="closeMobileMenu()" aria-label="Обслуживание клиентов: +372 5646 1210">+372 5646 1210</a>
     <div class="mobile-menu__lang">
       <a href="/" class="mobile-lang-link"><iconify-icon icon="circle-flags:ee" width="32" height="32"></iconify-icon><span>Eesti keel</span></a>
             <a href="/ru" class="mobile-lang-link active"><iconify-icon icon="circle-flags:ru" width="32" height="32"></iconify-icon><span>Русский</span></a>
@@ -932,7 +932,7 @@
         </div>
         <p class="contact__promise">Оставить заявку — перезвоним через 30 минут</p>
         <div class="accent-underline"></div>
-        <a href="tel:+37256461210" class="gb-phone-link">
+        <a href="tel:+37256461210" class="gb-phone-link" aria-label="Обслуживание клиентов: +372 5646 1210">
           <iconify-icon icon="mdi:phone" width="24" height="24" aria-hidden="true"></iconify-icon>
           +372 5646 1210
         </a>
@@ -994,7 +994,14 @@
         </div>
         <div class="location__detail">
             <span class="location__label">Телефон</span>
-            <a href="tel:+37256461210" class="location__value" style="color: var(--accent-primary);">+372 5646 1210</a>
+            <div class="location__contacts">
+                <a href="tel:+37256461210" class="location-contact" aria-label="Обслуживание клиентов: +372 5646 1210">
+                    <span class="location-contact__line">
+                        <span class="location-contact__name">Обслуживание клиентов</span>
+                        <span class="location-contact__phone">+372 5646 1210</span>
+                    </span>
+                </a>
+            </div>
         </div>
         <div class="location__detail">
             <span class="location__label">Email</span>
@@ -1019,7 +1026,7 @@
   <!-- FAB Contact -->
   <div class="fab-contact" id="fabContact">
     <div class="fab-contact__menu">
-      <a href="tel:+37256461210" class="fab-contact__action" id="fabCall">
+      <a href="tel:+37256461210" class="fab-contact__action" id="fabCall" aria-label="Обслуживание клиентов: +372 5646 1210">
         <iconify-icon icon="mdi:phone" width="20" height="20" aria-hidden="true"></iconify-icon>
         <span>Позвонить</span>
       </a>
@@ -1049,8 +1056,7 @@
       <div>
         <div class="footer__col-title">Контакты</div>
         <div class="footer__text">
-          Anton: <a href="tel:+37258503960">5850 3960</a><br>
-          Raino: <a href="tel:+37256461210">5646 1210</a><br>
+          Обслуживание клиентов: <a href="tel:+37256461210" aria-label="Обслуживание клиентов: +372 5646 1210">+372 5646 1210</a><br>
           <a href="mailto:info@mrcar.ee">info@mrcar.ee</a><br>
           Kopli 82a, 10412 Tallinn
         </div>
