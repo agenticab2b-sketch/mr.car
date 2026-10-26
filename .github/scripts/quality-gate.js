@@ -71,6 +71,7 @@ for (const filePath of PUBLIC_HTML) {
   checkServiceLinks(relPath, content);
   checkInternalNofollow(relPath, content);
   checkRequiredInternalLinks(relPath, content);
+  checkWebastoMainContent(relPath, content);
   checkCanonicalAndHreflang(relPath, content);
   checkSocialMeta(relPath, content);
   checkBrokenEncoding(relPath, content);
@@ -227,6 +228,19 @@ function checkRequiredInternalLinks(relPath, content) {
         message: `missing required internal link: ${href}`,
       });
     }
+  }
+}
+
+function checkWebastoMainContent(relPath, content) {
+  if (relPath !== 'services/webasto-diagnostika.html') return;
+  for (const [className, minimum] of [['wb-step', 5], ['wb-check-item', 8], ['wb-benefit', 4], ['wb-faq__item', 6]]) {
+    const count = content.split(`class="${className}"`).length - 1;
+    if (count < minimum) failures.push({ type: 'webasto-content', file: relPath, message: `expected at least ${minimum} ${className} items, found ${count}` });
+  }
+  const faq = content.indexOf('class="wb-faq"');
+  const booking = content.indexOf('id="request"');
+  if (faq < 0 || booking < 0 || faq > booking) {
+    failures.push({ type: 'webasto-content', file: relPath, message: 'main Webasto information and FAQ must appear before the booking form' });
   }
 }
 
