@@ -1739,6 +1739,54 @@ function syncServicesAllGrids() {
   return updated;
 }
 
+function syncHomepagePricing() {
+  const copy = {
+    et: [
+      ['Mootoriõli ja õlifiltri vahetus', 'Töö; õli ja filter eraldi'],
+      ['Webasto diagnostika', 'Arvutidiagnostika ja tehniline kontroll'],
+      ['Veakoodide lugemine ja kustutamine', 'Fikseeritud hind']
+    ],
+    ru: [
+      ['Замена масла и масляного фильтра', 'Работа; масло и фильтр отдельно'],
+      ['Диагностика Webasto', 'Компьютерная диагностика и техническая проверка'],
+      ['Чтение и удаление кодов ошибок', 'Фиксированная цена']
+    ],
+    en: [
+      ['Engine oil and oil filter change', 'Labour; oil and filter charged separately'],
+      ['Webasto diagnostics', 'Computer diagnostics and technical inspection'],
+      ['Fault code reading and clearing', 'Fixed price']
+    ]
+  };
+  let updated = 0;
+  for (const cfg of LANGS) {
+    const filePath = path.join(ROOT, cfg.prefix.slice(1), 'index.html');
+    const source = fs.readFileSync(filePath, 'utf8');
+    const maintenance = loadServices(cfg.dataFile).find(s => s.allSlugs?.ru === 'tehobsluzhivanie-diagnostika');
+    if (!maintenance?.pricingRows?.length) throw new Error(`Missing maintenance prices for ${cfg.lang}`);
+    const oilPrice = maintenance.pricingRows[0].price.match(/\d+/)[0];
+    // Keep the Webasto teaser rate; fault code reading/clearing is the fixed
+    // 25 EUR service published on the reviewed diagnostics pages.
+    const formatPrice = (amount, from = false) => cfg.lang === 'en'
+      ? `${from ? 'from ' : ''}€${amount}`
+      : `${from ? (cfg.lang === 'ru' ? 'от ' : 'alates ') : ''}${amount} €`;
+    const prices = [formatPrice(oilPrice), formatPrice(45, true), formatPrice(25)];
+    const cards = copy[cfg.lang].map(([title, note], index) => `                <div class="pricing-item">
+                    <span class="pricing-item__service">${esc(title)}</span>
+                    <span class="pricing-item__price">${esc(prices[index])}</span>
+                    <span class="pricing-item__note">${esc(note)}</span>
+                </div>`).join('\n');
+    const grid = `            <div class="pricing-grid site-container reveal">\n${cards}\n            </div>\n\n            `;
+    if (!source.includes('class="pricing-grid site-container reveal"')) throw new Error(`Missing homepage pricing grid for ${cfg.lang}`);
+    const next = source.replace(/\s*<div class="pricing-grid site-container reveal">[\s\S]*?(?=<div class="pricing__cta-wrapper">)/, '\n\n' + grid);
+    if (next !== source) {
+      fs.writeFileSync(filePath, next, 'utf8');
+      changedGeneratedUrls.add(`${PROD_ORIGIN}${cfg.prefix || '/'}`);
+      updated++;
+    }
+  }
+  return updated;
+}
+
 function syncGlobalFooters() {
   const cfgByLang = new Map(LANGS.map(cfg => [cfg.lang, cfg]));
   let updated = 0;
@@ -2383,6 +2431,9 @@ process.stdout.write(`✅ Customer service contacts synced in ${totalContactsSyn
 process.stdout.write('\n🧩 Syncing shared SEO and accessibility HTML patterns…\n');
 const totalSharedHtmlSynced = syncSharedHtmlPatterns();
 process.stdout.write(`✅ Shared HTML patterns synced in ${totalSharedHtmlSynced} files.\n`);
+
+const totalHomepagePricingSynced = syncHomepagePricing();
+process.stdout.write(`✅ Homepage pricing synced in ${totalHomepagePricingSynced} files.\n`);
 
 // ─── Update sitemap.xml ───────────────────────────────────────────────────────
 
