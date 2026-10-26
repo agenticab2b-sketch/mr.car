@@ -564,6 +564,18 @@ const SERVICES = [
             "Hooldusnäidiku nullimine"
         ],
         afterListText: "Hooldustöö hind sõltub auto mudelist ja tööde mahust. Helista — arvutame täpse hinna enne külastust.",
+        pricingTitle: "Tehnilise hoolduse hinnakiri",
+        pricingRows: [
+            {"service":"Mootoriõli ja õlifiltri vahetus","price":"töö 50 €"},
+            {"service":"Mootoriõli ja peamiste filtrite vahetus","price":"töö 70 €"},
+            {"service":"Süüte- või hõõgküünalde vahetus","price":"töö alates 45 €"},
+            {"service":"Pidurivedeliku vahetus","price":"töö alates 45 €"},
+            {"service":"Jahutusvedeliku vahetus","price":"töö alates 45 €"},
+            {"service":"Arvutidiagnostika eraldi teenusena","price":"alates 50 €"},
+            {"service":"Auto endoskoopiline kontroll koos fotoaruandega","price":"alates 70 €"},
+            {"service":"Auto põhjalik tehnilise seisukorra kontroll koos esmase arvutidiagnostikaga","price":"80 €"}
+        ],
+        pricingNote: "Hinnad on töö eest, kui pole märgitud teisiti. Mootoriõli, filtrid, süüte- ja hõõgküünlad, töövedelikud, varuosad ning muud kulumaterjalid arvestatakse eraldi. Tehnilise hoolduse töö hind sisaldab hooldusvälba näidiku nullimist.",
         promoBanner: {
             enabled: true,
             text: "Hooldus 10% soodsamalt esimesel külastusel. Broneeri veebis!"

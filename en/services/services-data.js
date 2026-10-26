@@ -566,6 +566,18 @@ const SERVICES = [
             "Service interval reset"
         ],
         afterListText: "Maintenance cost depends on the car model and work volume. Call us — we'll provide an exact price before your visit.",
+        pricingTitle: "Vehicle Maintenance Prices",
+        pricingRows: [
+            {"service":"Engine oil and oil filter replacement","price":"labour €50"},
+            {"service":"Replacement of engine oil and main filters","price":"labour €70"},
+            {"service":"Spark plug or glow plug replacement","price":"labour from €45"},
+            {"service":"Brake fluid replacement","price":"labour from €45"},
+            {"service":"Coolant replacement","price":"labour from €45"},
+            {"service":"Computer diagnostics as a separate service","price":"from €50"},
+            {"service":"Vehicle endoscopic inspection with a photo report","price":"from €70"},
+            {"service":"Full vehicle condition inspection with basic computer diagnostics","price":"€80"}
+        ],
+        pricingNote: "Prices are for labour unless stated otherwise. Oil, filters, spark plugs, glow plugs, technical fluids, spare parts and other consumables are charged separately. Maintenance labour includes resetting the service interval indicator.",
         promoBanner: {
             enabled: true,
             text: "10% discount on maintenance for first visit. Book online!"

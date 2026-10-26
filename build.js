@@ -704,8 +704,10 @@ function buildCrossLinks(links) {
       </div>`;
 }
 
-function renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner) {
+function renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner, cfg) {
   const afterSymptomsHtml = s.afterSymptomsHtml || esc(s.afterSymptomsText || '');
+  const pricingLabels = getPricingLabels(cfg.lang);
+  const pricingRowsHtml = buildPricingRows(s.pricingRows || [], pricingLabels);
 
   return `
       <!-- Intro -->
@@ -734,7 +736,16 @@ function renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner
         <p class="sd-services-list__after">${esc(s.afterListText || '')}</p>
       </div>
 
-      ${promoBanner}`;
+      ${pricingRowsHtml ? `<section id="pricing" class="gb-page-section">
+        <h3 class="gb-section-title">${esc(s.pricingTitle || '')}</h3>
+        <table class="gb-pricing-table">
+          <thead><tr><th scope="col">${esc(pricingLabels.service)}</th><th scope="col">${esc(pricingLabels.price)}</th></tr></thead>
+          <tbody>${pricingRowsHtml}</tbody>
+        </table>
+        ${s.pricingNote ? `<p class="gb-pricing-note">${esc(s.pricingNote)}</p>` : ''}
+      </section>
+
+      ` : ''}${promoBanner}`;
 }
 
 function renderDeepDiveContent(s, cfg) {
@@ -1954,7 +1965,7 @@ function renderPage(s, services, cfg, articleDates = {}) {
         </div>` : '';
   const mainContentHtml = s.templateVariant === 'service-deep-dive-v2'
     ? renderDeepDiveContent(s, cfg)
-    : renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner);
+    : renderDefaultMainContent(s, symptomCards, servicesListHtml, promoBanner, cfg);
 
   // Prepare Form Partial
   let renderedForm = FORM_PARTIAL
