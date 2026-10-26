@@ -2020,7 +2020,7 @@ function renderPage(s, services, cfg, articleDates = {}) {
     .replace(/{{lang}}/g, esc(cfg.lang))
     .replace(/{{form_meta}}/g, esc(cfg.formMeta))
     .replace(/{{form_title}}/g, esc(s.form.title))
-    .replace(/{{form_subtitle}}/g, esc(s.form.subtitle))
+    .replace(/{{form_subtitle_html}}/g, s.form.subtitle ? `<p class="contact__promise">${esc(s.form.subtitle)}</p>` : '')
     .replace(/{{formValidation}}/g, esc(cfg.formValidation))
     .replace(/{{formLabels_name}}/g, esc(cfg.formLabels.name))
     .replace(/{{formPlaceholder_name}}/g, esc(cfg.formPlaceholder.name))

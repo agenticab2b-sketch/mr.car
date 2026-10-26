@@ -56,7 +56,7 @@ const SERVICES = [
         },
         form: {
             title: "Book Repair",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Car Repair in Tallinn — Mr.Car | All service types",
@@ -108,7 +108,7 @@ const SERVICES = [
         },
         form: {
             title: "Book Muffler Repair",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Muffler Repair — Mr.Car Tallinn",
@@ -410,7 +410,7 @@ const SERVICES = [
         },
         form: {
             title: "Book suspension diagnostics",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         jsonLdServiceDescription: "Suspension diagnostics and repair in Tallinn: shock absorbers, control arms, ball joints, silent blocks, wheel bearings, and 3D wheel alignment.",
         seo: {
@@ -469,7 +469,7 @@ const SERVICES = [
         },
         form: {
             title: "Book brake pads replacement",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Brake repair and brake pads replacement in Tallinn — Mr.Car",
@@ -521,7 +521,7 @@ const SERVICES = [
         },
         form: {
             title: "Book Tire Service",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Tire Services in Tallinn — Mr.Car | from €20",
@@ -590,7 +590,7 @@ const SERVICES = [
         },
         form: {
             title: "Book Maintenance",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Technical Maintenance — Mr.Car Tallinn | Auto Service",
@@ -682,7 +682,7 @@ const SERVICES = [
         },
         form: {
             title: "Book Gearbox Repair",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Gearbox Repair in Tallinn — Automatic, DSG | Mr.Car",
@@ -735,7 +735,7 @@ const SERVICES = [
         },
         form: {
             title: "Book Electrical Repair",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Auto Electrician in Tallinn — Mr.Car | Electrical Repair",
@@ -1092,7 +1092,7 @@ const SERVICES = [
         },
         form: {
             title: "Book engine diagnostics or repair",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         jsonLdServiceDescription: "Engine diagnostics and repair in Tallinn for warning lights, overheating, oil consumption, timing-drive faults, cylinder-head work and other mechanical engine problems.",
         seo: {
@@ -1995,7 +1995,7 @@ const SERVICES = [
         },
         form: {
             title: "Book Car Inspection",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Pre-purchase Inspection in Tallinn — Mr.Car | €80",
@@ -2048,7 +2048,7 @@ const SERVICES = [
         },
         form: {
             title: "Book AC Service",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "AC Recharging — Mr.Car Tallinn | Climate",
@@ -2108,7 +2108,7 @@ const SERVICES = [
         },
         form: {
             title: "Book Webasto Repair",
-            subtitle: "Leave a request — we'll call back within 30 minutes"
+            subtitle: ""
         },
         seo: {
             title: "Webasto Repair in Tallinn — Mr.Car | Diagnostics & Service",

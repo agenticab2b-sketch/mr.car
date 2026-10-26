@@ -56,7 +56,7 @@ const SERVICES = [
         },
         form: {
             title: "Remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Autoremont Tallinnas — Mr.Car | Kõik tööliigid",
@@ -108,7 +108,7 @@ const SERVICES = [
         },
         form: {
             title: "Summuti remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Summuti remont — Mr.Car Tallinn",
@@ -410,7 +410,7 @@ const SERVICES = [
         },
         form: {
             title: "Veermiku diagnostika broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         jsonLdServiceDescription: "Veermiku diagnostika ja remont Tallinnas: amortisaatorid, õõtshoovad, kuulliigendid, puksid, rattalaagrid ja 3D-sildade reguleerimine.",
         seo: {
@@ -467,7 +467,7 @@ const SERVICES = [
         },
         form: {
             title: "Pidurite diagnostika broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Pidurite remont ja piduriklotside vahetus Tallinnas | Mr.Car",
@@ -519,7 +519,7 @@ const SERVICES = [
         },
         form: {
             title: "Rehvitööde broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Rehvitööd Tallinnas — Mr.Car | alates €20",
@@ -588,7 +588,7 @@ const SERVICES = [
         },
         form: {
             title: "Hoolduse broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Tehniline hooldus — Mr.Car Tallinn | Autoteenindus",
@@ -680,7 +680,7 @@ const SERVICES = [
         },
         form: {
             title: "Käigukasti remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Käigukasti remont Tallinnas — Automaatkast, DSG | Mr.Car",
@@ -733,7 +733,7 @@ const SERVICES = [
         },
         form: {
             title: "Elektri remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Autoelekter Tallinnas — Mr.Car | Elektrisüsteemide remont",
@@ -1090,7 +1090,7 @@ const SERVICES = [
         },
         form: {
             title: "Mootori remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minuti jooksul"
+            subtitle: ""
         },
         jsonLdServiceDescription: "Mootorite diagnostika ja remont Tallinnas: Check Engine'i märgutuli, ülekuumenemine, õlikulu, gaasijaotusajam, plokikaas ja muud mootoritööd.",
         seo: {
@@ -1993,7 +1993,7 @@ const SERVICES = [
         },
         form: {
             title: "Auto kontrolli broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Auto kontroll enne ostmist — Mr.Car Tallinn | €80",
@@ -2046,7 +2046,7 @@ const SERVICES = [
         },
         form: {
             title: "Kliimaseadme hoolduse broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Kliimaseadme täitmine — Mr.Car Tallinn | Konditsioneer",
@@ -2105,7 +2105,7 @@ const SERVICES = [
         },
         form: {
             title: "Webasto remondi broneerimine",
-            subtitle: "Jäta päring — helistame tagasi 30 minutiga"
+            subtitle: ""
         },
         seo: {
             title: "Webasto remont Tallinnas — Mr.Car | Diagnostika ja hooldus",
